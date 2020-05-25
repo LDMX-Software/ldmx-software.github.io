@@ -2,14 +2,18 @@
     <div class="box">
         <h1>
             <a href="{{ '/' | relative_url }}" class="logo" >
-                <img src="{{ 'img/logo.png' | relative_url }}" width="183.75" height="45.5" alt="Jekyll Logo" >
+                <img src="{{ 'img/logo.png' | relative_url }}" width="183.75" height="45.5" alt="ldmx-sw Logo" >
             </a>
         </h1> 
         <nav>
             <ul>
-                {% for page in site.pages %} {% if page.title %}
-                <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-                {% endif %} {% endfor %}
+                {% for p in site.data.nav %}
+                <li
+                    {% if p.link == page.url %} class="current" {% endif %} 
+                >
+                    <a href="{{ p.link | relative_url }}">{{ p.title }} </a>
+                </li>
+                {% endfor %}
             </ul>
         </nav>
     </div>
