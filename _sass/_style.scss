@@ -9,6 +9,14 @@ body {
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover { color: #f90 } 
+
+}
+
 header { 
 
     padding: 15px;
@@ -57,12 +65,18 @@ nav {
                 @include box-shadow(inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1));
                 text-shadow: 0 1px 3px rgba(0,0,0,.5);
             }
+
+            &:hover {
+                background-color: #252525;
+                @include box-shadow(inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1));
+                text-shadow: 0 1px 3px rgba(0,0,0,.5); 
+            }
         }
 
         &.current {
 
             a {
-                background-color: #fc0;
+                background-color: #f90;
                 color: #222;
                 @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5), 0 1px 5px rgba(0,0,0,.5));
                 text-shadow: 0 1px 0 rgba(255,255,255,.3);
