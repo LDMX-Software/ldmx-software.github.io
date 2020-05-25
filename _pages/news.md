@@ -2,6 +2,6 @@
 
 layout: default 
 title: News 
-permalink: /news
+permalink: /news/
 
 ---
