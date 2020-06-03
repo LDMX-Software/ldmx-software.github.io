@@ -380,22 +380,24 @@ $(function() {
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="comment">//choose which file to import from</span></div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keyword">auto</span> theImportFile{<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>}; <span class="comment">//if this is an input file</span></div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a> and <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a> and <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a> ) </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            theImportFile = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span> (theImportFile) {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="comment">//the file exist</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            TTreeReader oldRunTree( <span class="stringliteral">&quot;LDMX_Run&quot;</span> , theImportFile );</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            TTreeReaderValue&lt;RunHeader&gt; oldRunHeader( oldRunTree , <span class="stringliteral">&quot;RunHeader&quot;</span> );</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="comment">//TODO check that setup went correctly</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">while</span>( oldRunTree.Next() ) {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="comment">//copy input run tree into run map</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a740dbc1905ef458d0822da7068900ff3">runMap_</a>[ oldRunHeader-&gt;getRunNumber() ] = *oldRunHeader;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            theImportFile = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>; <span class="comment">//output file with input parent to read from</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a> )</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordflow">return</span>; <span class="comment">//output file, no input parent to read from</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">if</span> (theImportFile) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="comment">//the file exist</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            TTreeReader oldRunTree( <span class="stringliteral">&quot;LDMX_Run&quot;</span> , theImportFile );</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            TTreeReaderValue&lt;RunHeader&gt; oldRunHeader( oldRunTree , <span class="stringliteral">&quot;RunHeader&quot;</span> );</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="comment">//TODO check that setup went correctly</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keywordflow">while</span>( oldRunTree.Next() ) {</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                <span class="comment">//copy input run tree into run map</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a740dbc1905ef458d0822da7068900ff3">runMap_</a>[ oldRunHeader-&gt;getRunNumber() ] = *oldRunHeader;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        }</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventFile_html_acb30b4cd94a2bb6fd464b234446e2399"><div class="ttname"><a href="classldmx_1_1EventFile.html#acb30b4cd94a2bb6fd464b234446e2399">ldmx::EventFile::updateParent</a></div><div class="ttdeci">void updateParent(EventFile *parent)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00230">EventFile.cxx:230</a></div></div>

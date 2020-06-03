@@ -299,160 +299,159 @@ $(function() {
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        Py_DECREF(pysequence);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">//all done with python nonsense</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment">//do nothing for some reason ¯\_(ツ)_/¯</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="comment">//  too lazy to figure out how to close up python2 well</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        Py_Finalize();</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="classldmx_1_1ConfigurePython.html#a523c78ec62339caf10e6a0b8752816d7">  337</a></span>&#160;    <a class="code" href="namespaceldmx.html#a9028f1d46e96ae071498fc94f663d56a">ProcessHandle</a> <a class="code" href="classldmx_1_1ConfigurePython.html#a523c78ec62339caf10e6a0b8752816d7">ConfigurePython::makeProcess</a>() {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="comment">//no python nonsense happens in here,</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="comment">//this just takes the parameters determined earlier</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="comment">//and puts them into the Process + EventProcessor framework</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keyword">auto</span> process{std::make_unique&lt;Process&gt;(<a class="code" href="classldmx_1_1ConfigurePython.html#acc7e183a3417d290890d47476ab50aa8">passname_</a>)};  </div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        process-&gt;setHistogramFileName(<a class="code" href="classldmx_1_1ConfigurePython.html#ab733492c9ebe4dfbe7d57f9b3366156a">histoOutFile_</a>);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        process-&gt;setEventLimit(<a class="code" href="classldmx_1_1ConfigurePython.html#a2054645ff493e99932eeac37e7233293">eventLimit_</a>);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        process-&gt;setLogFrequency(<a class="code" href="classldmx_1_1ConfigurePython.html#a0d7738fd25132f68e4aa8544c4a14e7e">logFrequency_</a>); </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        std::for_each(<a class="code" href="classldmx_1_1ConfigurePython.html#ac92502918c7289b51e9189f2077ca7c5">libraries_</a>.begin(), <a class="code" href="classldmx_1_1ConfigurePython.html#ac92502918c7289b51e9189f2077ca7c5">libraries_</a>.end(), </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                [](<span class="keyword">auto</span>&amp; lib) { EventProcessorFactory::getInstance().loadLibrary(lib);}</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                ); </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> proc : <a class="code" href="classldmx_1_1ConfigurePython.html#aeab1e78a03579126f627ab92c8361cd3">sequence_</a>) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <a class="code" href="classldmx_1_1EventProcessor.html">EventProcessor</a>* ep = <a class="code" href="classldmx_1_1EventProcessorFactory.html#a288aa4dd9ba6fb37f13ee78e9054ac83">EventProcessorFactory::getInstance</a>().<a class="code" href="classldmx_1_1EventProcessorFactory.html#a2f8befd8acd3acc5520a931959dd4084">createEventProcessor</a>(proc.className_, proc.instanceName_, *process);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="keywordflow">if</span> (ep == 0) {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;UnableToCreate&quot;</span>, <span class="stringliteral">&quot;Unable to create instance &#39;&quot;</span> + proc.instanceName_ + <span class="stringliteral">&quot;&#39; of class &#39;&quot;</span> + proc.className_ + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="keywordflow">if</span> (!proc.histograms_.empty()) {</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                <a class="code" href="classldmx_1_1HistogramPool.html">HistogramPool</a>* histograms = HistogramPool::getInstance(); </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                ep-&gt;<a class="code" href="classldmx_1_1EventProcessor.html#aa844f84a142be4a4ee74f575debc291d">getHistoDirectory</a>();</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; hist : proc.histograms_) { </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    histograms-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#a738f15475b24e4f06a53804d3a1afccd">create</a>&lt;TH1F&gt;(hist.name_, hist.xLabel_, hist.bins_, hist.xmin_, hist.xmax_); </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                } </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            }</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            ep-&gt;<a class="code" href="classldmx_1_1EventProcessor.html#a9482dccbb5ce7bc2efe0537c679c0ec0">configure</a>(proc.params_);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            process-&gt;addToSequence(ep);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : <a class="code" href="classldmx_1_1ConfigurePython.html#a03862dd75f2260a683cd8cb754c0ce1e">inputFiles_</a>) {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            process-&gt;addFileToProcess(file);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : <a class="code" href="classldmx_1_1ConfigurePython.html#a9ec35dcf8f1908874a1b784697b250c6">outputFiles_</a>) {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            process-&gt;addOutputFileName(file);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        process-&gt;setCompressionSetting(<a class="code" href="classldmx_1_1ConfigurePython.html#a0b9c05044aaff90d25d93b23055e5e1a">compressionSetting_</a>);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> rule : <a class="code" href="classldmx_1_1ConfigurePython.html#a638ec8a4db7ace29c62e773395b63d36">keepRules_</a>) {</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            process-&gt;addDropKeepRule(rule);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        }</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        process-&gt;getStorageController().setDefaultKeep(<a class="code" href="classldmx_1_1ConfigurePython.html#a2d39298bd17c9ddcba75aad08233fe2f">skimDefaultIsKeep_</a>);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i&lt;<a class="code" href="classldmx_1_1ConfigurePython.html#a9438e4305f513fe40fb6cc7f735fe793">skimRules_</a>.size(); i+=2) {</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            process-&gt;getStorageController().addRule(<a class="code" href="classldmx_1_1ConfigurePython.html#a9438e4305f513fe40fb6cc7f735fe793">skimRules_</a>[i],<a class="code" href="classldmx_1_1ConfigurePython.html#a9438e4305f513fe40fb6cc7f735fe793">skimRules_</a>[i+1]);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1ConfigurePython.html#a1afa13c0529abf39324eb93a9d08663e">run_</a> &gt; 0)</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            process-&gt;setRunNumber(<a class="code" href="classldmx_1_1ConfigurePython.html#a1afa13c0529abf39324eb93a9d08663e">run_</a>);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">return</span> process;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    }</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno"><a class="line" href="classldmx_1_1ConfigurePython.html#a4c788a935fe13b33532d9b75dc26ba20">  389</a></span>&#160;    std::map&lt; std::string, std::any &gt; <a class="code" href="classldmx_1_1ConfigurePython.html#a4c788a935fe13b33532d9b75dc26ba20">ConfigurePython::getParameters</a>(PyObject* dictionary) { </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        PyObject *key(0), *value(0);</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        Py_ssize_t pos = 0;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        std::map &lt; std::string, std::any &gt; params; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">while</span> (PyDict_Next(dictionary, &amp;pos, &amp;key, &amp;value)) {</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            std::string skey{<a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>(key)};</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceldmx.html#a7491af2c3a02ec371f1d60bec86dcc4c">isPyInt</a>(value)) {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                <span class="keywordflow">if</span> (PyBool_Check(value)) {</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    params[skey] = bool(PyLong_AsLong(value)); </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                } <span class="keywordflow">else</span> { </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    params[skey] = int(PyLong_AsLong(value));</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                }</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyFloat_Check(value)) {</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                params[skey] = PyFloat_AsDouble(value);  </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="namespaceldmx.html#a9a0a89cd9e34ea85feca2bfe61f8b859">isPyString</a>(value)) {</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                params[skey] = <a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>(value);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyList_Check(value)) { <span class="comment">// assume everything is same value as first value</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                <span class="keywordflow">if</span> (PyList_Size(value) &gt; 0) {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                    <span class="keyword">auto</span> vec0{PyList_GetItem(value, 0)};</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                    <span class="keywordflow">if</span> (PyLong_Check(vec0)) {</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                        std::vector&lt;int&gt; vals;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> j{0}; j &lt; PyList_Size(value); j++)</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                            vals.push_back(PyLong_AsLong(PyList_GetItem(value, j)));</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                        params[skey] = vals;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyFloat_Check(vec0)) {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                        std::vector&lt;double&gt; vals;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> j{0}; j &lt; PyList_Size(value); j++)</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                            vals.push_back(PyFloat_AsDouble(PyList_GetItem(value, j)));</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                        params[skey] = vals;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="namespaceldmx.html#a9a0a89cd9e34ea85feca2bfe61f8b859">isPyString</a>(vec0)) {</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                        std::vector&lt;std::string&gt; vals;</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                        <span class="keywordflow">for</span> (Py_ssize_t j = 0; j &lt; PyList_Size(value); j++){</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                            PyObject* elem = PyList_GetItem(value , j );</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                            vals.push_back(<a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>(elem));</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                            Py_DECREF(elem);</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                        }</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                        params[skey] = vals;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                    } <span class="keywordflow">else</span> { </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                        <span class="comment">// If the objects stored in the list doesn&#39;t </span></div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                        <span class="comment">// satisfy any of the above conditions, just</span></div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                        <span class="comment">// create a vector of Class objects.</span></div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                        std::vector&lt; Class &gt; vals;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> j{0}; j &lt; PyList_Size(value); ++j) {</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                            <span class="keyword">auto</span> <span class="keywordtype">object</span>{PyList_GetItem( value, j )}; </div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                            <a class="code" href="structldmx_1_1Class.html">Class</a> c; </div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                            c.<a class="code" href="structldmx_1_1Class.html#ac77ea0624c6f72fc78e3465424933dd4">className_</a>    = <a class="code" href="namespaceldmx.html#afea2737c51ea6fc3c52d425d19daafbf">stringMember</a>(<span class="keywordtype">object</span>, <span class="stringliteral">&quot;class_name&quot;</span>);</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                            c.<a class="code" href="structldmx_1_1Class.html#ac77a080b80c41af3f5656d090cea6f6d">instanceName_</a> = <a class="code" href="namespaceldmx.html#afea2737c51ea6fc3c52d425d19daafbf">stringMember</a>(<span class="keywordtype">object</span>, <span class="stringliteral">&quot;instance_name&quot;</span>);  </div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                            <span class="keyword">auto</span> dict{PyObject_GetAttrString(<span class="keywordtype">object</span>, <span class="stringliteral">&quot;parameters&quot;</span>)};</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                            <span class="keyword">auto</span> classParams{<a class="code" href="classldmx_1_1ConfigurePython.html#a4c788a935fe13b33532d9b75dc26ba20">getParameters</a>(dict)}; </div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                            c.<a class="code" href="structldmx_1_1Class.html#a97470fbf9c0747f010d48c5355e57fb5">params_</a>.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>(classParams); </div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                            Py_DECREF(dict);</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                            vals.push_back(c);</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                            Py_DECREF(<span class="keywordtype">object</span>);</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                        } </div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                        params[skey] = vals;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                    } <span class="comment">//type of object in python list</span></div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                } <span class="comment">//python list has non-zero size</span></div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            } <span class="comment">//python object type</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            Py_XDECREF( key );</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            Py_XDECREF(value);</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        } <span class="comment">//loop through python dictionary</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        <span class="keywordflow">return</span> params; </div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    }</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;} <span class="comment">//ldmx</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">//do nothing for some reason ¯\_(ツ)_/¯</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment">//  too lazy to figure out how to close up python well</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="comment">//  calling the below function leads to a seg fault on</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="comment">//  some machines</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="comment">//Py_Finalize();</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="classldmx_1_1ConfigurePython.html#a523c78ec62339caf10e6a0b8752816d7">  336</a></span>&#160;    <a class="code" href="namespaceldmx.html#a9028f1d46e96ae071498fc94f663d56a">ProcessHandle</a> <a class="code" href="classldmx_1_1ConfigurePython.html#a523c78ec62339caf10e6a0b8752816d7">ConfigurePython::makeProcess</a>() {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="comment">//no python nonsense happens in here,</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="comment">//this just takes the parameters determined earlier</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="comment">//and puts them into the Process + EventProcessor framework</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keyword">auto</span> process{std::make_unique&lt;Process&gt;(<a class="code" href="classldmx_1_1ConfigurePython.html#acc7e183a3417d290890d47476ab50aa8">passname_</a>)};  </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        process-&gt;setHistogramFileName(<a class="code" href="classldmx_1_1ConfigurePython.html#ab733492c9ebe4dfbe7d57f9b3366156a">histoOutFile_</a>);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        process-&gt;setEventLimit(<a class="code" href="classldmx_1_1ConfigurePython.html#a2054645ff493e99932eeac37e7233293">eventLimit_</a>);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        process-&gt;setLogFrequency(<a class="code" href="classldmx_1_1ConfigurePython.html#a0d7738fd25132f68e4aa8544c4a14e7e">logFrequency_</a>); </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        std::for_each(<a class="code" href="classldmx_1_1ConfigurePython.html#ac92502918c7289b51e9189f2077ca7c5">libraries_</a>.begin(), <a class="code" href="classldmx_1_1ConfigurePython.html#ac92502918c7289b51e9189f2077ca7c5">libraries_</a>.end(), </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                [](<span class="keyword">auto</span>&amp; lib) { EventProcessorFactory::getInstance().loadLibrary(lib);}</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                ); </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> proc : <a class="code" href="classldmx_1_1ConfigurePython.html#aeab1e78a03579126f627ab92c8361cd3">sequence_</a>) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <a class="code" href="classldmx_1_1EventProcessor.html">EventProcessor</a>* ep = <a class="code" href="classldmx_1_1EventProcessorFactory.html#a288aa4dd9ba6fb37f13ee78e9054ac83">EventProcessorFactory::getInstance</a>().<a class="code" href="classldmx_1_1EventProcessorFactory.html#a2f8befd8acd3acc5520a931959dd4084">createEventProcessor</a>(proc.className_, proc.instanceName_, *process);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="keywordflow">if</span> (ep == 0) {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;UnableToCreate&quot;</span>, <span class="stringliteral">&quot;Unable to create instance &#39;&quot;</span> + proc.instanceName_ + <span class="stringliteral">&quot;&#39; of class &#39;&quot;</span> + proc.className_ + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="keywordflow">if</span> (!proc.histograms_.empty()) {</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <a class="code" href="classldmx_1_1HistogramPool.html">HistogramPool</a>* histograms = HistogramPool::getInstance(); </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                ep-&gt;<a class="code" href="classldmx_1_1EventProcessor.html#aa844f84a142be4a4ee74f575debc291d">getHistoDirectory</a>();</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; hist : proc.histograms_) { </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    histograms-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#a738f15475b24e4f06a53804d3a1afccd">create</a>&lt;TH1F&gt;(hist.name_, hist.xLabel_, hist.bins_, hist.xmin_, hist.xmax_); </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                } </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            ep-&gt;<a class="code" href="classldmx_1_1EventProcessor.html#a9482dccbb5ce7bc2efe0537c679c0ec0">configure</a>(proc.params_);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            process-&gt;addToSequence(ep);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        }</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : <a class="code" href="classldmx_1_1ConfigurePython.html#a03862dd75f2260a683cd8cb754c0ce1e">inputFiles_</a>) {</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            process-&gt;addFileToProcess(file);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : <a class="code" href="classldmx_1_1ConfigurePython.html#a9ec35dcf8f1908874a1b784697b250c6">outputFiles_</a>) {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            process-&gt;addOutputFileName(file);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        process-&gt;setCompressionSetting(<a class="code" href="classldmx_1_1ConfigurePython.html#a0b9c05044aaff90d25d93b23055e5e1a">compressionSetting_</a>);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> rule : <a class="code" href="classldmx_1_1ConfigurePython.html#a638ec8a4db7ace29c62e773395b63d36">keepRules_</a>) {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            process-&gt;addDropKeepRule(rule);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        process-&gt;getStorageController().setDefaultKeep(<a class="code" href="classldmx_1_1ConfigurePython.html#a2d39298bd17c9ddcba75aad08233fe2f">skimDefaultIsKeep_</a>);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i&lt;<a class="code" href="classldmx_1_1ConfigurePython.html#a9438e4305f513fe40fb6cc7f735fe793">skimRules_</a>.size(); i+=2) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            process-&gt;getStorageController().addRule(<a class="code" href="classldmx_1_1ConfigurePython.html#a9438e4305f513fe40fb6cc7f735fe793">skimRules_</a>[i],<a class="code" href="classldmx_1_1ConfigurePython.html#a9438e4305f513fe40fb6cc7f735fe793">skimRules_</a>[i+1]);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1ConfigurePython.html#a1afa13c0529abf39324eb93a9d08663e">run_</a> &gt; 0)</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            process-&gt;setRunNumber(<a class="code" href="classldmx_1_1ConfigurePython.html#a1afa13c0529abf39324eb93a9d08663e">run_</a>);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">return</span> process;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="classldmx_1_1ConfigurePython.html#a4c788a935fe13b33532d9b75dc26ba20">  388</a></span>&#160;    std::map&lt; std::string, std::any &gt; <a class="code" href="classldmx_1_1ConfigurePython.html#a4c788a935fe13b33532d9b75dc26ba20">ConfigurePython::getParameters</a>(PyObject* dictionary) { </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        PyObject *key(0), *value(0);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        Py_ssize_t pos = 0;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        std::map &lt; std::string, std::any &gt; params; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">while</span> (PyDict_Next(dictionary, &amp;pos, &amp;key, &amp;value)) {</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            std::string skey{<a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>(key)};</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceldmx.html#a7491af2c3a02ec371f1d60bec86dcc4c">isPyInt</a>(value)) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                <span class="keywordflow">if</span> (PyBool_Check(value)) {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                    params[skey] = bool(PyLong_AsLong(value)); </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                } <span class="keywordflow">else</span> { </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                    params[skey] = int(PyLong_AsLong(value));</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyFloat_Check(value)) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                params[skey] = PyFloat_AsDouble(value);  </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="namespaceldmx.html#a9a0a89cd9e34ea85feca2bfe61f8b859">isPyString</a>(value)) {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                params[skey] = <a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>(value);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyList_Check(value)) { <span class="comment">// assume everything is same value as first value</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                <span class="keywordflow">if</span> (PyList_Size(value) &gt; 0) {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                    <span class="keyword">auto</span> vec0{PyList_GetItem(value, 0)};</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceldmx.html#a7491af2c3a02ec371f1d60bec86dcc4c">isPyInt</a>(vec0)) {</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                        std::vector&lt;int&gt; vals;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> j{0}; j &lt; PyList_Size(value); j++)</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                            vals.push_back(PyLong_AsLong(PyList_GetItem(value, j)));</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                        params[skey] = vals;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyFloat_Check(vec0)) {</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                        std::vector&lt;double&gt; vals;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> j{0}; j &lt; PyList_Size(value); j++)</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                            vals.push_back(PyFloat_AsDouble(PyList_GetItem(value, j)));</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                        params[skey] = vals;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="namespaceldmx.html#a9a0a89cd9e34ea85feca2bfe61f8b859">isPyString</a>(vec0)) {</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                        std::vector&lt;std::string&gt; vals;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                        <span class="keywordflow">for</span> (Py_ssize_t j = 0; j &lt; PyList_Size(value); j++){</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                            PyObject* elem = PyList_GetItem(value , j );</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                            vals.push_back(<a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>(elem));</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                            Py_DECREF(elem);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                        }</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                        params[skey] = vals;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                    } <span class="keywordflow">else</span> { </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                        <span class="comment">// If the objects stored in the list doesn&#39;t </span></div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                        <span class="comment">// satisfy any of the above conditions, just</span></div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                        <span class="comment">// create a vector of Class objects.</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                        std::vector&lt; Class &gt; vals;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> j{0}; j &lt; PyList_Size(value); ++j) {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                            <span class="keyword">auto</span> <span class="keywordtype">object</span>{PyList_GetItem( value, j )}; </div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                            <a class="code" href="structldmx_1_1Class.html">Class</a> c; </div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                            c.<a class="code" href="structldmx_1_1Class.html#ac77ea0624c6f72fc78e3465424933dd4">className_</a>    = <a class="code" href="namespaceldmx.html#afea2737c51ea6fc3c52d425d19daafbf">stringMember</a>(<span class="keywordtype">object</span>, <span class="stringliteral">&quot;class_name&quot;</span>);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                            c.<a class="code" href="structldmx_1_1Class.html#ac77a080b80c41af3f5656d090cea6f6d">instanceName_</a> = <a class="code" href="namespaceldmx.html#afea2737c51ea6fc3c52d425d19daafbf">stringMember</a>(<span class="keywordtype">object</span>, <span class="stringliteral">&quot;instance_name&quot;</span>);  </div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                            <span class="keyword">auto</span> dict{PyObject_GetAttrString(<span class="keywordtype">object</span>, <span class="stringliteral">&quot;parameters&quot;</span>)};</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                            <span class="keyword">auto</span> classParams{<a class="code" href="classldmx_1_1ConfigurePython.html#a4c788a935fe13b33532d9b75dc26ba20">getParameters</a>(dict)}; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                            c.<a class="code" href="structldmx_1_1Class.html#a97470fbf9c0747f010d48c5355e57fb5">params_</a>.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>(classParams); </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                            Py_DECREF(dict);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                            vals.push_back(c);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                            Py_DECREF(<span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                        } </div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                        params[skey] = vals;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                    } <span class="comment">//type of object in python list</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                } <span class="comment">//python list has non-zero size</span></div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            } <span class="comment">//python object type</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            Py_XDECREF( key );</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            Py_XDECREF(value);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        } <span class="comment">//loop through python dictionary</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordflow">return</span> params; </div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    }</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;} <span class="comment">//ldmx</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1ConfigurePython_html_ac92502918c7289b51e9189f2077ca7c5"><div class="ttname"><a href="classldmx_1_1ConfigurePython.html#ac92502918c7289b51e9189f2077ca7c5">ldmx::ConfigurePython::libraries_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; libraries_</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8h_source.html#l00176">ConfigurePython.h:176</a></div></div>
 <div class="ttc" id="aclassldmx_1_1ConfigurePython_html_a03862dd75f2260a683cd8cb754c0ce1e"><div class="ttname"><a href="classldmx_1_1ConfigurePython.html#a03862dd75f2260a683cd8cb754c0ce1e">ldmx::ConfigurePython::inputFiles_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; inputFiles_</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8h_source.html#l00155">ConfigurePython.h:155</a></div></div>
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessorFactory_html_a2f8befd8acd3acc5520a931959dd4084"><div class="ttname"><a href="classldmx_1_1EventProcessorFactory.html#a2f8befd8acd3acc5520a931959dd4084">ldmx::EventProcessorFactory::createEventProcessor</a></div><div class="ttdeci">EventProcessor * createEventProcessor(const std::string &amp;classname, const std::string &amp;moduleInstanceName, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessorFactory_8cxx_source.html#l00042">EventProcessorFactory.cxx:42</a></div></div>
-<div class="ttc" id="aclassldmx_1_1ConfigurePython_html_a4c788a935fe13b33532d9b75dc26ba20"><div class="ttname"><a href="classldmx_1_1ConfigurePython.html#a4c788a935fe13b33532d9b75dc26ba20">ldmx::ConfigurePython::getParameters</a></div><div class="ttdeci">std::map&lt; std::string, std::any &gt; getParameters(PyObject *dictionary)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00389">ConfigurePython.cxx:389</a></div></div>
+<div class="ttc" id="aclassldmx_1_1ConfigurePython_html_a4c788a935fe13b33532d9b75dc26ba20"><div class="ttname"><a href="classldmx_1_1ConfigurePython.html#a4c788a935fe13b33532d9b75dc26ba20">ldmx::ConfigurePython::getParameters</a></div><div class="ttdeci">std::map&lt; std::string, std::any &gt; getParameters(PyObject *dictionary)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00388">ConfigurePython.cxx:388</a></div></div>
 <div class="ttc" id="anamespaceldmx_html_a8ec0806618c7d0cd6801d23bb5ce01b7"><div class="ttname"><a href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">ldmx::getPyString</a></div><div class="ttdeci">static std::string getPyString(PyObject *pyObj)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00090">ConfigurePython.cxx:90</a></div></div>
 <div class="ttc" id="aclassldmx_1_1ConfigurePython_html_a0d7738fd25132f68e4aa8544c4a14e7e"><div class="ttname"><a href="classldmx_1_1ConfigurePython.html#a0d7738fd25132f68e4aa8544c4a14e7e">ldmx::ConfigurePython::logFrequency_</a></div><div class="ttdeci">int logFrequency_</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8h_source.html#l00149">ConfigurePython.h:149</a></div></div>
 <div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
@@ -470,7 +469,7 @@ $(function() {
 <div class="ttc" id="anamespaceldmx_html_a7491af2c3a02ec371f1d60bec86dcc4c"><div class="ttname"><a href="namespaceldmx.html#a7491af2c3a02ec371f1d60bec86dcc4c">ldmx::isPyInt</a></div><div class="ttdeci">static bool isPyInt(PyObject *pyObj)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00073">ConfigurePython.cxx:73</a></div></div>
 <div class="ttc" id="astructldmx_1_1Class_html_ac77a080b80c41af3f5656d090cea6f6d"><div class="ttname"><a href="structldmx_1_1Class.html#ac77a080b80c41af3f5656d090cea6f6d">ldmx::Class::instanceName_</a></div><div class="ttdeci">std::string instanceName_</div><div class="ttdoc">Name of the instance of this class described by this object.</div><div class="ttdef"><b>Definition:</b> <a href="FrameworkDef_8h_source.html#l00033">FrameworkDef.h:33</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessor_html_a9482dccbb5ce7bc2efe0537c679c0ec0"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a9482dccbb5ce7bc2efe0537c679c0ec0">ldmx::EventProcessor::configure</a></div><div class="ttdeci">virtual void configure(Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00095">EventProcessor.h:95</a></div></div>
-<div class="ttc" id="aclassldmx_1_1ConfigurePython_html_a523c78ec62339caf10e6a0b8752816d7"><div class="ttname"><a href="classldmx_1_1ConfigurePython.html#a523c78ec62339caf10e6a0b8752816d7">ldmx::ConfigurePython::makeProcess</a></div><div class="ttdeci">ProcessHandle makeProcess()</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00337">ConfigurePython.cxx:337</a></div></div>
+<div class="ttc" id="aclassldmx_1_1ConfigurePython_html_a523c78ec62339caf10e6a0b8752816d7"><div class="ttname"><a href="classldmx_1_1ConfigurePython.html#a523c78ec62339caf10e6a0b8752816d7">ldmx::ConfigurePython::makeProcess</a></div><div class="ttdeci">ProcessHandle makeProcess()</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00336">ConfigurePython.cxx:336</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HistogramPool_html"><div class="ttname"><a href="classldmx_1_1HistogramPool.html">ldmx::HistogramPool</a></div><div class="ttdef"><b>Definition:</b> <a href="HistogramPool_8h_source.html#l00022">HistogramPool.h:22</a></div></div>
 <div class="ttc" id="astructldmx_1_1Class_html"><div class="ttname"><a href="structldmx_1_1Class.html">ldmx::Class</a></div><div class="ttdoc">Encapsualtes the information required to create a class of type className_.</div><div class="ttdef"><b>Definition:</b> <a href="FrameworkDef_8h_source.html#l00027">FrameworkDef.h:27</a></div></div>
 <div class="ttc" id="anamespaceldmx_html_a9a0a89cd9e34ea85feca2bfe61f8b859"><div class="ttname"><a href="namespaceldmx.html#a9a0a89cd9e34ea85feca2bfe61f8b859">ldmx::isPyString</a></div><div class="ttdeci">static bool isPyString(PyObject *pyObj)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00056">ConfigurePython.cxx:56</a></div></div>

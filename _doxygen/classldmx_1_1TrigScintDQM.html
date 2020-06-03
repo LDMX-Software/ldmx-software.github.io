@@ -91,6 +91,11 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aaf23584764eeaad45cec5382b1655463"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1HistogramPool.html">HistogramPool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a> {nullptr}</td></tr>
 <tr class="separator:aaf23584764eeaad45cec5382b1655463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0fb41dd8fead4cc274d2affdcdc2e0d"><td class="memItemLeft" align="right" valign="top"><a id="ae0fb41dd8fead4cc274d2affdcdc2e0d"></a>
+std::unique_ptr&lt; <a class="el" href="classldmx_1_1TrigScintID.html">TrigScintID</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintDQM.html#ae0fb41dd8fead4cc274d2affdcdc2e0d">detID_</a></td></tr>
+<tr class="memdesc:ae0fb41dd8fead4cc274d2affdcdc2e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector ID <br  />
+ <br /></td></tr>
+<tr class="separator:ae0fb41dd8fead4cc274d2affdcdc2e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae13bc14f2425701c10c42f436f51fa2b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a> {&quot;TriggerPadUpSimHits&quot;}</td></tr>
 <tr class="separator:ae13bc14f2425701c10c42f436f51fa2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a921f0a4b78dc7e1f69a89ae03ed0a9e6"><td class="memItemLeft" align="right" valign="top"><a id="a921f0a4b78dc7e1f69a89ae03ed0a9e6"></a>
@@ -114,7 +119,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8h_source.html#l00034">34</a> of file <a class="el" href="TrigScintDQM_8h_source.html">TrigScintDQM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8h_source.html#l00036">36</a> of file <a class="el" href="TrigScintDQM_8h_source.html">TrigScintDQM.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a363931b292676ca41a087566038c8882"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a363931b292676ca41a087566038c8882">&#9670;&nbsp;</a></span>TrigScintDQM()</h2>
@@ -204,44 +209,51 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classldmx_1_1Analyzer.html#abf95b685858c4b01883553f31be68727">ldmx::Analyzer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8cxx_source.html#l00093">93</a> of file <a class="el" href="TrigScintDQM_8cxx_source.html">TrigScintDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                  { </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="comment">// Check if the collection of digitized TrigScint hits exist. If it doesn&#39;t </span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="comment">// don&#39;t continue processing.</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">if</span> ( !event.exists(<a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a>.c_str()) ) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; <a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span>; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keyword">const</span> std::vector&lt;SimCalorimeterHit&gt; TrigScintHits = <span class="keyword">event</span>.getCollection&lt;SimCalorimeterHit&gt;( <a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="comment">// Get the total hit count</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keywordtype">int</span> hitCount = TrigScintHits.size();  </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;n_hits_&quot;</span>+padName_)-&gt;Fill(hitCount); </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordtype">double</span> totalEnergy{0};  </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> SimCalorimeterHit &amp;hit : TrigScintHits ) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;energy_&quot;</span>+padName_)-&gt;Fill(hit.getEdep()); </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;hit_time_&quot;</span>+padName_)-&gt;Fill(hit.getTime());</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;id_&quot;</span>+padName_)-&gt;Fill(hit.getID()&gt;&gt;4 );</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    std::vector&lt;float&gt; posvec = hit.getPosition();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;x_&quot;</span>+padName_)-&gt;Fill( posvec.at(0) );</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;y_&quot;</span>+padName_)-&gt;Fill( posvec.at(1) );</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;z_&quot;</span>+padName_)-&gt;Fill( posvec.at(2) );</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    totalEnergy += hit.getEdep(); </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;total_energy_&quot;</span>+padName_)-&gt;Fill(totalEnergy); </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8cxx_source.html#l00090">90</a> of file <a class="el" href="TrigScintDQM_8cxx_source.html">TrigScintDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                  { </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="comment">// Check if the collection of digitized TrigScint hits exist. If it doesn&#39;t </span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="comment">// don&#39;t continue processing.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> ( !event.exists(<a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a>.c_str()) ) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; <a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span>; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keyword">const</span> std::vector&lt;SimCalorimeterHit&gt; TrigScintHits = <span class="keyword">event</span>.getCollection&lt;SimCalorimeterHit&gt;( <a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="comment">// Get the total hit count</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keywordtype">int</span> hitCount = TrigScintHits.size();  </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;n_hits_&quot;</span>+padName_)-&gt;Fill(hitCount); </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keywordtype">double</span> totalEnergy{0};  </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> SimCalorimeterHit &amp;hit : TrigScintHits ) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">int</span> detIDRaw{hit.getID()};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#ae0fb41dd8fead4cc274d2affdcdc2e0d">detID_</a>-&gt;setRawValue( hit.getID() ); </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#ae0fb41dd8fead4cc274d2affdcdc2e0d">detID_</a>-&gt;unpack();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">int</span> bar = <a class="code" href="classldmx_1_1TrigScintDQM.html#ae0fb41dd8fead4cc274d2affdcdc2e0d">detID_</a>-&gt;getFieldValue(<span class="stringliteral">&quot;bar&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;energy_&quot;</span>+padName_)-&gt;Fill(hit.getEdep()); </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;hit_time_&quot;</span>+padName_)-&gt;Fill(hit.getTime());</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;id_&quot;</span>+padName_)-&gt;Fill( bar );</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::vector&lt;float&gt; posvec = hit.getPosition();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;x_&quot;</span>+padName_)-&gt;Fill( posvec.at(0) );</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;y_&quot;</span>+padName_)-&gt;Fill( posvec.at(1) );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;z_&quot;</span>+padName_)-&gt;Fill( posvec.at(2) );</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    totalEnergy += hit.getEdep(); </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <a class="code" href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;total_energy_&quot;</span>+padName_)-&gt;Fill(totalEnergy); </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Event_8h_source.html#l00087">ldmx::Event::exists()</a>, <a class="el" href="HistogramPool_8cxx_source.html#l00054">ldmx::HistogramPool::get()</a>, <a class="el" href="TrigScintDQM_8h_source.html#l00064">histograms_</a>, and <a class="el" href="TrigScintDQM_8h_source.html#l00068">hitCollectionName_</a>.</p>
+<p class="reference">References <a class="el" href="TrigScintDQM_8h_source.html#l00069">detID_</a>, <a class="el" href="Event_8h_source.html#l00087">ldmx::Event::exists()</a>, <a class="el" href="HistogramPool_8cxx_source.html#l00054">ldmx::HistogramPool::get()</a>, <a class="el" href="TrigScintDQM_8h_source.html#l00066">histograms_</a>, and <a class="el" href="TrigScintDQM_8h_source.html#l00073">hitCollectionName_</a>.</p>
 
 </div>
 </div>
@@ -278,16 +290,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classldmx_1_1EventProcessor.html#a9482dccbb5ce7bc2efe0537c679c0ec0">ldmx::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8cxx_source.html#l00085">85</a> of file <a class="el" href="TrigScintDQM_8cxx_source.html">TrigScintDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                               {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a> = ps.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;hit_collection&quot;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      padName_ = ps.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;pad&quot;</span>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;In TrigScintDQM::configure, got parameters &quot;</span> &lt;&lt; <a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a> &lt;&lt; <span class="stringliteral">&quot; and &quot;</span> &lt;&lt; padName_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8cxx_source.html#l00080">80</a> of file <a class="el" href="TrigScintDQM_8cxx_source.html">TrigScintDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                               {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a> = ps.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;hit_collection&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      padName_ = ps.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;pad&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;In TrigScintDQM::configure, got parameters &quot;</span> &lt;&lt; <a class="code" href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">hitCollectionName_</a> &lt;&lt; <span class="stringliteral">&quot; and &quot;</span> &lt;&lt; padName_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="classldmx_1_1TrigScintDQM.html#ae0fb41dd8fead4cc274d2affdcdc2e0d">detID_</a>= std::make_unique&lt;TrigScintID&gt;();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, and <a class="el" href="TrigScintDQM_8h_source.html#l00068">hitCollectionName_</a>.</p>
+<p class="reference">References <a class="el" href="TrigScintDQM_8h_source.html#l00069">detID_</a>, <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, and <a class="el" href="TrigScintDQM_8h_source.html#l00073">hitCollectionName_</a>.</p>
 
 </div>
 </div>
@@ -379,14 +393,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                  <span class="stringliteral">&quot;Photoelectrons in a TrigScint bar&quot;</span>, 1500, 0, 1500,</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                  <span class="stringliteral">&quot;Earliest time of TrigScint hit above threshold (ns)&quot;</span>, 1600, -100, 1500);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// TODO: implement getting a list of the constructed histograms, to iterate through and set overflow boolean. </span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HistogramPool_8h_source.html#l00050">ldmx::HistogramPool::create()</a>, <a class="el" href="EventProcessor_8cxx_source.html#l00023">ldmx::EventProcessor::getHistoDirectory()</a>, and <a class="el" href="TrigScintDQM_8h_source.html#l00064">histograms_</a>.</p>
+<p class="reference">References <a class="el" href="HistogramPool_8h_source.html#l00050">ldmx::HistogramPool::create()</a>, <a class="el" href="EventProcessor_8cxx_source.html#l00023">ldmx::EventProcessor::getHistoDirectory()</a>, and <a class="el" href="TrigScintDQM_8h_source.html#l00066">histograms_</a>.</p>
 
 </div>
 </div>
@@ -412,9 +421,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Singleton used to access histograms. </p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8h_source.html#l00064">64</a> of file <a class="el" href="TrigScintDQM_8h_source.html">TrigScintDQM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8h_source.html#l00066">66</a> of file <a class="el" href="TrigScintDQM_8h_source.html">TrigScintDQM.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TrigScintDQM_8cxx_source.html#l00093">analyze()</a>, and <a class="el" href="TrigScintDQM_8cxx_source.html#l00017">onProcessStart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrigScintDQM_8cxx_source.html#l00090">analyze()</a>, and <a class="el" href="TrigScintDQM_8cxx_source.html#l00017">onProcessStart()</a>.</p>
 
 </div>
 </div>
@@ -439,9 +448,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Name of trigger pad hit collection. </p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8h_source.html#l00068">68</a> of file <a class="el" href="TrigScintDQM_8h_source.html">TrigScintDQM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintDQM_8h_source.html#l00073">73</a> of file <a class="el" href="TrigScintDQM_8h_source.html">TrigScintDQM.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TrigScintDQM_8cxx_source.html#l00093">analyze()</a>, and <a class="el" href="TrigScintDQM_8cxx_source.html#l00085">configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrigScintDQM_8cxx_source.html#l00090">analyze()</a>, and <a class="el" href="TrigScintDQM_8cxx_source.html#l00080">configure()</a>.</p>
 
 </div>
 </div>
@@ -450,10 +459,11 @@ Additional Inherited Members</h2></td></tr>
 <li>DQM/src/<a class="el" href="TrigScintDQM_8cxx_source.html">TrigScintDQM.cxx</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassldmx_1_1TrigScintDQM_html_ae0fb41dd8fead4cc274d2affdcdc2e0d"><div class="ttname"><a href="classldmx_1_1TrigScintDQM.html#ae0fb41dd8fead4cc274d2affdcdc2e0d">ldmx::TrigScintDQM::detID_</a></div><div class="ttdeci">std::unique_ptr&lt; TrigScintID &gt; detID_</div><div class="ttdoc">Detector ID</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintDQM_8h_source.html#l00069">TrigScintDQM.h:69</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessor_html_aa844f84a142be4a4ee74f575debc291d"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#aa844f84a142be4a4ee74f575debc291d">ldmx::EventProcessor::getHistoDirectory</a></div><div class="ttdeci">TDirectory * getHistoDirectory()</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00023">EventProcessor.cxx:23</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintDQM_html_aaf23584764eeaad45cec5382b1655463"><div class="ttname"><a href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">ldmx::TrigScintDQM::histograms_</a></div><div class="ttdeci">HistogramPool * histograms_</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintDQM_8h_source.html#l00064">TrigScintDQM.h:64</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintDQM_html_aaf23584764eeaad45cec5382b1655463"><div class="ttname"><a href="classldmx_1_1TrigScintDQM.html#aaf23584764eeaad45cec5382b1655463">ldmx::TrigScintDQM::histograms_</a></div><div class="ttdeci">HistogramPool * histograms_</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintDQM_8h_source.html#l00066">TrigScintDQM.h:66</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Analyzer_html_a292d214965c667249fe4e1cf400ff444"><div class="ttname"><a href="classldmx_1_1Analyzer.html#a292d214965c667249fe4e1cf400ff444">ldmx::Analyzer::Analyzer</a></div><div class="ttdeci">Analyzer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00033">EventProcessor.cxx:33</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintDQM_html_ae13bc14f2425701c10c42f436f51fa2b"><div class="ttname"><a href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">ldmx::TrigScintDQM::hitCollectionName_</a></div><div class="ttdeci">std::string hitCollectionName_</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintDQM_8h_source.html#l00068">TrigScintDQM.h:68</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintDQM_html_ae13bc14f2425701c10c42f436f51fa2b"><div class="ttname"><a href="classldmx_1_1TrigScintDQM.html#ae13bc14f2425701c10c42f436f51fa2b">ldmx::TrigScintDQM::hitCollectionName_</a></div><div class="ttdeci">std::string hitCollectionName_</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintDQM_8h_source.html#l00073">TrigScintDQM.h:73</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HistogramPool_html_ad57bfcdc35c52ab1ee7b95afbd25ef96"><div class="ttname"><a href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">ldmx::HistogramPool::get</a></div><div class="ttdeci">TH1 * get(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="HistogramPool_8cxx_source.html#l00054">HistogramPool.cxx:54</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HistogramPool_html_a738f15475b24e4f06a53804d3a1afccd"><div class="ttname"><a href="classldmx_1_1HistogramPool.html#a738f15475b24e4f06a53804d3a1afccd">ldmx::HistogramPool::create</a></div><div class="ttdeci">void create(const std::string &amp;name, const std::string &amp;xLabel, const int &amp;bins, const int &amp;xmin, const int &amp;xmax)</div><div class="ttdef"><b>Definition:</b> <a href="HistogramPool_8h_source.html#l00050">HistogramPool.h:50</a></div></div>
 <!-- start footer part -->
