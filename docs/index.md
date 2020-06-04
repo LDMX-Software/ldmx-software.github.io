@@ -8,7 +8,7 @@
 * __Tutorials__:
     * [Overview of ldmx-sw with examples specific to running at SLAC](https://tinyurl.com/y9lzvzwv)
     * [ldmx-sw tutorial](https://tinyurl.com/yd4w4vtf) (requires access to the LDMX space on the FNAL indico)
-    * [Excercises]({% Startup-Exercises.md %})
+    * [Excercises]({% link Startup-Exercises.md %})
 
 ## SLAC Specific
 * [Getting Started at SLAC]({% link Getting-Started-with-ldmx-sw-at-SLAC.md %})
