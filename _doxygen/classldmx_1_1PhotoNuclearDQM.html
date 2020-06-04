@@ -96,10 +96,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aea648938a1e350635306b3f11d080297"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1PhotoNuclearDQM.html#aea648938a1e350635306b3f11d080297">classifyEvent</a> (const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> *particle, const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> &gt; &amp;particleMap, double threshold)</td></tr>
-<tr class="separator:aea648938a1e350635306b3f11d080297"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a360b3f7497230fac23efaa9c5b4b4491"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1PhotoNuclearDQM.html#a360b3f7497230fac23efaa9c5b4b4491">classifyCompactEvent</a> (const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> *particle, const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> &gt; &amp;particleMap, double threshold)</td></tr>
-<tr class="separator:a360b3f7497230fac23efaa9c5b4b4491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db23fb62a2d66fbec9f76314e28abc7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1PhotoNuclearDQM.html#a4db23fb62a2d66fbec9f76314e28abc7">classifyEvent</a> (const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> * &gt; daughters, double threshold)</td></tr>
+<tr class="separator:a4db23fb62a2d66fbec9f76314e28abc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdda5cbcd3acd0d2b60f214dedf6d682"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1PhotoNuclearDQM.html#abdda5cbcd3acd0d2b60f214dedf6d682">classifyCompactEvent</a> (const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> *pnGamma, const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> * &gt; daughters, double threshold)</td></tr>
+<tr class="separator:abdda5cbcd3acd0d2b60f214dedf6d682"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -201,27 +201,27 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// Loop through all of the PN daughters and extract kinematic </span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">// information.</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> &amp;daughterTrackID : pnGamma-&gt;getDaughters() ) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; daughterTrackID : pnGamma-&gt;getDaughters() ) {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="comment">//skip daughters that weren&#39;t saved</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">if</span> ( particleMap.count( daughterTrackID ) == 0 ) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">if</span> ( particleMap.count( daughterTrackID ) == 0 ) <span class="keywordflow">continue</span>; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keyword">const</span> SimParticle* daughter = &amp;(particleMap.at(daughterTrackID));</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keyword">auto</span> daughter{&amp;(particleMap.at(daughterTrackID))};</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="comment">// Get the PDG ID</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordtype">int</span> pdgID = daughter-&gt;getPdgID();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keyword">auto</span> pdgID{daughter-&gt;getPdgID()};</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="comment">// Ignore photons and nuclei</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">if</span> (pdgID == 22 || pdgID &gt; 10000) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment">// Calculate the kinetic energy</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordtype">double</span> ke = daughter-&gt;getEnergy() - daughter-&gt;getMass();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordtype">double</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            std::vector&lt;double&gt; vec = daughter-&gt;getMomentum(); </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            std::vector&lt;double&gt; vec{daughter-&gt;getMomentum()}; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            TVector3 pvec(vec[0], vec[1], vec[2]); </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="comment">//  Calculate the polar angle</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordtype">double</span> theta = pvec.Theta()*(180/3.14159);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keyword">auto</span> theta{pvec.Theta()*(180/3.14159)};</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">if</span> (lke &lt; ke) { lke = ke; lt = theta; }  </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            </div>
@@ -248,13 +248,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a5c522f5fd418036c23a1675ea4e2b60a">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;hardest_pi_theta&quot;</span>)-&gt;Fill(lpit); </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">// Classify the event</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordtype">int</span> eventType = <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#aea648938a1e350635306b3f11d080297">classifyEvent</a>(pnGamma, particleMap, 200); </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordtype">int</span> eventType500MeV = <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#aea648938a1e350635306b3f11d080297">classifyEvent</a>(pnGamma, particleMap, 500); </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordtype">int</span> eventType2000MeV = <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#aea648938a1e350635306b3f11d080297">classifyEvent</a>(pnGamma, particleMap, 2000);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keyword">auto</span> eventType{<a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a4db23fb62a2d66fbec9f76314e28abc7">classifyEvent</a>(pnDaughters, 200)};</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keyword">auto</span> eventType500MeV{<a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a4db23fb62a2d66fbec9f76314e28abc7">classifyEvent</a>(pnDaughters, 500)};</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keyword">auto</span> eventType2000MeV{<a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a4db23fb62a2d66fbec9f76314e28abc7">classifyEvent</a>(pnDaughters, 2000)};</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordtype">int</span> eventTypeComp = <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a360b3f7497230fac23efaa9c5b4b4491">classifyCompactEvent</a>(pnGamma, particleMap, 200);  </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordtype">int</span> eventTypeComp500MeV = <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a360b3f7497230fac23efaa9c5b4b4491">classifyCompactEvent</a>(pnGamma, particleMap, 500);  </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordtype">int</span> eventTypeComp2000MeV = <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a360b3f7497230fac23efaa9c5b4b4491">classifyCompactEvent</a>(pnGamma, particleMap, 2000);  </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keyword">auto</span> eventTypeComp{<a class="code" href="classldmx_1_1PhotoNuclearDQM.html#abdda5cbcd3acd0d2b60f214dedf6d682">classifyCompactEvent</a>(pnGamma, pnDaughters, 200)}; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keyword">auto</span> eventTypeComp500MeV{<a class="code" href="classldmx_1_1PhotoNuclearDQM.html#abdda5cbcd3acd0d2b60f214dedf6d682">classifyCompactEvent</a>(pnGamma, pnDaughters, 200)}; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">auto</span> eventTypeComp2000MeV{<a class="code" href="classldmx_1_1PhotoNuclearDQM.html#abdda5cbcd3acd0d2b60f214dedf6d682">classifyCompactEvent</a>(pnGamma, pnDaughters, 200)}; </div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a5c522f5fd418036c23a1675ea4e2b60a">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;event_type&quot;</span>)-&gt;Fill(eventType);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="classldmx_1_1PhotoNuclearDQM.html#a5c522f5fd418036c23a1675ea4e2b60a">histograms_</a>-&gt;<a class="code" href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">get</a>(<span class="stringliteral">&quot;event_type_500mev&quot;</span>)-&gt;Fill(eventType500MeV);</div>
@@ -316,12 +316,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        } </div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00400">classifyCompactEvent()</a>, <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00298">classifyEvent()</a>, <a class="el" href="HistogramPool_8cxx_source.html#l00054">ldmx::HistogramPool::get()</a>, <a class="el" href="SimParticle_8h_source.html#l00066">ldmx::SimParticle::getEnergy()</a>, <a class="el" href="Event_8h_source.html#l00229">ldmx::Event::getMap()</a>, <a class="el" href="SimParticle_8h_source.html#l00134">ldmx::SimParticle::getMass()</a>, <a class="el" href="SimParticle_8h_source.html#l00127">ldmx::SimParticle::getMomentum()</a>, <a class="el" href="SimParticle_8h_source.html#l00073">ldmx::SimParticle::getPdgID()</a>, and <a class="el" href="PhotoNuclearDQM_8h_source.html#l00057">histograms_</a>.</p>
+<p class="reference">References <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00396">classifyCompactEvent()</a>, <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00298">classifyEvent()</a>, <a class="el" href="HistogramPool_8cxx_source.html#l00054">ldmx::HistogramPool::get()</a>, <a class="el" href="Event_8h_source.html#l00229">ldmx::Event::getMap()</a>, and <a class="el" href="PhotoNuclearDQM_8h_source.html#l00057">histograms_</a>.</p>
 
 </div>
 </div>
-<a id="a360b3f7497230fac23efaa9c5b4b4491"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a360b3f7497230fac23efaa9c5b4b4491">&#9670;&nbsp;</a></span>classifyCompactEvent()</h2>
+<a id="abdda5cbcd3acd0d2b60f214dedf6d682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdda5cbcd3acd0d2b60f214dedf6d682">&#9670;&nbsp;</a></span>classifyCompactEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,13 +333,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">int ldmx::PhotoNuclearDQM::classifyCompactEvent </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> *&#160;</td>
-          <td class="paramname"><em>particle</em>, </td>
+          <td class="paramname"><em>pnGamma</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>particleMap</em>, </td>
+          <td class="paramtype">const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> * &gt;&#160;</td>
+          <td class="paramname"><em>daughters</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -361,61 +361,57 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Method used to classify events in a compact manner. </p>
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00400">400</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                                                                                                                                       {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;   </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordtype">short</span> n{0}, n_t{0}, k0l{0}, kp{0}, k0s{0}, soft{0};</div>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00396">396</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                                                                                                                                          {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;   </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordtype">short</span> n{0}, n_t{0}, k0l{0}, kp{0}, k0s{0}, soft{0};</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="comment">// Loop through all of the PN daughters and extract kinematic </span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="comment">// information.</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; daughter : daughters ) {</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="comment">// Loop through all of the PN daughters and extract kinematic </span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="comment">// information.</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> daughterTrackID : particle-&gt;getDaughters() ) {</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keywordflow">if</span> ( particleMap.count( daughterTrackID) == 0 ) <span class="keywordflow">continue</span>; <span class="comment">//daughter wasn&#39;t stored</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="comment">// Calculate the kinetic energy</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            <span class="keyword">auto</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="comment">// Get the PDG ID</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keyword">auto</span> pdgID{abs(daughter-&gt;getPdgID())};</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="keyword">const</span> SimParticle &amp;daughter = particleMap.find( daughterTrackID )-&gt;second;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="comment">// Calculate the kinetic energy</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <span class="keywordtype">double</span> ke = daughter.getEnergy() - daughter.getMass();</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="keywordflow">if</span> (ke &lt; 500) { </div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                soft++;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                <span class="keywordflow">continue</span>; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            } </div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            </div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="comment">// Get the PDG ID</span></div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            <span class="keywordtype">int</span> pdgID = abs(daughter.getPdgID());</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            <span class="keywordflow">if</span> (ke &lt; 500) { </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                soft++;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="keywordflow">continue</span>; </div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            } </div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="keywordflow">if</span> (ke &gt;= 0.8*particle-&gt;getEnergy()) {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                <span class="keywordflow">if</span> (pdgID == 2112) n++;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 130) k0l++; </div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 321) kp++; </div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 310) k0s++;</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            }</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordflow">if</span> ((pdgID == 2112) &amp;&amp; ke &gt; threshold) n_t++;</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="keywordflow">if</span> (ke &gt;= 0.8*pnGamma-&gt;getEnergy()) {</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="keywordflow">if</span> (pdgID == 2112) n++;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 130) k0l++; </div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 321) kp++; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 310) k0s++;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            }</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="keywordflow">if</span> ((pdgID == 2112) &amp;&amp; ke &gt; threshold) n_t++;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        }</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordtype">int</span> neutral_kaons{k0l + k0s};</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">if</span> (n != 0) <span class="keywordflow">return</span> 0; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">if</span> (kp != 0) <span class="keywordflow">return</span> 1; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">if</span> (neutral_kaons != 0) <span class="keywordflow">return</span> 2; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordflow">if</span> (n_t == 2) <span class="keywordflow">return</span> 3; </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordflow">if</span> (soft == daughters.size()) <span class="keywordflow">return</span> 4; </div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordtype">int</span> neutral_kaons{k0l + k0s};</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="keywordflow">if</span> (n != 0) <span class="keywordflow">return</span> 0; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">if</span> (kp != 0) <span class="keywordflow">return</span> 1; </div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">if</span> (neutral_kaons != 0) <span class="keywordflow">return</span> 2; </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">if</span> (n_t == 2) <span class="keywordflow">return</span> 3; </div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keywordflow">if</span> (soft == particle-&gt;getDaughters().size()) <span class="keywordflow">return</span> 4; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">return</span> 5; </div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    }</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">return</span> 5; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    </div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimParticle_8h_source.html#l00149">ldmx::SimParticle::getDaughters()</a>, <a class="el" href="SimParticle_8h_source.html#l00066">ldmx::SimParticle::getEnergy()</a>, <a class="el" href="SimParticle_8h_source.html#l00134">ldmx::SimParticle::getMass()</a>, and <a class="el" href="SimParticle_8h_source.html#l00073">ldmx::SimParticle::getPdgID()</a>.</p>
+<p class="reference">References <a class="el" href="SimParticle_8h_source.html#l00066">ldmx::SimParticle::getEnergy()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00143">analyze()</a>.</p>
 
 </div>
 </div>
-<a id="aea648938a1e350635306b3f11d080297"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea648938a1e350635306b3f11d080297">&#9670;&nbsp;</a></span>classifyEvent()</h2>
+<a id="a4db23fb62a2d66fbec9f76314e28abc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db23fb62a2d66fbec9f76314e28abc7">&#9670;&nbsp;</a></span>classifyEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,14 +422,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">int ldmx::PhotoNuclearDQM::classifyEvent </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> *&#160;</td>
-          <td class="paramname"><em>particle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>particleMap</em>, </td>
+          <td class="paramtype">const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> * &gt;&#160;</td>
+          <td class="paramname"><em>daughters</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -456,110 +446,104 @@ Additional Inherited Members</h2></td></tr>
 <p>Method used to classify events. </p>
 
 <p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00298">298</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                                                                                                                {</div>
+<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                                                                                       {</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordtype">short</span> n{0}, p{0}, pi{0}, pi0{0}, exotic{0}, k0l{0}, kp{0}, k0s{0}, </div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;              lambda{0};</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="comment">// Loop through all of the PN daughters and extract kinematic </span></div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="comment">// information.</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> daughterTrackID : particle-&gt;getDaughters() ) {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; daughter : daughters ) {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="keywordflow">if</span> ( particleMap.count( daughterTrackID ) == 0 ) <span class="keywordflow">continue</span>; <span class="comment">//daughter wasn&#39;t stored</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <span class="keyword">const</span> SimParticle &amp;daughter = particleMap.find(daughterTrackID)-&gt;second;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="comment">// Calculate the kinetic energy</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordtype">double</span> ke = daughter.getEnergy() - daughter.getMass();</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="comment">// If the kinetic energy is below threshold, continue</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="keywordflow">if</span> (ke &lt;= threshold) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="comment">// Get the PDG ID</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordtype">int</span> pdgID = abs(daughter.getPdgID());</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">if</span> (pdgID == 2112) n++;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 2212) p++;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 211) pi++;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 111) pi0++;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 130) k0l++; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 321) kp++; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 310) k0s++;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordflow">else</span> exotic++;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordtype">int</span> kaons = k0l + kp + k0s; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordtype">int</span> nucleons = n + p; </div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordtype">int</span> pions = pi + pi0; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordtype">int</span> count = nucleons + pions + exotic + kaons ;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordtype">int</span> count_a = p + pions + exotic + kaons ;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordtype">int</span> count_b = pions + exotic+ kaons;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordtype">int</span> count_c = nucleons + pi0 + exotic+ kaons;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordtype">int</span> count_d = n + pi0 + exotic+ k0l + kp + k0s;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordtype">int</span> count_e = p + pi0 + exotic+ k0l + kp + k0s;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordtype">int</span> count_f = n + p + pi + exotic+ k0l + kp + k0s;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordtype">int</span> count_g = n + pi + pi0 + exotic+ k0l + kp + k0s;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordtype">int</span> count_h = n + p + pi + pi0 + k0l + kp + k0s;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordtype">int</span> count_i = p + pi + exotic+ k0l + kp + k0s; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordtype">int</span> count_j = n + pi + exotic+ k0l + kp + k0s; </div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordtype">int</span> count_k = nucleons + pions + exotic + kp + k0s; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordtype">int</span> count_l = nucleons + pions + exotic + k0l + k0s; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordtype">int</span> count_m = nucleons + pions + exotic + kp + k0l; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordtype">int</span> count_n = pi0 + exotic + kaons; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordtype">int</span> count_o = pi + exotic + kaons;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordtype">int</span> count_p = exotic + kaons; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">if</span> (count == 0) <span class="keywordflow">return</span> 0; <span class="comment">// Nothing hard</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">if</span> (n == 1) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="keywordflow">if</span> (count_a == 0) <span class="keywordflow">return</span> 1; <span class="comment">// 1n</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_b == 0) ) <span class="keywordflow">return</span> 15; <span class="comment">// pn</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="comment">// Calculate the kinetic energy</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="keyword">auto</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="comment">// If the kinetic energy is below threshold, continue</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keywordflow">if</span> (ke &lt;= threshold) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <span class="comment">// Get the PDG ID</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="keyword">auto</span> pdgID{abs(daughter-&gt;getPdgID())};</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">if</span> (pdgID == 2112) n++;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 2212) p++;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 211) pi++;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 111) pi0++;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 130) k0l++; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 321) kp++; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 310) k0s++;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="keywordflow">else</span> exotic++;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordtype">int</span> kaons = k0l + kp + k0s; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordtype">int</span> nucleons = n + p; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordtype">int</span> pions = pi + pi0; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordtype">int</span> count = nucleons + pions + exotic + kaons ;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordtype">int</span> count_a = p + pions + exotic + kaons ;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordtype">int</span> count_b = pions + exotic+ kaons;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordtype">int</span> count_c = nucleons + pi0 + exotic+ kaons;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordtype">int</span> count_d = n + pi0 + exotic+ k0l + kp + k0s;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordtype">int</span> count_e = p + pi0 + exotic+ k0l + kp + k0s;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordtype">int</span> count_f = n + p + pi + exotic+ k0l + kp + k0s;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordtype">int</span> count_g = n + pi + pi0 + exotic+ k0l + kp + k0s;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordtype">int</span> count_h = n + p + pi + pi0 + k0l + kp + k0s;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordtype">int</span> count_i = p + pi + exotic+ k0l + kp + k0s; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordtype">int</span> count_j = n + pi + exotic+ k0l + kp + k0s; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordtype">int</span> count_k = nucleons + pions + exotic + kp + k0s; </div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordtype">int</span> count_l = nucleons + pions + exotic + k0l + k0s; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordtype">int</span> count_m = nucleons + pions + exotic + kp + k0l; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordtype">int</span> count_n = pi0 + exotic + kaons; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordtype">int</span> count_o = pi + exotic + kaons;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordtype">int</span> count_p = exotic + kaons; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">if</span> (count == 0) <span class="keywordflow">return</span> 0; <span class="comment">// Nothing hard</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">if</span> (n == 1) {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <span class="keywordflow">if</span> (count_a == 0) <span class="keywordflow">return</span> 1; <span class="comment">// 1n</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_b == 0) ) <span class="keywordflow">return</span> 15; <span class="comment">// pn</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">if</span> ( (n == 2) &amp;&amp; (count_a == 0) ) <span class="keywordflow">return</span> 2; <span class="comment">// 2 n</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">if</span> ( (n &gt;= 3) &amp;&amp; (count_a == 0) ) <span class="keywordflow">return</span> 3; <span class="comment">// &gt;= 3 n</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">if</span> ( (n == 2) &amp;&amp; (count_a == 0) ) <span class="keywordflow">return</span> 2; <span class="comment">// 2 n</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">if</span> ( (n &gt;= 3) &amp;&amp; (count_a == 0) ) <span class="keywordflow">return</span> 3; <span class="comment">// &gt;= 3 n</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">if</span> (pi == 1) {</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <span class="keywordflow">if</span> (count_c == 0) <span class="keywordflow">return</span> 4; <span class="comment">// 1 pi</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_d == 0) ) <span class="keywordflow">return</span> 7;   <span class="comment">// 1 pi 1 p</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 2) &amp;&amp; (count_d == 0) ) <span class="keywordflow">return</span> 8;   <span class="comment">// 1 pi 1 p</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (count_e == 0) ) <span class="keywordflow">return</span> 7;  <span class="comment">// 1 pi 1 n</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 2) &amp;&amp; (count_e == 0) ) <span class="keywordflow">return</span> 8;  <span class="comment">// 1 pi 1 n</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (p == 1) &amp;&amp;  (count_n == 0) ) <span class="keywordflow">return</span> 8; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        }</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">if</span> (pi == 2) {</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">if</span> (count_c == 0) <span class="keywordflow">return</span> 5; <span class="comment">// 2pi</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_d == 0) ) <span class="keywordflow">return</span> 9; <span class="comment">// 2pi p </span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (count_e == 0) ) <span class="keywordflow">return</span> 9; <span class="comment">// 2pi n</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        }</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">if</span> ( pi0 == 1 ) {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;             <span class="keywordflow">if</span> (count_f == 0) <span class="keywordflow">return</span> 6; <span class="comment">// 1 pi0</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (count_i == 0) ) <span class="keywordflow">return</span> 10; <span class="comment">// 1pi0 1 p</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 2) &amp;&amp; (count_i == 0) ) <span class="keywordflow">return</span> 11; <span class="comment">// 1pi0 1 p</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_j == 0) ) <span class="keywordflow">return</span> 10; <span class="comment">// 1pi0 1 n</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 2) &amp;&amp; (count_j == 0) ) <span class="keywordflow">return</span> 11;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (p == 1) &amp;&amp; (count_o == 0) ) <span class="keywordflow">return</span> 11;  </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (pi == 1) &amp;&amp; ((p == 1) || (n == 1)) &amp;&amp; (count_p == 0)) <span class="keywordflow">return</span> 12;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        }</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_g == 0) ) <span class="keywordflow">return</span> 13; <span class="comment">// 1 p </span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">if</span> ( (p == 2) &amp;&amp; (count_g == 0) ) <span class="keywordflow">return</span> 14; <span class="comment">// 2 p</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span> (k0l == 1) <span class="keywordflow">return</span> 16;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span> (kp == 1) <span class="keywordflow">return</span> 17;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">if</span> (k0s == 1) <span class="keywordflow">return</span> 18;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">if</span> ( (exotic &gt; 0) &amp;&amp; (count_h == 0) ) <span class="keywordflow">return</span> 19;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordflow">return</span> 20;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">if</span> (pi == 1) {</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <span class="keywordflow">if</span> (count_c == 0) <span class="keywordflow">return</span> 4; <span class="comment">// 1 pi</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_d == 0) ) <span class="keywordflow">return</span> 7;   <span class="comment">// 1 pi 1 p</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 2) &amp;&amp; (count_d == 0) ) <span class="keywordflow">return</span> 8;   <span class="comment">// 1 pi 1 p</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (count_e == 0) ) <span class="keywordflow">return</span> 7;  <span class="comment">// 1 pi 1 n</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 2) &amp;&amp; (count_e == 0) ) <span class="keywordflow">return</span> 8;  <span class="comment">// 1 pi 1 n</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (p == 1) &amp;&amp;  (count_n == 0) ) <span class="keywordflow">return</span> 8; </div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">if</span> (pi == 2) {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="keywordflow">if</span> (count_c == 0) <span class="keywordflow">return</span> 5; <span class="comment">// 2pi</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_d == 0) ) <span class="keywordflow">return</span> 9; <span class="comment">// 2pi p </span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (count_e == 0) ) <span class="keywordflow">return</span> 9; <span class="comment">// 2pi n</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> ( pi0 == 1 ) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;             <span class="keywordflow">if</span> (count_f == 0) <span class="keywordflow">return</span> 6; <span class="comment">// 1 pi0</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (count_i == 0) ) <span class="keywordflow">return</span> 10; <span class="comment">// 1pi0 1 p</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 2) &amp;&amp; (count_i == 0) ) <span class="keywordflow">return</span> 11; <span class="comment">// 1pi0 1 p</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_j == 0) ) <span class="keywordflow">return</span> 10; <span class="comment">// 1pi0 1 n</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (p == 2) &amp;&amp; (count_j == 0) ) <span class="keywordflow">return</span> 11;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (n == 1) &amp;&amp; (p == 1) &amp;&amp; (count_o == 0) ) <span class="keywordflow">return</span> 11;  </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;             <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (pi == 1) &amp;&amp; ((p == 1) || (n == 1)) &amp;&amp; (count_p == 0)) <span class="keywordflow">return</span> 12;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">if</span> ( (p == 1) &amp;&amp; (count_g == 0) ) <span class="keywordflow">return</span> 13; <span class="comment">// 1 p </span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">if</span> ( (p == 2) &amp;&amp; (count_g == 0) ) <span class="keywordflow">return</span> 14; <span class="comment">// 2 p</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">if</span> (k0l == 1) <span class="keywordflow">return</span> 16;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">if</span> (kp == 1) <span class="keywordflow">return</span> 17;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">if</span> (k0s == 1) <span class="keywordflow">return</span> 18;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span> ( (exotic &gt; 0) &amp;&amp; (count_h == 0) ) <span class="keywordflow">return</span> 19;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> 20;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimParticle_8h_source.html#l00149">ldmx::SimParticle::getDaughters()</a>, <a class="el" href="SimParticle_8h_source.html#l00066">ldmx::SimParticle::getEnergy()</a>, <a class="el" href="SimParticle_8h_source.html#l00134">ldmx::SimParticle::getMass()</a>, and <a class="el" href="SimParticle_8h_source.html#l00073">ldmx::SimParticle::getPdgID()</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00143">analyze()</a>.</p>
 
 </div>
@@ -607,8 +591,8 @@ Additional Inherited Members</h2></td></tr>
 <li>DQM/src/<a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1PhotoNuclearDQM_html_a360b3f7497230fac23efaa9c5b4b4491"><div class="ttname"><a href="classldmx_1_1PhotoNuclearDQM.html#a360b3f7497230fac23efaa9c5b4b4491">ldmx::PhotoNuclearDQM::classifyCompactEvent</a></div><div class="ttdeci">int classifyCompactEvent(const SimParticle *particle, const std::map&lt; int, SimParticle &gt; &amp;particleMap, double threshold)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00400">PhotoNuclearDQM.cxx:400</a></div></div>
-<div class="ttc" id="aclassldmx_1_1PhotoNuclearDQM_html_aea648938a1e350635306b3f11d080297"><div class="ttname"><a href="classldmx_1_1PhotoNuclearDQM.html#aea648938a1e350635306b3f11d080297">ldmx::PhotoNuclearDQM::classifyEvent</a></div><div class="ttdeci">int classifyEvent(const SimParticle *particle, const std::map&lt; int, SimParticle &gt; &amp;particleMap, double threshold)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00298">PhotoNuclearDQM.cxx:298</a></div></div>
+<div class="ttc" id="aclassldmx_1_1PhotoNuclearDQM_html_a4db23fb62a2d66fbec9f76314e28abc7"><div class="ttname"><a href="classldmx_1_1PhotoNuclearDQM.html#a4db23fb62a2d66fbec9f76314e28abc7">ldmx::PhotoNuclearDQM::classifyEvent</a></div><div class="ttdeci">int classifyEvent(const std::vector&lt; const SimParticle * &gt; daughters, double threshold)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00298">PhotoNuclearDQM.cxx:298</a></div></div>
+<div class="ttc" id="aclassldmx_1_1PhotoNuclearDQM_html_abdda5cbcd3acd0d2b60f214dedf6d682"><div class="ttname"><a href="classldmx_1_1PhotoNuclearDQM.html#abdda5cbcd3acd0d2b60f214dedf6d682">ldmx::PhotoNuclearDQM::classifyCompactEvent</a></div><div class="ttdeci">int classifyCompactEvent(const SimParticle *pnGamma, const std::vector&lt; const SimParticle * &gt; daughters, double threshold)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00396">PhotoNuclearDQM.cxx:396</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HistogramPool_html_ad57bfcdc35c52ab1ee7b95afbd25ef96"><div class="ttname"><a href="classldmx_1_1HistogramPool.html#ad57bfcdc35c52ab1ee7b95afbd25ef96">ldmx::HistogramPool::get</a></div><div class="ttdeci">TH1 * get(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="HistogramPool_8cxx_source.html#l00054">HistogramPool.cxx:54</a></div></div>
 <div class="ttc" id="aclassldmx_1_1PhotoNuclearDQM_html_a5c522f5fd418036c23a1675ea4e2b60a"><div class="ttname"><a href="classldmx_1_1PhotoNuclearDQM.html#a5c522f5fd418036c23a1675ea4e2b60a">ldmx::PhotoNuclearDQM::histograms_</a></div><div class="ttdeci">HistogramPool * histograms_</div><div class="ttdoc">Singleton used to access histograms.</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8h_source.html#l00057">PhotoNuclearDQM.h:57</a></div></div>
 <!-- start footer part -->
