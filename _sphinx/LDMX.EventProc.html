@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LDMX.EventProc package &#8212; ldmx-sw python 2.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/groundwork.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LDMX.Framework package" href="LDMX.Framework.html" />
+    <link rel="prev" title="LDMX.Ecal package" href="LDMX.Ecal.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Framework.html" title="LDMX.Framework package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Ecal.html" title="LDMX.Ecal package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" accesskey="U">LDMX package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ldmx-eventproc-package">
+<h1>LDMX.EventProc package<a class="headerlink" href="#ldmx-eventproc-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-LDMX.EventProc.hcalDigis">
+<span id="ldmx-eventproc-hcaldigis-module"></span><h2>LDMX.EventProc.hcalDigis module<a class="headerlink" href="#module-LDMX.EventProc.hcalDigis" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for HcalDigiProducer</p>
+<p>Sets all parameters to reasonable defaults.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.EventProc.hcalDigis</span> <span class="kn">import</span> <span class="n">hcalDigis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">hcalDigis</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.EventProc.hcalVeto">
+<span id="ldmx-eventproc-hcalveto-module"></span><h2>LDMX.EventProc.hcalVeto module<a class="headerlink" href="#module-LDMX.EventProc.hcalVeto" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for HcalVetoProcessor</p>
+<p>Sets all parameters to reasonable defaults.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.EventProc.hcalVeto</span> <span class="kn">import</span> <span class="n">hcalVeto</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">hcalVeto</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ldmx-eventproc-my-process-module">
+<h2>LDMX.EventProc.my_process module<a class="headerlink" href="#ldmx-eventproc-my-process-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="ldmx-eventproc-recon-trig-skim-module">
+<h2>LDMX.EventProc.recon_trig_skim module<a class="headerlink" href="#ldmx-eventproc-recon-trig-skim-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-LDMX.EventProc.simpleTrigger">
+<span id="ldmx-eventproc-simpletrigger-module"></span><h2>LDMX.EventProc.simpleTrigger module<a class="headerlink" href="#module-LDMX.EventProc.simpleTrigger" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for TriggerProcessor</p>
+<p>Sets all parameters to reasonable defaults.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.EventProc.simpleTrigger</span> <span class="kn">import</span> <span class="n">simpleTrigger</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">simpleTrigger</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.EventProc.trackerHitKiller">
+<span id="ldmx-eventproc-trackerhitkiller-module"></span><h2>LDMX.EventProc.trackerHitKiller module<a class="headerlink" href="#module-LDMX.EventProc.trackerHitKiller" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for TrackerhitKiller</p>
+<p>Sets all parameters to reasonable defaults.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.EventProc.trackerHitKiller</span> <span class="kn">import</span> <span class="n">trackerHitKiller</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">trackerHitKiller</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.EventProc.trigScintDigis">
+<span id="ldmx-eventproc-trigscintdigis-module"></span><h2>LDMX.EventProc.trigScintDigis module<a class="headerlink" href="#module-LDMX.EventProc.trigScintDigis" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for TrigScintDigiProducers</p>
+<p>Sets all parameters to reasonable defaults.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.EventProc.trigScintDigis</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span> <span class="n">trigScintDigis</span> <span class="p">,</span> <span class="n">trigScintDigisDn</span> <span class="p">,</span> <span class="n">trigScintDigisTag</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ldmx-eventproc-trigger-skim-module">
+<h2>LDMX.EventProc.trigger_skim module<a class="headerlink" href="#ldmx-eventproc-trigger-skim-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-LDMX.EventProc">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-LDMX.EventProc" title="Permalink to this headline">¶</a></h2>
+<p>Python module to configure the LDMX module EventProc</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LDMX.EventProc package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-LDMX.EventProc.hcalDigis">LDMX.EventProc.hcalDigis module</a></li>
+<li><a class="reference internal" href="#module-LDMX.EventProc.hcalVeto">LDMX.EventProc.hcalVeto module</a></li>
+<li><a class="reference internal" href="#ldmx-eventproc-my-process-module">LDMX.EventProc.my_process module</a></li>
+<li><a class="reference internal" href="#ldmx-eventproc-recon-trig-skim-module">LDMX.EventProc.recon_trig_skim module</a></li>
+<li><a class="reference internal" href="#module-LDMX.EventProc.simpleTrigger">LDMX.EventProc.simpleTrigger module</a></li>
+<li><a class="reference internal" href="#module-LDMX.EventProc.trackerHitKiller">LDMX.EventProc.trackerHitKiller module</a></li>
+<li><a class="reference internal" href="#module-LDMX.EventProc.trigScintDigis">LDMX.EventProc.trigScintDigis module</a></li>
+<li><a class="reference internal" href="#ldmx-eventproc-trigger-skim-module">LDMX.EventProc.trigger_skim module</a></li>
+<li><a class="reference internal" href="#module-LDMX.EventProc">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="LDMX.Ecal.html"
+                        title="previous chapter">LDMX.Ecal package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="LDMX.Framework.html"
+                        title="next chapter">LDMX.Framework package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/LDMX.EventProc.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Framework.html" title="LDMX.Framework package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Ecal.html" title="LDMX.Ecal package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" >LDMX package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Tom Eichlersmith.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    </div>
+  </body>
+</html>

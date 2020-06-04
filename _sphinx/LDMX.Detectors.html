@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LDMX.Detectors package &#8212; ldmx-sw python 2.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/groundwork.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LDMX.Ecal package" href="LDMX.Ecal.html" />
+    <link rel="prev" title="LDMX.DQM package" href="LDMX.DQM.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Ecal.html" title="LDMX.Ecal package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="LDMX.DQM.html" title="LDMX.DQM package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" accesskey="U">LDMX package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ldmx-detectors-package">
+<h1>LDMX.Detectors package<a class="headerlink" href="#ldmx-detectors-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-LDMX.Detectors.makePath">
+<span id="ldmx-detectors-makepath-module"></span><h2>LDMX.Detectors.makePath module<a class="headerlink" href="#module-LDMX.Detectors.makePath" title="Permalink to this headline">¶</a></h2>
+<p>Helpful python configuration functions for getting the path to installed detector descriptions.</p>
+<p>makePath is meant to be internal to this module,
+but there is no reason a user could use it for a different purpose if desired</p>
+<dl class="simple">
+<dt>This file was configured by cmake for the installation of ldmx-sw at</dt><dd><p>/home/runner/work/ldmx-sw/ldmx-sw/install</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="LDMX.Detectors.makePath.makeDetectorPath">
+<code class="sig-prename descclassname">LDMX.Detectors.makePath.</code><code class="sig-name descname">makeDetectorPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Detectors.makePath.makeDetectorPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the full path to the installed ldmx detector description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>detName</strong> (<em>str</em>) – Name of detector to get a path for (should match the name of one of the detector directories)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>full path to the installed detector gdml description</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Useful for use with the simulator producer:
+&gt;&gt;&gt; from LDMX.Detector.makePath import *
+&gt;&gt;&gt; mySimulator.parameters[‘detector’] = makeDetectorPath( ‘ldmx-det-v12’ )</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.Detectors.makePath.makePath">
+<code class="sig-prename descclassname">LDMX.Detectors.makePath.</code><code class="sig-name descname">makePath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detName</span></em>, <em class="sig-param"><span class="n">fileName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Detectors.makePath.makePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a path to the installed data directory for the input detector and file names.</p>
+<p>Assumes the detectors are installed in the ‘data/detectors’ directory in the installation directory.
+Errors out the python script if the created full path does exist.
+This could happen because
+- The inputs were spelled wrong
+- The detector gdml files were not installed
+- The detector or file you want doesn’t exist</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>detName</strong> (<em>str</em>) – Name of detector to get a path for (should match the name of one of the detector directories)</p></li>
+<li><p><strong>fileName</strong> (<em>str</em>) – Name of the detector gdml file to get a path for (should match the name – no extension – of one of the gdml files)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>full path to installed detector gdml description</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.Detectors.makePath.makeScoringPlanesPath">
+<code class="sig-prename descclassname">LDMX.Detectors.makePath.</code><code class="sig-name descname">makeScoringPlanesPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Detectors.makePath.makeScoringPlanesPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the full path to the installed ldmx scoring planes description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>detName</strong> (<em>str</em>) – Name of detector to get a path for (should match the name of one of the detector directories)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>full path to the installed scoring planes gdml description</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Useful for use with the simulator producer:
+&gt;&gt;&gt; from LDMX.Detector.makePath import *
+&gt;&gt;&gt; mySimulator.parameters[‘scoring_planes’] = makeScoringPlanesPath( ‘ldmx-det-v12’ )</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-LDMX.Detectors">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-LDMX.Detectors" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LDMX.Detectors package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-LDMX.Detectors.makePath">LDMX.Detectors.makePath module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Detectors">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="LDMX.DQM.html"
+                        title="previous chapter">LDMX.DQM package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="LDMX.Ecal.html"
+                        title="next chapter">LDMX.Ecal package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/LDMX.Detectors.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Ecal.html" title="LDMX.Ecal package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="LDMX.DQM.html" title="LDMX.DQM package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" >LDMX package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Tom Eichlersmith.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    </div>
+  </body>
+</html>

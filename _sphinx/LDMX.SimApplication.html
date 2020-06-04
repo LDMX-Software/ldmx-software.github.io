@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LDMX.SimApplication package &#8212; ldmx-sw python 2.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/groundwork.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="LDMX.Framework package" href="LDMX.Framework.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Framework.html" title="LDMX.Framework package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" accesskey="U">LDMX package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ldmx-simapplication-package">
+<h1>LDMX.SimApplication package<a class="headerlink" href="#ldmx-simapplication-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-LDMX.SimApplication.ecal_pn_example">
+<span id="ldmx-simapplication-ecal-pn-example-module"></span><h2>LDMX.SimApplication.ecal_pn_example module<a class="headerlink" href="#module-LDMX.SimApplication.ecal_pn_example" title="Permalink to this headline">¶</a></h2>
+<p>Fully-runnable example that uses the biased ecal pn template</p>
+</div>
+<div class="section" id="module-LDMX.SimApplication.examples">
+<span id="ldmx-simapplication-examples-module"></span><h2>LDMX.SimApplication.examples module<a class="headerlink" href="#module-LDMX.SimApplication.examples" title="Permalink to this headline">¶</a></h2>
+<p>Examples of using different primary generators</p>
+<dl class="py function">
+<dt id="LDMX.SimApplication.examples.gpsExample">
+<code class="sig-prename descclassname">LDMX.SimApplication.examples.</code><code class="sig-name descname">gpsExample</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.examples.gpsExample" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example simulator of how to use the General Particle Source.</p>
+<p>This function is mainly helpful for testing that your install
+works with this primary generator. You can look at the
+source code for this function for ideas on how to implement your own
+verison.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>that will simulate the v12 detector with
+high verbosity and an electron smeared across the target
+with a cos angular dependence and a linear energy dependence
+between 3 and 4 GeV.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="LDMX.Framework.html#LDMX.Framework.ldmxcfg.Producer" title="LDMX.Framework.ldmxcfg.Producer">ldmxcfg.Producer</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gps_sim</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">gpsExample</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.examples.inclusive_single_e">
+<code class="sig-prename descclassname">LDMX.SimApplication.examples.</code><code class="sig-name descname">inclusive_single_e</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.examples.inclusive_single_e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a basic un-biased, inclusive single electron simulation</p>
+<p>This function is mainly helpful for testing that your install
+works with this primary generator. You can look at the
+source code for this function for ideas on how to implement your own
+verison.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>that will simulate un-biased, inclusive single electrons
+fired from upstream of the tagger into the v12 ldmx geometry</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="LDMX.Framework.html#LDMX.Framework.ldmxcfg.Producer" title="LDMX.Framework.ldmxcfg.Producer">ldmxcfg.Producer</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bkgd_sim</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">inclusive_single_e</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.examples.lheExample">
+<code class="sig-prename descclassname">LDMX.SimApplication.examples.</code><code class="sig-name descname">lheExample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lheFile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.examples.lheExample" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example simulator of how to use the LHE generator</p>
+<p>This function is mainly helpful for testing that your install
+works with this primary generator. You can look at the
+source code for this function for ideas on how to implement your own
+verison.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lheFile</strong> (<em>str</em>) – The LHE file to use a primary vertices</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>that will simulate the v12 detector using the
+input LHE file with high verbosity.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="LDMX.Framework.html#LDMX.Framework.ldmxcfg.Producer" title="LDMX.Framework.ldmxcfg.Producer">ldmxcfg.Producer</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lhe_sim</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">lheExample</span><span class="p">(</span> <span class="n">thePathToMyLHEFile</span> <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.examples.multiExample">
+<code class="sig-prename descclassname">LDMX.SimApplication.examples.</code><code class="sig-name descname">multiExample</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.examples.multiExample" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example simulator of how to use the Multi-Primary Particle Gun</p>
+<p>This function is mainly helpful for testing that your install
+works with this primary generator. You can look at the
+source code for this function for ideas on how to implement your own</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Simulator in the v12 geometry with high verbosity and 4GeV electrons
+fired from within the target where the number of electrons is
+Poisson-distributed around an average of 2</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="LDMX.Framework.html#LDMX.Framework.ldmxcfg.Producer" title="LDMX.Framework.ldmxcfg.Producer">ldmxcfg.Producer</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mpg_sim</span> <span class="o">=</span> <span class="n">exampls</span><span class="o">.</span><span class="n">multiExample</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-LDMX.SimApplication.generators">
+<span id="ldmx-simapplication-generators-module"></span><h2>LDMX.SimApplication.generators module<a class="headerlink" href="#module-LDMX.SimApplication.generators" title="Permalink to this headline">¶</a></h2>
+<p>Primary Generator templates for use throughout ldmx-sw</p>
+<p>Mainly focused on reducing the number of places that certain parameter and class names
+are hardcoded into the python configuration.</p>
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.completeReSim">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">completeReSim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.completeReSim" title="Permalink to this definition">¶</a></dt>
+<dd><p>New complete re-simprimary generator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of new primary generator</p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – path to ROOT file containing the SimParticles to re-simulate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>configured to be a RootCompleteReSim with the input file given to it</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#LDMX.SimApplication.simcfg.PrimaryGenerator" title="LDMX.SimApplication.simcfg.PrimaryGenerator">simcfg.PrimaryGenerator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.ecalSP">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">ecalSP</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.ecalSP" title="Permalink to this definition">¶</a></dt>
+<dd><p>New ecal scoring planes primary generator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of new primary generator</p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – path to ROOT file containing the EcalScoringPlanes to re-simulate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>configured to be a RootSimFromEcalSP with the input file given to it</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#LDMX.SimApplication.simcfg.PrimaryGenerator" title="LDMX.SimApplication.simcfg.PrimaryGenerator">simcfg.PrimaryGenerator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.gps">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">gps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.gps" title="Permalink to this definition">¶</a></dt>
+<dd><p>New general particle source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of new primary generator</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>configured to be a GeneralParticleSource without any of its parameters set</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#LDMX.SimApplication.simcfg.PrimaryGenerator" title="LDMX.SimApplication.simcfg.PrimaryGenerator">simcfg.PrimaryGenerator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.gun">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">gun</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.gun" title="Permalink to this definition">¶</a></dt>
+<dd><p>New basic particle gun primary generator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of new primary generator</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>configured to be a ParticleGun without any of its parameters set</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#LDMX.SimApplication.simcfg.PrimaryGenerator" title="LDMX.SimApplication.simcfg.PrimaryGenerator">simcfg.PrimaryGenerator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.lhe">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">lhe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">filePath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.lhe" title="Permalink to this definition">¶</a></dt>
+<dd><p>New LHE file primary generator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of new primary generator</p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – path to LHE file containing the primary vertices</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>configured to be a LHEPrimaryGenerator with the input file given to it</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#LDMX.SimApplication.simcfg.PrimaryGenerator" title="LDMX.SimApplication.simcfg.PrimaryGenerator">simcfg.PrimaryGenerator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.multi">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">multi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.multi" title="Permalink to this definition">¶</a></dt>
+<dd><p>New multi particle gun primary generator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of new primary generator</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>configured to be a MultiParticleGun without any of its parameters set</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#LDMX.SimApplication.simcfg.PrimaryGenerator" title="LDMX.SimApplication.simcfg.PrimaryGenerator">simcfg.PrimaryGenerator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.single_1pt2gev_e_upstream_tagger">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">single_1pt2gev_e_upstream_tagger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.single_1pt2gev_e_upstream_tagger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure a particle gun to fire a 1.2 GeV electron upstream of the tagger tracker.</p>
+<p>This is used to study the rejection of off energy electrons in the tagger
+tracker. The position and direction are set such that the electron will be
+bent by  the field and arrive at the target at approximately [0, 0, 0]
+(assuming it’s not smeared).</p>
+<p>The gun position below requires the particles to be fired at 11.011 degrees.
+The direction vector is calculated as follows:</p>
+<p>dir_vector = [ sin(11.011) = .2292/1.2, 0, cos(11.011) = 1.1779/1.2 ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>Instance of a particle gun configured to fire a single 1.2 Gev electron</em></p></li>
+<li><p><em>directly upstream of the tagger tracker.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.single_4gev_e_upstream_tagger">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">single_4gev_e_upstream_tagger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.single_4gev_e_upstream_tagger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure a particle gun to fire a 4 GeV electron upstream of the tagger tracker.</p>
+<p>The position and direction are set such that the electron will be bent by
+the field and arrive at the target at approximately [0, 0, 0] (assuming
+it’s not smeared).</p>
+<p>The gun position below requires the particles to be fired at 4.5 degrees.
+The direction vector is calculated as follows:</p>
+<p>dir_vector = [ sin(4.5) = .3138/4, 0, cos(4.5) = 3.9877/4 ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>Instance of a particle gun configured to fire a single 4 Gev electron</em></p></li>
+<li><p><em>directly upstream of the tagger tracker.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.single_4gev_e_upstream_target">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">single_4gev_e_upstream_target</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.single_4gev_e_upstream_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure a particle gun to fire a 4 GeV electron upstream of the tagger tracker.</p>
+<p>The position and direction are set such that the electron will be bent by
+the field and arrive at the target at approximately [0, 0, 0] (assuming
+it’s not smeared).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>Instance of a particle gun configured to fire a single 4 Gev electron</em></p></li>
+<li><p><em>directly upstream of the tagger tracker.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.SimApplication.generators.single_8gev_e_upstream_tagger">
+<code class="sig-prename descclassname">LDMX.SimApplication.generators.</code><code class="sig-name descname">single_8gev_e_upstream_tagger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.generators.single_8gev_e_upstream_tagger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure a particle gun to fire a 8 GeV electron upstream of the tagger tracker.</p>
+<p>This is used to study the rejection of off energy electrons in the tagger
+tracker. The position and direction are set such that the electron will be
+bent by  the field and arrive at the target at approximately [0, 0, 0]
+(assuming it’s not smeared).</p>
+<p>The gun position below requires the particles to be fired at 2.5 degrees.
+The direction vector is calculated as follows:</p>
+<p>dir_vector = [ 8.*sin(2.5) = .349, 0, 8.*cos(2.5) = 7.9924 ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>Instance of a particle gun configured to fire a single 8 Gev electron</em></p></li>
+<li><p><em>directly upstream of the tagger tracker.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-LDMX.SimApplication.sim_example">
+<span id="ldmx-simapplication-sim-example-module"></span><h2>LDMX.SimApplication.sim_example module<a class="headerlink" href="#module-LDMX.SimApplication.sim_example" title="Permalink to this headline">¶</a></h2>
+<p>A short run-ready example for a basic, unbiased simulation</p>
+</div>
+<div class="section" id="module-LDMX.SimApplication.simcfg">
+<span id="ldmx-simapplication-simcfg-module"></span><h2>LDMX.SimApplication.simcfg module<a class="headerlink" href="#module-LDMX.SimApplication.simcfg" title="Permalink to this headline">¶</a></h2>
+<p>Internal configuration module for simulation objects</p>
+<p>The simulation requires a lot more detailed configuration than
+the other processors, so we have two extra objects that require
+their own python classes.</p>
+<dl class="py class">
+<dt id="LDMX.SimApplication.simcfg.PrimaryGenerator">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.SimApplication.simcfg.</code><code class="sig-name descname">PrimaryGenerator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instance_name</span></em>, <em class="sig-param"><span class="n">class_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.simcfg.PrimaryGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object that stores parameters for a PrimaryGenerator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instance_name</strong> (<em>str</em>) – Unique name for this particular instance of a PrimaryGenerator</p></li>
+<li><p><strong>class_name</strong> (<em>str</em>) – Name of C++ class that this PrimaryGenerator should be</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="LDMX.SimApplication.simcfg.PrimaryGenerator.parameters">
+<code class="sig-name descname">parameters</code><a class="headerlink" href="#LDMX.SimApplication.simcfg.PrimaryGenerator.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python dictionary passed to C++ PrimaryGenerator to be used to configure it</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.SimApplication.simcfg.UserAction">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.SimApplication.simcfg.</code><code class="sig-name descname">UserAction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instance_name</span></em>, <em class="sig-param"><span class="n">class_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.SimApplication.simcfg.UserAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object that stores parameters for a UserAction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instance_name</strong> (<em>str</em>) – Unique name for this particular instance of a UserAction</p></li>
+<li><p><strong>class_name</strong> (<em>str</em>) – Name of C++ class that this UserAction should be</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="LDMX.SimApplication.simcfg.UserAction.parameters">
+<code class="sig-name descname">parameters</code><a class="headerlink" href="#LDMX.SimApplication.simcfg.UserAction.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python dictionary passed to C++ UserAction to be used to configure it</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-LDMX.SimApplication">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-LDMX.SimApplication" title="Permalink to this headline">¶</a></h2>
+<p>Python module to configure the LDMX module SimApplication</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LDMX.SimApplication package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-LDMX.SimApplication.ecal_pn_example">LDMX.SimApplication.ecal_pn_example module</a></li>
+<li><a class="reference internal" href="#module-LDMX.SimApplication.examples">LDMX.SimApplication.examples module</a></li>
+<li><a class="reference internal" href="#module-LDMX.SimApplication.generators">LDMX.SimApplication.generators module</a></li>
+<li><a class="reference internal" href="#module-LDMX.SimApplication.sim_example">LDMX.SimApplication.sim_example module</a></li>
+<li><a class="reference internal" href="#module-LDMX.SimApplication.simcfg">LDMX.SimApplication.simcfg module</a></li>
+<li><a class="reference internal" href="#module-LDMX.SimApplication">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="LDMX.Framework.html"
+                        title="previous chapter">LDMX.Framework package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/LDMX.SimApplication.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Framework.html" title="LDMX.Framework package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" >LDMX package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Tom Eichlersmith.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    </div>
+  </body>
+</html>

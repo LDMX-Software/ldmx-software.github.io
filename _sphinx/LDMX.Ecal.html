@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LDMX.Ecal package &#8212; ldmx-sw python 2.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/groundwork.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LDMX.EventProc package" href="LDMX.EventProc.html" />
+    <link rel="prev" title="LDMX.Detectors package" href="LDMX.Detectors.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.EventProc.html" title="LDMX.EventProc package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Detectors.html" title="LDMX.Detectors package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" accesskey="U">LDMX package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ldmx-ecal-package">
+<h1>LDMX.Ecal package<a class="headerlink" href="#ldmx-ecal-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-LDMX.Ecal.dnnEcalVeto">
+<span id="ldmx-ecal-dnnecalveto-module"></span><h2>LDMX.Ecal.dnnEcalVeto module<a class="headerlink" href="#module-LDMX.Ecal.dnnEcalVeto" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for DNN Ecal veto</p>
+<p>Contains an object with helpful defaults set,
+except the parameter ‘disc_cut’ which should be
+set by the user if they want to actually have
+the veto set storage hints.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.Ecal.dnnEcalVeto</span> <span class="kn">import</span> <span class="n">dnnEcalVeto</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">dnnEcalVeto</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.Ecal.ecalClusters">
+<span id="ldmx-ecal-ecalclusters-module"></span><h2>LDMX.Ecal.ecalClusters module<a class="headerlink" href="#module-LDMX.Ecal.ecalClusters" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for the EcalClusterProducer</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.Ecal.ecalClusters</span> <span class="kn">import</span> <span class="n">ecalClusters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ecalClusters</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.Ecal.ecalDigis">
+<span id="ldmx-ecal-ecaldigis-module"></span><h2>LDMX.Ecal.ecalDigis module<a class="headerlink" href="#module-LDMX.Ecal.ecalDigis" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for the EcalDigiProducer</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.Ecal.ecalDigis</span> <span class="kn">import</span> <span class="n">ecalDigis</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ecalDigis</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.Ecal.ecalRecon">
+<span id="ldmx-ecal-ecalrecon-module"></span><h2>LDMX.Ecal.ecalRecon module<a class="headerlink" href="#module-LDMX.Ecal.ecalRecon" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for the EcalRecProducer</p>
+<p>This file contains the layer weights for the different ecal geometries.
+Currently, the v12 layer weights are used.</p>
+<p>It is not advised to edit this file, it would be better to copy
+the layer weights and second order energy correct to your personal
+python configuration file if you want to use a different geometry’s parameters.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.Ecal.ecalRecon</span> <span class="kn">import</span> <span class="n">ecalRecon</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ecalRecon</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.Ecal.ecalSim2Rec">
+<span id="ldmx-ecal-ecalsim2rec-module"></span><h2>LDMX.Ecal.ecalSim2Rec module<a class="headerlink" href="#module-LDMX.Ecal.ecalSim2Rec" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for the EcalSim2Rec</p>
+<p>This is a legacy producer that skips the more realistic
+digi pipeline. It will be removed in later ldmx-sw versions.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.Ecal.ecalSim2Rec</span> <span class="kn">import</span> <span class="n">ecalSim2Rec</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ecalSim2Rec</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.Ecal.ecalVeto">
+<span id="ldmx-ecal-ecalveto-module"></span><h2>LDMX.Ecal.ecalVeto module<a class="headerlink" href="#module-LDMX.Ecal.ecalVeto" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for Ecal veto</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">LDMX.Ecal.ecalVeto</span> <span class="kn">import</span> <span class="n">ecalVeto</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ecalVeto</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-LDMX.Ecal.makePath">
+<span id="ldmx-ecal-makepath-module"></span><h2>LDMX.Ecal.makePath module<a class="headerlink" href="#module-LDMX.Ecal.makePath" title="Permalink to this headline">¶</a></h2>
+<p>Helpful python configuration functions for getting the path to installed data files.</p>
+<dl class="simple">
+<dt>This file was configured by cmake for the installation of ldmx-sw at</dt><dd><p>/home/runner/work/ldmx-sw/ldmx-sw/install</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="LDMX.Ecal.makePath.makeBDTPath">
+<code class="sig-prename descclassname">LDMX.Ecal.makePath.</code><code class="sig-name descname">makeBDTPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">BDTname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Ecal.makePath.makeBDTPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the full path to the installed BDT files</p>
+<p>Exits entire python script if file does not exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>BDTname</strong> (<em>str</em>) – Name of BDT file to make path for (no extension)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>full path to installed data file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ecalVeto</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s1">&#39;bdt_file&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">makeBDTPath</span><span class="p">(</span> <span class="s1">&#39;gabrielle&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="LDMX.Ecal.makePath.makeCellXYPath">
+<code class="sig-prename descclassname">LDMX.Ecal.makePath.</code><code class="sig-name descname">makeCellXYPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Ecal.makePath.makeCellXYPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the full path to the installed cell xy text file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>full path to installed data file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>The need for the cellxy.txt file will be remove in upcoming ldmx-sw versions.</p></li>
+</ul>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ecalVeto</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s1">&#39;cellxy_file&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">makeCellXYPath</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-LDMX.Ecal">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-LDMX.Ecal" title="Permalink to this headline">¶</a></h2>
+<p>Python module to configure the LDMX module Ecal</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LDMX.Ecal package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-LDMX.Ecal.dnnEcalVeto">LDMX.Ecal.dnnEcalVeto module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Ecal.ecalClusters">LDMX.Ecal.ecalClusters module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Ecal.ecalDigis">LDMX.Ecal.ecalDigis module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Ecal.ecalRecon">LDMX.Ecal.ecalRecon module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Ecal.ecalSim2Rec">LDMX.Ecal.ecalSim2Rec module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Ecal.ecalVeto">LDMX.Ecal.ecalVeto module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Ecal.makePath">LDMX.Ecal.makePath module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Ecal">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="LDMX.Detectors.html"
+                        title="previous chapter">LDMX.Detectors package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="LDMX.EventProc.html"
+                        title="next chapter">LDMX.EventProc package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/LDMX.Ecal.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.EventProc.html" title="LDMX.EventProc package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="LDMX.Detectors.html" title="LDMX.Detectors package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" >LDMX package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Tom Eichlersmith.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    </div>
+  </body>
+</html>

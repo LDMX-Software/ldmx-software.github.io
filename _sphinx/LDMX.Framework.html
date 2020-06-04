@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LDMX.Framework package &#8212; ldmx-sw python 2.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/groundwork.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LDMX.SimApplication package" href="LDMX.SimApplication.html" />
+    <link rel="prev" title="LDMX.EventProc package" href="LDMX.EventProc.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.SimApplication.html" title="LDMX.SimApplication package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="LDMX.EventProc.html" title="LDMX.EventProc package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" accesskey="U">LDMX package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ldmx-framework-package">
+<h1>LDMX.Framework package<a class="headerlink" href="#ldmx-framework-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-LDMX.Framework.histogram">
+<span id="ldmx-framework-histogram-module"></span><h2>LDMX.Framework.histogram module<a class="headerlink" href="#module-LDMX.Framework.histogram" title="Permalink to this headline">¶</a></h2>
+<p>&#64;package histogram
+Histogram configuration objects</p>
+<p>These histogram objects are passed to the HistogramPool to be
+created for processors that they are grouped with.</p>
+<dl class="py class">
+<dt id="LDMX.Framework.histogram.histogram1D">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Framework.histogram.</code><code class="sig-name descname">histogram1D</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">xlabel</span></em>, <em class="sig-param"><span class="n">bins</span></em>, <em class="sig-param"><span class="n">xmin</span></em>, <em class="sig-param"><span class="n">xmax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.histogram.histogram1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object to hold parameters for a one-dimensional root histogram</p>
+<p>This histogram object will be passed to the HistogramPool and created,
+so that it is available to the processor who created it</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – pointer name of histogram (like you are defining a variable)</p></li>
+<li><p><strong>xlabel</strong> (<em>str</em>) – title of x-axis that this histogram represents</p></li>
+<li><p><strong>bins</strong> (<em>int</em>) – number of bins</p></li>
+<li><p><strong>xmin</strong> (<em>int</em>) – minimum value for the x-axis</p></li>
+<li><p><strong>xmax</strong> (<em>int</em>) – maximum value for the x-axis</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-LDMX.Framework.ldmxcfg">
+<span id="ldmx-framework-ldmxcfg-module"></span><h2>LDMX.Framework.ldmxcfg module<a class="headerlink" href="#module-LDMX.Framework.ldmxcfg" title="Permalink to this headline">¶</a></h2>
+<p>&#64;package ldmxcfg
+Basic python configuration for ldmx-app</p>
+<dl class="py class">
+<dt id="LDMX.Framework.ldmxcfg.Analyzer">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Framework.ldmxcfg.</code><code class="sig-name descname">Analyzer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instanceName</span></em>, <em class="sig-param"><span class="n">className</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Analyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A analyzer object.</p>
+<p>This object contains the parameters that are necessary for a ldmx::Analyzer to be configured.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instanceName</strong> (<em>str</em>) – Name of this copy of the analyzer object</p></li>
+<li><p><strong>className</strong> (<em>str</em>) – Name (including namespace) of the C++ class that this analyzer should be</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Analyzer.parameters">
+<code class="sig-name descname">parameters</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Analyzer.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>python dictionary that will be passed to the C++ object during the configure method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Analyzer.histograms">
+<code class="sig-name descname">histograms</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Analyzer.histograms" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of histogram configure objects for the HistogramPool to make for this analyzer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dumAna</span> <span class="o">=</span> <span class="n">ldmxcfg</span><span class="o">.</span><span class="n">Analyzer</span><span class="p">(</span> <span class="s1">&#39;thisIsADummyAnalyzer&#39;</span> <span class="p">,</span> <span class="s1">&#39;ldmx::DummyAnalyzer&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.Framework.histograms.histogram1D</span></code></dt><dd><p>histogram configure object</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Analyzer.build1DHistogram">
+<code class="sig-name descname">build1DHistogram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">xlabel</span></em>, <em class="sig-param"><span class="n">bins</span></em>, <em class="sig-param"><span class="n">xmin</span></em>, <em class="sig-param"><span class="n">xmax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Analyzer.build1DHistogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a histogram for this analyzer to fill.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">LDMX.Framework.histograms.histogram1D()</span></code></dt><dd><p>histogram configuration object</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.Framework.ldmxcfg.Process">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Framework.ldmxcfg.</code><code class="sig-name descname">Process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">passName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Process configuration object</p>
+<p>The python object that stores the necessary parameters for configuring
+a Process for ldmx-app to execute.</p>
+<p>Upon construction, the class-wide reference lastProcess is set
+and the rest of the attributes are set to sensible defaults.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>passName</strong> (<em>str</em>) – Short reference name for this run of the process</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.lastProcess">
+<code class="sig-name descname">lastProcess</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.lastProcess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class-wide reference to the last Process object to be constructed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#LDMX.Framework.ldmxcfg.Process" title="LDMX.Framework.ldmxcfg.Process">Process</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.maxEvents">
+<code class="sig-name descname">maxEvents</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.maxEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number events to process</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.run">
+<code class="sig-name descname">run</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run number for this process</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.inputFiles">
+<code class="sig-name descname">inputFiles</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.inputFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input files to read in event data from and process</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of strings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.outputFiles">
+<code class="sig-name descname">outputFiles</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.outputFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output files to write out event data to after processing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of strings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.sequence">
+<code class="sig-name descname">sequence</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of event processors to pass the event bus objects to</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of Producers and Analyzers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.keep">
+<code class="sig-name descname">keep</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.keep" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of rules to keep or drop objects from the event bus</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of strings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.libraries">
+<code class="sig-name descname">libraries</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.libraries" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of libraries to load before attempting to build any processors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of strings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.skimDefaultIsKeep">
+<code class="sig-name descname">skimDefaultIsKeep</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.skimDefaultIsKeep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag to say whether to process should by default keep the event or not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.skimRules">
+<code class="sig-name descname">skimRules</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.skimRules" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of skimming rules for which processors the process should listen to when deciding whether to keep an event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of strings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.logFrequency">
+<code class="sig-name descname">logFrequency</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.logFrequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the event number whenever its modulus with this frequency is zero</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#LDMX.Framework.ldmxcfg.Producer" title="LDMX.Framework.ldmxcfg.Producer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Producer</span></code></a></dt><dd><p>one type of event processor</p>
+</dd>
+<dt><a class="reference internal" href="#LDMX.Framework.ldmxcfg.Analyzer" title="LDMX.Framework.ldmxcfg.Analyzer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Analyzer</span></code></a></dt><dd><p>the other type of event processor</p>
+</dd>
+</dl>
+</div>
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-name descname">lastProcess</code><em class="property"> = None</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Process.setCompression">
+<code class="sig-name descname">setCompression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">algorithm</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">9</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.setCompression" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the compression settings for any output files in this process</p>
+<p>We combine the compression settings here in the same way that ROOT
+does. This allows the compression settings to be passed along as
+one integer rather than two without any loss of generality.</p>
+<p>Look at ROOT’s documentation for TFile to learn more
+about the different compression algorithms and levels available
+(as well as what integers to use). There is a summary table
+below.</p>
+<p>Algorithm           | int | root version
+——————- | — | ————
+ROOT global default |  0  | root-6.16
+ZLIB                |  1  | root-6.16
+LZMA                |  2  | root-6.16
+Old (ROOT 5)        |  3  | root-6.16
+LZ4                 |  4  | root-6.16
+ZSTD                |  5  | root-6.20</p>
+<p>Level 0 : no compression is applied
+Level 9 : maximum amount of compression available from algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>algorithm</strong> (<em>int</em>) – flag for the algorithm to use</p></li>
+<li><p><strong>level</strong> (<em>int</em>) – flag for the level of compression to use</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Process.skimConsider">
+<code class="sig-name descname">skimConsider</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">namePat</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.skimConsider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the process to listen to processors matching input.</p>
+<p>The list of skim rules has a rather complicated form, so it
+is better to use this helper function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>namePat</strong> (<em>str</em>) – Pattern for the processor instanceNames to match for the Process to listen</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ecalVeto</span> <span class="o">=</span> <span class="n">ldmxcfg</span><span class="o">.</span><span class="n">Producer</span><span class="p">(</span> <span class="s1">&#39;ecalVeto&#39;</span> <span class="p">,</span> <span class="s1">&#39;EcalVetoProcessor&#39;</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Setup of other parameters for the veto</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">skimConsider</span><span class="p">(</span> <span class="s1">&#39;ecalVeto&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#LDMX.Framework.ldmxcfg.Process.skimConsiderLabelled" title="LDMX.Framework.ldmxcfg.Process.skimConsiderLabelled"><code class="xref py py-meth docutils literal notranslate"><span class="pre">skimConsiderLabelled()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Process.skimConsiderLabelled">
+<code class="sig-name descname">skimConsiderLabelled</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">namePat</span></em>, <em class="sig-param"><span class="n">labelPat</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.skimConsiderLabelled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the process to listen to processors matching input.</p>
+<p>The list of skim rules has a rather complicated form, so it
+is better to use this helper function.</p>
+<p>Some uses of <code class="docutils literal notranslate"><span class="pre">setStorageHint</span></code> in processors include a “reason”
+for the given storage hint. The input label pattern is check
+on matching this “reason” for the storage hint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>namePat</strong> (<em>str</em>) – Pattern for the processor instanceNames to match for the Process to listen</p></li>
+<li><p><strong>labelPat</strong> (<em>str</em>) – Pattern for the storage hint reason to match for the Process to listen</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#LDMX.Framework.ldmxcfg.Process.skimConsider" title="LDMX.Framework.ldmxcfg.Process.skimConsider"><code class="xref py py-meth docutils literal notranslate"><span class="pre">skimConsider()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Process.skimDefaultIsDrop">
+<code class="sig-name descname">skimDefaultIsDrop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.skimDefaultIsDrop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the process to by default drop (not save) every event.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Process.skimDefaultIsSave">
+<code class="sig-name descname">skimDefaultIsSave</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.skimDefaultIsSave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the process to by default keep every event.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.Framework.ldmxcfg.Producer">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Framework.ldmxcfg.</code><code class="sig-name descname">Producer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instanceName</span></em>, <em class="sig-param"><span class="n">className</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Producer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A producer object.</p>
+<p>This object contains the parameters that are necessary for a ldmx::Producer to be configured.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instanceName</strong> (<em>str</em>) – Name of this copy of the producer object</p></li>
+<li><p><strong>className</strong> (<em>str</em>) – Name (including namespace) of the C++ class that this producer should be</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Producer.parameters">
+<code class="sig-name descname">parameters</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Producer.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>python dictionary that will be passed to the C++ object during the configure method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Producer.histograms">
+<code class="sig-name descname">histograms</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Producer.histograms" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of histogram configure objects for the HistogramPool to make for this producer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of histogram1D objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dumPro</span> <span class="o">=</span> <span class="n">ldmxcfg</span><span class="o">.</span><span class="n">Producer</span><span class="p">(</span> <span class="s1">&#39;thisIsADummyProducer&#39;</span> <span class="p">,</span> <span class="s1">&#39;ldmx::DummyProducer&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.Framework.histograms.histogram1D</span></code></dt><dd><p>histogram configure object</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Producer.build1DHistogram">
+<code class="sig-name descname">build1DHistogram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">xlabel</span></em>, <em class="sig-param"><span class="n">bins</span></em>, <em class="sig-param"><span class="n">xmin</span></em>, <em class="sig-param"><span class="n">xmax</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Producer.build1DHistogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a histogram for this producer to fill.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">LDMX.Framework.histograms.histogram1D()</span></code></dt><dd><p>histogram configuration object</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-LDMX.Framework">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-LDMX.Framework" title="Permalink to this headline">¶</a></h2>
+<p>Python module to configure the LDMX module Framework</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LDMX.Framework package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-LDMX.Framework.histogram">LDMX.Framework.histogram module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Framework.ldmxcfg">LDMX.Framework.ldmxcfg module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Framework">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="LDMX.EventProc.html"
+                        title="previous chapter">LDMX.EventProc package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="LDMX.SimApplication.html"
+                        title="next chapter">LDMX.SimApplication package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/LDMX.Framework.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="LDMX.SimApplication.html" title="LDMX.SimApplication package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="LDMX.EventProc.html" title="LDMX.EventProc package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="LDMX.html" >LDMX package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Tom Eichlersmith.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    </div>
+  </body>
+</html>
