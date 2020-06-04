@@ -2,6 +2,6 @@
 
 layout: default 
 title: Documentation 
-permalink: /docs/
+permalink: /docs/index.html
 
 ---
