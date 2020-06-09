@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 There is [a repository](https://github.com/LDMX-Software/ldmx-analysis) that already has implemented a few processors that can be compiled outside of ldmx-sw. This repository is a good place to start. You can try forking it to your own GitHub account and then playing around from there.
 
 The rest of this page details the minimum requirements (that is accomplished by the linked repo) in order to compile EventProcessors outside of ldmx-sw.

@@ -1,16 +1,20 @@
-The `ldmx-app` application is used for simulation, reconstruction, and analysis of data from the LDMX experiment.  The application receives its configuration for a given purpose by interpreting a python script which contains instructions about what C++ code to run and what parameters to run.  The python script is _not_ run for each event, but instead is used to determine the configuration of the C++ code which is run for each event.
+---
+layout: default
+---
 
-## Brief summary of running `ldmx-app`
+The `fire` application is used for simulation, reconstruction, and analysis of data from the LDMX experiment.  The application receives its configuration for a given purpose by interpreting a python script which contains instructions about what C++ code to run and what parameters to run.  The python script is _not_ run for each event, but instead is used to determine the configuration of the C++ code which is run for each event.
+
+## Brief summary of running `fire`
 
 From the commandline, the application is run as follows:
 
-    $ ldmx-app [application arguments] {configuration_script.py} [arguments for configuration script]
+    $ fire [application arguments] {configuration_script.py} [arguments for configuration script]
 
 The configuration script language is discussed in more detail below.
 
 ### Application arguments
 
-Application arguments affect the overall behavior of the `ldmx-app` application.  Currently, none are defined, but they could include controls on the logging output for example.
+Application arguments affect the overall behavior of the `fire` application.  Currently, none are defined, but they could include controls on the logging output for example.
 
 ### Configuration script arguments
 
@@ -18,7 +22,7 @@ Arguments after the `.py` file on the commandline will be passed to the script a
 
 ## The Process Object
 
-The Process object represents the overall processing step.  It **must be included** in any `ldmx-app` configuration.  When the Process is constructed, the user must provide a processing pass name.  This processing pass name is used to identify the products in the data file and cannot be repeated when later processing the same file.  The pass name is useful when a file has been processed multiple times -- for example, when reprocessing a file with new calibration constants. 
+The Process object represents the overall processing step.  It **must be included** in any `fire` configuration.  When the Process is constructed, the user must provide a processing pass name.  This processing pass name is used to identify the products in the data file and cannot be repeated when later processing the same file.  The pass name is useful when a file has been processed multiple times -- for example, when reprocessing a file with new calibration constants. 
 
 In the example above, the pass name is `practice`, so the line which constructs the Process is:
 ```python
@@ -52,7 +56,7 @@ Here is a list of all the process options and what they control.
    - For example: `[ mySimulator, ecalDigis, ecalRecon ]`
 - `keep` (list of strings)
    - List of drop/keep rules to help ldmx-sw know which collections to put into output file(s)
-   - Slightly complicated, see the [documentation of EventFile](https://ldmx-software.github.io/ldmx-sw/html/classldmx_1_1EventFile.html#a9999632efb2af6d0e720c8070bd9e384)
+   - Slightly complicated, see the [documentation of EventFile](https://ldmx-software.github.io/ldmx-sw/html/classldmx_1_1EventFile.html)
    - For example: `[ "drop .*SimHits.*" , "keep Ecal.*" ]`
 - `libraries` (list of strings)
    - List of dynamic libraries to load before processing

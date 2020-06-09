@@ -1,3 +1,25 @@
+---
+layout: default
+---
+
+# Docker Container
+
+> _Note:_ This method is _highly_ recommended. The extra details below are not for the faint of heart.
+
+- [Install the docker engine](https://docs.docker.com/engine/install/)
+- (on Linux systems) [Manage docker as non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+- Clone the repo: `git clone https://github.com/LDMX-Software/ldmx-sw.git`
+- Setup the environment: `source ldmx-sw/scripts/ldmx-env.sh`
+  - Must occur in a `bash` terminal (the default on iOS and Ubuntu systems)
+  - Downloads the latest development docker image, so it may take some time (a few minutes) on the first run
+  - Must be re-run whenever a new terminal is opened
+- Make a build directory: `cd ldmx-sw; mkdir build; cd build;`
+- Configure the build: `ldmx cmake -DCMAKE_INSTALL_PREFIX=../install ..`
+- Build and Install: `ldmx make install -j2`
+- Now you can run any processor in _ldmx-sw_ through `ldmx fire`
+
+---
+
 Building ldmx-sw will require the installation of several dependencies. The following guide will walk you through the installation of those dependencies as well as ldmx-sw.
 
 ## Supported Platforms
@@ -141,31 +163,3 @@ Comments, suggestions or cries for help can be sent to [Omar Moreno](mailto:omor
 
 * [LDMX-SW Doxygen Documentation](https://ldmxanalysis.github.io/ldmx-sw/html/index.html)
 
-# Custom OS
-
-> _Note:_ This method of using ldmx-sw is new and not very well tested. If you run into issues, please send questions to [Tom Eichlersmith](mailto:eichl008@umn.edu) or contact him on the LDMX Slack.
-
-Currently, the ldmx-sw custom development operating system is stored on [Tom's homepage](http://homepages.spa.umn.edu/~eichl008/ldmx-dev-vm/) (hopefully this is temporary!). You can go there and click on the files to download them, or you could use `wget`:
-```bash
-wget --no-parent http://homepages.spa.umn.edu/~eichl008/ldmx-dev-vm/ldmx-dev.{iso,md5}
-```
-No matter how you download the `iso` image, you should check that the download completed correctly:
-```bash
-# make sure ldmx-dev.iso is in this directory too
-md5sum --check ldmx-dev.md5
-```
-Now you can either install this `iso` on a computer you have or use it as the file to run a virtual machine with. Either way, after you start up this OS, you should try the following commands to compile and build ldmx-sw.
-```bash
-git clone --recursive https://github.com/LDMX-Software/ldmx-sw.git #get ldmx-sw from githug
-cd ldmx-sw
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=../install/ ../
-make install
-```
-Again, this method of using ldmx-sw is still in development, so you may run into lots of issues. Whether or not you solve any issues you run into, _please_ send the issue, your build system (i.e. virtual machine manager like VirtualBox), and (if you solved it) how you solved it to [Tom Eichlersmith](mailto:eichl008@umn.edu). It has been tested on the following build systems successfully.
-- Bare metal (i.e. installed as primary OS on an HP laptop) (Tom E)
-
-> If you try this and get frustrated, feel free to abandon this method and continue to the (more manual) method below.
-
----

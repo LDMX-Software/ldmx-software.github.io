@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ### _Not merged into master yet_
 ---
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 The following is a summary of the getting started slide deck found at https://tinyurl.com/uvq8l28.
 
 Note: The recipe that follows only works on the centos 7 machines.

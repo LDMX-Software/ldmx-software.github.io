@@ -1,10 +1,14 @@
+---
+layout: default
+---
+
 ## Pre-Requisites
 
 This page assumes you (the reader) already has experience with `git` and `C++` in order to focus on the specifics of `ldmx-sw`. If you are not as experienced with either of these, then you may need to use more resources than this guide to gain an understanding of `ldmx-sw`.
 
 ## 0. Installation and Test Run
 
-Follow the instructions on [how to install ldmx-sw](https://github.com/LDMX-Software/ldmx-sw/wiki/Installing-ldmx-sw) to build an installation on your local computer. If you are using group resources, your group may already have an installation that you can use and you can skip this step.
+Follow the instructions on how to install ldmx-sw to build an installation on your local computer. If you are using group resources, your group may already have an installation that you can use and you can skip this step.
 
 Make sure the installation was built and linked correctly by running `ldmx-test` without any arguments. This should return a message describing saying that several tests passed, for example:
 ```bash

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 This page details all of the parameters you can use to tune the simulation to behave how you want it to.
 
 General
@@ -8,7 +12,7 @@ Like any other Producer, the simulation is configured by passing parameters to i
 simulation.parameters[ "parameterKey" ] = parameterValue
 ```
 The parameter keys, types, accessing locations, and descriptions are documented on this page.
-A minimal working example is (for example) displayed on [Generating Simulation Samples](https://github.com/LDMX-Software/ldmx-sw/wiki/Generating-Simulation-Samples). The parameters in this first section are passed directly to the simulator producer.
+A minimal working example is displayed on [Generating Simulation Samples]({% link docs/Generating-Simulation-Samples.md %})
 
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
@@ -52,7 +56,7 @@ Parameter | Type | Accessed By | Description
 `darkbrem.method` | int | APrimePhysics | decision on how to interpret the LHE vertices
 `darkbrem.globalxsecfactor` | double | APrimePhysics | scaling number to multiply the cross section for the dark brem everywhere
 
-A more full description of the Dark Brem process and how these parameters affect its abilities is described [on its own page](https://github.com/LDMX-Software/ldmx-sw/wiki/Dark-Brem-(Signal)-Process).
+A more full description of the Dark Brem process and how these parameters affect its abilities is described [on its own page]({% link docs/Dark-Brem-Signal-Process.md %}).
 
 UserActions
 ---

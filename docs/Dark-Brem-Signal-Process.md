@@ -1,6 +1,10 @@
+---
+layout: default
+---
+
 The signal generation is done by a custom Geant4 physics process. This custom physics process `G4eDarkBremsstrahlung` has a corresponding model `G4eDarkBremsstrahlungModel` which handles most of the simulation work. The physics list entry `APrimePhysics` and the process are mainly there to conform to Geant4's framework and pass parameters to the model.
 
-The model is written to take in LHE files that have A' vertices (like the [old signal sim](https://github.com/LDMX-Software/ldmx-sw/wiki/Dark-Brem-(Signal)-Process#old-simulation-style)) and then scale them to the actual energy of the electron (when Geant4 decides for the dark brem to happen).
+The model is written to take in LHE files that have A' vertices (like the old signal sim below) and then scale them to the actual energy of the electron (when Geant4 decides for the dark brem to happen).
 
 The four parameters are detailed below.
 
@@ -42,4 +46,4 @@ The _Negatives_ category for `ForwardOnly` motivates a "dictionary" of LHE event
 ---
 # Old Simulation Style
 
-The old simulation style used the [LHEPrimaryGenerator](https://github.com/LDMX-Software/ldmx-sw/wiki/Configuring-the-Simulation#lhe-vertices-as-primaries) to setup the electron and A' as primaries. The vertex of the primaries imported from the LHE files would be smeared around the target, but the electron's energy would stay fixed at the energy simulated for the LHE files.
+The old simulation style used the [LHEPrimaryGenerator]({% link docs/Configuring-the-Simulation.md %}) to setup the electron and A' as primaries. The vertex of the primaries imported from the LHE files would be smeared around the target, but the electron's energy would stay fixed at the energy simulated for the LHE files.

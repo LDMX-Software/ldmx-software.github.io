@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 We just merged in a new testing framework to use with ldmx-sw: [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top)
 
 This testing framework allows us to write several different testing functions throughout all of ldmx-sw, which are then compiled into one executable: `ldmx-test`. This executable has several command line options, all of which are detailed in Catch2's [reference documentation](https://github.com/catchorg/Catch2/blob/master/docs/Readme.md#top). This documentation does an excellent job detailing how to write new tests and how to have your tests do a variety of tasks; please refer to that documentation when you wish to write a test.
