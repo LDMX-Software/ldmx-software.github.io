@@ -46,9 +46,9 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classldmx_1_1NtupleManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ldmx::NtupleManager Class Reference</div>  </div>
@@ -77,11 +77,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fill</b> ()</td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#aa2c75f9e9dcbc0a310cee537b94f2bef">clear</a> ()</td></tr>
 <tr class="memdesc:aa2c75f9e9dcbc0a310cee537b94f2bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all of the variables to their limits. <br /></td></tr>
 <tr class="separator:aa2c75f9e9dcbc0a310cee537b94f2bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53f0fa190a5082584a60a959c982f0a"><td class="memItemLeft" align="right" valign="top"><a id="ab53f0fa190a5082584a60a959c982f0a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#ab53f0fa190a5082584a60a959c982f0a">NtupleManager</a> (const <a class="el" href="classldmx_1_1NtupleManager.html">NtupleManager</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ab53f0fa190a5082584a60a959c982f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hide Copy Constructor. <br /></td></tr>
+<tr class="separator:ab53f0fa190a5082584a60a959c982f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9440a6e0eb9599fe604c7f44d5fbdf13"><td class="memItemLeft" align="right" valign="top"><a id="a9440a6e0eb9599fe604c7f44d5fbdf13"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#a9440a6e0eb9599fe604c7f44d5fbdf13">operator=</a> (const <a class="el" href="classldmx_1_1NtupleManager.html">NtupleManager</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a9440a6e0eb9599fe604c7f44d5fbdf13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hide Assignment Operator. <br /></td></tr>
+<tr class="separator:a9440a6e0eb9599fe604c7f44d5fbdf13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8ece33d3c4c18ee3de611312bd45d3ce"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classldmx_1_1NtupleManager.html">NtupleManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#a8ece33d3c4c18ee3de611312bd45d3ce">getInstance</a> ()</td></tr>
-<tr class="separator:a8ece33d3c4c18ee3de611312bd45d3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f11cc97f4fd6889e2f7138c96ac0ac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classldmx_1_1NtupleManager.html">NtupleManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#a52f11cc97f4fd6889e2f7138c96ac0ac">getInstance</a> ()</td></tr>
+<tr class="separator:a52f11cc97f4fd6889e2f7138c96ac0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a502372187b1971feb0b58c3c52a99367"><td class="memItemLeft" align="right" valign="top"><a id="a502372187b1971feb0b58c3c52a99367"></a>
+typedef std::variant&lt; short, int, float, double, long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#a502372187b1971feb0b58c3c52a99367">variable_type</a></td></tr>
+<tr class="memdesc:a502372187b1971feb0b58c3c52a99367"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variables these trees can hold. <br /></td></tr>
+<tr class="separator:a502372187b1971feb0b58c3c52a99367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -96,25 +111,15 @@ Private Attributes</h2></td></tr>
 std::unordered_map&lt; std::string, TTree * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a></td></tr>
 <tr class="memdesc:a446590f04ef059454c832f9542d819f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for ROOT trees. <br /></td></tr>
 <tr class="separator:a446590f04ef059454c832f9542d819f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab672fc24557bd1112f4ca7659d0b8eda"><td class="memItemLeft" align="right" valign="top"><a id="ab672fc24557bd1112f4ca7659d0b8eda"></a>
-std::unordered_map&lt; std::string, vtype &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#ab672fc24557bd1112f4ca7659d0b8eda">variables_</a></td></tr>
-<tr class="memdesc:ab672fc24557bd1112f4ca7659d0b8eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for tree leaves. <br /></td></tr>
-<tr class="separator:ab672fc24557bd1112f4ca7659d0b8eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76000fb58efe4c18edbe91c2e76b5c2b"><td class="memItemLeft" align="right" valign="top">const std::map&lt; const char *, std::string, <a class="el" href="structldmx_1_1cmpStr.html">cmpStr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#a76000fb58efe4c18edbe91c2e76b5c2b">rtype_</a></td></tr>
-<tr class="memdesc:a76000fb58efe4c18edbe91c2e76b5c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map from variable type to string representation used by ROOT.  <a href="classldmx_1_1NtupleManager.html#a76000fb58efe4c18edbe91c2e76b5c2b">More...</a><br /></td></tr>
-<tr class="separator:a76000fb58efe4c18edbe91c2e76b5c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a787f9d482c44ed117534d64aad1d2e81"><td class="memItemLeft" align="right" valign="top"><a id="a787f9d482c44ed117534d64aad1d2e81"></a>
-static <a class="el" href="classldmx_1_1NtupleManager.html">NtupleManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#a787f9d482c44ed117534d64aad1d2e81">instance_</a> = nullptr</td></tr>
-<tr class="memdesc:a787f9d482c44ed117534d64aad1d2e81"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classldmx_1_1NtupleManager.html" title="Singleton class used to manage the creation and pooling of ntuples.">NtupleManager</a> instance. <br /></td></tr>
-<tr class="separator:a787f9d482c44ed117534d64aad1d2e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4952669e9e8275d806e588be95b90c"><td class="memItemLeft" align="right" valign="top"><a id="a0f4952669e9e8275d806e588be95b90c"></a>
+std::unordered_map&lt; std::string, <a class="el" href="classldmx_1_1NtupleManager.html#a502372187b1971feb0b58c3c52a99367">variable_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NtupleManager.html#a0f4952669e9e8275d806e588be95b90c">variables_</a></td></tr>
+<tr class="memdesc:a0f4952669e9e8275d806e588be95b90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for tree leaves. <br /></td></tr>
+<tr class="separator:a0f4952669e9e8275d806e588be95b90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Singleton class used to manage the creation and pooling of ntuples. </p>
 
-<p class="definition">Definition at line <a class="el" href="NtupleManager_8h_source.html#l00045">45</a> of file <a class="el" href="NtupleManager_8h_source.html">NtupleManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NtupleManager_8h_source.html#l00033">33</a> of file <a class="el" href="NtupleManager_8h_source.html">NtupleManager.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a586b5fe6b9b7c092960dc8c5a1a61c16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a586b5fe6b9b7c092960dc8c5a1a61c16">&#9670;&nbsp;</a></span>addVar()</h2>
@@ -167,39 +172,46 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NtupleManager_8h_source.html#l00069">69</a> of file <a class="el" href="NtupleManager_8h_source.html">NtupleManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                                        {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="comment">// Check if the variable exists in the map. If it does, throw </span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="comment">// an exception.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NtupleManager.html#ab672fc24557bd1112f4ca7659d0b8eda">variables_</a>.count(vname) != 0) { </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                            <span class="stringliteral">&quot;NtupleManager&quot;</span>, </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                            <span class="stringliteral">&quot;A variable with name &quot;</span> + vname + <span class="stringliteral">&quot; has already been defined.&quot;</span>); </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                } </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">// Check if a tree named &#39;tname&#39; has already been created.  If</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">// not, throw an exception.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a>.count(tname) == 0) </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        <span class="stringliteral">&quot;NtupleManager&quot;</span>, </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        <span class="stringliteral">&quot;A tree with name &quot;</span> + tname + <span class="stringliteral">&quot; has already been created.&quot;</span> </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    ); </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;              </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">// Initialize the variable to the minimum limit of that type. </span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="classldmx_1_1NtupleManager.html#ab672fc24557bd1112f4ca7659d0b8eda">variables_</a>[vname] = T(std::numeric_limits&lt;T&gt;::min()); </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="comment">// Get the type name</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keyword">auto</span> typeName = <span class="keyword">typeid</span>(boost::get&lt;T&gt;(<a class="code" href="classldmx_1_1NtupleManager.html#ab672fc24557bd1112f4ca7659d0b8eda">variables_</a>[vname])).name(); </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="comment">// Add the variable to the ROOT tree</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a>[tname]-&gt;Branch(vname.c_str(), &amp;boost::get&lt;T&gt;(<a class="code" href="classldmx_1_1NtupleManager.html#ab672fc24557bd1112f4ca7659d0b8eda">variables_</a>[vname]), </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        (vname + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="classldmx_1_1NtupleManager.html#a76000fb58efe4c18edbe91c2e76b5c2b">rtype_</a>.at(typeName)).c_str()); </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            } </div>
+<p class="definition">Definition at line <a class="el" href="NtupleManager_8h_source.html#l00057">57</a> of file <a class="el" href="NtupleManager_8h_source.html">NtupleManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="comment">// Check if the variable exists in the map. If it does, throw </span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="comment">// an exception.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NtupleManager.html#a0f4952669e9e8275d806e588be95b90c">variables_</a>.count(vname) != 0) { </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                            <span class="stringliteral">&quot;NtupleManager&quot;</span>, </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            <span class="stringliteral">&quot;A variable with name &quot;</span> + vname + <span class="stringliteral">&quot; has already been defined.&quot;</span>); </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                } </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment">// Check if a tree named &#39;tname&#39; has already been created.  If</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="comment">// not, throw an exception.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a>.count(tname) == 0) </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="stringliteral">&quot;NtupleManager&quot;</span>, </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="stringliteral">&quot;A tree with name &quot;</span> + tname + <span class="stringliteral">&quot; has already been created.&quot;</span> </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    ); </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;              </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="comment">// Initialize the variable to the minimum limit of that type. </span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="classldmx_1_1NtupleManager.html#a0f4952669e9e8275d806e588be95b90c">variables_</a>[vname] = T(std::numeric_limits&lt;T&gt;::min()); </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="comment">// Get the type name</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                std::string typeName = <span class="keyword">typeid</span>(std::get&lt;T&gt;(<a class="code" href="classldmx_1_1NtupleManager.html#a0f4952669e9e8275d806e588be95b90c">variables_</a>[vname])).name();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="comment">//  The type name in C++ for basic types are lowercase:</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="comment">//      s, i, f, d, l</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">//  while in ROOT it is uppercase:</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">//      S, I, F, D, L</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="comment">//  so we need the call to toupper</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">for</span> ( <span class="keywordtype">char</span>&amp; c : typeName ) c = toupper(c);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="comment">// Add the variable to the ROOT tree</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a>[tname]-&gt;Branch(vname.c_str(), &amp;std::get&lt;T&gt;(<a class="code" href="classldmx_1_1NtupleManager.html#a0f4952669e9e8275d806e588be95b90c">variables_</a>[vname]), </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        (vname + <span class="stringliteral">&quot;/&quot;</span> + typeName).c_str()); </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            } </div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="NtupleManager_8h_source.html#l00143">rtype_</a>, <a class="el" href="NtupleManager_8h_source.html#l00137">trees_</a>, and <a class="el" href="NtupleManager_8h_source.html#l00140">variables_</a>.</p>
+<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="NtupleManager_8h_source.html#l00144">trees_</a>, and <a class="el" href="NtupleManager_8h_source.html#l00147">variables_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DummyAnalyzer_8cxx_source.html#l00151">ldmx::DummyAnalyzer::onProcessStart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DummyAnalyzer_8cxx_source.html#l00152">ldmx::DummyAnalyzer::onProcessStart()</a>.</p>
 
 </div>
 </div>
@@ -226,30 +238,30 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NtupleManager_8cxx_source.html#l00018">18</a> of file <a class="el" href="NtupleManager_8cxx_source.html">NtupleManager.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">// Check if a tree named &#39;name&#39; has already been created.  If so</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">// throw an exception. </span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a>.count(name) != 0) </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="stringliteral">&quot;NtupleManager&quot;</span>, </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    <span class="stringliteral">&quot;A tree with name &quot;</span> + name + <span class="stringliteral">&quot; has already been created.&quot;</span> </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            ); </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// Create a tree with the given name and add it to the list of trees.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">auto</span> tree{<span class="keyword">new</span> TTree{name.c_str(), name.c_str()}};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a>[name] = tree;       </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="NtupleManager_8cxx_source.html#l00016">16</a> of file <a class="el" href="NtupleManager_8cxx_source.html">NtupleManager.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">// Check if a tree named &#39;name&#39; has already been created.  If so</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="comment">// throw an exception. </span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a>.count(name) != 0) </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    <span class="stringliteral">&quot;NtupleManager&quot;</span>, </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    <span class="stringliteral">&quot;A tree with name &quot;</span> + name + <span class="stringliteral">&quot; has already been created.&quot;</span> </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            ); </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// Create a tree with the given name and add it to the list of trees.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">auto</span> tree{<span class="keyword">new</span> TTree{name.c_str(), name.c_str()}};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">trees_</a>[name] = tree;       </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, and <a class="el" href="NtupleManager_8h_source.html#l00137">trees_</a>.</p>
+<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, and <a class="el" href="NtupleManager_8h_source.html#l00144">trees_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DummyAnalyzer_8cxx_source.html#l00151">ldmx::DummyAnalyzer::onProcessStart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DummyAnalyzer_8cxx_source.html#l00152">ldmx::DummyAnalyzer::onProcessStart()</a>.</p>
 
 </div>
 </div>
-<a id="a8ece33d3c4c18ee3de611312bd45d3ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ece33d3c4c18ee3de611312bd45d3ce">&#9670;&nbsp;</a></span>getInstance()</h2>
+<a id="a52f11cc97f4fd6889e2f7138c96ac0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f11cc97f4fd6889e2f7138c96ac0ac">&#9670;&nbsp;</a></span>getInstance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +270,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classldmx_1_1NtupleManager.html">NtupleManager</a> * ldmx::NtupleManager::getInstance </td>
+          <td class="memname"><a class="el" href="classldmx_1_1NtupleManager.html">NtupleManager</a> &amp; ldmx::NtupleManager::getInstance </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -272,18 +284,16 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classldmx_1_1NtupleManager.html" title="Singleton class used to manage the creation and pooling of ntuples.">NtupleManager</a> instance </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="NtupleManager_8cxx_source.html#l00010">10</a> of file <a class="el" href="NtupleManager_8cxx_source.html">NtupleManager.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                              {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="comment">// Create an instance of the NtupleManager if needed</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1NtupleManager.html#a787f9d482c44ed117534d64aad1d2e81">instance_</a>) <a class="code" href="classldmx_1_1NtupleManager.html#a787f9d482c44ed117534d64aad1d2e81">instance_</a> = <span class="keyword">new</span> <a class="code" href="classldmx_1_1NtupleManager.html#aa5e3f4d37115bc0059c1dfb5490e2ab1">NtupleManager</a>; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1NtupleManager.html#a787f9d482c44ed117534d64aad1d2e81">instance_</a>; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="NtupleManager_8cxx_source.html#l00008">8</a> of file <a class="el" href="NtupleManager_8cxx_source.html">NtupleManager.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                              {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="comment">// Create an instance of the NtupleManager if needed</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">static</span> <a class="code" href="classldmx_1_1NtupleManager.html#aa5e3f4d37115bc0059c1dfb5490e2ab1">NtupleManager</a> instance;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">return</span> instance; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NtupleManager_8h_source.html#l00134">instance_</a>, and <a class="el" href="NtupleManager_8cxx_source.html#l00008">NtupleManager()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DummyAnalyzer_8cxx_source.html#l00151">ldmx::DummyAnalyzer::onProcessStart()</a>, and <a class="el" href="Process_8cxx_source.html#l00029">ldmx::Process::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00029">ldmx::Process::run()</a>.</p>
 
 </div>
 </div>
@@ -331,62 +341,25 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="NtupleManager_8h_source.html#l00110">110</a> of file <a class="el" href="NtupleManager_8h_source.html">NtupleManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                               {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="comment">// Check if the variable already exists in the map.  If it</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="comment">// doesn&#39;t, warn the user and don&#39;t try to set the variable </span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="comment">// value. </span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NtupleManager.html#ab672fc24557bd1112f4ca7659d0b8eda">variables_</a>.count(vname) == 0) { </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;[ NtupleManager ]: Warning! The variable &quot;</span> </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                              &lt;&lt; vname &lt;&lt; <span class="stringliteral">&quot; does not exist in the tree.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    <span class="keywordflow">return</span>; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="comment">// Set the value of the variable</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <a class="code" href="classldmx_1_1NtupleManager.html#ab672fc24557bd1112f4ca7659d0b8eda">variables_</a>[vname] = value;      </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="NtupleManager_8h_source.html#l00105">105</a> of file <a class="el" href="NtupleManager_8h_source.html">NtupleManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                               {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="comment">// Check if the variable already exists in the map.  If it</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="comment">// doesn&#39;t, warn the user and don&#39;t try to set the variable </span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="comment">// value. </span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NtupleManager.html#a0f4952669e9e8275d806e588be95b90c">variables_</a>.count(vname) == 0) { </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;[ NtupleManager ]: Warning! The variable &quot;</span> </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                              &lt;&lt; vname &lt;&lt; <span class="stringliteral">&quot; does not exist in the tree.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">return</span>; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="comment">// Set the value of the variable</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <a class="code" href="classldmx_1_1NtupleManager.html#a0f4952669e9e8275d806e588be95b90c">variables_</a>[vname] = value;      </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NtupleManager_8h_source.html#l00140">variables_</a>.</p>
+<p class="reference">References <a class="el" href="NtupleManager_8h_source.html#l00147">variables_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DummyAnalyzer_8cxx_source.html#l00075">ldmx::DummyAnalyzer::analyze()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a76000fb58efe4c18edbe91c2e76b5c2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76000fb58efe4c18edbe91c2e76b5c2b">&#9670;&nbsp;</a></span>rtype_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::map&lt; const char*, std::string, <a class="el" href="structldmx_1_1cmpStr.html">cmpStr</a>&gt; ldmx::NtupleManager::rtype_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= </div>
-<div class="line">            { </div>
-<div class="line">                {<span class="stringliteral">&quot;s&quot;</span>, <span class="stringliteral">&quot;S&quot;</span>}, </div>
-<div class="line">                {<span class="stringliteral">&quot;i&quot;</span>, <span class="stringliteral">&quot;I&quot;</span>},</div>
-<div class="line">                {<span class="stringliteral">&quot;f&quot;</span>, <span class="stringliteral">&quot;F&quot;</span>},</div>
-<div class="line">                {<span class="stringliteral">&quot;d&quot;</span>, <span class="stringliteral">&quot;D&quot;</span>},</div>
-<div class="line">                {<span class="stringliteral">&quot;l&quot;</span>, <span class="stringliteral">&quot;L&quot;</span>},</div>
-<div class="line">            }</div>
-</div><!-- fragment -->
-<p>Map from variable type to string representation used by ROOT. </p>
-
-<p class="definition">Definition at line <a class="el" href="NtupleManager_8h_source.html#l00143">143</a> of file <a class="el" href="NtupleManager_8h_source.html">NtupleManager.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="NtupleManager_8h_source.html#l00069">addVar()</a>.</p>
 
 </div>
 </div>
@@ -395,12 +368,10 @@ template&lt;typename T &gt; </div>
 <li>Framework/src/<a class="el" href="NtupleManager_8cxx_source.html">NtupleManager.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1NtupleManager_html_aa5e3f4d37115bc0059c1dfb5490e2ab1"><div class="ttname"><a href="classldmx_1_1NtupleManager.html#aa5e3f4d37115bc0059c1dfb5490e2ab1">ldmx::NtupleManager::NtupleManager</a></div><div class="ttdeci">NtupleManager()</div><div class="ttdoc">Private constructor to prevent instantiation.</div><div class="ttdef"><b>Definition:</b> <a href="NtupleManager_8cxx_source.html#l00008">NtupleManager.cxx:8</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NtupleManager_html_a76000fb58efe4c18edbe91c2e76b5c2b"><div class="ttname"><a href="classldmx_1_1NtupleManager.html#a76000fb58efe4c18edbe91c2e76b5c2b">ldmx::NtupleManager::rtype_</a></div><div class="ttdeci">const std::map&lt; const char *, std::string, cmpStr &gt; rtype_</div><div class="ttdoc">Map from variable type to string representation used by ROOT.</div><div class="ttdef"><b>Definition:</b> <a href="NtupleManager_8h_source.html#l00143">NtupleManager.h:143</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NtupleManager_html_aa5e3f4d37115bc0059c1dfb5490e2ab1"><div class="ttname"><a href="classldmx_1_1NtupleManager.html#aa5e3f4d37115bc0059c1dfb5490e2ab1">ldmx::NtupleManager::NtupleManager</a></div><div class="ttdeci">NtupleManager()</div><div class="ttdoc">Private constructor to prevent instantiation.</div><div class="ttdef"><b>Definition:</b> <a href="NtupleManager_8cxx_source.html#l00006">NtupleManager.cxx:6</a></div></div>
 <div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NtupleManager_html_a787f9d482c44ed117534d64aad1d2e81"><div class="ttname"><a href="classldmx_1_1NtupleManager.html#a787f9d482c44ed117534d64aad1d2e81">ldmx::NtupleManager::instance_</a></div><div class="ttdeci">static NtupleManager * instance_</div><div class="ttdoc">NtupleManager instance.</div><div class="ttdef"><b>Definition:</b> <a href="NtupleManager_8h_source.html#l00134">NtupleManager.h:134</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NtupleManager_html_ab672fc24557bd1112f4ca7659d0b8eda"><div class="ttname"><a href="classldmx_1_1NtupleManager.html#ab672fc24557bd1112f4ca7659d0b8eda">ldmx::NtupleManager::variables_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, vtype &gt; variables_</div><div class="ttdoc">Container for tree leaves.</div><div class="ttdef"><b>Definition:</b> <a href="NtupleManager_8h_source.html#l00140">NtupleManager.h:140</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NtupleManager_html_a446590f04ef059454c832f9542d819f6"><div class="ttname"><a href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">ldmx::NtupleManager::trees_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, TTree * &gt; trees_</div><div class="ttdoc">Container for ROOT trees.</div><div class="ttdef"><b>Definition:</b> <a href="NtupleManager_8h_source.html#l00137">NtupleManager.h:137</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NtupleManager_html_a0f4952669e9e8275d806e588be95b90c"><div class="ttname"><a href="classldmx_1_1NtupleManager.html#a0f4952669e9e8275d806e588be95b90c">ldmx::NtupleManager::variables_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, variable_type &gt; variables_</div><div class="ttdoc">Container for tree leaves.</div><div class="ttdef"><b>Definition:</b> <a href="NtupleManager_8h_source.html#l00147">NtupleManager.h:147</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NtupleManager_html_a446590f04ef059454c832f9542d819f6"><div class="ttname"><a href="classldmx_1_1NtupleManager.html#a446590f04ef059454c832f9542d819f6">ldmx::NtupleManager::trees_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, TTree * &gt; trees_</div><div class="ttdoc">Container for ROOT trees.</div><div class="ttdef"><b>Definition:</b> <a href="NtupleManager_8h_source.html#l00144">NtupleManager.h:144</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

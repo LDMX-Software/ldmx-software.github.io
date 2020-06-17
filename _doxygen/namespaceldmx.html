@@ -81,8 +81,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1ClusterAlgoResult.html">ClusterAlgoResult</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains details about the clustering algorithm.  <a href="classldmx_1_1ClusterAlgoResult.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1cmpStr.html">cmpStr</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1ConfigurePython.html">ConfigurePython</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class which reads/executes a python script and creates a <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a> object based on the input.  <a href="classldmx_1_1ConfigurePython.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,7 +233,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HexPrism.html">HexPrism</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the necessary geometry details for a hexagonal prism.  <a href="structldmx_1_1HexPrism.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Histogram1DBuilder.html">Histogram1DBuilder</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HistogramHelper.html">HistogramHelper</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HistogramInfo.html">HistogramInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates the information required to create a histogram.  <a href="structldmx_1_1HistogramInfo.html#details">More...</a><br /></td></tr>
@@ -562,6 +560,8 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>areScorePlaneH
 <tr class="separator:aecf550162bc715098edb1ddc3cb01e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5e2e996f1b52d5877ab36b92ab5f4f8"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceldmx.html#ad5e2e996f1b52d5877ab36b92ab5f4f8">stringListMember</a> (PyObject *owner, const char *listname)</td></tr>
 <tr class="separator:ad5e2e996f1b52d5877ab36b92ab5f4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b4994d9056c05dfcd5dd81e9e55174"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceldmx.html#ac0b4994d9056c05dfcd5dd81e9e55174">doubleListMember</a> (PyObject *owner, const char *listname)</td></tr>
+<tr class="separator:ac0b4994d9056c05dfcd5dd81e9e55174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a37ded25b46ef2031ee10d2700874a8"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceldmx.html#a6a37ded25b46ef2031ee10d2700874a8">operator&lt;&lt;</a> (std::ostream &amp;stream, const <a class="el" href="classldmx_1_1LHEParticle.html">LHEParticle</a> &amp;particle)</td></tr>
 <tr class="separator:a6a37ded25b46ef2031ee10d2700874a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -643,7 +643,7 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </div><div class="memdoc">
 <p>Typedef for <a class="el" href="classldmx_1_1EventProcessorFactory.html" title="Singleton module factory that creates EventProcessor objects.">EventProcessorFactory</a> use. </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00039">39</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00041">41</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 
 </div>
 </div>
@@ -724,6 +724,81 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ac0b4994d9056c05dfcd5dd81e9e55174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b4994d9056c05dfcd5dd81e9e55174">&#9670;&nbsp;</a></span>doubleListMember()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;double&gt; ldmx::doubleListMember </td>
+          <td>(</td>
+          <td class="paramtype">PyObject *&#160;</td>
+          <td class="paramname"><em>owner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>listname</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get a double list member of the input owner.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classldmx_1_1Exception.html" title="Standard base exception class with some useful output information.">Exception</a></td><td>if input name does not reference a python list object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">owner</td><td>python object to look for the list member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>name of list member of python object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector of doubles containing the entries in the python member list </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00189">189</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                                                                       {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">auto</span> pylist = PyObject_GetAttrString( owner , listname );</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">if</span> ( !PyList_Check(pylist) ) {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="stringliteral">&quot;BadType&quot;</span>,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="stringliteral">&quot;&#39;&quot;</span> + std::string(listname) + <span class="stringliteral">&quot;&#39; is not a python list as expected.&quot;</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    );</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        std::vector&lt;double&gt; list;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">for</span> ( Py_ssize_t i = 0; i &lt; PyList_Size(pylist); i++ ) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            PyObject *elem = PyList_GetItem(pylist , i );</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            list.push_back( PyFloat_AsDouble(elem) );</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            Py_DECREF( elem );</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> std::move(list);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00208">ldmx::ConfigurePython::ConfigurePython()</a>.</p>
+
+</div>
+</div>
 <a id="aa4aa4fba8a331335fb2eba97d6c0b3bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4aa4fba8a331335fb2eba97d6c0b3bc">&#9670;&nbsp;</a></span>getPyInt()</h2>
 
@@ -757,18 +832,18 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the value stored in it </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00110">110</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                         {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">int</span> retval(0);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        retval = PyInt_AsLong(pyObj);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        retval = PyLong_AsLong(pyObj);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00109">109</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                         {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">int</span> retval(0);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        retval = PyInt_AsLong(pyObj);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        retval = PyLong_AsLong(pyObj);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00145">intMember()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00143">intMember()</a>.</p>
 
 </div>
 </div>
@@ -805,20 +880,20 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the value stored in it </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00090">90</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                  {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        std::string retval;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        retval = PyString_AsString(pyObj);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        PyObject* pyStr = PyUnicode_AsEncodedString(pyObj, <span class="stringliteral">&quot;utf-8&quot;</span>,<span class="stringliteral">&quot;Error ~&quot;</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        retval = PyBytes_AS_STRING(pyStr);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        Py_XDECREF(pyStr);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00089">89</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                                  {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::string retval;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        retval = PyString_AsString(pyObj);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        PyObject* pyStr = PyUnicode_AsEncodedString(pyObj, <span class="stringliteral">&quot;utf-8&quot;</span>,<span class="stringliteral">&quot;Error ~&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        retval = PyBytes_AS_STRING(pyStr);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        Py_XDECREF(pyStr);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00388">ldmx::ConfigurePython::getParameters()</a>, <a class="el" href="ConfigurePython_8cxx_source.html#l00164">stringListMember()</a>, and <a class="el" href="ConfigurePython_8cxx_source.html#l00128">stringMember()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00407">ldmx::ConfigurePython::getParameters()</a>, <a class="el" href="ConfigurePython_8cxx_source.html#l00161">stringListMember()</a>, and <a class="el" href="ConfigurePython_8cxx_source.html#l00127">stringMember()</a>.</p>
 
 </div>
 </div>
@@ -855,15 +930,15 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>newly allocated wide char string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00040">40</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> cSize = mbstowcs(NULL,cstr,0)+1;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">wchar_t</span>* wc = <span class="keyword">new</span> <span class="keywordtype">wchar_t</span>[cSize];</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        mbstowcs( wc , cstr , cSize );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> wc;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00039">39</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> cSize = mbstowcs(NULL,cstr,0)+1;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">wchar_t</span>* wc = <span class="keyword">new</span> <span class="keywordtype">wchar_t</span>[cSize];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        mbstowcs( wc , cstr , cSize );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> wc;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00184">ldmx::ConfigurePython::ConfigurePython()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00208">ldmx::ConfigurePython::ConfigurePython()</a>.</p>
 
 </div>
 </div>
@@ -910,20 +985,19 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value of integer member </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00145">145</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">long</span> retval(0);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        PyObject* temp = PyObject_GetAttrString(owner, name.c_str());</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> (temp != 0) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            retval = <a class="code" href="namespaceldmx.html#aa4aa4fba8a331335fb2eba97d6c0b3bc">getPyInt</a>(temp);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            Py_DECREF(temp);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00143">143</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordtype">long</span> retval(0);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        PyObject* temp = PyObject_GetAttrString(owner, name.c_str());</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">if</span> (temp != 0) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            retval = <a class="code" href="namespaceldmx.html#aa4aa4fba8a331335fb2eba97d6c0b3bc">getPyInt</a>(temp);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ConfigurePython_8cxx_source.html#l00110">getPyInt()</a>.</p>
+<p class="reference">References <a class="el" href="ConfigurePython_8cxx_source.html#l00109">getPyInt()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00184">ldmx::ConfigurePython::ConfigurePython()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00208">ldmx::ConfigurePython::ConfigurePython()</a>.</p>
 
 </div>
 </div>
@@ -960,16 +1034,16 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if an integer python object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00073">73</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                         {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> PyInt_Check(pyObj);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> PyLong_Check(pyObj);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00072">72</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                         {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> PyInt_Check(pyObj);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> PyLong_Check(pyObj);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00388">ldmx::ConfigurePython::getParameters()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00407">ldmx::ConfigurePython::getParameters()</a>.</p>
 
 </div>
 </div>
@@ -1006,16 +1080,16 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if a string python object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00056">56</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                            {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> PyString_Check(pyObj);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> PyUnicode_Check(pyObj);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00055">55</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                            {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#if PY_MAJOR_VERSION &lt; 3</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> PyString_Check(pyObj);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> PyUnicode_Check(pyObj);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00388">ldmx::ConfigurePython::getParameters()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00407">ldmx::ConfigurePython::getParameters()</a>.</p>
 
 </div>
 </div>
@@ -1111,30 +1185,29 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector of strings containing the entries in the python member list </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00164">164</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                                                                          {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">auto</span> pylist = PyObject_GetAttrString( owner , listname );</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span> ( !PyList_Check(pylist) ) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    <span class="stringliteral">&quot;BadType&quot;</span>,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    <span class="stringliteral">&quot;&#39;&quot;</span> + std::string(listname) + <span class="stringliteral">&quot;&#39; is not a python list as expected.&quot;</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    );</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        std::vector&lt;std::string&gt; list;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">for</span> ( Py_ssize_t i = 0; i &lt; PyList_Size(pylist); i++ ) {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            PyObject *elem = PyList_GetItem(pylist , i );</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            list.push_back( <a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>( elem ) );</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            Py_DECREF( elem );</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        Py_DECREF(pylist);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span> std::move(list);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00161">161</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                                                          {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">auto</span> pylist = PyObject_GetAttrString( owner , listname );</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> ( !PyList_Check(pylist) ) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <span class="stringliteral">&quot;BadType&quot;</span>,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    <span class="stringliteral">&quot;&#39;&quot;</span> + std::string(listname) + <span class="stringliteral">&quot;&#39; is not a python list as expected.&quot;</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    );</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        std::vector&lt;std::string&gt; list;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">for</span> ( Py_ssize_t i = 0; i &lt; PyList_Size(pylist); i++ ) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            PyObject *elem = PyList_GetItem(pylist , i );</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            list.push_back( <a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>( elem ) );</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            Py_DECREF( elem );</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> std::move(list);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, and <a class="el" href="ConfigurePython_8cxx_source.html#l00090">getPyString()</a>.</p>
+<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, and <a class="el" href="ConfigurePython_8cxx_source.html#l00089">getPyString()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00184">ldmx::ConfigurePython::ConfigurePython()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00208">ldmx::ConfigurePython::ConfigurePython()</a>.</p>
 
 </div>
 </div>
@@ -1181,20 +1254,19 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value of string member </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00128">128</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                                                          {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        std::string retval;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        PyObject* temp = PyObject_GetAttrString(owner, name.c_str());</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">if</span> (temp != 0) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            retval = <a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>(temp);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            Py_DECREF(temp);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="ConfigurePython_8cxx_source.html#l00127">127</a> of file <a class="el" href="ConfigurePython_8cxx_source.html">ConfigurePython.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                                          {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        std::string retval;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        PyObject* temp = PyObject_GetAttrString(owner, name.c_str());</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">if</span> (temp != 0) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            retval = <a class="code" href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">getPyString</a>(temp);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ConfigurePython_8cxx_source.html#l00090">getPyString()</a>.</p>
+<p class="reference">References <a class="el" href="ConfigurePython_8cxx_source.html#l00089">getPyString()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00184">ldmx::ConfigurePython::ConfigurePython()</a>, and <a class="el" href="ConfigurePython_8cxx_source.html#l00388">ldmx::ConfigurePython::getParameters()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00208">ldmx::ConfigurePython::ConfigurePython()</a>, and <a class="el" href="ConfigurePython_8cxx_source.html#l00407">ldmx::ConfigurePython::getParameters()</a>.</p>
 
 </div>
 </div>
@@ -1257,9 +1329,9 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="anamespaceldmx_html_a8ec0806618c7d0cd6801d23bb5ce01b7"><div class="ttname"><a href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">ldmx::getPyString</a></div><div class="ttdeci">static std::string getPyString(PyObject *pyObj)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00090">ConfigurePython.cxx:90</a></div></div>
+<div class="ttc" id="anamespaceldmx_html_a8ec0806618c7d0cd6801d23bb5ce01b7"><div class="ttname"><a href="namespaceldmx.html#a8ec0806618c7d0cd6801d23bb5ce01b7">ldmx::getPyString</a></div><div class="ttdeci">static std::string getPyString(PyObject *pyObj)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00089">ConfigurePython.cxx:89</a></div></div>
 <div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
-<div class="ttc" id="anamespaceldmx_html_aa4aa4fba8a331335fb2eba97d6c0b3bc"><div class="ttname"><a href="namespaceldmx.html#aa4aa4fba8a331335fb2eba97d6c0b3bc">ldmx::getPyInt</a></div><div class="ttdeci">static int getPyInt(PyObject *pyObj)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00110">ConfigurePython.cxx:110</a></div></div>
+<div class="ttc" id="anamespaceldmx_html_aa4aa4fba8a331335fb2eba97d6c0b3bc"><div class="ttname"><a href="namespaceldmx.html#aa4aa4fba8a331335fb2eba97d6c0b3bc">ldmx::getPyInt</a></div><div class="ttdeci">static int getPyInt(PyObject *pyObj)</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8cxx_source.html#l00109">ConfigurePython.cxx:109</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

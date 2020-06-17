@@ -54,7 +54,7 @@ $(function() {
 <p>Encapsulates the information required to create a histogram.  
  <a href="structldmx_1_1HistogramInfo.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="ConfigurePython_8h_source.html">ConfigurePython.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="FrameworkDef_8h_source.html">FrameworkDef.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -66,25 +66,25 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HistogramInfo.html#a15de11313831fa1bdc42498727527787">xLabel_</a></td></tr>
 <tr class="memdesc:a15de11313831fa1bdc42498727527787"><td class="mdescLeft">&#160;</td><td class="mdescRight">X axis label. <br /></td></tr>
 <tr class="separator:a15de11313831fa1bdc42498727527787"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b38f02399936913723aed2c163bbd7e"><td class="memItemLeft" align="right" valign="top"><a id="a2b38f02399936913723aed2c163bbd7e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HistogramInfo.html#a2b38f02399936913723aed2c163bbd7e">bins_</a></td></tr>
-<tr class="memdesc:a2b38f02399936913723aed2c163bbd7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of bins. <br /></td></tr>
-<tr class="separator:a2b38f02399936913723aed2c163bbd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a499144c5243a16770c24014bcd142a38"><td class="memItemLeft" align="right" valign="top"><a id="a499144c5243a16770c24014bcd142a38"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HistogramInfo.html#a499144c5243a16770c24014bcd142a38">xmin_</a></td></tr>
-<tr class="memdesc:a499144c5243a16770c24014bcd142a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum value of the histogram axis. <br /></td></tr>
-<tr class="separator:a499144c5243a16770c24014bcd142a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a788e921a62341ac176351fcadaac0264"><td class="memItemLeft" align="right" valign="top"><a id="a788e921a62341ac176351fcadaac0264"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HistogramInfo.html#a788e921a62341ac176351fcadaac0264">xmax_</a></td></tr>
-<tr class="memdesc:a788e921a62341ac176351fcadaac0264"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum value of the histogram axis. <br /></td></tr>
-<tr class="separator:a788e921a62341ac176351fcadaac0264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042d02d776e08b0f7794240543626d56"><td class="memItemLeft" align="right" valign="top"><a id="a042d02d776e08b0f7794240543626d56"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HistogramInfo.html#a042d02d776e08b0f7794240543626d56">xbins_</a></td></tr>
+<tr class="memdesc:a042d02d776e08b0f7794240543626d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bin Edges for X axis. <br /></td></tr>
+<tr class="separator:a042d02d776e08b0f7794240543626d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1a074d6f83ccad98686c9d765d75ed"><td class="memItemLeft" align="right" valign="top"><a id="a1c1a074d6f83ccad98686c9d765d75ed"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HistogramInfo.html#a1c1a074d6f83ccad98686c9d765d75ed">yLabel_</a></td></tr>
+<tr class="memdesc:a1c1a074d6f83ccad98686c9d765d75ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y axis label. <br /></td></tr>
+<tr class="separator:a1c1a074d6f83ccad98686c9d765d75ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac367ebaf643a2077aa94c8685dad6ea3"><td class="memItemLeft" align="right" valign="top"><a id="ac367ebaf643a2077aa94c8685dad6ea3"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structldmx_1_1HistogramInfo.html#ac367ebaf643a2077aa94c8685dad6ea3">ybins_</a></td></tr>
+<tr class="memdesc:ac367ebaf643a2077aa94c8685dad6ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bin Edges for Y axis (non-empty ==&gt; 2D histogram) <br /></td></tr>
+<tr class="separator:ac367ebaf643a2077aa94c8685dad6ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Encapsulates the information required to create a histogram. </p>
 
-<p class="definition">Definition at line <a class="el" href="ConfigurePython_8h_source.html#l00036">36</a> of file <a class="el" href="ConfigurePython_8h_source.html">ConfigurePython.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FrameworkDef_8h_source.html#l00026">26</a> of file <a class="el" href="FrameworkDef_8h_source.html">FrameworkDef.h</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Framework/include/Framework/<a class="el" href="ConfigurePython_8h_source.html">ConfigurePython.h</a></li>
+<li>Framework/include/Framework/<a class="el" href="FrameworkDef_8h_source.html">FrameworkDef.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
