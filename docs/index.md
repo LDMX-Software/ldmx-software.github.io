@@ -11,6 +11,7 @@ layout: default
 - [Generating Simulation Samples]({% link docs/Generating-Simulation-Samples.md %})
 - [Getting Started at SLAC](%{ link docs/Getting-Started-with-ldmx-sw-at-SLAC.md %})
 - [Running and Configuring ldmx]({% link docs/Running-and-configuring-ldmx-app.md %})
+- [Structure of Event Processors]({% link docs/Structure-of-Event-Processors.md %})
 - __Tutorials__
   - [Overview of ldmx-sw with examples specific to running at SLAC](https://tinyurl.com/y9lzvzwv)
   - [ldmx-sw tutorial](https://tinyurl.com/yd4w4vtf) (requires access to the LDMX space on the FNAL indico)
