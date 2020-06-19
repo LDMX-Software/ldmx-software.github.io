@@ -100,7 +100,7 @@ myHcalDigis.meanNoise = 0.05 #default is 0.02
 # tell the process what sequence to do the processors in
 p.sequence = [
     mySim,
-    EcalDigiProducer(), EcalRecProducer(),
+    digi.EcalDigiProducer(), digi.EcalRecProducer(),
     myHcalDigis
 ]
 
