@@ -17,10 +17,19 @@ a {
 
 }
 
+header, 
+section, 
+footer { 
+    float: left; 
+    width: 100%; 
+    clear: both; 
+}
+
 header { 
 
-    padding: 15px;
+    padding: 10px;
     background: darken(#333, 3%);
+    margin-top: -10px;
 
     h1,
     nav { display: inline-block; } 
@@ -83,4 +92,16 @@ nav {
             }
         }
     }
-} 
+}
+
+.intro {
+
+    text-align: center;
+    padding: 10px;  
+
+    p { 
+        font-size: 32pt;
+        line-height: 1em;
+        margin: 0;
+    }
+}
