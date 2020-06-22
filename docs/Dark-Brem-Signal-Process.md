@@ -11,18 +11,18 @@ The four parameters are detailed below.
 - APrimeMass
   - **required**
   - This is the mass of the A' in MeV. It _must_ match the mass of the A' that the LHE files were generated with.
-  - Example: `simulation.parameters[ "APrimeMass" ] = 10. #MeV`
-- darkbrem.madGraphFilePath
+  - Example: `simulation.APrimeMass = 10. #MeV`
+- darkbrem\_madGraphFilePath
   - **required**
   - Path to the LHE file that contains the e-->e-A' vertices.
-  - Example: `simulation.parameters[ "darkbrem.madgraphfilepath" ] = myVertices.lhe`
-- darkbrem.globalxsecfactor
+  - Example: `simulation.darkbrem_madgraphfilepath = myVertices.lhe`
+- darkbrem\_globalxsecfactor
   - Global factor to increase the dark brem cross section by.
   - The default for this optional variable is set to `1.`.
-  - Example: `simulation.parameters[ "darkbrem.globalxsecfactor" ] = 9000.`
-- darkbrem.method
+  - Example: `simulation.darkbrem_globalxsecfactor = 9000.`
+- darkbrem\_method
   - The method of how the model should interpret the imported vertices.
-  - Example: `simulation.parameters[ "darkbrem.method" ] = 1 #Forward Only`
+  - Example: `simulation.darkbrem_method = 1 #Forward Only`
   - There are three options:
 
 Method | Int to Pass | Default? | Description

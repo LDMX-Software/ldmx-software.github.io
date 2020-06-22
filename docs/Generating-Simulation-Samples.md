@@ -7,21 +7,19 @@ The generation of simulation samples is done mainly by the Geant4 package with s
 ### Basic Usage
 Running the simulation is just like any other producer in ldmx-sw. In your python configuration script, it is _required_ that you have the following lines (or equivalent):
 ```python
-# p is a Process created earlier in your py config script
-p.libraries.append( "libSimApplication.so" ) #ldmx-app needs to know where to find the Simulator
-mySimulator = ldmxcfg.Producer( "mySimulator" , "ldmx::Simulator" ) #create the simulator object
+from LDMX.SimApplication.simulator import simulator
+mySimulator = simulator( "mySimulator" ) #create the simulator object
 ```
 You can write your own detector description in the gdml format (if you want), but ldmx-sw already comes with several versions of the LDMX detector description. These versions are installed with it and can be accessed with some python (+ cmake!) magic:
 ```python
 from LDMX.Detectors.makePath import *
-mySimulator.parameters[ "detector" ] = makeDetectorPath( "ldmx-det-v12" )
-# you can choose any of the names of the directories in the Detectors/data directory to input to this python function
+mySimulator.setDetector( 'ldmx-det-v12' )
 ```
 Okay, `mySimulator` now is created and has been given a path to an LDMX detector description.
 What else is needed? Well, we need _at least_ one more thing. We need to tell the simulation _how_ to start the simulation. In Geant4 speak, this is called a "Primary Generator". In ldmx-sw, we already have several generators defined (more details on [Configuring the Simulation]({% link docs/Configuring-the-Simulation.md %})), but for this simple example, we will just import a standard generator.
 ```python
 from LDMX.SimApplication import generators
-mySimulator.parameters[ "generators" ] = [ generators.single_4gev_e_upstream_tagger() ]
+mySimulator.generators = [ generators.single_4gev_e_upstream_tagger() ]
 ```
 Now you can add `mySimulator` to the process sequence:
 ```python
@@ -81,38 +79,35 @@ from LDMX.Framework import ldmxcfg
 # Create the necessary process object (call this pass "sim")
 p = ldmxcfg.Process( "sim" )
 
-# Define necessary libraries that need to be loaded for these processors
-p.libraries = [
-    "libEventProc.so", #to load hcalDigis
-    "libEcal.so", #to load Ecal processors
-    "libSimApplication.so" #to load the Simulator
-]
-
 # import a template simulator and change some of its parameters
 from LDMX.SimApplication import generators
-from LDMX.Detectors.makePath import makeDetectorPath
+from LDMX.SimApplication import simulator
 
-mySim = ldmxcfg.Producer( "mySim" , "ldmx::Simulator" )
-mySim.parameters[ "detector" ] = makeDetectorPath( "ldmx-det-v12" )
-mySim.parameters[ "generators" ] = [ generators.single_4gev_e_upstream_tagger() ]
-mySim.parameters[ "runNumber" ] = 9001
+mySim = simulator.simulator( "mySim" )
+mySim.setDetector( 'ldmx-det-v12' )
+mySim.generators = [ generators.single_4gev_e_upstream_tagger() ]
+mySim.runNumber = 9001
+mySim.description = 'I am a basic working example!'
 
 # import template reconstruction processors
-from LDMX.Ecal.ecalDigis import ecalDigis
-from LDMX.Ecal.ecalRecon import ecalRecon
-from LDMX.EventProc.hcalDigis import hcalDigis
+from LDMX.Ecal import digi
+from LDMX.EventProc import hcal
+
+# can also modify templates before adding them to sequence
+myHcalDigis = hcal.HcalDigiProducer('myHcalDigis')
+myHcalDigis.meanNoise = 0.05 #default is 0.02
 
 # tell the process what sequence to do the processors in
 p.sequence = [
     mySim,
-    ecalDigis, ecalRecon,
-    hcalDigis
+    digi.EcalDigiProducer(), digi.EcalRecProducer(),
+    myHcalDigis
 ]
 
 # During production (simulation), maxEvents is used as the number
 # of events to simulate.
 # Other times (like when analyzing a file), maxEvents is used as
-# a cutoff to prevent ldmx-app from running over the entire file.
+# a cutoff to prevent fire from running over the entire file.
 p.maxEvents = 10
 
 # how frequently should the process print messages to the screen?

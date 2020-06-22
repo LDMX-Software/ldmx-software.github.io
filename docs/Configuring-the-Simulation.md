@@ -9,7 +9,7 @@ General
 
 Like any other Producer, the simulation is configured by passing parameters to it in the python configuration file.
 ```python
-simulation.parameters[ "parameterKey" ] = parameterValue
+simulation.parameterKey = parameterValue
 ```
 The parameter keys, types, accessing locations, and descriptions are documented on this page.
 A minimal working example is displayed on [Generating Simulation Samples]({% link docs/Generating-Simulation-Samples.md %})
@@ -34,15 +34,15 @@ The biasing parameters are given directly to the simulation and are listed below
 
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
-`biasing.enabled` | bool | DetectorConstruction and RunManager | Should we bias?
-`biasing.process` | string | DetectorConstruction | Geant4 process to bias
-`biasing.volume` | string | DetectorConstruction | Geant4 volume to bias inside of
-`biasing.particle` | string | DetectorConstruction and RunManager | Geant4 particle to bias
-`biasing.all` | bool | DetectorConstruction | Should Geant4 bias all particles of the input type?
-`biasing.incident` | bool | DetectorConstruction | Should Geant4 bias only the incident particle of the input type?
-`biasing.disableEMBiasing` | bool | DetectorConstruction | Should Geant4 disable down-biasing EM?
-`biasing.threshold` | double | DetectorConstruction | Minium energy threshold to bias (MeV)
-`biasing.factor` | int | DetectorConstruction | Factor to multiply cross-section by
+`biasing_enabled` | bool | DetectorConstruction and RunManager | Should we bias?
+`biasing_process` | string | DetectorConstruction | Geant4 process to bias
+`biasing_volume` | string | DetectorConstruction | Geant4 volume to bias inside of
+`biasing_particle` | string | DetectorConstruction and RunManager | Geant4 particle to bias
+`biasing_all` | bool | DetectorConstruction | Should Geant4 bias all particles of the input type?
+`biasing_incident` | bool | DetectorConstruction | Should Geant4 bias only the incident particle of the input type?
+`biasing_disableEMBiasing` | bool | DetectorConstruction | Should Geant4 disable down-biasing EM?
+`biasing_threshold` | double | DetectorConstruction | Minium energy threshold to bias (MeV)
+`biasing_factor` | int | DetectorConstruction | Factor to multiply cross-section by
 
 ### Dark Brem Process (Signal)
 
@@ -52,28 +52,29 @@ We do this using the following parameters.
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
 `APrimeMass` | double | APrimePhysics | (**required**) mass of A' to simulate with (MeV)
-`darkbrem.madgraphfilepath` | string | APrimePhysics | (**required**) full path to a LHE file with dark brem vertices in it (mass of A' must match)
-`darkbrem.method` | int | APrimePhysics | decision on how to interpret the LHE vertices
-`darkbrem.globalxsecfactor` | double | APrimePhysics | scaling number to multiply the cross section for the dark brem everywhere
+`darkbrem_madgraphfilepath` | string | APrimePhysics | (**required**) full path to a LHE file with dark brem vertices in it (mass of A' must match)
+`darkbrem_method` | int | APrimePhysics | decision on how to interpret the LHE vertices
+`darkbrem_globalxsecfactor` | double | APrimePhysics | scaling number to multiply the cross section for the dark brem everywhere
 
 A more full description of the Dark Brem process and how these parameters affect its abilities is described [on its own page]({% link docs/Dark-Brem-Signal-Process.md %}).
 
 UserActions
 ---
 
-Because of the wide variety and flexibility of Geant4's UserActions, we have implemented a way for these various classes to all be passed along with their parameters.
+Because of the wide variety and flexibility of Geant4's UserActions, 
+we have implemented a way for these various classes to all be passed along with their parameters.
 This method is extremely similar to how you create Event Processors and give them parameters.
 The best way to illustrate how to use one is with an example:
 ```python
 # First create the UserAction using the simcfg module
-from LDMX.Biasing import event_filters
-target_brem_filter = event_filters.targetBremFilter() #import template
+from LDMX.Biasing import filters
+target_brem_filter = filters.TargetBremFilter() #import template
 # Set the parameters that the UserAction uses
 # the template provides reasonable defaults, but you can change them
-target_brem_filter.parameters['recoilEnergyThreshold'] = 1500. #MeV - maximum recoil electron energy
-target_brem_filter.parameters['bremEnergyThreshold'] = 2500. #MeV - minimum brem energy
+target_brem_filter.recoilEnergyThreshold = 1500. #MeV - maximum recoil electron energy
+target_brem_filter.bremEnergyThreshold = 2500. #MeV - minimum brem energy
 # Then give the UserAction to the simulation so that it knows to use it
-simulation.parameters['actions'].append( target_brem_filter )
+simulation.actions.append( target_brem_filter )
 ```
 No matter the UserAction, the last line above is how you tell the simulation to use it.
 
@@ -93,21 +94,20 @@ The first type of filter aborts events if certain requirements aren't met.
 
 Filter | Requirement on Event
 ---|---
-`target_brem_filter()` | "hard-enough" brem in the target (hard-enough defined by the parameters)
-`ecal_pn_filter()` | PN interaction happens in the ECal
-`target_en_filter()` | EN interaction happens in the Target
-`target_pn_filter()` | PN interaction happens in the target
-`target_ap_filter()` | dark brem happens in the target
-`tagger_veto_filter()` | Primary electron doesn't lose fall below 3.8 GeV before reaching target
+`TargetBremFilter()` | "hard-enough" brem in the target (hard-enough defined by the parameters)
+`EcalProcessFilter()` | PN interaction happens in the ECal
+`TargetENFilter()` | EN interaction happens in the Target
+`TargetPNFilter()` | PN interaction happens in the target
+`DarkBremFilter()` | dark brem happens in the target
+`TaggerVetoFilter()` | Primary electron doesn't lose fall below 3.8 GeV before reaching target
 
 The other type of filter looks for tracks (what Geant4 call's individual particles) in Geant4 that match certain conditions and tell Geant4 (and our simulation) to save them in the output SimParticles collection.
 
 Filter | Keeps all tracks...
 ---|---
-`pn_track_filter()` | produced by the PN interaction
-`en_track_filter()` | produced by the EN interaction
-`ap_track_filter()` | produced by a dark brem
-
+`TrackProcessFilter.photo_nuclear()` | produced by the PN interaction
+`TrackProcessFilter.electro_nuclear()` | produced by the EN interaction
+`TrackProcessFilter.dark_brem()` | produced by a dark brem
 
 Generators
 ---
@@ -121,11 +121,11 @@ Parameter | Type | Accessed By | Description
 Like UserActions, PrimaryGenerator is a python class that you can create using the `LDMX.SimApplication.simcfg` python module. And actually, there are several helpful functions defined in the `LDMX.SimApplication.generators` python module. These helpful functions return the correct python class and set some helpful defaults. Look at that file for more details. The most widely used primary generator is a simple one: a single 4GeV electron fired from upstream of the tagger. You could use that generator in your simulation with the following lines:
 ```python
 from LDMX.SimApplication import generators
-simulation.parameters[ "generators" ] = [ generators.single_4gev_e_upstream_tagger() ]
+simulation.generators = [ generators.single_4gev_e_upstream_tagger() ]
 ```
 You can send generators parameters in the same way as EventProcessors and UserActions:
 ```python
-myGenerator.parameters[ "parameterKey" ] = parameterValue
+myGenerator.parameterKey = parameterValue
 ```
 
 Several of these generators can be used at once, although not all combinations have been tested.
@@ -140,7 +140,8 @@ from LDMX.SimApplication import generators
 This generator is the basic Geant4 particle gun. It can shoot one particle of a definite position and momentum into the simulation. Create a ParticleGun with:
 ```python
 myParticleGun = generators.gun( "myParticleGun" )
-# set the parameters
+# set the parameters, for example, to use electrons:
+myParticleGun.particle = 'e-'
 ```
 
 Parameter | Type | Accessed By | Description
@@ -170,9 +171,9 @@ myReSimFromECal = generators.ecalSP( "myReSimFromECal" , "<path-to-root-file>" )
 You also have access to the following variables if you need to tell the generator which scoring planes hits collection to use. These parameters are given reasonable defaults.
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
-`ecalSPHitsCollName` | string | RootSimFromEcalSP | Name of ECal Scoring Planes Hits collection created by simulation
-`ecalSPHitsPassName` | string | RootSimFromEcalSP | Name of pass that generated the collection you want to use
-`timeCutoff` | double | RootSimFromEcalSP | Maximum time to allow for a particle to to leave the ECal and be included in this re-sim
+`collection_name` | string | RootSimFromEcalSP | Name of ECal Scoring Planes Hits collection created by simulation
+`pass_name` | string | RootSimFromEcalSP | Name of pass that generated the collection you want to use
+`time_cutoff` | double | RootSimFromEcalSP | Maximum time to allow for a particle to to leave the ECal and be included in this re-sim
 
 #### Root Re-sim from primaries
 
@@ -185,8 +186,8 @@ myCompleteReSim = generators.completeReSim( "myCompleteReSim" , "<path-to-ROOT-f
 Similar to the previous generator, you also have access to the following variables if you need to tell the generator which SimParticles collection to use. These parameters are given reasonable defaults.
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
-`simParticleCollName` | string | RootCompleteReSim | Name of SimParticles collection created by simulation
-`simParticlePassName` | string | RootCompleteReSim | Name of pass that generated the collection you want to use
+`collection_name` | string | RootCompleteReSim | Name of SimParticles collection created by simulation
+`pass_name` | string | RootCompleteReSim | Name of pass that generated the collection you want to use
 
 #### Geant4's General Particle Source
 
