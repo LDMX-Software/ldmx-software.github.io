@@ -156,18 +156,16 @@ $(function() {
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }   </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">// forces Geant4 to use previous eventSeeds</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">// TODO remove this IO bottleneck</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::ofstream tmpout(<span class="stringliteral">&quot;tmpEvent.rndm&quot;</span>);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        std::string eventSeed = <a class="code" href="classldmx_1_1RootSimFromEcalSP.html#ab681455b94239a1522f763b7487bf245">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a72077dc95c6f43291e32170e1e0f32f6">getStringParameter</a>(<span class="stringliteral">&quot;eventSeed&quot;</span>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        tmpout &lt;&lt; eventSeed;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        tmpout.close();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">// Create an input stream with a copy of the event seed as content.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">// The input stream is then passed to the random engine to restore </span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// the state.</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        std::istringstream iss(<a class="code" href="classldmx_1_1RootSimFromEcalSP.html#ab681455b94239a1522f763b7487bf245">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a72077dc95c6f43291e32170e1e0f32f6">getStringParameter</a>(<span class="stringliteral">&quot;eventSeed&quot;</span>));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        G4Random::restoreFullState(iss); </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;} <span class="comment">//ldmx</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;} <span class="comment">//ldmx</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<a class="code" href="PrimaryGenerator_8h.html#a71118804d43e2a248ed985811c872b4f">DECLARE_GENERATOR</a>( <a class="code" href="namespaceldmx.html">ldmx</a> , RootSimFromEcalSP )</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<a class="code" href="PrimaryGenerator_8h.html#a71118804d43e2a248ed985811c872b4f">DECLARE_GENERATOR</a>( <a class="code" href="namespaceldmx.html">ldmx</a> , RootSimFromEcalSP )</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RootSimFromEcalSP_html_a3f6176167a1315f4307d841c72070c30"><div class="ttname"><a href="classldmx_1_1RootSimFromEcalSP.html#a3f6176167a1315f4307d841c72070c30">ldmx::RootSimFromEcalSP::ifile_</a></div><div class="ttdeci">std::unique_ptr&lt; EventFile &gt; ifile_</div><div class="ttdef"><b>Definition:</b> <a href="RootSimFromEcalSP_8h_source.html#l00097">RootSimFromEcalSP.h:97</a></div></div>

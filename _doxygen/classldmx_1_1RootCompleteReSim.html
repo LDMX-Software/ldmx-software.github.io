@@ -269,14 +269,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//forces Geant4 to use the evenSeed from the last time by writing it to the file it reads by default</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">//TODO remove this I/O bottleneck</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::ofstream tmpout(<span class="stringliteral">&quot;tmpEvent.rndm&quot;</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::string eventSeed = <a class="code" href="classldmx_1_1RootCompleteReSim.html#adca27a5bb5aef18bd3c1556455cac0f9">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a72077dc95c6f43291e32170e1e0f32f6">getStringParameter</a>(<span class="stringliteral">&quot;eventSeed&quot;</span>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        tmpout &lt;&lt; eventSeed;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        tmpout.close();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">// Create an input stream with a copy of the event seed as content.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// The input stream is then passed to the random engine to restore </span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// the state.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::istringstream iss(<a class="code" href="classldmx_1_1RootCompleteReSim.html#adca27a5bb5aef18bd3c1556455cac0f9">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a72077dc95c6f43291e32170e1e0f32f6">getStringParameter</a>(<span class="stringliteral">&quot;eventSeed&quot;</span>));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        G4Random::restoreFullState(iss); </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Event_8h_source.html#l00057">ldmx::Event::getEventHeader()</a>, <a class="el" href="Event_8h_source.html#l00229">ldmx::Event::getMap()</a>, <a class="el" href="EventHeader_8h_source.html#l00184">ldmx::EventHeader::getStringParameter()</a>, <a class="el" href="RootCompleteReSim_8h_source.html#l00092">ievent_</a>, <a class="el" href="RootCompleteReSim_8h_source.html#l00087">ifile_</a>, <a class="el" href="RootCompleteReSim_8h_source.html#l00077">simParticleCollName_</a>, and <a class="el" href="RootCompleteReSim_8h_source.html#l00082">simParticlePassName_</a>.</p>
 

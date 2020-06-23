@@ -54,21 +54,23 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classldmx_1_1Producer.html" title="Base class for a module which produces a data product.">Producer</a> that runs Geant4 simulation inside of ldmx-app.  
+<p><a class="el" href="classldmx_1_1Producer.html" title="Base class for a module which produces a data product.">Producer</a> that wraps the Geant4 simulation engine so it can be run using the fire app.  
  <a href="classldmx_1_1Simulator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Simulator_8h_source.html">Simulator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a897746a71dc38dbc509b747291ec26f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#a897746a71dc38dbc509b747291ec26f6">Simulator</a> (const std::string &amp;name, <a class="el" href="classldmx_1_1Process.html">ldmx::Process</a> &amp;process)</td></tr>
-<tr class="separator:a897746a71dc38dbc509b747291ec26f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee0fe640bbe0f38bb7a6f886515ef9d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#aee0fe640bbe0f38bb7a6f886515ef9d3">~Simulator</a> ()</td></tr>
+<tr class="memitem:a19a8badcaa7b35d8f178a7c576aae27f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#a19a8badcaa7b35d8f178a7c576aae27f">Simulator</a> (const std::string &amp;name, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td></tr>
+<tr class="separator:a19a8badcaa7b35d8f178a7c576aae27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0fe640bbe0f38bb7a6f886515ef9d3"><td class="memItemLeft" align="right" valign="top"><a id="aee0fe640bbe0f38bb7a6f886515ef9d3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#aee0fe640bbe0f38bb7a6f886515ef9d3">~Simulator</a> ()</td></tr>
+<tr class="memdesc:aee0fe640bbe0f38bb7a6f886515ef9d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="separator:aee0fe640bbe0f38bb7a6f886515ef9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf3d58c825463223741faff0bd99060a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#aaf3d58c825463223741faff0bd99060a">configure</a> (<a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;parameters) final override</td></tr>
 <tr class="separator:aaf3d58c825463223741faff0bd99060a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe92b4c5503053b1e8a0618b27afc6a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#afe92b4c5503053b1e8a0618b27afc6a2">produce</a> (<a class="el" href="classldmx_1_1Event.html">ldmx::Event</a> &amp;event) final override</td></tr>
-<tr class="separator:afe92b4c5503053b1e8a0618b27afc6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5426ca327739ca452dc569f213e9c072"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#a5426ca327739ca452dc569f213e9c072">produce</a> (<a class="el" href="classldmx_1_1Event.html">Event</a> &amp;event) final override</td></tr>
+<tr class="separator:a5426ca327739ca452dc569f213e9c072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a12fd90e51f775d098869bd89628e2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#a9a12fd90e51f775d098869bd89628e2e">onFileOpen</a> (<a class="el" href="classldmx_1_1EventFile.html">EventFile</a> &amp;eventFile) final override</td></tr>
 <tr class="separator:a9a12fd90e51f775d098869bd89628e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8773a87189373cd0cdccfe90f4817bdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#a8773a87189373cd0cdccfe90f4817bdb">onFileClose</a> (<a class="el" href="classldmx_1_1EventFile.html">EventFile</a> &amp;eventFile) final override</td></tr>
@@ -102,6 +104,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a9ed6e6a7649c1ae45bfe5d560d8e93b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#a9ed6e6a7649c1ae45bfe5d560d8e93b1">allowed</a> (const std::string &amp;command) const</td></tr>
 <tr class="separator:a9ed6e6a7649c1ae45bfe5d560d8e93b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fdd32b857f9c928b26feedef6293376"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Simulator.html#a7fdd32b857f9c928b26feedef6293376">setSeeds</a> (std::vector&lt; int &gt; seeds)</td></tr>
+<tr class="separator:a7fdd32b857f9c928b26feedef6293376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -159,13 +163,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aba2a1ee9a8ceeed570810cfe402d5195 inherit pro_attribs_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classldmx_1_1Producer.html" title="Base class for a module which produces a data product.">Producer</a> that runs Geant4 simulation inside of ldmx-app. </p>
+<div class="textblock"><p><a class="el" href="classldmx_1_1Producer.html" title="Base class for a module which produces a data product.">Producer</a> that wraps the Geant4 simulation engine so it can be run using the fire app. </p>
 <p>Most (if not all) of the heavy lifting is done in the classes in the Sim* modules. This producer is mainly focused on calling appropriate functions at the right time in the processing chain. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00053">53</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00047">47</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a897746a71dc38dbc509b747291ec26f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a897746a71dc38dbc509b747291ec26f6">&#9670;&nbsp;</a></span>Simulator()</h2>
+<a id="a19a8badcaa7b35d8f178a7c576aae27f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a8badcaa7b35d8f178a7c576aae27f">&#9670;&nbsp;</a></span>Simulator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,48 +194,25 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Constructor.</p>
-<p>Blank <a class="el" href="classldmx_1_1Producer.html" title="Base class for a module which produces a data product.">Producer</a> constructor Constructs object that are non-configurable.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Name for this instance of the class. </td></tr>
-    <tr><td class="paramname">process</td><td>The <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a> class assocaited with <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a>, provided by the Framework. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name for this instance of the class. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">process</td><td>The <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a> class assocaited with <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a>, provided by the Framework. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00043">43</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                                                    : <a class="code" href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">Producer</a>( name , process ) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// Get the ui manager from geant</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">//      This pointer is handled by Geant4</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a> = G4UImanager::GetUIpointer();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00044">44</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                                    : <a class="code" href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">Producer</a>( name , process ) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// Get the ui manager from geant</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">//      This pointer is handled by Geant4</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a> = G4UImanager::GetUIpointer();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00137">uiManager_</a>.</p>
+<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00136">uiManager_</a>.</p>
 
-</div>
-</div>
-<a id="aee0fe640bbe0f38bb7a6f886515ef9d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee0fe640bbe0f38bb7a6f886515ef9d3">&#9670;&nbsp;</a></span>~Simulator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ldmx::Simulator::~Simulator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Destructor.</p>
-<p>Deletes hanging pointers </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00051">51</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{ }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -259,23 +240,23 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Check if the input command is allowed to be run.</p>
-<p>Looks for sub-strings matching the ones listed as an invalid command. These invalid commands are mostly commands where control has been handed over to <a class="el" href="classldmx_1_1Simulator.html" title="Producer that runs Geant4 simulation inside of ldmx-app.">Simulator</a>. </p>
+<p>Looks for sub-strings matching the ones listed as an invalid command. These invalid commands are mostly commands where control has been handed over to <a class="el" href="classldmx_1_1Simulator.html" title="Producer that wraps the Geant4 simulation engine so it can be run using the fire app.">Simulator</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00240">240</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                                          {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">const</span> std::string &amp;invalidSubstring : <a class="code" href="classldmx_1_1Simulator.html#a0ae2c251bb41fa1c771e148eab04918d">invalidCommands_</a> ) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">if</span> ( command.find( invalidSubstring ) != std::string::npos ) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="comment">//found invalid substring in this command ==&gt; NOT ALLOWED</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">//checked all invalid commands ==&gt; ALLOWED</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00233">233</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                                          {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">const</span> std::string &amp;invalidSubstring : <a class="code" href="classldmx_1_1Simulator.html#a0ae2c251bb41fa1c771e148eab04918d">invalidCommands_</a> ) {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">if</span> ( command.find( invalidSubstring ) != std::string::npos ) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="comment">//found invalid substring in this command ==&gt; NOT ALLOWED</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment">//checked all invalid commands ==&gt; ALLOWED</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00147">invalidCommands_</a>.</p>
+<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00146">invalidCommands_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00053">configure()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00158">onProcessStart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00054">configure()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00156">onProcessStart()</a>.</p>
 
 </div>
 </div>
@@ -305,87 +286,84 @@ Additional Inherited Members</h2></td></tr>
 <p>Callback for the processor to configure itself from the given set of parameters.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parameters</td><td>ParameterSet for configuration. </td></tr>
+    <tr><td class="paramname">parameters</td><td>The parameter set used to configure this processor. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classldmx_1_1EventProcessor.html#a9482dccbb5ce7bc2efe0537c679c0ec0">ldmx::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00053">53</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// parameters used to configure the simulation</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a> = parameters; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// Set the run number. If not specified, the run number is set to 0. </span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">int</span> runNumber = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;( <span class="stringliteral">&quot;runNumber&quot;</span> );</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#a782a4d2a8468fff7f149dbe93812a684">setRunNumber</a>( runNumber );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// Set the verbosity level.  The default level  is 0.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;verbosity&quot;</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// If the verbosity level is set to 0, </span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// If the verbosity level is &gt; 1, log everything to a file. Otherwise,</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// dump the output. If a prefix has been specified, append it ot the </span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">// log message. </span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">auto</span> loggingPrefix = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;logging_prefix&quot;</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> == 0 ) <a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a> = std::make_unique&lt;BatchSession&gt;();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> &gt; 1 ) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span> ( loggingPrefix.empty() ) <a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a> = std::make_unique&lt;LoggedSession&gt;();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">else</span> <a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a> = std::make_unique&lt;LoggedSession&gt;( loggingPrefix + <span class="stringliteral">&quot;_G4cout.log&quot;</span> , loggingPrefix + <span class="stringliteral">&quot;_G4cerr.log&quot;</span> );</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a> != <span class="keyword">nullptr</span>) <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a>-&gt;SetCoutDestination( <a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a>.get() ); </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// Instantiate the run manager.  </span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a> = std::make_unique&lt;RunManager&gt;(parameters);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// Instantiate the GDML parser and corresponding messenger owned and</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// managed by DetectorConstruction</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        G4GDMLParser *parser = <span class="keyword">new</span> G4GDMLParser;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// Instantiate the class so cascade parameters can be set.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        G4CascadeParameters::Instance();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// Set the DetectorConstruction instance used to build the detector </span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// from the GDML description. </span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;SetUserInitialization( <span class="keyword">new</span> DetectorConstruction( parser , parameters ) );</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// Store the random numbers used to generate an event. </span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;SetRandomNumberStore( <span class="keyword">true</span> );</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// Parse the detector geometry and validate if specified.</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">auto</span> detectorPath{<a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;detector&quot;</span>)};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">auto</span> validateGeometry{<a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; <span class="keywordtype">bool</span> &gt;(<span class="stringliteral">&quot;validate_detector&quot;</span>)}; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> &gt; 0 ) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[ Simulator ] : Reading in geometry from &#39;&quot;</span> &lt;&lt; detectorPath &lt;&lt; <span class="stringliteral">&quot;&#39;... &quot;</span> &lt;&lt; std::flush;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        G4GeometryManager::GetInstance()-&gt;OpenGeometry();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        parser-&gt;Read( detectorPath, validateGeometry );</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;DefineWorldVolume( parser-&gt;GetWorldVolume() );</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">auto</span> preInitCommands = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::vector&lt; std::string &gt; &gt;(<span class="stringliteral">&quot;preInitCommands&quot;</span> ); </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">const</span> std::string&amp; cmd : preInitCommands ) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a9ed6e6a7649c1ae45bfe5d560d8e93b1">allowed</a>(cmd) ) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordtype">int</span> g4Ret = <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a>-&gt;ApplyCommand( cmd );</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span> ( g4Ret &gt; 0 ) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                            <span class="stringliteral">&quot;PreInitCmd&quot;</span>,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                            <span class="stringliteral">&quot;Pre Initialization command &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; returned a failue status from Geant4: &quot;</span> + std::to_string(g4Ret)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                            );</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        <span class="stringliteral">&quot;PreInitCmd&quot;</span>,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                        <span class="stringliteral">&quot;Pre Initialization command &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; is not allowed because another part of Simulator handles it.&quot;</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                        );</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00054">54</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// parameters used to configure the simulation</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a> = parameters; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Set the run number. If not specified, the run number is set to 0. </span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">int</span> runNumber = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;( <span class="stringliteral">&quot;runNumber&quot;</span> );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#a782a4d2a8468fff7f149dbe93812a684">setRunNumber</a>( runNumber );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// Set the verbosity level.  The default level  is 0.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;verbosity&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// If the verbosity level is set to 0, </span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// If the verbosity level is &gt; 1, log everything to a file. Otherwise,</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">// dump the output. If a prefix has been specified, append it ot the </span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">// log message. </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">auto</span> loggingPrefix = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;logging_prefix&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> == 0 ) <a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a> = std::make_unique&lt;BatchSession&gt;();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> &gt; 1 ) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">if</span> ( loggingPrefix.empty() ) <a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a> = std::make_unique&lt;LoggedSession&gt;();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">else</span> <a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a> = std::make_unique&lt;LoggedSession&gt;( loggingPrefix + <span class="stringliteral">&quot;_G4cout.log&quot;</span> , loggingPrefix + <span class="stringliteral">&quot;_G4cerr.log&quot;</span> );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a> != <span class="keyword">nullptr</span>) <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a>-&gt;SetCoutDestination( <a class="code" href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">sessionHandle_</a>.get() ); </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// Instantiate the run manager.  </span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a> = std::make_unique&lt;RunManager&gt;(parameters);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// Instantiate the GDML parser and corresponding messenger owned and</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// managed by DetectorConstruction</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        G4GDMLParser *parser = <span class="keyword">new</span> G4GDMLParser;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">// Instantiate the class so cascade parameters can be set.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        G4CascadeParameters::Instance();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// Set the DetectorConstruction instance used to build the detector </span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// from the GDML description. </span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;SetUserInitialization( <span class="keyword">new</span> DetectorConstruction( parser , parameters ) );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">// Parse the detector geometry and validate if specified.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">auto</span> detectorPath{<a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;detector&quot;</span>)};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">auto</span> validateGeometry{<a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; <span class="keywordtype">bool</span> &gt;(<span class="stringliteral">&quot;validate_detector&quot;</span>)}; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> &gt; 0 ) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[ Simulator ] : Reading in geometry from &#39;&quot;</span> &lt;&lt; detectorPath &lt;&lt; <span class="stringliteral">&quot;&#39;... &quot;</span> &lt;&lt; std::flush;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        G4GeometryManager::GetInstance()-&gt;OpenGeometry();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        parser-&gt;Read( detectorPath, validateGeometry );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;DefineWorldVolume( parser-&gt;GetWorldVolume() );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">auto</span> preInitCommands = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::vector&lt; std::string &gt; &gt;(<span class="stringliteral">&quot;preInitCommands&quot;</span> ); </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">const</span> std::string&amp; cmd : preInitCommands ) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a9ed6e6a7649c1ae45bfe5d560d8e93b1">allowed</a>(cmd) ) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordtype">int</span> g4Ret = <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a>-&gt;ApplyCommand( cmd );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">if</span> ( g4Ret &gt; 0 ) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                            <span class="stringliteral">&quot;PreInitCmd&quot;</span>,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                            <span class="stringliteral">&quot;Pre Initialization command &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; returned a failue status from Geant4: &quot;</span> + std::to_string(g4Ret)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                            );</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        <span class="stringliteral">&quot;PreInitCmd&quot;</span>,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        <span class="stringliteral">&quot;Pre Initialization command &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; is not allowed because another part of Simulator handles it.&quot;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        );</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8cxx_source.html#l00240">allowed()</a>, <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, <a class="el" href="Simulator_8h_source.html#l00154">parameters_</a>, <a class="el" href="EventProcessor_8h_source.html#l00188">ldmx::EventProcessor::process_</a>, <a class="el" href="Simulator_8h_source.html#l00134">runManager_</a>, <a class="el" href="Simulator_8h_source.html#l00143">sessionHandle_</a>, <a class="el" href="Process_8h_source.html#l00116">ldmx::Process::setRunNumber()</a>, <a class="el" href="Simulator_8h_source.html#l00137">uiManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00157">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="Simulator_8cxx_source.html#l00233">allowed()</a>, <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, <a class="el" href="Simulator_8h_source.html#l00149">parameters_</a>, <a class="el" href="EventProcessor_8h_source.html#l00188">ldmx::EventProcessor::process_</a>, <a class="el" href="Simulator_8h_source.html#l00133">runManager_</a>, <a class="el" href="Simulator_8h_source.html#l00142">sessionHandle_</a>, <a class="el" href="Process_8h_source.html#l00116">ldmx::Process::setRunNumber()</a>, <a class="el" href="Simulator_8h_source.html#l00136">uiManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00152">verbosity_</a>.</p>
 
 </div>
 </div>
@@ -422,26 +400,26 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classldmx_1_1EventProcessor.html#ab54b6c2dd2b56b107942a04c5e10c620">ldmx::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00204">204</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                          { </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;       </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">// End the current run and print out some basic statistics if verbose </span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">// level &gt; 0.  </span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;TerminateEventLoop();</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">// Persist any remaining events, call the end of run action and </span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// terminate the Geant4 kernel. </span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;RunTermination();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="comment">// Cleanup persistency manager</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="comment">//  Geant4 expects us to handle the persistency manager</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="comment">//  In order to avoid segfaulting nonsense, I delete it here</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="comment">//  so that it is deleted before the EventFile it references</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="comment">//  is deleted</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">persistencyManager_</a>.reset( <span class="keyword">nullptr</span> );</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00197">197</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                          { </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;       </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="comment">// End the current run and print out some basic statistics if verbose </span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="comment">// level &gt; 0.  </span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;TerminateEventLoop();</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="comment">// Persist any remaining events, call the end of run action and </span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="comment">// terminate the Geant4 kernel. </span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;RunTermination();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">// Cleanup persistency manager</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="comment">//  Geant4 expects us to handle the persistency manager</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="comment">//  In order to avoid segfaulting nonsense, I delete it here</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">//  so that it is deleted before the EventFile it references</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">//  is deleted</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">persistencyManager_</a>.reset( <span class="keyword">nullptr</span> );</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00140">persistencyManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00134">runManager_</a>.</p>
+<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00139">persistencyManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00133">runManager_</a>.</p>
 
 </div>
 </div>
@@ -479,14 +457,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classldmx_1_1EventProcessor.html#a45b7388860e54cbce5bb95c6c6171881">ldmx::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00125">125</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                              {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">// Initialize persistency manager and connect it to the current EventFile</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">persistencyManager_</a> = std::make_unique&lt;RootPersistencyManager&gt;(file, <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>); </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">persistencyManager_</a>-&gt;Initialize(); </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00123">123</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                              {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// Initialize persistency manager and connect it to the current EventFile</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">persistencyManager_</a> = std::make_unique&lt;RootPersistencyManager&gt;(file, <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>); </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">persistencyManager_</a>-&gt;Initialize(); </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00154">parameters_</a>, and <a class="el" href="Simulator_8h_source.html#l00140">persistencyManager_</a>.</p>
+<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00149">parameters_</a>, and <a class="el" href="Simulator_8h_source.html#l00139">persistencyManager_</a>.</p>
 
 </div>
 </div>
@@ -512,65 +490,60 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Initialization of simulation</p>
+<p>Initialization of simulation.</p>
 <p>This uses the parameters set in the configure method to construct and initialize the simulation objects.</p>
 <p>This function runs the post init setup commands. </p>
 
 <p>Reimplemented from <a class="el" href="classldmx_1_1EventProcessor.html#ac9915215ea81db00eca7eacc35aac08e">ldmx::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00158">158</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                   {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">//initialize run</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;Initialize();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">auto</span> randomSeeds = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt;std::vector&lt;int&gt;&gt;(<span class="stringliteral">&quot;randomSeeds&quot;</span>);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">if</span> ( randomSeeds.size() &gt; 1 ) {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="comment">//Geant4 allows for random seeds from 2 to 100</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            std::string cmd( <span class="stringliteral">&quot;/random/setSeeds &quot;</span> );</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;seed : randomSeeds ) {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                cmd += std::to_string(seed) + <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a>-&gt;ApplyCommand( cmd );</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="comment">// Get the extra simulation configuring commands</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">auto</span> postInitCommands = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::vector&lt; std::string &gt; &gt;(<span class="stringliteral">&quot;postInitCommands&quot;</span>);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">const</span> std::string&amp; cmd : postInitCommands ) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a9ed6e6a7649c1ae45bfe5d560d8e93b1">allowed</a>(cmd) ) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keywordtype">int</span> g4Ret = <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a>-&gt;ApplyCommand( cmd );</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">if</span> ( g4Ret &gt; 0 ) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                            <span class="stringliteral">&quot;PostInitCmd&quot;</span>,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                            <span class="stringliteral">&quot;Post Initialization command &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; returned a failue status from Geant4: &quot;</span> + std::to_string(g4Ret)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                            );</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                        <span class="stringliteral">&quot;PostInitCmd&quot;</span>,</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                        <span class="stringliteral">&quot;Post Initialization command &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; is not allowed because another part of Simulator handles it.&quot;</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                        );</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// Instantiate the scoring worlds including any parallel worlds. </span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;ConstructScoringWorlds();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="comment">// Initialize the current run</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;RunInitialization();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="comment">// Initialize the event processing</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;InitializeEventLoop( 1 );</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00156">156</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                   {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">//initialize run</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;Initialize();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">// If specified, set the seeds.  The seed vector must contain at </span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// least two seeds otherwise nothing will get set.</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">auto</span> seeds{<a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::vector&lt; int &gt; &gt;(<span class="stringliteral">&quot;randomSeeds&quot;</span>)};</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a7fdd32b857f9c928b26feedef6293376">setSeeds</a>(seeds); </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="comment">// Get the extra simulation configuring commands</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">auto</span> postInitCommands = <a class="code" href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::vector&lt; std::string &gt; &gt;(<span class="stringliteral">&quot;postInitCommands&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">const</span> std::string&amp; cmd : postInitCommands ) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a9ed6e6a7649c1ae45bfe5d560d8e93b1">allowed</a>(cmd) ) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordtype">int</span> g4Ret = <a class="code" href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">uiManager_</a>-&gt;ApplyCommand( cmd );</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keywordflow">if</span> ( g4Ret &gt; 0 ) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                            <span class="stringliteral">&quot;PostInitCmd&quot;</span>,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                            <span class="stringliteral">&quot;Post Initialization command &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; returned a failue status from Geant4: &quot;</span> + std::to_string(g4Ret)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                            );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        <span class="stringliteral">&quot;PostInitCmd&quot;</span>,</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        <span class="stringliteral">&quot;Post Initialization command &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; is not allowed because another part of Simulator handles it.&quot;</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        );</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="comment">// Instantiate the scoring worlds including any parallel worlds. </span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;ConstructScoringWorlds();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">// Initialize the current run</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;RunInitialization();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// Initialize the event processing</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;InitializeEventLoop( 1 );</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8cxx_source.html#l00240">allowed()</a>, <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, <a class="el" href="Simulator_8h_source.html#l00154">parameters_</a>, <a class="el" href="Simulator_8h_source.html#l00134">runManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00137">uiManager_</a>.</p>
+<p class="reference">References <a class="el" href="Simulator_8cxx_source.html#l00233">allowed()</a>, <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, <a class="el" href="Simulator_8h_source.html#l00149">parameters_</a>, <a class="el" href="Simulator_8h_source.html#l00133">runManager_</a>, <a class="el" href="Simulator_8cxx_source.html#l00244">setSeeds()</a>, and <a class="el" href="Simulator_8h_source.html#l00136">uiManager_</a>.</p>
 
 </div>
 </div>
-<a id="afe92b4c5503053b1e8a0618b27afc6a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe92b4c5503053b1e8a0618b27afc6a2">&#9670;&nbsp;</a></span>produce()</h2>
+<a id="a5426ca327739ca452dc569f213e9c072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5426ca327739ca452dc569f213e9c072">&#9670;&nbsp;</a></span>produce()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,7 +565,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Run simulation and export results to output event.</p>
+<p>Run simulation and persist results to output event.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>The event to process. </td></tr>
@@ -602,35 +575,95 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classldmx_1_1Producer.html#a7ac942786d11a4768ad430d52ba6a427">ldmx::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00131">131</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                            {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment">// Pass the current LDMX event object to the persistency manager.  This</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment">// is needed by the persistency manager to fill the current event. </span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">persistencyManager_</a>-&gt;setCurrentEvent( &amp;event ); </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">// Generate and process a Geant4 event. </span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;ProcessOneEvent( event.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>() );</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">// If a Geant4 event has been aborted, skip the rest of the processing</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment">// sequence. This will immediately force the simulation to move on to </span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="comment">// the next event. </span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;GetCurrentEvent()-&gt;IsAborted() ) { this-&gt;<a class="code" href="classldmx_1_1EventProcessor.html#afffb4b8c898001d952408798676d5635">abortEvent</a>(); }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#a48d643afef27ef6ddc75108d82ce5209">getLogFrequency</a>() &gt; 0 and event.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>() % <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#a48d643afef27ef6ddc75108d82ce5209">getLogFrequency</a>() == 0 ) {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="comment">//print according to log frequency and verbosity</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> &gt; 1 ) std::cout &lt;&lt; <span class="stringliteral">&quot;[ Simulator ] : Printing event contents:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keyword">event</span>.Print( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> );</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">// Terminate the event.  This checks if an event is to be stored or </span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">// stacked for later. </span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;TerminateOneEvent();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00129">129</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                            {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="comment">// Pass the current LDMX event object to the persistency manager.  This</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">// is needed by the persistency manager to fill the current event. </span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">persistencyManager_</a>-&gt;setCurrentEvent( &amp;event ); </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">// Generate and process a Geant4 event. </span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;ProcessOneEvent( event.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>() );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment">// If a Geant4 event has been aborted, skip the rest of the processing</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// sequence. This will immediately force the simulation to move on to </span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">// the next event. </span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;GetCurrentEvent()-&gt;IsAborted() ) { this-&gt;<a class="code" href="classldmx_1_1EventProcessor.html#afffb4b8c898001d952408798676d5635">abortEvent</a>(); }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#a48d643afef27ef6ddc75108d82ce5209">getLogFrequency</a>() &gt; 0 and event.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>() % <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#a48d643afef27ef6ddc75108d82ce5209">getLogFrequency</a>() == 0 ) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="comment">//print according to log frequency and verbosity</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> &gt; 1 ) std::cout &lt;&lt; <span class="stringliteral">&quot;[ Simulator ] : Printing event contents:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keyword">event</span>.Print( <a class="code" href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">verbosity_</a> );</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// Terminate the event.  This checks if an event is to be stored or </span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">// stacked for later. </span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">runManager_</a>-&gt;TerminateOneEvent();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00185">ldmx::EventProcessor::abortEvent()</a>, <a class="el" href="Event_8h_source.html#l00057">ldmx::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00072">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="Process_8h_source.html#l00139">ldmx::Process::getLogFrequency()</a>, <a class="el" href="Simulator_8h_source.html#l00140">persistencyManager_</a>, <a class="el" href="EventProcessor_8h_source.html#l00188">ldmx::EventProcessor::process_</a>, <a class="el" href="Simulator_8h_source.html#l00134">runManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00157">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00185">ldmx::EventProcessor::abortEvent()</a>, <a class="el" href="Event_8h_source.html#l00057">ldmx::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00072">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="Process_8h_source.html#l00139">ldmx::Process::getLogFrequency()</a>, <a class="el" href="Simulator_8h_source.html#l00139">persistencyManager_</a>, <a class="el" href="EventProcessor_8h_source.html#l00188">ldmx::EventProcessor::process_</a>, <a class="el" href="Simulator_8h_source.html#l00133">runManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00152">verbosity_</a>.</p>
+
+</div>
+</div>
+<a id="a7fdd32b857f9c928b26feedef6293376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fdd32b857f9c928b26feedef6293376">&#9670;&nbsp;</a></span>setSeeds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ldmx::Simulator::setSeeds </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>seeds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the seeds to be used by the Geant4 random engine.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">seeds</td><td>A vector of seeds to pass to the G4 random engine. The vector must contain at least 2 seeds otherwise an exception is thrown. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00244">244</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                                   {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">// If no seeds have been specified then return immediately.</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">if</span> (seeds.empty()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="comment">// If seeds are specified, make sure that the container has at least </span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// two seeds.  If not, throw an exception.  </span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">if</span> (seeds.size() == 1) { </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;ConfigurationException&quot;</span>, <span class="stringliteral">&quot;At least two seeds need to be specified.&quot;</span>);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="comment">// Create the array of seeds and pass them to G4Random.  Currently, </span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="comment">// only 100 seeds can be specified at a time.  If less than 100 </span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// seeds are specified, the remaining slots are set to 0. </span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        std::vector&lt; long &gt; seedVec(100, 0); </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">for</span> (std::size_t index{0}; index &lt; seeds.size(); ++index) seedVec[index] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(seeds[index]);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">// Pass the array of seeds to the random engine.</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        G4Random::setTheSeeds(&amp;seedVec[0]);  </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00156">onProcessStart()</a>.</p>
 
 </div>
 </div>
@@ -661,11 +694,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">            <span class="stringliteral">&quot;ldmx&quot;</span>, </div>
 <div class="line">            <span class="stringliteral">&quot;/persistency/gdml/read&quot;</span> </div>
 <div class="line">        }</div>
-</div><!-- fragment --><p>Commands not allowed to be passed from python config file This is because <a class="el" href="classldmx_1_1Simulator.html" title="Producer that runs Geant4 simulation inside of ldmx-app.">Simulator</a> already runs them. </p>
+</div><!-- fragment --><p>Commands not allowed to be passed from python config file This is because <a class="el" href="classldmx_1_1Simulator.html" title="Producer that wraps the Geant4 simulation engine so it can be run using the fire app.">Simulator</a> already runs them. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00147">147</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00146">146</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00240">allowed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00233">allowed()</a>.</p>
 
 </div>
 </div>
@@ -674,23 +707,24 @@ Additional Inherited Members</h2></td></tr>
 <li>SimCore/src/<a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1Simulator_html_a0e52f9615d62746662f8d9438c22ccbc"><div class="ttname"><a href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">ldmx::Simulator::uiManager_</a></div><div class="ttdeci">G4UImanager * uiManager_</div><div class="ttdoc">User interface handle.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00137">Simulator.h:137</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_a0e52f9615d62746662f8d9438c22ccbc"><div class="ttname"><a href="classldmx_1_1Simulator.html#a0e52f9615d62746662f8d9438c22ccbc">ldmx::Simulator::uiManager_</a></div><div class="ttdeci">G4UImanager * uiManager_</div><div class="ttdoc">User interface handle.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00136">Simulator.h:136</a></div></div>
 <div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Simulator_html_a9ed6e6a7649c1ae45bfe5d560d8e93b1"><div class="ttname"><a href="classldmx_1_1Simulator.html#a9ed6e6a7649c1ae45bfe5d560d8e93b1">ldmx::Simulator::allowed</a></div><div class="ttdeci">bool allowed(const std::string &amp;command) const</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8cxx_source.html#l00240">Simulator.cxx:240</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_a9ed6e6a7649c1ae45bfe5d560d8e93b1"><div class="ttname"><a href="classldmx_1_1Simulator.html#a9ed6e6a7649c1ae45bfe5d560d8e93b1">ldmx::Simulator::allowed</a></div><div class="ttdeci">bool allowed(const std::string &amp;command) const</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8cxx_source.html#l00233">Simulator.cxx:233</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Process_html_a48d643afef27ef6ddc75108d82ce5209"><div class="ttname"><a href="classldmx_1_1Process.html#a48d643afef27ef6ddc75108d82ce5209">ldmx::Process::getLogFrequency</a></div><div class="ttdeci">int getLogFrequency() const</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00139">Process.h:139</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Simulator_html_a6ca8a68b2ffeccc405968be9ca8c424a"><div class="ttname"><a href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">ldmx::Simulator::persistencyManager_</a></div><div class="ttdeci">std::unique_ptr&lt; RootPersistencyManager &gt; persistencyManager_</div><div class="ttdoc">PersistencyManager.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00140">Simulator.h:140</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_a6ca8a68b2ffeccc405968be9ca8c424a"><div class="ttname"><a href="classldmx_1_1Simulator.html#a6ca8a68b2ffeccc405968be9ca8c424a">ldmx::Simulator::persistencyManager_</a></div><div class="ttdeci">std::unique_ptr&lt; RootPersistencyManager &gt; persistencyManager_</div><div class="ttdoc">PersistencyManager.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00139">Simulator.h:139</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventHeader_html_a8152a5d36972d1c0671ee54a0bf1a794"><div class="ttname"><a href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">ldmx::EventHeader::getEventNumber</a></div><div class="ttdeci">int getEventNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="EventHeader_8h_source.html#l00072">EventHeader.h:72</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Simulator_html_a54efca24ddb15aa2a22cb836d34c7417"><div class="ttname"><a href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">ldmx::Simulator::sessionHandle_</a></div><div class="ttdeci">std::unique_ptr&lt; G4UIsession &gt; sessionHandle_</div><div class="ttdoc">Handle to the G4Session -&gt; how to deal with G4cout and G4cerr.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00143">Simulator.h:143</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_a54efca24ddb15aa2a22cb836d34c7417"><div class="ttname"><a href="classldmx_1_1Simulator.html#a54efca24ddb15aa2a22cb836d34c7417">ldmx::Simulator::sessionHandle_</a></div><div class="ttdeci">std::unique_ptr&lt; G4UIsession &gt; sessionHandle_</div><div class="ttdoc">Handle to the G4Session -&gt; how to deal with G4cout and G4cerr.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00142">Simulator.h:142</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_a96dbbc683b0457a5231f7f667ca4c520"><div class="ttname"><a href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">ldmx::Event::getEventHeader</a></div><div class="ttdeci">EventHeader &amp; getEventHeader()</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00057">Event.h:57</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Producer_html_abd1f979d49afb16c520ca66840d174cc"><div class="ttname"><a href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">ldmx::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00043">EventProcessor.cxx:43</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Parameters_html_a707c2861371103bff5716f069f55ef05"><div class="ttname"><a href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">ldmx::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name, T defaultParam=T())</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00062">Parameters.h:62</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Simulator_html_aed6b8ea95f0e6a23a3103b2dedd85814"><div class="ttname"><a href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">ldmx::Simulator::runManager_</a></div><div class="ttdeci">std::unique_ptr&lt; RunManager &gt; runManager_</div><div class="ttdoc">Manager controlling G4 simulation run.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00134">Simulator.h:134</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_a7fdd32b857f9c928b26feedef6293376"><div class="ttname"><a href="classldmx_1_1Simulator.html#a7fdd32b857f9c928b26feedef6293376">ldmx::Simulator::setSeeds</a></div><div class="ttdeci">void setSeeds(std::vector&lt; int &gt; seeds)</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8cxx_source.html#l00244">Simulator.cxx:244</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_aed6b8ea95f0e6a23a3103b2dedd85814"><div class="ttname"><a href="classldmx_1_1Simulator.html#aed6b8ea95f0e6a23a3103b2dedd85814">ldmx::Simulator::runManager_</a></div><div class="ttdeci">std::unique_ptr&lt; RunManager &gt; runManager_</div><div class="ttdoc">Manager controlling G4 simulation run.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00133">Simulator.h:133</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessor_html_ae4d5efe10b50e887f4e71a8c00b0eac0"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">ldmx::EventProcessor::process_</a></div><div class="ttdeci">Process &amp; process_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00188">EventProcessor.h:188</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Process_html_a782a4d2a8468fff7f149dbe93812a684"><div class="ttname"><a href="classldmx_1_1Process.html#a782a4d2a8468fff7f149dbe93812a684">ldmx::Process::setRunNumber</a></div><div class="ttdeci">void setRunNumber(int run)</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00116">Process.h:116</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessor_html_afffb4b8c898001d952408798676d5635"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#afffb4b8c898001d952408798676d5635">ldmx::EventProcessor::abortEvent</a></div><div class="ttdeci">void abortEvent()</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00185">EventProcessor.h:185</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Simulator_html_a0ae2c251bb41fa1c771e148eab04918d"><div class="ttname"><a href="classldmx_1_1Simulator.html#a0ae2c251bb41fa1c771e148eab04918d">ldmx::Simulator::invalidCommands_</a></div><div class="ttdeci">static const std::vector&lt; std::string &gt; invalidCommands_</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00147">Simulator.h:147</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Simulator_html_aaf5b80ff2bdba36302732656b1a98675"><div class="ttname"><a href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">ldmx::Simulator::parameters_</a></div><div class="ttdeci">Parameters parameters_</div><div class="ttdoc">The parameters used to configure the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00154">Simulator.h:154</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Simulator_html_a2b3ec9763aa0e8dc70e7098e0b7515de"><div class="ttname"><a href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">ldmx::Simulator::verbosity_</a></div><div class="ttdeci">int verbosity_</div><div class="ttdoc">Vebosity for the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00157">Simulator.h:157</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_a0ae2c251bb41fa1c771e148eab04918d"><div class="ttname"><a href="classldmx_1_1Simulator.html#a0ae2c251bb41fa1c771e148eab04918d">ldmx::Simulator::invalidCommands_</a></div><div class="ttdeci">static const std::vector&lt; std::string &gt; invalidCommands_</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00146">Simulator.h:146</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_aaf5b80ff2bdba36302732656b1a98675"><div class="ttname"><a href="classldmx_1_1Simulator.html#aaf5b80ff2bdba36302732656b1a98675">ldmx::Simulator::parameters_</a></div><div class="ttdeci">Parameters parameters_</div><div class="ttdoc">The parameters used to configure the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00149">Simulator.h:149</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Simulator_html_a2b3ec9763aa0e8dc70e7098e0b7515de"><div class="ttname"><a href="classldmx_1_1Simulator.html#a2b3ec9763aa0e8dc70e7098e0b7515de">ldmx::Simulator::verbosity_</a></div><div class="ttdeci">int verbosity_</div><div class="ttdoc">Vebosity for the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00152">Simulator.h:152</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

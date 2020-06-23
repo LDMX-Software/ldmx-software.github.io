@@ -170,12 +170,9 @@ std::vector&lt; <a class="el" href="classldmx_1_1UserAction.html">UserAction</a>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Clear the global track map.</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classldmx_1_1UserTrackingAction.html#a7e1af9180bd57205112c6bc26ec3bfc9">UserTrackingAction::getUserTrackingAction</a>()-&gt;<a class="code" href="classldmx_1_1UserTrackingAction.html#a5e9181fe6327caca3ab916c168bfae44">getTrackMap</a>()-&gt;<a class="code" href="classldmx_1_1TrackMap.html#aecab88a170705182ca462febd440d741">clear</a>();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> ( <span class="keyword">dynamic_cast&lt;</span>RunManager*<span class="keyword">&gt;</span>(G4RunManager::GetRunManager())-&gt;useRootSeed() )</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            G4Random::restoreEngineStatus(<span class="stringliteral">&quot;tmpEvent.rndm&quot;</span>); <span class="comment">// this line will be needed to read in a set of seeds</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// Call user event actions</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; eventAction : eventActions_ ) eventAction-&gt;BeginOfEventAction(event); </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// Call user event actions</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; eventAction : eventActions_ ) eventAction-&gt;BeginOfEventAction(event); </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="TrackMap_8cxx_source.html#l00030">ldmx::TrackMap::clear()</a>, <a class="el" href="UserTrackingAction_8h_source.html#l00066">ldmx::UserTrackingAction::getTrackMap()</a>, and <a class="el" href="UserTrackingAction_8h_source.html#l00092">ldmx::UserTrackingAction::getUserTrackingAction()</a>.</p>
 
@@ -203,11 +200,11 @@ std::vector&lt; <a class="el" href="classldmx_1_1UserAction.html">UserAction</a>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventAction_8cxx_source.html#l00044">44</a> of file <a class="el" href="UserEventAction_8cxx_source.html">UserEventAction.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                               {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// Call user event actions</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; eventAction : eventActions_ ) eventAction-&gt;EndOfEventAction(event); </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="UserEventAction_8cxx_source.html#l00041">41</a> of file <a class="el" href="UserEventAction_8cxx_source.html">UserEventAction.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                               {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// Call user event actions</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; eventAction : eventActions_ ) eventAction-&gt;EndOfEventAction(event); </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

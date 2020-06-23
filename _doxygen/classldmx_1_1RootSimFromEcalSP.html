@@ -287,14 +287,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }   </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">// forces Geant4 to use previous eventSeeds</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">// TODO remove this IO bottleneck</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::ofstream tmpout(<span class="stringliteral">&quot;tmpEvent.rndm&quot;</span>);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        std::string eventSeed = <a class="code" href="classldmx_1_1RootSimFromEcalSP.html#ab681455b94239a1522f763b7487bf245">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a72077dc95c6f43291e32170e1e0f32f6">getStringParameter</a>(<span class="stringliteral">&quot;eventSeed&quot;</span>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        tmpout &lt;&lt; eventSeed;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        tmpout.close();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">// Create an input stream with a copy of the event seed as content.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">// The input stream is then passed to the random engine to restore </span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// the state.</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        std::istringstream iss(<a class="code" href="classldmx_1_1RootSimFromEcalSP.html#ab681455b94239a1522f763b7487bf245">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a72077dc95c6f43291e32170e1e0f32f6">getStringParameter</a>(<span class="stringliteral">&quot;eventSeed&quot;</span>));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        G4Random::restoreFullState(iss); </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="RootSimFromEcalSP_8h_source.html#l00087">ecalSPHitsCollName_</a>, <a class="el" href="RootSimFromEcalSP_8h_source.html#l00092">ecalSPHitsPassName_</a>, <a class="el" href="Event_8h_source.html#l00213">ldmx::Event::getCollection()</a>, <a class="el" href="Event_8h_source.html#l00057">ldmx::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00184">ldmx::EventHeader::getStringParameter()</a>, <a class="el" href="RootSimFromEcalSP_8h_source.html#l00102">ievent_</a>, <a class="el" href="RootSimFromEcalSP_8h_source.html#l00097">ifile_</a>, and <a class="el" href="RootSimFromEcalSP_8h_source.html#l00082">timeCutoff_</a>.</p>
 
