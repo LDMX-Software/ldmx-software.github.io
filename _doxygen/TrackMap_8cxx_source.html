@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.8.18"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>LDMX Software: SimApplication/src/TrackMap.cxx Source File</title>
+		<title>LDMX Software: SimCore/src/TrackMap.cxx Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -39,7 +39,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_df4befc74a5a42026b680d6c82c82ec6.html">SimApplication</a></li><li class="navelem"><a class="el" href="dir_c8b54e95c9660ed4cdbdf968b5868bdc.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d764adcdf188058460d8947cee0814f0.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_7ad22e876ae3bef8b8853f417e896df5.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -47,14 +47,14 @@ $(function() {
 <div class="title">TrackMap.cxx</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TrackMap_8h.html">SimApplication/TrackMap.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TrackMap_8h.html">SimCore/TrackMap.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Geant4</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;G4EventManager.hh&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;G4Event.hh&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// LDMX</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Trajectory_8h.html">SimApplication/Trajectory.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Trajectory_8h.html">SimCore/Trajectory.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
@@ -78,14 +78,11 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classldmx_1_1TrackMap.html#aecab88a170705182ca462febd440d741">   30</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1TrackMap.html#aecab88a170705182ca462febd440d741">TrackMap::clear</a>() {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [trackID, trajectory] : <a class="code" href="classldmx_1_1TrackMap.html#afed38c6295ceb98e06e41bb9a4e60a71">trajectoryMap_</a>) { </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">delete</span> trajectory;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classldmx_1_1TrackMap.html#afed38c6295ceb98e06e41bb9a4e60a71">trajectoryMap_</a>.clear();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classldmx_1_1TrackMap.html#a0d46b5ce93c7431900e0ff42f6954ddd">trackIDMap_</a>.clear();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classldmx_1_1TrackMap.html#afed38c6295ceb98e06e41bb9a4e60a71">trajectoryMap_</a>.clear();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classldmx_1_1TrackMap.html#a0d46b5ce93c7431900e0ff42f6954ddd">trackIDMap_</a>.clear();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TrackMap_html_afed38c6295ceb98e06e41bb9a4e60a71"><div class="ttname"><a href="classldmx_1_1TrackMap.html#afed38c6295ceb98e06e41bb9a4e60a71">ldmx::TrackMap::trajectoryMap_</a></div><div class="ttdeci">Trajectory::TrajectoryMap trajectoryMap_</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00106">TrackMap.h:106</a></div></div>
