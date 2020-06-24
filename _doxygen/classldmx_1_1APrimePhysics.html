@@ -113,7 +113,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="structldmx_1_1Class.html" title="Encapsualtes the information required to create a class of type className_.">Class</a> constructor.</p>
+<p>Class constructor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the physics. </td></tr>
@@ -126,9 +126,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            G4VPhysicsConstructor(name), <a class="code" href="classldmx_1_1APrimePhysics.html#ab91dae2363f0b140a1bcfc060c473ef9">aprimeDef_</a>(<span class="keyword">nullptr</span>) { </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classldmx_1_1APrimePhysics.html#a64c223a6b6c7a69d5bfd2eec43255e3b">aprimeMass_</a>       = params.getParameter&lt;<span class="keywordtype">double</span>     &gt;( <span class="stringliteral">&quot;APrimeMass&quot;</span>                );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">int</span> bremMethodInt = params.getParameter&lt;<span class="keywordtype">int</span>        &gt;( <span class="stringliteral">&quot;darkbrem.method&quot;</span>           );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classldmx_1_1APrimePhysics.html#af0d77a5a7001df711e4f848221ba068c">madGraphFilePath_</a> = params.getParameter&lt;std::string&gt;( <span class="stringliteral">&quot;darkbrem.madgraphfilepath&quot;</span> );</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classldmx_1_1APrimePhysics.html#a278a2360db6b3944ecf988c20a0f8978">globalXsecFactor_</a> = params.getParameter&lt;<span class="keywordtype">double</span>     &gt;( <span class="stringliteral">&quot;darkbrem.globalxsecfactor&quot;</span> );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">int</span> bremMethodInt = params.getParameter&lt;<span class="keywordtype">int</span>        &gt;( <span class="stringliteral">&quot;darkbrem_method&quot;</span>           );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classldmx_1_1APrimePhysics.html#af0d77a5a7001df711e4f848221ba068c">madGraphFilePath_</a> = params.getParameter&lt;std::string&gt;( <span class="stringliteral">&quot;darkbrem_madgraphfilepath&quot;</span> );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classldmx_1_1APrimePhysics.html#a278a2360db6b3944ecf988c20a0f8978">globalXsecFactor_</a> = params.getParameter&lt;<span class="keywordtype">double</span>     &gt;( <span class="stringliteral">&quot;darkbrem_globalxsecfactor&quot;</span> );</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">//prevent negative or shrinking xsec factors</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1APrimePhysics.html#a278a2360db6b3944ecf988c20a0f8978">globalXsecFactor_</a> &lt; 1 ) <a class="code" href="classldmx_1_1APrimePhysics.html#a278a2360db6b3944ecf988c20a0f8978">globalXsecFactor_</a> = 1.;</div>
@@ -138,7 +138,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="APrimePhysics_8h_source.html#l00068">aprimeMass_</a>, <a class="el" href="APrimePhysics_8h_source.html#l00080">bremMethod_</a>, <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, <a class="el" href="APrimePhysics_8h_source.html#l00085">globalXsecFactor_</a>, and <a class="el" href="APrimePhysics_8h_source.html#l00075">madGraphFilePath_</a>.</p>
+<p class="reference">References <a class="el" href="APrimePhysics_8h_source.html#l00068">aprimeMass_</a>, <a class="el" href="APrimePhysics_8h_source.html#l00080">bremMethod_</a>, <a class="el" href="Parameters_8h_source.html#l00060">ldmx::Parameters::getParameter()</a>, <a class="el" href="APrimePhysics_8h_source.html#l00085">globalXsecFactor_</a>, and <a class="el" href="APrimePhysics_8h_source.html#l00075">madGraphFilePath_</a>.</p>
 
 </div>
 </div>
@@ -164,7 +164,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="structldmx_1_1Class.html" title="Encapsualtes the information required to create a class of type className_.">Class</a> destructor.</p>
+<p>Class destructor.</p>
 <p>Nothing right now. </p>
 
 <p class="definition">Definition at line <a class="el" href="APrimePhysics_8cxx_source.html#l00035">35</a> of file <a class="el" href="APrimePhysics_8cxx_source.html">APrimePhysics.cxx</a>.</p>

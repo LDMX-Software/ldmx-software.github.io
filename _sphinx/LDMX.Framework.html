@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="LDMX.SimCore package" href="LDMX.SimCore.html" />
-    <link rel="prev" title="LDMX.EventProc package" href="LDMX.EventProc.html" /> 
+    <link rel="prev" title="LDMX.Exception package" href="LDMX.Exception.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -31,7 +31,7 @@
           <a href="LDMX.SimCore.html" title="LDMX.SimCore package"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="LDMX.EventProc.html" title="LDMX.EventProc package"
+          <a href="LDMX.Exception.html" title="LDMX.Exception package"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="LDMX.html" accesskey="U">LDMX package</a> &#187;</li>
@@ -92,6 +92,16 @@ histogram.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-LDMX.Framework.include">
+<span id="ldmx-framework-include-module"></span><h2>LDMX.Framework.include module<a class="headerlink" href="#module-LDMX.Framework.include" title="Permalink to this headline">¶</a></h2>
+<p>Include this module</p>
+<dl class="py function">
+<dt id="LDMX.Framework.include.library">
+<code class="sig-prename descclassname">LDMX.Framework.include.</code><code class="sig-name descname">library</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.include.library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach the name of Framework library to the process</p>
+</dd></dl>
+
+</div>
 <div class="section" id="module-LDMX.Framework.ldmxcfg">
 <span id="ldmx-framework-ldmxcfg-module"></span><h2>LDMX.Framework.ldmxcfg module<a class="headerlink" href="#module-LDMX.Framework.ldmxcfg" title="Permalink to this headline">¶</a></h2>
 <p>ldmxcfg</p>
@@ -126,17 +136,6 @@ histogram.</p>
 </ul>
 </dd>
 </dl>
-<dl class="py attribute">
-<dt id="LDMX.Framework.ldmxcfg.EventProcessor.parameters">
-<code class="sig-name descname">parameters</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.EventProcessor.parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>python dictionary that will be passed to the C++ object during the configure method</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt id="LDMX.Framework.ldmxcfg.EventProcessor.histograms">
 <code class="sig-name descname">histograms</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.EventProcessor.histograms" title="Permalink to this definition">¶</a></dt>
@@ -378,10 +377,51 @@ and the rest of the attributes are set to sensible defaults.</p>
 </dd>
 </dl>
 </div>
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Process.addLibrary">
+<code class="sig-name descname">addLibrary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.addLibrary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a library to the list of dynamically loaded libraries</p>
+<p>A process object must already have been created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lib</strong> (<em>str</em>) – name of library to load</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>Will exit the script if a process object hasn’t been defined yet.</p></li>
+</ul>
+</div>
+<p class="rubric">Examples</p>
+<p>addLibrary( ‘libSimCore.so’ )</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Process.inputDir">
+<code class="sig-name descname">inputDir</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indir</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.inputDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan the input directory and make a list of input root files to read from it</p>
+<p>Lists all files ending in ‘.root’ in the input directory (not recursive).
+Extends the inputFiles list by these files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>indir</strong> (<em>str</em>) – Path to directory of event files to read in</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt id="id0">
 <code class="sig-name descname">lastProcess</code><em class="property"> = None</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt id="LDMX.Framework.ldmxcfg.Process.pause">
+<code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print this Process and wait for user confirmation to continue</p>
+<p>Prints the process through the print function, and then
+waits for the user to press Enter to continue.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="LDMX.Framework.ldmxcfg.Process.setCompression">
@@ -426,11 +466,9 @@ is better to use this helper function.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ecalVeto</span> <span class="o">=</span> <span class="n">ldmxcfg</span><span class="o">.</span><span class="n">Producer</span><span class="p">(</span> <span class="s1">&#39;ecalVeto&#39;</span> <span class="p">,</span> <span class="s1">&#39;EcalVetoProcessor&#39;</span> <span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Setup of other parameters for the veto</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">skimConsider</span><span class="p">(</span> <span class="s1">&#39;ecalVeto&#39;</span> <span class="p">)</span>
-</pre></div>
-</div>
+<p>ecalVeto = ldmxcfg.Producer( ‘ecalVeto’ , ‘EcalVetoProcessor’ )
+# Setup of other parameters for the veto
+p.skimConsider( ‘ecalVeto’ )</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#LDMX.Framework.ldmxcfg.Process.skimConsiderLabelled" title="LDMX.Framework.ldmxcfg.Process.skimConsiderLabelled"><code class="xref py py-meth docutils literal notranslate"><span class="pre">skimConsiderLabelled()</span></code></a></p>
@@ -508,6 +546,7 @@ on matching this “reason” for the storage hint.</p>
 <li><a class="reference internal" href="#">LDMX.Framework package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-LDMX.Framework.histogram">LDMX.Framework.histogram module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Framework.include">LDMX.Framework.include module</a></li>
 <li><a class="reference internal" href="#module-LDMX.Framework.ldmxcfg">LDMX.Framework.ldmxcfg module</a></li>
 <li><a class="reference internal" href="#module-LDMX.Framework">Module contents</a></li>
 </ul>
@@ -515,8 +554,8 @@ on matching this “reason” for the storage hint.</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="LDMX.EventProc.html"
-                        title="previous chapter">LDMX.EventProc package</a></p>
+  <p class="topless"><a href="LDMX.Exception.html"
+                        title="previous chapter">LDMX.Exception package</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="LDMX.SimCore.html"
                         title="next chapter">LDMX.SimCore package</a></p>
@@ -554,7 +593,7 @@ on matching this “reason” for the storage hint.</p>
           <a href="LDMX.SimCore.html" title="LDMX.SimCore package"
              >next</a> |</li>
         <li class="right" >
-          <a href="LDMX.EventProc.html" title="LDMX.EventProc package"
+          <a href="LDMX.Exception.html" title="LDMX.Exception package"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ldmx-sw python 2.0.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="LDMX.html" >LDMX package</a> &#187;</li>

@@ -91,8 +91,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab38afea01d11e6c540b3646717ed33a5 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac235e777cff959f18bc120232d689f50 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ac235e777cff959f18bc120232d689f50">setStorageHint</a> (ldmx::StorageControlHint hint, const std::string &amp;purposeString)</td></tr>
 <tr class="separator:ac235e777cff959f18bc120232d689f50 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a842949b7520f121621d407e723edef inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a9a842949b7520f121621d407e723edef">createHistograms</a> (const std::vector&lt; <a class="el" href="structldmx_1_1HistogramInfo.html">HistogramInfo</a> &gt; &amp;histos)</td></tr>
-<tr class="separator:a9a842949b7520f121621d407e723edef inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4deffb5a280902e2cc54a0118ec7f29b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a4deffb5a280902e2cc54a0118ec7f29b">createHistograms</a> (const std::vector&lt; <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &gt; &amp;histos)</td></tr>
+<tr class="separator:a4deffb5a280902e2cc54a0118ec7f29b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -137,7 +137,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00051">51</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00053">53</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adc7c78ad88f05cf81fe3f6dbd1dc3dda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc7c78ad88f05cf81fe3f6dbd1dc3dda">&#9670;&nbsp;</a></span>PnWeightProcessor()</h2>
@@ -180,7 +180,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    8.243e-13, 9.333e-17, -7.584e-20, -1.991e-23, 9.757e-27);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PnWeightProcessor_8h_source.html#l00110">hFit</a>, and <a class="el" href="PnWeightProcessor_8h_source.html#l00107">lFit</a>.</p>
+<p class="reference">References <a class="el" href="PnWeightProcessor_8h_source.html#l00112">hFit</a>, and <a class="el" href="PnWeightProcessor_8h_source.html#l00109">lFit</a>.</p>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1PnWeightProcessor.html#a69401d29e9e959daee9759f3d3872271">lFit</a>-&gt;Eval(w)/<a class="code" href="classldmx_1_1PnWeightProcessor.html#ac7dda9b111f1c5b6b9ccdb9cc68b6e9e">hFit</a>-&gt;Eval(w); </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PnWeightProcessor_8h_source.html#l00110">hFit</a>, and <a class="el" href="PnWeightProcessor_8h_source.html#l00107">lFit</a>.</p>
+<p class="reference">References <a class="el" href="PnWeightProcessor_8h_source.html#l00112">hFit</a>, and <a class="el" href="PnWeightProcessor_8h_source.html#l00109">lFit</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PnWeightProcessor_8cxx_source.html#l00051">produce()</a>.</p>
 
@@ -325,7 +325,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classldmx_1_1PnWeightProcessor.html#a5b90b02b27d0105f798473ae4f50e713">thetaThreshold_</a> = parameters.getParameter&lt; <span class="keywordtype">double</span> &gt;(<span class="stringliteral">&quot;theta_threshold&quot;</span>);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, <a class="el" href="PnWeightProcessor_8h_source.html#l00104">thetaThreshold_</a>, and <a class="el" href="PnWeightProcessor_8h_source.html#l00101">wThreshold_</a>.</p>
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00060">ldmx::Parameters::getParameter()</a>, <a class="el" href="PnWeightProcessor_8h_source.html#l00106">thetaThreshold_</a>, and <a class="el" href="PnWeightProcessor_8h_source.html#l00103">wThreshold_</a>.</p>
 
 </div>
 </div>
@@ -461,7 +461,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">event</span>.add(<span class="stringliteral">&quot;PNweight&quot;</span>, result);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PnWeightResult_8h_source.html#l00064">ldmx::PnWeightResult::addTheta()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00067">ldmx::PnWeightResult::addW()</a>, <a class="el" href="PnWeightProcessor_8cxx_source.html#l00159">calculateW()</a>, <a class="el" href="PnWeightProcessor_8cxx_source.html#l00155">calculateWeight()</a>, <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="SimParticle_8h_source.html#l00066">ldmx::SimParticle::getEnergy()</a>, <a class="el" href="SimParticle_8h_source.html#l00134">ldmx::SimParticle::getMass()</a>, <a class="el" href="SimParticle_8h_source.html#l00127">ldmx::SimParticle::getMomentum()</a>, <a class="el" href="SimParticle_8h_source.html#l00073">ldmx::SimParticle::getPdgID()</a>, <a class="el" href="PnWeightProcessor_8h_source.html#l00063">NEUTRON_PDGID</a>, <a class="el" href="PnWeightProcessor_8h_source.html#l00060">PROTON_PDGID</a>, <a class="el" href="PnWeightResult_8h_source.html#l00070">ldmx::PnWeightResult::setHardestNucleonKe()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00073">ldmx::PnWeightResult::setHardestNucleonTheta()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00076">ldmx::PnWeightResult::setHardestNucleonW()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00079">ldmx::PnWeightResult::setHighestWNucleonKe()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00082">ldmx::PnWeightResult::setHighestWNucleonTheta()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00085">ldmx::PnWeightResult::setHighestWNucleonW()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00088">ldmx::PnWeightResult::setWeight()</a>, <a class="el" href="PnWeightProcessor_8h_source.html#l00104">thetaThreshold_</a>, and <a class="el" href="PnWeightProcessor_8h_source.html#l00101">wThreshold_</a>.</p>
+<p class="reference">References <a class="el" href="PnWeightResult_8h_source.html#l00064">ldmx::PnWeightResult::addTheta()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00067">ldmx::PnWeightResult::addW()</a>, <a class="el" href="PnWeightProcessor_8cxx_source.html#l00159">calculateW()</a>, <a class="el" href="PnWeightProcessor_8cxx_source.html#l00155">calculateWeight()</a>, <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="SimParticle_8h_source.html#l00066">ldmx::SimParticle::getEnergy()</a>, <a class="el" href="SimParticle_8h_source.html#l00134">ldmx::SimParticle::getMass()</a>, <a class="el" href="SimParticle_8h_source.html#l00127">ldmx::SimParticle::getMomentum()</a>, <a class="el" href="SimParticle_8h_source.html#l00073">ldmx::SimParticle::getPdgID()</a>, <a class="el" href="PnWeightProcessor_8h_source.html#l00065">NEUTRON_PDGID</a>, <a class="el" href="PnWeightProcessor_8h_source.html#l00062">PROTON_PDGID</a>, <a class="el" href="PnWeightResult_8h_source.html#l00070">ldmx::PnWeightResult::setHardestNucleonKe()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00073">ldmx::PnWeightResult::setHardestNucleonTheta()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00076">ldmx::PnWeightResult::setHardestNucleonW()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00079">ldmx::PnWeightResult::setHighestWNucleonKe()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00082">ldmx::PnWeightResult::setHighestWNucleonTheta()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00085">ldmx::PnWeightResult::setHighestWNucleonW()</a>, <a class="el" href="PnWeightResult_8h_source.html#l00088">ldmx::PnWeightResult::setWeight()</a>, <a class="el" href="PnWeightProcessor_8h_source.html#l00106">thetaThreshold_</a>, and <a class="el" href="PnWeightProcessor_8h_source.html#l00103">wThreshold_</a>.</p>
 
 </div>
 </div>
@@ -487,7 +487,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Fit to high tail of inclusive W (theta &gt; 100) plot. </p>
 
-<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00110">110</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00112">112</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PnWeightProcessor_8cxx_source.html#l00155">calculateWeight()</a>, and <a class="el" href="PnWeightProcessor_8cxx_source.html#l00030">PnWeightProcessor()</a>.</p>
 
@@ -514,7 +514,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Fit to lower slope of inclusive W (theta &gt; 100) plot. </p>
 
-<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00107">107</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00109">109</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PnWeightProcessor_8cxx_source.html#l00155">calculateWeight()</a>, and <a class="el" href="PnWeightProcessor_8cxx_source.html#l00030">PnWeightProcessor()</a>.</p>
 
@@ -541,7 +541,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Neutron PDG ID </p>
 
-<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00063">63</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00065">65</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PnWeightProcessor_8cxx_source.html#l00051">produce()</a>.</p>
 
@@ -568,7 +568,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Proton PDG ID </p>
 
-<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00060">60</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00062">62</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PnWeightProcessor_8cxx_source.html#l00051">produce()</a>.</p>
 
@@ -595,7 +595,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Minimum angle for backwards-going hadron. </p>
 
-<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00104">104</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00106">106</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PnWeightProcessor_8cxx_source.html#l00046">configure()</a>, and <a class="el" href="PnWeightProcessor_8cxx_source.html#l00051">produce()</a>.</p>
 
@@ -622,7 +622,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Threshold after which to apply W reweighting. </p>
 
-<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00101">101</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PnWeightProcessor_8h_source.html#l00103">103</a> of file <a class="el" href="PnWeightProcessor_8h_source.html">PnWeightProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PnWeightProcessor_8cxx_source.html#l00046">configure()</a>, and <a class="el" href="PnWeightProcessor_8cxx_source.html#l00051">produce()</a>.</p>
 
@@ -634,14 +634,14 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
-<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_affa1d130e47805081035c8766d24cd73"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#affa1d130e47805081035c8766d24cd73">ldmx::PnWeightProcessor::NEUTRON_PDGID</a></div><div class="ttdeci">static const int NEUTRON_PDGID</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00063">PnWeightProcessor.h:63</a></div></div>
-<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_ac7dda9b111f1c5b6b9ccdb9cc68b6e9e"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#ac7dda9b111f1c5b6b9ccdb9cc68b6e9e">ldmx::PnWeightProcessor::hFit</a></div><div class="ttdeci">std::unique_ptr&lt; TF1 &gt; hFit</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00110">PnWeightProcessor.h:110</a></div></div>
-<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a293ab9b510182e3496149585dfba1edd"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a293ab9b510182e3496149585dfba1edd">ldmx::PnWeightProcessor::wThreshold_</a></div><div class="ttdeci">double wThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00101">PnWeightProcessor.h:101</a></div></div>
-<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a3da240ed24ba65f19dc31ed1286ac8c1"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a3da240ed24ba65f19dc31ed1286ac8c1">ldmx::PnWeightProcessor::PROTON_PDGID</a></div><div class="ttdeci">static const int PROTON_PDGID</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00060">PnWeightProcessor.h:60</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Producer_html_abd1f979d49afb16c520ca66840d174cc"><div class="ttname"><a href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">ldmx::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00043">EventProcessor.cxx:43</a></div></div>
+<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_affa1d130e47805081035c8766d24cd73"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#affa1d130e47805081035c8766d24cd73">ldmx::PnWeightProcessor::NEUTRON_PDGID</a></div><div class="ttdeci">static const int NEUTRON_PDGID</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00065">PnWeightProcessor.h:65</a></div></div>
+<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_ac7dda9b111f1c5b6b9ccdb9cc68b6e9e"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#ac7dda9b111f1c5b6b9ccdb9cc68b6e9e">ldmx::PnWeightProcessor::hFit</a></div><div class="ttdeci">std::unique_ptr&lt; TF1 &gt; hFit</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00112">PnWeightProcessor.h:112</a></div></div>
+<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a293ab9b510182e3496149585dfba1edd"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a293ab9b510182e3496149585dfba1edd">ldmx::PnWeightProcessor::wThreshold_</a></div><div class="ttdeci">double wThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00103">PnWeightProcessor.h:103</a></div></div>
+<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a3da240ed24ba65f19dc31ed1286ac8c1"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a3da240ed24ba65f19dc31ed1286ac8c1">ldmx::PnWeightProcessor::PROTON_PDGID</a></div><div class="ttdeci">static const int PROTON_PDGID</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00062">PnWeightProcessor.h:62</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Producer_html_abd1f979d49afb16c520ca66840d174cc"><div class="ttname"><a href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">ldmx::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00048">EventProcessor.cxx:48</a></div></div>
 <div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a8064b76157ba547766ecc3be84025145"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a8064b76157ba547766ecc3be84025145">ldmx::PnWeightProcessor::calculateW</a></div><div class="ttdeci">double calculateW(const SimParticle *particle, double delta=0.5)</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8cxx_source.html#l00159">PnWeightProcessor.cxx:159</a></div></div>
-<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a5b90b02b27d0105f798473ae4f50e713"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a5b90b02b27d0105f798473ae4f50e713">ldmx::PnWeightProcessor::thetaThreshold_</a></div><div class="ttdeci">double thetaThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00104">PnWeightProcessor.h:104</a></div></div>
-<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a69401d29e9e959daee9759f3d3872271"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a69401d29e9e959daee9759f3d3872271">ldmx::PnWeightProcessor::lFit</a></div><div class="ttdeci">std::unique_ptr&lt; TF1 &gt; lFit</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00107">PnWeightProcessor.h:107</a></div></div>
+<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a5b90b02b27d0105f798473ae4f50e713"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a5b90b02b27d0105f798473ae4f50e713">ldmx::PnWeightProcessor::thetaThreshold_</a></div><div class="ttdeci">double thetaThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00106">PnWeightProcessor.h:106</a></div></div>
+<div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a69401d29e9e959daee9759f3d3872271"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a69401d29e9e959daee9759f3d3872271">ldmx::PnWeightProcessor::lFit</a></div><div class="ttdeci">std::unique_ptr&lt; TF1 &gt; lFit</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8h_source.html#l00109">PnWeightProcessor.h:109</a></div></div>
 <div class="ttc" id="aclassldmx_1_1PnWeightProcessor_html_a87be50115b3607b2f4c1028bc4c9ffff"><div class="ttname"><a href="classldmx_1_1PnWeightProcessor.html#a87be50115b3607b2f4c1028bc4c9ffff">ldmx::PnWeightProcessor::calculateWeight</a></div><div class="ttdeci">double calculateWeight(double w)</div><div class="ttdef"><b>Definition:</b> <a href="PnWeightProcessor_8cxx_source.html#l00155">PnWeightProcessor.cxx:155</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>

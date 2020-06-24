@@ -52,7 +52,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="structldmx_1_1Class.html" title="Encapsualtes the information required to create a class of type className_.">Class</a> that extends the functionality of G4GeneralParticleSource.  
+<p>Class that extends the functionality of G4GeneralParticleSource.  
  <a href="classldmx_1_1GeneralParticleSource.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="GeneralParticleSource_8h_source.html">GeneralParticleSource.h</a>&gt;</code></p>
@@ -96,7 +96,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="separator:a04264968ac702df3ef04e23be4aba1d2 inherit pro_attribs_classldmx_1_1PrimaryGenerator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="structldmx_1_1Class.html" title="Encapsualtes the information required to create a class of type className_.">Class</a> that extends the functionality of G4GeneralParticleSource. </p>
+<div class="textblock"><p>Class that extends the functionality of G4GeneralParticleSource. </p>
 
 <p class="definition">Definition at line <a class="el" href="GeneralParticleSource_8h_source.html#l00032">32</a> of file <a class="el" href="GeneralParticleSource_8h_source.html">GeneralParticleSource.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -139,7 +139,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classldmx_1_1PrimaryGenerator.html#a38ee9c4de4efc5f946133b4d26fdd9f9">PrimaryGenerator</a>( name , parameters )</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">auto</span> initCommands{<a class="code" href="classldmx_1_1PrimaryGenerator.html#a04264968ac702df3ef04e23be4aba1d2">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">getParameter</a>&lt; std::vector&lt;std::string&gt; &gt;( <span class="stringliteral">&quot;initCommands&quot;</span> )};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">auto</span> initCommands{<a class="code" href="classldmx_1_1PrimaryGenerator.html#a04264968ac702df3ef04e23be4aba1d2">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; std::vector&lt;std::string&gt; &gt;( <span class="stringliteral">&quot;initCommands&quot;</span> )};</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span>&amp; cmd : initCommands ) {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordtype">int</span> g4Ret = G4UImanager::GetUIpointer()-&gt;ApplyCommand( cmd );</div>
@@ -152,7 +152,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } </div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="Parameters_8h_source.html#l00062">ldmx::Parameters::getParameter()</a>, and <a class="el" href="PrimaryGenerator_8h_source.html#l00076">ldmx::PrimaryGenerator::parameters_</a>.</p>
+<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, <a class="el" href="Parameters_8h_source.html#l00060">ldmx::Parameters::getParameter()</a>, and <a class="el" href="PrimaryGenerator_8h_source.html#l00076">ldmx::PrimaryGenerator::parameters_</a>.</p>
 
 </div>
 </div>
@@ -241,7 +241,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="ttc" id="aclassldmx_1_1PrimaryGenerator_html_a04264968ac702df3ef04e23be4aba1d2"><div class="ttname"><a href="classldmx_1_1PrimaryGenerator.html#a04264968ac702df3ef04e23be4aba1d2">ldmx::PrimaryGenerator::parameters_</a></div><div class="ttdeci">Parameters parameters_</div><div class="ttdoc">The set of parameters used to configure this class.</div><div class="ttdef"><b>Definition:</b> <a href="PrimaryGenerator_8h_source.html#l00076">PrimaryGenerator.h:76</a></div></div>
 <div class="ttc" id="aclassldmx_1_1GeneralParticleSource_html_aa49fff963025f384cf33600c17c2e398"><div class="ttname"><a href="classldmx_1_1GeneralParticleSource.html#aa49fff963025f384cf33600c17c2e398">ldmx::GeneralParticleSource::theG4Source_</a></div><div class="ttdeci">G4GeneralParticleSource theG4Source_</div><div class="ttdef"><b>Definition:</b> <a href="GeneralParticleSource_8h_source.html#l00063">GeneralParticleSource.h:63</a></div></div>
 <div class="ttc" id="aclassldmx_1_1PrimaryGenerator_html_a38ee9c4de4efc5f946133b4d26fdd9f9"><div class="ttname"><a href="classldmx_1_1PrimaryGenerator.html#a38ee9c4de4efc5f946133b4d26fdd9f9">ldmx::PrimaryGenerator::PrimaryGenerator</a></div><div class="ttdeci">PrimaryGenerator(const std::string &amp;name, Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="PrimaryGenerator_8cxx_source.html#l00014">PrimaryGenerator.cxx:14</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Parameters_html_a707c2861371103bff5716f069f55ef05"><div class="ttname"><a href="classldmx_1_1Parameters.html#a707c2861371103bff5716f069f55ef05">ldmx::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name, T defaultParam=T())</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00062">Parameters.h:62</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Parameters_html_a3b66add92c7331ca071eca9c423ea9e9"><div class="ttname"><a href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">ldmx::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00060">Parameters.h:60</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

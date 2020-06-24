@@ -94,33 +94,32 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> UserActionManager::createAction(<span class="keyword">const</span> std::string&amp; className, <span class="keyword">const</span> std::string&amp; instanceName, Parameters&amp; parameters) { </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">auto</span> it{<a class="code" href="classldmx_1_1UserActionManager.html#a16bf33ce22ea72f9979de954c6b1ed26">actionInfo_</a>.find(className)}; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (it == <a class="code" href="classldmx_1_1UserActionManager.html#a16bf33ce22ea72f9979de954c6b1ed26">actionInfo_</a>.end()) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;UserActionException&quot;</span>, <span class="stringliteral">&quot;Failed to create &quot;</span> + className); </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        } </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">auto</span> act{it-&gt;second.builder_(instanceName, parameters)};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::vector&lt; TYPE &gt; types = act-&gt;getTypes();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; type : types) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> (type == TYPE::RUN) </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                std::get&lt; UserRunAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::RUN])-&gt;registerAction(act); </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == TYPE::EVENT) </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                std::get&lt; UserEventAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::EVENT])-&gt;registerAction(act); </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == TYPE::TRACKING) </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                std::get&lt; UserTrackingAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::TRACKING])-&gt;registerAction(act); </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == TYPE::STEPPING) </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                std::get&lt; USteppingAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::STEPPING])-&gt;registerAction(act); </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == TYPE::STACKING) </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                std::get&lt; UserStackingAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::STACKING])-&gt;registerAction(act); </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;               <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;UserActionException&quot;</span>, <span class="stringliteral">&quot;User action type doesn&#39;t exist.&quot;</span>); </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        } </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <span class="comment">// ldmx</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">auto</span> it{<a class="code" href="classldmx_1_1UserActionManager.html#a16bf33ce22ea72f9979de954c6b1ed26">actionInfo_</a>.find(className)}; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (it == <a class="code" href="classldmx_1_1UserActionManager.html#a16bf33ce22ea72f9979de954c6b1ed26">actionInfo_</a>.end()) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;UserActionException&quot;</span>, <span class="stringliteral">&quot;Failed to create &quot;</span> + className); </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        } </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">auto</span> act{it-&gt;second.builder_(instanceName, parameters)};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::vector&lt; TYPE &gt; types = act-&gt;getTypes();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; type : types) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (type == TYPE::RUN) </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                std::get&lt; UserRunAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::RUN])-&gt;registerAction(act); </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == TYPE::EVENT) </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                std::get&lt; UserEventAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::EVENT])-&gt;registerAction(act); </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == TYPE::TRACKING) </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                std::get&lt; UserTrackingAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::TRACKING])-&gt;registerAction(act); </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == TYPE::STEPPING) </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                std::get&lt; USteppingAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::STEPPING])-&gt;registerAction(act); </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == TYPE::STACKING) </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                std::get&lt; UserStackingAction* &gt;(<a class="code" href="classldmx_1_1UserActionManager.html#a7ea0a6d8d2eeeb4f2898b3b76a03cdd6">actions_</a>[TYPE::STACKING])-&gt;registerAction(act); </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;               <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;UserActionException&quot;</span>, <span class="stringliteral">&quot;User action type doesn&#39;t exist.&quot;</span>); </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        } </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;} <span class="comment">// ldmx</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1UserActionManager_html_a1c5f1e06d3c52cbc59f8f3636e556504"><div class="ttname"><a href="classldmx_1_1UserActionManager.html#a1c5f1e06d3c52cbc59f8f3636e556504">ldmx::UserActionManager::getInstance</a></div><div class="ttdeci">static UserActionManager &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="UserActionManager_8cxx_source.html#l00034">UserActionManager.cxx:34</a></div></div>
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>

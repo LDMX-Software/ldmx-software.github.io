@@ -86,8 +86,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab38afea01d11e6c540b3646717ed33a5 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac235e777cff959f18bc120232d689f50 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ac235e777cff959f18bc120232d689f50">setStorageHint</a> (ldmx::StorageControlHint hint, const std::string &amp;purposeString)</td></tr>
 <tr class="separator:ac235e777cff959f18bc120232d689f50 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a842949b7520f121621d407e723edef inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a9a842949b7520f121621d407e723edef">createHistograms</a> (const std::vector&lt; <a class="el" href="structldmx_1_1HistogramInfo.html">HistogramInfo</a> &gt; &amp;histos)</td></tr>
-<tr class="separator:a9a842949b7520f121621d407e723edef inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4deffb5a280902e2cc54a0118ec7f29b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a4deffb5a280902e2cc54a0118ec7f29b">createHistograms</a> (const std::vector&lt; <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &gt; &amp;histos)</td></tr>
+<tr class="separator:a4deffb5a280902e2cc54a0118ec7f29b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -118,7 +118,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Base class for a module which does not produce a data product. </p>
 <dl class="section note"><dt>Note</dt><dd>This class processes a constant copy of the event which cannot be updated. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00246">246</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00251">251</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a292d214965c667249fe4e1cf400ff444"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a292d214965c667249fe4e1cf400ff444">&#9670;&nbsp;</a></span>Analyzer()</h2>
@@ -145,7 +145,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="structldmx_1_1Class.html" title="Encapsualtes the information required to create a class of type className_.">Class</a> constructor.</p>
+<p>Class constructor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>Name for this instance of the class. </td></tr>
@@ -157,8 +157,8 @@ Additional Inherited Members</h2></td></tr>
 <dd>
 The provided name should not be the class name, but rather a logical label for this instance of the class, as more than one copy of a given class can be loaded into a <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a> with different parameters. Names should not include whitespace or special characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00045">45</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;: <a class="code" href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">EventProcessor</a>(name,process) {}</div>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00050">50</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;: <a class="code" href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">EventProcessor</a>(name,process) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -219,7 +219,7 @@ The provided name should not be the class name, but rather a logical label for t
 </div><div class="memdoc">
 <p>Constant used to track <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> types by the <a class="el" href="classldmx_1_1EventProcessorFactory.html" title="Singleton module factory that creates EventProcessor objects.">EventProcessorFactory</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00251">251</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00256">256</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 
 </div>
 </div>

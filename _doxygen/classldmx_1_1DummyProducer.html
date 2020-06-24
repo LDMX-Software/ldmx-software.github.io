@@ -94,8 +94,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onFileClose</
 <tr class="separator:ab38afea01d11e6c540b3646717ed33a5 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac235e777cff959f18bc120232d689f50 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ac235e777cff959f18bc120232d689f50">setStorageHint</a> (ldmx::StorageControlHint hint, const std::string &amp;purposeString)</td></tr>
 <tr class="separator:ac235e777cff959f18bc120232d689f50 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a842949b7520f121621d407e723edef inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a9a842949b7520f121621d407e723edef">createHistograms</a> (const std::vector&lt; <a class="el" href="structldmx_1_1HistogramInfo.html">HistogramInfo</a> &gt; &amp;histos)</td></tr>
-<tr class="separator:a9a842949b7520f121621d407e723edef inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4deffb5a280902e2cc54a0118ec7f29b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a4deffb5a280902e2cc54a0118ec7f29b">createHistograms</a> (const std::vector&lt; <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &gt; &amp;histos)</td></tr>
+<tr class="separator:a4deffb5a280902e2cc54a0118ec7f29b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -164,9 +164,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Callback for the <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> to configure itself from the given set of parameters.</p>
+<p>The parameters a processor has access to are the member variables of the python class in the sequence that has className equal to the <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> class name.</p>
+<p>For an example, look at <a class="el" href="classldmx_1_1MyProcessor.html">MyProcessor</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parameters</td><td>ParameterSet for configuration. </td></tr>
+    <tr><td class="paramname">parameters</td><td><a class="el" href="classldmx_1_1Parameters.html">Parameters</a> for configuration. </td></tr>
   </table>
   </dd>
 </dl>

@@ -51,13 +51,9 @@
 </div>
 <div class="section" id="module-LDMX.Biasing.ecal">
 <span id="ldmx-biasing-ecal-module"></span><h2>LDMX.Biasing.ecal module<a class="headerlink" href="#module-LDMX.Biasing.ecal" title="Permalink to this headline">¶</a></h2>
-<p>&#64;package ecal
-Example configurations for producing biased interactions in the ECal.</p>
-<blockquote>
-<div><blockquote>
-<div><p>from LDMX.Biasing import ecal</p>
-</div></blockquote>
-</div></blockquote>
+<p>Example configurations for producing biased interactions in the ECal.</p>
+<p class="rubric">Example</p>
+<p>from LDMX.Biasing import ecal</p>
 <dl class="py function">
 <dt id="LDMX.Biasing.ecal.dark_brem">
 <code class="sig-prename descclassname">LDMX.Biasing.ecal.</code><code class="sig-name descname">dark_brem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ap_mass</span></em>, <em class="sig-param"><span class="n">lhe</span></em>, <em class="sig-param"><span class="n">detector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.ecal.dark_brem" title="Permalink to this definition">¶</a></dt>
@@ -97,7 +93,10 @@ checked by the EcalProcessFilter.  Only events that see the brem photon
 undergo a photo-nucler reaction in the ECal are kept.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>detector</strong> (<em>str</em>) – Path to the detector</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>detector</strong> (<em>str</em>) – Path to the detector</p></li>
+<li><p><strong>generator</strong> (<a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.PrimaryGenerator" title="LDMX.SimCore.simcfg.PrimaryGenerator"><em>PrimaryGenerator</em></a>) – generator to use</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p></p>
@@ -113,16 +112,111 @@ undergo a photo-nucler reaction in the ECal are kept.</p>
 </div>
 <div class="section" id="module-LDMX.Biasing.filters">
 <span id="ldmx-biasing-filters-module"></span><h2>LDMX.Biasing.filters module<a class="headerlink" href="#module-LDMX.Biasing.filters" title="Permalink to this headline">¶</a></h2>
-<p>&#64;package filters
+<p>filters
 Examples of how each filter is configured for biased MC generation.</p>
 <blockquote>
 <div><p>The configurations below reflect the nominal values currently being used
 for large scale production.  When debugging, it’s best to create these
 generators directly.</p>
 </div></blockquote>
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.ap_track_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">ap_track_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.ap_track_filter" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt id="LDMX.Biasing.filters.DarkBremFilter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">DarkBremFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vol</span><span class="o">=</span><span class="default_value">'target'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.DarkBremFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Configuration for filtering A’ events</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vol</strong> (<em>str</em>) – Geant4 name of volume to filter for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.Biasing.filters.EcalProcessFilter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">EcalProcessFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">process</span><span class="o">=</span><span class="default_value">'photonNuclear'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.EcalProcessFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Configuration for filtering events that don’t see a hard brem undergo a photo-nuclear reaction in the ECal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>process</strong> (<em>str</em>) – Geant4 process to look for in the ecal</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.Biasing.filters.TaggerVetoFilter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TaggerVetoFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thresh</span><span class="o">=</span><span class="default_value">3800.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TaggerVetoFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Configuration used to reject off-energy electrons in the tagger tracker.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>thresh</strong> (<em>float</em>) – Minimum energy [MeV] that electron should have</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.Biasing.filters.TargetBremFilter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TargetBremFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recoil_max_p</span><span class="o">=</span><span class="default_value">1500.0</span></em>, <em class="sig-param"><span class="n">brem_min_e</span><span class="o">=</span><span class="default_value">2500.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TargetBremFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Configuration for filtering events that don’t see a hard brem in the target.</p>
+<p>An event is vetoed if one of two conditions is satisfied:
+1) The recoil electron exits the target area with an energy above 1500 MeV
+2) The recoil electorn brems, but the energy of at least one of the brems
+isn’t above 2500 MeV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>recoil_max_p</strong> (<em>float</em>) – Maximum momentum the recoil electron can have [MeV]</p></li>
+<li><p><strong>brem_min_e</strong> (<em>float</em>) – Minimum energy the brem photon can have [MeV]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="LDMX.Biasing.filters.TargetBremFilter.kill_recoil_track">
+<code class="sig-name descname">kill_recoil_track</code><a class="headerlink" href="#LDMX.Biasing.filters.TargetBremFilter.kill_recoil_track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should we kill the recoil electron track for a worst case scenario?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.Biasing.filters.TargetENFilter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TargetENFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recoil_thresh</span><span class="o">=</span><span class="default_value">4000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TargetENFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Configuration for filtering electro-nuclear events in the target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>recoil_thresh</strong> (<em>float</em>) – ????? [MeV]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.Biasing.filters.TargetPNFilter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TargetPNFilter</code><a class="headerlink" href="#LDMX.Biasing.filters.TargetPNFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Configuration for filtering photo-nuclear events in the target.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="LDMX.Biasing.filters.TrackProcessFilter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TrackProcessFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">process_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TrackProcessFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Configuration used to tag all tracks produced via the given process to persist them to the event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>process_name</strong> (<em>str</em>) – The Geant4 process name (e.g. photonNuclear) via which the tracks were produced.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="LDMX.Biasing.filters.TrackProcessFilter.dark_brem">
+<code class="sig-name descname">dark_brem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TrackProcessFilter.dark_brem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configuration used to tag all dark brem tracks to persist them to the event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -134,23 +228,9 @@ generators directly.</p>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.ecal_pn_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">ecal_pn_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.ecal_pn_filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration for filtering events that don’t see a hard brem undergo a photo-nuclear reaction in the ECal.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Instance of configured EcalProcessFilter.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.en_track_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">en_track_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.en_track_filter" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="LDMX.Biasing.filters.TrackProcessFilter.electro_nuclear">
+<code class="sig-name descname">electro_nuclear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TrackProcessFilter.electro_nuclear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configuration used to tag all electro-nuclear tracks to persist them to the event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -162,9 +242,9 @@ generators directly.</p>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.pn_track_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">pn_track_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.pn_track_filter" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="LDMX.Biasing.filters.TrackProcessFilter.photo_nuclear">
+<code class="sig-name descname">photo_nuclear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TrackProcessFilter.photo_nuclear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configuration used to tag all photo-nuclear tracks to persist them to the event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -176,97 +256,16 @@ generators directly.</p>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.tagger_veto_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">tagger_veto_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.tagger_veto_filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration used to reject off-energy electrons in the tagger tracker.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Instance of configured TaggerVetoFilter</p>
-</dd>
-</dl>
 </dd></dl>
 
+</div>
+<div class="section" id="module-LDMX.Biasing.include">
+<span id="ldmx-biasing-include-module"></span><h2>LDMX.Biasing.include module<a class="headerlink" href="#module-LDMX.Biasing.include" title="Permalink to this headline">¶</a></h2>
+<p>Include this module</p>
 <dl class="py function">
-<dt id="LDMX.Biasing.filters.target_ap_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">target_ap_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.target_ap_filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration for filtering A’ events in the target.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Instance of configured DarkBremFilter.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.target_brem_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">target_brem_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.target_brem_filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration for filtering events that don’t see a hard brem in the target.</p>
-<p>An event is vetoed if one of two conditions is satisfied:
-1) The recoil electron exits the target area with an energy above 1500 MeV
-2) The recoil electorn brems, but the energy of at least one of the brems
-isn’t above 2500 MeV.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Instance of configured TargetBremFilter.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.target_en_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">target_en_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.target_en_filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration for filtering electro-nuclear events in the target.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Instance of configured TargetENProcessFilter.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.target_pn_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">target_pn_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.target_pn_filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration for filtering photo-nuclear events in the target.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Instance of configured TargetProcessFilter.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="LDMX.Biasing.filters.track_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">track_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">process_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.track_filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configuration used to tag all tracks produced via the given process to persist them to the event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>process_name</strong> (<em>str</em>) – The Geant4 process name (e.g. photonNuclear) via which the tracks were
-produced.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><em>Instance of TrackProcessFilter configured to tag tracks produced via the</em></p></li>
-<li><p><em>given process.</em></p></li>
-</ul>
-</p>
-</dd>
-</dl>
+<dt id="LDMX.Biasing.include.library">
+<code class="sig-prename descclassname">LDMX.Biasing.include.</code><code class="sig-name descname">library</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.include.library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach the name of Biasing library to the process</p>
 </dd></dl>
 
 </div>
@@ -274,9 +273,30 @@ produced.</p>
 <span id="ldmx-biasing-particle-filter-module"></span><h2>LDMX.Biasing.particle_filter module<a class="headerlink" href="#module-LDMX.Biasing.particle_filter" title="Permalink to this headline">¶</a></h2>
 <p>Example configurations for filtering out PN events by the properties of
 of the reaction products.</p>
-<dl class="py function">
-<dt id="LDMX.Biasing.particle_filter.kaon_filter">
-<code class="sig-prename descclassname">LDMX.Biasing.particle_filter.</code><code class="sig-name descname">kaon_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.particle_filter.kaon_filter" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt id="LDMX.Biasing.particle_filter.PhotoNuclearProductsFilter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.particle_filter.</code><code class="sig-name descname">PhotoNuclearProductsFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.particle_filter.PhotoNuclearProductsFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Configuration for keeping events with specific products of PN interactions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name for this filter</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="LDMX.Biasing.particle_filter.PhotoNuclearProductsFilter.pdg_ids">
+<code class="sig-name descname">pdg_ids</code><a class="headerlink" href="#LDMX.Biasing.particle_filter.PhotoNuclearProductsFilter.pdg_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of PDG product IDs to look for in PN products</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of ints</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="LDMX.Biasing.particle_filter.PhotoNuclearProductsFilter.kaon">
+<code class="sig-name descname">kaon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.particle_filter.PhotoNuclearProductsFilter.kaon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configuration for filtering photo-nuclear events whose products don’t contain a kaon.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -288,21 +308,19 @@ of the reaction products.</p>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
 </div>
 <div class="section" id="module-LDMX.Biasing.target">
 <span id="ldmx-biasing-target-module"></span><h2>LDMX.Biasing.target module<a class="headerlink" href="#module-LDMX.Biasing.target" title="Permalink to this headline">¶</a></h2>
-<p>&#64;package target
-Example configurations for producing biased interactions in the target.</p>
-<blockquote>
-<div><blockquote>
-<div><p>from LDMX.Biasing import target</p>
-</div></blockquote>
-</div></blockquote>
+<p>Example configurations for producing biased interactions in the target.</p>
+<p class="rubric">Example</p>
+<p>from LDMX.Biasing import target</p>
 <dl class="py function">
 <dt id="LDMX.Biasing.target.dark_brem">
 <code class="sig-prename descclassname">LDMX.Biasing.target.</code><code class="sig-name descname">dark_brem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ap_mass</span></em>, <em class="sig-param"><span class="n">lhe</span></em>, <em class="sig-param"><span class="n">detector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.target.dark_brem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Example configuration for producing dark brem interactions in the target.</p>
-<p>This configures the simulator to fire a 4 GeV electron upstream of the
+<p>This configures the sim to fire a 4 GeV electron upstream of the
 tagger tracker.  The dark-photon production cross-section is biased up in
 the target.  Only events that result in a dark-photon being produced in the
 target are kept.</p>
@@ -318,7 +336,7 @@ target are kept.</p>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Instance of the simulator configured for dark-brem production in the target.</p>
+<dd class="field-odd"><p>Instance of the sim configured for dark-brem production in the target.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -340,7 +358,7 @@ electro-nuclear reaction take places in the target.</p>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Instance of the simulator configured for target electro-nuclear.</p>
+<dd class="field-odd"><p>Instance of the sim configured for target electro-nuclear.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -364,11 +382,28 @@ a photo-nuclear reaction in the target.</p>
 <dd class="field-even"><p></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Instance of the simulator configured for target photo-nuclear.</p>
+<dd class="field-odd"><p>Instance of the sim configured for target photo-nuclear.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
 <p>target_pn_sim = target.photo_nuclear(‘ldmx-det-v12’)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-LDMX.Biasing.util">
+<span id="ldmx-biasing-util-module"></span><h2>LDMX.Biasing.util module<a class="headerlink" href="#module-LDMX.Biasing.util" title="Permalink to this headline">¶</a></h2>
+<p>Utility classes for Simulation</p>
+<dl class="py class">
+<dt id="LDMX.Biasing.util.StepPrinter">
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.util.</code><code class="sig-name descname">StepPrinter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">track_id</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.util.StepPrinter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
+<p>Print each step of the input track ID</p>
+<p>The default track ID is 1 (the primary particle).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>track_id</strong> (<em>int</em><em>, </em><em>optional</em>) – Geant4 track ID to print each step of</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -391,8 +426,10 @@ a photo-nuclear reaction in the target.</p>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-LDMX.Biasing.ecal">LDMX.Biasing.ecal module</a></li>
 <li><a class="reference internal" href="#module-LDMX.Biasing.filters">LDMX.Biasing.filters module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Biasing.include">LDMX.Biasing.include module</a></li>
 <li><a class="reference internal" href="#module-LDMX.Biasing.particle_filter">LDMX.Biasing.particle_filter module</a></li>
 <li><a class="reference internal" href="#module-LDMX.Biasing.target">LDMX.Biasing.target module</a></li>
+<li><a class="reference internal" href="#module-LDMX.Biasing.util">LDMX.Biasing.util module</a></li>
 <li><a class="reference internal" href="#module-LDMX.Biasing">Module contents</a></li>
 </ul>
 </li>
