@@ -230,18 +230,18 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">auto</span> simParticles{<a class="code" href="classldmx_1_1RootCompleteReSim.html#adca27a5bb5aef18bd3c1556455cac0f9">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#aa70a03b8a6d8a453946d2f330103eb0f">getMap</a>&lt;int,SimParticle&gt;( <a class="code" href="classldmx_1_1RootCompleteReSim.html#a6a7735268f84e9301695252f4b52e3f5">simParticleCollName_</a> , <a class="code" href="classldmx_1_1RootCompleteReSim.html#a855aea813bfa28a2bfd2062e2ab51a8b">simParticlePassName_</a> )};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::vector&lt;G4PrimaryVertex*&gt; vertices; <span class="comment">//vertices already put into Geant4</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; particle : simParticles ) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [ trackID , sp ] : simParticles ) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// check if particle has status 1</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// skip if not primary gen status</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> (particle.second.getGenStatus() != 1) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> (sp.getGenStatus() != 1) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordtype">bool</span> vertexExists = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            G4PrimaryVertex* curvertex = <span class="keyword">new</span> G4PrimaryVertex();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iV = 0; iV &lt; vertices.size(); ++iV) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">double</span> cur_vx = particle.second.getVertex()[0];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordtype">double</span> cur_vy = particle.second.getVertex()[1];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">double</span> cur_vz = particle.second.getVertex()[2];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">double</span> cur_vx = sp.getVertex()[0];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordtype">double</span> cur_vy = sp.getVertex()[1];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">double</span> cur_vz = sp.getVertex()[2];</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordtype">double</span> i_vx = vertices.at(iV)-&gt;GetX0();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordtype">double</span> i_vy = vertices.at(iV)-&gt;GetY0();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordtype">double</span> i_vz = vertices.at(iV)-&gt;GetZ0();</div>
@@ -251,30 +251,26 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (vertexExists == <span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                curvertex-&gt;SetPosition(particle.second.getVertex()[0], </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                       particle.second.getVertex()[1], </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                       particle.second.getVertex()[2]);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                curvertex-&gt;SetWeight(1.);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                anEvent-&gt;AddPrimaryVertex(curvertex);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            G4PrimaryParticle* primary = <span class="keyword">new</span> G4PrimaryParticle();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            primary-&gt;SetPDGcode(particle.second.getPdgID());</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            primary-&gt;SetMomentum(particle.second.getMomentum()[0] * MeV, </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                 particle.second.getMomentum()[1] * MeV, </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                 particle.second.getMomentum()[2] * MeV);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            primary-&gt;SetMass(particle.second.getMass() * MeV);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                curvertex-&gt;SetPosition(sp.getVertex()[0], sp.getVertex()[1], sp.getVertex()[2]);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                curvertex-&gt;SetWeight(1.);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                anEvent-&gt;AddPrimaryVertex(curvertex);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            G4PrimaryParticle* primary = <span class="keyword">new</span> G4PrimaryParticle();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            primary-&gt;SetPDGcode(sp.getPdgID());</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            primary-&gt;SetMomentum(sp.getMomentum()[0] * MeV, sp.getMomentum()[1] * MeV, sp.getMomentum()[2] * MeV);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            primary-&gt;SetMass(sp.getMass() * MeV);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            curvertex-&gt;SetPrimary(primary);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            curvertex-&gt;SetPrimary(primary);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">// Create an input stream with a copy of the event seed as content.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// The input stream is then passed to the random engine to restore </span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// the state.</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::istringstream iss(<a class="code" href="classldmx_1_1RootCompleteReSim.html#adca27a5bb5aef18bd3c1556455cac0f9">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a72077dc95c6f43291e32170e1e0f32f6">getStringParameter</a>(<span class="stringliteral">&quot;eventSeed&quot;</span>));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        G4Random::restoreFullState(iss); </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// Create an input stream with a copy of the event seed as content.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// The input stream is then passed to the random engine to restore </span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// the state.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        std::istringstream iss(<a class="code" href="classldmx_1_1RootCompleteReSim.html#adca27a5bb5aef18bd3c1556455cac0f9">ievent_</a>.<a class="code" href="classldmx_1_1Event.html#a96dbbc683b0457a5231f7f667ca4c520">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a72077dc95c6f43291e32170e1e0f32f6">getStringParameter</a>(<span class="stringliteral">&quot;eventSeed&quot;</span>));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        G4Random::restoreFullState(iss); </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Event_8h_source.html#l00057">ldmx::Event::getEventHeader()</a>, <a class="el" href="Event_8h_source.html#l00229">ldmx::Event::getMap()</a>, <a class="el" href="EventHeader_8h_source.html#l00184">ldmx::EventHeader::getStringParameter()</a>, <a class="el" href="RootCompleteReSim_8h_source.html#l00092">ievent_</a>, <a class="el" href="RootCompleteReSim_8h_source.html#l00087">ifile_</a>, <a class="el" href="RootCompleteReSim_8h_source.html#l00077">simParticleCollName_</a>, and <a class="el" href="RootCompleteReSim_8h_source.html#l00082">simParticlePassName_</a>.</p>
 
@@ -390,8 +386,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>SimCore/include/SimCore/<a class="el" href="RootCompleteReSim_8h_source.html">RootCompleteReSim.h</a></li>
-<li>SimCore/src/<a class="el" href="RootCompleteReSim_8cxx_source.html">RootCompleteReSim.cxx</a></li>
+<li>SimApplication/include/SimApplication/<a class="el" href="RootCompleteReSim_8h_source.html">RootCompleteReSim.h</a></li>
+<li>SimApplication/src/<a class="el" href="RootCompleteReSim_8cxx_source.html">RootCompleteReSim.cxx</a></li>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1RootCompleteReSim_html_adca27a5bb5aef18bd3c1556455cac0f9"><div class="ttname"><a href="classldmx_1_1RootCompleteReSim.html#adca27a5bb5aef18bd3c1556455cac0f9">ldmx::RootCompleteReSim::ievent_</a></div><div class="ttdeci">Event ievent_</div><div class="ttdef"><b>Definition:</b> <a href="RootCompleteReSim_8h_source.html#l00092">RootCompleteReSim.h:92</a></div></div>

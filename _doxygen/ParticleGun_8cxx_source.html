@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.8.18"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>LDMX Software: SimCore/src/ParticleGun.cxx Source File</title>
+		<title>LDMX Software: SimApplication/src/ParticleGun.cxx Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -39,7 +39,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d764adcdf188058460d8947cee0814f0.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_7ad22e876ae3bef8b8853f417e896df5.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_df4befc74a5a42026b680d6c82c82ec6.html">SimApplication</a></li><li class="navelem"><a class="el" href="dir_c8b54e95c9660ed4cdbdf968b5868bdc.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -48,7 +48,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="ParticleGun_8cxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ParticleGun_8h.html">SimCore/ParticleGun.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ParticleGun_8h.html">SimApplication/ParticleGun.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*~~~~~~~~~~~~~~~~*/</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*   C++ StdLib   */</span></div>
@@ -74,7 +74,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classldmx_1_1PrimaryGenerator.html">PrimaryGenerator</a>( name , parameters )</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classldmx_1_1ParticleGun.html#a4e6a569d048cea2af626094b6bc23c58">verbosity_</a> = parameters.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;verbosity&quot;</span> , 0);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classldmx_1_1ParticleGun.html#a4e6a569d048cea2af626094b6bc23c58">verbosity_</a> = parameters.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;verbosity&quot;</span>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">auto</span> particleTable{G4ParticleTable::GetParticleTable()};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        </div>
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classldmx_1_1ParticleGun.html#ae4aeb4d8d30e61da8d282e39d5de4dc0">theGun_</a>.SetParticlePosition(pVec);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">auto</span> time{parameters.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; <span class="keywordtype">double</span> &gt;(<span class="stringliteral">&quot;time&quot;</span>,0)}; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">auto</span> time{parameters.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; <span class="keywordtype">double</span> &gt;(<span class="stringliteral">&quot;time&quot;</span>)}; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (time &lt; 0) time = 0.0; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1ParticleGun.html#a4e6a569d048cea2af626094b6bc23c58">verbosity_</a> &gt; 1 ) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[ ParticleGun ] : Setting particle time  to &quot;</span> &lt;&lt; time &lt;&lt; std::endl;</div>
