@@ -48,8 +48,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef SIMCORE_USERACTION_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define SIMCORE_USERACTION_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef SIMAPPLICATION_USERACTION_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define SIMAPPLICATION_USERACTION_H</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*~~~~~~~~~~~~~~~~*/</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   C++ StdLib   */</span></div>
@@ -135,7 +135,7 @@ $(function() {
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#define DECLARE_ACTION(NS, CLASS) ldmx::UserAction* CLASS ## Builder (const std::string&amp; name, ldmx::Parameters&amp; parameters) { return new NS::CLASS(name, parameters); } __attribute((constructor(205))) static void CLASS ## Declare() { ldmx::UserAction::declare(std::string(#NS) + &quot;::&quot; + std::string(#CLASS), &amp; CLASS ## Builder); } </span></div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#endif // SIMCORE_USERACTION_H</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#endif // SIMAPPLICATION_USERACTION_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1UserAction_html_a59a9403163c706234edf7293aadade44"><div class="ttname"><a href="classldmx_1_1UserAction.html#a59a9403163c706234edf7293aadade44">ldmx::UserAction::PreUserTrackingAction</a></div><div class="ttdeci">virtual void PreUserTrackingAction(const G4Track *)</div><div class="ttdef"><b>Definition:</b> <a href="UserAction_8h_source.html#l00114">UserAction.h:114</a></div></div>
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
