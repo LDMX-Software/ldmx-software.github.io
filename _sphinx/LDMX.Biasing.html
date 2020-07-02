@@ -95,7 +95,7 @@ undergo a photo-nucler reaction in the ECal are kept.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>detector</strong> (<em>str</em>) – Path to the detector</p></li>
-<li><p><strong>generator</strong> (<a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.PrimaryGenerator" title="LDMX.SimApplication.simcfg.PrimaryGenerator"><em>PrimaryGenerator</em></a>) – generator to use</p></li>
+<li><p><strong>generator</strong> (<a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.PrimaryGenerator" title="LDMX.SimCore.simcfg.PrimaryGenerator"><em>PrimaryGenerator</em></a>) – generator to use</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -122,7 +122,7 @@ generators directly.</p>
 <dl class="py class">
 <dt id="LDMX.Biasing.filters.DarkBremFilter">
 <em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">DarkBremFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vol</span><span class="o">=</span><span class="default_value">'target'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.DarkBremFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Configuration for filtering A’ events</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -134,7 +134,7 @@ generators directly.</p>
 <dl class="py class">
 <dt id="LDMX.Biasing.filters.EcalProcessFilter">
 <em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">EcalProcessFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">process</span><span class="o">=</span><span class="default_value">'photonNuclear'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.EcalProcessFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Configuration for filtering events that don’t see a hard brem undergo a photo-nuclear reaction in the ECal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -146,7 +146,7 @@ generators directly.</p>
 <dl class="py class">
 <dt id="LDMX.Biasing.filters.TaggerVetoFilter">
 <em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TaggerVetoFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thresh</span><span class="o">=</span><span class="default_value">3800.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TaggerVetoFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Configuration used to reject off-energy electrons in the tagger tracker.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -158,7 +158,7 @@ generators directly.</p>
 <dl class="py class">
 <dt id="LDMX.Biasing.filters.TargetBremFilter">
 <em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TargetBremFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recoil_max_p</span><span class="o">=</span><span class="default_value">1500.0</span></em>, <em class="sig-param"><span class="n">brem_min_e</span><span class="o">=</span><span class="default_value">2500.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TargetBremFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Configuration for filtering events that don’t see a hard brem in the target.</p>
 <p>An event is vetoed if one of two conditions is satisfied:
 1) The recoil electron exits the target area with an energy above 1500 MeV
@@ -187,12 +187,12 @@ isn’t above 2500 MeV.</p>
 
 <dl class="py class">
 <dt id="LDMX.Biasing.filters.TargetENFilter">
-<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TargetENFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recoil_thresh</span><span class="o">=</span><span class="default_value">4000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TargetENFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TargetENFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recoil_thresh</span><span class="o">=</span><span class="default_value">2500.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TargetENFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Configuration for filtering electro-nuclear events in the target.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>recoil_thresh</strong> (<em>float</em>) – ????? [MeV]</p>
+<dd class="field-odd"><p><strong>recoil_thresh</strong> (<em>float</em>) – Maximum energy recoil electron is allowed to have [MeV]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -200,14 +200,14 @@ isn’t above 2500 MeV.</p>
 <dl class="py class">
 <dt id="LDMX.Biasing.filters.TargetPNFilter">
 <em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TargetPNFilter</code><a class="headerlink" href="#LDMX.Biasing.filters.TargetPNFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Configuration for filtering photo-nuclear events in the target.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="LDMX.Biasing.filters.TrackProcessFilter">
 <em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.filters.</code><code class="sig-name descname">TrackProcessFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">process_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.filters.TrackProcessFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Configuration used to tag all tracks produced via the given process to persist them to the event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -276,7 +276,7 @@ of the reaction products.</p>
 <dl class="py class">
 <dt id="LDMX.Biasing.particle_filter.PhotoNuclearProductsFilter">
 <em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.particle_filter.</code><code class="sig-name descname">PhotoNuclearProductsFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.particle_filter.PhotoNuclearProductsFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Configuration for keeping events with specific products of PN interactions</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -396,7 +396,7 @@ a photo-nuclear reaction in the target.</p>
 <dl class="py class">
 <dt id="LDMX.Biasing.util.StepPrinter">
 <em class="property">class </em><code class="sig-prename descclassname">LDMX.Biasing.util.</code><code class="sig-name descname">StepPrinter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">track_id</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#LDMX.Biasing.util.StepPrinter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="LDMX.SimApplication.html#LDMX.SimApplication.simcfg.UserAction" title="LDMX.SimApplication.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimApplication.simcfg.UserAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="LDMX.SimCore.html#LDMX.SimCore.simcfg.UserAction" title="LDMX.SimCore.simcfg.UserAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LDMX.SimCore.simcfg.UserAction</span></code></a></p>
 <p>Print each step of the input track ID</p>
 <p>The default track ID is 1 (the primary particle).</p>
 <dl class="field-list simple">

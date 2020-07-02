@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.8.18"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>LDMX Software: SimApplication/src/SimParticleBuilder.cxx Source File</title>
+		<title>LDMX Software: SimCore/src/SimParticleBuilder.cxx Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -39,7 +39,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_df4befc74a5a42026b680d6c82c82ec6.html">SimApplication</a></li><li class="navelem"><a class="el" href="dir_c8b54e95c9660ed4cdbdf968b5868bdc.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d764adcdf188058460d8947cee0814f0.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_7ad22e876ae3bef8b8853f417e896df5.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -47,7 +47,7 @@ $(function() {
 <div class="title">SimParticleBuilder.cxx</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SimParticleBuilder_8h.html">SimApplication/SimParticleBuilder.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SimParticleBuilder_8h.html">SimCore/SimParticleBuilder.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
@@ -55,9 +55,9 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Exception_8h.html">Exception/Exception.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Event_8h.html">Framework/Event.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventConstants_8h.html">Event/EventConstants.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G4CalorimeterHit_8h.html">SimApplication/G4CalorimeterHit.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G4TrackerHit_8h.html">SimApplication/G4TrackerHit.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="UserTrackingAction_8h.html">SimApplication/UserTrackingAction.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G4CalorimeterHit_8h.html">SimCore/G4CalorimeterHit.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G4TrackerHit_8h.html">SimCore/G4TrackerHit.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="UserTrackingAction_8h.html">SimCore/UserTrackingAction.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Geant4</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;G4SystemOfUnits.hh&quot;</span></div>
@@ -163,7 +163,7 @@ $(function() {
 <div class="ttc" id="aclassldmx_1_1SimParticle_html_a33236a4e5ee0667e27a87b1a8ca0bdd5"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a33236a4e5ee0667e27a87b1a8ca0bdd5">ldmx::SimParticle::setVertex</a></div><div class="ttdeci">void setVertex(const double &amp;x, const double &amp;y, const double &amp;z)</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00193">SimParticle.h:193</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimParticle_html_a2f980077eebfad41eb05792ff55cbb8d"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a2f980077eebfad41eb05792ff55cbb8d">ldmx::SimParticle::setGenStatus</a></div><div class="ttdeci">void setGenStatus(const int &amp;genStatus)</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00177">SimParticle.h:177</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Trajectory_html_ab5f98f4e4a71229f2b2c3b92b6e6cb7d"><div class="ttname"><a href="classldmx_1_1Trajectory.html#ab5f98f4e4a71229f2b2c3b92b6e6cb7d">ldmx::Trajectory::GetTrackID</a></div><div class="ttdeci">G4int GetTrackID() const</div><div class="ttdef"><b>Definition:</b> <a href="Trajectory_8cxx_source.html#l00075">Trajectory.cxx:75</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Event_html_ae3cdb4644d0d1c0ea864964cb6be1b69"><div class="ttname"><a href="classldmx_1_1Event.html#ae3cdb4644d0d1c0ea864964cb6be1b69">ldmx::Event::add</a></div><div class="ttdeci">void add(const std::string &amp;collectionName, T &amp;obj)</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00118">Event.h:118</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Event_html_ae3cdb4644d0d1c0ea864964cb6be1b69"><div class="ttname"><a href="classldmx_1_1Event.html#ae3cdb4644d0d1c0ea864964cb6be1b69">ldmx::Event::add</a></div><div class="ttdeci">void add(const std::string &amp;collectionName, T &amp;obj)</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00126">Event.h:126</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Trajectory_html_a11f695d0487b1ad96011937aedc1fb6a"><div class="ttname"><a href="classldmx_1_1Trajectory.html#a11f695d0487b1ad96011937aedc1fb6a">ldmx::Trajectory::getEndPoint</a></div><div class="ttdeci">G4ThreeVector getEndPoint() const</div><div class="ttdef"><b>Definition:</b> <a href="Trajectory_8cxx_source.html#l00121">Trajectory.cxx:121</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimParticle_html_ab782d314f68da632f2f24083553dd3b4"><div class="ttname"><a href="classldmx_1_1SimParticle.html#ab782d314f68da632f2f24083553dd3b4">ldmx::SimParticle::addParent</a></div><div class="ttdeci">void addParent(const int &amp;parentTrackID)</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00262">SimParticle.h:262</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Trajectory_html_a268fddd11ab349bd88737268fb9a0d0d"><div class="ttname"><a href="classldmx_1_1Trajectory.html#a268fddd11ab349bd88737268fb9a0d0d">ldmx::Trajectory::GetParentID</a></div><div class="ttdeci">G4int GetParentID() const</div><div class="ttdef"><b>Definition:</b> <a href="Trajectory_8cxx_source.html#l00079">Trajectory.cxx:79</a></div></div>

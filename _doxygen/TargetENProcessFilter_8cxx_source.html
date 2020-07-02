@@ -60,108 +60,107 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classldmx_1_1TargetENProcessFilter.html#a9992f4f60ba5dfb3425bf6323be5dafe">   17</a></span>&#160;    <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a9992f4f60ba5dfb3425bf6323be5dafe">TargetENProcessFilter::TargetENProcessFilter</a>(<span class="keyword">const</span> std::string&amp; name, <a class="code" href="classldmx_1_1Parameters.html">Parameters</a>&amp; parameters) </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        : <a class="code" href="classldmx_1_1UserAction.html">UserAction</a> (name, parameters) {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a68cfca39698842bb0c735fb9b1ff7f1a">volumeName_</a> = parameters.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;volume&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a2d86ce9a34a65818468236acd71c84d6">recoilEnergyThreshold_</a> = parameters.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; <span class="keywordtype">double</span> &gt;(<span class="stringliteral">&quot;recoilThreshold&quot;</span>); </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a23cd2c8cf53bdaa2f890fdc8a46d0ee7">process_</a> = parameters.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;process&quot;</span>);  </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classldmx_1_1TargetENProcessFilter.html#a05753d31a9658f0f245d6269ddd40394">   25</a></span>&#160;    <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a05753d31a9658f0f245d6269ddd40394">TargetENProcessFilter::~TargetENProcessFilter</a>() {}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classldmx_1_1TargetENProcessFilter.html#a0bd605fda3b2ff98a6f70da67cac81ba">   27</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a0bd605fda3b2ff98a6f70da67cac81ba">TargetENProcessFilter::stepping</a>(<span class="keyword">const</span> G4Step* step) { </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TargetENProcessFilter.html#a389afcd882a3c85d6189561312f8110d">reactionOccurred_</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// Get the track associated with this step.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        G4Track* track = step-&gt;GetTrack();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Only process tracks whose parent is the primary particle</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (track-&gt;GetParentID() != 0) <span class="keywordflow">return</span>; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// get the PDGID of the track.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        G4int pdgID = track-&gt;GetParticleDefinition()-&gt;GetPDGEncoding();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// Make sure that the particle being processed is an electron.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (pdgID != 11) <span class="keywordflow">return</span>; <span class="comment">// Throw an exception</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// Get the volume the particle is in.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        G4VPhysicalVolume* volume = track-&gt;GetVolume();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        G4String volumeName = volume-&gt;GetName();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// If the particle isn&#39;t in the target, don&#39;t continue with the processing.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (volumeName.compareTo(<a class="code" href="classldmx_1_1TargetENProcessFilter.html#a68cfca39698842bb0c735fb9b1ff7f1a">volumeName_</a>) != 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">/*std::cout &lt;&lt; &quot;*******************************&quot; &lt;&lt; std::endl; </span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;*   Step &quot; &lt;&lt; track-&gt;GetCurrentStepNumber() &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;********************************&quot; &lt;&lt; std::endl;*/</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (track-&gt;GetMomentum().mag() &gt; <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a2d86ce9a34a65818468236acd71c84d6">recoilEnergyThreshold_</a>) { </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// Get the particles daughters.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">const</span> G4TrackVector* secondaries = step-&gt;GetSecondary();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// If the brem photon doesn&#39;t undergo any reaction in the target, stop</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// processing the rest of the event. </span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (secondaries-&gt;size() == 0) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">/*std::cout &lt;&lt; &quot;[ TargetENProcessFilter ]: &quot;</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">                        &lt;&lt; &quot;Electron did not interact in the target. --&gt; Postponing tracks.&quot;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">                        &lt;&lt; std::endl;*/</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        } <span class="keywordflow">else</span> { </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;       </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            G4String processName = secondaries-&gt;at(0)-&gt;GetCreatorProcess()-&gt;GetProcessName(); </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="comment">/*std::cout &lt;&lt; &quot;[ TargetENProcessFilter ]: &quot;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">                      &lt;&lt; &quot;Electron produced &quot; &lt;&lt; secondaries-&gt;size() </span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">                      &lt;&lt; &quot; particle via &quot; &lt;&lt; processName &lt;&lt; &quot; process.&quot; </span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">                      &lt;&lt; std::endl;*/</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">// Only record the process that is being biased</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (!processName.contains(<a class="code" href="classldmx_1_1TargetENProcessFilter.html#a23cd2c8cf53bdaa2f890fdc8a46d0ee7">process_</a>)) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">/*std::cout &lt;&lt; &quot;[ TargetENProcessFilter ]: &quot;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">                          &lt;&lt; &quot;Process was not &quot; &lt;&lt; BiasingMessenger::getProcess() &lt;&lt; &quot;--&gt; Killing all tracks!&quot; </span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">                          &lt;&lt; std::endl;*/</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    <span class="keywordflow">return</span>; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[ TargetENProcessFilter ]: &quot;</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                      &lt;&lt; <span class="stringliteral">&quot;Electronuclear reaction resulted in &quot;</span> &lt;&lt; secondaries-&gt;size() </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                      &lt;&lt; <span class="stringliteral">&quot; particles via &quot;</span> &lt;&lt; processName &lt;&lt; <span class="stringliteral">&quot; process.&quot;</span> </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                      &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">//BiasingMessenger::setEventWeight(track-&gt;GetWeight());</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a389afcd882a3c85d6189561312f8110d">reactionOccurred_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }    </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classldmx_1_1TargetENProcessFilter.html#a8000294690cd0b4bdf933237a3e7f82c">  105</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a8000294690cd0b4bdf933237a3e7f82c">TargetENProcessFilter::EndOfEventAction</a>(<span class="keyword">const</span> G4Event*) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a389afcd882a3c85d6189561312f8110d">reactionOccurred_</a> = <span class="keyword">false</span>; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;DECLARE_ACTION(<a class="code" href="namespaceldmx.html">ldmx</a>, TargetENProcessFilter) </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a2d86ce9a34a65818468236acd71c84d6">recoilEnergyThreshold_</a> = parameters.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; <span class="keywordtype">double</span> &gt;(<span class="stringliteral">&quot;recoilThreshold&quot;</span>); </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classldmx_1_1TargetENProcessFilter.html#a05753d31a9658f0f245d6269ddd40394">   24</a></span>&#160;    <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a05753d31a9658f0f245d6269ddd40394">TargetENProcessFilter::~TargetENProcessFilter</a>() {}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classldmx_1_1TargetENProcessFilter.html#a0bd605fda3b2ff98a6f70da67cac81ba">   26</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a0bd605fda3b2ff98a6f70da67cac81ba">TargetENProcessFilter::stepping</a>(<span class="keyword">const</span> G4Step* step) { </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TargetENProcessFilter.html#a389afcd882a3c85d6189561312f8110d">reactionOccurred_</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// Get the track associated with this step.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        G4Track* track = step-&gt;GetTrack();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// Only process tracks whose parent is the primary particle</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> (track-&gt;GetParentID() != 0) <span class="keywordflow">return</span>; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// get the PDGID of the track.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        G4int pdgID = track-&gt;GetParticleDefinition()-&gt;GetPDGEncoding();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// Make sure that the particle being processed is an electron.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (pdgID != 11) <span class="keywordflow">return</span>; <span class="comment">// Throw an exception</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// Get the volume the particle is in.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        G4VPhysicalVolume* volume = track-&gt;GetVolume();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        G4String volumeName = volume-&gt;GetName();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// If the particle isn&#39;t in the target, don&#39;t continue with the processing.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (volumeName.compareTo(<a class="code" href="classldmx_1_1TargetENProcessFilter.html#a68cfca39698842bb0c735fb9b1ff7f1a">volumeName_</a>) != 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">/*std::cout &lt;&lt; &quot;*******************************&quot; &lt;&lt; std::endl; </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;*   Step &quot; &lt;&lt; track-&gt;GetCurrentStepNumber() &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;********************************&quot; &lt;&lt; std::endl;*/</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (track-&gt;GetMomentum().mag() &gt; <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a2d86ce9a34a65818468236acd71c84d6">recoilEnergyThreshold_</a>) { </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Get the particles daughters.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">const</span> G4TrackVector* secondaries = step-&gt;GetSecondary();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// If the brem photon doesn&#39;t undergo any reaction in the target, stop</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// processing the rest of the event. </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (secondaries-&gt;size() == 0) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">/*std::cout &lt;&lt; &quot;[ TargetENProcessFilter ]: &quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">                        &lt;&lt; &quot;Electron did not interact in the target. --&gt; Postponing tracks.&quot;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">                        &lt;&lt; std::endl;*/</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        } <span class="keywordflow">else</span> { </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;       </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            G4String processName = secondaries-&gt;at(0)-&gt;GetCreatorProcess()-&gt;GetProcessName(); </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="comment">/*std::cout &lt;&lt; &quot;[ TargetENProcessFilter ]: &quot;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">                      &lt;&lt; &quot;Electron produced &quot; &lt;&lt; secondaries-&gt;size() </span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">                      &lt;&lt; &quot; particle via &quot; &lt;&lt; processName &lt;&lt; &quot; process.&quot; </span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">                      &lt;&lt; std::endl;*/</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="comment">// Only record the process that is being biased</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> (!processName.contains(<a class="code" href="classldmx_1_1TargetENProcessFilter.html#a23cd2c8cf53bdaa2f890fdc8a46d0ee7">process_</a>)) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="comment">/*std::cout &lt;&lt; &quot;[ TargetENProcessFilter ]: &quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">                          &lt;&lt; &quot;Process was not &quot; &lt;&lt; BiasingMessenger::getProcess() &lt;&lt; &quot;--&gt; Killing all tracks!&quot; </span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">                          &lt;&lt; std::endl;*/</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <span class="keywordflow">return</span>; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[ TargetENProcessFilter ]: &quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                      &lt;&lt; <span class="stringliteral">&quot;Electronuclear reaction resulted in &quot;</span> &lt;&lt; secondaries-&gt;size() </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                      &lt;&lt; <span class="stringliteral">&quot; particles via &quot;</span> &lt;&lt; processName &lt;&lt; <span class="stringliteral">&quot; process.&quot;</span> </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                      &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">//BiasingMessenger::setEventWeight(track-&gt;GetWeight());</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a389afcd882a3c85d6189561312f8110d">reactionOccurred_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }    </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classldmx_1_1TargetENProcessFilter.html#a8000294690cd0b4bdf933237a3e7f82c">  104</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a8000294690cd0b4bdf933237a3e7f82c">TargetENProcessFilter::EndOfEventAction</a>(<span class="keyword">const</span> G4Event*) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="classldmx_1_1TargetENProcessFilter.html#a389afcd882a3c85d6189561312f8110d">reactionOccurred_</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;DECLARE_ACTION(<a class="code" href="namespaceldmx.html">ldmx</a>, TargetENProcessFilter) </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a389afcd882a3c85d6189561312f8110d"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a389afcd882a3c85d6189561312f8110d">ldmx::TargetENProcessFilter::reactionOccurred_</a></div><div class="ttdeci">bool reactionOccurred_</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8h_source.html#l00057">TargetENProcessFilter.h:57</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a8000294690cd0b4bdf933237a3e7f82c"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a8000294690cd0b4bdf933237a3e7f82c">ldmx::TargetENProcessFilter::EndOfEventAction</a></div><div class="ttdeci">void EndOfEventAction(const G4Event *) final override</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8cxx_source.html#l00105">TargetENProcessFilter.cxx:105</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a8000294690cd0b4bdf933237a3e7f82c"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a8000294690cd0b4bdf933237a3e7f82c">ldmx::TargetENProcessFilter::EndOfEventAction</a></div><div class="ttdeci">void EndOfEventAction(const G4Event *) final override</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8cxx_source.html#l00104">TargetENProcessFilter.cxx:104</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a23cd2c8cf53bdaa2f890fdc8a46d0ee7"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a23cd2c8cf53bdaa2f890fdc8a46d0ee7">ldmx::TargetENProcessFilter::process_</a></div><div class="ttdeci">std::string process_</div><div class="ttdoc">Process to filter on.</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8h_source.html#l00063">TargetENProcessFilter.h:63</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Parameters_html"><div class="ttname"><a href="classldmx_1_1Parameters.html">ldmx::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00026">Parameters.h:26</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a68cfca39698842bb0c735fb9b1ff7f1a"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a68cfca39698842bb0c735fb9b1ff7f1a">ldmx::TargetENProcessFilter::volumeName_</a></div><div class="ttdeci">std::string volumeName_</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8h_source.html#l00054">TargetENProcessFilter.h:54</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a05753d31a9658f0f245d6269ddd40394"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a05753d31a9658f0f245d6269ddd40394">ldmx::TargetENProcessFilter::~TargetENProcessFilter</a></div><div class="ttdeci">~TargetENProcessFilter()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8cxx_source.html#l00025">TargetENProcessFilter.cxx:25</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a05753d31a9658f0f245d6269ddd40394"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a05753d31a9658f0f245d6269ddd40394">ldmx::TargetENProcessFilter::~TargetENProcessFilter</a></div><div class="ttdeci">~TargetENProcessFilter()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8cxx_source.html#l00024">TargetENProcessFilter.cxx:24</a></div></div>
 <div class="ttc" id="aTargetENProcessFilter_8h_html"><div class="ttname"><a href="TargetENProcessFilter_8h.html">TargetENProcessFilter.h</a></div><div class="ttdoc">Class defining a UserActionPlugin that biases Geant4 to only process events which involve an electron...</div></div>
 <div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a2d86ce9a34a65818468236acd71c84d6"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a2d86ce9a34a65818468236acd71c84d6">ldmx::TargetENProcessFilter::recoilEnergyThreshold_</a></div><div class="ttdeci">double recoilEnergyThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8h_source.html#l00060">TargetENProcessFilter.h:60</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a0bd605fda3b2ff98a6f70da67cac81ba"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a0bd605fda3b2ff98a6f70da67cac81ba">ldmx::TargetENProcessFilter::stepping</a></div><div class="ttdeci">void stepping(const G4Step *step) final override</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8cxx_source.html#l00027">TargetENProcessFilter.cxx:27</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a0bd605fda3b2ff98a6f70da67cac81ba"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a0bd605fda3b2ff98a6f70da67cac81ba">ldmx::TargetENProcessFilter::stepping</a></div><div class="ttdeci">void stepping(const G4Step *step) final override</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8cxx_source.html#l00026">TargetENProcessFilter.cxx:26</a></div></div>
 <div class="ttc" id="aclassldmx_1_1UserAction_html"><div class="ttname"><a href="classldmx_1_1UserAction.html">ldmx::UserAction</a></div><div class="ttdoc">Interface that defines a user action.</div><div class="ttdef"><b>Definition:</b> <a href="UserAction_8h_source.html#l00049">UserAction.h:49</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Parameters_html_a3b66add92c7331ca071eca9c423ea9e9"><div class="ttname"><a href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">ldmx::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00060">Parameters.h:60</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TargetENProcessFilter_html_a9992f4f60ba5dfb3425bf6323be5dafe"><div class="ttname"><a href="classldmx_1_1TargetENProcessFilter.html#a9992f4f60ba5dfb3425bf6323be5dafe">ldmx::TargetENProcessFilter::TargetENProcessFilter</a></div><div class="ttdeci">TargetENProcessFilter(const std::string &amp;name, Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="TargetENProcessFilter_8cxx_source.html#l00017">TargetENProcessFilter.cxx:17</a></div></div>
