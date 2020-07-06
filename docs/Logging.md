@@ -2,13 +2,20 @@
 layout: default
 ---
 
-### _Not merged into master yet_
----
-
 In ldmx-sw, we use the [logging library from boost](https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/index.html).
-The initialization (and de-initialization) procedures are housed in the `Logger` header and implementation files in the `Exception` module. The general idea is for each class to have its own logger which gives a message and some meta-data to the boost logging core which then filters it before dumping the message to sinks. In our case, we have two (optional) sinks: the terminal and a logging file. All of the logging configuration is done by the command line parameters passed to `ldmx-app` _before_ the python configuration file.
+The initialization (and de-initialization) procedures are housed in the `Logger` header and implementation files in the `Framework` module. The general idea is for each class to have its own logger which gives a message and some meta-data to the boost logging core which then filters it before dumping the message to sinks. In our case, we have two (optional) sinks: the terminal and a logging file. All of the logging configuration is done by the parameters passed to the Process in the python configuration file.
 
-You can configure what is logged by passing parameters to `ldmx-app` _before_ the python configuration file. You can see all the options and what the defaults are by running `ldmx-app -h` to print the usage information.
+## Configuration
+The python class `Process` has three parameters that configure how the logging works.
+
+Parameter | Description
+---|---
+`logFileName` | Name of logging file. No logging to file is done if this is not set.
+`termLogLevel` | Logging level (and above) to print to terminal
+`fileLogLevel` | Logging level (and above) to print to file
+
+The logging levels are defined in the `Logger` header file, and a general description is given below.
+Right now, configuration uses the `int` equivalent while the C++ uses the enum `level`s.
 
 ## Basics: Logging in Processors
 
@@ -17,13 +24,13 @@ In order to save time and lines of code, we have defined a macro that can be use
 ldmx_log(info) << My message goes here;
 ```
 `info` is the severity level of this message. A severity level can be any of the following:
-Level | Description | Example
---- | --- | ---
-`debug` | Extra-detailed information that you would want if you were suspicious that things were running correctly | Whether a sensitive detector is skipping a hit or not
-`info` | Helpful comments for checking operations | What processes are enabled in Geant4
-`warn` | Something wrong happened but its not too bad | REGEX mismatch in GDML parsing
-`error`| Something _really_ wrong happened and the user needs to know that something needs to change | Extra information before an `EXCEPTION_RAISE` calls
-`fatal`| Reserved for run-ending exceptions | Message from catches of `Exception`.
+Level | Int | Description | Example
+--- | --- | --- | ---
+`debug` | 0 | Extra-detailed information that you would want if you were suspicious that things were running correctly | Whether a sensitive detector is skipping a hit or not
+`info` | 1 | Helpful comments for checking operations | What processes are enabled in Geant4
+`warn` | 2 | Something wrong happened but its not too bad | REGEX mismatch in GDML parsing
+`error`| 3 | Something _really_ wrong happened and the user needs to know that something needs to change | Extra information before an `EXCEPTION_RAISE` calls
+`fatal`| 4 | Reserved for run-ending exceptions | Message from catches of `Exception`.
 
 This is really all you need for an `EventProcessor`. Notice that the logger _does not_ need a new line character at the end of the line. The logger automatically makes a new line after each message.
 
