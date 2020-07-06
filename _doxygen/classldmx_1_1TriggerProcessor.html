@@ -106,6 +106,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3f075302a6c05d4ef2e4e48ba21d8c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6e2491cfcc9f6c7671e7f6567517e4b"><td class="memItemLeft" align="right" valign="top">TString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TriggerProcessor.html#af6e2491cfcc9f6c7671e7f6567517e4b">algoName_</a></td></tr>
 <tr class="separator:af6e2491cfcc9f6c7671e7f6567517e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a835cd333f414f58fe16a047fcfd76acb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TriggerProcessor.html#a835cd333f414f58fe16a047fcfd76acb">inputColl_</a></td></tr>
+<tr class="separator:a835cd333f414f58fe16a047fcfd76acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01ab5baabcc1563e72162f2a8815273"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TriggerProcessor.html#ae01ab5baabcc1563e72162f2a8815273">outputColl_</a></td></tr>
+<tr class="separator:ae01ab5baabcc1563e72162f2a8815273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -252,15 +256,17 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> = parameters.getParameter&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;mode&quot;</span>);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="classldmx_1_1TriggerProcessor.html#aacbb9c1c7f516c27f286a13ae3968a78">startLayer_</a> = parameters.getParameter&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;start_layer&quot;</span>);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classldmx_1_1TriggerProcessor.html#a3f075302a6c05d4ef2e4e48ba21d8c2f">endLayer_</a> = parameters.getParameter&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;end_layer&quot;</span>);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> == 0) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="classldmx_1_1TriggerProcessor.html#af6e2491cfcc9f6c7671e7f6567517e4b">algoName_</a> = <span class="stringliteral">&quot;LayerSumTrig&quot;</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> == 1) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classldmx_1_1TriggerProcessor.html#af6e2491cfcc9f6c7671e7f6567517e4b">algoName_</a> = <span class="stringliteral">&quot;CenterTower&quot;</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classldmx_1_1TriggerProcessor.html#a835cd333f414f58fe16a047fcfd76acb">inputColl_</a> = parameters.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;input_collection&quot;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classldmx_1_1TriggerProcessor.html#ae01ab5baabcc1563e72162f2a8815273">outputColl_</a> = parameters.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;trigger_collection&quot;</span>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> == 0) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classldmx_1_1TriggerProcessor.html#af6e2491cfcc9f6c7671e7f6567517e4b">algoName_</a> = <span class="stringliteral">&quot;LayerSumTrig&quot;</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> == 1) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="classldmx_1_1TriggerProcessor.html#af6e2491cfcc9f6c7671e7f6567517e4b">algoName_</a> = <span class="stringliteral">&quot;CenterTower&quot;</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TriggerProcessor_8h_source.html#l00081">algoName_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00078">endLayer_</a>, <a class="el" href="Parameters_8h_source.html#l00060">ldmx::Parameters::getParameter()</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00066">layerESumCut_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00072">mode_</a>, and <a class="el" href="TriggerProcessor_8h_source.html#l00075">startLayer_</a>.</p>
+<p class="reference">References <a class="el" href="TriggerProcessor_8h_source.html#l00081">algoName_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00078">endLayer_</a>, <a class="el" href="Parameters_8h_source.html#l00060">ldmx::Parameters::getParameter()</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00085">inputColl_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00066">layerESumCut_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00072">mode_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00088">outputColl_</a>, and <a class="el" href="TriggerProcessor_8h_source.html#l00075">startLayer_</a>.</p>
 
 </div>
 </div>
@@ -293,53 +299,53 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Implements <a class="el" href="classldmx_1_1Producer.html#a7ac942786d11a4768ad430d52ba6a427">ldmx::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TriggerProcessor_8cxx_source.html#l00020">20</a> of file <a class="el" href="TriggerProcessor_8cxx_source.html">TriggerProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                               {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> std::vector&lt;EcalHit&gt; ecalRecHits = <span class="keyword">event</span>.getCollection&lt;EcalHit&gt;(<span class="stringliteral">&quot;EcalRecHits&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::vector&lt;double&gt; layerDigiE(100, 0.0); <span class="comment">// big empty vector..</span></div>
+<p class="definition">Definition at line <a class="el" href="TriggerProcessor_8cxx_source.html#l00022">22</a> of file <a class="el" href="TriggerProcessor_8cxx_source.html">TriggerProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                               {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> std::vector&lt;EcalHit&gt; ecalRecHits = <span class="keyword">event</span>.getCollection&lt;EcalHit&gt;(<a class="code" href="classldmx_1_1TriggerProcessor.html#a835cd333f414f58fe16a047fcfd76acb">inputColl_</a>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> EcalHit &amp;hit : ecalRecHits ) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span> (hit.getLayer() &lt; layerDigiE.size()) { <span class="comment">// just to be safe...</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> == 0) { <span class="comment">// Sum over all cells in a given layer</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    layerDigiE[hit.getLayer()] += hit.getEnergy();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> == 1) { <span class="comment">// Sum over cells in central tower only</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    <span class="comment">//std::pair&lt;float, float&gt; xyPos = hit-&gt;getCellCentroidXYPair(hit-&gt;getID());</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="comment">//float cellRadius = sqrt(pow(xyPos.first, 2) + pow(xyPos.second, 2));</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="comment">//if (cellRadius &lt; MAGICNUMBERHERE) {</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="comment">//    layerDigiE[hit-&gt;getLayer()] += hit-&gt;getEnergy();</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="comment">//}</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">float</span> layerSum = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">bool</span> pass = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iL = <a class="code" href="classldmx_1_1TriggerProcessor.html#aacbb9c1c7f516c27f286a13ae3968a78">startLayer_</a>; iL &lt; <a class="code" href="classldmx_1_1TriggerProcessor.html#a3f075302a6c05d4ef2e4e48ba21d8c2f">endLayer_</a>; ++iL) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            layerSum += layerDigiE[iL];</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        pass = (layerSum &lt;= <a class="code" href="classldmx_1_1TriggerProcessor.html#a65ebcc0d50f9a8ae1cf6e76ca250e3b3">layerESumCut_</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::vector&lt;double&gt; layerDigiE(100, 0.0); <span class="comment">// big empty vector..</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> EcalHit &amp;hit : ecalRecHits ) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (hit.getLayer() &lt; layerDigiE.size()) { <span class="comment">// just to be safe...</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> == 0) { <span class="comment">// Sum over all cells in a given layer</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    layerDigiE[hit.getLayer()] += hit.getEnergy();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">mode_</a> == 1) { <span class="comment">// Sum over cells in central tower only</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="comment">//std::pair&lt;float, float&gt; xyPos = hit-&gt;getCellCentroidXYPair(hit-&gt;getID());</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="comment">//float cellRadius = sqrt(pow(xyPos.first, 2) + pow(xyPos.second, 2));</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="comment">//if (cellRadius &lt; MAGICNUMBERHERE) {</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="comment">//    layerDigiE[hit-&gt;getLayer()] += hit-&gt;getEnergy();</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <span class="comment">//}</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">float</span> layerSum = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> pass = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iL = <a class="code" href="classldmx_1_1TriggerProcessor.html#aacbb9c1c7f516c27f286a13ae3968a78">startLayer_</a>; iL &lt; <a class="code" href="classldmx_1_1TriggerProcessor.html#a3f075302a6c05d4ef2e4e48ba21d8c2f">endLayer_</a>; ++iL) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            layerSum += layerDigiE[iL];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        TriggerResult result;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        result.set(<a class="code" href="classldmx_1_1TriggerProcessor.html#af6e2491cfcc9f6c7671e7f6567517e4b">algoName_</a>, pass, 3);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        result.setAlgoVar(0, layerSum);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        result.setAlgoVar(1, <a class="code" href="classldmx_1_1TriggerProcessor.html#a65ebcc0d50f9a8ae1cf6e76ca250e3b3">layerESumCut_</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        result.setAlgoVar(2, <a class="code" href="classldmx_1_1TriggerProcessor.html#a3f075302a6c05d4ef2e4e48ba21d8c2f">endLayer_</a> - <a class="code" href="classldmx_1_1TriggerProcessor.html#aacbb9c1c7f516c27f286a13ae3968a78">startLayer_</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">event</span>.add(<span class="stringliteral">&quot;Trigger&quot;</span>, result );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        pass = (layerSum &lt;= <a class="code" href="classldmx_1_1TriggerProcessor.html#a65ebcc0d50f9a8ae1cf6e76ca250e3b3">layerESumCut_</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        TriggerResult result;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        result.set(<a class="code" href="classldmx_1_1TriggerProcessor.html#af6e2491cfcc9f6c7671e7f6567517e4b">algoName_</a>, pass, 3);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        result.setAlgoVar(0, layerSum);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        result.setAlgoVar(1, <a class="code" href="classldmx_1_1TriggerProcessor.html#a65ebcc0d50f9a8ae1cf6e76ca250e3b3">layerESumCut_</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        result.setAlgoVar(2, <a class="code" href="classldmx_1_1TriggerProcessor.html#a3f075302a6c05d4ef2e4e48ba21d8c2f">endLayer_</a> - <a class="code" href="classldmx_1_1TriggerProcessor.html#aacbb9c1c7f516c27f286a13ae3968a78">startLayer_</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// mark the event</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (pass) </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">setStorageHint</a>(hint_shouldKeep);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">setStorageHint</a>(hint_shouldDrop);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">event</span>.add(<a class="code" href="classldmx_1_1TriggerProcessor.html#ae01ab5baabcc1563e72162f2a8815273">outputColl_</a>, result );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// mark the event</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (pass) </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">setStorageHint</a>(hint_shouldKeep);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">setStorageHint</a>(hint_shouldDrop);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TriggerProcessor_8h_source.html#l00081">algoName_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00078">endLayer_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00066">layerESumCut_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00072">mode_</a>, <a class="el" href="classldmx_1_1TriggerResult.html#a66ad625eaa94cbf33251b7f7b139d5e0">ldmx::TriggerResult::set()</a>, <a class="el" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">ldmx::TriggerResult::setAlgoVar()</a>, <a class="el" href="EventProcessor_8h_source.html#l00161">ldmx::EventProcessor::setStorageHint()</a>, and <a class="el" href="TriggerProcessor_8h_source.html#l00075">startLayer_</a>.</p>
+<p class="reference">References <a class="el" href="TriggerProcessor_8h_source.html#l00081">algoName_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00078">endLayer_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00085">inputColl_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00066">layerESumCut_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00072">mode_</a>, <a class="el" href="TriggerProcessor_8h_source.html#l00088">outputColl_</a>, <a class="el" href="classldmx_1_1TriggerResult.html#a66ad625eaa94cbf33251b7f7b139d5e0">ldmx::TriggerResult::set()</a>, <a class="el" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">ldmx::TriggerResult::setAlgoVar()</a>, <a class="el" href="EventProcessor_8h_source.html#l00161">ldmx::EventProcessor::setStorageHint()</a>, and <a class="el" href="TriggerProcessor_8h_source.html#l00075">startLayer_</a>.</p>
 
 </div>
 </div>
@@ -367,7 +373,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="TriggerProcessor_8h_source.html#l00081">81</a> of file <a class="el" href="TriggerProcessor_8h_source.html">TriggerProcessor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00020">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00022">produce()</a>.</p>
 
 </div>
 </div>
@@ -394,7 +400,34 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="TriggerProcessor_8h_source.html#l00078">78</a> of file <a class="el" href="TriggerProcessor_8h_source.html">TriggerProcessor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00020">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00022">produce()</a>.</p>
+
+</div>
+</div>
+<a id="a835cd333f414f58fe16a047fcfd76acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a835cd333f414f58fe16a047fcfd76acb">&#9670;&nbsp;</a></span>inputColl_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ldmx::TriggerProcessor::inputColl_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The name of the input collection (the Ecal hits). </p>
+
+<p class="definition">Definition at line <a class="el" href="TriggerProcessor_8h_source.html#l00085">85</a> of file <a class="el" href="TriggerProcessor_8h_source.html">TriggerProcessor.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00022">produce()</a>.</p>
 
 </div>
 </div>
@@ -421,7 +454,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="TriggerProcessor_8h_source.html#l00066">66</a> of file <a class="el" href="TriggerProcessor_8h_source.html">TriggerProcessor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00020">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00022">produce()</a>.</p>
 
 </div>
 </div>
@@ -448,7 +481,34 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="TriggerProcessor_8h_source.html#l00072">72</a> of file <a class="el" href="TriggerProcessor_8h_source.html">TriggerProcessor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00020">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00022">produce()</a>.</p>
+
+</div>
+</div>
+<a id="ae01ab5baabcc1563e72162f2a8815273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01ab5baabcc1563e72162f2a8815273">&#9670;&nbsp;</a></span>outputColl_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ldmx::TriggerProcessor::outputColl_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The name of the output collection (the trigger decision). </p>
+
+<p class="definition">Definition at line <a class="el" href="TriggerProcessor_8h_source.html#l00088">88</a> of file <a class="el" href="TriggerProcessor_8h_source.html">TriggerProcessor.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00022">produce()</a>.</p>
 
 </div>
 </div>
@@ -475,7 +535,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="TriggerProcessor_8h_source.html#l00075">75</a> of file <a class="el" href="TriggerProcessor_8h_source.html">TriggerProcessor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00020">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">configure()</a>, and <a class="el" href="TriggerProcessor_8cxx_source.html#l00022">produce()</a>.</p>
 
 </div>
 </div>
@@ -484,11 +544,13 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <li>EventProc/src/<a class="el" href="TriggerProcessor_8cxx_source.html">TriggerProcessor.cxx</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassldmx_1_1TriggerProcessor_html_ae01ab5baabcc1563e72162f2a8815273"><div class="ttname"><a href="classldmx_1_1TriggerProcessor.html#ae01ab5baabcc1563e72162f2a8815273">ldmx::TriggerProcessor::outputColl_</a></div><div class="ttdeci">std::string outputColl_</div><div class="ttdef"><b>Definition:</b> <a href="TriggerProcessor_8h_source.html#l00088">TriggerProcessor.h:88</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TriggerProcessor_html_a65ebcc0d50f9a8ae1cf6e76ca250e3b3"><div class="ttname"><a href="classldmx_1_1TriggerProcessor.html#a65ebcc0d50f9a8ae1cf6e76ca250e3b3">ldmx::TriggerProcessor::layerESumCut_</a></div><div class="ttdeci">float layerESumCut_</div><div class="ttdef"><b>Definition:</b> <a href="TriggerProcessor_8h_source.html#l00066">TriggerProcessor.h:66</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00161">EventProcessor.h:161</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TriggerProcessor_html_aca78ca22e988f259351de0826c90c608"><div class="ttname"><a href="classldmx_1_1TriggerProcessor.html#aca78ca22e988f259351de0826c90c608">ldmx::TriggerProcessor::mode_</a></div><div class="ttdeci">int mode_</div><div class="ttdef"><b>Definition:</b> <a href="TriggerProcessor_8h_source.html#l00072">TriggerProcessor.h:72</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TriggerProcessor_html_af6e2491cfcc9f6c7671e7f6567517e4b"><div class="ttname"><a href="classldmx_1_1TriggerProcessor.html#af6e2491cfcc9f6c7671e7f6567517e4b">ldmx::TriggerProcessor::algoName_</a></div><div class="ttdeci">TString algoName_</div><div class="ttdef"><b>Definition:</b> <a href="TriggerProcessor_8h_source.html#l00081">TriggerProcessor.h:81</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Producer_html_abd1f979d49afb16c520ca66840d174cc"><div class="ttname"><a href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">ldmx::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00048">EventProcessor.cxx:48</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TriggerProcessor_html_a835cd333f414f58fe16a047fcfd76acb"><div class="ttname"><a href="classldmx_1_1TriggerProcessor.html#a835cd333f414f58fe16a047fcfd76acb">ldmx::TriggerProcessor::inputColl_</a></div><div class="ttdeci">std::string inputColl_</div><div class="ttdef"><b>Definition:</b> <a href="TriggerProcessor_8h_source.html#l00085">TriggerProcessor.h:85</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TriggerProcessor_html_a3f075302a6c05d4ef2e4e48ba21d8c2f"><div class="ttname"><a href="classldmx_1_1TriggerProcessor.html#a3f075302a6c05d4ef2e4e48ba21d8c2f">ldmx::TriggerProcessor::endLayer_</a></div><div class="ttdeci">int endLayer_</div><div class="ttdef"><b>Definition:</b> <a href="TriggerProcessor_8h_source.html#l00078">TriggerProcessor.h:78</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TriggerProcessor_html_aacbb9c1c7f516c27f286a13ae3968a78"><div class="ttname"><a href="classldmx_1_1TriggerProcessor.html#aacbb9c1c7f516c27f286a13ae3968a78">ldmx::TriggerProcessor::startLayer_</a></div><div class="ttdeci">int startLayer_</div><div class="ttdef"><b>Definition:</b> <a href="TriggerProcessor_8h_source.html#l00075">TriggerProcessor.h:75</a></div></div>
 <!-- start footer part -->
