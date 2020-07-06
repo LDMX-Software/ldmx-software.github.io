@@ -133,14 +133,13 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00043">43</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                  {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;~VisAttributesStore&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">for</span> ( <span class="keyword">auto</span> &amp;nameAtt : <a class="code" href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">visAttributesMap_</a> ) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keyword">delete</span> nameAtt.second;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">visAttributesMap_</a>.clear();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">for</span> ( <span class="keyword">auto</span> &amp;nameAtt : <a class="code" href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">visAttributesMap_</a> ) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keyword">delete</span> nameAtt.second;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">visAttributesMap_</a>.clear();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00074">visAttributesMap_</a>.</p>
+<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00073">visAttributesMap_</a>.</p>
 
 </div>
 </div>
@@ -186,12 +185,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00065">65</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                                                         {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">visAttributesMap_</a>[name] = visAttributes;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00064">64</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                                                         {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">visAttributesMap_</a>[name] = visAttributes;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00074">visAttributesMap_</a>.</p>
+<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00073">visAttributesMap_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="AuxInfoReader_8cxx_source.html#l00380">ldmx::AuxInfoReader::createVisAttributes()</a>.</p>
 
@@ -262,12 +261,12 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The vis attributes or <em>nullptr</em> if does not exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00056">56</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                                     {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">visAttributesMap_</a>.at(name);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00055">55</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                                     {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">visAttributesMap_</a>.at(name);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00074">visAttributesMap_</a>.</p>
+<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00073">visAttributesMap_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="AuxInfoReader_8cxx_source.html#l00147">ldmx::AuxInfoReader::assignAuxInfoToVolumes()</a>.</p>
 
@@ -295,9 +294,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The map of names to vis attributes. </p>
 
-<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00074">74</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00073">73</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VisAttributesStore_8h_source.html#l00065">addVisAttributes()</a>, <a class="el" href="VisAttributesStore_8h_source.html#l00056">getVisAttributes()</a>, and <a class="el" href="VisAttributesStore_8h_source.html#l00043">~VisAttributesStore()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VisAttributesStore_8h_source.html#l00064">addVisAttributes()</a>, <a class="el" href="VisAttributesStore_8h_source.html#l00055">getVisAttributes()</a>, and <a class="el" href="VisAttributesStore_8h_source.html#l00043">~VisAttributesStore()</a>.</p>
 
 </div>
 </div>
@@ -305,7 +304,7 @@ Private Attributes</h2></td></tr>
 <li>SimCore/include/SimCore/<a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1VisAttributesStore_html_a5a25db1e08f534af8e368fbc77dec569"><div class="ttname"><a href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">ldmx::VisAttributesStore::visAttributesMap_</a></div><div class="ttdeci">VisAttributesMap visAttributesMap_</div><div class="ttdef"><b>Definition:</b> <a href="VisAttributesStore_8h_source.html#l00074">VisAttributesStore.h:74</a></div></div>
+<div class="ttc" id="aclassldmx_1_1VisAttributesStore_html_a5a25db1e08f534af8e368fbc77dec569"><div class="ttname"><a href="classldmx_1_1VisAttributesStore.html#a5a25db1e08f534af8e368fbc77dec569">ldmx::VisAttributesStore::visAttributesMap_</a></div><div class="ttdeci">VisAttributesMap visAttributesMap_</div><div class="ttdef"><b>Definition:</b> <a href="VisAttributesStore_8h_source.html#l00073">VisAttributesStore.h:73</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

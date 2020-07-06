@@ -270,6 +270,18 @@ and the rest of the attributes are set to sensible defaults.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.maxTriesPerEvent">
+<code class="sig-name descname">maxTriesPerEvent</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.maxTriesPerEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of attempts to make in a row before giving up on an event
+Only used in Production Mode (no input files)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt id="LDMX.Framework.ldmxcfg.Process.run">
 <code class="sig-name descname">run</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run number for this process</p>
@@ -364,6 +376,39 @@ and the rest of the attributes are set to sensible defaults.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.termLogLevel">
+<code class="sig-name descname">termLogLevel</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.termLogLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum severity of log messages to print to terminal: 0 (debug) - 4 (fatal)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.fileLogLevel">
+<code class="sig-name descname">fileLogLevel</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.fileLogLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum severity of log messages to print to file: 0 (debug) - 4 (fatal)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="LDMX.Framework.ldmxcfg.Process.logFileName">
+<code class="sig-name descname">logFileName</code><a class="headerlink" href="#LDMX.Framework.ldmxcfg.Process.logFileName" title="Permalink to this definition">¶</a></dt>
+<dd><p>File to print log messages to, won’t setup file logging if this parameter is not set</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -609,7 +654,7 @@ on matching this “reason” for the storage hint.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, LDMX Collaboration.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
     </div>
   </body>
 </html>

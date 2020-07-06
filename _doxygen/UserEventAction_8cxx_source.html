@@ -61,42 +61,40 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;SimCore/RootPersistencyManager.h&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RunManager_8h.html">SimCore/RunManager.h</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TrackMap_8h.html">SimCore/TrackMap.h</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TrajectoryContainer_8h.html">SimCore/TrajectoryContainer.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="UserTrackingAction_8h.html">SimCore/UserTrackingAction.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*~~~~~~~~~~~~*/</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/*   Geant4   */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*~~~~~~~~~~~~*/</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;G4Event.hh&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;G4RunManager.hh&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="UserTrackingAction_8h.html">SimCore/UserTrackingAction.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*~~~~~~~~~~~~*/</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*   Geant4   */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/*~~~~~~~~~~~~*/</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;G4Event.hh&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;G4RunManager.hh&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classldmx_1_1UserEventAction.html#a714bf60009f980151c47cad5c42cfb2c">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1UserEventAction.html#a714bf60009f980151c47cad5c42cfb2c">UserEventAction::BeginOfEventAction</a>(<span class="keyword">const</span> G4Event* event) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Clear the global track map.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classldmx_1_1UserTrackingAction.html#a7e1af9180bd57205112c6bc26ec3bfc9">UserTrackingAction::getUserTrackingAction</a>()-&gt;<a class="code" href="classldmx_1_1UserTrackingAction.html#a5e9181fe6327caca3ab916c168bfae44">getTrackMap</a>()-&gt;<a class="code" href="classldmx_1_1TrackMap.html#aecab88a170705182ca462febd440d741">clear</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// Call user event actions</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; eventAction : eventActions_ ) eventAction-&gt;BeginOfEventAction(event); </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classldmx_1_1UserEventAction.html#afa586505913fb6dcfbcd818095abb5e7">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1UserEventAction.html#afa586505913fb6dcfbcd818095abb5e7">UserEventAction::EndOfEventAction</a>(<span class="keyword">const</span> G4Event* event) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// Call user event actions</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; eventAction : eventActions_ ) eventAction-&gt;EndOfEventAction(event); </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classldmx_1_1UserEventAction.html#a714bf60009f980151c47cad5c42cfb2c">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1UserEventAction.html#a714bf60009f980151c47cad5c42cfb2c">UserEventAction::BeginOfEventAction</a>(<span class="keyword">const</span> G4Event* event) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// Clear the global track map.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classldmx_1_1UserTrackingAction.html#a7e1af9180bd57205112c6bc26ec3bfc9">UserTrackingAction::getUserTrackingAction</a>()-&gt;<a class="code" href="classldmx_1_1UserTrackingAction.html#a5e9181fe6327caca3ab916c168bfae44">getTrackMap</a>()-&gt;<a class="code" href="classldmx_1_1TrackMap.html#aecab88a170705182ca462febd440d741">clear</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Call user event actions</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; eventAction : eventActions_ ) eventAction-&gt;BeginOfEventAction(event); </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classldmx_1_1UserEventAction.html#afa586505913fb6dcfbcd818095abb5e7">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1UserEventAction.html#afa586505913fb6dcfbcd818095abb5e7">UserEventAction::EndOfEventAction</a>(<span class="keyword">const</span> G4Event* event) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// Call user event actions</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; eventAction : eventActions_ ) eventAction-&gt;EndOfEventAction(event); </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="aTrackMap_8h_html"><div class="ttname"><a href="TrackMap_8h.html">TrackMap.h</a></div><div class="ttdoc">Class which defines a map of track ID to parent ID and Trajectory.</div></div>
 <div class="ttc" id="aclassldmx_1_1UserTrackingAction_html_a7e1af9180bd57205112c6bc26ec3bfc9"><div class="ttname"><a href="classldmx_1_1UserTrackingAction.html#a7e1af9180bd57205112c6bc26ec3bfc9">ldmx::UserTrackingAction::getUserTrackingAction</a></div><div class="ttdeci">static UserTrackingAction * getUserTrackingAction()</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackingAction_8h_source.html#l00092">UserTrackingAction.h:92</a></div></div>
-<div class="ttc" id="aclassldmx_1_1UserEventAction_html_a714bf60009f980151c47cad5c42cfb2c"><div class="ttname"><a href="classldmx_1_1UserEventAction.html#a714bf60009f980151c47cad5c42cfb2c">ldmx::UserEventAction::BeginOfEventAction</a></div><div class="ttdeci">void BeginOfEventAction(const G4Event *event)</div><div class="ttdef"><b>Definition:</b> <a href="UserEventAction_8cxx_source.html#l00032">UserEventAction.cxx:32</a></div></div>
+<div class="ttc" id="aclassldmx_1_1UserEventAction_html_a714bf60009f980151c47cad5c42cfb2c"><div class="ttname"><a href="classldmx_1_1UserEventAction.html#a714bf60009f980151c47cad5c42cfb2c">ldmx::UserEventAction::BeginOfEventAction</a></div><div class="ttdeci">void BeginOfEventAction(const G4Event *event)</div><div class="ttdef"><b>Definition:</b> <a href="UserEventAction_8cxx_source.html#l00031">UserEventAction.cxx:31</a></div></div>
 <div class="ttc" id="aRunManager_8h_html"><div class="ttname"><a href="RunManager_8h.html">RunManager.h</a></div><div class="ttdoc">Class providing a Geant4 run manager implementation.</div></div>
-<div class="ttc" id="aTrajectoryContainer_8h_html"><div class="ttname"><a href="TrajectoryContainer_8h.html">TrajectoryContainer.h</a></div><div class="ttdoc">Class which implements a Trajectory container.</div></div>
-<div class="ttc" id="aclassldmx_1_1UserEventAction_html_afa586505913fb6dcfbcd818095abb5e7"><div class="ttname"><a href="classldmx_1_1UserEventAction.html#afa586505913fb6dcfbcd818095abb5e7">ldmx::UserEventAction::EndOfEventAction</a></div><div class="ttdeci">void EndOfEventAction(const G4Event *event)</div><div class="ttdef"><b>Definition:</b> <a href="UserEventAction_8cxx_source.html#l00041">UserEventAction.cxx:41</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrackMap_html_aecab88a170705182ca462febd440d741"><div class="ttname"><a href="classldmx_1_1TrackMap.html#aecab88a170705182ca462febd440d741">ldmx::TrackMap::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00030">TrackMap.cxx:30</a></div></div>
+<div class="ttc" id="aclassldmx_1_1UserEventAction_html_afa586505913fb6dcfbcd818095abb5e7"><div class="ttname"><a href="classldmx_1_1UserEventAction.html#afa586505913fb6dcfbcd818095abb5e7">ldmx::UserEventAction::EndOfEventAction</a></div><div class="ttdeci">void EndOfEventAction(const G4Event *event)</div><div class="ttdef"><b>Definition:</b> <a href="UserEventAction_8cxx_source.html#l00040">UserEventAction.cxx:40</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrackMap_html_aecab88a170705182ca462febd440d741"><div class="ttname"><a href="classldmx_1_1TrackMap.html#aecab88a170705182ca462febd440d741">ldmx::TrackMap::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00036">TrackMap.cxx:36</a></div></div>
 <div class="ttc" id="aclassldmx_1_1UserTrackingAction_html_a5e9181fe6327caca3ab916c168bfae44"><div class="ttname"><a href="classldmx_1_1UserTrackingAction.html#a5e9181fe6327caca3ab916c168bfae44">ldmx::UserTrackingAction::getTrackMap</a></div><div class="ttdeci">TrackMap * getTrackMap()</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackingAction_8h_source.html#l00066">UserTrackingAction.h:66</a></div></div>
 <div class="ttc" id="aUserTrackingAction_8h_html"><div class="ttname"><a href="UserTrackingAction_8h.html">UserTrackingAction.h</a></div><div class="ttdoc">Class which implements the user tracking action.</div></div>
 <div class="ttc" id="aUserEventAction_8h_html"><div class="ttname"><a href="UserEventAction_8h.html">UserEventAction.h</a></div><div class="ttdoc">Class which implements the Geant4 user event action.</div></div>

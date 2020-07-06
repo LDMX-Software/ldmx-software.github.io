@@ -54,9 +54,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a86dbaf365a538e4c656ada74775ec27c"><td class="memItemLeft" align="right" valign="top"><a id="a86dbaf365a538e4c656ada74775ec27c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TestAnalyzer</b> (<a class="el" href="classldmx_1_1Process.html">Process</a> &amp;p)</td></tr>
-<tr class="separator:a86dbaf365a538e4c656ada74775ec27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598dd7174d94a9f722c49c56ff8be74d"><td class="memItemLeft" align="right" valign="top"><a id="a598dd7174d94a9f722c49c56ff8be74d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TestAnalyzer</b> (const std::string &amp;name, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;p)</td></tr>
+<tr class="separator:a598dd7174d94a9f722c49c56ff8be74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53a12c48a30120144c7ba62359251450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1test_1_1TestAnalyzer.html#a53a12c48a30120144c7ba62359251450">onProcessStart</a> () final override</td></tr>
 <tr class="separator:a53a12c48a30120144c7ba62359251450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7140a76454face1f899bdccd3938092"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1test_1_1TestAnalyzer.html#ad7140a76454face1f899bdccd3938092">analyze</a> (const <a class="el" href="classldmx_1_1Event.html">Event</a> &amp;event) final override</td></tr>
@@ -117,6 +117,10 @@ Additional Inherited Members</h2></td></tr>
 <a class="el" href="classldmx_1_1NtupleManager.html">NtupleManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#aba2a1ee9a8ceeed570810cfe402d5195">ntuple_</a> {<a class="el" href="classldmx_1_1NtupleManager.html#a52f11cc97f4fd6889e2f7138c96ac0ac">NtupleManager::getInstance</a>()}</td></tr>
 <tr class="memdesc:aba2a1ee9a8ceeed570810cfe402d5195 inherit pro_attribs_classldmx_1_1EventProcessor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager for any ntuples. <br /></td></tr>
 <tr class="separator:aba2a1ee9a8ceeed570810cfe402d5195 inherit pro_attribs_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9685619198fab6900155a29101be7e42 inherit pro_attribs_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top"><a id="a9685619198fab6900155a29101be7e42"></a>
+logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a9685619198fab6900155a29101be7e42">theLog_</a></td></tr>
+<tr class="memdesc:a9685619198fab6900155a29101be7e42 inherit pro_attribs_classldmx_1_1EventProcessor"><td class="mdescLeft">&#160;</td><td class="mdescRight">The logger for this <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a>. <br /></td></tr>
+<tr class="separator:a9685619198fab6900155a29101be7e42 inherit pro_attribs_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Bare analyzer that looks for objects matching what the <a class="el" href="classldmx_1_1test_1_1TestProducer.html">TestProducer</a> put in.</p>
@@ -125,7 +129,7 @@ Additional Inherited Members</h2></td></tr>
 <li><a class="el" href="classldmx_1_1Event.html#a5291adb21539e04a6c1bc03210a5bdc0">Event::getCollection</a> and <a class="el" href="classldmx_1_1Event.html#af50f75e65d050788dd84a7bdb7e9debd">Event::getObject</a> don't throw errors. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00106">106</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00109">109</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad7140a76454face1f899bdccd3938092"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7140a76454face1f899bdccd3938092">&#9670;&nbsp;</a></span>analyze()</h2>
@@ -159,34 +163,34 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classldmx_1_1Analyzer.html#abf95b685858c4b01883553f31be68727">ldmx::Analyzer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00121">121</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                                        {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordtype">int</span> i_event = <span class="keyword">event</span>.getEventNumber();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            REQUIRE( i_event &gt; 0 );</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            std::vector&lt;CalorimeterHit&gt; caloHits;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            REQUIRE_NOTHROW(caloHits = event.<a class="code" href="classldmx_1_1Event.html#a5291adb21539e04a6c1bc03210a5bdc0">getCollection</a>&lt;<a class="code" href="classldmx_1_1CalorimeterHit.html">CalorimeterHit</a>&gt;( <span class="stringliteral">&quot;TestCollection&quot;</span> ));</div>
+<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00124">124</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                                        {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordtype">int</span> i_event = <span class="keyword">event</span>.getEventNumber();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            REQUIRE( i_event &gt; 0 );</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            CHECK( caloHits.size() == i_event );</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">for</span> ( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; caloHits.size(); i++ ) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                CHECK( caloHits.at(i).getID() == i_event*10 + i );</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <a class="code" href="classldmx_1_1test_1_1TestAnalyzer.html#a60c95af3f6fcca9b499185259eb4c067">test_hist_</a>-&gt;Fill( caloHits.at(i).getID() );</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <a class="code" href="classldmx_1_1HcalVetoResult.html">HcalVetoResult</a> vetoRes;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            REQUIRE_NOTHROW(vetoRes = event.<a class="code" href="classldmx_1_1Event.html#af50f75e65d050788dd84a7bdb7e9debd">getObject</a>&lt;<a class="code" href="classldmx_1_1HcalVetoResult.html">HcalVetoResult</a>&gt;( <span class="stringliteral">&quot;TestObject&quot;</span> ));</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            std::vector&lt;CalorimeterHit&gt; caloHits;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            REQUIRE_NOTHROW(caloHits = event.<a class="code" href="classldmx_1_1Event.html#a5291adb21539e04a6c1bc03210a5bdc0">getCollection</a>&lt;<a class="code" href="classldmx_1_1CalorimeterHit.html">CalorimeterHit</a>&gt;( <span class="stringliteral">&quot;TestCollection&quot;</span> ));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            CHECK( caloHits.size() == i_event );</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">for</span> ( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; caloHits.size(); i++ ) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                CHECK( caloHits.at(i).getID() == i_event*10 + i );</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <a class="code" href="classldmx_1_1test_1_1TestAnalyzer.html#a60c95af3f6fcca9b499185259eb4c067">test_hist_</a>-&gt;Fill( caloHits.at(i).getID() );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keyword">auto</span> maxPEHit{vetoRes.<a class="code" href="classldmx_1_1HcalVetoResult.html#a9e7ba85b09b8c7b275fce826dacf510f">getMaxPEHit</a>()};</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            CHECK( maxPEHit.getID()     == i_event );</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            CHECK( vetoRes.<a class="code" href="classldmx_1_1HcalVetoResult.html#a3f5f17136f4f0e34e52d3190decf26c6">passesVeto</a>() == (i_event%2==0) );</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <a class="code" href="classldmx_1_1HcalVetoResult.html">HcalVetoResult</a> vetoRes;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            REQUIRE_NOTHROW(vetoRes = event.<a class="code" href="classldmx_1_1Event.html#af50f75e65d050788dd84a7bdb7e9debd">getObject</a>&lt;<a class="code" href="classldmx_1_1HcalVetoResult.html">HcalVetoResult</a>&gt;( <span class="stringliteral">&quot;TestObject&quot;</span> ));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keyword">auto</span> maxPEHit{vetoRes.<a class="code" href="classldmx_1_1HcalVetoResult.html#a9e7ba85b09b8c7b275fce826dacf510f">getMaxPEHit</a>()};</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            CHECK( maxPEHit.getID()     == i_event );</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            CHECK( vetoRes.<a class="code" href="classldmx_1_1HcalVetoResult.html#a3f5f17136f4f0e34e52d3190decf26c6">passesVeto</a>() == (i_event%2==0) );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalVetoResult_8h_source.html#l00043">ldmx::HcalVetoResult::getMaxPEHit()</a>, <a class="el" href="HcalVetoResult_8h_source.html#l00040">ldmx::HcalVetoResult::passesVeto()</a>, and <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00150">test_hist_</a>.</p>
+<p class="reference">References <a class="el" href="HcalVetoResult_8h_source.html#l00043">ldmx::HcalVetoResult::getMaxPEHit()</a>, <a class="el" href="HcalVetoResult_8h_source.html#l00040">ldmx::HcalVetoResult::passesVeto()</a>, and <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00153">test_hist_</a>.</p>
 
 </div>
 </div>
@@ -216,16 +220,16 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classldmx_1_1EventProcessor.html#ac9915215ea81db00eca7eacc35aac08e">ldmx::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00113">113</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                             {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            REQUIRE_NOTHROW(<a class="code" href="classldmx_1_1EventProcessor.html#aa844f84a142be4a4ee74f575debc291d">getHistoDirectory</a>());</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="classldmx_1_1test_1_1TestAnalyzer.html#a60c95af3f6fcca9b499185259eb4c067">test_hist_</a> = <span class="keyword">new</span> TH1F( </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <span class="stringliteral">&quot;test_hist_&quot;</span> , <span class="stringliteral">&quot;Test Histogram&quot;</span>,</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    101, -50, 50 );</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="classldmx_1_1test_1_1TestAnalyzer.html#a60c95af3f6fcca9b499185259eb4c067">test_hist_</a>-&gt;SetCanExtend(TH1::kAllAxes);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00116">116</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                             {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            REQUIRE_NOTHROW(<a class="code" href="classldmx_1_1EventProcessor.html#aa844f84a142be4a4ee74f575debc291d">getHistoDirectory</a>());</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="classldmx_1_1test_1_1TestAnalyzer.html#a60c95af3f6fcca9b499185259eb4c067">test_hist_</a> = <span class="keyword">new</span> TH1F( </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    <span class="stringliteral">&quot;test_hist_&quot;</span> , <span class="stringliteral">&quot;Test Histogram&quot;</span>,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    101, -50, 50 );</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classldmx_1_1test_1_1TestAnalyzer.html#a60c95af3f6fcca9b499185259eb4c067">test_hist_</a>-&gt;SetCanExtend(TH1::kAllAxes);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EventProcessor_8cxx_source.html#l00015">ldmx::EventProcessor::getHistoDirectory()</a>, and <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00150">test_hist_</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessor_8cxx_source.html#l00015">ldmx::EventProcessor::getHistoDirectory()</a>, and <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00153">test_hist_</a>.</p>
 
 </div>
 </div>
@@ -239,7 +243,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html">ldmx::CalorimeterHit</a></div><div class="ttdoc">Represents a reconstructed hit in a calorimeter cell within the detector.</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00023">CalorimeterHit.h:23</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_af50f75e65d050788dd84a7bdb7e9debd"><div class="ttname"><a href="classldmx_1_1Event.html#af50f75e65d050788dd84a7bdb7e9debd">ldmx::Event::getObject</a></div><div class="ttdeci">const T getObject(const std::string &amp;collectionName, const std::string &amp;passName) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00205">Event.h:205</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalVetoResult_html_a9e7ba85b09b8c7b275fce826dacf510f"><div class="ttname"><a href="classldmx_1_1HcalVetoResult.html#a9e7ba85b09b8c7b275fce826dacf510f">ldmx::HcalVetoResult::getMaxPEHit</a></div><div class="ttdeci">HcalHit getMaxPEHit() const</div><div class="ttdef"><b>Definition:</b> <a href="HcalVetoResult_8h_source.html#l00043">HcalVetoResult.h:43</a></div></div>
-<div class="ttc" id="aclassldmx_1_1test_1_1TestAnalyzer_html_a60c95af3f6fcca9b499185259eb4c067"><div class="ttname"><a href="classldmx_1_1test_1_1TestAnalyzer.html#a60c95af3f6fcca9b499185259eb4c067">ldmx::test::TestAnalyzer::test_hist_</a></div><div class="ttdeci">TH1F * test_hist_</div><div class="ttdoc">test histogram filled with event indices</div><div class="ttdef"><b>Definition:</b> <a href="FunctionalCoreTest_8cxx_source.html#l00150">FunctionalCoreTest.cxx:150</a></div></div>
+<div class="ttc" id="aclassldmx_1_1test_1_1TestAnalyzer_html_a60c95af3f6fcca9b499185259eb4c067"><div class="ttname"><a href="classldmx_1_1test_1_1TestAnalyzer.html#a60c95af3f6fcca9b499185259eb4c067">ldmx::test::TestAnalyzer::test_hist_</a></div><div class="ttdeci">TH1F * test_hist_</div><div class="ttdoc">test histogram filled with event indices</div><div class="ttdef"><b>Definition:</b> <a href="FunctionalCoreTest_8cxx_source.html#l00153">FunctionalCoreTest.cxx:153</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalVetoResult_html"><div class="ttname"><a href="classldmx_1_1HcalVetoResult.html">ldmx::HcalVetoResult</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalVetoResult_8h_source.html#l00023">HcalVetoResult.h:23</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
