@@ -48,7 +48,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MagneticFieldMap3D_8h.html">SimCore/MagneticFieldMap3D.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Exception_8h.html">Exception/Exception.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;Framework/Exception.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// STL</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
@@ -71,7 +71,7 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// Throw an error if file does not exist.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (!file.good()) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>( <span class="stringliteral">&quot;FileDNE&quot;</span> , <span class="stringliteral">&quot;The field map file &#39;&quot;</span> + std::string(filename) + <span class="stringliteral">&quot;&#39; does not exist!&quot;</span> );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            EXCEPTION_RAISE( <span class="stringliteral">&quot;FileDNE&quot;</span> , <span class="stringliteral">&quot;The field map file &#39;&quot;</span> + std::string(filename) + <span class="stringliteral">&quot;&#39; does not exist!&quot;</span> );</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        G4cout &lt;&lt; <span class="stringliteral">&quot;-----------------------------------------------------------&quot;</span> &lt;&lt; G4endl;</div>
@@ -238,8 +238,6 @@ $(function() {
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;} <span class="comment">// namespace</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
-<div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
-<div class="ttc" id="aException_8h_html"><div class="ttname"><a href="Exception_8h.html">Exception.h</a></div><div class="ttdoc">Class that provides a standard base exception class.</div></div>
 <div class="ttc" id="aMagneticFieldMap3D_8h_html"><div class="ttname"><a href="MagneticFieldMap3D_8h.html">MagneticFieldMap3D.h</a></div><div class="ttdoc">Class for defining a global 3D magnetic field.</div></div>
 <div class="ttc" id="aclassldmx_1_1MagneticFieldMap3D_html_a74310f2550427afd3ef13c0c22879a3e"><div class="ttname"><a href="classldmx_1_1MagneticFieldMap3D.html#a74310f2550427afd3ef13c0c22879a3e">ldmx::MagneticFieldMap3D::GetFieldValue</a></div><div class="ttdeci">void GetFieldValue(const double point[4], double *bfield) const</div><div class="ttdef"><b>Definition:</b> <a href="MagneticFieldMap3D_8cxx_source.html#l00124">MagneticFieldMap3D.cxx:124</a></div></div>
 <!-- start footer part -->

@@ -71,7 +71,7 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (!regcomp(&amp;reg,exp.c_str(),REG_EXTENDED|REG_ICASE|REG_NOSUB)) {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classldmx_1_1Event.html#abfa80b29f6c9080da114378ff591efbc">regexDropCollections_</a>.push_back( reg );</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            EXCEPTION_RAISE(</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    <span class="stringliteral">&quot;InvalidRegex&quot;</span>,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="stringliteral">&quot;The passed drop rule regex &#39;&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    + exp</div>
@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    regfree(&amp;reg_type);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                 } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    EXCEPTION_RAISE(</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        <span class="stringliteral">&quot;InvalidRegex&quot;</span>,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <span class="stringliteral">&quot;The passed type regex &#39;&quot;</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        + typematch</div>
@@ -108,7 +108,7 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                regfree(&amp;reg_pass);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                EXCEPTION_RAISE(</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="stringliteral">&quot;InvalidRegex&quot;</span>,</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="stringliteral">&quot;The passed name regex &#39;&quot;</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    + namematch</div>
@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            regfree(&amp;reg_name);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            EXCEPTION_RAISE(</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="stringliteral">&quot;RegexErr&quot;</span>,</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="stringliteral">&quot;The passed passname regex &#39;&quot;</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    + passmatch</div>
@@ -212,7 +212,6 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_a093baad9e2b92f63d57fd670d85d1a64"><div class="ttname"><a href="classldmx_1_1Event.html#a093baad9e2b92f63d57fd670d85d1a64">ldmx::Event::entries_</a></div><div class="ttdeci">Long64_t entries_</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00611">Event.h:611</a></div></div>
-<div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_aa2840d5f8f3414c52268bfdc2c6f2b67"><div class="ttname"><a href="classldmx_1_1Event.html#aa2840d5f8f3414c52268bfdc2c6f2b67">ldmx::Event::products_</a></div><div class="ttdeci">std::vector&lt; ProductTag &gt; products_</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00671">Event.h:671</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_a71211257e2129997a62c24b165edcffd"><div class="ttname"><a href="classldmx_1_1Event.html#a71211257e2129997a62c24b165edcffd">ldmx::Event::shouldDrop</a></div><div class="ttdeci">bool shouldDrop(const std::string &amp;collName) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00154">Event.cxx:154</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_a0bb8a4d17bf459828638128fe3941fbf"><div class="ttname"><a href="classldmx_1_1Event.html#a0bb8a4d17bf459828638128fe3941fbf">ldmx::Event::branchNames_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; branchNames_</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00651">Event.h:651</a></div></div>

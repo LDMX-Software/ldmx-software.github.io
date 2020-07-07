@@ -112,7 +112,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classldmx_1_1LoggedSession.html#a7740264f8864aceed7cb01f7545b3841">coutFile_</a>.open( coutFileName );</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> ( not <a class="code" href="classldmx_1_1LoggedSession.html#a7740264f8864aceed7cb01f7545b3841">coutFile_</a>.is_open() ) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            EXCEPTION_RAISE(</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    <span class="stringliteral">&quot;G4Logging&quot;</span>,</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    <span class="stringliteral">&quot;Unable to open log file &#39;&quot;</span> + coutFileName + <span class="stringliteral">&quot;&#39;.&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    );</div>
@@ -120,7 +120,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classldmx_1_1LoggedSession.html#ad77a64d3b5bc88c29ad9bd1f25071202">cerrFile_</a>.open( cerrFileName );</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> ( not <a class="code" href="classldmx_1_1LoggedSession.html#ad77a64d3b5bc88c29ad9bd1f25071202">cerrFile_</a>.is_open() ) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            EXCEPTION_RAISE(</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    <span class="stringliteral">&quot;G4Logging&quot;</span>,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="stringliteral">&quot;Unable to open log file &#39;&quot;</span> + cerrFileName + <span class="stringliteral">&quot;&#39;.&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    );</div>
@@ -128,7 +128,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="G4Session_8h_source.html#l00064">cerrFile_</a>, <a class="el" href="G4Session_8h_source.html#l00061">coutFile_</a>, and <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>.</p>
+<p class="reference">References <a class="el" href="G4Session_8h_source.html#l00064">cerrFile_</a>, and <a class="el" href="G4Session_8h_source.html#l00061">coutFile_</a>.</p>
 
 </div>
 </div>
@@ -306,7 +306,6 @@ Private Attributes</h2></td></tr>
 <li>SimCore/src/<a class="el" href="G4Session_8cxx_source.html">G4Session.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
 <div class="ttc" id="aclassldmx_1_1LoggedSession_html_ad77a64d3b5bc88c29ad9bd1f25071202"><div class="ttname"><a href="classldmx_1_1LoggedSession.html#ad77a64d3b5bc88c29ad9bd1f25071202">ldmx::LoggedSession::cerrFile_</a></div><div class="ttdeci">std::ofstream cerrFile_</div><div class="ttdef"><b>Definition:</b> <a href="G4Session_8h_source.html#l00064">G4Session.h:64</a></div></div>
 <div class="ttc" id="aclassldmx_1_1LoggedSession_html_a7740264f8864aceed7cb01f7545b3841"><div class="ttname"><a href="classldmx_1_1LoggedSession.html#a7740264f8864aceed7cb01f7545b3841">ldmx::LoggedSession::coutFile_</a></div><div class="ttdeci">std::ofstream coutFile_</div><div class="ttdef"><b>Definition:</b> <a href="G4Session_8h_source.html#l00061">G4Session.h:61</a></div></div>
 <!-- start footer part -->

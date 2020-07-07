@@ -309,14 +309,14 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef LDMX_USE_ONNXRUNTIME</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            rt_ = std::make_unique&lt;Ort::ONNXRuntime&gt;(parameters.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;bdt_file&quot;</span>));</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;EcalVetoProcessor&quot;</span>,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            EXCEPTION_RAISE(<span class="stringliteral">&quot;EcalVetoProcessor&quot;</span>,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                            <span class="stringliteral">&quot;Cannot run BDT because ONNXRuntime is not installed.&quot;</span>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        cellFileNamexy_ = parameters.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;cellxy_file&quot;</span>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (!std::ifstream(cellFileNamexy_).good()) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;EcalVetoProcessor&quot;</span>,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            EXCEPTION_RAISE(<span class="stringliteral">&quot;EcalVetoProcessor&quot;</span>,</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                            <span class="stringliteral">&quot;The specified x,y cell file &#39;&quot;</span> + cellFileNamexy_ + <span class="stringliteral">&quot;&#39; does not exist!&quot;</span>);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            std::ifstream cellxyfile(cellFileNamexy_);</div>
@@ -393,7 +393,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="classldmx_1_1EcalVetoProcessor.html#ae1ca3b290398e52c4fac3986a2c05461">collectionName_</a> = parameters.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;collection_name&quot;</span>);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00141">collectionName_</a>, <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, and <a class="el" href="Parameters_8h_source.html#l00060">ldmx::Parameters::getParameter()</a>.</p>
+<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00141">collectionName_</a>, and <a class="el" href="Parameters_8h_source.html#l00060">ldmx::Parameters::getParameter()</a>.</p>
 
 </div>
 </div>
@@ -810,7 +810,6 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <li>Ecal/src/<a class="el" href="EcalVetoProcessor_8cxx_source.html">EcalVetoProcessor.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalVetoProcessor_html_ae1ca3b290398e52c4fac3986a2c05461"><div class="ttname"><a href="classldmx_1_1EcalVetoProcessor.html#ae1ca3b290398e52c4fac3986a2c05461">ldmx::EcalVetoProcessor::collectionName_</a></div><div class="ttdeci">std::string collectionName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalVetoProcessor_8h_source.html#l00141">EcalVetoProcessor.h:141</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00161">EventProcessor.h:161</a></div></div>
 <!-- start footer part -->

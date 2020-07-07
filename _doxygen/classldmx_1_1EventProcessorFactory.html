@@ -324,13 +324,13 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span>* handle = dlopen(libname.c_str(), RTLD_NOW);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (handle == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;LibraryLoadFailure&quot;</span>, <span class="stringliteral">&quot;Error loading library &#39;&quot;</span> + libname + <span class="stringliteral">&quot;&#39;:&quot;</span> + dlerror());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            EXCEPTION_RAISE(<span class="stringliteral">&quot;LibraryLoadFailure&quot;</span>, <span class="stringliteral">&quot;Error loading library &#39;&quot;</span> + libname + <span class="stringliteral">&quot;&#39;:&quot;</span> + dlerror());</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classldmx_1_1EventProcessorFactory.html#a64523985846cd38eb1faaee92e0e308d">librariesLoaded_</a>.insert(libname);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, and <a class="el" href="EventProcessorFactory_8h_source.html#l00091">librariesLoaded_</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessorFactory_8h_source.html#l00091">librariesLoaded_</a>.</p>
 
 </div>
 </div>
@@ -378,7 +378,7 @@ Static Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                                                                                            {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">auto</span> ptr = <a class="code" href="classldmx_1_1EventProcessorFactory.html#a96808f7757fbf8a7a98552665b7ee96d">moduleInfo_</a>.find(classname);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">if</span> (ptr != <a class="code" href="classldmx_1_1EventProcessorFactory.html#a96808f7757fbf8a7a98552665b7ee96d">moduleInfo_</a>.end()) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(<span class="stringliteral">&quot;ExistingEventProcessorDefinition&quot;</span>, <span class="stringliteral">&quot;Already have a module registered with the classname &#39;&quot;</span> + classname + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            EXCEPTION_RAISE(<span class="stringliteral">&quot;ExistingEventProcessorDefinition&quot;</span>, <span class="stringliteral">&quot;Already have a module registered with the classname &#39;&quot;</span> + classname + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        EventProcessorInfo mi;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        mi.classname = classname;</div>
@@ -387,7 +387,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classldmx_1_1EventProcessorFactory.html#a96808f7757fbf8a7a98552665b7ee96d">moduleInfo_</a>[classname] = mi;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>, and <a class="el" href="EventProcessorFactory_8h_source.html#l00088">moduleInfo_</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessorFactory_8h_source.html#l00088">moduleInfo_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EventProcessor_8cxx_source.html#l00027">ldmx::EventProcessor::declare()</a>.</p>
 
@@ -481,7 +481,6 @@ Static Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1EventProcessorFactory_html_a96808f7757fbf8a7a98552665b7ee96d"><div class="ttname"><a href="classldmx_1_1EventProcessorFactory.html#a96808f7757fbf8a7a98552665b7ee96d">ldmx::EventProcessorFactory::moduleInfo_</a></div><div class="ttdeci">std::map&lt; std::string, EventProcessorInfo &gt; moduleInfo_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessorFactory_8h_source.html#l00088">EventProcessorFactory.h:88</a></div></div>
-<div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessorFactory_html_a64523985846cd38eb1faaee92e0e308d"><div class="ttname"><a href="classldmx_1_1EventProcessorFactory.html#a64523985846cd38eb1faaee92e0e308d">ldmx::EventProcessorFactory::librariesLoaded_</a></div><div class="ttdeci">std::set&lt; std::string &gt; librariesLoaded_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessorFactory_8h_source.html#l00091">EventProcessorFactory.h:91</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessorFactory_html_ae7fdc9208fde1d62b50f464f746390b4"><div class="ttname"><a href="classldmx_1_1EventProcessorFactory.html#ae7fdc9208fde1d62b50f464f746390b4">ldmx::EventProcessorFactory::theFactory_</a></div><div class="ttdeci">static EventProcessorFactory theFactory_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessorFactory_8h_source.html#l00094">EventProcessorFactory.h:94</a></div></div>
 <!-- start footer part -->

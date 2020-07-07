@@ -50,7 +50,7 @@ $(function() {
 <a href="G4Session_8cxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G4Session_8h.html">SimCore/G4Session.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Exception_8h.html">Exception/Exception.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Framework/Exception.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
@@ -58,7 +58,7 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classldmx_1_1LoggedSession.html#a7740264f8864aceed7cb01f7545b3841">coutFile_</a>.open( coutFileName );</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> ( not <a class="code" href="classldmx_1_1LoggedSession.html#a7740264f8864aceed7cb01f7545b3841">coutFile_</a>.is_open() ) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            EXCEPTION_RAISE(</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    <span class="stringliteral">&quot;G4Logging&quot;</span>,</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    <span class="stringliteral">&quot;Unable to open log file &#39;&quot;</span> + coutFileName + <span class="stringliteral">&quot;&#39;.&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    );</div>
@@ -66,7 +66,7 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classldmx_1_1LoggedSession.html#ad77a64d3b5bc88c29ad9bd1f25071202">cerrFile_</a>.open( cerrFileName );</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> ( not <a class="code" href="classldmx_1_1LoggedSession.html#ad77a64d3b5bc88c29ad9bd1f25071202">cerrFile_</a>.is_open() ) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>(</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            EXCEPTION_RAISE(</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    <span class="stringliteral">&quot;G4Logging&quot;</span>,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="stringliteral">&quot;Unable to open log file &#39;&quot;</span> + cerrFileName + <span class="stringliteral">&quot;&#39;.&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    );</div>
@@ -93,14 +93,12 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
-<div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
 <div class="ttc" id="aclassldmx_1_1LoggedSession_html_aca0b3139b81d25fa8ac7c6316aefb055"><div class="ttname"><a href="classldmx_1_1LoggedSession.html#aca0b3139b81d25fa8ac7c6316aefb055">ldmx::LoggedSession::LoggedSession</a></div><div class="ttdeci">LoggedSession(const std::string &amp;coutFileName=&quot;G4cout.log&quot;, const std::string &amp;cerrFileName=&quot;G4cerr.log&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="G4Session_8cxx_source.html#l00013">G4Session.cxx:13</a></div></div>
 <div class="ttc" id="aG4Session_8h_html"><div class="ttname"><a href="G4Session_8h.html">G4Session.h</a></div><div class="ttdoc">Classes which redirect the output of G4cout and G4cerr.</div></div>
 <div class="ttc" id="aclassldmx_1_1LoggedSession_html_a87d8e62bf4e010105223eca1cb115253"><div class="ttname"><a href="classldmx_1_1LoggedSession.html#a87d8e62bf4e010105223eca1cb115253">ldmx::LoggedSession::ReceiveG4cerr</a></div><div class="ttdeci">G4int ReceiveG4cerr(const G4String &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="G4Session_8cxx_source.html#l00044">G4Session.cxx:44</a></div></div>
 <div class="ttc" id="aclassldmx_1_1LoggedSession_html_a7c6d25a5884d4b5fca9e46fabb96c0bb"><div class="ttname"><a href="classldmx_1_1LoggedSession.html#a7c6d25a5884d4b5fca9e46fabb96c0bb">ldmx::LoggedSession::ReceiveG4cout</a></div><div class="ttdeci">G4int ReceiveG4cout(const G4String &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="G4Session_8cxx_source.html#l00038">G4Session.cxx:38</a></div></div>
 <div class="ttc" id="aclassldmx_1_1LoggedSession_html_ad77a64d3b5bc88c29ad9bd1f25071202"><div class="ttname"><a href="classldmx_1_1LoggedSession.html#ad77a64d3b5bc88c29ad9bd1f25071202">ldmx::LoggedSession::cerrFile_</a></div><div class="ttdeci">std::ofstream cerrFile_</div><div class="ttdef"><b>Definition:</b> <a href="G4Session_8h_source.html#l00064">G4Session.h:64</a></div></div>
 <div class="ttc" id="aclassldmx_1_1LoggedSession_html_af50fd9db7aa73b137a41ee77556d88bd"><div class="ttname"><a href="classldmx_1_1LoggedSession.html#af50fd9db7aa73b137a41ee77556d88bd">ldmx::LoggedSession::~LoggedSession</a></div><div class="ttdeci">~LoggedSession()</div><div class="ttdef"><b>Definition:</b> <a href="G4Session_8cxx_source.html#l00033">G4Session.cxx:33</a></div></div>
-<div class="ttc" id="aException_8h_html"><div class="ttname"><a href="Exception_8h.html">Exception.h</a></div><div class="ttdoc">Class that provides a standard base exception class.</div></div>
 <div class="ttc" id="aclassldmx_1_1LoggedSession_html_a7740264f8864aceed7cb01f7545b3841"><div class="ttname"><a href="classldmx_1_1LoggedSession.html#a7740264f8864aceed7cb01f7545b3841">ldmx::LoggedSession::coutFile_</a></div><div class="ttdeci">std::ofstream coutFile_</div><div class="ttdef"><b>Definition:</b> <a href="G4Session_8h_source.html#l00061">G4Session.h:61</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>

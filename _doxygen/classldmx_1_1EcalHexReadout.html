@@ -847,13 +847,11 @@ static const std::vector&lt; double &gt;&#160;</td><td class="memItemRight" vali
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="comment">//   wonder why TH2Poly-&gt;GetBin(ID) doesn&#39;t exist. plus the map is useful by itself.</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keyword">auto</span> search = cellPositionMap_.find(cellID);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="keywordflow">if</span>(search == cellPositionMap_.end()) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>( <span class="stringliteral">&quot;InvalidCellID&quot;</span> , <span class="stringliteral">&quot;Cell &quot;</span> + std::to_string(cellID) + <span class="stringliteral">&quot; is not valid.&quot;</span> );</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    EXCEPTION_RAISE( <span class="stringliteral">&quot;InvalidCellID&quot;</span> , <span class="stringliteral">&quot;Cell &quot;</span> + std::to_string(cellID) + <span class="stringliteral">&quot; is not valid.&quot;</span> );</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordflow">return</span> search-&gt;second;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00271">distanceToEdge()</a>.</p>
 
 </div>
@@ -906,12 +904,12 @@ static const std::vector&lt; double &gt;&#160;</td><td class="memItemRight" vali
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                    TString error_msg = TString(<span class="stringliteral">&quot;[EcalHexReadout::getCellIDRelative] Relative coordinates are outside module hexagon!&quot;</span>) + </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                        TString::Format(<span class="stringliteral">&quot; Is the gap used by EcalHexReadout (%.2f mm) and the minimum module radius (%.2f mm)&quot;</span>,gap_,moduler_) +</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                        TString::Format(<span class="stringliteral">&quot; the same as hexagon_gap and Hex_radius in ecal.gdml? Received (x,y) = (%.2f,%.2f).&quot;</span>,x,y);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    <a class="code" href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a>( <span class="stringliteral">&quot;InvalidArg&quot;</span> , error_msg.Data() );</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    EXCEPTION_RAISE( <span class="stringliteral">&quot;InvalidArg&quot;</span> , error_msg.Data() );</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                }</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">return</span> bin;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00328">ecalMap_</a>, and <a class="el" href="Exception_8h_source.html#l00127">EXCEPTION_RAISE</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00328">ecalMap_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8h_source.html#l00147">getCellModuleID()</a>.</p>
 
@@ -1596,7 +1594,6 @@ static const std::vector&lt; double &gt;&#160;</td><td class="memItemRight" vali
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a201ec824d6806ff70bdb716cc42cc70e"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a201ec824d6806ff70bdb716cc42cc70e">ldmx::EcalHexReadout::buildCellModuleMap</a></div><div class="ttdeci">void buildCellModuleMap()</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00128">EcalHexReadout.cxx:128</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a9d22369c3704814a3c52667b1373bbe8"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a9d22369c3704814a3c52667b1373bbe8">ldmx::EcalHexReadout::isInside</a></div><div class="ttdeci">bool isInside(double normX, double normY) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00284">EcalHexReadout.cxx:284</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a541f97d9e548732fe28df78b11e83fc3"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a541f97d9e548732fe28df78b11e83fc3">ldmx::EcalHexReadout::getModuleCenter</a></div><div class="ttdeci">XYCoords getModuleCenter(int moduleID) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00102">EcalHexReadout.h:102</a></div></div>
-<div class="ttc" id="aException_8h_html_a6d45ac49a0cb250fe3cabf8cf3fae7e8"><div class="ttname"><a href="Exception_8h.html#a6d45ac49a0cb250fe3cabf8cf3fae7e8">EXCEPTION_RAISE</a></div><div class="ttdeci">#define EXCEPTION_RAISE(EXCEPTION, MSG)</div><div class="ttdoc">Utility macro for throwing exceptions, automatically including the necessary file,...</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00128">Exception.h:127</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a6ee5ea90dd6e9b270d0572909ed9fee9"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a6ee5ea90dd6e9b270d0572909ed9fee9">ldmx::EcalHexReadout::getCellCenterAbsolute</a></div><div class="ttdeci">XYCoords getCellCenterAbsolute(int cellModuleID) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00176">EcalHexReadout.h:176</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_ac4aeb2b9831ad98110e4984f2c6f766b"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#ac4aeb2b9831ad98110e4984f2c6f766b">ldmx::EcalHexReadout::buildNeighborMaps</a></div><div class="ttdeci">void buildNeighborMaps()</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00220">EcalHexReadout.cxx:220</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a05e3dc7a3e36411474327cc877cb0079"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a05e3dc7a3e36411474327cc877cb0079">ldmx::EcalHexReadout::buildModuleMap</a></div><div class="ttdeci">void buildModuleMap()</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00114">EcalHexReadout.cxx:114</a></div></div>
