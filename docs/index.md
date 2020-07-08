@@ -8,6 +8,7 @@ layout: default
 
 # Getting Started
 - [Building and Installing ldmx-sw]({% link docs/Building-ldmx-sw.md %})
+- [What the F.A.Q.?]({% link docs/faq.md %})
 - [Generating Simulation Samples]({% link docs/Generating-Simulation-Samples.md %})
 - [Getting Started at SLAC](%{ link docs/Getting-Started-with-ldmx-sw-at-SLAC.md %})
 - [Running and Configuring ldmx]({% link docs/Running-and-configuring-ldmx-app.md %})
