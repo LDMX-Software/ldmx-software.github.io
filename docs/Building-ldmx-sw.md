@@ -2,19 +2,21 @@
 layout: default
 ---
 
-# Docker Container
+# Container
 
 > _Note:_ This method is _highly_ recommended. The extra details below are not for the faint of heart.
 
 - [Install the docker engine](https://docs.docker.com/engine/install/)
+  - [singularity](https://sylabs.io/guides/3.5/user-guide/) is also supported if you can't install and/or don't want to install docker.
 - (on Linux systems) [Manage docker as non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
-- Clone the repo: `git clone https://github.com/LDMX-Software/ldmx-sw.git`
+- Clone the repo: `git clone --recursive https://github.com/LDMX-Software/ldmx-sw.git`
+  - The `--recursive` flag is _very important_ because there are several necessary parts of _ldmx-sw_ stored in separate git repositories.
 - Setup the environment: `source ldmx-sw/scripts/ldmx-env.sh`
   - Must occur in a `bash` terminal (the default on iOS and Ubuntu systems)
   - Downloads the latest development docker image, so it may take some time (a few minutes) on the first run
   - Must be re-run whenever a new terminal is opened
 - Make a build directory: `cd ldmx-sw; mkdir build; cd build;`
-- Configure the build: `ldmx cmake -DCMAKE_INSTALL_PREFIX=../install ..`
+- Configure the build: `ldmx cmake ..`
 - Build and Install: `ldmx make install -j2`
 - Now you can run any processor in _ldmx-sw_ through `ldmx fire`
 
@@ -25,7 +27,7 @@ Building ldmx-sw will require the installation of several dependencies. The foll
 ## Supported Platforms
 * Linux 
     * __Tested on__: RedHat6 and CentOS7 with devtoolset-6/8, OpenSuse > 42.1, Ubuntu > 18.0)
-* Building on MacOS is not currently supported.
+* Building on MacOS outside the container is not supported.
 
 ## Required Tools
 
@@ -100,7 +102,7 @@ Building ldmx-sw will require the installation of several dependencies. The foll
         tar -zxvf root_v6.16.00.source.tar.gz
         mkdir root-6.16.00-build
         cd root-6.16.00-build
-        cmake -DCMAKE_INSTALL_PREFIX=../root-6.16.00-install -Dgdml=ON -Dcxx17=ON ..
+        cmake -DCMAKE_INSTALL_PREFIX=../root-6.16.00-install -Dgdml=ON -Dcxx17=ON -DPYTHON_EXECUTABLE=$(which python3) ..
         make -j16 install
         cd ../root-6.16.00-install
         source bin/thisroot.sh
@@ -159,7 +161,4 @@ Now that you have an installation of ldmx-sw, you can start writing your own pro
 
 Comments, suggestions or cries for help can be sent to [Omar Moreno](mailto:omoreno@slac.stanford.edu) or posted in the #getting_started channel of the [LDMX Software Slack](https://ldmxsoftware.slack.com/).  
 
-## References
-
-* [LDMX-SW Doxygen Documentation](https://ldmxanalysis.github.io/ldmx-sw/html/index.html)
 
