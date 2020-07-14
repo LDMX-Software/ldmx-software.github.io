@@ -42,5 +42,13 @@ This is the command you want to be giving to `bsub` or some other submission pro
 The only files it needs access to are the configuration script that you want to run and the `.sif` image file;
 both of which are only used at the start-up of the container.
 
-It is best practice to write a "submission script" that handles the running of this command _and_ any post-run actions.
-These post-run actions are most commonly copying over the resulting data files to a directory that you have access to.
+#### Submission Script
+It is best practice to write a "submission script" that handles the running of this command _and_ any pre- or post- run actions.
+A lot of different submission scripts have been written in `bash` and `python`, but they all have a similar structure:
+1. Setup the batch environment (e.g. Find singularity image file and turn off email notifications)
+2. Configure or write a job script which does all the pre- and post- run actions as well as the `singularity run` command.
+   a. Go to a scratch or temporary directory to work
+   b. Pre-Run Actions: copying over input file, inserting parameters into configuration script, etc...
+   c. Run `singularity run` command
+   d. Post-Run Actions: copying output files to output directory cleaning up scractch directory
+3. Submit the job script using the submission program (e.g. `bsub` or `condor`) however many times
