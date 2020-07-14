@@ -22,6 +22,7 @@ layout: default
 - [Contributing]({% link docs/Contributing-to-ldmx-sw.md %})
 - [Configuring the Simulation]({% link docs/Configuring-the-Simulation.md %})
 - [Logging]({% link docs/Logging.md %})
+- [Creating your own production image]({% link docs/custom-production-image.md %})
 - [Adding a new class to the ROOT Dictionary]({% link docs/Adding-a-new-class-to-the-ldmx-framework-ROOT-dictionary.md %})
 - [Creating a new Event Bus Object]({% link docs/Creating-a-new-Event-Bus-Object.md %})
 - [Dark Brem (Signal) Process]({% link docs/Dark-Brem-Signal-Process.md %})
