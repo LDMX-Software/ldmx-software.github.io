@@ -84,6 +84,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab38afea01d11e6c540b3646717ed33a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac235e777cff959f18bc120232d689f50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ac235e777cff959f18bc120232d689f50">setStorageHint</a> (ldmx::StorageControlHint hint, const std::string &amp;purposeString)</td></tr>
 <tr class="separator:ac235e777cff959f18bc120232d689f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ba5901a215e991e59e8e86f9a0a86b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#aa5ba5901a215e991e59e8e86f9a0a86b">getLogFrequency</a> () const</td></tr>
+<tr class="separator:aa5ba5901a215e991e59e8e86f9a0a86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14fc8018378054e59f275e695a4064ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a14fc8018378054e59f275e695a4064ce">getRunNumber</a> () const</td></tr>
+<tr class="separator:a14fc8018378054e59f275e695a4064ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4deffb5a280902e2cc54a0118ec7f29b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a4deffb5a280902e2cc54a0118ec7f29b">createHistograms</a> (const std::vector&lt; <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &gt; &amp;histos)</td></tr>
 <tr class="separator:a4deffb5a280902e2cc54a0118ec7f29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -99,8 +103,6 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ae4d5efe10b50e887f4e71a8c00b0eac0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1Process.html">Process</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a></td></tr>
-<tr class="separator:ae4d5efe10b50e887f4e71a8c00b0eac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9caad392817bb9e2ca9c9f28a544de2f"><td class="memItemLeft" align="right" valign="top"><a id="a9caad392817bb9e2ca9c9f28a544de2f"></a>
 <a class="el" href="classldmx_1_1HistogramHelper.html">HistogramHelper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a9caad392817bb9e2ca9c9f28a544de2f">histograms_</a></td></tr>
 <tr class="memdesc:a9caad392817bb9e2ca9c9f28a544de2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface class for making and filling histograms. <br /></td></tr>
@@ -116,6 +118,8 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:ae4d5efe10b50e887f4e71a8c00b0eac0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1Process.html">Process</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a></td></tr>
+<tr class="separator:ae4d5efe10b50e887f4e71a8c00b0eac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3541d222ac202973ab32d1ab9bd4f0ba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a3541d222ac202973ab32d1ab9bd4f0ba">name_</a></td></tr>
 <tr class="separator:a3541d222ac202973ab32d1ab9bd4f0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8963717f1852610dcf9c8cf6dfa98d85"><td class="memItemLeft" align="right" valign="top">TDirectory *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a8963717f1852610dcf9c8cf6dfa98d85">histoDir_</a> {0}</td></tr>
@@ -222,10 +226,10 @@ Private Attributes</h2></td></tr>
 <p>Abort the event immediately.</p>
 <p>Skip the rest of the sequence and don't save anything in the event bus. </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00191">191</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{ <span class="keywordflow">throw</span> AbortEventException(); }</div>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00203">203</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{ <span class="keywordflow">throw</span> AbortEventException(); }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00129">ldmx::Simulator::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00125">ldmx::Simulator::produce()</a>.</p>
 
 </div>
 </div>
@@ -262,7 +266,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classldmx_1_1TrigScintDQM.html#a937b228b4cbbd1ea5c4b2c5cec55114e">ldmx::TrigScintDQM</a>, <a class="el" href="classldmx_1_1TrigScintHitDQM.html#a5d9a32cca073ce7c071df23e6c176083">ldmx::TrigScintHitDQM</a>, <a class="el" href="classldmx_1_1EcalDigiVerifier.html#a3a1488febd78ac9308a08ae5ffe8f11e">ldmx::EcalDigiVerifier</a>, <a class="el" href="classldmx_1_1Simulator.html#aaf3d58c825463223741faff0bd99060a">ldmx::Simulator</a>, <a class="el" href="classldmx_1_1PnWeightProcessor.html#a7a131f88d98ca466c310c2ef23ad74f4">ldmx::PnWeightProcessor</a>, <a class="el" href="classldmx_1_1TrigScintDigiProducer.html#a1416495e2694773c9a7b4ae8b3570099">ldmx::TrigScintDigiProducer</a>, <a class="el" href="classldmx_1_1DummyAnalyzer.html#a01b0810f24cac82a9ac107d3fe1f02ea">ldmx::DummyAnalyzer</a>, <a class="el" href="classldmx_1_1EcalClusterProducer.html#a31a5df14ed1b0afa0dfe6814d822abf9">ldmx::EcalClusterProducer</a>, <a class="el" href="classldmx_1_1EcalSim2Rec.html#a294acb33669c062e19e06521817f4f01">ldmx::EcalSim2Rec</a>, <a class="el" href="classldmx_1_1EcalVetoProcessor.html#aab15251610ce86123764bde86058cfcf">ldmx::EcalVetoProcessor</a>, <a class="el" href="classldmx_1_1TriggerProcessor.html#a1741e1c935512f10e1cd4d9e38dee0e3">ldmx::TriggerProcessor</a>, <a class="el" href="classldmx_1_1RecoilTrackerDQM.html#a9a3ac8dc5e5d417254c126f79274f478">ldmx::RecoilTrackerDQM</a>, <a class="el" href="classldmx_1_1MyProcessor.html#abfc5faaf8ad046bdbcc97c90d406dd27">ldmx::MyProcessor</a>, <a class="el" href="classldmx_1_1HcalDigiProducer.html#ac1aa323272060cbf43c10639ea050a34">ldmx::HcalDigiProducer</a>, <a class="el" href="classldmx_1_1test_1_1TestConfig.html#a949d0f3fb113dec3b89c61b5a9f8225c">ldmx::test::TestConfig</a>, <a class="el" href="classldmx_1_1HCalDQM.html#a1552bdb5ea2f7673397c8d15bfe931fc">ldmx::HCalDQM</a>, <a class="el" href="classldmx_1_1HcalVetoProcessor.html#a2d5a6ae920c273c8da1dc8afac46ab67">ldmx::HcalVetoProcessor</a>, <a class="el" href="classldmx_1_1DummyProducer.html#aa69747fb52be1bcda8c7a11a772b210c">ldmx::DummyProducer</a>, <a class="el" href="classldmx_1_1TrackerHitKiller.html#a2df01cb0fa1e3b82b0218e406f4daa14">ldmx::TrackerHitKiller</a>, <a class="el" href="classldmx_1_1FindableTrackProcessor.html#a2117f97b3e958f8ab02cd9c6b7a5a68d">ldmx::FindableTrackProcessor</a>, <a class="el" href="classldmx_1_1PhotoNuclearDQM.html#addf693c8dc6f8ec3635dd7acfd77dbce">ldmx::PhotoNuclearDQM</a>, <a class="el" href="classldmx_1_1DNNEcalVetoProcessor.html#a0a91399a6131759a463d6cec8970d2a2">ldmx::DNNEcalVetoProcessor</a>, <a class="el" href="classldmx_1_1test_1_1TestProducer.html#aa46910e58d688e03d8805d64451f60b5">ldmx::test::TestProducer</a>, <a class="el" href="classldmx_1_1EcalRecProducer.html#a5cbe695b55c25b845efb0218cab4d82e">ldmx::EcalRecProducer</a>, and <a class="el" href="classldmx_1_1EcalDigiProducer.html#a3fd70f41429d787758df01ec2c59de4c">ldmx::EcalDigiProducer</a>.</p>
+<p>Reimplemented in <a class="el" href="classldmx_1_1TrigScintDQM.html#a937b228b4cbbd1ea5c4b2c5cec55114e">ldmx::TrigScintDQM</a>, <a class="el" href="classldmx_1_1TrigScintHitDQM.html#a5d9a32cca073ce7c071df23e6c176083">ldmx::TrigScintHitDQM</a>, <a class="el" href="classldmx_1_1EcalDigiVerifier.html#a3a1488febd78ac9308a08ae5ffe8f11e">ldmx::EcalDigiVerifier</a>, <a class="el" href="classldmx_1_1Simulator.html#aaf3d58c825463223741faff0bd99060a">ldmx::Simulator</a>, <a class="el" href="classldmx_1_1PnWeightProcessor.html#a7a131f88d98ca466c310c2ef23ad74f4">ldmx::PnWeightProcessor</a>, <a class="el" href="classldmx_1_1TrigScintDigiProducer.html#a1416495e2694773c9a7b4ae8b3570099">ldmx::TrigScintDigiProducer</a>, <a class="el" href="classldmx_1_1EcalClusterProducer.html#a31a5df14ed1b0afa0dfe6814d822abf9">ldmx::EcalClusterProducer</a>, <a class="el" href="classldmx_1_1EcalSim2Rec.html#a294acb33669c062e19e06521817f4f01">ldmx::EcalSim2Rec</a>, <a class="el" href="classldmx_1_1EcalVetoProcessor.html#aab15251610ce86123764bde86058cfcf">ldmx::EcalVetoProcessor</a>, <a class="el" href="classldmx_1_1TriggerProcessor.html#a1741e1c935512f10e1cd4d9e38dee0e3">ldmx::TriggerProcessor</a>, <a class="el" href="classldmx_1_1RecoilTrackerDQM.html#a9a3ac8dc5e5d417254c126f79274f478">ldmx::RecoilTrackerDQM</a>, <a class="el" href="classldmx_1_1MyProcessor.html#abfc5faaf8ad046bdbcc97c90d406dd27">ldmx::MyProcessor</a>, <a class="el" href="classldmx_1_1HcalDigiProducer.html#ac1aa323272060cbf43c10639ea050a34">ldmx::HcalDigiProducer</a>, <a class="el" href="classldmx_1_1test_1_1TestConfig.html#a949d0f3fb113dec3b89c61b5a9f8225c">ldmx::test::TestConfig</a>, <a class="el" href="classldmx_1_1HCalDQM.html#a1552bdb5ea2f7673397c8d15bfe931fc">ldmx::HCalDQM</a>, <a class="el" href="classldmx_1_1HcalVetoProcessor.html#a2d5a6ae920c273c8da1dc8afac46ab67">ldmx::HcalVetoProcessor</a>, <a class="el" href="classldmx_1_1TrackerHitKiller.html#a2df01cb0fa1e3b82b0218e406f4daa14">ldmx::TrackerHitKiller</a>, <a class="el" href="classldmx_1_1FindableTrackProcessor.html#a2117f97b3e958f8ab02cd9c6b7a5a68d">ldmx::FindableTrackProcessor</a>, <a class="el" href="classldmx_1_1PhotoNuclearDQM.html#addf693c8dc6f8ec3635dd7acfd77dbce">ldmx::PhotoNuclearDQM</a>, <a class="el" href="classldmx_1_1DNNEcalVetoProcessor.html#a0a91399a6131759a463d6cec8970d2a2">ldmx::DNNEcalVetoProcessor</a>, <a class="el" href="classldmx_1_1test_1_1TestProducer.html#aa46910e58d688e03d8805d64451f60b5">ldmx::test::TestProducer</a>, <a class="el" href="classldmx_1_1EcalRecProducer.html#a5cbe695b55c25b845efb0218cab4d82e">ldmx::EcalRecProducer</a>, and <a class="el" href="classldmx_1_1EcalDigiProducer.html#a3fd70f41429d787758df01ec2c59de4c">ldmx::EcalDigiProducer</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00103">103</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{ } </div>
@@ -288,25 +292,25 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Internal function which is used to create histograms passed from the python configuration @parma histos vector of <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> that configure histograms to create </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00031">31</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                                             {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; h : histos ) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">auto</span> name{h.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;name&quot;</span>)};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">auto</span> xLabel{h.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;xlabel&quot;</span>)};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">auto</span> xbins{h.getParameter&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;xbins&quot;</span>)};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">auto</span> yLabel{h.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;ylabel&quot;</span>)};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">auto</span> ybins{h.getParameter&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;ybins&quot;</span>,{})};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> ( ybins.empty() ) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="comment">//assume 1D histogram</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="classldmx_1_1EventProcessor.html#a9caad392817bb9e2ca9c9f28a544de2f">histograms_</a>.<a class="code" href="classldmx_1_1HistogramHelper.html#ac633a2ec45c54b3698f91bf258ff340c">create</a>( name , xLabel , xbins );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="comment">//assume 2D histogram</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="classldmx_1_1EventProcessor.html#a9caad392817bb9e2ca9c9f28a544de2f">histograms_</a>.<a class="code" href="classldmx_1_1HistogramHelper.html#ac633a2ec45c54b3698f91bf258ff340c">create</a>( name , xLabel , xbins , yLabel , ybins );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00039">39</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                                             {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; h : histos ) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">auto</span> name{h.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;name&quot;</span>)};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">auto</span> xLabel{h.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;xlabel&quot;</span>)};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">auto</span> xbins{h.getParameter&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;xbins&quot;</span>)};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">auto</span> yLabel{h.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;ylabel&quot;</span>)};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">auto</span> ybins{h.getParameter&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;ybins&quot;</span>,{})};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> ( ybins.empty() ) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="comment">//assume 1D histogram</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="classldmx_1_1EventProcessor.html#a9caad392817bb9e2ca9c9f28a544de2f">histograms_</a>.<a class="code" href="classldmx_1_1HistogramHelper.html#ac633a2ec45c54b3698f91bf258ff340c">create</a>( name , xLabel , xbins );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="comment">//assume 2D histogram</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="classldmx_1_1EventProcessor.html#a9caad392817bb9e2ca9c9f28a544de2f">histograms_</a>.<a class="code" href="classldmx_1_1HistogramHelper.html#ac633a2ec45c54b3698f91bf258ff340c">create</a>( name , xLabel , xbins , yLabel , ybins );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Histograms_8cxx_source.html#l00057">ldmx::HistogramHelper::create()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00197">histograms_</a>.</p>
+<p class="reference">References <a class="el" href="Histograms_8cxx_source.html#l00057">ldmx::HistogramHelper::create()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00206">histograms_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00021">ldmx::Process::Process()</a>.</p>
 
@@ -359,10 +363,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00027">27</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                                                                     {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classldmx_1_1EventProcessorFactory.html#a288aa4dd9ba6fb37f13ee78e9054ac83">EventProcessorFactory::getInstance</a>().<a class="code" href="classldmx_1_1EventProcessorFactory.html#aca89b0f11082628225d134a994b51f66">registerEventProcessor</a>(classname, classtype, maker);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00035">35</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                                                                     {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classldmx_1_1EventProcessorFactory.html#a288aa4dd9ba6fb37f13ee78e9054ac83">EventProcessorFactory::getInstance</a>().<a class="code" href="classldmx_1_1EventProcessorFactory.html#aca89b0f11082628225d134a994b51f66">registerEventProcessor</a>(classname, classtype, maker);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="EventProcessorFactory_8h_source.html#l00032">ldmx::EventProcessorFactory::getInstance()</a>, and <a class="el" href="EventProcessorFactory_8cxx_source.html#l00012">ldmx::EventProcessorFactory::registerEventProcessor()</a>.</p>
 
@@ -395,9 +399,63 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EventProcessor.html#a8963717f1852610dcf9c8cf6dfa98d85">histoDir_</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00211">histoDir_</a>, <a class="el" href="Process_8cxx_source.html#l00357">ldmx::Process::makeHistoDirectory()</a>, <a class="el" href="EventProcessor_8h_source.html#l00208">name_</a>, and <a class="el" href="EventProcessor_8h_source.html#l00194">process_</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00223">histoDir_</a>, <a class="el" href="Process_8cxx_source.html#l00357">ldmx::Process::makeHistoDirectory()</a>, <a class="el" href="EventProcessor_8h_source.html#l00220">name_</a>, and <a class="el" href="EventProcessor_8h_source.html#l00217">process_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00037">ldmx::EcalDigiProducer::configure()</a>, <a class="el" href="TrigScintHitDQM_8cxx_source.html#l00017">ldmx::TrigScintHitDQM::onProcessStart()</a>, <a class="el" href="TrigScintDQM_8cxx_source.html#l00017">ldmx::TrigScintDQM::onProcessStart()</a>, <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00116">ldmx::test::TestAnalyzer::onProcessStart()</a>, <a class="el" href="DummyAnalyzer_8cxx_source.html#l00153">ldmx::DummyAnalyzer::onProcessStart()</a>, and <a class="el" href="Process_8cxx_source.html#l00021">ldmx::Process::Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00037">ldmx::EcalDigiProducer::configure()</a>, <a class="el" href="TrigScintHitDQM_8cxx_source.html#l00017">ldmx::TrigScintHitDQM::onProcessStart()</a>, <a class="el" href="TrigScintDQM_8cxx_source.html#l00017">ldmx::TrigScintDQM::onProcessStart()</a>, <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00116">ldmx::test::TestAnalyzer::onProcessStart()</a>, and <a class="el" href="Process_8cxx_source.html#l00021">ldmx::Process::Process()</a>.</p>
+
+</div>
+</div>
+<a id="aa5ba5901a215e991e59e8e86f9a0a86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ba5901a215e991e59e8e86f9a0a86b">&#9670;&nbsp;</a></span>getLogFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ldmx::EventProcessor::getLogFrequency </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the current logging frequency from the process </p><dl class="section return"><dt>Returns</dt><dd>int frequency logging should occurr </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00027">27</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                              {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#a48d643afef27ef6ddc75108d82ce5209">getLogFrequency</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Process_8h_source.html#l00068">ldmx::Process::getLogFrequency()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00217">process_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00125">ldmx::Simulator::produce()</a>.</p>
+
+</div>
+</div>
+<a id="a14fc8018378054e59f275e695a4064ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14fc8018378054e59f275e695a4064ce">&#9670;&nbsp;</a></span>getRunNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ldmx::EventProcessor::getRunNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the run number from the process </p><dl class="section return"><dt>Returns</dt><dd>int run number </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00031">31</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                           {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#ad68da85b91e26f0072224e8ca8781bc8">getRunNumber</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Process_8h_source.html#l00062">ldmx::Process::getRunNumber()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00217">process_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00119">ldmx::Simulator::onFileOpen()</a>.</p>
 
 </div>
 </div>
@@ -432,7 +490,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This callback is rarely used. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classldmx_1_1DummyAnalyzer.html#af7c9a1dad787809885ec85f4d56eb622">ldmx::DummyAnalyzer</a>, <a class="el" href="classldmx_1_1Simulator.html#a8773a87189373cd0cdccfe90f4817bdb">ldmx::Simulator</a>, and <a class="el" href="classldmx_1_1test_1_1TestProducer.html#a760cc8eaa3296cc4e58cc0645544dd41">ldmx::test::TestProducer</a>.</p>
+<p>Reimplemented in <a class="el" href="classldmx_1_1Simulator.html#a8773a87189373cd0cdccfe90f4817bdb">ldmx::Simulator</a>, and <a class="el" href="classldmx_1_1test_1_1TestProducer.html#a760cc8eaa3296cc4e58cc0645544dd41">ldmx::test::TestProducer</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00128">128</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                                           {</div>
@@ -471,7 +529,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This callback is rarely used. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classldmx_1_1DummyAnalyzer.html#a00cdf2553d4a43d81ab67328999b3415">ldmx::DummyAnalyzer</a>, and <a class="el" href="classldmx_1_1Simulator.html#a9a12fd90e51f775d098869bd89628e2e">ldmx::Simulator</a>.</p>
+<p>Reimplemented in <a class="el" href="classldmx_1_1Simulator.html#a9a12fd90e51f775d098869bd89628e2e">ldmx::Simulator</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00119">119</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                                          {</div>
@@ -539,7 +597,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Callback for the <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> to take any necessary action when the processing of events finishes, such as calculating job-summary quantities. </p>
 
-<p>Reimplemented in <a class="el" href="classldmx_1_1DummyAnalyzer.html#a11f1ced02359b8c35c7e6ed95e48d9cb">ldmx::DummyAnalyzer</a>, <a class="el" href="classldmx_1_1Simulator.html#af24bf1fcdb1bca146a93c6317b5e0527">ldmx::Simulator</a>, and <a class="el" href="classldmx_1_1DummyProducer.html#ad82df79bf64827c44c56ad28b26c500c">ldmx::DummyProducer</a>.</p>
+<p>Reimplemented in <a class="el" href="classldmx_1_1Simulator.html#af24bf1fcdb1bca146a93c6317b5e0527">ldmx::Simulator</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00144">144</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                        {</div>
@@ -571,7 +629,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Callback for the <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> to take any necessary action when the processing of events starts, such as creating histograms. </p>
 
-<p>Reimplemented in <a class="el" href="classldmx_1_1DummyAnalyzer.html#ad555f7078d8b7f4e899080fb0766c1d1">ldmx::DummyAnalyzer</a>, <a class="el" href="classldmx_1_1test_1_1TestAnalyzer.html#a53a12c48a30120144c7ba62359251450">ldmx::test::TestAnalyzer</a>, <a class="el" href="classldmx_1_1Simulator.html#a7372158da0b7957da9fb08dff4047e71">ldmx::Simulator</a>, <a class="el" href="classldmx_1_1DummyProducer.html#a7a5e56622fa8dbed3591ced94674cfd3">ldmx::DummyProducer</a>, <a class="el" href="classldmx_1_1TrigScintDQM.html#ad0ed9d4efe0e451fee6c02d4ca92bca4">ldmx::TrigScintDQM</a>, <a class="el" href="classldmx_1_1RecoilTrackerDQM.html#a9c65b1028710ab0a054d1e28ca974bf2">ldmx::RecoilTrackerDQM</a>, <a class="el" href="classldmx_1_1TrigScintHitDQM.html#aa16104f54f81f4bd7d7c8beb29c97c9c">ldmx::TrigScintHitDQM</a>, and <a class="el" href="classldmx_1_1PhotoNuclearDQM.html#adf41bfc4adbf1a89d730a76b5512a326">ldmx::PhotoNuclearDQM</a>.</p>
+<p>Reimplemented in <a class="el" href="classldmx_1_1test_1_1TestAnalyzer.html#a53a12c48a30120144c7ba62359251450">ldmx::test::TestAnalyzer</a>, <a class="el" href="classldmx_1_1Simulator.html#a7372158da0b7957da9fb08dff4047e71">ldmx::Simulator</a>, <a class="el" href="classldmx_1_1TrigScintDQM.html#ad0ed9d4efe0e451fee6c02d4ca92bca4">ldmx::TrigScintDQM</a>, <a class="el" href="classldmx_1_1RecoilTrackerDQM.html#a9c65b1028710ab0a054d1e28ca974bf2">ldmx::RecoilTrackerDQM</a>, <a class="el" href="classldmx_1_1TrigScintHitDQM.html#aa16104f54f81f4bd7d7c8beb29c97c9c">ldmx::TrigScintHitDQM</a>, and <a class="el" href="classldmx_1_1PhotoNuclearDQM.html#adf41bfc4adbf1a89d730a76b5512a326">ldmx::PhotoNuclearDQM</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00136">136</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                          {</div>
@@ -656,7 +714,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">process_</a>.<a class="code" href="classldmx_1_1Process.html#ab6b18ccdf1402592b2aa69864a69e8dc">getStorageController</a>().<a class="code" href="classldmx_1_1StorageControl.html#a1df10e60838fb94698b8b8cf395254a7">addHint</a>(<a class="code" href="classldmx_1_1EventProcessor.html#a3541d222ac202973ab32d1ab9bd4f0ba">name_</a>,hint,purposeString);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="StorageControl_8cxx_source.html#l00012">ldmx::StorageControl::addHint()</a>, <a class="el" href="Process_8h_source.html#l00095">ldmx::Process::getStorageController()</a>, <a class="el" href="EventProcessor_8h_source.html#l00208">name_</a>, and <a class="el" href="EventProcessor_8h_source.html#l00194">process_</a>.</p>
+<p class="reference">References <a class="el" href="StorageControl_8cxx_source.html#l00012">ldmx::StorageControl::addHint()</a>, <a class="el" href="Process_8h_source.html#l00093">ldmx::Process::getStorageController()</a>, <a class="el" href="EventProcessor_8h_source.html#l00220">name_</a>, and <a class="el" href="EventProcessor_8h_source.html#l00217">process_</a>.</p>
 
 </div>
 </div>
@@ -682,7 +740,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Histogram directory </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00211">211</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00223">223</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EventProcessor_8cxx_source.html#l00015">getHistoDirectory()</a>.</p>
 
@@ -709,7 +767,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The name of the <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00208">208</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00220">220</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EventProcessor_8cxx_source.html#l00015">getHistoDirectory()</a>, and <a class="el" href="EventProcessor_8cxx_source.html#l00023">setStorageHint()</a>.</p>
 
@@ -730,15 +788,15 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Handle to the <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00194">194</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00217">217</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00054">ldmx::Simulator::configure()</a>, <a class="el" href="EventProcessor_8cxx_source.html#l00015">getHistoDirectory()</a>, <a class="el" href="DummyAnalyzer_8cxx_source.html#l00153">ldmx::DummyAnalyzer::onProcessStart()</a>, <a class="el" href="Simulator_8cxx_source.html#l00129">ldmx::Simulator::produce()</a>, and <a class="el" href="EventProcessor_8cxx_source.html#l00023">setStorageHint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EventProcessor_8cxx_source.html#l00015">getHistoDirectory()</a>, <a class="el" href="EventProcessor_8cxx_source.html#l00027">getLogFrequency()</a>, <a class="el" href="EventProcessor_8cxx_source.html#l00031">getRunNumber()</a>, and <a class="el" href="EventProcessor_8cxx_source.html#l00023">setStorageHint()</a>.</p>
 
 </div>
 </div>
@@ -749,15 +807,17 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1HistogramHelper_html_ac633a2ec45c54b3698f91bf258ff340c"><div class="ttname"><a href="classldmx_1_1HistogramHelper.html#ac633a2ec45c54b3698f91bf258ff340c">ldmx::HistogramHelper::create</a></div><div class="ttdeci">void create(const std::string &amp;name, const std::string &amp;xLabel, const double &amp;bins, const double &amp;xmin, const double &amp;xmax)</div><div class="ttdef"><b>Definition:</b> <a href="Histograms_8cxx_source.html#l00057">Histograms.cxx:57</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessorFactory_html_a288aa4dd9ba6fb37f13ee78e9054ac83"><div class="ttname"><a href="classldmx_1_1EventProcessorFactory.html#a288aa4dd9ba6fb37f13ee78e9054ac83">ldmx::EventProcessorFactory::getInstance</a></div><div class="ttdeci">static EventProcessorFactory &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessorFactory_8h_source.html#l00032">EventProcessorFactory.h:32</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventProcessor_html_a3541d222ac202973ab32d1ab9bd4f0ba"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a3541d222ac202973ab32d1ab9bd4f0ba">ldmx::EventProcessor::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00208">EventProcessor.h:208</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventProcessor_html_a9caad392817bb9e2ca9c9f28a544de2f"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a9caad392817bb9e2ca9c9f28a544de2f">ldmx::EventProcessor::histograms_</a></div><div class="ttdeci">HistogramHelper histograms_</div><div class="ttdoc">Interface class for making and filling histograms.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00197">EventProcessor.h:197</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Process_html_ad68da85b91e26f0072224e8ca8781bc8"><div class="ttname"><a href="classldmx_1_1Process.html#ad68da85b91e26f0072224e8ca8781bc8">ldmx::Process::getRunNumber</a></div><div class="ttdeci">int getRunNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00062">Process.h:62</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventProcessor_html_a3541d222ac202973ab32d1ab9bd4f0ba"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a3541d222ac202973ab32d1ab9bd4f0ba">ldmx::EventProcessor::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00220">EventProcessor.h:220</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Process_html_a48d643afef27ef6ddc75108d82ce5209"><div class="ttname"><a href="classldmx_1_1Process.html#a48d643afef27ef6ddc75108d82ce5209">ldmx::Process::getLogFrequency</a></div><div class="ttdeci">int getLogFrequency() const</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00068">Process.h:68</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventProcessor_html_a9caad392817bb9e2ca9c9f28a544de2f"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a9caad392817bb9e2ca9c9f28a544de2f">ldmx::EventProcessor::histograms_</a></div><div class="ttdeci">HistogramHelper histograms_</div><div class="ttdoc">Interface class for making and filling histograms.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00206">EventProcessor.h:206</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00161">EventProcessor.h:161</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventProcessor_html_a9685619198fab6900155a29101be7e42"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a9685619198fab6900155a29101be7e42">ldmx::EventProcessor::theLog_</a></div><div class="ttdeci">logging::logger theLog_</div><div class="ttdoc">The logger for this EventProcessor.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00203">EventProcessor.h:203</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventProcessor_html_a9685619198fab6900155a29101be7e42"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a9685619198fab6900155a29101be7e42">ldmx::EventProcessor::theLog_</a></div><div class="ttdeci">logging::logger theLog_</div><div class="ttdoc">The logger for this EventProcessor.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00212">EventProcessor.h:212</a></div></div>
 <div class="ttc" id="aclassldmx_1_1StorageControl_html_a1df10e60838fb94698b8b8cf395254a7"><div class="ttname"><a href="classldmx_1_1StorageControl.html#a1df10e60838fb94698b8b8cf395254a7">ldmx::StorageControl::addHint</a></div><div class="ttdeci">void addHint(const std::string &amp;processor_name, ldmx::StorageControlHint hint, const std::string &amp;purposeString)</div><div class="ttdef"><b>Definition:</b> <a href="StorageControl_8cxx_source.html#l00012">StorageControl.cxx:12</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventProcessor_html_a8963717f1852610dcf9c8cf6dfa98d85"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a8963717f1852610dcf9c8cf6dfa98d85">ldmx::EventProcessor::histoDir_</a></div><div class="ttdeci">TDirectory * histoDir_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00211">EventProcessor.h:211</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventProcessor_html_a8963717f1852610dcf9c8cf6dfa98d85"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#a8963717f1852610dcf9c8cf6dfa98d85">ldmx::EventProcessor::histoDir_</a></div><div class="ttdeci">TDirectory * histoDir_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00223">EventProcessor.h:223</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventProcessorFactory_html_aca89b0f11082628225d134a994b51f66"><div class="ttname"><a href="classldmx_1_1EventProcessorFactory.html#aca89b0f11082628225d134a994b51f66">ldmx::EventProcessorFactory::registerEventProcessor</a></div><div class="ttdeci">void registerEventProcessor(const std::string &amp;classname, int classtype, EventProcessorMaker *maker)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessorFactory_8cxx_source.html#l00012">EventProcessorFactory.cxx:12</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Process_html_ab6b18ccdf1402592b2aa69864a69e8dc"><div class="ttname"><a href="classldmx_1_1Process.html#ab6b18ccdf1402592b2aa69864a69e8dc">ldmx::Process::getStorageController</a></div><div class="ttdeci">StorageControl &amp; getStorageController()</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00095">Process.h:95</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventProcessor_html_ae4d5efe10b50e887f4e71a8c00b0eac0"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">ldmx::EventProcessor::process_</a></div><div class="ttdeci">Process &amp; process_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00194">EventProcessor.h:194</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Process_html_ab6b18ccdf1402592b2aa69864a69e8dc"><div class="ttname"><a href="classldmx_1_1Process.html#ab6b18ccdf1402592b2aa69864a69e8dc">ldmx::Process::getStorageController</a></div><div class="ttdeci">StorageControl &amp; getStorageController()</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00093">Process.h:93</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventProcessor_html_ae4d5efe10b50e887f4e71a8c00b0eac0"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ae4d5efe10b50e887f4e71a8c00b0eac0">ldmx::EventProcessor::process_</a></div><div class="ttdeci">Process &amp; process_</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00217">EventProcessor.h:217</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Process_html_ae6a27e7a5fa6a3191be64979413d30d6"><div class="ttname"><a href="classldmx_1_1Process.html#ae6a27e7a5fa6a3191be64979413d30d6">ldmx::Process::makeHistoDirectory</a></div><div class="ttdeci">TDirectory * makeHistoDirectory(const std::string &amp;dirName)</div><div class="ttdef"><b>Definition:</b> <a href="Process_8cxx_source.html#l00357">Process.cxx:357</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
