@@ -60,8 +60,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abae5cbd9c3e0310f7998d1551508c41d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#abae5cbd9c3e0310f7998d1551508c41d">EcalHexReadout</a> (double moduleMaxR, double gap, unsigned nCellsWide, const std::vector&lt; double &gt; &amp;layerZPositions, double ecalFrontZ)</td></tr>
-<tr class="separator:abae5cbd9c3e0310f7998d1551508c41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebef9c08f51ffae05a1e7e70cf84722"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#a0ebef9c08f51ffae05a1e7e70cf84722">EcalHexReadout</a> (double moduleMinR, double gap, unsigned nCellsWide, const std::vector&lt; double &gt; &amp;layerZPositions, double ecalFrontZ)</td></tr>
+<tr class="separator:a0ebef9c08f51ffae05a1e7e70cf84722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f2a9f43fbc3e02dee49ce92b4a2da0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#aa2f2a9f43fbc3e02dee49ce92b4a2da0">~EcalHexReadout</a> ()</td></tr>
 <tr class="separator:aa2f2a9f43fbc3e02dee49ce92b4a2da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64e4c844a1d4618658ccc5d9d7a4764a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#a64e4c844a1d4618658ccc5d9d7a4764a">getCellAbsolutePosition</a> (int rawID, double &amp;x, double &amp;y, double &amp;z) const</td></tr>
@@ -181,8 +181,8 @@ std::map&lt; int, std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRigh
 
 <p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00037">37</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abae5cbd9c3e0310f7998d1551508c41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abae5cbd9c3e0310f7998d1551508c41d">&#9670;&nbsp;</a></span>EcalHexReadout()</h2>
+<a id="a0ebef9c08f51ffae05a1e7e70cf84722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebef9c08f51ffae05a1e7e70cf84722">&#9670;&nbsp;</a></span>EcalHexReadout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,7 +191,7 @@ std::map&lt; int, std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRigh
           <td class="memname">ldmx::EcalHexReadout::EcalHexReadout </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>moduleMaxR</em>, </td>
+          <td class="paramname"><em>moduleMinR</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -226,7 +226,7 @@ std::map&lt; int, std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRigh
 </div><div class="memdoc">
 <p>Class constructor. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">moduleMaxR</td><td>The center-to-corner radius of an ECal module [mm]. See comments in src. </td></tr>
+    <tr><td class="paramname">moduleMinR</td><td>The center-to-flat radius of an ECal module [mm]. See comments in src. </td></tr>
     <tr><td class="paramname">gap</td><td>air gap between edges of adjacent ECal modules [mm] </td></tr>
     <tr><td class="paramname">nCellsWide</td><td>Total cell count in center horizontal row. </td></tr>
   </table>
@@ -276,8 +276,8 @@ std::map&lt; int, std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRigh
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">//         Checked with a ruler - correct.</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        gap_        = gap;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        moduleR_    = moduleMaxR;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        moduler_    = moduleR_*(sqrt(3)/2);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        moduleR_    = moduleMinR*(2/sqrt(3));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        moduler_    = moduleMinR;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classldmx_1_1EcalHexReadout.html#a00b9f1b9a1a02274bb7cd2d40de0aa5a">nCellsWide_</a> = nCellsWide;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        cellr_      = moduleR_/(nCellsWide - 1./3.);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        cellR_      = (2./sqrt(3.))*cellr_;</div>
