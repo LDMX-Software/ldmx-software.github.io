@@ -7,7 +7,7 @@ The generation of simulation samples is done mainly by the Geant4 package with s
 ### Basic Usage
 Running the simulation is just like any other producer in ldmx-sw. In your python configuration script, it is _required_ that you have the following lines (or equivalent):
 ```python
-from LDMX.SimApplication.simulator import simulator
+from LDMX.SimCore.simulator import simulator
 mySimulator = simulator( "mySimulator" ) #create the simulator object
 ```
 You can write your own detector description in the gdml format (if you want), but ldmx-sw already comes with several versions of the LDMX detector description. These versions are installed with it and can be accessed with some python (+ cmake!) magic:
@@ -18,7 +18,7 @@ mySimulator.setDetector( 'ldmx-det-v12' )
 Okay, `mySimulator` now is created and has been given a path to an LDMX detector description.
 What else is needed? Well, we need _at least_ one more thing. We need to tell the simulation _how_ to start the simulation. In Geant4 speak, this is called a "Primary Generator". In ldmx-sw, we already have several generators defined (more details on [Configuring the Simulation]({% link docs/Configuring-the-Simulation.md %})), but for this simple example, we will just import a standard generator.
 ```python
-from LDMX.SimApplication import generators
+from LDMX.SimCore import generators
 mySimulator.generators = [ generators.single_4gev_e_upstream_tagger() ]
 ```
 Now you can add `mySimulator` to the process sequence:
@@ -41,7 +41,7 @@ Run: `fire myConfig.py` or `ldmx fire myConfig.py` if using the docker installat
 There are a lot of commonly used aspects of the simulation, so we have incorporated these common "templates" into the python interface for the simulation. This section is focused on listing these available templates and how to access them.
 
 #### Generators
-Access with: `from LDMX.SimApplication import generators`.
+Access with: `from LDMX.SimCore import generators`.
 
 This module contains functions that produce each of the generators. You should _always_ use these helper functions because sometimes the underlying naming conventions may change in future developments. More detail about the generators is in the Generators section of [Configuring the Simulation]({% link docs/Configuring-the-Simulation.md %}).
 
@@ -80,8 +80,8 @@ from LDMX.Framework import ldmxcfg
 p = ldmxcfg.Process( "sim" )
 
 # import a template simulator and change some of its parameters
-from LDMX.SimApplication import generators
-from LDMX.SimApplication import simulator
+from LDMX.SimCore import generators
+from LDMX.SimCore import simulator
 
 mySim = simulator.simulator( "mySim" )
 mySim.setDetector( 'ldmx-det-v12' )
