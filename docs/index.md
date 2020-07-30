@@ -29,5 +29,5 @@ layout: default
 - [Batch Jobs at SLAC]({% link docs/Submitting-Jobs-to-the-Batch-Farm.md %})
 - [Unit Testing]({% link docs/Unit-Testing-in-ldmx-sw.md %})
 - [Processing Outside ldmx-sw]({% link docs/Processing-Outside-of-ldmx-sw.md %})
-- [C++ API Reference]({% link _doxygen %})
-- [Python API Reference]({% link _sphinx %})
+- [C++ API Reference]({% link _doxygen/index.html %})
+- [Python API Reference]({% link _sphinx/index.html %})
