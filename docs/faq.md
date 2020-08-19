@@ -54,3 +54,16 @@ This makes sure that the dependencies never change.
 
 If you need some dependency that isn't in your version of the container,
 please file an [issue with the docker repository](https://github.com/LDMX-Software/docker/issues/new/choose) to request what's called a "derivative" container.
+
+### Parameter 'className' does not exist in list of parameters.
+This error usually occurs when you pass an object that isn't an EventProcessor as an EventProcessor to the Process sequence.
+A feature that is helpful for debugging your configuration file is the `Process.pause` function:
+```
+# at the end of your config.py
+p.pause() #prints your Process configuration and waits for you to press enter before continuing
+```
+
+### ldmx-sw cannot find the contents of a file when I _know_ that the file exists
+Remember that you are running inside of the container, so the file you want to give to the software must be accessible by the container.
+Some python features that are helpful for making sure the container can find your file are `os.path.fullpath` to get the full path to a file and
+`os.path.isfile` to check that the file exists.
