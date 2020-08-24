@@ -94,6 +94,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4b8d8ccd4c0f4253a6c70aba413b1b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21bde7564d75c3b1b2fb83ffdf5ac1cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#a21bde7564d75c3b1b2fb83ffdf5ac1cd">isNNN</a> (<a class="el" href="classldmx_1_1EcalID.html">EcalID</a> centroid, <a class="el" href="classldmx_1_1EcalID.html">EcalID</a> probe) const</td></tr>
 <tr class="separator:a21bde7564d75c3b1b2fb83ffdf5ac1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289142dae34069b42b7ffa372cf3f53d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#a289142dae34069b42b7ffa372cf3f53d">getModuleMinR</a> () const</td></tr>
+<tr class="separator:a289142dae34069b42b7ffa372cf3f53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab7f40c71a70b5a0be206cf5f915075"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#a0ab7f40c71a70b5a0be206cf5f915075">getModuleMaxR</a> () const</td></tr>
+<tr class="separator:a0ab7f40c71a70b5a0be206cf5f915075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dafb9299318aa1deb12c35d2b83d4e7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#a8dafb9299318aa1deb12c35d2b83d4e7">getCellMinR</a> () const</td></tr>
+<tr class="separator:a8dafb9299318aa1deb12c35d2b83d4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fdc7bf74be4dcaf22c2b9a38743889"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#aa2fdc7bf74be4dcaf22c2b9a38743889">getCellMaxR</a> () const</td></tr>
+<tr class="separator:aa2fdc7bf74be4dcaf22c2b9a38743889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae75265eb71219cc63ea25fb6b4081180"><td class="memItemLeft" align="right" valign="top">const std::map&lt; int, std::pair&lt; double, double &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#ae75265eb71219cc63ea25fb6b4081180">getCellPositionMap</a> () const</td></tr>
 <tr class="separator:ae75265eb71219cc63ea25fb6b4081180"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5fc46d98284ea1d0f370b8b4f9a216f"><td class="memItemLeft" align="right" valign="top">const std::map&lt; <a class="el" href="classldmx_1_1EcalID.html">EcalID</a>, std::pair&lt; double, double &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHexReadout.html#ad5fc46d98284ea1d0f370b8b4f9a216f">getCellModulePositionMap</a> () const</td></tr>
@@ -264,7 +272,7 @@ THIS GRID:</h2>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classldmx_1_1EcalHexReadout.html#aeac683d8c4aa534f55488f2dbff4d511">verbose_</a>&gt;0){ std::cout &lt;&lt; std::endl; }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8cxx_source.html#l00064">buildCellMap()</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00230">buildCellModuleMap()</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00043">buildModuleMap()</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00248">buildNeighborMaps()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00417">cellr_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00423">cellR_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00438">ecalFrontZ_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00414">gap_</a>, <a class="el" href="Parameters_8h_source.html#l00069">ldmx::Parameters::getParameter()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00441">layerZPositions_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00420">moduler_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00426">moduleR_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00435">nCellRHeight_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00411">verbose_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8cxx_source.html#l00064">buildCellMap()</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00230">buildCellModuleMap()</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00043">buildModuleMap()</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00248">buildNeighborMaps()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00453">cellr_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00459">cellR_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00474">ecalFrontZ_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00450">gap_</a>, <a class="el" href="Parameters_8h_source.html#l00069">ldmx::Parameters::getParameter()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00477">layerZPositions_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00456">moduler_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00462">moduleR_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00471">nCellRHeight_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00447">verbose_</a>.</p>
 
 </div>
 </div>
@@ -504,7 +512,7 @@ Strategy</h2>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00447">cellPositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00417">cellr_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00423">cellR_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00466">ecalMap_</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00311">isInside()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00420">moduler_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00426">moduleR_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00411">verbose_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00483">cellPositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00453">cellr_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00459">cellR_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00502">ecalMap_</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00311">isInside()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00456">moduler_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00462">moduleR_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00447">verbose_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00014">EcalHexReadout()</a>.</p>
 
@@ -562,7 +570,7 @@ Strategy</h2>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classldmx_1_1EcalHexReadout.html#aeac683d8c4aa534f55488f2dbff4d511">verbose_</a>&gt;0) std::cout &lt;&lt; <span class="stringliteral">&quot;  contained &quot;</span> &lt;&lt; <a class="code" href="classldmx_1_1EcalHexReadout.html#ad3bd1214a3836bc6a8e8fe4547e0fc8d">cellModulePositionMap_</a>.size() &lt;&lt; <span class="stringliteral">&quot; entries. &quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00450">cellModulePositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00447">cellPositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00444">modulePositionMap_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00411">verbose_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00486">cellModulePositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00483">cellPositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00480">modulePositionMap_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00447">verbose_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00014">EcalHexReadout()</a>.</p>
 
@@ -628,7 +636,7 @@ Strategy</h2>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classldmx_1_1EcalHexReadout.html#aeac683d8c4aa534f55488f2dbff4d511">verbose_</a>&gt;0) std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00414">gap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00444">modulePositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00420">moduler_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00411">verbose_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00450">gap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00480">modulePositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00456">moduler_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00447">verbose_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00014">EcalHexReadout()</a>.</p>
 
@@ -708,7 +716,7 @@ Strategy</h2>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00450">cellModulePositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00417">cellr_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00423">cellR_</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00298">distanceToEdge()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00208">getCellCenterAbsolute()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00192">getCellModuleID()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00230">isEdgeCell()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00420">moduler_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00426">moduleR_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00453">NNMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00456">NNNMap_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00411">verbose_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00486">cellModulePositionMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00453">cellr_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00459">cellR_</a>, <a class="el" href="EcalHexReadout_8cxx_source.html#l00298">distanceToEdge()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00208">getCellCenterAbsolute()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00192">getCellModuleID()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00230">isEdgeCell()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00456">moduler_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00462">moduleR_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00489">NNMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00492">NNNMap_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00447">verbose_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00014">EcalHexReadout()</a>.</p>
 
@@ -781,7 +789,7 @@ Strategy</h2>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">return</span> dist;</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalID_8h_source.html#l00096">ldmx::EcalID::cell()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00173">getCellCenterRelative()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00420">moduler_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00426">moduleR_</a>.</p>
+<p class="reference">References <a class="el" href="EcalID_8h_source.html#l00096">ldmx::EcalID::cell()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00173">getCellCenterRelative()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00456">moduler_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00462">moduleR_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00248">buildNeighborMaps()</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00230">isEdgeCell()</a>.</p>
 
@@ -903,7 +911,7 @@ Strategy</h2>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#ad3bd1214a3836bc6a8e8fe4547e0fc8d">cellModulePositionMap_</a>.at(EcalID(0,cellModuleID.module(),cellModuleID.cell()));</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalID_8h_source.html#l00096">ldmx::EcalID::cell()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00450">cellModulePositionMap_</a>, and <a class="el" href="EcalID_8h_source.html#l00063">ldmx::EcalID::module()</a>.</p>
+<p class="reference">References <a class="el" href="EcalID_8h_source.html#l00096">ldmx::EcalID::cell()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00486">cellModulePositionMap_</a>, and <a class="el" href="EcalID_8h_source.html#l00063">ldmx::EcalID::module()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00248">buildNeighborMaps()</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00088">getCellAbsolutePosition()</a>.</p>
 
@@ -958,7 +966,7 @@ Strategy</h2>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                <span class="keywordflow">return</span> search-&gt;second;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00447">cellPositionMap_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00483">cellPositionMap_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00298">distanceToEdge()</a>.</p>
 
@@ -1021,9 +1029,77 @@ Strategy</h2>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keywordflow">return</span> bin;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00466">ecalMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00414">gap_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00420">moduler_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00502">ecalMap_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00450">gap_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00456">moduler_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8h_source.html#l00192">getCellModuleID()</a>.</p>
+
+</div>
+</div>
+<a id="aa2fdc7bf74be4dcaf22c2b9a38743889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2fdc7bf74be4dcaf22c2b9a38743889">&#9670;&nbsp;</a></span>getCellMaxR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ldmx::EcalHexReadout::getCellMaxR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the center-to-corner radius of the cell hexagons</p>
+<dl class="section return"><dt>Returns</dt><dd>cell max radius [mm] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00328">328</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                       {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#a1481095039b9283d620827b825ca06b1">cellR_</a>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00459">cellR_</a>.</p>
+
+</div>
+</div>
+<a id="a8dafb9299318aa1deb12c35d2b83d4e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dafb9299318aa1deb12c35d2b83d4e7">&#9670;&nbsp;</a></span>getCellMinR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ldmx::EcalHexReadout::getCellMinR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the center-to-flat radius of the cell hexagons</p>
+<dl class="section return"><dt>Returns</dt><dd>cell min radius [mm] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00319">319</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                       {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#aa411a6f3c759da91bd9ddda4ba1decb9">cellr_</a>;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00453">cellr_</a>.</p>
 
 </div>
 </div>
@@ -1080,7 +1156,7 @@ Strategy</h2>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keywordflow">return</span> EcalID(0,moduleID,cellID);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00154">getCellIDRelative()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00126">getModuleID()</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00444">modulePositionMap_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00154">getCellIDRelative()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00126">getModuleID()</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00480">modulePositionMap_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00248">buildNeighborMaps()</a>.</p>
 
@@ -1110,12 +1186,12 @@ Strategy</h2>
 </div><div class="memdoc">
 <p>Get a const reference to the full cell-module position map. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00306">306</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                                                                                          {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#ad3bd1214a3836bc6a8e8fe4547e0fc8d">cellModulePositionMap_</a>;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00342">342</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                                                                          {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#ad3bd1214a3836bc6a8e8fe4547e0fc8d">cellModulePositionMap_</a>;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00450">cellModulePositionMap_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00486">cellModulePositionMap_</a>.</p>
 
 </div>
 </div>
@@ -1145,10 +1221,10 @@ Strategy</h2>
 <dl class="section note"><dt>Note</dt><dd>This is only helpful in the use case where you want to print the cell ID &lt;-&gt; cell position map. DO NOT USE THIS OTHERWISE.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to member variable ecalMap_ </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00319">319</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;{ <span class="keywordflow">return</span> &amp;<a class="code" href="classldmx_1_1EcalHexReadout.html#af15a164a554997823d0a6ac5479dfab6">ecalMap_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00355">355</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{ <span class="keywordflow">return</span> &amp;<a class="code" href="classldmx_1_1EcalHexReadout.html#af15a164a554997823d0a6ac5479dfab6">ecalMap_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00466">ecalMap_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00502">ecalMap_</a>.</p>
 
 </div>
 </div>
@@ -1176,12 +1252,12 @@ Strategy</h2>
 </div><div class="memdoc">
 <p>Get a const reference to the cell center position map. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00299">299</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                                                                 {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#a93ca64659ba36e91c8c214d2b6bbdaba">cellPositionMap_</a>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00335">335</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                                                                 {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#a93ca64659ba36e91c8c214d2b6bbdaba">cellPositionMap_</a>;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00447">cellPositionMap_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00483">cellPositionMap_</a>.</p>
 
 </div>
 </div>
@@ -1222,7 +1298,7 @@ Strategy</h2>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#af6982db29300d9015cc04a7cbda3986c">modulePositionMap_</a>.at(moduleID);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00444">modulePositionMap_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00480">modulePositionMap_</a>.</p>
 
 </div>
 </div>
@@ -1284,9 +1360,77 @@ Strategy</h2>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">return</span> bestID;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00444">modulePositionMap_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00420">moduler_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00480">modulePositionMap_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00456">moduler_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8h_source.html#l00192">getCellModuleID()</a>.</p>
+
+</div>
+</div>
+<a id="a0ab7f40c71a70b5a0be206cf5f915075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab7f40c71a70b5a0be206cf5f915075">&#9670;&nbsp;</a></span>getModuleMaxR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ldmx::EcalHexReadout::getModuleMaxR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the center-to-corner radius of the module hexagons</p>
+<dl class="section return"><dt>Returns</dt><dd>module max radius [mm] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00310">310</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                         {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#acbf95653cded8772299056d5ea557105">moduleR_</a>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00462">moduleR_</a>.</p>
+
+</div>
+</div>
+<a id="a289142dae34069b42b7ffa372cf3f53d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289142dae34069b42b7ffa372cf3f53d">&#9670;&nbsp;</a></span>getModuleMinR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ldmx::EcalHexReadout::getModuleMinR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the center-to-flat radius of the module hexagons</p>
+<dl class="section return"><dt>Returns</dt><dd>module min radius [mm] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00301">301</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                         {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#abe8818450ac613540a84aca91c808fe8">moduler_</a>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00456">moduler_</a>.</p>
 
 </div>
 </div>
@@ -1329,7 +1473,7 @@ Strategy</h2>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="keywordflow">return</span> list;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00453">NNMap_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00489">NNMap_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8h_source.html#l00263">isNN()</a>.</p>
 
@@ -1374,7 +1518,7 @@ Strategy</h2>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="keywordflow">return</span> list;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00456">NNNMap_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00492">NNNMap_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8h_source.html#l00289">isNNN()</a>.</p>
 
@@ -1417,7 +1561,7 @@ Strategy</h2>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1EcalHexReadout.html#a3d6cf2d6aa9ed38913936445e031fa0a">ecalFrontZ_</a> + <a class="code" href="classldmx_1_1EcalHexReadout.html#aabdd321c511fa6728a4d22a376eeae14">layerZPositions_</a>.at(layer);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00438">ecalFrontZ_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00441">layerZPositions_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00474">ecalFrontZ_</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00477">layerZPositions_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8h_source.html#l00088">getCellAbsolutePosition()</a>.</p>
 
@@ -1460,7 +1604,7 @@ Strategy</h2>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="keywordflow">return</span> (<a class="code" href="classldmx_1_1EcalHexReadout.html#aba0999d9c878a1ac5746d1b1f8cd7856">distanceToEdge</a>(cellModuleID) &lt; <a class="code" href="classldmx_1_1EcalHexReadout.html#a1481095039b9283d620827b825ca06b1">cellR_</a>);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00423">cellR_</a>, and <a class="el" href="EcalHexReadout_8cxx_source.html#l00298">distanceToEdge()</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00459">cellR_</a>, and <a class="el" href="EcalHexReadout_8cxx_source.html#l00298">distanceToEdge()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00248">buildNeighborMaps()</a>.</p>
 
@@ -1516,7 +1660,7 @@ Strategy</h2>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">return</span> (dotProd &gt; 0.);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00411">verbose_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00447">verbose_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00064">buildCellMap()</a>.</p>
 
@@ -1655,9 +1799,9 @@ Strategy</h2>
 <p>Honeycomb Binning from ROOT</p>
 <p>Needs to be mutable because ROOT doesn't have good const handling </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00466">466</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00502">502</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00064">buildCellMap()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00154">getCellIDRelative()</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00319">getCellPolyMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00064">buildCellMap()</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00154">getCellIDRelative()</a>, and <a class="el" href="EcalHexReadout_8h_source.html#l00355">getCellPolyMap()</a>.</p>
 
 </div>
 </div>
@@ -1683,7 +1827,7 @@ Strategy</h2>
 <p>Number of cell center-to-corner radii (one side of the cell) from the bottom to the top of the module</p>
 <p>Could be fractional depending on how many fractions of a radii are spanning between the center of the top/bottom cell row and the edge of the module </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00435">435</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalHexReadout_8h_source.html#l00471">471</a> of file <a class="el" href="EcalHexReadout_8h_source.html">EcalHexReadout.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalHexReadout_8cxx_source.html#l00014">EcalHexReadout()</a>.</p>
 
@@ -1697,32 +1841,32 @@ Strategy</h2>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a53eb62b5d96ad24072aff1a1752e0bad"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a53eb62b5d96ad24072aff1a1752e0bad">ldmx::EcalHexReadout::getZPosition</a></div><div class="ttdeci">double getZPosition(int layer) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00104">EcalHexReadout.h:104</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a201ec824d6806ff70bdb716cc42cc70e"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a201ec824d6806ff70bdb716cc42cc70e">ldmx::EcalHexReadout::buildCellModuleMap</a></div><div class="ttdeci">void buildCellModuleMap()</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00230">EcalHexReadout.cxx:230</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a9d22369c3704814a3c52667b1373bbe8"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a9d22369c3704814a3c52667b1373bbe8">ldmx::EcalHexReadout::isInside</a></div><div class="ttdeci">bool isInside(double normX, double normY) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00311">EcalHexReadout.cxx:311</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a1bbd845808c2836b6c1530c12b4e0fa4"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a1bbd845808c2836b6c1530c12b4e0fa4">ldmx::EcalHexReadout::nCellRHeight_</a></div><div class="ttdeci">double nCellRHeight_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00435">EcalHexReadout.h:435</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_abe8818450ac613540a84aca91c808fe8"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#abe8818450ac613540a84aca91c808fe8">ldmx::EcalHexReadout::moduler_</a></div><div class="ttdeci">double moduler_</div><div class="ttdoc">Center-to-Flat Radius of module hexagon [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00420">EcalHexReadout.h:420</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a1481095039b9283d620827b825ca06b1"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a1481095039b9283d620827b825ca06b1">ldmx::EcalHexReadout::cellR_</a></div><div class="ttdeci">double cellR_</div><div class="ttdoc">Center-to-Corner Radius of cell hexagon [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00423">EcalHexReadout.h:423</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_ad3bd1214a3836bc6a8e8fe4547e0fc8d"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#ad3bd1214a3836bc6a8e8fe4547e0fc8d">ldmx::EcalHexReadout::cellModulePositionMap_</a></div><div class="ttdeci">std::map&lt; EcalID, std::pair&lt; double, double &gt; &gt; cellModulePositionMap_</div><div class="ttdoc">Position of cell centers relative to world geometry (uses ID with real cell and module and layer as z...</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00450">EcalHexReadout.h:450</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a1bbd845808c2836b6c1530c12b4e0fa4"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a1bbd845808c2836b6c1530c12b4e0fa4">ldmx::EcalHexReadout::nCellRHeight_</a></div><div class="ttdeci">double nCellRHeight_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00471">EcalHexReadout.h:471</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_abe8818450ac613540a84aca91c808fe8"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#abe8818450ac613540a84aca91c808fe8">ldmx::EcalHexReadout::moduler_</a></div><div class="ttdeci">double moduler_</div><div class="ttdoc">Center-to-Flat Radius of module hexagon [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00456">EcalHexReadout.h:456</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a1481095039b9283d620827b825ca06b1"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a1481095039b9283d620827b825ca06b1">ldmx::EcalHexReadout::cellR_</a></div><div class="ttdeci">double cellR_</div><div class="ttdoc">Center-to-Corner Radius of cell hexagon [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00459">EcalHexReadout.h:459</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_ad3bd1214a3836bc6a8e8fe4547e0fc8d"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#ad3bd1214a3836bc6a8e8fe4547e0fc8d">ldmx::EcalHexReadout::cellModulePositionMap_</a></div><div class="ttdeci">std::map&lt; EcalID, std::pair&lt; double, double &gt; &gt; cellModulePositionMap_</div><div class="ttdoc">Position of cell centers relative to world geometry (uses ID with real cell and module and layer as z...</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00486">EcalHexReadout.h:486</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_ac4aeb2b9831ad98110e4984f2c6f766b"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#ac4aeb2b9831ad98110e4984f2c6f766b">ldmx::EcalHexReadout::buildNeighborMaps</a></div><div class="ttdeci">void buildNeighborMaps()</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00248">EcalHexReadout.cxx:248</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a1f2b9f3ed6994ffb2716ad5d15ed9e67"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a1f2b9f3ed6994ffb2716ad5d15ed9e67">ldmx::EcalHexReadout::getCellCenterAbsolute</a></div><div class="ttdeci">std::pair&lt; double, double &gt; getCellCenterAbsolute(EcalID cellModuleID) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00208">EcalHexReadout.h:208</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a523f77a4dad9737cf2679d2994b748c6"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a523f77a4dad9737cf2679d2994b748c6">ldmx::EcalHexReadout::getCellCenterRelative</a></div><div class="ttdeci">std::pair&lt; double, double &gt; getCellCenterRelative(int cellID) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00173">EcalHexReadout.h:173</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a05e3dc7a3e36411474327cc877cb0079"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a05e3dc7a3e36411474327cc877cb0079">ldmx::EcalHexReadout::buildModuleMap</a></div><div class="ttdeci">void buildModuleMap()</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00043">EcalHexReadout.cxx:43</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a93ca64659ba36e91c8c214d2b6bbdaba"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a93ca64659ba36e91c8c214d2b6bbdaba">ldmx::EcalHexReadout::cellPositionMap_</a></div><div class="ttdeci">std::map&lt; int, std::pair&lt; double, double &gt; &gt; cellPositionMap_</div><div class="ttdoc">Position of cell centers relative to module (uses cell ID as key)</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00447">EcalHexReadout.h:447</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_acbf95653cded8772299056d5ea557105"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#acbf95653cded8772299056d5ea557105">ldmx::EcalHexReadout::moduleR_</a></div><div class="ttdeci">double moduleR_</div><div class="ttdoc">Center-to-Corner Radius of module hexagon [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00426">EcalHexReadout.h:426</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aeac683d8c4aa534f55488f2dbff4d511"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aeac683d8c4aa534f55488f2dbff4d511">ldmx::EcalHexReadout::verbose_</a></div><div class="ttdeci">int verbose_</div><div class="ttdoc">verbosity, not configurable but helpful if developing</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00411">EcalHexReadout.h:411</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a3d6cf2d6aa9ed38913936445e031fa0a"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a3d6cf2d6aa9ed38913936445e031fa0a">ldmx::EcalHexReadout::ecalFrontZ_</a></div><div class="ttdeci">double ecalFrontZ_</div><div class="ttdoc">Front of ECal relative to world geometry [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00438">EcalHexReadout.h:438</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aabdd321c511fa6728a4d22a376eeae14"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aabdd321c511fa6728a4d22a376eeae14">ldmx::EcalHexReadout::layerZPositions_</a></div><div class="ttdeci">std::vector&lt; double &gt; layerZPositions_</div><div class="ttdoc">The layer Z postions are with respect to the front of the ECal [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00441">EcalHexReadout.h:441</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a93ca64659ba36e91c8c214d2b6bbdaba"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a93ca64659ba36e91c8c214d2b6bbdaba">ldmx::EcalHexReadout::cellPositionMap_</a></div><div class="ttdeci">std::map&lt; int, std::pair&lt; double, double &gt; &gt; cellPositionMap_</div><div class="ttdoc">Position of cell centers relative to module (uses cell ID as key)</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00483">EcalHexReadout.h:483</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_acbf95653cded8772299056d5ea557105"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#acbf95653cded8772299056d5ea557105">ldmx::EcalHexReadout::moduleR_</a></div><div class="ttdeci">double moduleR_</div><div class="ttdoc">Center-to-Corner Radius of module hexagon [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00462">EcalHexReadout.h:462</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aeac683d8c4aa534f55488f2dbff4d511"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aeac683d8c4aa534f55488f2dbff4d511">ldmx::EcalHexReadout::verbose_</a></div><div class="ttdeci">int verbose_</div><div class="ttdoc">verbosity, not configurable but helpful if developing</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00447">EcalHexReadout.h:447</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a3d6cf2d6aa9ed38913936445e031fa0a"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a3d6cf2d6aa9ed38913936445e031fa0a">ldmx::EcalHexReadout::ecalFrontZ_</a></div><div class="ttdeci">double ecalFrontZ_</div><div class="ttdoc">Front of ECal relative to world geometry [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00474">EcalHexReadout.h:474</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aabdd321c511fa6728a4d22a376eeae14"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aabdd321c511fa6728a4d22a376eeae14">ldmx::EcalHexReadout::layerZPositions_</a></div><div class="ttdeci">std::vector&lt; double &gt; layerZPositions_</div><div class="ttdoc">The layer Z postions are with respect to the front of the ECal [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00477">EcalHexReadout.h:477</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a2825ec01b21a6f697bf03c3d98fb304a"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a2825ec01b21a6f697bf03c3d98fb304a">ldmx::EcalHexReadout::getNN</a></div><div class="ttdeci">std::vector&lt; EcalID &gt; getNN(EcalID id) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00250">EcalHexReadout.h:250</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a4b8d8ccd4c0f4253a6c70aba413b1b27"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a4b8d8ccd4c0f4253a6c70aba413b1b27">ldmx::EcalHexReadout::getNNN</a></div><div class="ttdeci">std::vector&lt; EcalID &gt; getNNN(EcalID id) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00276">EcalHexReadout.h:276</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_ab5b455834faccba33f2a2235b9888c81"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#ab5b455834faccba33f2a2235b9888c81">ldmx::EcalHexReadout::getModuleID</a></div><div class="ttdeci">int getModuleID(double x, double y) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00126">EcalHexReadout.h:126</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a910aa8077878771e6b264ce5c804409c"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a910aa8077878771e6b264ce5c804409c">ldmx::EcalHexReadout::NNMap_</a></div><div class="ttdeci">std::map&lt; EcalID, std::vector&lt; EcalID &gt; &gt; NNMap_</div><div class="ttdoc">Map of cell ID to neighboring cells (uses ID with real cell and module and layer as zero for key)</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00453">EcalHexReadout.h:453</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a769854d7fb0c67df7e56f7a73c9bf207"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a769854d7fb0c67df7e56f7a73c9bf207">ldmx::EcalHexReadout::NNNMap_</a></div><div class="ttdeci">std::map&lt; EcalID, std::vector&lt; EcalID &gt; &gt; NNNMap_</div><div class="ttdoc">Map of cell ID to neighbors of neighbor cells (uses ID with real cell and module and layer as zero fo...</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00456">EcalHexReadout.h:456</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a910aa8077878771e6b264ce5c804409c"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a910aa8077878771e6b264ce5c804409c">ldmx::EcalHexReadout::NNMap_</a></div><div class="ttdeci">std::map&lt; EcalID, std::vector&lt; EcalID &gt; &gt; NNMap_</div><div class="ttdoc">Map of cell ID to neighboring cells (uses ID with real cell and module and layer as zero for key)</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00489">EcalHexReadout.h:489</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a769854d7fb0c67df7e56f7a73c9bf207"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a769854d7fb0c67df7e56f7a73c9bf207">ldmx::EcalHexReadout::NNNMap_</a></div><div class="ttdeci">std::map&lt; EcalID, std::vector&lt; EcalID &gt; &gt; NNNMap_</div><div class="ttdoc">Map of cell ID to neighbors of neighbor cells (uses ID with real cell and module and layer as zero fo...</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00492">EcalHexReadout.h:492</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_ab42dd6bfd06539ace4bedfa6e5c6bfad"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#ab42dd6bfd06539ace4bedfa6e5c6bfad">ldmx::EcalHexReadout::buildCellMap</a></div><div class="ttdeci">void buildCellMap()</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00064">EcalHexReadout.cxx:64</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a1b24c37eeb6ad660963022e4758b92c5"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a1b24c37eeb6ad660963022e4758b92c5">ldmx::EcalHexReadout::getCellIDRelative</a></div><div class="ttdeci">int getCellIDRelative(double x, double y) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00154">EcalHexReadout.h:154</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a7ae3be71cc7980920b64eccf59b0c27d"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a7ae3be71cc7980920b64eccf59b0c27d">ldmx::EcalHexReadout::isEdgeCell</a></div><div class="ttdeci">bool isEdgeCell(EcalID cellModuleID) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00230">EcalHexReadout.h:230</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_af15a164a554997823d0a6ac5479dfab6"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#af15a164a554997823d0a6ac5479dfab6">ldmx::EcalHexReadout::ecalMap_</a></div><div class="ttdeci">TH2Poly ecalMap_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00466">EcalHexReadout.h:466</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aa411a6f3c759da91bd9ddda4ba1decb9"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aa411a6f3c759da91bd9ddda4ba1decb9">ldmx::EcalHexReadout::cellr_</a></div><div class="ttdeci">double cellr_</div><div class="ttdoc">Center-to-Flat Radius of cell hexagon [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00417">EcalHexReadout.h:417</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_af15a164a554997823d0a6ac5479dfab6"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#af15a164a554997823d0a6ac5479dfab6">ldmx::EcalHexReadout::ecalMap_</a></div><div class="ttdeci">TH2Poly ecalMap_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00502">EcalHexReadout.h:502</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aa411a6f3c759da91bd9ddda4ba1decb9"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aa411a6f3c759da91bd9ddda4ba1decb9">ldmx::EcalHexReadout::cellr_</a></div><div class="ttdeci">double cellr_</div><div class="ttdoc">Center-to-Flat Radius of cell hexagon [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00453">EcalHexReadout.h:453</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aba0999d9c878a1ac5746d1b1f8cd7856"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aba0999d9c878a1ac5746d1b1f8cd7856">ldmx::EcalHexReadout::distanceToEdge</a></div><div class="ttdeci">double distanceToEdge(EcalID cellModuleID) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8cxx_source.html#l00298">EcalHexReadout.cxx:298</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_af6982db29300d9015cc04a7cbda3986c"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#af6982db29300d9015cc04a7cbda3986c">ldmx::EcalHexReadout::modulePositionMap_</a></div><div class="ttdeci">std::map&lt; int, std::pair&lt; double, double &gt; &gt; modulePositionMap_</div><div class="ttdoc">Postion of module centers relative to world geometry (uses module ID as key)</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00444">EcalHexReadout.h:444</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aa8283a781129c83d72b4b05b411b4906"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aa8283a781129c83d72b4b05b411b4906">ldmx::EcalHexReadout::gap_</a></div><div class="ttdeci">double gap_</div><div class="ttdoc">Gap between module flat sides [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00414">EcalHexReadout.h:414</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_af6982db29300d9015cc04a7cbda3986c"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#af6982db29300d9015cc04a7cbda3986c">ldmx::EcalHexReadout::modulePositionMap_</a></div><div class="ttdeci">std::map&lt; int, std::pair&lt; double, double &gt; &gt; modulePositionMap_</div><div class="ttdoc">Postion of module centers relative to world geometry (uses module ID as key)</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00480">EcalHexReadout.h:480</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_aa8283a781129c83d72b4b05b411b4906"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#aa8283a781129c83d72b4b05b411b4906">ldmx::EcalHexReadout::gap_</a></div><div class="ttdeci">double gap_</div><div class="ttdoc">Gap between module flat sides [mm].</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00450">EcalHexReadout.h:450</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a5293b7b33e0eea806b797069a7ca1ffb"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a5293b7b33e0eea806b797069a7ca1ffb">ldmx::EcalHexReadout::getCellModuleID</a></div><div class="ttdeci">EcalID getCellModuleID(double x, double y) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00192">EcalHexReadout.h:192</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
