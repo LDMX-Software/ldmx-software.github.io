@@ -66,12 +66,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a12badfe21a23c014c2cdf764182e8c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac65e61e75315fcce2a5626251fef7046"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a> (std::map&lt; std::string, std::any &gt; parameters)</td></tr>
 <tr class="separator:ac65e61e75315fcce2a5626251fef7046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a133187e361aac70b935dde4e5708f5f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Parameters.html#a133187e361aac70b935dde4e5708f5f4">exists</a> (const std::string &amp;name) const</td></tr>
+<tr class="separator:a133187e361aac70b935dde4e5708f5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b66add92c7331ca071eca9c423ea9e9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3b66add92c7331ca071eca9c423ea9e9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a> (const std::string &amp;name) const</td></tr>
 <tr class="separator:a3b66add92c7331ca071eca9c423ea9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06df271d25db17a2f83baacfad2dcd8c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a06df271d25db17a2f83baacfad2dcd8c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classldmx_1_1Parameters.html#a06df271d25db17a2f83baacfad2dcd8c">getParameter</a> (const std::string &amp;name, const T &amp;def) const</td></tr>
 <tr class="separator:a06df271d25db17a2f83baacfad2dcd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72063c7e8dcfeb2459986bb6b65a4932"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Parameters.html#a72063c7e8dcfeb2459986bb6b65a4932">keys</a> () const</td></tr>
+<tr class="separator:a72063c7e8dcfeb2459986bb6b65a4932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -85,6 +89,49 @@ std::map&lt; std::string, std::any &gt;&#160;</td><td class="memItemRight" valig
 
 <p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00026">26</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a133187e361aac70b935dde4e5708f5f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133187e361aac70b935dde4e5708f5f4">&#9670;&nbsp;</a></span>exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ldmx::Parameters::exists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check to see if a parameter exists</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>name of parameter to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if parameter exists in configuration set </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00051">51</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                     {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a>.find(name)!=<a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a>.end();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00119">parameters_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Parameters_8h_source.html#l00069">getParameter()</a>.</p>
+
+</div>
+</div>
 <a id="a3b66add92c7331ca071eca9c423ea9e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b66add92c7331ca071eca9c423ea9e9">&#9670;&nbsp;</a></span>getParameter() <span class="overload">[1/2]</span></h2>
 
@@ -128,31 +175,31 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The user specified parameter of type T. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00060">60</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                        { </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="comment">// Check if the variable exists in the map.  If it doesn&#39;t, </span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="comment">// raise an exception.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a>.count(name) == 0) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    EXCEPTION_RAISE( <span class="stringliteral">&quot;NonExistParam&quot;</span>,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            <span class="stringliteral">&quot;Parameter &#39;&quot;</span>+name+<span class="stringliteral">&quot;&#39; does not exist in list of parameters.&quot;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            );</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                T parameter; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">try</span> { </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    parameter = std::any_cast&lt; T &gt;(<a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a>.at(name));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::bad_any_cast&amp; e) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    EXCEPTION_RAISE( <span class="stringliteral">&quot;BadTypeParam&quot;</span>,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                    <span class="stringliteral">&quot;Parameter &#39;&quot;</span> + name + <span class="stringliteral">&quot;&#39; is being cast to incorrect type &#39;&quot;</span> + <span class="keyword">typeid</span>(T).name() + <span class="stringliteral">&quot;&#39;.&quot;</span>); </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">return</span> parameter; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00069">69</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                        { </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="comment">// Check if the variable exists in the map.  If it doesn&#39;t, </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="comment">// raise an exception.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">if</span> (not <a class="code" href="classldmx_1_1Parameters.html#a133187e361aac70b935dde4e5708f5f4">exists</a>(name)) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    EXCEPTION_RAISE( <span class="stringliteral">&quot;NonExistParam&quot;</span>,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                            <span class="stringliteral">&quot;Parameter &#39;&quot;</span>+name+<span class="stringliteral">&quot;&#39; does not exist in list of parameters.&quot;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                            );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                T parameter; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">try</span> { </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    parameter = std::any_cast&lt; T &gt;(<a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a>.at(name));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::bad_any_cast&amp; e) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    EXCEPTION_RAISE( <span class="stringliteral">&quot;BadTypeParam&quot;</span>,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                    <span class="stringliteral">&quot;Parameter &#39;&quot;</span> + name + <span class="stringliteral">&quot;&#39; is being cast to incorrect type &#39;&quot;</span> + <span class="keyword">typeid</span>(T).name() + <span class="stringliteral">&quot;&#39;.&quot;</span>); </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">return</span> parameter; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00100">parameters_</a>.</p>
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00051">exists()</a>, and <a class="el" href="Parameters_8h_source.html#l00119">parameters_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="APrimePhysics_8cxx_source.html#l00019">ldmx::APrimePhysics::APrimePhysics()</a>, <a class="el" href="EcalDigiProducer_8cxx_source.html#l00032">ldmx::EcalDigiProducer::configure()</a>, <a class="el" href="EcalRecProducer_8cxx_source.html#l00019">ldmx::EcalRecProducer::configure()</a>, <a class="el" href="DNNEcalVetoProcessor_8cxx_source.html#l00022">ldmx::DNNEcalVetoProcessor::configure()</a>, <a class="el" href="EcalClusterProducer_8cxx_source.html#l00016">ldmx::EcalClusterProducer::configure()</a>, <a class="el" href="EcalSim2Rec_8cxx_source.html#l00022">ldmx::EcalSim2Rec::configure()</a>, <a class="el" href="EcalVetoProcessor_8cxx_source.html#l00063">ldmx::EcalVetoProcessor::configure()</a>, <a class="el" href="HcalDigiProducer_8cxx_source.html#l00018">ldmx::HcalDigiProducer::configure()</a>, <a class="el" href="HcalVetoProcessor_8cxx_source.html#l00023">ldmx::HcalVetoProcessor::configure()</a>, <a class="el" href="MyProcessor_8cxx_source.html#l00013">ldmx::MyProcessor::configure()</a>, <a class="el" href="PnWeightProcessor_8cxx_source.html#l00046">ldmx::PnWeightProcessor::configure()</a>, <a class="el" href="TrackerHitKiller_8cxx_source.html#l00031">ldmx::TrackerHitKiller::configure()</a>, <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">ldmx::TriggerProcessor::configure()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00015">ldmx::TrigScintDigiProducer::configure()</a>, <a class="el" href="Simulator_8cxx_source.html#l00054">ldmx::Simulator::configure()</a>, <a class="el" href="EcalDigiVerifier_8cxx_source.html#l00006">ldmx::EcalDigiVerifier::configure()</a>, <a class="el" href="TrigScintDQM_8cxx_source.html#l00037">ldmx::TrigScintDQM::configure()</a>, <a class="el" href="TrigScintHitDQM_8cxx_source.html#l00049">ldmx::TrigScintHitDQM::configure()</a>, <a class="el" href="DarkBremFilter_8cxx_source.html#l00016">ldmx::DarkBremFilter::DarkBremFilter()</a>, <a class="el" href="GeneralParticleSource_8cxx_source.html#l00022">ldmx::GeneralParticleSource::GeneralParticleSource()</a>, <a class="el" href="RunManager_8cxx_source.html#l00084">ldmx::RunManager::Initialize()</a>, <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00024">ldmx::LHEPrimaryGenerator::LHEPrimaryGenerator()</a>, <a class="el" href="MultiParticleGunPrimaryGenerator_8cxx_source.html#l00012">ldmx::MultiParticleGunPrimaryGenerator::MultiParticleGunPrimaryGenerator()</a>, <a class="el" href="Simulator_8cxx_source.html#l00157">ldmx::Simulator::onProcessStart()</a>, <a class="el" href="ParticleGun_8cxx_source.html#l00030">ldmx::ParticleGun::ParticleGun()</a>, <a class="el" href="PhotoNuclearProductsFilter_8cxx_source.html#l00022">ldmx::PhotoNuclearProductsFilter::PhotoNuclearProductsFilter()</a>, <a class="el" href="Process_8cxx_source.html#l00021">ldmx::Process::Process()</a>, <a class="el" href="RootCompleteReSim_8cxx_source.html#l00028">ldmx::RootCompleteReSim::RootCompleteReSim()</a>, <a class="el" href="RootPersistencyManager_8cxx_source.html#l00036">ldmx::RootPersistencyManager::RootPersistencyManager()</a>, <a class="el" href="RootSimFromEcalSP_8cxx_source.html#l00034">ldmx::RootSimFromEcalSP::RootSimFromEcalSP()</a>, <a class="el" href="RunManager_8cxx_source.html#l00036">ldmx::RunManager::RunManager()</a>, <a class="el" href="RunManager_8cxx_source.html#l00051">ldmx::RunManager::setupPhysics()</a>, <a class="el" href="StepPrinter_8cxx_source.html#l00011">ldmx::StepPrinter::StepPrinter()</a>, <a class="el" href="RootPersistencyManager_8cxx_source.html#l00065">ldmx::RootPersistencyManager::Store()</a>, <a class="el" href="TaggerVetoFilter_8cxx_source.html#l00012">ldmx::TaggerVetoFilter::TaggerVetoFilter()</a>, <a class="el" href="TargetBremFilter_8cxx_source.html#l00018">ldmx::TargetBremFilter::TargetBremFilter()</a>, <a class="el" href="TargetENProcessFilter_8cxx_source.html#l00017">ldmx::TargetENProcessFilter::TargetENProcessFilter()</a>, <a class="el" href="TargetProcessFilter_8cxx_source.html#l00026">ldmx::TargetProcessFilter::TargetProcessFilter()</a>, and <a class="el" href="TrackProcessFilter_8cxx_source.html#l00016">ldmx::TrackProcessFilter::TrackProcessFilter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="APrimePhysics_8cxx_source.html#l00019">ldmx::APrimePhysics::APrimePhysics()</a>, <a class="el" href="EcalDigiProducer_8cxx_source.html#l00032">ldmx::EcalDigiProducer::configure()</a>, <a class="el" href="EcalRecProducer_8cxx_source.html#l00019">ldmx::EcalRecProducer::configure()</a>, <a class="el" href="DNNEcalVetoProcessor_8cxx_source.html#l00022">ldmx::DNNEcalVetoProcessor::configure()</a>, <a class="el" href="EcalClusterProducer_8cxx_source.html#l00016">ldmx::EcalClusterProducer::configure()</a>, <a class="el" href="EcalSim2Rec_8cxx_source.html#l00022">ldmx::EcalSim2Rec::configure()</a>, <a class="el" href="EcalVetoProcessor_8cxx_source.html#l00063">ldmx::EcalVetoProcessor::configure()</a>, <a class="el" href="HcalDigiProducer_8cxx_source.html#l00018">ldmx::HcalDigiProducer::configure()</a>, <a class="el" href="HcalVetoProcessor_8cxx_source.html#l00023">ldmx::HcalVetoProcessor::configure()</a>, <a class="el" href="MyProcessor_8cxx_source.html#l00013">ldmx::MyProcessor::configure()</a>, <a class="el" href="PnWeightProcessor_8cxx_source.html#l00046">ldmx::PnWeightProcessor::configure()</a>, <a class="el" href="TrackerHitKiller_8cxx_source.html#l00031">ldmx::TrackerHitKiller::configure()</a>, <a class="el" href="TriggerProcessor_8cxx_source.html#l00006">ldmx::TriggerProcessor::configure()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00015">ldmx::TrigScintDigiProducer::configure()</a>, <a class="el" href="Simulator_8cxx_source.html#l00054">ldmx::Simulator::configure()</a>, <a class="el" href="EcalDigiVerifier_8cxx_source.html#l00006">ldmx::EcalDigiVerifier::configure()</a>, <a class="el" href="TrigScintDQM_8cxx_source.html#l00037">ldmx::TrigScintDQM::configure()</a>, <a class="el" href="TrigScintHitDQM_8cxx_source.html#l00049">ldmx::TrigScintHitDQM::configure()</a>, <a class="el" href="DarkBremFilter_8cxx_source.html#l00016">ldmx::DarkBremFilter::DarkBremFilter()</a>, <a class="el" href="GeneralParticleSource_8cxx_source.html#l00022">ldmx::GeneralParticleSource::GeneralParticleSource()</a>, <a class="el" href="RunManager_8cxx_source.html#l00084">ldmx::RunManager::Initialize()</a>, <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00024">ldmx::LHEPrimaryGenerator::LHEPrimaryGenerator()</a>, <a class="el" href="MultiParticleGunPrimaryGenerator_8cxx_source.html#l00012">ldmx::MultiParticleGunPrimaryGenerator::MultiParticleGunPrimaryGenerator()</a>, <a class="el" href="Simulator_8cxx_source.html#l00157">ldmx::Simulator::onProcessStart()</a>, <a class="el" href="ParticleGun_8cxx_source.html#l00030">ldmx::ParticleGun::ParticleGun()</a>, <a class="el" href="PhotoNuclearProductsFilter_8cxx_source.html#l00022">ldmx::PhotoNuclearProductsFilter::PhotoNuclearProductsFilter()</a>, <a class="el" href="RootCompleteReSim_8cxx_source.html#l00028">ldmx::RootCompleteReSim::RootCompleteReSim()</a>, <a class="el" href="RootPersistencyManager_8cxx_source.html#l00036">ldmx::RootPersistencyManager::RootPersistencyManager()</a>, <a class="el" href="RootSimFromEcalSP_8cxx_source.html#l00034">ldmx::RootSimFromEcalSP::RootSimFromEcalSP()</a>, <a class="el" href="RunManager_8cxx_source.html#l00036">ldmx::RunManager::RunManager()</a>, <a class="el" href="RunManager_8cxx_source.html#l00051">ldmx::RunManager::setupPhysics()</a>, <a class="el" href="StepPrinter_8cxx_source.html#l00011">ldmx::StepPrinter::StepPrinter()</a>, <a class="el" href="RootPersistencyManager_8cxx_source.html#l00065">ldmx::RootPersistencyManager::Store()</a>, <a class="el" href="TaggerVetoFilter_8cxx_source.html#l00012">ldmx::TaggerVetoFilter::TaggerVetoFilter()</a>, <a class="el" href="TargetBremFilter_8cxx_source.html#l00018">ldmx::TargetBremFilter::TargetBremFilter()</a>, <a class="el" href="TargetENProcessFilter_8cxx_source.html#l00017">ldmx::TargetENProcessFilter::TargetENProcessFilter()</a>, <a class="el" href="TargetProcessFilter_8cxx_source.html#l00026">ldmx::TargetProcessFilter::TargetProcessFilter()</a>, and <a class="el" href="TrackProcessFilter_8cxx_source.html#l00016">ldmx::TrackProcessFilter::TrackProcessFilter()</a>.</p>
 
 </div>
 </div>
@@ -195,16 +242,51 @@ template&lt;typename T &gt; </div>
 <p>Return the input default if a parameter is not found in map.</p>
 <dl class="section return"><dt>Returns</dt><dd>the user parameter of type T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00089">89</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                                                       {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a>.count(name) == 0 ) <span class="keywordflow">return</span> def;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="comment">//get here knowing that name exists in parameters_</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">return</span> getParameter&lt;T&gt;(name);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00098">98</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">if</span> (not <a class="code" href="classldmx_1_1Parameters.html#a133187e361aac70b935dde4e5708f5f4">exists</a>(name)) <span class="keywordflow">return</span> def;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">//get here knowing that name exists in parameters_</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">return</span> getParameter&lt;T&gt;(name);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00100">parameters_</a>.</p>
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00051">exists()</a>.</p>
+
+</div>
+</div>
+<a id="a72063c7e8dcfeb2459986bb6b65a4932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72063c7e8dcfeb2459986bb6b65a4932">&#9670;&nbsp;</a></span>keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; ldmx::Parameters::keys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get a list of the keys available. This may be helpful in debugging to make sure the parameters are spelled correctly. </p>
+
+<p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00110">110</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                              {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                std::vector&lt;std::string&gt; key;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : <a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a>) key.push_back(i.first);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">return</span> key;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00119">parameters_</a>.</p>
 
 </div>
 </div>
@@ -239,12 +321,12 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00042">42</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                        { </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a> = parameters; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="Parameters_8h_source.html#l00041">41</a> of file <a class="el" href="Parameters_8h_source.html">Parameters.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                                        { </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">parameters_</a> = parameters; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00100">parameters_</a>.</p>
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00119">parameters_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ConfigurePython_8cxx_source.html#l00162">ldmx::ConfigurePython::ConfigurePython()</a>, <a class="el" href="ConfigurePython_8cxx_source.html#l00066">ldmx::getMembers()</a>, <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00357">ldmx::test::runProcess()</a>, and <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00026">TEST_CASE()</a>.</p>
 
@@ -254,7 +336,8 @@ template&lt;typename T &gt; </div>
 <li>Framework/include/Framework/<a class="el" href="Parameters_8h_source.html">Parameters.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1Parameters_html_a35942295d2d51b7e4331695da2756b3f"><div class="ttname"><a href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">ldmx::Parameters::parameters_</a></div><div class="ttdeci">std::map&lt; std::string, std::any &gt; parameters_</div><div class="ttdoc">Parameters.</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00100">Parameters.h:100</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Parameters_html_a35942295d2d51b7e4331695da2756b3f"><div class="ttname"><a href="classldmx_1_1Parameters.html#a35942295d2d51b7e4331695da2756b3f">ldmx::Parameters::parameters_</a></div><div class="ttdeci">std::map&lt; std::string, std::any &gt; parameters_</div><div class="ttdoc">Parameters.</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00119">Parameters.h:119</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Parameters_html_a133187e361aac70b935dde4e5708f5f4"><div class="ttname"><a href="classldmx_1_1Parameters.html#a133187e361aac70b935dde4e5708f5f4">ldmx::Parameters::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00051">Parameters.h:51</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

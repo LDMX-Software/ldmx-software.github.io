@@ -95,6 +95,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac9915215ea81db00eca7eacc35aac08e inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad217e06c4e1cb63ee2a8ee0a2c4f6fe4 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ad217e06c4e1cb63ee2a8ee0a2c4f6fe4">onProcessEnd</a> ()</td></tr>
 <tr class="separator:ad217e06c4e1cb63ee2a8ee0a2c4f6fe4 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6aa759083a2385cf3c293327d15c33 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aeb6aa759083a2385cf3c293327d15c33 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#aeb6aa759083a2385cf3c293327d15c33">getCondition</a> (const std::string &amp;condition_name)</td></tr>
+<tr class="separator:aeb6aa759083a2385cf3c293327d15c33 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa844f84a142be4a4ee74f575debc291d inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">TDirectory *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#aa844f84a142be4a4ee74f575debc291d">getHistoDirectory</a> ()</td></tr>
 <tr class="separator:aa844f84a142be4a4ee74f575debc291d inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab38afea01d11e6c540b3646717ed33a5 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">setStorageHint</a> (ldmx::StorageControlHint hint)</td></tr>
@@ -387,7 +390,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="classldmx_1_1EcalVetoProcessor.html#ae1ca3b290398e52c4fac3986a2c05461">collectionName_</a> = parameters.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;collection_name&quot;</span>);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00138">collectionName_</a>, and <a class="el" href="Parameters_8h_source.html#l00060">ldmx::Parameters::getParameter()</a>.</p>
+<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00138">collectionName_</a>, and <a class="el" href="Parameters_8h_source.html#l00069">ldmx::Parameters::getParameter()</a>.</p>
 
 </div>
 </div>
@@ -766,7 +769,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keyword">event</span>.add( <a class="code" href="classldmx_1_1EcalVetoProcessor.html#ae1ca3b290398e52c4fac3986a2c05461">collectionName_</a>, result );</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00138">collectionName_</a>, <a class="el" href="Event_8h_source.html#l00095">ldmx::Event::exists()</a>, <a class="el" href="SimTrackerHit_8h_source.html#l00102">ldmx::SimTrackerHit::getMomentum()</a>, <a class="el" href="EcalVetoResult_8h_source.html#l00074">ldmx::EcalVetoResult::passesVeto()</a>, <a class="el" href="EventProcessor_8h_source.html#l00161">ldmx::EventProcessor::setStorageHint()</a>, and <a class="el" href="classldmx_1_1EcalVetoResult.html#a82f2c6a79562982dba06d0a57a9822f5">ldmx::EcalVetoResult::setVariables()</a>.</p>
+<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00138">collectionName_</a>, <a class="el" href="Event_8h_source.html#l00103">ldmx::Event::exists()</a>, <a class="el" href="SimTrackerHit_8h_source.html#l00102">ldmx::SimTrackerHit::getMomentum()</a>, <a class="el" href="EcalVetoResult_8h_source.html#l00074">ldmx::EcalVetoResult::passesVeto()</a>, <a class="el" href="EventProcessor_8h_source.html#l00170">ldmx::EventProcessor::setStorageHint()</a>, and <a class="el" href="classldmx_1_1EcalVetoResult.html#a82f2c6a79562982dba06d0a57a9822f5">ldmx::EcalVetoResult::setVariables()</a>.</p>
 
 </div>
 </div>
@@ -804,7 +807,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1EcalVetoProcessor_html_ae1ca3b290398e52c4fac3986a2c05461"><div class="ttname"><a href="classldmx_1_1EcalVetoProcessor.html#ae1ca3b290398e52c4fac3986a2c05461">ldmx::EcalVetoProcessor::collectionName_</a></div><div class="ttdeci">std::string collectionName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalVetoProcessor_8h_source.html#l00138">EcalVetoProcessor.h:138</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00161">EventProcessor.h:161</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00170">EventProcessor.h:170</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

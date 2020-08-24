@@ -52,7 +52,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Base class for a module which produces a data product.  
+<p><a class="el" href="classBase.html">Base</a> class for a module which produces a data product.  
  <a href="classldmx_1_1Producer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>&gt;</code></p>
@@ -80,6 +80,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac9915215ea81db00eca7eacc35aac08e inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad217e06c4e1cb63ee2a8ee0a2c4f6fe4 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ad217e06c4e1cb63ee2a8ee0a2c4f6fe4">onProcessEnd</a> ()</td></tr>
 <tr class="separator:ad217e06c4e1cb63ee2a8ee0a2c4f6fe4 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6aa759083a2385cf3c293327d15c33 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aeb6aa759083a2385cf3c293327d15c33 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#aeb6aa759083a2385cf3c293327d15c33">getCondition</a> (const std::string &amp;condition_name)</td></tr>
+<tr class="separator:aeb6aa759083a2385cf3c293327d15c33 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa844f84a142be4a4ee74f575debc291d inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">TDirectory *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#aa844f84a142be4a4ee74f575debc291d">getHistoDirectory</a> ()</td></tr>
 <tr class="separator:aa844f84a142be4a4ee74f575debc291d inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab38afea01d11e6c540b3646717ed33a5 inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">setStorageHint</a> (ldmx::StorageControlHint hint)</td></tr>
@@ -121,10 +124,10 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <tr class="separator:a9685619198fab6900155a29101be7e42 inherit pro_attribs_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class for a module which produces a data product. </p>
+<div class="textblock"><p><a class="el" href="classBase.html">Base</a> class for a module which produces a data product. </p>
 <dl class="section note"><dt>Note</dt><dd>This class processes a mutable copy of the event so that it can add data to it. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00232">232</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00251">251</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abd1f979d49afb16c520ca66840d174cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd1f979d49afb16c520ca66840d174cc">&#9670;&nbsp;</a></span>Producer()</h2>
@@ -162,8 +165,8 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <dd>
 The provided name should not be the class name, but rather a logical label for this instance of the class, as more than one copy of a given class can be loaded into a <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a> with different parameters. Names should not include whitespace or special characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00056">56</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;: <a class="code" href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">EventProcessor</a>(name,process) {}</div>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00060">60</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;: <a class="code" href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">EventProcessor</a>(name,process) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -222,9 +225,9 @@ The provided name should not be the class name, but rather a logical label for t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Constant used to track <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> types by the <a class="el" href="classldmx_1_1EventProcessorFactory.html" title="Singleton module factory that creates EventProcessor objects.">EventProcessorFactory</a> </p>
+<p>Constant used to track <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> types by the <a class="el" href="classldmx_1_1PluginFactory.html" title="Singleton module factory that creates EventProcessor objects.">PluginFactory</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00237">237</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00256">256</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 
 </div>
 </div>
