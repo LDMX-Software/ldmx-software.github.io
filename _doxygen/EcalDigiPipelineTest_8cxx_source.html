@@ -60,124 +60,110 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceldmx.html">ldmx</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::map&lt; std::string , std::any &gt; requiredProcessParams;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;passName&quot;</span>] = std::string(<span class="stringliteral">&quot;dummyProcess&quot;</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;histogramFile&quot;</span>] = std::string();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;logFileName&quot;</span>] = std::string();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;maxTriesPerEvent&quot;</span>] = 1; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 1; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;logFrequency&quot;</span>] = 1; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;termLogLevel&quot;</span>] = 4; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;fileLogLevel&quot;</span>] = 4; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;compressionSetting&quot;</span>] = 1; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;run&quot;</span>] = 1; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">false</span>; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::map&lt; std::string , std::any &gt; actualParameters;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classldmx_1_1Parameters.html">Parameters</a> wrapperClass;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    actualParameters[ <span class="stringliteral">&quot;instanceName&quot;</span> ] = std::string(<span class="stringliteral">&quot;DummyEcalDigisWillNotRun&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    actualParameters[ <span class="stringliteral">&quot;className&quot;</span> ] = std::string(<span class="stringliteral">&quot;ldmx::EcalDigiProducer&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    actualParameters[ <span class="stringliteral">&quot;randomSeed&quot;</span> ] = 1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    actualParameters[ <span class="stringliteral">&quot;gain&quot;</span> ] = 2000.;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    actualParameters[ <span class="stringliteral">&quot;pedestal&quot;</span> ] = 1100.;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    actualParameters[ <span class="stringliteral">&quot;noiseIntercept&quot;</span> ] = 700.;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    actualParameters[ <span class="stringliteral">&quot;noiseSlope&quot;</span> ] = 25.;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    actualParameters[ <span class="stringliteral">&quot;padCapacitance&quot;</span> ] = 0.1;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    actualParameters[ <span class="stringliteral">&quot;nADCs&quot;</span> ] = 10; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    actualParameters[ <span class="stringliteral">&quot;iSOI&quot;</span>  ] = 0; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    actualParameters[ <span class="stringliteral">&quot;readoutThreshold&quot;</span> ] = 4.;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    actualParameters[ <span class="stringliteral">&quot;makeConfigHists&quot;</span> ] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    wrapperClass.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>( actualParameters );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::vector&lt;Parameters&gt; seq = { wrapperClass };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    requiredProcessParams[<span class="stringliteral">&quot;sequence&quot;</span>] = seq;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classldmx_1_1Parameters.html">Parameters</a> dummyConfig;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    dummyConfig.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>(requiredProcessParams);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classldmx_1_1Process.html">Process</a> dummyProcess( dummyConfig );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classldmx_1_1Event.html">Event</a> testEventBus( <span class="stringliteral">&quot;testEcalDigiPipeline&quot;</span> );</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::vector&lt;SimCalorimeterHit&gt; pretendSimHits;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//fill pretend sim hits with a range of simulated energies</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">double</span> maxEnergy  = 25. ; <span class="comment">//MeV</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">double</span> energyStep = 0.5 ; <span class="comment">//MeV</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">double</span> currEnergy = 1.  ; <span class="comment">//minEnergy MeV &lt;-- needs to be above readout threshold (after internal EcalDigi&#39;s calculation)</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">while</span> ( currEnergy &lt; maxEnergy ) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">//TODO test several contribs</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">//  right now, not a big deal because we just do an energy weight average anyways</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classldmx_1_1SimCalorimeterHit.html">SimCalorimeterHit</a> currHit;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classldmx_1_1EcalID.html">EcalID</a> id(0,1,index++);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        currHit.<a class="code" href="classldmx_1_1SimCalorimeterHit.html#a8748f89687f78fc1a329bf59bf5541dd">setID</a>( <span class="keywordtype">id</span>.raw() );</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        currHit.<a class="code" href="classldmx_1_1SimCalorimeterHit.html#a7899e3d68af42c07c36c358d332caee8">addContrib</a>(</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                -1 <span class="comment">//incidentID</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                , -1 <span class="comment">// trackID</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                , 0 <span class="comment">// pdg ID</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                , currEnergy <span class="comment">// edep</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                , 1. <span class="comment">//time</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                );</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        pretendSimHits.push_back( currHit );</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        currEnergy += energyStep;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    testEventBus.<a class="code" href="classldmx_1_1Event.html#ae3cdb4644d0d1c0ea864964cb6be1b69">add</a>( <span class="stringliteral">&quot;EcalSimHits&quot;</span> , pretendSimHits ); <span class="comment">//needs to be correct collection name</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classldmx_1_1EcalDigiProducer.html">EcalDigiProducer</a> digis( <span class="stringliteral">&quot;testDigis&quot;</span> , dummyProcess );</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    actualParameters.clear();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    actualParameters[ <span class="stringliteral">&quot;randomSeed&quot;</span> ] = 1;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    actualParameters[ <span class="stringliteral">&quot;gain&quot;</span> ] = 2000.;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    actualParameters[ <span class="stringliteral">&quot;pedestal&quot;</span> ] = 1100.;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    actualParameters[ <span class="stringliteral">&quot;noiseIntercept&quot;</span> ] = 700.;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    actualParameters[ <span class="stringliteral">&quot;noiseSlope&quot;</span> ] = 25.;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    actualParameters[ <span class="stringliteral">&quot;padCapacitance&quot;</span> ] = 0.1;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    actualParameters[ <span class="stringliteral">&quot;nADCs&quot;</span> ] = 10; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    actualParameters[ <span class="stringliteral">&quot;iSOI&quot;</span>  ] = 0; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    actualParameters[ <span class="stringliteral">&quot;readoutThreshold&quot;</span> ] = 4.;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    actualParameters[ <span class="stringliteral">&quot;makeConfigHists&quot;</span> ] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    wrapperClass.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>( actualParameters );</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    REQUIRE_NOTHROW( digis.<a class="code" href="classldmx_1_1EcalDigiProducer.html#a3fd70f41429d787758df01ec2c59de4c">configure</a>( wrapperClass ) );</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    REQUIRE_NOTHROW( digis.<a class="code" href="classldmx_1_1EcalDigiProducer.html#a420ea8451560d1451347134894db300b">produce</a>( testEventBus ) );</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classldmx_1_1EcalRecProducer.html">EcalRecProducer</a> recon( <span class="stringliteral">&quot;testRecon&quot;</span> , dummyProcess);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    actualParameters.clear();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    actualParameters[ <span class="stringliteral">&quot;digiCollName&quot;</span> ] = std::string(<span class="stringliteral">&quot;EcalDigis&quot;</span>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    actualParameters[ <span class="stringliteral">&quot;digiPassName&quot;</span> ] = std::string();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    actualParameters[ <span class="stringliteral">&quot;secondOrderEnergyCorrection&quot;</span> ] = 4000./4010.;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    std::vector&lt;double&gt; layerWeights = {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        1.675, 2.724, 4.398, 6.039, 7.696, 9.077, 9.630, 9.630, 9.630, 9.630, 9.630,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        9.630, 13.497, 17.364, 17.364, 17.364, 17.364, 17.364, 17.364, 17.364, 17.364,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        17.364, 8.990</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    };</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    actualParameters[ <span class="stringliteral">&quot;layerWeights&quot;</span> ] = layerWeights;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    wrapperClass.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>( actualParameters );</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    REQUIRE_NOTHROW( recon.<a class="code" href="classldmx_1_1EcalRecProducer.html#a5cbe695b55c25b845efb0218cab4d82e">configure</a>( wrapperClass ) );</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    REQUIRE_NOTHROW( recon.<a class="code" href="classldmx_1_1EcalRecProducer.html#ab971685aae4851c188bb1245b272449b">produce</a>( testEventBus ) );</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">auto</span> recHits{testEventBus.<a class="code" href="classldmx_1_1Event.html#a5291adb21539e04a6c1bc03210a5bdc0">getCollection</a>&lt;<a class="code" href="classldmx_1_1EcalHit.html">EcalHit</a>&gt;( <span class="stringliteral">&quot;EcalRecHits&quot;</span> )};</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">//rec hits shouldn&#39;t lose any sim hits ??</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    REQUIRE( pretendSimHits.size() &lt;= recHits.size() );</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">//sort the rec hits by ID</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    std::sort( recHits.begin(), recHits.end(),</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            []( <span class="keyword">const</span> <a class="code" href="classldmx_1_1EcalHit.html">EcalHit</a> &amp;lhs , <span class="keyword">const</span> <a class="code" href="classldmx_1_1EcalHit.html">EcalHit</a> &amp;rhs ) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                return lhs.getID() &lt; rhs.getID();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            });</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">//now sim hits and rec hits are in the same order</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">//  and rec hits have _at least_ as many hits as sim hits</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">for</span> ( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iHit = 0; iHit &lt; pretendSimHits.size(); iHit++ ) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">//argument to epsilon is maximum relative difference allowed</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="comment">//  right now, I set it to 0.025 (2.5% allowed difference)</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        CHECK( recHits.at(iHit).getAmplitude() == Approx( pretendSimHits.at(iHit).getEdep() ).epsilon(0.025) );</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> dummyProcess{<a class="code" href="classldmx_1_1Process.html#ac9cc1086db657fa714ea859f1ac2f352">Process::getDummy</a>()};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classldmx_1_1Event.html">Event</a> testEventBus( <span class="stringliteral">&quot;testEcalDigiPipeline&quot;</span> );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::vector&lt;SimCalorimeterHit&gt; pretendSimHits;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//fill pretend sim hits with a range of simulated energies</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">double</span> maxEnergy  = 25. ; <span class="comment">//MeV</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">double</span> energyStep = 0.5 ; <span class="comment">//MeV</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">double</span> currEnergy = 1.  ; <span class="comment">//minEnergy MeV &lt;-- needs to be above readout threshold (after internal EcalDigi&#39;s calculation)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">while</span> ( currEnergy &lt; maxEnergy ) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">//TODO test several contribs</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">//  right now, not a big deal because we just do an energy weight average anyways</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classldmx_1_1SimCalorimeterHit.html">SimCalorimeterHit</a> currHit;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classldmx_1_1EcalID.html">EcalID</a> id(0,1,index++);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        currHit.<a class="code" href="classldmx_1_1SimCalorimeterHit.html#a8748f89687f78fc1a329bf59bf5541dd">setID</a>( <span class="keywordtype">id</span>.raw() );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        currHit.<a class="code" href="classldmx_1_1SimCalorimeterHit.html#a7899e3d68af42c07c36c358d332caee8">addContrib</a>(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                -1 <span class="comment">//incidentID</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                , -1 <span class="comment">// trackID</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                , 0 <span class="comment">// pdg ID</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                , currEnergy <span class="comment">// edep</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                , 1. <span class="comment">//time</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        pretendSimHits.push_back( currHit );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        currEnergy += energyStep;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    testEventBus.<a class="code" href="classldmx_1_1Event.html#ae3cdb4644d0d1c0ea864964cb6be1b69">add</a>( <span class="stringliteral">&quot;EcalSimHits&quot;</span> , pretendSimHits ); <span class="comment">//needs to be correct collection name</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::map&lt;std::string,std::any&gt; actualParameters;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classldmx_1_1EcalDigiProducer.html">EcalDigiProducer</a> digis( <span class="stringliteral">&quot;testDigis&quot;</span> , dummyProcess );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    actualParameters.clear();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    actualParameters[ <span class="stringliteral">&quot;randomSeed&quot;</span> ] = 1;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    actualParameters[ <span class="stringliteral">&quot;gain&quot;</span> ] = 2000.;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    actualParameters[ <span class="stringliteral">&quot;pedestal&quot;</span> ] = 1100.;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    actualParameters[ <span class="stringliteral">&quot;noiseIntercept&quot;</span> ] = 700.;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    actualParameters[ <span class="stringliteral">&quot;noiseSlope&quot;</span> ] = 25.;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    actualParameters[ <span class="stringliteral">&quot;padCapacitance&quot;</span> ] = 0.1;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    actualParameters[ <span class="stringliteral">&quot;nADCs&quot;</span> ] = 10; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    actualParameters[ <span class="stringliteral">&quot;iSOI&quot;</span>  ] = 0; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    actualParameters[ <span class="stringliteral">&quot;readoutThreshold&quot;</span> ] = 4.;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    actualParameters[ <span class="stringliteral">&quot;makeConfigHists&quot;</span> ] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classldmx_1_1Parameters.html">Parameters</a> ecalDigi;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ecalDigi.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>( actualParameters );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    REQUIRE_NOTHROW( digis.<a class="code" href="classldmx_1_1EcalDigiProducer.html#a3fd70f41429d787758df01ec2c59de4c">configure</a>( ecalDigi ) );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    REQUIRE_NOTHROW( digis.<a class="code" href="classldmx_1_1EcalDigiProducer.html#a420ea8451560d1451347134894db300b">produce</a>( testEventBus ) );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    actualParameters.clear();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    actualParameters[<span class="stringliteral">&quot;gap&quot;</span>] = 1.5;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    actualParameters[<span class="stringliteral">&quot;moduleMinR&quot;</span>] = 85.0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    actualParameters[<span class="stringliteral">&quot;ecalFrontZ&quot;</span>] = 240.5;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    actualParameters[<span class="stringliteral">&quot;nCellRHeight&quot;</span>] = 35.3;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    actualParameters[<span class="stringliteral">&quot;verbose&quot;</span>] = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    std::vector&lt;double&gt; layerZPositions = {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                      7.850, 13.300, 26.400, 33.500, 47.950, 56.550, 72.250, 81.350, 97.050, 106.150,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                      121.850, 130.950, 146.650, 155.750, 171.450, 180.550, 196.250, 205.350, 221.050,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                      230.150, 245.850, 254.950, 270.650, 279.750, 298.950, 311.550, 330.750, 343.350,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                      362.550, 375.150, 394.350, 406.950, 426.150, 438.750 </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    };</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    actualParameters[<span class="stringliteral">&quot;layerZPositions&quot;</span>] = layerZPositions;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classldmx_1_1Parameters.html">Parameters</a> hexReadout;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    hexReadout.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>(actualParameters);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="classldmx_1_1EcalRecProducer.html">EcalRecProducer</a> recon( <span class="stringliteral">&quot;testRecon&quot;</span> , dummyProcess);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    actualParameters.clear();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    actualParameters[ <span class="stringliteral">&quot;digiCollName&quot;</span> ] = std::string(<span class="stringliteral">&quot;EcalDigis&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    actualParameters[ <span class="stringliteral">&quot;digiPassName&quot;</span> ] = std::string();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    actualParameters[ <span class="stringliteral">&quot;secondOrderEnergyCorrection&quot;</span> ] = 4000./4010.;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::vector&lt;double&gt; layerWeights = {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        1.675, 2.724, 4.398, 6.039, 7.696, 9.077, 9.630, 9.630, 9.630, 9.630, 9.630,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630, 9.630,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        9.630, 13.497, 17.364, 17.364, 17.364, 17.364, 17.364, 17.364, 17.364, 17.364,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        17.364, 8.990</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    };</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    actualParameters[ <span class="stringliteral">&quot;layerWeights&quot;</span> ] = layerWeights;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    actualParameters[ <span class="stringliteral">&quot;hexReadout&quot;</span>   ] = hexReadout;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classldmx_1_1Parameters.html">Parameters</a> ecalRecon;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ecalRecon.<a class="code" href="classldmx_1_1Parameters.html#ac65e61e75315fcce2a5626251fef7046">setParameters</a>( actualParameters );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    REQUIRE_NOTHROW( recon.<a class="code" href="classldmx_1_1EcalRecProducer.html#a5cbe695b55c25b845efb0218cab4d82e">configure</a>( ecalRecon ) );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    REQUIRE_NOTHROW( recon.<a class="code" href="classldmx_1_1EcalRecProducer.html#ab971685aae4851c188bb1245b272449b">produce</a>( testEventBus ) );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">auto</span> recHits{testEventBus.<a class="code" href="classldmx_1_1Event.html#a5291adb21539e04a6c1bc03210a5bdc0">getCollection</a>&lt;<a class="code" href="classldmx_1_1EcalHit.html">EcalHit</a>&gt;( <span class="stringliteral">&quot;EcalRecHits&quot;</span> )};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">//rec hits shouldn&#39;t lose any sim hits ??</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    REQUIRE( pretendSimHits.size() &lt;= recHits.size() );</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">//sort the rec hits by ID</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::sort( recHits.begin(), recHits.end(),</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            []( <span class="keyword">const</span> <a class="code" href="classldmx_1_1EcalHit.html">EcalHit</a> &amp;lhs , <span class="keyword">const</span> <a class="code" href="classldmx_1_1EcalHit.html">EcalHit</a> &amp;rhs ) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                return lhs.getID() &lt; rhs.getID();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            });</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">//now sim hits and rec hits are in the same order</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">//  and rec hits have _at least_ as many hits as sim hits</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">for</span> ( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iHit = 0; iHit &lt; pretendSimHits.size(); iHit++ ) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="comment">//argument to epsilon is maximum relative difference allowed</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">//  right now, I set it to 0.025 (2.5% allowed difference)</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        CHECK( recHits.at(iHit).getAmplitude() == Approx( pretendSimHits.at(iHit).getEdep() ).epsilon(0.025) );</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a8748f89687f78fc1a329bf59bf5541dd"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a8748f89687f78fc1a329bf59bf5541dd">ldmx::SimCalorimeterHit::setID</a></div><div class="ttdeci">void setID(const int id)</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00098">SimCalorimeterHit.h:98</a></div></div>
 <div class="ttc" id="aEcalRecProducer_8h_html"><div class="ttname"><a href="EcalRecProducer_8h.html">EcalRecProducer.h</a></div><div class="ttdoc">Class that performs basic ECal digitization.</div></div>
@@ -193,12 +179,12 @@ $(function() {
 <div class="ttc" id="aclassldmx_1_1Parameters_html"><div class="ttname"><a href="classldmx_1_1Parameters.html">ldmx::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00026">Parameters.h:26</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a></div><div class="ttdoc">Stores simulated calorimeter hit information.</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00031">SimCalorimeterHit.h:31</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00038">Event.h:38</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Process_html_ac9cc1086db657fa714ea859f1ac2f352"><div class="ttname"><a href="classldmx_1_1Process.html#ac9cc1086db657fa714ea859f1ac2f352">ldmx::Process::getDummy</a></div><div class="ttdeci">static Process getDummy()</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00117">Process.h:117</a></div></div>
 <div class="ttc" id="aEvent_8h_html"><div class="ttname"><a href="Event_8h.html">Event.h</a></div><div class="ttdoc">Class implementing an event buffer system for storing event data.</div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_ab971685aae4851c188bb1245b272449b"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#ab971685aae4851c188bb1245b272449b">ldmx::EcalRecProducer::produce</a></div><div class="ttdeci">virtual void produce(Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8cxx_source.html#l00086">EcalRecProducer.cxx:86</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_ab971685aae4851c188bb1245b272449b"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#ab971685aae4851c188bb1245b272449b">ldmx::EcalRecProducer::produce</a></div><div class="ttdeci">virtual void produce(Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8cxx_source.html#l00031">EcalRecProducer.cxx:31</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalDigiProducer_html_a3fd70f41429d787758df01ec2c59de4c"><div class="ttname"><a href="classldmx_1_1EcalDigiProducer.html#a3fd70f41429d787758df01ec2c59de4c">ldmx::EcalDigiProducer::configure</a></div><div class="ttdeci">virtual void configure(Parameters &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="EcalDigiProducer_8cxx_source.html#l00032">EcalDigiProducer.cxx:32</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_ae3cdb4644d0d1c0ea864964cb6be1b69"><div class="ttname"><a href="classldmx_1_1Event.html#ae3cdb4644d0d1c0ea864964cb6be1b69">ldmx::Event::add</a></div><div class="ttdeci">void add(const std::string &amp;collectionName, T &amp;obj)</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00134">Event.h:134</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a7899e3d68af42c07c36c358d332caee8"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a7899e3d68af42c07c36c358d332caee8">ldmx::SimCalorimeterHit::addContrib</a></div><div class="ttdeci">void addContrib(int incidentID, int trackID, int pdgCode, float edep, float time)</div></div>
-<div class="ttc" id="aclassldmx_1_1Process_html"><div class="ttname"><a href="classldmx_1_1Process.html">ldmx::Process</a></div><div class="ttdoc">Class which represents the process under execution.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00034">Process.h:34</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a5cbe695b55c25b845efb0218cab4d82e"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a5cbe695b55c25b845efb0218cab4d82e">ldmx::EcalRecProducer::configure</a></div><div class="ttdeci">virtual void configure(Parameters &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8cxx_source.html#l00019">EcalRecProducer.cxx:19</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalRecProducer_html"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html">ldmx::EcalRecProducer</a></div><div class="ttdoc">Performs basic ECal reconstruction.</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00042">EcalRecProducer.h:42</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalDigiProducer_html_a420ea8451560d1451347134894db300b"><div class="ttname"><a href="classldmx_1_1EcalDigiProducer.html#a420ea8451560d1451347134894db300b">ldmx::EcalDigiProducer::produce</a></div><div class="ttdeci">virtual void produce(Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="EcalDigiProducer_8cxx_source.html#l00093">EcalDigiProducer.cxx:93</a></div></div>

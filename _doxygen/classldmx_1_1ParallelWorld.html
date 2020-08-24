@@ -103,10 +103,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="ParallelWorld_8cxx_source.html#l00004">4</a> of file <a class="el" href="ParallelWorld_8cxx_source.html">ParallelWorld.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    : G4VUserParallelWorld(worldName), <a class="code" href="classldmx_1_1ParallelWorld.html#a3cc0c5700674370766954ee126bab548">parser_</a>(parser), </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;      <a class="code" href="classldmx_1_1ParallelWorld.html#a2f71b4bd7b3dd4c4cb6358aff26d512c">auxInfoReader_</a>(<span class="keyword">new</span> AuxInfoReader(parser)) {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="ParallelWorld_8cxx_source.html#l00006">6</a> of file <a class="el" href="ParallelWorld_8cxx_source.html">ParallelWorld.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    : G4VUserParallelWorld(worldName), <a class="code" href="classldmx_1_1ParallelWorld.html#a3cc0c5700674370766954ee126bab548">parser_</a>(parser), </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;      <a class="code" href="classldmx_1_1ParallelWorld.html#a2f71b4bd7b3dd4c4cb6358aff26d512c">auxInfoReader_</a>(<span class="keyword">new</span> AuxInfoReader(parser,Parameters())) {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -126,10 +126,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="ParallelWorld_8cxx_source.html#l00009">9</a> of file <a class="el" href="ParallelWorld_8cxx_source.html">ParallelWorld.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                  {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;   <span class="keyword">delete</span> <a class="code" href="classldmx_1_1ParallelWorld.html#a2f71b4bd7b3dd4c4cb6358aff26d512c">auxInfoReader_</a>;  </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="ParallelWorld_8cxx_source.html#l00011">11</a> of file <a class="el" href="ParallelWorld_8cxx_source.html">ParallelWorld.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                  {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   <span class="keyword">delete</span> <a class="code" href="classldmx_1_1ParallelWorld.html#a2f71b4bd7b3dd4c4cb6358aff26d512c">auxInfoReader_</a>;  </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
