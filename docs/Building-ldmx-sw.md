@@ -75,7 +75,7 @@ Building ldmx-sw will require the installation of several dependencies. The foll
       and fixes to the calculation of the Gamma to mu+mu- matrix element. 
     * __Building on Linux__: 
         ``` bash
-        git clone -b LDMX.10.2.3_v0.3 --single-branch https://github.com/LDMXAnalysis/geant4.git 
+        git clone -b LDMX.10.2.3_v0.4 --single-branch https://github.com/LDMXAnalysis/geant4.git 
         cd geant4
         mkdir build; cd build
         cmake -DGEANT4_USE_GDML=ON -DGEANT4_INSTALL_DATA=ON -DXERCESC_ROOT_DIR=$XercesC_DIR \
