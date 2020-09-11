@@ -1,16 +1,29 @@
 
+version: 2.2.1
 title: Light Dark Matter eXperiment (LDMX)
 email: '' 
 description: >- # this means to ignore newlines until "baseurl:"
     The Light Dark Matter eXperiment aims to decisively test a variety of dark
     matter scenarios in the MeV - GeV mass range. 
 baseurl: '' # the subpath of your site, e.g. /blog
-url: 'http://localhost:4000' 
+repository: https://github.com/LDMX-Software/ldmx-sw
+timezon: America/Los_Angeles
+
 sass:
     sass_dir: _sass
+collections: 
+    docs: 
+        permalink: "/:collection/:path/"
+        output: true
 include: 
     - _pages
     - _doxygen
     - _sphinx
     - _static
     - _sources
+defaults:
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
