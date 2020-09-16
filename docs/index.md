@@ -11,7 +11,7 @@ layout: default
 - [What the F.A.Q.?]({% link docs/faq.md %})
 - [Generating Simulation Samples]({% link docs/Generating-Simulation-Samples.md %})
 - [Getting Started at SLAC](%{ link docs/Getting-Started-with-ldmx-sw-at-SLAC.md %})
-- [Running and Configuring ldmx]({% link docs/Running-and-configuring-ldmx-app.md %})
+- [Running and Configuring ldmx]({% link docs/Running-and-configuring-fire.md %})
 - [Structure of Event Processors]({% link docs/Structure-of-Event-Processors.md %})
 - __Tutorials__
   - [Overview of ldmx-sw with examples specific to running at SLAC](https://tinyurl.com/y9lzvzwv)
@@ -28,6 +28,5 @@ layout: default
 - [Dark Brem (Signal) Process]({% link docs/Dark-Brem-Signal-Process.md %})
 - [Batch Jobs at SLAC]({% link docs/Submitting-Jobs-to-the-Batch-Farm.md %})
 - [Unit Testing]({% link docs/Unit-Testing-in-ldmx-sw.md %})
-- [Processing Outside ldmx-sw]({% link docs/Processing-Outside-of-ldmx-sw.md %})
 - [C++ API Reference]({% link _doxygen/index.html %})
 - [Python API Reference]({% link _sphinx/index.html %})

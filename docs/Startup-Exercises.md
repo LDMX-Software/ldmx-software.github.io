@@ -2,28 +2,21 @@
 layout: default
 ---
 
-## Pre-Requisites
+# Start-Up Exercises
 
 This page assumes you (the reader) already has experience with `git` and `C++` in order to focus on the specifics of `ldmx-sw`. 
 If you are not as experienced with either of these, 
 then you may need to use more resources than this guide to gain an understanding of `ldmx-sw`.
 
-**Note:** All of the commands in these exercises should be prepended by `ldmx` if you are using the docker container.
-(If you ran `source ldmx-sw/scripts/ldmx-env.sh`.)
-
 ## 0. Installation and Test Run
 
-Follow the instructions on how to install ldmx-sw to build an installation on your local computer. 
-If you are using group resources, your group may already have an installation that you can use and you can skip this step.
+Follow the instructions on how to install ldmx-sw to build an installation on your local computer.
+The most up-to-date instructions can be found [on the ldmx-sw README](https://github.com/LDMX-Software/ldmx-sw/blob/master/README.md).
 
-To  use the the SLAC installation, or your own installation at SLAC, 
-please see [these instructions]({% link docs/Getting-Started-with-ldmx-sw-at-SLAC.md %}).
-
-
-Make sure the installation was built and linked correctly by running `ldmx-test` without any arguments. 
+Make sure the installation was built and linked correctly by running the test application.
 This should return a message describing saying that several tests passed, for example:
 ```bash
-$ ldmx-test
+$ ldmx run_test
 ===============================================================================
 All tests passed (6 assertions in 1 test case)
 
@@ -43,7 +36,7 @@ For the purposes of the rest of these exercises,
 you should have a single file of ~100 events so that it can be analyzed fairly quickly. 
 If you want to skip to writing your own analyzers and you already have an event file, then you can skip to the next exercise.
 
-Read through [Running and Configuring `fire`]({% link docs/Running-and-configuring-ldmx-app.md %}) 
+Read through [Running and Configuring `fire`]({% link docs/Running-and-configuring-fire.md %}) 
 to learn more about the python configuration scripts. 
 The configuration script provided there gives an example of a script you could use to generate the small event file to analyze. 
 Mess around with the parameters and look at the processors used in that script to make your sample your own and learn more!

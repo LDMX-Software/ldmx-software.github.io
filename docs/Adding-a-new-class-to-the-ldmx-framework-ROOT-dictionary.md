@@ -2,6 +2,8 @@
 layout: default
 ---
 
+**Deprecation Warning:** These instructions will change drastically in ldmx-sw version 3.0.
+
 This is necessary if you want to add your own class to the event bus through a producer. Adding a class to the ROOT dictionary allows for ROOT classes to "know" that it exists and use it similar to other ROOT classes. The ldmx framework assumes that the object you are putting into the event bus is in the ROOT dictionary and is a member of the `EventBusPassenger` variant type.
 
 1. Write the class header and implementation files like normal. Let's say the name of your class is `ClassName`.

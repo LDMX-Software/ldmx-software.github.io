@@ -96,14 +96,9 @@ class MyProducer(Producer) :
     def __init__(self,name) :
         super().__init__(
             name, # unique instance name because you could have more than one copy of a processor
-            'ldmx::MyProducer' #the full name including namespaces of the C++ class
+            'ldmx::MyProducer', #the full name including namespaces of the C++ class
+            'MyModule' #the name of the module this processor is in (e.g. Ecal or Analysis)
             )
-        
-        # include the MyModule library so that the application
-        #   "knows" the C++ for MyProducer
-        # MyModule is the module that MyProducer is in (e.g. Ecal or EventProc or Analysis)
-        from LDMX.MyModule import include
-        include.library()
         
         # define the parameters and their defaults
         #   notice that the names of the parameters
@@ -120,10 +115,10 @@ Now in a configuration script you can create a configuration for MyProducer and 
 #   that contains the python class definition of MyProducer
 from LDMX.MyModule import my_producer
 myProd = MyProducer('myProd')
-myProd.my_parameter = 10 #will change the 5 to 10 in the C++
+myProd.my_parameter = 10 #will change the 5 to 10 so the C++ class will receive 10
 ```
 
 # Other Objects
 This structure for Event Processors is pretty general,
 and actually there are other objects in the C++ application that are configured in this way:
-PrimaryGenerators and UserActions.
+PrimaryGenerators, UserActions, and ConditionsObjectProviders.

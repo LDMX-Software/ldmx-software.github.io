@@ -2,6 +2,8 @@
 layout: default
 ---
 
+**Deprecation Warning:** Drastic updates are planned to the signal simulation and will be apart of ldmx-sw version 3.0.
+
 The signal generation is done by a custom Geant4 physics process. This custom physics process `G4eDarkBremsstrahlung` has a corresponding model `G4eDarkBremsstrahlungModel` which handles most of the simulation work. The physics list entry `APrimePhysics` and the process are mainly there to conform to Geant4's framework and pass parameters to the model.
 
 The model is written to take in LHE files that have A' vertices (like the old signal sim below) and then scale them to the actual energy of the electron (when Geant4 decides for the dark brem to happen).

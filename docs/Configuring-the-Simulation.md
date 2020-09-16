@@ -169,6 +169,7 @@ This generator re-simulates the event using the particles leaving the ECal scori
 myReSimFromECal = generators.ecalSP( "myReSimFromECal" , "<path-to-root-file>" )
 ```
 You also have access to the following variables if you need to tell the generator which scoring planes hits collection to use. These parameters are given reasonable defaults.
+
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
 `collection_name` | string | RootSimFromEcalSP | Name of ECal Scoring Planes Hits collection created by simulation
@@ -184,6 +185,7 @@ This generator complete re-simulates the event from the original primary particl
 myCompleteReSim = generators.completeReSim( "myCompleteReSim" , "<path-to-ROOT-file>" )
 ```
 Similar to the previous generator, you also have access to the following variables if you need to tell the generator which SimParticles collection to use. These parameters are given reasonable defaults.
+
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
 `collection_name` | string | RootCompleteReSim | Name of SimParticles collection created by simulation
@@ -219,8 +221,3 @@ Parameter | Type | AccessedBy | Description
 `vertex` | vector of doubles | MultiParticleGunPrimaryGenerator | location of primary vertex to shoot the particle(s) from (mm)
 `momentum` | vector of doubles | MultiParticleGunPrimaryGenerator | 3-momentum of primary particle(s) (MeV)
 
-#### stdhep
-
-_Not implemented._
-
-Planned implementation for ldmx-sw v2.1 on [Issue #615](https://github.com/LDMX-Software/ldmx-sw/issues/615).

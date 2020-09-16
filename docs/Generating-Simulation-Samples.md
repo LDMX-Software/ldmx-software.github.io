@@ -2,7 +2,7 @@
 layout: default
 ---
 
-The generation of simulation samples is done mainly by the Geant4 package with several additions stored in the `SimApplication` module of ldmx-sw. However, you do not need to know the simulation to this level of depth. The `Simulator` producer in the `SimApplication` module is your messenger to run the simulation. Here, I will go through its basic usage. For more information about _all_ of the available parameters, please see the documentation on [Configuring the Simulation]({% link docs/Configuring-the-Simulation.md %}).
+The generation of simulation samples is done mainly by the Geant4 package with several additions stored in the `SimCore` module of ldmx-sw. However, you do not need to know the simulation to this level of depth. The `Simulator` producer in the `SimCore` module is your messenger to run the simulation. Here, I will go through its basic usage. For more information about _all_ of the available parameters, please see the documentation on [Configuring the Simulation]({% link docs/Configuring-the-Simulation.md %}).
 
 ### Basic Usage
 Running the simulation is just like any other producer in ldmx-sw. In your python configuration script, it is _required_ that you have the following lines (or equivalent):
@@ -12,7 +12,6 @@ mySimulator = simulator( "mySimulator" ) #create the simulator object
 ```
 You can write your own detector description in the gdml format (if you want), but ldmx-sw already comes with several versions of the LDMX detector description. These versions are installed with it and can be accessed with some python (+ cmake!) magic:
 ```python
-from LDMX.Detectors.makePath import *
 mySimulator.setDetector( 'ldmx-det-v12' )
 ```
 Okay, `mySimulator` now is created and has been given a path to an LDMX detector description.
@@ -113,10 +112,13 @@ p.maxEvents = 10
 # how frequently should the process print messages to the screen?
 p.logFrequency = 1
 
+# I want to see all of the information messages (the default is only warnings and errors)
+p.termLogLevel = 1
+
 # give name of output file
 p.outputFiles = [ "output.root" ]
 
 # print process object to make sure configuration is correct
-# at beginning of run
-print(p)
+# at beginning of run and wait for user to press enter to start
+p.pause()
 ```

@@ -8,13 +8,9 @@ The `fire` application is used for simulation, reconstruction, and analysis of d
 
 From the commandline, the application is run as follows:
 
-    $ fire [application arguments] {configuration_script.py} [arguments for configuration script]
+    $ fire {configuration_script.py} [arguments for configuration script]
 
 The configuration script language is discussed in more detail below.
-
-### Application arguments
-
-Application arguments affect the overall behavior of the `fire` application.  Currently, none are defined, but they could include controls on the logging output for example.
 
 ### Configuration script arguments
 

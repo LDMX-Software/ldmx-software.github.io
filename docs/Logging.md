@@ -24,6 +24,7 @@ In order to save time and lines of code, we have defined a macro that can be use
 ldmx_log(info) << My message goes here;
 ```
 `info` is the severity level of this message. A severity level can be any of the following:
+
 Level | Int | Description | Example
 --- | --- | --- | ---
 `debug` | 0 | Extra-detailed information that you would want if you were suspicious that things were running correctly | Whether a sensitive detector is skipping a hit or not

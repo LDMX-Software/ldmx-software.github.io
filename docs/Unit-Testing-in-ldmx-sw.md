@@ -2,11 +2,11 @@
 layout: default
 ---
 
-We just merged in a new testing framework to use with ldmx-sw: [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top)
+In ldmx-sw we use an external tool for our testing framework: [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top)
 
-This testing framework allows us to write several different testing functions throughout all of ldmx-sw, which are then compiled into one executable: `ldmx-test`. This executable has several command line options, all of which are detailed in Catch2's [reference documentation](https://github.com/catchorg/Catch2/blob/master/docs/Readme.md#top). This documentation does an excellent job detailing how to write new tests and how to have your tests do a variety of tasks; please refer to that documentation when you wish to write a test.
+This testing framework allows us to write several different testing functions throughout all of ldmx-sw, which are then compiled into one executable: `run_test`. This executable has several command line options, all of which are detailed in Catch2's [reference documentation](https://github.com/catchorg/Catch2/blob/master/docs/Readme.md#top). This documentation does an excellent job detailing how to write new tests and how to have your tests do a variety of tasks; please refer to that documentation when you wish to write a test.
 
-The basic idea behind Unit Testing is to make sure that we change only what we want to change. The compiler in C++ does a good job of catching syntax errors and writing tests using this package allows us to test the run-time behavior of `ldmx-app` in a similar way.
+The basic idea behind Unit Testing is to make sure that we change only what we want to change. The compiler in C++ does a good job of catching syntax errors and writing tests using this package allows us to test the run-time behavior of `fire` in a similar way.
 
 Catch2 allows us to organize our tests into labels so that the user can run a specific group of tests instead of all at once. A basic structure for ldmx-sw tests is as follows:
 1. Put any tests you write into the `test` directory in the module you wish to test.
@@ -26,7 +26,7 @@ Just to give you an example, here is a basic test that would be compiled into th
 
 ```c++
 //file is MyModule/test/MyTest.cxx
-#include "Exception/catch.hpp" //for TEST_CASE, REQUIRE, and other Catch2 macros
+#include "catch.hpp" //for TEST_CASE, REQUIRE, and other Catch2 macros
 
 /**
  * my test
@@ -51,3 +51,100 @@ TEST_CASE( "My first test can compile." , "[MyModule][meta-test]" ) {
     std::cout << "I won't get here!" << std::endl;
 } //my test
 ```
+
+# Testing Event Processors
+The complicated nature of how we use our event processors is complicated to test. Here I outline a basic structure for writing a test to check a specific processor (or a series of processors).
+
+The basic idea is to set up special processors to setup what your processor should see and to check what it produces.
+
+```c++
+#include "catch.hpp"
+
+#include "Framework/Process.h"
+#include "Framework/ConfigurePython.h"
+#include "Framework/EventProcessor.h"
+
+namespace ldmx {
+namespace test {
+
+/**
+ * This Processor produces any and all collections or objects that your processor
+ * needs to function. You can do this in a specific way that makes it easier to 
+ * check later in the processing.
+ */
+class SetupTestForMyProcessor : public Producer {
+    public:
+        SetupTestForMyProcessor(const std::string &name,Process &p) : Producer(name,p) { }
+        ~SetupTestForMyProcessor() { }
+        
+        void produce(Event &event) final override {
+            //put any collections that your processor(s) use into the event bus
+            //make sure these collections have a specific form that you can test easily
+            //  (no random-ness)
+        }
+}; //SetupTestForMyProcessor
+
+/**
+ * This Analyzer is what actually does all the CHECKing.
+ *
+ * You run this processor after the processor(s) that you are testing,
+ * so you have access to both the input objects made by the set
+ * up processor and the objects created by your processor(s).
+ */
+class CheckMyProcessor : public Analyzer {
+    public:
+        CheckMyProcessor(const std::string &name,Process &p) : Producer(name,p) { }
+        ~CheckMyProcessor() { }
+        
+        void analyze(const Event &event) final override {
+            //Use CHECK macros to see if the event objects
+            // that your processor(s) produced are what you expect
+        }
+}; //SetupTestForMyProcessor
+
+} //test
+} //ldmx
+
+// Need to declare the processors we wrote
+DECLARE_PRODUCER_NS(ldmx::test,SetupTestForMyProcessor)
+DECLARE_ANALYZER_NS(ldmx::test,CheckMyProcessor)
+
+/**
+ * The TEST_CASE is actually pretty short since all of the setup
+ * and checking is done in the test processors above.
+ *
+ * Here we simply write a configuration file that is then given
+ * to ConfigurePython to make a process which we then run.
+ */
+TEST_CASE( "Testing the full running of MyProcessor" , "[MyModule]" ) {
+
+    const std::string config_file{"/tmp/my_processor_test.py"};
+    std::ofstream cf( config_file );
+
+    cf << "from LDMX.Framework import ldmxcfg" << std::endl;
+    cf << "p = ldmxcfg.Process( 'testMyProcessor' )" << std::endl;
+    cf << "p.maxEvents = 1" << std::endl;
+    cf << "p.outputFiles = [ '/tmp/my_processor_test.root' ]" << std::endl;
+    cf << "p.sequence = [" << std::endl;
+    cf << "    ldmxcfg.Producer('Setup','ldmx::test::SetupTestForMyProcessor','MyModule')," << std::endl;
+    cf << "    #put your processor(s) here " << std::endl;
+    cf << "    , ldmxcfg.Analyzer('Check','ldmx::test::CheckMyProcessor','MyModule')," << std::endl;
+    cf << "    ]" << std::endl;
+
+    /* debug pause before running
+    cf << "p.pause()" << std::endl;
+    */
+
+    cf.close();
+
+    char **args;
+    ldmx::ProcessHandle p;
+
+    ldmx::ConfigurePython cfg( config_file , args , 0 );
+    REQUIRE_NOTHROW(p = cfg.makeProcess());
+    p->run();
+
+}
+
+```
+
