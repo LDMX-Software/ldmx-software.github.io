@@ -30,22 +30,22 @@ header {
     padding: 10px;
     background: darken(#333, 3%);
     margin-top: -10px;
+    margin-left: -10px;
 
     h1,
     nav { display: inline-block; } 
 
+
     .box {
         display: flex;
-        height: 50px; 
-
-        & > * { margin: auto }
+        height: 60px; 
+        justify-content: space-between; 
+        align-items: center;
     }
 
     .logo {
         display: block; 
-        img { margin-top: -7px }
     }
-
 }
 
 nav {
@@ -53,8 +53,7 @@ nav {
     ul { 
         padding: 0; 
         margin: 0;
-        white-space: nowrap; 
-        display: inline-block; 
+        text-align: center; 
     }
 
     li {
@@ -66,19 +65,12 @@ nav {
             font-size: 0.75em;
             padding: 0.5em 1em;
             text-shadow: none;
-            text-transform: uppercase;
             @include transition(all .25s);
 
             &:hover {
                 background-color: #252525;
                 @include box-shadow(inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1));
                 text-shadow: 0 1px 3px rgba(0,0,0,.5);
-            }
-
-            &:hover {
-                background-color: #252525;
-                @include box-shadow(inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1));
-                text-shadow: 0 1px 3px rgba(0,0,0,.5); 
             }
         }
 
@@ -105,3 +97,56 @@ nav {
         margin: 0;
     }
 }
+
+.docs {
+    
+    article { min-height: 800px; }
+
+    .content { padding: 0; }
+}
+
+article {
+
+  h2, h3, h4, h5, h6 { margin: 1em 0; }
+
+  h4 { color: #fff; }
+
+  ul li {
+
+    p { margin: 0; }
+
+    blockquote { margin: 10px 0; }
+  }
+
+  ul li,
+  ol li {
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+}
+
+article {
+  background-color: #444;
+  @include border-radius(10px);
+  padding: 20px;
+  margin: 0 10px;
+  @include box-shadow(0 3px 10px rgba(0,0,0,.1));
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  article ul { padding-left: 20px; }
+}
+
+@media (max-width: 568px) {
+  article { margin: 0; }
+}
+
+@media (min-width: 768px) {
+  article {
+    padding: 40px 40px 30px;
+    font-size: 21px;
+  }
+}
+

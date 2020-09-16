@@ -1,12 +1,13 @@
 <header>
     <div class="box">
-        <h1>
-            <a href="{{ '/' | relative_url }}" class="logo" >
-                <img src="{{ 'img/logo.png' | relative_url }}" width="183.75" height="45.5" alt="ldmx-sw Logo" >
-            </a>
-        </h1> 
         <nav>
             <ul>
+                <li>
+                    <a href="{{ '/' | relative_url }}" >
+                        <img src="{{ 'img/logo.png' | relative_url }}" width="183.75" height="45.5" alt="ldmx-sw Logo" >
+                    </a>
+                </li>
+
                 {% for p in site.data.nav %}
                 <li
                     {% if p.link == page.url %} class="current" {% endif %} 
