@@ -465,8 +465,8 @@ typedef enum ldmx::SubdetectorIDTypeEnum&#160;</td><td class="memItemRight" vali
 <tr class="memitem:ab990f7e382250e644a7dae6b77d388e2"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceldmx.html#ab990f7e382250e644a7dae6b77d388e2">BoundingBox</a></td></tr>
 <tr class="memdesc:ab990f7e382250e644a7dae6b77d388e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the minimum and maximum of each coordinate for a box.  <a href="namespaceldmx.html#ab990f7e382250e644a7dae6b77d388e2">More...</a><br /></td></tr>
 <tr class="separator:ab990f7e382250e644a7dae6b77d388e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a117578fe8cea6197cc510d1b27204014"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classldmx_1_1ConditionsObjectProvider.html">ConditionsObjectProvider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceldmx.html#a117578fe8cea6197cc510d1b27204014">ConditionsObjectProviderMaker</a>(const std::string &amp;name, const std::string &amp;tagname, const <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;params, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td></tr>
-<tr class="separator:a117578fe8cea6197cc510d1b27204014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8728f08a8879524c0984ee68144c11d8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classldmx_1_1ConditionsObjectProvider.html">ConditionsObjectProvider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceldmx.html#a8728f08a8879524c0984ee68144c11d8">ConditionsObjectProviderMaker</a>(const std::string &amp;objname, const std::string &amp;tagname, const <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;params, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td></tr>
+<tr class="separator:a8728f08a8879524c0984ee68144c11d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac5f202d9290421144c78b7414c0080"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classldmx_1_1EventProcessor.html">EventProcessor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceldmx.html#a5ac5f202d9290421144c78b7414c0080">EventProcessorMaker</a>(const std::string &amp;name, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td></tr>
 <tr class="separator:a5ac5f202d9290421144c78b7414c0080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9028f1d46e96ae071498fc94f663d56a"><td class="memItemLeft" align="right" valign="top">typedef std::unique_ptr&lt; <a class="el" href="classldmx_1_1Process.html">Process</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceldmx.html#a9028f1d46e96ae071498fc94f663d56a">ProcessHandle</a></td></tr>
@@ -620,14 +620,14 @@ const std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bot
 
 </div>
 </div>
-<a id="a117578fe8cea6197cc510d1b27204014"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a117578fe8cea6197cc510d1b27204014">&#9670;&nbsp;</a></span>ConditionsObjectProviderMaker</h2>
+<a id="a8728f08a8879524c0984ee68144c11d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8728f08a8879524c0984ee68144c11d8">&#9670;&nbsp;</a></span>ConditionsObjectProviderMaker</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classldmx_1_1ConditionsObjectProvider.html">ConditionsObjectProvider</a>* ldmx::ConditionsObjectProviderMaker(const std::string &amp;name, const std::string &amp;tagname, const <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;params, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td>
+          <td class="memname">typedef <a class="el" href="classldmx_1_1ConditionsObjectProvider.html">ConditionsObjectProvider</a>* ldmx::ConditionsObjectProviderMaker(const std::string &amp;objname, const std::string &amp;tagname, const <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;params, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -723,7 +723,7 @@ There are two types of EventBusPassengers: 1) Those that exist inside of an STL 
 </div><div class="memdoc">
 <p>A handle to the current process Used to pass a process from <a class="el" href="classldmx_1_1ConfigurePython.html" title="Utility class which reads/executes a python script and creates a Process object based on the input.">ConfigurePython</a> to ldmx-app. </p>
 
-<p class="definition">Definition at line <a class="el" href="Process_8h_source.html#l00197">197</a> of file <a class="el" href="Process_8h_source.html">Process.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Process_8h_source.html#l00203">203</a> of file <a class="el" href="Process_8h_source.html">Process.h</a>.</p>
 
 </div>
 </div>

@@ -69,6 +69,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2485c464b0c66ef9717614e558ba46a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c15385c1e66dbb136b83a9e924b148d"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1BaseTableCondition.html#a8c15385c1e66dbb136b83a9e924b148d">getRowCount</a> () const</td></tr>
 <tr class="separator:a8c15385c1e66dbb136b83a9e924b148d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab670bea96807d7cdb8ea0c97405030be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1BaseTableCondition.html#ab670bea96807d7cdb8ea0c97405030be">setIdMask</a> (unsigned int mask)</td></tr>
+<tr class="separator:ab670bea96807d7cdb8ea0c97405030be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84ab0917ba1a5e9f22b5912cec20758c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1BaseTableCondition.html#a84ab0917ba1a5e9f22b5912cec20758c">getIdMask</a> () const</td></tr>
+<tr class="separator:a84ab0917ba1a5e9f22b5912cec20758c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classldmx_1_1ConditionsObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classldmx_1_1ConditionsObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classldmx_1_1ConditionsObject.html">ldmx::ConditionsObject</a></td></tr>
 <tr class="memitem:a637f04044144b7c0206a36ae980c29fb inherit pub_methods_classldmx_1_1ConditionsObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1ConditionsObject.html#a637f04044144b7c0206a36ae980c29fb">ConditionsObject</a> (const std::string &amp;name)</td></tr>
 <tr class="separator:a637f04044144b7c0206a36ae980c29fb inherit pub_methods_classldmx_1_1ConditionsObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,6 +101,9 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>columnCount_<
 <tr class="memitem:ad7c1992764d5cb63bfb2b603634827bd"><td class="memItemLeft" align="right" valign="top"><a id="ad7c1992764d5cb63bfb2b603634827bd"></a>
 std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keys_</b></td></tr>
 <tr class="separator:ad7c1992764d5cb63bfb2b603634827bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78579a255f4dc39316ecf1d384e2e895"><td class="memItemLeft" align="right" valign="top"><a id="a78579a255f4dc39316ecf1d384e2e895"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>idMask_</b></td></tr>
+<tr class="separator:a78579a255f4dc39316ecf1d384e2e895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -138,7 +145,7 @@ std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"
 <p>Create table with given set of columns </p>
 
 <p class="definition">Definition at line <a class="el" href="SimpleTableCondition_8h_source.html#l00024">24</a> of file <a class="el" href="SimpleTableCondition_8h_source.html">SimpleTableCondition.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                                                   : <a class="code" href="classldmx_1_1ConditionsObject.html#a637f04044144b7c0206a36ae980c29fb">ConditionsObject</a>{name}, columns_{columns} {</div>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                                                   : <a class="code" href="classldmx_1_1ConditionsObject.html#a637f04044144b7c0206a36ae980c29fb">ConditionsObject</a>{name}, columns_{columns},idMask_{0xFFFFFFFFu}  {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        columnCount_=(<span class="keywordtype">unsigned</span> int)(columns.size());</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 </div><!-- fragment -->
@@ -276,8 +283,39 @@ std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> columnCount_;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="SimpleTableCondition_8h_source.html#l00154">ldmx::HomogenousTableCondition&lt; int &gt;::getByName()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00163">ldmx::HgcrocEmulator::getCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimpleTableCondition_8h_source.html#l00170">ldmx::HomogenousTableCondition&lt; int &gt;::getByName()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00163">ldmx::HgcrocEmulator::getCondition()</a>.</p>
 
+</div>
+</div>
+<a id="a84ab0917ba1a5e9f22b5912cec20758c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84ab0917ba1a5e9f22b5912cec20758c">&#9670;&nbsp;</a></span>getIdMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ldmx::BaseTableCondition::getIdMask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the AND mask to be applied to the id. Typically used to "flatten" a table in some manner. </p>
+
+<p class="definition">Definition at line <a class="el" href="SimpleTableCondition_8h_source.html#l00089">89</a> of file <a class="el" href="SimpleTableCondition_8h_source.html">SimpleTableCondition.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                   { </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> idMask_;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8c15385c1e66dbb136b83a9e924b148d"></a>
@@ -309,7 +347,7 @@ std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> keys_.size();</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="SimpleTableCondition_8h_source.html#l00108">ldmx::HomogenousTableCondition&lt; int &gt;::add()</a>, <a class="el" href="SimpleTableCondition_8h_source.html#l00129">ldmx::HomogenousTableCondition&lt; int &gt;::get()</a>, <a class="el" href="SimpleTableCondition_8h_source.html#l00141">ldmx::HomogenousTableCondition&lt; int &gt;::getRow()</a>, and <a class="el" href="SimpleTableCondition_8h_source.html#l00057">getRowId()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimpleTableCondition_8h_source.html#l00124">ldmx::HomogenousTableCondition&lt; int &gt;::add()</a>, <a class="el" href="SimpleTableCondition_8h_source.html#l00145">ldmx::HomogenousTableCondition&lt; int &gt;::get()</a>, <a class="el" href="SimpleTableCondition_8h_source.html#l00157">ldmx::HomogenousTableCondition&lt; int &gt;::getRow()</a>, and <a class="el" href="SimpleTableCondition_8h_source.html#l00057">getRowId()</a>.</p>
 
 </div>
 </div>
@@ -347,6 +385,40 @@ std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="SimpleTableCondition_8h_source.html#l00074">getRowCount()</a>.</p>
+
+</div>
+</div>
+<a id="ab670bea96807d7cdb8ea0c97405030be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab670bea96807d7cdb8ea0c97405030be">&#9670;&nbsp;</a></span>setIdMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ldmx::BaseTableCondition::setIdMask </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set an AND mask to be applied to the id. Typically used to "flatten" a table in some manner. </p>
+
+<p class="definition">Definition at line <a class="el" href="SimpleTableCondition_8h_source.html#l00082">82</a> of file <a class="el" href="SimpleTableCondition_8h_source.html">SimpleTableCondition.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                      { </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        idMask_=mask;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="SimpleCSVTableProvider_8cxx_source.html#l00220">ldmx::SimpleCSVTableProvider::getCondition()</a>.</p>
 
 </div>
 </div>
