@@ -11,14 +11,14 @@ If the objects already in ldmx-sw/Event module do not suit your purposes, you ca
 
 Method | Description
 ---|---
-`Print(std::ostream&)` | Summarize object in a one line description of the form: `MyObject { param1 = val, param2 = val,...}` output to input ostream.
+`Print()` | Summarize object in a one line description of the form: `MyObject { param1 = val, param2 = val,...}` output to input ostream.
 `operator<` | This is used to sort the collection before inputting into event bus.
 
 * If your class is going to be outside an STL container (i.e. put into the event bus by itself), then you need
 
 Method | Description
 ---|---
-`Print(std::ostream&)` | Summarize object in a one line description of the form: `MyObject { param1 = val, param2 = val,...}` output to input ostream.
+`Print()` | Summarize object in a one line description of the form: `MyObject { param1 = val, param2 = val,...}` output to input ostream.
 `Clear()` | Resets object to default-constructed state.
 
 
