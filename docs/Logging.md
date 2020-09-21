@@ -35,6 +35,8 @@ Level | Int | Description | Example
 
 This is really all you need for an `EventProcessor`. Notice that the logger _does not_ need a new line character at the end of the line. The logger automatically makes a new line after each message.
 
+There is an additional logging level below "debug". A lot of times during development, a developer puts messages inside of the code to make sure it is working properly. A lot of these extra messages are not very helpful for the end user, so they should go into the log at all. Feel free to leave these messages in, but comment them out so that they don't clog up the log. A good rule of thumb is that the debug channel should have at most one message per event, info - one message every few events, warn - a few messages total per run, and error only one message per run.
+
 ## More Detail: Logging Outside Processors
 
 There are some other inheritance trees inside of ldmx-sw that have `theLog_` as a protected member variable (like how it is set up for processors). For example, `XsecBiasingOperator`, `UserAction`, and `PrimaryGenerator`, so you _may not_ need to define a new member `theLog_` in your class if it inherits from a class with `theLog_` already defined and accessible (i.e. public or protected).
