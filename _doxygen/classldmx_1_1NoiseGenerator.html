@@ -58,6 +58,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2bc77611a71fdbce3c20889a70204844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6f615d184602d3fad1f6e98a373c53c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#aa6f615d184602d3fad1f6e98a373c53c">~NoiseGenerator</a> ()</td></tr>
 <tr class="separator:aa6f615d184602d3fad1f6e98a373c53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeecc578dd406ad025a867a9f588b7b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#aaeecc578dd406ad025a867a9f588b7b9">seedGenerator</a> (uint64_t seed)</td></tr>
+<tr class="separator:aaeecc578dd406ad025a867a9f588b7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97ed8450d14d2b830055ec2a5ca37b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#ad97ed8450d14d2b830055ec2a5ca37b7">hasSeed</a> () const</td></tr>
+<tr class="separator:ad97ed8450d14d2b830055ec2a5ca37b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15b98b8ec076589d5cecc4ee1d443f76"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#a15b98b8ec076589d5cecc4ee1d443f76">generateNoiseHits</a> (int emptyChannels)</td></tr>
 <tr class="separator:a15b98b8ec076589d5cecc4ee1d443f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab964df05033cd71064c2609df55039ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#ab964df05033cd71064c2609df55039ce">setNoiseThreshold</a> (double noiseThreshold)</td></tr>
@@ -66,12 +70,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad9e6a3e46dc2a7c12a9d8dd9c4f8ac2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93bc91592f2884d556af550dc84c3358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#a93bc91592f2884d556af550dc84c3358">setPedestal</a> (double pedestal)</td></tr>
 <tr class="separator:a93bc91592f2884d556af550dc84c3358"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13f907b727dba54942ac0f87a5be8ea9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#a13f907b727dba54942ac0f87a5be8ea9">setSeed</a> (int seed)</td></tr>
-<tr class="separator:a13f907b727dba54942ac0f87a5be8ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a76da323773e2c3c89744fa2a22068691"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; TRandom3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a></td></tr>
+<tr class="memitem:a76da323773e2c3c89744fa2a22068691"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; TRandom3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a> {nullptr}</td></tr>
 <tr class="separator:a76da323773e2c3c89744fa2a22068691"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bbaebf3d4e5c83ec5d40696e13502d9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">noiseThreshold_</a> {4}</td></tr>
 <tr class="separator:a6bbaebf3d4e5c83ec5d40696e13502d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,16 +117,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8cxx_source.html#l00011">11</a> of file <a class="el" href="NoiseGenerator_8cxx_source.html">NoiseGenerator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                                                {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a> = std::make_unique&lt;TRandom3&gt;( time(<span class="keyword">nullptr</span>) );</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">noise_</a> = noiseValue;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classldmx_1_1NoiseGenerator.html#aadc92e5572d72f453f066f00a1ee4c95">useGaussianModel_</a> = gauss;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classldmx_1_1NoiseGenerator.html#ad470824bdbbc40b267c7b57e4a635542">poisson_dist_</a> = std::make_unique&lt; boost::math::poisson_distribution&lt;&gt; &gt;(noiseValue);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8cxx_source.html#l00012">12</a> of file <a class="el" href="NoiseGenerator_8cxx_source.html">NoiseGenerator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                            {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">noise_</a> = noiseValue;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classldmx_1_1NoiseGenerator.html#aadc92e5572d72f453f066f00a1ee4c95">useGaussianModel_</a> = gauss;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classldmx_1_1NoiseGenerator.html#ad470824bdbbc40b267c7b57e4a635542">poisson_dist_</a> = std::make_unique&lt; boost::math::poisson_distribution&lt;&gt; &gt;(noiseValue);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00070">noise_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00079">poisson_dist_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00064">random_</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00076">useGaussianModel_</a>.</p>
+<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00073">noise_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00082">poisson_dist_</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00079">useGaussianModel_</a>.</p>
 
 </div>
 </div>
@@ -144,8 +144,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8cxx_source.html#l00019">19</a> of file <a class="el" href="NoiseGenerator_8cxx_source.html">NoiseGenerator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{ }</div>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8cxx_source.html#l00018">18</a> of file <a class="el" href="NoiseGenerator_8cxx_source.html">NoiseGenerator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -172,57 +172,117 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A vector containing the amplitude of the noise hits <em>above the threshold</em> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the amplitude of the noise hits. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8cxx_source.html#l00021">21</a> of file <a class="el" href="NoiseGenerator_8cxx_source.html">NoiseGenerator.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                                         { </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;[ Noise Generator ]: Empty channels: &quot; </span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">//           &lt;&lt; emptyChannels &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;[ Noise Generator ]: Normalized integration limit: &quot; </span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">//          &lt;&lt; noiseThreshold_ &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">double</span> integral;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span>( <a class="code" href="classldmx_1_1NoiseGenerator.html#aadc92e5572d72f453f066f00a1ee4c95">useGaussianModel_</a> ) </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            integral = ROOT::Math::normal_cdf_c(<a class="code" href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">noiseThreshold_</a>, <a class="code" href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">noise_</a>, <a class="code" href="classldmx_1_1NoiseGenerator.html#a5a7bbc3d94a9b3a8da10eb7d19011e1f">pedestal_</a>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            integral = boost::math::cdf(complement(*<a class="code" href="classldmx_1_1NoiseGenerator.html#ad470824bdbbc40b267c7b57e4a635542">poisson_dist_</a>,<a class="code" href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">noiseThreshold_</a>-1));</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Integral: &quot; </span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">//          &lt;&lt; integral &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">double</span> noiseHitCount = <a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a>-&gt;Binomial(emptyChannels, integral); </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: # Noise hits: &quot; </span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">//          &lt;&lt; noiseHitCount &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::vector&lt;double&gt; noiseHits;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> hitIndex = 0; hitIndex &lt; noiseHitCount; ++hitIndex) { </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordtype">double</span> rand = <a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a>-&gt;Uniform();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Rand: &quot; </span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">//          &lt;&lt; rand &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordtype">double</span> draw = integral*rand; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Draw: &quot; </span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="comment">//          &lt;&lt; draw &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordtype">double</span> cumulativeProb = 1.0 - integral + draw;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Cumulative probability: &quot; </span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">//          &lt;&lt; cumulativeProb &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordtype">double</span> valueAboveThreshold;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span>( <a class="code" href="classldmx_1_1NoiseGenerator.html#aadc92e5572d72f453f066f00a1ee4c95">useGaussianModel_</a> )</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                valueAboveThreshold = ROOT::Math::gaussian_quantile(cumulativeProb, <a class="code" href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">noise_</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                valueAboveThreshold = boost::math::quantile(*<a class="code" href="classldmx_1_1NoiseGenerator.html#ad470824bdbbc40b267c7b57e4a635542">poisson_dist_</a>,cumulativeProb);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Noise value: &quot; </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">//          &lt;&lt; gaussAboveThreshold &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            noiseHits.push_back(valueAboveThreshold); </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;       <span class="keywordflow">return</span> noiseHits;  </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8cxx_source.html#l00024">24</a> of file <a class="el" href="NoiseGenerator_8cxx_source.html">NoiseGenerator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                                     { </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a>.get()==<span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    EXCEPTION_RAISE(<span class="stringliteral">&quot;RandomSeedException&quot;</span>,<span class="stringliteral">&quot;Noise generator was not seeded before use&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">// std::cout &lt;&lt; &quot;[ Noise Generator ]: Empty channels: &quot; </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">//           &lt;&lt; emptyChannels &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// std::cout &lt;&lt; &quot;[ Noise Generator ]: Normalized integration limit: &quot; </span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">//          &lt;&lt; noiseThreshold_ &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">double</span> integral;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span>( <a class="code" href="classldmx_1_1NoiseGenerator.html#aadc92e5572d72f453f066f00a1ee4c95">useGaussianModel_</a> ) </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    integral = ROOT::Math::normal_cdf_c(<a class="code" href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">noiseThreshold_</a>, <a class="code" href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">noise_</a>, <a class="code" href="classldmx_1_1NoiseGenerator.html#a5a7bbc3d94a9b3a8da10eb7d19011e1f">pedestal_</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    integral = boost::math::cdf(complement(*<a class="code" href="classldmx_1_1NoiseGenerator.html#ad470824bdbbc40b267c7b57e4a635542">poisson_dist_</a>,<a class="code" href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">noiseThreshold_</a>-1));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Integral: &quot; </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">//          &lt;&lt; integral &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">double</span> noiseHitCount = <a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a>-&gt;Binomial(emptyChannels, integral); </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: # Noise hits: &quot; </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">//          &lt;&lt; noiseHitCount &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  std::vector&lt;double&gt; noiseHits;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> hitIndex = 0; hitIndex &lt; noiseHitCount; ++hitIndex) { </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">double</span> rand = <a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a>-&gt;Uniform();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Rand: &quot; </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//          &lt;&lt; rand &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span> draw = integral*rand; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Draw: &quot; </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//          &lt;&lt; draw &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">double</span> cumulativeProb = 1.0 - integral + draw;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Cumulative probability: &quot; </span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//          &lt;&lt; cumulativeProb &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">double</span> valueAboveThreshold;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="classldmx_1_1NoiseGenerator.html#aadc92e5572d72f453f066f00a1ee4c95">useGaussianModel_</a> )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      valueAboveThreshold = ROOT::Math::gaussian_quantile(cumulativeProb, <a class="code" href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">noise_</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      valueAboveThreshold = boost::math::quantile(*<a class="code" href="classldmx_1_1NoiseGenerator.html#ad470824bdbbc40b267c7b57e4a635542">poisson_dist_</a>,cumulativeProb);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;[ Noise Generator ]: Noise value: &quot; </span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">//          &lt;&lt; gaussAboveThreshold &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    noiseHits.push_back(valueAboveThreshold); </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">return</span> noiseHits;  </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00070">noise_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00067">noiseThreshold_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00073">pedestal_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00079">poisson_dist_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00064">random_</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00076">useGaussianModel_</a>.</p>
+<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00073">noise_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00070">noiseThreshold_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00076">pedestal_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00082">poisson_dist_</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00067">random_</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00079">useGaussianModel_</a>.</p>
+
+</div>
+</div>
+<a id="ad97ed8450d14d2b830055ec2a5ca37b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97ed8450d14d2b830055ec2a5ca37b7">&#9670;&nbsp;</a></span>hasSeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ldmx::NoiseGenerator::hasSeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Has been seeded? </p>
+
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00044">44</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a>.get()!=<span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00067">random_</a>.</p>
+
+</div>
+</div>
+<a id="aaeecc578dd406ad025a867a9f588b7b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeecc578dd406ad025a867a9f588b7b9">&#9670;&nbsp;</a></span>seedGenerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ldmx::NoiseGenerator::seedGenerator </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>seed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Seed the generator </p>
+
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8cxx_source.html#l00020">20</a> of file <a class="el" href="NoiseGenerator_8cxx_source.html">NoiseGenerator.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a>=std::make_unique&lt;TRandom3&gt;(seed);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00067">random_</a>.</p>
 
 </div>
 </div>
@@ -251,10 +311,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Set the mean noise. </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00053">53</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <a class="code" href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">noise_</a> = noise; };</div>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00059">59</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ <a class="code" href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">noise_</a> = noise; };</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00070">noise_</a>.</p>
+<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00073">noise_</a>.</p>
 
 </div>
 </div>
@@ -283,10 +343,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Set the noise threshold. </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00050">50</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <a class="code" href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">noiseThreshold_</a> = noiseThreshold; }</div>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00056">56</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <a class="code" href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">noiseThreshold_</a> = noiseThreshold; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00067">noiseThreshold_</a>.</p>
+<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00070">noiseThreshold_</a>.</p>
 
 </div>
 </div>
@@ -315,42 +375,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Set the pedestal. </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00056">56</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <a class="code" href="classldmx_1_1NoiseGenerator.html#a5a7bbc3d94a9b3a8da10eb7d19011e1f">pedestal_</a> = pedestal; }; </div>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00062">62</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{ <a class="code" href="classldmx_1_1NoiseGenerator.html#a5a7bbc3d94a9b3a8da10eb7d19011e1f">pedestal_</a> = pedestal; }; </div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00073">pedestal_</a>.</p>
-
-</div>
-</div>
-<a id="a13f907b727dba54942ac0f87a5be8ea9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13f907b727dba54942ac0f87a5be8ea9">&#9670;&nbsp;</a></span>setSeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ldmx::NoiseGenerator::setSeed </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>seed</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Set the random seed. </p>
-
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00059">59</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ <a class="code" href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">random_</a>-&gt;SetSeed(seed); }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00064">random_</a>.</p>
+<p class="reference">References <a class="el" href="NoiseGenerator_8h_source.html#l00076">pedestal_</a>.</p>
 
 </div>
 </div>
@@ -376,9 +404,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Mean noise. </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00070">70</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00073">73</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00021">generateNoiseHits()</a>, <a class="el" href="NoiseGenerator_8cxx_source.html#l00011">NoiseGenerator()</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00053">setNoise()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00024">generateNoiseHits()</a>, <a class="el" href="NoiseGenerator_8cxx_source.html#l00012">NoiseGenerator()</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00059">setNoise()</a>.</p>
 
 </div>
 </div>
@@ -403,9 +431,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The noise threshold. </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00067">67</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00070">70</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00021">generateNoiseHits()</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00050">setNoiseThreshold()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00024">generateNoiseHits()</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00056">setNoiseThreshold()</a>.</p>
 
 </div>
 </div>
@@ -430,9 +458,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Pedestal or baseline. </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00073">73</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00076">76</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00021">generateNoiseHits()</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00056">setPedestal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00024">generateNoiseHits()</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00062">setPedestal()</a>.</p>
 
 </div>
 </div>
@@ -457,9 +485,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>pdf for poisson errors </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00079">79</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00082">82</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00021">generateNoiseHits()</a>, and <a class="el" href="NoiseGenerator_8cxx_source.html#l00011">NoiseGenerator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00024">generateNoiseHits()</a>, and <a class="el" href="NoiseGenerator_8cxx_source.html#l00012">NoiseGenerator()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +501,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;TRandom3&gt; ldmx::NoiseGenerator::random_</td>
+          <td class="memname">std::unique_ptr&lt;TRandom3&gt; ldmx::NoiseGenerator::random_ {nullptr}</td>
         </tr>
       </table>
   </td>
@@ -484,9 +512,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Random number generator. </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00064">64</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00067">67</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00021">generateNoiseHits()</a>, <a class="el" href="NoiseGenerator_8cxx_source.html#l00011">NoiseGenerator()</a>, and <a class="el" href="NoiseGenerator_8h_source.html#l00059">setSeed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00024">generateNoiseHits()</a>, <a class="el" href="NoiseGenerator_8h_source.html#l00044">hasSeed()</a>, and <a class="el" href="NoiseGenerator_8cxx_source.html#l00020">seedGenerator()</a>.</p>
 
 </div>
 </div>
@@ -511,9 +539,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Gaussian flag </p>
 
-<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00076">76</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NoiseGenerator_8h_source.html#l00079">79</a> of file <a class="el" href="NoiseGenerator_8h_source.html">NoiseGenerator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00021">generateNoiseHits()</a>, and <a class="el" href="NoiseGenerator_8cxx_source.html#l00011">NoiseGenerator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NoiseGenerator_8cxx_source.html#l00024">generateNoiseHits()</a>, and <a class="el" href="NoiseGenerator_8cxx_source.html#l00012">NoiseGenerator()</a>.</p>
 
 </div>
 </div>
@@ -522,12 +550,12 @@ Private Attributes</h2></td></tr>
 <li>Tools/src/<a class="el" href="NoiseGenerator_8cxx_source.html">NoiseGenerator.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_a5a7bbc3d94a9b3a8da10eb7d19011e1f"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#a5a7bbc3d94a9b3a8da10eb7d19011e1f">ldmx::NoiseGenerator::pedestal_</a></div><div class="ttdeci">double pedestal_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00073">NoiseGenerator.h:73</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_a6bbaebf3d4e5c83ec5d40696e13502d9"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">ldmx::NoiseGenerator::noiseThreshold_</a></div><div class="ttdeci">double noiseThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00067">NoiseGenerator.h:67</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_ad470824bdbbc40b267c7b57e4a635542"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#ad470824bdbbc40b267c7b57e4a635542">ldmx::NoiseGenerator::poisson_dist_</a></div><div class="ttdeci">std::unique_ptr&lt; boost::math::poisson_distribution&lt;&gt; &gt; poisson_dist_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00079">NoiseGenerator.h:79</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_a056aaea9d0e15f1338b5d80a3978b344"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">ldmx::NoiseGenerator::noise_</a></div><div class="ttdeci">double noise_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00070">NoiseGenerator.h:70</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_aadc92e5572d72f453f066f00a1ee4c95"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#aadc92e5572d72f453f066f00a1ee4c95">ldmx::NoiseGenerator::useGaussianModel_</a></div><div class="ttdeci">bool useGaussianModel_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00076">NoiseGenerator.h:76</a></div></div>
-<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_a76da323773e2c3c89744fa2a22068691"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">ldmx::NoiseGenerator::random_</a></div><div class="ttdeci">std::unique_ptr&lt; TRandom3 &gt; random_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00064">NoiseGenerator.h:64</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_a5a7bbc3d94a9b3a8da10eb7d19011e1f"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#a5a7bbc3d94a9b3a8da10eb7d19011e1f">ldmx::NoiseGenerator::pedestal_</a></div><div class="ttdeci">double pedestal_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00076">NoiseGenerator.h:76</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_a6bbaebf3d4e5c83ec5d40696e13502d9"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#a6bbaebf3d4e5c83ec5d40696e13502d9">ldmx::NoiseGenerator::noiseThreshold_</a></div><div class="ttdeci">double noiseThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00070">NoiseGenerator.h:70</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_ad470824bdbbc40b267c7b57e4a635542"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#ad470824bdbbc40b267c7b57e4a635542">ldmx::NoiseGenerator::poisson_dist_</a></div><div class="ttdeci">std::unique_ptr&lt; boost::math::poisson_distribution&lt;&gt; &gt; poisson_dist_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00082">NoiseGenerator.h:82</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_a056aaea9d0e15f1338b5d80a3978b344"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#a056aaea9d0e15f1338b5d80a3978b344">ldmx::NoiseGenerator::noise_</a></div><div class="ttdeci">double noise_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00073">NoiseGenerator.h:73</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_aadc92e5572d72f453f066f00a1ee4c95"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#aadc92e5572d72f453f066f00a1ee4c95">ldmx::NoiseGenerator::useGaussianModel_</a></div><div class="ttdeci">bool useGaussianModel_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00079">NoiseGenerator.h:79</a></div></div>
+<div class="ttc" id="aclassldmx_1_1NoiseGenerator_html_a76da323773e2c3c89744fa2a22068691"><div class="ttname"><a href="classldmx_1_1NoiseGenerator.html#a76da323773e2c3c89744fa2a22068691">ldmx::NoiseGenerator::random_</a></div><div class="ttdeci">std::unique_ptr&lt; TRandom3 &gt; random_</div><div class="ttdef"><b>Definition:</b> <a href="NoiseGenerator_8h_source.html#l00067">NoiseGenerator.h:67</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

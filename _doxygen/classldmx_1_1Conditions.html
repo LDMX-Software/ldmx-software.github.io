@@ -80,6 +80,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8e8014f1d24dd9497278669f5933d1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8535b9f3a2a2da361416e93867ebb9d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Conditions.html#a8535b9f3a2a2da361416e93867ebb9d0">onProcessEnd</a> ()</td></tr>
 <tr class="separator:a8535b9f3a2a2da361416e93867ebb9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5dcb04b63de961a2934ee6484eecaef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Conditions.html#aa5dcb04b63de961a2934ee6484eecaef">onNewRun</a> (<a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;)</td></tr>
+<tr class="separator:aa5dcb04b63de961a2934ee6484eecaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb0dfa1db070c818fb304f537a569776"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Conditions.html#afb0dfa1db070c818fb304f537a569776">createConditionsObjectProvider</a> (const std::string &amp;classname, const std::string &amp;instancename, const std::string &amp;tagname, const <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;params)</td></tr>
 <tr class="separator:afb0dfa1db070c818fb304f537a569776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -206,7 +208,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PluginFactory_8cxx_source.html#l00065">ldmx::PluginFactory::createConditionsObjectProvider()</a>, <a class="el" href="ConditionsObjectProvider_8h_source.html#l00100">ldmx::ConditionsObjectProvider::getConditionObjectName()</a>, <a class="el" href="PluginFactory_8h_source.html#l00033">ldmx::PluginFactory::getInstance()</a>, <a class="el" href="Conditions_8h_source.html#l00100">process_</a>, and <a class="el" href="Conditions_8h_source.html#l00103">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="PluginFactory_8cxx_source.html#l00065">ldmx::PluginFactory::createConditionsObjectProvider()</a>, <a class="el" href="ConditionsObjectProvider_8h_source.html#l00108">ldmx::ConditionsObjectProvider::getConditionObjectName()</a>, <a class="el" href="PluginFactory_8h_source.html#l00033">ldmx::PluginFactory::getInstance()</a>, <a class="el" href="Conditions_8h_source.html#l00116">process_</a>, and <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
 
 </div>
 </div>
@@ -235,14 +237,28 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Primary request action for a conditions object If the object is in the cache and still valid (IOV), the cached object will be returned. If it is not in the cache, or is out of date, the () method will be called to provide the object. </p>
+<p>Primary request action for a conditions object If the object is in the cache and still valid (IOV), the cached object will be returned. If it is not in the cache, or is out of date, the <a class="el" href="classldmx_1_1ConditionsObjectProvider.html#a05523f20ad5ba5dd1d2a373506675b7e">ConditionsObjectProvider::getCondition</a> method will be called to provide the object.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classldmx_1_1Conditions.html#a82be41f80c9ecabb081187f14da1a299">getConditionPtr</a> </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>type to cast condition object to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">condition_name</td><td>name of condition to retrieve </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const reference to conditions object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00072">72</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                         {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>T&amp;<span class="keyword">&gt;</span>(*<a class="code" href="classldmx_1_1Conditions.html#a82be41f80c9ecabb081187f14da1a299">getConditionPtr</a>(condition_name));    </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00081">81</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                         {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>T&amp;<span class="keyword">&gt;</span>(*<a class="code" href="classldmx_1_1Conditions.html#a82be41f80c9ecabb081187f14da1a299">getConditionPtr</a>(condition_name));    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8cxx_source.html#l00044">getConditionPtr()</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8cxx_source.html#l00049">getConditionPtr()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EventProcessor_8h_source.html#l00153">ldmx::EventProcessor::getCondition()</a>.</p>
 
@@ -263,17 +279,24 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Access the IOV for the given condition </p>
+<p>Access the IOV for the given condition</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">condition_name</td><td>name of condition to get IOV for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Interval Of Validity for the input condition name </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8cxx_source.html#l00037">37</a> of file <a class="el" href="Conditions_8cxx_source.html">Conditions.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                                               {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">auto</span> cacheptr = <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>.find(condition_name);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">if</span> (cacheptr == <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>.end()) <span class="keywordflow">return</span> ConditionsIOV();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">return</span> cacheptr-&gt;second.iov;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Conditions_8cxx_source.html#l00042">42</a> of file <a class="el" href="Conditions_8cxx_source.html">Conditions.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">auto</span> cacheptr = <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>.find(condition_name);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">if</span> (cacheptr == <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>.end()) <span class="keywordflow">return</span> ConditionsIOV();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">return</span> cacheptr-&gt;second.iov;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00115">cache_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00134">cache_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ConditionsObjectProvider_8cxx_source.html#l00013">ldmx::ConditionsObjectProvider::requestParentCondition()</a>.</p>
 
@@ -294,62 +317,104 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Primary request action for a conditions object If the object is in the cache and still valid (IOV), the cached object will be returned. If it is not in the cache, or is out of date, the () method will be called to provide the object. </p>
+<p>Primary request action for a conditions object If the object is in the cache and still valid (IOV), the cached object will be returned. If it is not in the cache, or is out of date, the <a class="el" href="classldmx_1_1ConditionsObjectProvider.html#a05523f20ad5ba5dd1d2a373506675b7e">ConditionsObjectProvider::getCondition</a> method will be called to provide the object.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classldmx_1_1Exception.html" title="Standard base exception class with some useful output information.">Exception</a></td><td>if condition object or provider for that object is not found.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">condition_name</td><td>name of condition to retrieve </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to conditions object with input name </dd></dl>
 <p>if still valid, we return what we have</p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8cxx_source.html#l00044">44</a> of file <a class="el" href="Conditions_8cxx_source.html">Conditions.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                                                   {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">const</span> EventHeader&amp; context=*(<a class="code" href="classldmx_1_1Conditions.html#a071d1b1c0d1ef8d5a4458d9948582ac9">process_</a>.<a class="code" href="classldmx_1_1Process.html#a6c28887c34232b4bd3201202511f22d9">getEventHeader</a>());</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">auto</span> cacheptr = <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>.find(condition_name);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">if</span> (cacheptr == <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>.end()) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">auto</span> copptr = <a class="code" href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">providerMap_</a>.find(condition_name);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (copptr==<a class="code" href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">providerMap_</a>.end()) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;ConditionUnavailable&quot;</span>,std::string(<span class="stringliteral">&quot;No provider is available for : &quot;</span>+condition_name));</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::pair&lt;const ConditionsObject*,ConditionsIOV&gt; cond=copptr-&gt;second-&gt;getCondition(context);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (!cond.first) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;ConditionUnavailable&quot;</span>,std::string(<span class="stringliteral">&quot;Null condition returned for requested item : &quot;</span>+condition_name));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// first request, create a cache entry</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    CacheEntry ce;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ce.iov=cond.second;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ce.obj=cond.first;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ce.provider=copptr-&gt;second;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>[condition_name]=ce;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> ce.obj;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (cacheptr-&gt;second.iov.validForEvent(context)) <span class="keywordflow">return</span> cacheptr-&gt;second.obj;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="comment">// if not, we release the old object</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      cacheptr-&gt;second.provider-&gt;releaseConditionsObject(cacheptr-&gt;second.obj);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="comment">// now ask for a new one</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      std::pair&lt;const ConditionsObject*,ConditionsIOV&gt; cond=cacheptr-&gt;second.provider-&gt;getCondition(context);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">if</span> (!cond.first) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::stringstream s;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        s &lt;&lt; <span class="stringliteral">&quot;Unable to update condition &#39;&quot;</span> </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          &lt;&lt; condition_name &lt;&lt; <span class="stringliteral">&quot;&#39; for event &quot;</span> </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          &lt;&lt; context.getEventNumber() &lt;&lt; <span class="stringliteral">&quot; run &quot;</span> &lt;&lt; context.getRun();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (context.isRealData()) s &lt;&lt; <span class="stringliteral">&quot; DATA&quot;</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span> s &lt;&lt; <span class="stringliteral">&quot; MC&quot;</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        EXCEPTION_RAISE(<span class="stringliteral">&quot;ConditionUnavailable&quot;</span>,s.str());</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      cacheptr-&gt;second.iov=cond.second;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      cacheptr-&gt;second.obj=cond.first;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keywordflow">return</span> cond.first;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Conditions_8cxx_source.html#l00049">49</a> of file <a class="el" href="Conditions_8cxx_source.html">Conditions.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                                                   {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">const</span> EventHeader&amp; context=*(<a class="code" href="classldmx_1_1Conditions.html#a071d1b1c0d1ef8d5a4458d9948582ac9">process_</a>.<a class="code" href="classldmx_1_1Process.html#a6c28887c34232b4bd3201202511f22d9">getEventHeader</a>());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">auto</span> cacheptr = <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>.find(condition_name);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (cacheptr == <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>.end()) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> copptr = <a class="code" href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">providerMap_</a>.find(condition_name);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (copptr==<a class="code" href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">providerMap_</a>.end()) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;ConditionUnavailable&quot;</span>,std::string(<span class="stringliteral">&quot;No provider is available for : &quot;</span>+condition_name));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::pair&lt;const ConditionsObject*,ConditionsIOV&gt; cond=copptr-&gt;second-&gt;getCondition(context);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (!cond.first) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;ConditionUnavailable&quot;</span>,std::string(<span class="stringliteral">&quot;Null condition returned for requested item : &quot;</span>+condition_name));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// first request, create a cache entry</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    CacheEntry ce;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ce.iov=cond.second;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ce.obj=cond.first;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ce.provider=copptr-&gt;second;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">cache_</a>[condition_name]=ce;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> ce.obj;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (cacheptr-&gt;second.iov.validForEvent(context)) <span class="keywordflow">return</span> cacheptr-&gt;second.obj;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="comment">// if not, we release the old object</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      cacheptr-&gt;second.provider-&gt;releaseConditionsObject(cacheptr-&gt;second.obj);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="comment">// now ask for a new one</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      std::pair&lt;const ConditionsObject*,ConditionsIOV&gt; cond=cacheptr-&gt;second.provider-&gt;getCondition(context);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">if</span> (!cond.first) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::stringstream s;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        s &lt;&lt; <span class="stringliteral">&quot;Unable to update condition &#39;&quot;</span> </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          &lt;&lt; condition_name &lt;&lt; <span class="stringliteral">&quot;&#39; for event &quot;</span> </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;          &lt;&lt; context.getEventNumber() &lt;&lt; <span class="stringliteral">&quot; run &quot;</span> &lt;&lt; context.getRun();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (context.isRealData()) s &lt;&lt; <span class="stringliteral">&quot; DATA&quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">else</span> s &lt;&lt; <span class="stringliteral">&quot; MC&quot;</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        EXCEPTION_RAISE(<span class="stringliteral">&quot;ConditionUnavailable&quot;</span>,s.str());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      cacheptr-&gt;second.iov=cond.second;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      cacheptr-&gt;second.obj=cond.first;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">return</span> cond.first;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00115">cache_</a>, <a class="el" href="Process_8h_source.html#l00069">ldmx::Process::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00072">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="EventHeader_8h_source.html#l00080">ldmx::EventHeader::getRun()</a>, <a class="el" href="EventHeader_8h_source.html#l00106">ldmx::EventHeader::isRealData()</a>, <a class="el" href="Conditions_8h_source.html#l00100">process_</a>, and <a class="el" href="Conditions_8h_source.html#l00103">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00134">cache_</a>, <a class="el" href="Process_8h_source.html#l00070">ldmx::Process::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00072">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="EventHeader_8h_source.html#l00080">ldmx::EventHeader::getRun()</a>, <a class="el" href="Conditions_8h_source.html#l00126">ldmx::Conditions::CacheEntry::iov</a>, <a class="el" href="EventHeader_8h_source.html#l00106">ldmx::EventHeader::isRealData()</a>, <a class="el" href="Conditions_8h_source.html#l00130">ldmx::Conditions::CacheEntry::obj</a>, <a class="el" href="Conditions_8h_source.html#l00116">process_</a>, <a class="el" href="Conditions_8h_source.html#l00128">ldmx::Conditions::CacheEntry::provider</a>, and <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Conditions_8h_source.html#l00072">getCondition()</a>, and <a class="el" href="ConditionsObjectProvider_8cxx_source.html#l00013">ldmx::ConditionsObjectProvider::requestParentCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Conditions_8h_source.html#l00081">getCondition()</a>, and <a class="el" href="ConditionsObjectProvider_8cxx_source.html#l00013">ldmx::ConditionsObjectProvider::requestParentCondition()</a>.</p>
+
+</div>
+</div>
+<a id="aa5dcb04b63de961a2934ee6484eecaef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5dcb04b63de961a2934ee6484eecaef">&#9670;&nbsp;</a></span>onNewRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ldmx::Conditions::onNewRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;&#160;</td>
+          <td class="paramname"><em>rh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calls onNewRun for all ConditionsObjectProviders </p>
+
+<p class="definition">Definition at line <a class="el" href="Conditions_8cxx_source.html#l00037">37</a> of file <a class="el" href="Conditions_8cxx_source.html">Conditions.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                       {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ptr: <a class="code" href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">providerMap_</a>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ptr.second-&gt;onNewRun(rh);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00100">ldmx::Process::run()</a>.</p>
 
 </div>
 </div>
@@ -375,7 +440,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ptr.second-&gt;onProcessEnd();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00103">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
 
 </div>
 </div>
@@ -401,7 +466,9 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ptr.second-&gt;onProcessStart();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00103">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00100">ldmx::Process::run()</a>.</p>
 
 </div>
 </div>
@@ -427,9 +494,9 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <p><a class="el" href="classldmx_1_1Conditions.html" title="Container and cache for conditions and conditions providers.">Conditions</a> cache </p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00115">115</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00134">134</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00037">getConditionIOV()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00044">getConditionPtr()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00042">getConditionIOV()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00049">getConditionPtr()</a>.</p>
 
 </div>
 </div>
@@ -454,9 +521,9 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <p>Handle to the <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00100">100</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00116">116</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00011">createConditionsObjectProvider()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00044">getConditionPtr()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00011">createConditionsObjectProvider()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00049">getConditionPtr()</a>.</p>
 
 </div>
 </div>
@@ -481,9 +548,9 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <p>Map of who provides which condition </p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00103">103</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00119">119</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00011">createConditionsObjectProvider()</a>, <a class="el" href="Conditions_8cxx_source.html#l00044">getConditionPtr()</a>, <a class="el" href="Conditions_8cxx_source.html#l00032">onProcessEnd()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00027">onProcessStart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00011">createConditionsObjectProvider()</a>, <a class="el" href="Conditions_8cxx_source.html#l00049">getConditionPtr()</a>, <a class="el" href="Conditions_8cxx_source.html#l00037">onNewRun()</a>, <a class="el" href="Conditions_8cxx_source.html#l00032">onProcessEnd()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00027">onProcessStart()</a>.</p>
 
 </div>
 </div>
@@ -492,13 +559,13 @@ template&lt;class T &gt; </div>
 <li>Framework/src/<a class="el" href="Conditions_8cxx_source.html">Conditions.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1Process_html_a6c28887c34232b4bd3201202511f22d9"><div class="ttname"><a href="classldmx_1_1Process.html#a6c28887c34232b4bd3201202511f22d9">ldmx::Process::getEventHeader</a></div><div class="ttdeci">const EventHeader * getEventHeader() const</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00069">Process.h:69</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Conditions_html_a82be41f80c9ecabb081187f14da1a299"><div class="ttname"><a href="classldmx_1_1Conditions.html#a82be41f80c9ecabb081187f14da1a299">ldmx::Conditions::getConditionPtr</a></div><div class="ttdeci">const ConditionsObject * getConditionPtr(const std::string &amp;condition_name)</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8cxx_source.html#l00044">Conditions.cxx:44</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Conditions_html_a015797d7075c02af443f2ba23a46ace7"><div class="ttname"><a href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">ldmx::Conditions::providerMap_</a></div><div class="ttdeci">std::map&lt; std::string, ConditionsObjectProvider * &gt; providerMap_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00103">Conditions.h:103</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Conditions_html_a071d1b1c0d1ef8d5a4458d9948582ac9"><div class="ttname"><a href="classldmx_1_1Conditions.html#a071d1b1c0d1ef8d5a4458d9948582ac9">ldmx::Conditions::process_</a></div><div class="ttdeci">Process &amp; process_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00100">Conditions.h:100</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Process_html_a6c28887c34232b4bd3201202511f22d9"><div class="ttname"><a href="classldmx_1_1Process.html#a6c28887c34232b4bd3201202511f22d9">ldmx::Process::getEventHeader</a></div><div class="ttdeci">const EventHeader * getEventHeader() const</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00070">Process.h:70</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Conditions_html_a82be41f80c9ecabb081187f14da1a299"><div class="ttname"><a href="classldmx_1_1Conditions.html#a82be41f80c9ecabb081187f14da1a299">ldmx::Conditions::getConditionPtr</a></div><div class="ttdeci">const ConditionsObject * getConditionPtr(const std::string &amp;condition_name)</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8cxx_source.html#l00049">Conditions.cxx:49</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Conditions_html_a015797d7075c02af443f2ba23a46ace7"><div class="ttname"><a href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">ldmx::Conditions::providerMap_</a></div><div class="ttdeci">std::map&lt; std::string, ConditionsObjectProvider * &gt; providerMap_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00119">Conditions.h:119</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Conditions_html_a071d1b1c0d1ef8d5a4458d9948582ac9"><div class="ttname"><a href="classldmx_1_1Conditions.html#a071d1b1c0d1ef8d5a4458d9948582ac9">ldmx::Conditions::process_</a></div><div class="ttdeci">Process &amp; process_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00116">Conditions.h:116</a></div></div>
 <div class="ttc" id="aclassldmx_1_1PluginFactory_html_a725214b6a848f1e3973152c739a1b8c6"><div class="ttname"><a href="classldmx_1_1PluginFactory.html#a725214b6a848f1e3973152c739a1b8c6">ldmx::PluginFactory::createConditionsObjectProvider</a></div><div class="ttdeci">ConditionsObjectProvider * createConditionsObjectProvider(const std::string &amp;classname, const std::string &amp;objName, const std::string &amp;tagname, const Parameters &amp;params, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="PluginFactory_8cxx_source.html#l00065">PluginFactory.cxx:65</a></div></div>
-<div class="ttc" id="aclassldmx_1_1ConditionsObjectProvider_html_a0a8b3736d41408e55fc4ddc31200096e"><div class="ttname"><a href="classldmx_1_1ConditionsObjectProvider.html#a0a8b3736d41408e55fc4ddc31200096e">ldmx::ConditionsObjectProvider::getConditionObjectName</a></div><div class="ttdeci">const std::string &amp; getConditionObjectName() const</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObjectProvider_8h_source.html#l00100">ConditionsObjectProvider.h:100</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Conditions_html_a973eea971438f89a0b6c60bf1dac4a06"><div class="ttname"><a href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">ldmx::Conditions::cache_</a></div><div class="ttdeci">std::map&lt; std::string, CacheEntry &gt; cache_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00115">Conditions.h:115</a></div></div>
+<div class="ttc" id="aclassldmx_1_1ConditionsObjectProvider_html_a0a8b3736d41408e55fc4ddc31200096e"><div class="ttname"><a href="classldmx_1_1ConditionsObjectProvider.html#a0a8b3736d41408e55fc4ddc31200096e">ldmx::ConditionsObjectProvider::getConditionObjectName</a></div><div class="ttdeci">const std::string &amp; getConditionObjectName() const</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObjectProvider_8h_source.html#l00108">ConditionsObjectProvider.h:108</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Conditions_html_a973eea971438f89a0b6c60bf1dac4a06"><div class="ttname"><a href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">ldmx::Conditions::cache_</a></div><div class="ttdeci">std::map&lt; std::string, CacheEntry &gt; cache_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00134">Conditions.h:134</a></div></div>
 <div class="ttc" id="aclassldmx_1_1PluginFactory_html_ad879f248850c202d98df0f784c25ca92"><div class="ttname"><a href="classldmx_1_1PluginFactory.html#ad879f248850c202d98df0f784c25ca92">ldmx::PluginFactory::getInstance</a></div><div class="ttdeci">static PluginFactory &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="PluginFactory_8h_source.html#l00033">PluginFactory.h:33</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>

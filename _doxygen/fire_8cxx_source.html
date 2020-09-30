@@ -106,57 +106,58 @@ $(function() {
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="classldmx_1_1Exception.html">Exception</a>&amp; e) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Configuration Error [&quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ade3b8926f6efd4c020e286d3b4b1ef1a">name</a>() &lt;&lt; <span class="stringliteral">&quot;] : &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a71441f22d086b6ec85736b99ea3ab749">message</a>() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;  at &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ae03bc478674d1833f8bd407f5ed5adfa">module</a>() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ad798c621886596898f526d0a2c297a80">line</a>() &lt;&lt; <span class="stringliteral">&quot; in &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a2f9b17be542689b13a2a48845f067ea7">function</a>() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;---- LDMXSW: Configuration load complete  --------&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// If Ctrl-c is used, immediately exit the application.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">struct </span>sigaction act;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    memset (&amp;act, <span class="charliteral">&#39;\0&#39;</span>, <span class="keyword">sizeof</span>(act));</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (sigaction(SIGINT, &amp;act, NULL) &lt; 0) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        perror (<span class="stringliteral">&quot;sigaction&quot;</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// See comment above for reason why this code is commented out.</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">/* Use the sa_sigaction field because the handles has two additional parameters */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">//act.sa_sigaction = &amp;softFinish;</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">/* The SA_SIGINFO flag tells sigaction() to use the sa_sigaction field, not sa_handler. */</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">//act.sa_flags = SA_SIGINFO;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;---- LDMXSW: Starting event processing --------&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        p-&gt;run();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="classldmx_1_1Exception.html">Exception</a>&amp; e) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">//Process::run opens up the logging using the parameters passed to it from python</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">//  if an Exception is thrown, we haven&#39;t gotten to the end of Process::run</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">//  where logging is closed, so we can do one more error message and then close it.</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">auto</span> theLog_{logging::makeLogger(<span class="stringliteral">&quot;fire&quot;</span>)}; <span class="comment">//ldmx_log macro needs this variable to be named &#39;theLog_&#39;</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ade3b8926f6efd4c020e286d3b4b1ef1a">name</a>() &lt;&lt; <span class="stringliteral">&quot;] : &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a71441f22d086b6ec85736b99ea3ab749">message</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;  at &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ae03bc478674d1833f8bd407f5ed5adfa">module</a>() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ad798c621886596898f526d0a2c297a80">line</a>() &lt;&lt; <span class="stringliteral">&quot; in &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a2f9b17be542689b13a2a48845f067ea7">function</a>()</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\nStack trace: &quot;</span> &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a23cb514d89025ef13981cb0c57cde077">stackTrace</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        logging::close();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> 127; <span class="comment">//return non-zero error-status</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;---- LDMXSW: Event processing complete  --------&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">void</span> printUsage() {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Usage: fire {configuration_script.py} [arguments to configuration script]&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;     configuration_script.py  (required) python script to configure the processing&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;     arguments                (optional) passed to configuration script when run in python&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Stack trace: &quot;</span> &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a23cb514d89025ef13981cb0c57cde077">stackTrace</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;---- LDMXSW: Configuration load complete  --------&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// If Ctrl-c is used, immediately exit the application.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">struct </span>sigaction act;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    memset (&amp;act, <span class="charliteral">&#39;\0&#39;</span>, <span class="keyword">sizeof</span>(act));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (sigaction(SIGINT, &amp;act, NULL) &lt; 0) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        perror (<span class="stringliteral">&quot;sigaction&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// See comment above for reason why this code is commented out.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">/* Use the sa_sigaction field because the handles has two additional parameters */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">//act.sa_sigaction = &amp;softFinish;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">/* The SA_SIGINFO flag tells sigaction() to use the sa_sigaction field, not sa_handler. */</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//act.sa_flags = SA_SIGINFO;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;---- LDMXSW: Starting event processing --------&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        p-&gt;run();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="classldmx_1_1Exception.html">Exception</a>&amp; e) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">//Process::run opens up the logging using the parameters passed to it from python</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">//  if an Exception is thrown, we haven&#39;t gotten to the end of Process::run</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">//  where logging is closed, so we can do one more error message and then close it.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keyword">auto</span> theLog_{logging::makeLogger(<span class="stringliteral">&quot;fire&quot;</span>)}; <span class="comment">//ldmx_log macro needs this variable to be named &#39;theLog_&#39;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ade3b8926f6efd4c020e286d3b4b1ef1a">name</a>() &lt;&lt; <span class="stringliteral">&quot;] : &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a71441f22d086b6ec85736b99ea3ab749">message</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;  at &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ae03bc478674d1833f8bd407f5ed5adfa">module</a>() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#ad798c621886596898f526d0a2c297a80">line</a>() &lt;&lt; <span class="stringliteral">&quot; in &quot;</span> &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a2f9b17be542689b13a2a48845f067ea7">function</a>()</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\nStack trace: &quot;</span> &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="classldmx_1_1Exception.html#a23cb514d89025ef13981cb0c57cde077">stackTrace</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        logging::close();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> 127; <span class="comment">//return non-zero error-status</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;---- LDMXSW: Event processing complete  --------&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keywordtype">void</span> printUsage() {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Usage: fire {configuration_script.py} [arguments to configuration script]&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;     configuration_script.py  (required) python script to configure the processing&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;     arguments                (optional) passed to configuration script when run in python&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Exception_html_a71441f22d086b6ec85736b99ea3ab749"><div class="ttname"><a href="classldmx_1_1Exception.html#a71441f22d086b6ec85736b99ea3ab749">ldmx::Exception::message</a></div><div class="ttdeci">const std::string &amp; message() const</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00061">Exception.h:61</a></div></div>
-<div class="ttc" id="anamespaceldmx_html_a9028f1d46e96ae071498fc94f663d56a"><div class="ttname"><a href="namespaceldmx.html#a9028f1d46e96ae071498fc94f663d56a">ldmx::ProcessHandle</a></div><div class="ttdeci">std::unique_ptr&lt; Process &gt; ProcessHandle</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00203">Process.h:203</a></div></div>
+<div class="ttc" id="anamespaceldmx_html_a9028f1d46e96ae071498fc94f663d56a"><div class="ttname"><a href="namespaceldmx.html#a9028f1d46e96ae071498fc94f663d56a">ldmx::ProcessHandle</a></div><div class="ttdeci">std::unique_ptr&lt; Process &gt; ProcessHandle</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00211">Process.h:211</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Exception_html_ade3b8926f6efd4c020e286d3b4b1ef1a"><div class="ttname"><a href="classldmx_1_1Exception.html#ade3b8926f6efd4c020e286d3b4b1ef1a">ldmx::Exception::name</a></div><div class="ttdeci">const std::string &amp; name() const</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00053">Exception.h:53</a></div></div>
 <div class="ttc" id="aProcess_8h_html"><div class="ttname"><a href="Process_8h.html">Process.h</a></div><div class="ttdoc">Class which represents the process under execution.</div></div>
 <div class="ttc" id="aclassldmx_1_1Exception_html_a2f9b17be542689b13a2a48845f067ea7"><div class="ttname"><a href="classldmx_1_1Exception.html#a2f9b17be542689b13a2a48845f067ea7">ldmx::Exception::function</a></div><div class="ttdeci">const std::string &amp; function() const</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00077">Exception.h:77</a></div></div>

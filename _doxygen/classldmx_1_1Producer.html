@@ -63,6 +63,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abd1f979d49afb16c520ca66840d174cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ac942786d11a4768ad430d52ba6a427"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Producer.html#a7ac942786d11a4768ad430d52ba6a427">produce</a> (<a class="el" href="classldmx_1_1Event.html">Event</a> &amp;event)=0</td></tr>
 <tr class="separator:a7ac942786d11a4768ad430d52ba6a427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc2ce996ba778390b218c4fdbb48cb41"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Producer.html#abc2ce996ba778390b218c4fdbb48cb41">beforeNewRun</a> (<a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;header)</td></tr>
+<tr class="separator:abc2ce996ba778390b218c4fdbb48cb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classldmx_1_1EventProcessor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classldmx_1_1EventProcessor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classldmx_1_1EventProcessor.html">ldmx::EventProcessor</a></td></tr>
 <tr class="memitem:ab1d17dd7b596699bbcc7837b4b7ffa7a inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">EventProcessor</a> (const std::string &amp;name, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td></tr>
 <tr class="separator:ab1d17dd7b596699bbcc7837b4b7ffa7a inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -93,6 +95,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa5ba5901a215e991e59e8e86f9a0a86b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14fc8018378054e59f275e695a4064ce inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a14fc8018378054e59f275e695a4064ce">getRunNumber</a> () const</td></tr>
 <tr class="separator:a14fc8018378054e59f275e695a4064ce inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3448c57acf7c6489e18ed95c0b0165c inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ab3448c57acf7c6489e18ed95c0b0165c">getName</a> () const</td></tr>
+<tr class="separator:ab3448c57acf7c6489e18ed95c0b0165c inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4deffb5a280902e2cc54a0118ec7f29b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#a4deffb5a280902e2cc54a0118ec7f29b">createHistograms</a> (const std::vector&lt; <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &gt; &amp;histos)</td></tr>
 <tr class="separator:a4deffb5a280902e2cc54a0118ec7f29b inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -127,7 +131,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="textblock"><p><a class="el" href="classBase.html">Base</a> class for a module which produces a data product. </p>
 <dl class="section note"><dt>Note</dt><dd>This class processes a mutable copy of the event so that it can add data to it. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00252">252</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00257">257</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abd1f979d49afb16c520ca66840d174cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd1f979d49afb16c520ca66840d174cc">&#9670;&nbsp;</a></span>Producer()</h2>
@@ -171,6 +175,43 @@ The provided name should not be the class name, but rather a logical label for t
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abc2ce996ba778390b218c4fdbb48cb41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc2ce996ba778390b218c4fdbb48cb41">&#9670;&nbsp;</a></span>beforeNewRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ldmx::Producer::beforeNewRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Handle allowing producers to modify run headers before the run begins </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td><a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> for <a class="el" href="classldmx_1_1Producer.html" title="Base class for a module which produces a data product.">Producer</a> to add parameters to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classldmx_1_1Simulator.html#a37289eab1056ebed772097640b44e63f">ldmx::Simulator</a>, and <a class="el" href="classldmx_1_1test_1_1TestProducer.html#ac5f690ade2a7525f0e59f5625f5a7602">ldmx::test::TestProducer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00289">289</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{ }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a7ac942786d11a4768ad430d52ba6a427"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ac942786d11a4768ad430d52ba6a427">&#9670;&nbsp;</a></span>produce()</h2>
 
@@ -227,7 +268,7 @@ The provided name should not be the class name, but rather a logical label for t
 </div><div class="memdoc">
 <p>Constant used to track <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> types by the <a class="el" href="classldmx_1_1PluginFactory.html" title="Singleton module factory that creates EventProcessor objects.">PluginFactory</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00257">257</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00262">262</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 
 </div>
 </div>
