@@ -65,8 +65,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a655cff6a5c3a4f5003c81490306b02eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHitIO.html#a655cff6a5c3a4f5003c81490306b02eb">EcalHitIO</a> ()</td></tr>
-<tr class="separator:a655cff6a5c3a4f5003c81490306b02eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7bc18e5d31afc64e78bb7abdfe55b26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHitIO.html#aa7bc18e5d31afc64e78bb7abdfe55b26">EcalHitIO</a> (<a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a> &amp;ci)</td></tr>
+<tr class="separator:aa7bc18e5d31afc64e78bb7abdfe55b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d254507e9c658098e47f5cedf7edeed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHitIO.html#a2d254507e9c658098e47f5cedf7edeed">~EcalHitIO</a> ()</td></tr>
 <tr class="separator:a2d254507e9c658098e47f5cedf7edeed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4ec18118fec77c6a401df80a9af4307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHitIO.html#ad4ec18118fec77c6a401df80a9af4307">configure</a> (const <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;ps)</td></tr>
@@ -80,8 +80,10 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aade677a08385b4d80e458ce729ec0dde"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classldmx_1_1EcalHexReadout.html">EcalHexReadout</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHitIO.html#aade677a08385b4d80e458ce729ec0dde">hexReadout_</a></td></tr>
-<tr class="separator:aade677a08385b4d80e458ce729ec0dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605e203b0f132e04c8cc92cbd9ac454d"><td class="memItemLeft" align="right" valign="top"><a id="a605e203b0f132e04c8cc92cbd9ac454d"></a>
+<a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHitIO.html#a605e203b0f132e04c8cc92cbd9ac454d">conditionsIntf_</a></td></tr>
+<tr class="memdesc:a605e203b0f132e04c8cc92cbd9ac454d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classldmx_1_1ConditionsInterface.html" title="Handle to the conditions system, provided at construction to classes which require it.">ConditionsInterface</a>. <br /></td></tr>
+<tr class="separator:a605e203b0f132e04c8cc92cbd9ac454d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbb3471db5231f4a0bd1025684d44bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">enableHitContribs_</a> {true}</td></tr>
 <tr class="separator:a1cbb3471db5231f4a0bd1025684d44bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab17882594929565c692c6c79d530b8c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">compressHitContribs_</a> {true}</td></tr>
@@ -100,7 +102,7 @@ No hit contribution information where energy is combined but vectors are not fil
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00041">41</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00042">42</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a702c8f67bc6289a0743c1bee5d4acea4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a702c8f67bc6289a0743c1bee5d4acea4">&#9670;&nbsp;</a></span>LayerCellPair</h2>
@@ -115,13 +117,13 @@ No hit contribution information where energy is combined but vectors are not fil
 </div><div class="memdoc">
 <p>Layer-cell pair. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00048">48</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00049">49</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a655cff6a5c3a4f5003c81490306b02eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a655cff6a5c3a4f5003c81490306b02eb">&#9670;&nbsp;</a></span>EcalHitIO()</h2>
+<a id="aa7bc18e5d31afc64e78bb7abdfe55b26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7bc18e5d31afc64e78bb7abdfe55b26">&#9670;&nbsp;</a></span>EcalHitIO()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,7 +134,8 @@ No hit contribution information where energy is combined but vectors are not fil
         <tr>
           <td class="memname">ldmx::EcalHitIO::EcalHitIO </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a> &amp;&#160;</td>
+          <td class="paramname"><em>ci</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -144,8 +147,8 @@ No hit contribution information where energy is combined but vectors are not fil
 </div><div class="memdoc">
 <p>Class constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00055">55</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ }</div>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00056">56</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;: <a class="code" href="classldmx_1_1EcalHitIO.html#a605e203b0f132e04c8cc92cbd9ac454d">conditionsIntf_</a>(ci) { }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -173,8 +176,8 @@ No hit contribution information where energy is combined but vectors are not fil
 </div><div class="memdoc">
 <p>Class destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00060">60</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ }</div>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00061">61</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -184,9 +187,6 @@ No hit contribution information where energy is combined but vectors are not fil
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ldmx::EcalHitIO::configure </td>
@@ -196,23 +196,16 @@ No hit contribution information where energy is combined but vectors are not fil
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>Configure the <a class="el" href="classldmx_1_1EcalHitIO.html" title="Provides hit readout for simulated ECal detector.">EcalHitIO</a> using the passed parameters </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00065">65</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                 {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">enableHitContribs_</a>   = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;enableHitContribs&quot;</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">compressHitContribs_</a> = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;compressHitContribs&quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keyword">auto</span> hexReadout{ps.getParameter&lt;Parameters&gt;(<span class="stringliteral">&quot;ecalHexReadout&quot;</span>)};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#aade677a08385b4d80e458ce729ec0dde">hexReadout_</a> = std::make_unique&lt;EcalHexReadout&gt;(hexReadout);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8cxx_source.html#l00014">14</a> of file <a class="el" href="EcalHitIO_8cxx_source.html">EcalHitIO.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">enableHitContribs_</a>   = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;enableHitContribs&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">compressHitContribs_</a> = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;compressHitContribs&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHitIO_8h_source.html#l00113">compressHitContribs_</a>, <a class="el" href="EcalHitIO_8h_source.html#l00108">enableHitContribs_</a>, <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, and <a class="el" href="EcalHitIO_8h_source.html#l00103">hexReadout_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHitIO_8h_source.html#l00105">compressHitContribs_</a>, <a class="el" href="EcalHitIO_8h_source.html#l00100">enableHitContribs_</a>, and <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RootPersistencyManager_8cxx_source.html#l00036">ldmx::RootPersistencyManager::RootPersistencyManager()</a>.</p>
 
@@ -248,12 +241,12 @@ No hit contribution information where energy is combined but vectors are not fil
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00092">92</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">compressHitContribs_</a> = compressHitContribs;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00088">88</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">compressHitContribs_</a> = compressHitContribs;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHitIO_8h_source.html#l00113">compressHitContribs_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHitIO_8h_source.html#l00105">compressHitContribs_</a>.</p>
 
 </div>
 </div>
@@ -287,12 +280,12 @@ No hit contribution information where energy is combined but vectors are not fil
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00084">84</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                              {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">enableHitContribs_</a> = enableHitContribs;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00080">80</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                              {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">enableHitContribs_</a> = enableHitContribs;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHitIO_8h_source.html#l00108">enableHitContribs_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHitIO_8h_source.html#l00100">enableHitContribs_</a>.</p>
 
 </div>
 </div>
@@ -330,88 +323,90 @@ No hit contribution information where energy is combined but vectors are not fil
 </dl>
 <p>Assign XY position to the hit using the ECal hex readout. Z position is set from the original hit, which should be the middle of the sensor.</p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8cxx_source.html#l00014">14</a> of file <a class="el" href="EcalHitIO_8cxx_source.html">EcalHitIO.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                                                                                 {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="comment">//get ancestral mapping of tracks</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">auto</span> trackMap{<a class="code" href="classldmx_1_1UserTrackingAction.html#a7e1af9180bd57205112c6bc26ec3bfc9">UserTrackingAction::getUserTrackingAction</a>()-&gt;<a class="code" href="classldmx_1_1UserTrackingAction.html#a5e9181fe6327caca3ab916c168bfae44">getTrackMap</a>()};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> nHits = hc-&gt;GetSize();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        std::map&lt; int, SimCalorimeterHit &gt; hitMap;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// Loop over input hits from Geant4.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iHit = 0; iHit &lt; nHits; iHit++) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="comment">// Get the hit and its ID.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            G4CalorimeterHit* g4hit = (G4CalorimeterHit*) hc-&gt;GetHit(iHit);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">int</span> hitID = g4hit-&gt;getID();</div>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8cxx_source.html#l00019">19</a> of file <a class="el" href="EcalHitIO_8cxx_source.html">EcalHitIO.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                                                                 {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> EcalHexReadout&amp; hexReadout = <a class="code" href="classldmx_1_1EcalHitIO.html#a605e203b0f132e04c8cc92cbd9ac454d">conditionsIntf_</a>.<a class="code" href="classldmx_1_1ConditionsInterface.html#af7862182cc515073b90d28532c5c4d6f">getCondition</a>&lt;EcalHexReadout&gt;(EcalHexReadout::CONDITIONS_OBJECT_NAME);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//get ancestral mapping of tracks</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> trackMap{<a class="code" href="classldmx_1_1UserTrackingAction.html#a7e1af9180bd57205112c6bc26ec3bfc9">UserTrackingAction::getUserTrackingAction</a>()-&gt;<a class="code" href="classldmx_1_1UserTrackingAction.html#a5e9181fe6327caca3ab916c168bfae44">getTrackMap</a>()};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> nHits = hc-&gt;GetSize();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::map&lt; int, SimCalorimeterHit &gt; hitMap;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="comment">// See if hit exists in map already.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            std::map&lt;int, SimCalorimeterHit &gt;::iterator it = hitMap.find(hitID);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// Loop over input hits from Geant4.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iHit = 0; iHit &lt; nHits; iHit++) {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="comment">// Is it a new hit?</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">if</span> (it == hitMap.end()) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="comment">// Create sim hit and assign the ID.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                hitMap[hitID] = SimCalorimeterHit();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                hitMap[hitID].setID(hitID);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="comment">// Get the hit and its ID.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            G4CalorimeterHit* g4hit = (G4CalorimeterHit*) hc-&gt;GetHit(iHit);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordtype">int</span> hitID = g4hit-&gt;getID();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">// See if hit exists in map already.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            std::map&lt;int, SimCalorimeterHit &gt;::iterator it = hitMap.find(hitID);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordtype">double</span> x,y,z;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classldmx_1_1EcalHitIO.html#aade677a08385b4d80e458ce729ec0dde">hexReadout_</a>-&gt;getCellAbsolutePosition( hitID , x , y , z );</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                hitMap[hitID].setPosition( x , y , z );</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            } </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// Get info from the G4 hit.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordtype">float</span> edep = g4hit-&gt;getEdep();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">float</span> time = g4hit-&gt;getTime();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">int</span> pdgCode = g4hit-&gt;getPdgCode();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">// Is it a new hit?</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (it == hitMap.end()) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="comment">// Create sim hit and assign the ID.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                hitMap[hitID] = SimCalorimeterHit();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                hitMap[hitID].setID(hitID);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">double</span> x,y,z;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                hexReadout.getCellAbsolutePosition( hitID , x , y , z );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                hitMap[hitID].setPosition( x , y , z );</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// Is hit contrib output enabled?</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">enableHitContribs_</a>) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="comment">// Find the SimParticle associated with this hit.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">int</span> trackID = g4hit-&gt;getTrackID();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="comment">// Find if there is an existing hit contrib.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">int</span> contribIndex = hitMap[hitID].findContribIndex(trackID, pdgCode);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="comment">// Is contrib output being compressed and a record exists for this SimParticle and PDG code?</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">compressHitContribs_</a> &amp;&amp; contribIndex != -1) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="comment">// Update an existing hit contrib.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    hitMap[hitID].updateContrib(contribIndex, edep, time);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="comment">// Add a hit contrib because all steps are being saved or there is not an existing record.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    hitMap[hitID].addContrib(trackMap-&gt;findIncident(trackID),trackID, pdgCode, edep, time);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            } </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">// Get info from the G4 hit.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">float</span> edep = g4hit-&gt;getEdep();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">float</span> time = g4hit-&gt;getTime();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">int</span> pdgCode = g4hit-&gt;getPdgCode();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// Is hit contrib output enabled?</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">enableHitContribs_</a>) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="comment">// Find the SimParticle associated with this hit.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">int</span> trackID = g4hit-&gt;getTrackID();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment">// Find if there is an existing hit contrib.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordtype">int</span> contribIndex = hitMap[hitID].findContribIndex(trackID, pdgCode);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="comment">// Is contrib output being compressed and a record exists for this SimParticle and PDG code?</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">compressHitContribs_</a> &amp;&amp; contribIndex != -1) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="comment">// Update an existing hit contrib.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    hitMap[hitID].updateContrib(contribIndex, edep, time);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="comment">// Hit contributions are not being saved so manually increment the edep and set time.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                hitMap[hitID].setEdep(hitMap[hitID].getEdep() + edep);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">if</span> (time &lt; hitMap[hitID].getTime() || hitMap[hitID].getTime() == 0) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    hitMap[hitID].setTime(time);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            } <span class="comment">//contrib output enabled or not</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }<span class="comment">//loop through geant4 hits</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">//copy aggregated hits into output collection</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        outputColl.clear();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span> &amp;mapHit : hitMap ) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            outputColl.push_back( mapHit.second );</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="comment">// Add a hit contrib because all steps are being saved or there is not an existing record.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    hitMap[hitID].addContrib(trackMap-&gt;findIncident(trackID),trackID, pdgCode, edep, time);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="comment">// Hit contributions are not being saved so manually increment the edep and set time.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                hitMap[hitID].setEdep(hitMap[hitID].getEdep() + edep);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">if</span> (time &lt; hitMap[hitID].getTime() || hitMap[hitID].getTime() == 0) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    hitMap[hitID].setTime(time);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            } <span class="comment">//contrib output enabled or not</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }<span class="comment">//loop through geant4 hits</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">//copy aggregated hits into output collection</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        outputColl.clear();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">for</span> ( <span class="keyword">auto</span> &amp;mapHit : hitMap ) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            outputColl.push_back( mapHit.second );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalHitIO_8h_source.html#l00113">compressHitContribs_</a>, <a class="el" href="EcalHitIO_8h_source.html#l00108">enableHitContribs_</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00110">ldmx::G4CalorimeterHit::getEdep()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00094">ldmx::G4CalorimeterHit::getID()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00160">ldmx::G4CalorimeterHit::getPdgCode()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00144">ldmx::G4CalorimeterHit::getTime()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00078">ldmx::G4CalorimeterHit::getTrackID()</a>, <a class="el" href="UserTrackingAction_8h_source.html#l00066">ldmx::UserTrackingAction::getTrackMap()</a>, <a class="el" href="UserTrackingAction_8h_source.html#l00092">ldmx::UserTrackingAction::getUserTrackingAction()</a>, and <a class="el" href="EcalHitIO_8h_source.html#l00103">hexReadout_</a>.</p>
+<p class="reference">References <a class="el" href="EcalHitIO_8h_source.html#l00105">compressHitContribs_</a>, <a class="el" href="EcalHitIO_8h_source.html#l00095">conditionsIntf_</a>, <a class="el" href="EcalHitIO_8h_source.html#l00100">enableHitContribs_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00085">ldmx::EcalHexReadout::getCellAbsolutePosition()</a>, <a class="el" href="ConditionsInterface_8h_source.html#l00031">ldmx::ConditionsInterface::getCondition()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00110">ldmx::G4CalorimeterHit::getEdep()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00094">ldmx::G4CalorimeterHit::getID()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00160">ldmx::G4CalorimeterHit::getPdgCode()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00144">ldmx::G4CalorimeterHit::getTime()</a>, <a class="el" href="G4CalorimeterHit_8h_source.html#l00078">ldmx::G4CalorimeterHit::getTrackID()</a>, <a class="el" href="UserTrackingAction_8h_source.html#l00066">ldmx::UserTrackingAction::getTrackMap()</a>, and <a class="el" href="UserTrackingAction_8h_source.html#l00092">ldmx::UserTrackingAction::getUserTrackingAction()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RootPersistencyManager_8cxx_source.html#l00119">ldmx::RootPersistencyManager::writeHitsCollections()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RootPersistencyManager_8cxx_source.html#l00123">ldmx::RootPersistencyManager::writeHitsCollections()</a>.</p>
 
 </div>
 </div>
@@ -437,9 +432,9 @@ No hit contribution information where energy is combined but vectors are not fil
 </div><div class="memdoc">
 <p>Enable compression of hit contributions by <a class="el" href="classldmx_1_1SimParticle.html">SimParticle</a> and PDG code. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00113">113</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00105">105</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalHitIO_8h_source.html#l00065">configure()</a>, <a class="el" href="EcalHitIO_8h_source.html#l00092">setCompressHitContribs()</a>, and <a class="el" href="EcalHitIO_8cxx_source.html#l00014">writeHitsCollection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalHitIO_8cxx_source.html#l00014">configure()</a>, <a class="el" href="EcalHitIO_8h_source.html#l00088">setCompressHitContribs()</a>, and <a class="el" href="EcalHitIO_8cxx_source.html#l00019">writeHitsCollection()</a>.</p>
 
 </div>
 </div>
@@ -464,37 +459,9 @@ No hit contribution information where energy is combined but vectors are not fil
 </div><div class="memdoc">
 <p>Enable hit contribution output. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00108">108</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00100">100</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalHitIO_8h_source.html#l00065">configure()</a>, <a class="el" href="EcalHitIO_8h_source.html#l00084">setEnableHitContribs()</a>, and <a class="el" href="EcalHitIO_8cxx_source.html#l00014">writeHitsCollection()</a>.</p>
-
-</div>
-</div>
-<a id="aade677a08385b4d80e458ce729ec0dde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aade677a08385b4d80e458ce729ec0dde">&#9670;&nbsp;</a></span>hexReadout_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="classldmx_1_1EcalHexReadout.html">EcalHexReadout</a>&gt; ldmx::EcalHitIO::hexReadout_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Hex cell readout.</p>
-<p>Inputs v12 geometry parameters </p>
-
-<p class="definition">Definition at line <a class="el" href="EcalHitIO_8h_source.html#l00103">103</a> of file <a class="el" href="EcalHitIO_8h_source.html">EcalHitIO.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="EcalHitIO_8h_source.html#l00065">configure()</a>, and <a class="el" href="EcalHitIO_8cxx_source.html#l00014">writeHitsCollection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalHitIO_8cxx_source.html#l00014">configure()</a>, <a class="el" href="EcalHitIO_8h_source.html#l00080">setEnableHitContribs()</a>, and <a class="el" href="EcalHitIO_8cxx_source.html#l00019">writeHitsCollection()</a>.</p>
 
 </div>
 </div>
@@ -503,10 +470,11 @@ No hit contribution information where energy is combined but vectors are not fil
 <li>SimCore/src/<a class="el" href="EcalHitIO_8cxx_source.html">EcalHitIO.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1EcalHitIO_html_ab17882594929565c692c6c79d530b8c0"><div class="ttname"><a href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">ldmx::EcalHitIO::compressHitContribs_</a></div><div class="ttdeci">bool compressHitContribs_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHitIO_8h_source.html#l00113">EcalHitIO.h:113</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHitIO_html_ab17882594929565c692c6c79d530b8c0"><div class="ttname"><a href="classldmx_1_1EcalHitIO.html#ab17882594929565c692c6c79d530b8c0">ldmx::EcalHitIO::compressHitContribs_</a></div><div class="ttdeci">bool compressHitContribs_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHitIO_8h_source.html#l00105">EcalHitIO.h:105</a></div></div>
 <div class="ttc" id="aclassldmx_1_1UserTrackingAction_html_a7e1af9180bd57205112c6bc26ec3bfc9"><div class="ttname"><a href="classldmx_1_1UserTrackingAction.html#a7e1af9180bd57205112c6bc26ec3bfc9">ldmx::UserTrackingAction::getUserTrackingAction</a></div><div class="ttdeci">static UserTrackingAction * getUserTrackingAction()</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackingAction_8h_source.html#l00092">UserTrackingAction.h:92</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHitIO_html_aade677a08385b4d80e458ce729ec0dde"><div class="ttname"><a href="classldmx_1_1EcalHitIO.html#aade677a08385b4d80e458ce729ec0dde">ldmx::EcalHitIO::hexReadout_</a></div><div class="ttdeci">std::unique_ptr&lt; EcalHexReadout &gt; hexReadout_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHitIO_8h_source.html#l00103">EcalHitIO.h:103</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHitIO_html_a1cbb3471db5231f4a0bd1025684d44bf"><div class="ttname"><a href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">ldmx::EcalHitIO::enableHitContribs_</a></div><div class="ttdeci">bool enableHitContribs_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHitIO_8h_source.html#l00108">EcalHitIO.h:108</a></div></div>
+<div class="ttc" id="aclassldmx_1_1ConditionsInterface_html_af7862182cc515073b90d28532c5c4d6f"><div class="ttname"><a href="classldmx_1_1ConditionsInterface.html#af7862182cc515073b90d28532c5c4d6f">ldmx::ConditionsInterface::getCondition</a></div><div class="ttdeci">const T &amp; getCondition(const std::string &amp;condition_name)</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsInterface_8h_source.html#l00031">ConditionsInterface.h:31</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHitIO_html_a605e203b0f132e04c8cc92cbd9ac454d"><div class="ttname"><a href="classldmx_1_1EcalHitIO.html#a605e203b0f132e04c8cc92cbd9ac454d">ldmx::EcalHitIO::conditionsIntf_</a></div><div class="ttdeci">ConditionsInterface &amp; conditionsIntf_</div><div class="ttdoc">ConditionsInterface.</div><div class="ttdef"><b>Definition:</b> <a href="EcalHitIO_8h_source.html#l00095">EcalHitIO.h:95</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalHitIO_html_a1cbb3471db5231f4a0bd1025684d44bf"><div class="ttname"><a href="classldmx_1_1EcalHitIO.html#a1cbb3471db5231f4a0bd1025684d44bf">ldmx::EcalHitIO::enableHitContribs_</a></div><div class="ttdeci">bool enableHitContribs_</div><div class="ttdef"><b>Definition:</b> <a href="EcalHitIO_8h_source.html#l00100">EcalHitIO.h:100</a></div></div>
 <div class="ttc" id="aclassldmx_1_1UserTrackingAction_html_a5e9181fe6327caca3ab916c168bfae44"><div class="ttname"><a href="classldmx_1_1UserTrackingAction.html#a5e9181fe6327caca3ab916c168bfae44">ldmx::UserTrackingAction::getTrackMap</a></div><div class="ttdeci">TrackMap * getTrackMap()</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackingAction_8h_source.html#l00066">UserTrackingAction.h:66</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>

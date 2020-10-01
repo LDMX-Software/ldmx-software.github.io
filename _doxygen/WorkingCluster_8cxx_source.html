@@ -56,16 +56,16 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    WorkingCluster::WorkingCluster(<span class="keyword">const</span> EcalHit* eh, <span class="keyword">const</span> std::shared_ptr&lt;EcalHexReadout&gt; hex) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    WorkingCluster::WorkingCluster(<span class="keyword">const</span> EcalHit* eh, <span class="keyword">const</span> EcalHexReadout&amp; hex) {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        add(eh, hex);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> WorkingCluster::add(<span class="keyword">const</span> EcalHit* eh, <span class="keyword">const</span> std::shared_ptr&lt;EcalHexReadout&gt; hex) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> WorkingCluster::add(<span class="keyword">const</span> EcalHit* eh, <span class="keyword">const</span> EcalHexReadout&amp; hex) {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">double</span> hitE = eh-&gt;getEnergy();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">double</span> hitX, hitY, hitZ;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        hex-&gt;getCellAbsolutePosition( eh-&gt;getID() <span class="comment">//this ID integer is converted into an EcalID</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        hex.getCellAbsolutePosition( eh-&gt;getID() <span class="comment">//this ID integer is converted into an EcalID</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                , hitX , hitY , hitZ );</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">double</span> newE = hitE + centroid_.E();</div>

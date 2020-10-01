@@ -59,8 +59,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a52502692d200ba7a1c57af69cc79427d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1DetectorConstruction.html#a52502692d200ba7a1c57af69cc79427d">DetectorConstruction</a> (G4GDMLParser *theParser, <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;parameters)</td></tr>
-<tr class="separator:a52502692d200ba7a1c57af69cc79427d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cd564f197a60c0f4664f120a431725f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1DetectorConstruction.html#a3cd564f197a60c0f4664f120a431725f">DetectorConstruction</a> (G4GDMLParser *theParser, <a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;parameters, <a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a> &amp;ci)</td></tr>
+<tr class="separator:a3cd564f197a60c0f4664f120a431725f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3fc8ead5edcfcd77632103464a39f21"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1DetectorConstruction.html#ab3fc8ead5edcfcd77632103464a39f21">~DetectorConstruction</a> ()</td></tr>
 <tr class="separator:ab3fc8ead5edcfcd77632103464a39f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8ff6e83f0d5272617db28fb8a76806b"><td class="memItemLeft" align="right" valign="top">G4VPhysicalVolume *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1DetectorConstruction.html#ab8ff6e83f0d5272617db28fb8a76806b">Construct</a> ()</td></tr>
@@ -89,8 +89,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="DetectorConstruction_8h_source.html#l00043">43</a> of file <a class="el" href="DetectorConstruction_8h_source.html">DetectorConstruction.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a52502692d200ba7a1c57af69cc79427d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52502692d200ba7a1c57af69cc79427d">&#9670;&nbsp;</a></span>DetectorConstruction()</h2>
+<a id="a3cd564f197a60c0f4664f120a431725f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cd564f197a60c0f4664f120a431725f">&#9670;&nbsp;</a></span>DetectorConstruction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -105,7 +105,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>parameters</em>&#160;</td>
+          <td class="paramname"><em>parameters</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a> &amp;&#160;</td>
+          <td class="paramname"><em>ci</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -122,8 +128,8 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="DetectorConstruction_8cxx_source.html#l00010">10</a> of file <a class="el" href="DetectorConstruction_8cxx_source.html">DetectorConstruction.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                                                              :</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="classldmx_1_1DetectorConstruction.html#a58fce28d156436d9981dcbcd4c5dcbff">parser_</a>(theParser), <a class="code" href="classldmx_1_1DetectorConstruction.html#ad262d9d65047043f79df43398759f41e">auxInfoReader_</a>(<span class="keyword">new</span> AuxInfoReader(theParser, parameters)) {</div>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                                                                                       :</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;      <a class="code" href="classldmx_1_1DetectorConstruction.html#a58fce28d156436d9981dcbcd4c5dcbff">parser_</a>(theParser), <a class="code" href="classldmx_1_1DetectorConstruction.html#ad262d9d65047043f79df43398759f41e">auxInfoReader_</a>(<span class="keyword">new</span> AuxInfoReader(theParser, parameters, ci)) {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                <a class="code" href="classldmx_1_1DetectorConstruction.html#a785aa93476cef113759805c39b3517fa">parameters_</a> = parameters; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
 </div><!-- fragment -->
@@ -188,7 +194,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1DetectorConstruction.html#a58fce28d156436d9981dcbcd4c5dcbff">parser_</a>-&gt;GetWorldVolume();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="AuxInfoReader_8cxx_source.html#l00143">ldmx::AuxInfoReader::assignAuxInfoToVolumes()</a>, <a class="el" href="DetectorConstruction_8h_source.html#l00086">auxInfoReader_</a>, <a class="el" href="DetectorConstruction_8h_source.html#l00081">parser_</a>, and <a class="el" href="AuxInfoReader_8cxx_source.html#l00043">ldmx::AuxInfoReader::readGlobalAuxInfo()</a>.</p>
+<p class="reference">References <a class="el" href="AuxInfoReader_8cxx_source.html#l00142">ldmx::AuxInfoReader::assignAuxInfoToVolumes()</a>, <a class="el" href="DetectorConstruction_8h_source.html#l00086">auxInfoReader_</a>, <a class="el" href="DetectorConstruction_8h_source.html#l00081">parser_</a>, and <a class="el" href="AuxInfoReader_8cxx_source.html#l00043">ldmx::AuxInfoReader::readGlobalAuxInfo()</a>.</p>
 
 </div>
 </div>
@@ -221,9 +227,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1DetectorConstruction.html#ad262d9d65047043f79df43398759f41e">auxInfoReader_</a>-&gt;<a class="code" href="classldmx_1_1AuxInfoReader.html#ad1f681f54d6099e12067814908053523">getDetectorHeader</a>();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="DetectorConstruction_8h_source.html#l00086">auxInfoReader_</a>, and <a class="el" href="AuxInfoReader_8h_source.html#l00060">ldmx::AuxInfoReader::getDetectorHeader()</a>.</p>
+<p class="reference">References <a class="el" href="DetectorConstruction_8h_source.html#l00086">auxInfoReader_</a>, and <a class="el" href="AuxInfoReader_8h_source.html#l00061">ldmx::AuxInfoReader::getDetectorHeader()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00127">ldmx::Simulator::beforeNewRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00126">ldmx::Simulator::beforeNewRun()</a>.</p>
 
 </div>
 </div>
@@ -289,8 +295,8 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1DetectorConstruction_html_ad262d9d65047043f79df43398759f41e"><div class="ttname"><a href="classldmx_1_1DetectorConstruction.html#ad262d9d65047043f79df43398759f41e">ldmx::DetectorConstruction::auxInfoReader_</a></div><div class="ttdeci">AuxInfoReader * auxInfoReader_</div><div class="ttdef"><b>Definition:</b> <a href="DetectorConstruction_8h_source.html#l00086">DetectorConstruction.h:86</a></div></div>
 <div class="ttc" id="aclassldmx_1_1DetectorConstruction_html_a785aa93476cef113759805c39b3517fa"><div class="ttname"><a href="classldmx_1_1DetectorConstruction.html#a785aa93476cef113759805c39b3517fa">ldmx::DetectorConstruction::parameters_</a></div><div class="ttdeci">Parameters parameters_</div><div class="ttdoc">The set of parameters used to configure this class.</div><div class="ttdef"><b>Definition:</b> <a href="DetectorConstruction_8h_source.html#l00089">DetectorConstruction.h:89</a></div></div>
-<div class="ttc" id="aclassldmx_1_1AuxInfoReader_html_a88d503f59b8b41b2ff09db6556a6cc5d"><div class="ttname"><a href="classldmx_1_1AuxInfoReader.html#a88d503f59b8b41b2ff09db6556a6cc5d">ldmx::AuxInfoReader::assignAuxInfoToVolumes</a></div><div class="ttdeci">void assignAuxInfoToVolumes()</div><div class="ttdef"><b>Definition:</b> <a href="AuxInfoReader_8cxx_source.html#l00143">AuxInfoReader.cxx:143</a></div></div>
-<div class="ttc" id="aclassldmx_1_1AuxInfoReader_html_ad1f681f54d6099e12067814908053523"><div class="ttname"><a href="classldmx_1_1AuxInfoReader.html#ad1f681f54d6099e12067814908053523">ldmx::AuxInfoReader::getDetectorHeader</a></div><div class="ttdeci">ldmx::DetectorHeader * getDetectorHeader()</div><div class="ttdef"><b>Definition:</b> <a href="AuxInfoReader_8h_source.html#l00060">AuxInfoReader.h:60</a></div></div>
+<div class="ttc" id="aclassldmx_1_1AuxInfoReader_html_a88d503f59b8b41b2ff09db6556a6cc5d"><div class="ttname"><a href="classldmx_1_1AuxInfoReader.html#a88d503f59b8b41b2ff09db6556a6cc5d">ldmx::AuxInfoReader::assignAuxInfoToVolumes</a></div><div class="ttdeci">void assignAuxInfoToVolumes()</div><div class="ttdef"><b>Definition:</b> <a href="AuxInfoReader_8cxx_source.html#l00142">AuxInfoReader.cxx:142</a></div></div>
+<div class="ttc" id="aclassldmx_1_1AuxInfoReader_html_ad1f681f54d6099e12067814908053523"><div class="ttname"><a href="classldmx_1_1AuxInfoReader.html#ad1f681f54d6099e12067814908053523">ldmx::AuxInfoReader::getDetectorHeader</a></div><div class="ttdeci">ldmx::DetectorHeader * getDetectorHeader()</div><div class="ttdef"><b>Definition:</b> <a href="AuxInfoReader_8h_source.html#l00061">AuxInfoReader.h:61</a></div></div>
 <div class="ttc" id="aclassldmx_1_1AuxInfoReader_html_a48882cc7c826f11193ddbba02d90a200"><div class="ttname"><a href="classldmx_1_1AuxInfoReader.html#a48882cc7c826f11193ddbba02d90a200">ldmx::AuxInfoReader::readGlobalAuxInfo</a></div><div class="ttdeci">void readGlobalAuxInfo()</div><div class="ttdef"><b>Definition:</b> <a href="AuxInfoReader_8cxx_source.html#l00043">AuxInfoReader.cxx:43</a></div></div>
 <div class="ttc" id="aclassldmx_1_1DetectorConstruction_html_a58fce28d156436d9981dcbcd4c5dcbff"><div class="ttname"><a href="classldmx_1_1DetectorConstruction.html#a58fce28d156436d9981dcbcd4c5dcbff">ldmx::DetectorConstruction::parser_</a></div><div class="ttdeci">G4GDMLParser * parser_</div><div class="ttdef"><b>Definition:</b> <a href="DetectorConstruction_8h_source.html#l00081">DetectorConstruction.h:81</a></div></div>
 <!-- start footer part -->

@@ -126,7 +126,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <li>Amplitude of EcalRecHit matches <a class="el" href="classldmx_1_1SimCalorimeterHit.html" title="Stores simulated calorimeter hit information.">SimCalorimeterHit</a> EDep with the same ID </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00096">96</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00100">100</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae18fe1c262c3e9326f9bf50e98b644f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae18fe1c262c3e9326f9bf50e98b644f2">&#9670;&nbsp;</a></span>analyze()</h2>
@@ -160,39 +160,39 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Implements <a class="el" href="classldmx_1_1Analyzer.html#abf95b685858c4b01883553f31be68727">ldmx::Analyzer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00103">103</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                        {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            std::vector&lt;SimCalorimeterHit&gt; simHits;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            REQUIRE_NOTHROW(simHits = event.getCollection&lt;SimCalorimeterHit&gt;( <span class="stringliteral">&quot;EcalSimHits&quot;</span> ));</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            std::map&lt;EcalID,double&gt; correct_energies;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hit : simHits ) correct_energies[EcalID(hit.getID())] = hit.getEdep();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            std::vector&lt;EcalHit&gt; recHits;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            REQUIRE_NOTHROW(recHits = event.getCollection&lt;EcalHit&gt;( <span class="stringliteral">&quot;EcalRecHits&quot;</span> ));</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hit : recHits ) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                EcalID id(hit.getID());</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordflow">if</span> ( correct_energies.count(<span class="keywordtype">id</span>) &gt; 0 ) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <span class="comment">//not a noise hit</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    <span class="comment">//argument to epsilon is maximum relative difference allowed</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    <span class="comment">//  right now, I set it to 0.05 (5% allowed difference)</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    CHECK_FALSE( hit.isNoise() );</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    CHECK( hit.getAmplitude() == Approx( correct_energies.at(<span class="keywordtype">id</span>) ).epsilon(0.05) );</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    correct_energies.erase(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="comment">//should be flagged as noise</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    CHECK( hit.isNoise() );</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="comment">// did we lose any energies during the processing?</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="comment">//  all of the correct eneriges should have been visited and erased in the above loop</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            CHECK( correct_energies.size() == 0 );</div>
+<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00107">107</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                        {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            std::vector&lt;SimCalorimeterHit&gt; simHits;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            REQUIRE_NOTHROW(simHits = event.getCollection&lt;SimCalorimeterHit&gt;( <span class="stringliteral">&quot;EcalSimHits&quot;</span> ));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            std::map&lt;EcalID,double&gt; correct_energies;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hit : simHits ) correct_energies[EcalID(hit.getID())] = hit.getEdep();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            std::vector&lt;EcalHit&gt; recHits;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            REQUIRE_NOTHROW(recHits = event.getCollection&lt;EcalHit&gt;( <span class="stringliteral">&quot;EcalRecHits&quot;</span> ));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hit : recHits ) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                EcalID id(hit.getID());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordflow">if</span> ( correct_energies.count(<span class="keywordtype">id</span>) &gt; 0 ) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="comment">//not a noise hit</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    <span class="comment">//argument to epsilon is maximum relative difference allowed</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    <span class="comment">//  right now, I set it to 0.05 (5% allowed difference)</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    CHECK_FALSE( hit.isNoise() );</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    CHECK( hit.getAmplitude() == Approx( correct_energies.at(<span class="keywordtype">id</span>) ).epsilon(0.05) );</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    correct_energies.erase(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    <span class="comment">//should be flagged as noise</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    CHECK( hit.isNoise() );</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            }</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="comment">// did we lose any energies during the processing?</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="comment">//  all of the correct eneriges should have been visited and erased in the above loop</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            CHECK( correct_energies.size() == 0 );</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -121,37 +121,39 @@ Functions</h2></td></tr>
 </ul>
 <p>@TODO still need to expand to multiple contribs in a single sim hit @TODO check layer weights are being calculated correctly somehow </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00157">157</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">const</span> std::string config_file{<span class="stringliteral">&quot;/tmp/ecal_digi_pipeline_test.py&quot;</span>};</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    std::ofstream cf( config_file );</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;from LDMX.Framework import ldmxcfg&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;p = ldmxcfg.Process( &#39;testEcalDigis&#39; )&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;p.maxEvents = 1&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;from LDMX.Ecal import digi&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;p.outputFiles = [ &#39;/tmp/ecal_digi_pipeline_test.root&#39; ]&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;p.sequence = [&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    ldmxcfg.Producer(&#39;fakeSimHits&#39;,&#39;ldmx::test::EcalFakeSimHits&#39;,&#39;Ecal&#39;),&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    digi.EcalDigiProducer(),&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    digi.EcalRecProducer(),&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    ldmxcfg.Analyzer(&#39;checkEcalHits&#39;,&#39;ldmx::test::EcalCheckEnergyReconstruction&#39;,&#39;Ecal&#39;),&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    ]&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">/* debug pause before running</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">    cf &lt;&lt; &quot;p.pause()&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    cf.close();</div>
+<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00161">161</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">const</span> std::string config_file{<span class="stringliteral">&quot;/tmp/ecal_digi_pipeline_test.py&quot;</span>};</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    std::ofstream cf( config_file );</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;from LDMX.Framework import ldmxcfg&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;p = ldmxcfg.Process( &#39;testEcalDigis&#39; )&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;p.maxEvents = 1&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;from LDMX.Ecal import digi&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;p.outputFiles = [ &#39;/tmp/ecal_digi_pipeline_test.root&#39; ]&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;from LDMX.Ecal import EcalGeometry&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;geom = EcalGeometry.EcalGeometryProvider.getInstance()&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;p.sequence = [&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    ldmxcfg.Producer(&#39;fakeSimHits&#39;,&#39;ldmx::test::EcalFakeSimHits&#39;,&#39;Ecal&#39;),&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    digi.EcalDigiProducer(),&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    digi.EcalRecProducer(),&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    ldmxcfg.Analyzer(&#39;checkEcalHits&#39;,&#39;ldmx::test::EcalCheckEnergyReconstruction&#39;,&#39;Ecal&#39;),&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    cf &lt;&lt; <span class="stringliteral">&quot;    ]&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">char</span> **args;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="namespaceldmx.html#a9028f1d46e96ae071498fc94f663d56a">ldmx::ProcessHandle</a> p;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="classldmx_1_1ConfigurePython.html">ldmx::ConfigurePython</a> cfg( config_file , args , 0 );</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    REQUIRE_NOTHROW(p = cfg.makeProcess());</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    p-&gt;run();</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">/* debug pause before running</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">    cf &lt;&lt; &quot;p.pause()&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    cf.close();</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">char</span> **args;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="namespaceldmx.html#a9028f1d46e96ae071498fc94f663d56a">ldmx::ProcessHandle</a> p;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="classldmx_1_1ConfigurePython.html">ldmx::ConfigurePython</a> cfg( config_file , args , 0 );</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    REQUIRE_NOTHROW(p = cfg.makeProcess());</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    p-&gt;run();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ConfigurePython_8cxx_source.html#l00263">ldmx::ConfigurePython::makeProcess()</a>.</p>
 

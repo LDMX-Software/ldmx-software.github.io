@@ -143,8 +143,6 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:a39c0330112ddddc94899d8e21f013960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6eee2ce5c3dbf1489131c7802583e963"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalRecProducer.html#a6eee2ce5c3dbf1489131c7802583e963">secondOrderEnergyCorrection_</a></td></tr>
 <tr class="separator:a6eee2ce5c3dbf1489131c7802583e963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a950e8fb98fbdb47f15c108048d4014f7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classldmx_1_1EcalHexReadout.html">EcalHexReadout</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalRecProducer.html#a950e8fb98fbdb47f15c108048d4014f7">ecalHexReadout_</a></td></tr>
-<tr class="separator:a950e8fb98fbdb47f15c108048d4014f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -175,7 +173,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="textblock"><p>Performs basic ECal reconstruction. </p>
 <p>Reconstruction is done from the EcalDigi samples. Some hard-coded parameters are used for position and energy calculation. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00035">35</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00034">34</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab9aed8e2bf6703d1956b941aebfdac2b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9aed8e2bf6703d1956b941aebfdac2b">&#9670;&nbsp;</a></span>EcalRecProducer()</h2>
@@ -204,10 +202,10 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8cxx_source.html#l00011">11</a> of file <a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                                                            :</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">Producer</a>(name, process) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8cxx_source.html#l00012">12</a> of file <a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                                            :</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">Producer</a>(name, process) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -235,8 +233,8 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8cxx_source.html#l00015">15</a> of file <a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{ }</div>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8cxx_source.html#l00016">16</a> of file <a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -268,31 +266,29 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Reimplemented from <a class="el" href="classldmx_1_1EventProcessor.html#a9482dccbb5ce7bc2efe0537c679c0ec0">ldmx::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8cxx_source.html#l00017">17</a> of file <a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                  {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#afa3ffa6b36318a320dc94ff3a933fb26">digiCollName_</a> = ps.getParameter&lt;std::string&gt;( <span class="stringliteral">&quot;digiCollName&quot;</span> );</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#ae6688fd878e340f93470c5e61a06b892">digiPassName_</a> = ps.getParameter&lt;std::string&gt;( <span class="stringliteral">&quot;digiPassName&quot;</span> );</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a39c0330112ddddc94899d8e21f013960">layerWeights_</a> = ps.getParameter&lt;std::vector&lt;double&gt;&gt;( <span class="stringliteral">&quot;layerWeights&quot;</span> );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a6eee2ce5c3dbf1489131c7802583e963">secondOrderEnergyCorrection_</a> = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;secondOrderEnergyCorrection&quot;</span> );</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">auto</span> hexReadout{ps.getParameter&lt;Parameters&gt;(<span class="stringliteral">&quot;hexReadout&quot;</span>)};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a950e8fb98fbdb47f15c108048d4014f7">ecalHexReadout_</a> = std::make_unique&lt;EcalHexReadout&gt;(hexReadout);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a4b5fb58a5edd99fbf5fbf61455d7ba03">mipSiEnergy_</a> = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;mipSiEnergy&quot;</span> );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#ac8f75edb394e244a17a994ae9a1682c2">mV_</a>          = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;mV&quot;</span> );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">auto</span> hgcrocParams{ps.getParameter&lt;Parameters&gt;(<span class="stringliteral">&quot;hgcroc&quot;</span>)};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#ad0d79aef283ed703ffc3731b113d8ca2">pedestal_</a>    = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;pedestal&quot;</span> );</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#aee400c875f32536856a13e7866ca3950">gain_</a>        = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;gain&quot;</span> );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a>  = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;clockCycle&quot;</span> );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a5dcdbd2545cc1066cbe87b61084768be">drainRate_</a>   = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;drainRate&quot;</span> );</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#aaff87bc468f6bb75b41f77abc539faca">totMax_</a>      = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;totMax&quot;</span> );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8cxx_source.html#l00018">18</a> of file <a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                  {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#afa3ffa6b36318a320dc94ff3a933fb26">digiCollName_</a> = ps.getParameter&lt;std::string&gt;( <span class="stringliteral">&quot;digiCollName&quot;</span> );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#ae6688fd878e340f93470c5e61a06b892">digiPassName_</a> = ps.getParameter&lt;std::string&gt;( <span class="stringliteral">&quot;digiPassName&quot;</span> );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a39c0330112ddddc94899d8e21f013960">layerWeights_</a> = ps.getParameter&lt;std::vector&lt;double&gt;&gt;( <span class="stringliteral">&quot;layerWeights&quot;</span> );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a6eee2ce5c3dbf1489131c7802583e963">secondOrderEnergyCorrection_</a> = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;secondOrderEnergyCorrection&quot;</span> );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a4b5fb58a5edd99fbf5fbf61455d7ba03">mipSiEnergy_</a> = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;mipSiEnergy&quot;</span> );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#ac8f75edb394e244a17a994ae9a1682c2">mV_</a>          = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;mV&quot;</span> );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">auto</span> hgcrocParams{ps.getParameter&lt;Parameters&gt;(<span class="stringliteral">&quot;hgcroc&quot;</span>)};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#ad0d79aef283ed703ffc3731b113d8ca2">pedestal_</a>    = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;pedestal&quot;</span> );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#aee400c875f32536856a13e7866ca3950">gain_</a>        = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;gain&quot;</span> );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a>  = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;clockCycle&quot;</span> );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#a5dcdbd2545cc1066cbe87b61084768be">drainRate_</a>   = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;drainRate&quot;</span> );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classldmx_1_1EcalRecProducer.html#aaff87bc468f6bb75b41f77abc539faca">totMax_</a>      = hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;( <span class="stringliteral">&quot;totMax&quot;</span> );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalRecProducer_8h_source.html#l00081">clockCycle_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00066">digiCollName_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00069">digiPassName_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00084">drainRate_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00116">ecalHexReadout_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00078">gain_</a>, <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00100">layerWeights_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00072">mipSiEnergy_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00090">mV_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00075">pedestal_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00110">secondOrderEnergyCorrection_</a>, and <a class="el" href="EcalRecProducer_8h_source.html#l00087">totMax_</a>.</p>
+<p class="reference">References <a class="el" href="EcalRecProducer_8h_source.html#l00080">clockCycle_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00065">digiCollName_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00068">digiPassName_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00083">drainRate_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00077">gain_</a>, <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00099">layerWeights_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00071">mipSiEnergy_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00089">mV_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00074">pedestal_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00109">secondOrderEnergyCorrection_</a>, and <a class="el" href="EcalRecProducer_8h_source.html#l00086">totMax_</a>.</p>
 
 </div>
 </div>
@@ -324,129 +320,134 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Implements <a class="el" href="classldmx_1_1Producer.html#a7ac942786d11a4768ad430d52ba6a427">ldmx::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8cxx_source.html#l00040">40</a> of file <a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                              {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::vector&lt;EcalHit&gt; ecalRecHits;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">auto</span> ecalDigis = <span class="keyword">event</span>.getObject&lt;HgcrocDigiCollection&gt;( <a class="code" href="classldmx_1_1EcalRecProducer.html#afa3ffa6b36318a320dc94ff3a933fb26">digiCollName_</a> , <a class="code" href="classldmx_1_1EcalRecProducer.html#ae6688fd878e340f93470c5e61a06b892">digiPassName_</a> );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> numDigiHits = ecalDigis.getNumDigis();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">//loop through digis</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> ( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iDigi = 0; iDigi &lt; numDigiHits; iDigi++ ) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">auto</span> digi = ecalDigis.getDigi( iDigi );</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">//ID from first digi sample</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">//  assuming rest of samples have same ID</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            EcalID id(digi.id());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">//ID to real space position</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">double</span> x,y,z;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classldmx_1_1EcalRecProducer.html#a950e8fb98fbdb47f15c108048d4014f7">ecalHexReadout_</a>-&gt;getCellAbsolutePosition( <span class="keywordtype">id</span> , x , y , z );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">//TOA is the time of arrival with respect to the 25ns clock window</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">//  TODO what to do if hit NOT in first clock cycle?</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordtype">double</span> timeRelClock25 = digi.begin()-&gt;toa()*(<a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a>/1024); <span class="comment">//ns</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">double</span> hitTime = timeRelClock25;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="comment">//get energy estimate from all digi samples</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">double</span> siEnergy(0.);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">/* debug printout</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">            std::cout &lt;&lt; &quot;Recon { &quot;</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">                &lt;&lt; &quot;ID: &quot; &lt;&lt; id &lt;&lt; &quot;, &quot;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">                &lt;&lt; &quot;TOA: &quot; &lt;&lt; hitTime &lt;&lt; &quot;ns } &quot;;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">                */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span> ( digi.isTOT() ) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="comment">//TOT - number of clock ticks that pulse was over threshold</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">//  this is related to the amplitude of the pulse approximately through a linear drain rate</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="comment">//  the amplitude of the pulse is related to the energy deposited</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordtype">int</span> tdc = digi.tot();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">double</span> tot = ( double(tdc)/4096. ) * <a class="code" href="classldmx_1_1EcalRecProducer.html#aaff87bc468f6bb75b41f77abc539faca">totMax_</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">//convert the time over threshold into a total energy deposited in the silicon</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">//  (time over threshold [ns]) * (rate of drain [mV/ns]) * (convert to energy [MeV/mV])</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                siEnergy = tot * <a class="code" href="classldmx_1_1EcalRecProducer.html#a5dcdbd2545cc1066cbe87b61084768be">drainRate_</a> * <a class="code" href="classldmx_1_1EcalRecProducer.html#ac8f75edb394e244a17a994ae9a1682c2">mV_</a>;</div>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8cxx_source.html#l00039">39</a> of file <a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                              {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Get the Ecal Geometry</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> EcalHexReadout&amp; hexReadout = getCondition&lt;EcalHexReadout&gt;(EcalHexReadout::CONDITIONS_OBJECT_NAME);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::vector&lt;EcalHit&gt; ecalRecHits;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">auto</span> ecalDigis = <span class="keyword">event</span>.getObject&lt;HgcrocDigiCollection&gt;( <a class="code" href="classldmx_1_1EcalRecProducer.html#afa3ffa6b36318a320dc94ff3a933fb26">digiCollName_</a> , <a class="code" href="classldmx_1_1EcalRecProducer.html#ae6688fd878e340f93470c5e61a06b892">digiPassName_</a> );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">int</span> numDigiHits = ecalDigis.getNumDigis();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">//loop through digis</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> ( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iDigi = 0; iDigi &lt; numDigiHits; iDigi++ ) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">auto</span> digi = ecalDigis.getDigi( iDigi );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">//ID from first digi sample</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">//  assuming rest of samples have same ID</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            EcalID id(digi.id());</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">//ID to real space position</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">double</span> x,y,z;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            hexReadout.getCellAbsolutePosition( <span class="keywordtype">id</span> , x , y , z );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">//get energy and time estimate from digi information</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">//TODO: Energy estimate from N samples can (and should be) refined</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">//TOA is the time of arrival with respect to the 25ns clock window</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="comment">//  TODO what to do if hit NOT in first clock cycle?</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">double</span> timeRelClock25 = digi.begin()-&gt;toa()*(<a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a>/1024); <span class="comment">//ns</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">double</span> hitTime = timeRelClock25;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">//get energy estimate from all digi samples</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">double</span> siEnergy(0.);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="comment">/* debug printout</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">            std::cout &lt;&lt; &quot;Recon { &quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">                &lt;&lt; &quot;ID: &quot; &lt;&lt; id &lt;&lt; &quot;, &quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">                &lt;&lt; &quot;TOA: &quot; &lt;&lt; hitTime &lt;&lt; &quot;ns } &quot;;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">                */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> ( digi.isTOT() ) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="comment">//TOT - number of clock ticks that pulse was over threshold</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">//  this is related to the amplitude of the pulse approximately through a linear drain rate</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="comment">//  the amplitude of the pulse is related to the energy deposited</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordtype">int</span> tdc = digi.tot();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordtype">double</span> tot = ( double(tdc)/4096. ) * <a class="code" href="classldmx_1_1EcalRecProducer.html#aaff87bc468f6bb75b41f77abc539faca">totMax_</a>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">/* debug printout</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">                std::cout &lt;&lt; &quot;TOT Mode -&gt; &quot;</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">                          &lt;&lt; tdc &lt;&lt; &quot; TDC Counts -&gt; &quot; &lt;&lt; tot &lt;&lt; &quot; ns -&gt; &quot;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">                          &lt;&lt; siEnergy &lt;&lt; &quot; MeV&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">                 */</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="comment">//ADC mode of readout</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="comment">//ADC - voltage measurement at a specific time of the pulse</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="comment">// Pulse Shape:</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="comment">//  p[0]/(1.0+exp(p[1](t-p[2]+p[3]-p[4])))/(1.0+exp(p[5]*(t-p[6]+p[3]-p[4])))</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="comment">//  p[0] = amplitude to be fit (TBD)</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">//  p[1] = -0.345 shape parameter - rate of up slope</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="comment">//  p[2] = 70.6547 shape parameter - time of up slope relative to shape fit</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="comment">//  p[3] = 77.732 shape parameter - time of peak relative to shape fit</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="comment">//  p[4] = peak time to be fit (TBD)</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">//  p[5] = 0.140068 shape parameter - rate of down slope</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">//  p[6] = 87.7649 shape paramter - time of down slope relative to shape fit</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="comment">//These measurements can be used to fit the pulse shape if TOT is not available</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                TH1F voltageMeasurements( <span class="stringliteral">&quot;voltageMeasurements&quot;</span> , <span class="stringliteral">&quot;voltageMeasurements&quot;</span> ,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        10.*<a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a> , 0. , 10.*<a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a> );</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordtype">double</span> maxMeas{0.};</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordtype">int</span> numWholeClocks{0};</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">for</span> ( <span class="keyword">auto</span> it = digi.begin(); it &lt; digi.end(); it++) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    <span class="keywordtype">double</span> voltage = (it-&gt;adc_t() - <a class="code" href="classldmx_1_1EcalRecProducer.html#ad0d79aef283ed703ffc3731b113d8ca2">pedestal_</a>)*<a class="code" href="classldmx_1_1EcalRecProducer.html#aee400c875f32536856a13e7866ca3950">gain_</a>; <span class="comment">//mV</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    <span class="keywordflow">if</span> ( voltage &gt; maxMeas ) maxMeas = voltage;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    <span class="keywordtype">double</span> time    = numWholeClocks*<a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a>; <span class="comment">//+ offestWithinClock; //ns</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    voltageMeasurements.Fill( time , voltage );</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">if</span> ( <span class="keyword">false</span> ) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    <span class="comment">//fit the voltage measurements with the pulse function</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <span class="comment">//  would need to access the pulse function in HGCROC somehow</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <span class="comment">//voltageMeasurements.Fit( &amp;pulseFunc_ , &quot;QW&quot; );</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    <span class="comment">//get the silicon energy from the fitted voltage amplitude in mV</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    <span class="comment">//siEnergy = (pulseFunc_.GetParameter( 0 ))*mV_;</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="comment">//just use the maximum measured voltage</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    siEnergy = (maxMeas)*<a class="code" href="classldmx_1_1EcalRecProducer.html#ac8f75edb394e244a17a994ae9a1682c2">mV_</a>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="comment">/* debug printout</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">                std::cout &lt;&lt; &quot;ADC Mode -&gt; &quot;</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">                          &lt;&lt; siEnergy &lt;&lt; &quot; MeV&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">                 */</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="comment">//incorporate layer weights</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordtype">int</span> layer = <span class="keywordtype">id</span>.layer();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordtype">double</span> recHitEnergy = </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                ( (siEnergy / <a class="code" href="classldmx_1_1EcalRecProducer.html#a4b5fb58a5edd99fbf5fbf61455d7ba03">mipSiEnergy_</a> )*<a class="code" href="classldmx_1_1EcalRecProducer.html#a39c0330112ddddc94899d8e21f013960">layerWeights_</a>.at(layer)+siEnergy )*<a class="code" href="classldmx_1_1EcalRecProducer.html#a6eee2ce5c3dbf1489131c7802583e963">secondOrderEnergyCorrection_</a>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="comment">//copy over information to rec hit structure in new collection</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            EcalHit recHit;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            recHit.setID( <span class="keywordtype">id</span>.raw() );</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            recHit.setXPos( x );</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            recHit.setYPos( y );</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            recHit.setZPos( z );</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            recHit.setAmplitude( siEnergy );</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            recHit.setEnergy( recHitEnergy );</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            recHit.setTime( hitTime );</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            ecalRecHits.push_back( recHit );</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">if</span> (event.exists(<span class="stringliteral">&quot;EcalSimHits&quot;</span>)) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="comment">//ecal sim hits exist ==&gt; label which hits are real and which are pure noise</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keyword">auto</span> ecalSimHits{<span class="keyword">event</span>.getCollection&lt;SimCalorimeterHit&gt;(<span class="stringliteral">&quot;EcalSimHits&quot;</span>)};</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            std::set&lt;int&gt; real_hits;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; sim_hit : ecalSimHits ) real_hits.insert( sim_hit.getID() );</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; hit : ecalRecHits ) hit.setNoise( real_hits.find(hit.getID()) == real_hits.end() );</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">//add collection to event bus</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keyword">event</span>.add( <span class="stringliteral">&quot;EcalRecHits&quot;</span>, ecalRecHits );</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">//convert the time over threshold into a total energy deposited in the silicon</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">//  (time over threshold [ns]) * (rate of drain [mV/ns]) * (convert to energy [MeV/mV])</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                siEnergy = tot * <a class="code" href="classldmx_1_1EcalRecProducer.html#a5dcdbd2545cc1066cbe87b61084768be">drainRate_</a> * <a class="code" href="classldmx_1_1EcalRecProducer.html#ac8f75edb394e244a17a994ae9a1682c2">mV_</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">/* debug printout</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">                std::cout &lt;&lt; &quot;TOT Mode -&gt; &quot;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">                          &lt;&lt; tdc &lt;&lt; &quot; TDC Counts -&gt; &quot; &lt;&lt; tot &lt;&lt; &quot; ns -&gt; &quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">                          &lt;&lt; siEnergy &lt;&lt; &quot; MeV&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">                 */</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="comment">//ADC mode of readout</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">//ADC - voltage measurement at a specific time of the pulse</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="comment">// Pulse Shape:</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="comment">//  p[0]/(1.0+exp(p[1](t-p[2]+p[3]-p[4])))/(1.0+exp(p[5]*(t-p[6]+p[3]-p[4])))</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="comment">//  p[0] = amplitude to be fit (TBD)</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">//  p[1] = -0.345 shape parameter - rate of up slope</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">//  p[2] = 70.6547 shape parameter - time of up slope relative to shape fit</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="comment">//  p[3] = 77.732 shape parameter - time of peak relative to shape fit</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="comment">//  p[4] = peak time to be fit (TBD)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">//  p[5] = 0.140068 shape parameter - rate of down slope</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="comment">//  p[6] = 87.7649 shape paramter - time of down slope relative to shape fit</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="comment">//These measurements can be used to fit the pulse shape if TOT is not available</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                TH1F voltageMeasurements( <span class="stringliteral">&quot;voltageMeasurements&quot;</span> , <span class="stringliteral">&quot;voltageMeasurements&quot;</span> ,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        10.*<a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a> , 0. , 10.*<a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a> );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordtype">double</span> maxMeas{0.};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordtype">int</span> numWholeClocks{0};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">for</span> ( <span class="keyword">auto</span> it = digi.begin(); it &lt; digi.end(); it++) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keywordtype">double</span> voltage = (it-&gt;adc_t() - <a class="code" href="classldmx_1_1EcalRecProducer.html#ad0d79aef283ed703ffc3731b113d8ca2">pedestal_</a>)*<a class="code" href="classldmx_1_1EcalRecProducer.html#aee400c875f32536856a13e7866ca3950">gain_</a>; <span class="comment">//mV</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">if</span> ( voltage &gt; maxMeas ) maxMeas = voltage;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="keywordtype">double</span> time    = numWholeClocks*<a class="code" href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">clockCycle_</a>; <span class="comment">//+ offestWithinClock; //ns</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    voltageMeasurements.Fill( time , voltage );</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">if</span> ( <span class="keyword">false</span> ) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    <span class="comment">//fit the voltage measurements with the pulse function</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <span class="comment">//  would need to access the pulse function in HGCROC somehow</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="comment">//voltageMeasurements.Fit( &amp;pulseFunc_ , &quot;QW&quot; );</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    <span class="comment">//get the silicon energy from the fitted voltage amplitude in mV</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    <span class="comment">//siEnergy = (pulseFunc_.GetParameter( 0 ))*mV_;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    <span class="comment">//just use the maximum measured voltage</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    siEnergy = (maxMeas)*<a class="code" href="classldmx_1_1EcalRecProducer.html#ac8f75edb394e244a17a994ae9a1682c2">mV_</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="comment">/* debug printout</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">                std::cout &lt;&lt; &quot;ADC Mode -&gt; &quot;</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">                          &lt;&lt; siEnergy &lt;&lt; &quot; MeV&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">                 */</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="comment">//incorporate layer weights</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordtype">int</span> layer = <span class="keywordtype">id</span>.layer();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordtype">double</span> recHitEnergy = </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                ( (siEnergy / <a class="code" href="classldmx_1_1EcalRecProducer.html#a4b5fb58a5edd99fbf5fbf61455d7ba03">mipSiEnergy_</a> )*<a class="code" href="classldmx_1_1EcalRecProducer.html#a39c0330112ddddc94899d8e21f013960">layerWeights_</a>.at(layer)+siEnergy )*<a class="code" href="classldmx_1_1EcalRecProducer.html#a6eee2ce5c3dbf1489131c7802583e963">secondOrderEnergyCorrection_</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment">//copy over information to rec hit structure in new collection</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            EcalHit recHit;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            recHit.setID( <span class="keywordtype">id</span>.raw() );</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            recHit.setXPos( x );</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            recHit.setYPos( y );</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            recHit.setZPos( z );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            recHit.setAmplitude( siEnergy );</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            recHit.setEnergy( recHitEnergy );</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            recHit.setTime( hitTime );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            ecalRecHits.push_back( recHit );</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (event.exists(<span class="stringliteral">&quot;EcalSimHits&quot;</span>)) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="comment">//ecal sim hits exist ==&gt; label which hits are real and which are pure noise</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keyword">auto</span> ecalSimHits{<span class="keyword">event</span>.getCollection&lt;SimCalorimeterHit&gt;(<span class="stringliteral">&quot;EcalSimHits&quot;</span>)};</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            std::set&lt;int&gt; real_hits;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; sim_hit : ecalSimHits ) real_hits.insert( sim_hit.getID() );</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">auto</span>&amp; hit : ecalRecHits ) hit.setNoise( real_hits.find(hit.getID()) == real_hits.end() );</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">//add collection to event bus</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">event</span>.add( <span class="stringliteral">&quot;EcalRecHits&quot;</span>, ecalRecHits );</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalRecProducer_8h_source.html#l00081">clockCycle_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00066">digiCollName_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00069">digiPassName_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00084">drainRate_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00116">ecalHexReadout_</a>, <a class="el" href="Event_8h_source.html#l00103">ldmx::Event::exists()</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00078">gain_</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00376">ldmx::HgcrocDigiCollection::getNumDigis()</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00100">layerWeights_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00072">mipSiEnergy_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00090">mV_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00075">pedestal_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00110">secondOrderEnergyCorrection_</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00081">ldmx::CalorimeterHit::setAmplitude()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00099">ldmx::CalorimeterHit::setEnergy()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00061">ldmx::CalorimeterHit::setID()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00115">ldmx::CalorimeterHit::setTime()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00131">ldmx::CalorimeterHit::setXPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00147">ldmx::CalorimeterHit::setYPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00163">ldmx::CalorimeterHit::setZPos()</a>, and <a class="el" href="EcalRecProducer_8h_source.html#l00087">totMax_</a>.</p>
+<p class="reference">References <a class="el" href="EcalRecProducer_8h_source.html#l00080">clockCycle_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00065">digiCollName_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00068">digiPassName_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00083">drainRate_</a>, <a class="el" href="Event_8h_source.html#l00103">ldmx::Event::exists()</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00077">gain_</a>, <a class="el" href="EcalHexReadout_8h_source.html#l00085">ldmx::EcalHexReadout::getCellAbsolutePosition()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00376">ldmx::HgcrocDigiCollection::getNumDigis()</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00099">layerWeights_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00071">mipSiEnergy_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00089">mV_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00074">pedestal_</a>, <a class="el" href="EcalRecProducer_8h_source.html#l00109">secondOrderEnergyCorrection_</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00081">ldmx::CalorimeterHit::setAmplitude()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00099">ldmx::CalorimeterHit::setEnergy()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00061">ldmx::CalorimeterHit::setID()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00115">ldmx::CalorimeterHit::setTime()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00131">ldmx::CalorimeterHit::setXPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00147">ldmx::CalorimeterHit::setYPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00163">ldmx::CalorimeterHit::setZPos()</a>, and <a class="el" href="EcalRecProducer_8h_source.html#l00086">totMax_</a>.</p>
 
 </div>
 </div>
@@ -472,9 +473,9 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Digi Collection Name to use as input </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00066">66</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00065">65</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00017">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00040">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00018">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00039">produce()</a>.</p>
 
 </div>
 </div>
@@ -499,36 +500,9 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Digi Pass Name to use as input </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00069">69</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00068">68</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00017">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00040">produce()</a>.</p>
-
-</div>
-</div>
-<a id="a950e8fb98fbdb47f15c108048d4014f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a950e8fb98fbdb47f15c108048d4014f7">&#9670;&nbsp;</a></span>ecalHexReadout_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="classldmx_1_1EcalHexReadout.html">EcalHexReadout</a>&gt; ldmx::EcalRecProducer::ecalHexReadout_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Helper Instance of <a class="el" href="classldmx_1_1EcalHexReadout.html" title="Implementation of ECal hexagonal cell readout.">EcalHexReadout</a>: performs real space x,y postion &lt;-&gt; module,cell ID translation </p>
-
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00116">116</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00017">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00040">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00018">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00039">produce()</a>.</p>
 
 </div>
 </div>
@@ -554,9 +528,9 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <p>Layer Weights to use for this reconstruction</p>
 <p>Layer weights account for the energy lost in the absorber directly in front of the Silicon layer where the measured energy was deposited. These are determined by calculating the average amount of energy lost by a MIP passing through the extra material between sensitive layers. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00100">100</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00099">99</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00017">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00040">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00018">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00039">produce()</a>.</p>
 
 </div>
 </div>
@@ -582,9 +556,9 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <p>Second Order Energy Correction to use for this reconstruction</p>
 <p>This is a shift applied to all of the energies in order to have the mean of the total energy deposited in the ECal be accurate. This is less physically motivated than the layer weights and is more of a calibration number. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00110">110</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalRecProducer_8h_source.html#l00109">109</a> of file <a class="el" href="EcalRecProducer_8h_source.html">EcalRecProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00017">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00040">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalRecProducer_8cxx_source.html#l00018">configure()</a>, and <a class="el" href="EcalRecProducer_8cxx_source.html#l00039">produce()</a>.</p>
 
 </div>
 </div>
@@ -593,19 +567,18 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <li>Ecal/src/<a class="el" href="EcalRecProducer_8cxx_source.html">EcalRecProducer.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_aaff87bc468f6bb75b41f77abc539faca"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#aaff87bc468f6bb75b41f77abc539faca">ldmx::EcalRecProducer::totMax_</a></div><div class="ttdeci">double totMax_</div><div class="ttdoc">Maximum TOT measured by the chip [ns].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00087">EcalRecProducer.h:87</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_aee400c875f32536856a13e7866ca3950"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#aee400c875f32536856a13e7866ca3950">ldmx::EcalRecProducer::gain_</a></div><div class="ttdeci">double gain_</div><div class="ttdoc">Conversion from ADC counts to voltage [mV].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00078">EcalRecProducer.h:78</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a39c0330112ddddc94899d8e21f013960"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a39c0330112ddddc94899d8e21f013960">ldmx::EcalRecProducer::layerWeights_</a></div><div class="ttdeci">std::vector&lt; double &gt; layerWeights_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00100">EcalRecProducer.h:100</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_aaff87bc468f6bb75b41f77abc539faca"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#aaff87bc468f6bb75b41f77abc539faca">ldmx::EcalRecProducer::totMax_</a></div><div class="ttdeci">double totMax_</div><div class="ttdoc">Maximum TOT measured by the chip [ns].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00086">EcalRecProducer.h:86</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_aee400c875f32536856a13e7866ca3950"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#aee400c875f32536856a13e7866ca3950">ldmx::EcalRecProducer::gain_</a></div><div class="ttdeci">double gain_</div><div class="ttdoc">Conversion from ADC counts to voltage [mV].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00077">EcalRecProducer.h:77</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a39c0330112ddddc94899d8e21f013960"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a39c0330112ddddc94899d8e21f013960">ldmx::EcalRecProducer::layerWeights_</a></div><div class="ttdeci">std::vector&lt; double &gt; layerWeights_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00099">EcalRecProducer.h:99</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Producer_html_abd1f979d49afb16c520ca66840d174cc"><div class="ttname"><a href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">ldmx::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00060">EventProcessor.cxx:60</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a6eee2ce5c3dbf1489131c7802583e963"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a6eee2ce5c3dbf1489131c7802583e963">ldmx::EcalRecProducer::secondOrderEnergyCorrection_</a></div><div class="ttdeci">double secondOrderEnergyCorrection_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00110">EcalRecProducer.h:110</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a48409017505d548dfa37f423b2bb29a3"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">ldmx::EcalRecProducer::clockCycle_</a></div><div class="ttdeci">double clockCycle_</div><div class="ttdoc">Length of clock cycle [ns].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00081">EcalRecProducer.h:81</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a4b5fb58a5edd99fbf5fbf61455d7ba03"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a4b5fb58a5edd99fbf5fbf61455d7ba03">ldmx::EcalRecProducer::mipSiEnergy_</a></div><div class="ttdeci">double mipSiEnergy_</div><div class="ttdoc">Energy [MeV] deposited by a MIP in Si 0.5mm thick.</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00072">EcalRecProducer.h:72</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_ae6688fd878e340f93470c5e61a06b892"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#ae6688fd878e340f93470c5e61a06b892">ldmx::EcalRecProducer::digiPassName_</a></div><div class="ttdeci">std::string digiPassName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00069">EcalRecProducer.h:69</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_afa3ffa6b36318a320dc94ff3a933fb26"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#afa3ffa6b36318a320dc94ff3a933fb26">ldmx::EcalRecProducer::digiCollName_</a></div><div class="ttdeci">std::string digiCollName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00066">EcalRecProducer.h:66</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_ad0d79aef283ed703ffc3731b113d8ca2"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#ad0d79aef283ed703ffc3731b113d8ca2">ldmx::EcalRecProducer::pedestal_</a></div><div class="ttdeci">double pedestal_</div><div class="ttdoc">Pedestal [ADC Counts] on below signal.</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00075">EcalRecProducer.h:75</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a950e8fb98fbdb47f15c108048d4014f7"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a950e8fb98fbdb47f15c108048d4014f7">ldmx::EcalRecProducer::ecalHexReadout_</a></div><div class="ttdeci">std::unique_ptr&lt; EcalHexReadout &gt; ecalHexReadout_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00116">EcalRecProducer.h:116</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_ac8f75edb394e244a17a994ae9a1682c2"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#ac8f75edb394e244a17a994ae9a1682c2">ldmx::EcalRecProducer::mV_</a></div><div class="ttdeci">double mV_</div><div class="ttdoc">Conversion from voltage [mV] to energy [MeV].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00090">EcalRecProducer.h:90</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a5dcdbd2545cc1066cbe87b61084768be"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a5dcdbd2545cc1066cbe87b61084768be">ldmx::EcalRecProducer::drainRate_</a></div><div class="ttdeci">double drainRate_</div><div class="ttdoc">Rate that voltage drains off chip after saturation [mV/ns].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00084">EcalRecProducer.h:84</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a6eee2ce5c3dbf1489131c7802583e963"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a6eee2ce5c3dbf1489131c7802583e963">ldmx::EcalRecProducer::secondOrderEnergyCorrection_</a></div><div class="ttdeci">double secondOrderEnergyCorrection_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00109">EcalRecProducer.h:109</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a48409017505d548dfa37f423b2bb29a3"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a48409017505d548dfa37f423b2bb29a3">ldmx::EcalRecProducer::clockCycle_</a></div><div class="ttdeci">double clockCycle_</div><div class="ttdoc">Length of clock cycle [ns].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00080">EcalRecProducer.h:80</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a4b5fb58a5edd99fbf5fbf61455d7ba03"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a4b5fb58a5edd99fbf5fbf61455d7ba03">ldmx::EcalRecProducer::mipSiEnergy_</a></div><div class="ttdeci">double mipSiEnergy_</div><div class="ttdoc">Energy [MeV] deposited by a MIP in Si 0.5mm thick.</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00071">EcalRecProducer.h:71</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_ae6688fd878e340f93470c5e61a06b892"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#ae6688fd878e340f93470c5e61a06b892">ldmx::EcalRecProducer::digiPassName_</a></div><div class="ttdeci">std::string digiPassName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00068">EcalRecProducer.h:68</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_afa3ffa6b36318a320dc94ff3a933fb26"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#afa3ffa6b36318a320dc94ff3a933fb26">ldmx::EcalRecProducer::digiCollName_</a></div><div class="ttdeci">std::string digiCollName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00065">EcalRecProducer.h:65</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_ad0d79aef283ed703ffc3731b113d8ca2"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#ad0d79aef283ed703ffc3731b113d8ca2">ldmx::EcalRecProducer::pedestal_</a></div><div class="ttdeci">double pedestal_</div><div class="ttdoc">Pedestal [ADC Counts] on below signal.</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00074">EcalRecProducer.h:74</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_ac8f75edb394e244a17a994ae9a1682c2"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#ac8f75edb394e244a17a994ae9a1682c2">ldmx::EcalRecProducer::mV_</a></div><div class="ttdeci">double mV_</div><div class="ttdoc">Conversion from voltage [mV] to energy [MeV].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00089">EcalRecProducer.h:89</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalRecProducer_html_a5dcdbd2545cc1066cbe87b61084768be"><div class="ttname"><a href="classldmx_1_1EcalRecProducer.html#a5dcdbd2545cc1066cbe87b61084768be">ldmx::EcalRecProducer::drainRate_</a></div><div class="ttdeci">double drainRate_</div><div class="ttdoc">Rate that voltage drains off chip after saturation [mV/ns].</div><div class="ttdef"><b>Definition:</b> <a href="EcalRecProducer_8h_source.html#l00083">EcalRecProducer.h:83</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

@@ -59,8 +59,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a584c28256516381492e85d76556b56b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1RunManager.html#a584c28256516381492e85d76556b56b1">RunManager</a> (<a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;parameters)</td></tr>
-<tr class="separator:a584c28256516381492e85d76556b56b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c38c592a670eec05b9983e606689fb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1RunManager.html#a6c38c592a670eec05b9983e606689fb9">RunManager</a> (<a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;parameters, <a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a> &amp;ci)</td></tr>
+<tr class="separator:a6c38c592a670eec05b9983e606689fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a800bb79b9b9663def1e35dc4533bd3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1RunManager.html#a8a800bb79b9b9663def1e35dc4533bd3">~RunManager</a> ()</td></tr>
 <tr class="separator:a8a800bb79b9b9663def1e35dc4533bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e91812db1ebe5eb38fda57ea7628612"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1RunManager.html#a0e91812db1ebe5eb38fda57ea7628612">setupPhysics</a> ()</td></tr>
@@ -90,14 +90,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3ba9ed0ff17b0138f702cb9f103e6ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7529b38836f07bb97dd684d9b5da496"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1RunManager.html#ac7529b38836f07bb97dd684d9b5da496">useRootSeed_</a> {false}</td></tr>
 <tr class="separator:ac7529b38836f07bb97dd684d9b5da496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc528596fecdb04d23dbd68263f31e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1RunManager.html#adbc528596fecdb04d23dbd68263f31e3">conditionsIntf_</a></td></tr>
+<tr class="separator:adbc528596fecdb04d23dbd68263f31e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extension of Geant4 run manager. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00039">39</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00040">40</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a584c28256516381492e85d76556b56b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a584c28256516381492e85d76556b56b1">&#9670;&nbsp;</a></span>RunManager()</h2>
+<a id="a6c38c592a670eec05b9983e606689fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c38c592a670eec05b9983e606689fb9">&#9670;&nbsp;</a></span>RunManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -106,15 +108,25 @@ Private Attributes</h2></td></tr>
           <td class="memname">ldmx::RunManager::RunManager </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classldmx_1_1Parameters.html">Parameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>parameters</em></td><td>)</td>
+          <td class="paramname"><em>parameters</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a> &amp;&#160;</td>
+          <td class="paramname"><em>ci</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Class constructor. </p>
 
 <p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00036">36</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                 {  </div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                                          : <a class="code" href="classldmx_1_1RunManager.html#adbc528596fecdb04d23dbd68263f31e3">conditionsIntf_</a>(ci) {  </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classldmx_1_1RunManager.html#ae08b7d5e269064ebdb524dd078cf9975">parameters_</a> = parameters; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
@@ -126,7 +138,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00091">parameters_</a>, and <a class="el" href="RunManager_8h_source.html#l00081">setUseRootSeed()</a>.</p>
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00092">parameters_</a>, and <a class="el" href="RunManager_8h_source.html#l00082">setUseRootSeed()</a>.</p>
 
 </div>
 </div>
@@ -215,7 +227,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">auto</span> validateGeometry_{<a class="code" href="classldmx_1_1RunManager.html#ae08b7d5e269064ebdb524dd078cf9975">parameters_</a>.<a class="code" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">getParameter</a>&lt; <span class="keywordtype">bool</span> &gt;(<span class="stringliteral">&quot;validate_detector&quot;</span>)};</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            G4GDMLParser* pwParser = <span class="keyword">new</span> G4GDMLParser();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            pwParser-&gt;Read(<a class="code" href="classldmx_1_1RunManager.html#a3ba9ed0ff17b0138f702cb9f103e6ea9">parallelWorldPath_</a>, validateGeometry_);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            this-&gt;<a class="code" href="classldmx_1_1RunManager.html#a1b7e02efd0765d7651521f5eaf7985b0">getDetectorConstruction</a>()-&gt;RegisterParallelWorld(<span class="keyword">new</span> ParallelWorld(pwParser, <span class="stringliteral">&quot;ldmxParallelWorld&quot;</span>));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            this-&gt;<a class="code" href="classldmx_1_1RunManager.html#a1b7e02efd0765d7651521f5eaf7985b0">getDetectorConstruction</a>()-&gt;RegisterParallelWorld(<span class="keyword">new</span> ParallelWorld(pwParser, <span class="stringliteral">&quot;ldmxParallelWorld&quot;</span>, <a class="code" href="classldmx_1_1RunManager.html#adbc528596fecdb04d23dbd68263f31e3">conditionsIntf_</a>));</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        G4RunManager::Initialize();</div>
@@ -247,7 +259,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunManager_8cxx_source.html#l00148">getDetectorConstruction()</a>, <a class="el" href="UserActionManager_8cxx_source.html#l00034">ldmx::UserActionManager::getInstance()</a>, <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00102">isPWEnabled_</a>, <a class="el" href="RunManager_8h_source.html#l00105">parallelWorldPath_</a>, <a class="el" href="RunManager_8h_source.html#l00091">parameters_</a>, and <a class="el" href="RunManager_8cxx_source.html#l00051">setupPhysics()</a>.</p>
+<p class="reference">References <a class="el" href="RunManager_8h_source.html#l00115">conditionsIntf_</a>, <a class="el" href="RunManager_8cxx_source.html#l00148">getDetectorConstruction()</a>, <a class="el" href="UserActionManager_8cxx_source.html#l00034">ldmx::UserActionManager::getInstance()</a>, <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00103">isPWEnabled_</a>, <a class="el" href="RunManager_8h_source.html#l00106">parallelWorldPath_</a>, <a class="el" href="RunManager_8h_source.html#l00092">parameters_</a>, and <a class="el" href="RunManager_8cxx_source.html#l00051">setupPhysics()</a>.</p>
 
 </div>
 </div>
@@ -301,7 +313,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        this-&gt;SetUserInitialization(pList);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00102">isPWEnabled_</a>, <a class="el" href="RunManager_8h_source.html#l00105">parallelWorldPath_</a>, <a class="el" href="RunManager_8h_source.html#l00091">parameters_</a>, and <a class="el" href="RunManager_8h_source.html#l00096">physicsListFactory_</a>.</p>
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00103">isPWEnabled_</a>, <a class="el" href="RunManager_8h_source.html#l00106">parallelWorldPath_</a>, <a class="el" href="RunManager_8h_source.html#l00092">parameters_</a>, and <a class="el" href="RunManager_8h_source.html#l00097">physicsListFactory_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00084">Initialize()</a>.</p>
 
@@ -332,10 +344,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Tell <a class="el" href="classldmx_1_1RunManager.html" title="Extension of Geant4 run manager.">RunManager</a> to use the seed from the root file. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00081">81</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{ <a class="code" href="classldmx_1_1RunManager.html#ac7529b38836f07bb97dd684d9b5da496">useRootSeed_</a> = useIt; }</div>
+<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00082">82</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{ <a class="code" href="classldmx_1_1RunManager.html#ac7529b38836f07bb97dd684d9b5da496">useRootSeed_</a> = useIt; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunManager_8h_source.html#l00110">useRootSeed_</a>.</p>
+<p class="reference">References <a class="el" href="RunManager_8h_source.html#l00111">useRootSeed_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00036">RunManager()</a>.</p>
 
@@ -405,14 +417,41 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Should we use the seed from the root file? </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00086">86</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunManager.html#ac7529b38836f07bb97dd684d9b5da496">useRootSeed_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00087">87</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunManager.html#ac7529b38836f07bb97dd684d9b5da496">useRootSeed_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunManager_8h_source.html#l00110">useRootSeed_</a>.</p>
+<p class="reference">References <a class="el" href="RunManager_8h_source.html#l00111">useRootSeed_</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="adbc528596fecdb04d23dbd68263f31e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc528596fecdb04d23dbd68263f31e3">&#9670;&nbsp;</a></span>conditionsIntf_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classldmx_1_1ConditionsInterface.html">ConditionsInterface</a>&amp; ldmx::RunManager::conditionsIntf_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="classldmx_1_1ConditionsInterface.html" title="Handle to the conditions system, provided at construction to classes which require it.">ConditionsInterface</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00115">115</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00084">Initialize()</a>.</p>
+
+</div>
+</div>
 <a id="a2b0952717f7d3a9bcb07b2fd9cf23e46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b0952717f7d3a9bcb07b2fd9cf23e46">&#9670;&nbsp;</a></span>isPWEnabled_</h2>
 
@@ -434,7 +473,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Flag indicating whether a parallel world should be registered </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00102">102</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00103">103</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00084">Initialize()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00051">setupPhysics()</a>.</p>
 
@@ -461,7 +500,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Path to GDML description of parallel world. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00105">105</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00106">106</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00084">Initialize()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00051">setupPhysics()</a>.</p>
 
@@ -488,7 +527,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Factory class for instantiating the physics list. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00096">96</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00097">97</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00051">setupPhysics()</a>.</p>
 
@@ -515,9 +554,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Should we use random seed from root file? </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00110">110</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00111">111</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunManager_8h_source.html#l00081">setUseRootSeed()</a>, and <a class="el" href="RunManager_8h_source.html#l00086">useRootSeed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunManager_8h_source.html#l00082">setUseRootSeed()</a>, and <a class="el" href="RunManager_8h_source.html#l00087">useRootSeed()</a>.</p>
 
 </div>
 </div>
@@ -526,13 +565,14 @@ Private Attributes</h2></td></tr>
 <li>SimCore/src/<a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1RunManager_html_ae08b7d5e269064ebdb524dd078cf9975"><div class="ttname"><a href="classldmx_1_1RunManager.html#ae08b7d5e269064ebdb524dd078cf9975">ldmx::RunManager::parameters_</a></div><div class="ttdeci">Parameters parameters_</div><div class="ttdoc">The set of parameters used to configure the RunManager.</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00091">RunManager.h:91</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunManager_html_ae08b7d5e269064ebdb524dd078cf9975"><div class="ttname"><a href="classldmx_1_1RunManager.html#ae08b7d5e269064ebdb524dd078cf9975">ldmx::RunManager::parameters_</a></div><div class="ttdeci">Parameters parameters_</div><div class="ttdoc">The set of parameters used to configure the RunManager.</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00092">RunManager.h:92</a></div></div>
 <div class="ttc" id="aclassldmx_1_1UserActionManager_html_a1c5f1e06d3c52cbc59f8f3636e556504"><div class="ttname"><a href="classldmx_1_1UserActionManager.html#a1c5f1e06d3c52cbc59f8f3636e556504">ldmx::UserActionManager::getInstance</a></div><div class="ttdeci">static UserActionManager &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="UserActionManager_8cxx_source.html#l00034">UserActionManager.cxx:34</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunManager_html_a2b0952717f7d3a9bcb07b2fd9cf23e46"><div class="ttname"><a href="classldmx_1_1RunManager.html#a2b0952717f7d3a9bcb07b2fd9cf23e46">ldmx::RunManager::isPWEnabled_</a></div><div class="ttdeci">bool isPWEnabled_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00102">RunManager.h:102</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunManager_html_ac7529b38836f07bb97dd684d9b5da496"><div class="ttname"><a href="classldmx_1_1RunManager.html#ac7529b38836f07bb97dd684d9b5da496">ldmx::RunManager::useRootSeed_</a></div><div class="ttdeci">bool useRootSeed_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00110">RunManager.h:110</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunManager_html_a3ba9ed0ff17b0138f702cb9f103e6ea9"><div class="ttname"><a href="classldmx_1_1RunManager.html#a3ba9ed0ff17b0138f702cb9f103e6ea9">ldmx::RunManager::parallelWorldPath_</a></div><div class="ttdeci">std::string parallelWorldPath_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00105">RunManager.h:105</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunManager_html_a943ec3e066e23a0d20be69d1bbbe4780"><div class="ttname"><a href="classldmx_1_1RunManager.html#a943ec3e066e23a0d20be69d1bbbe4780">ldmx::RunManager::setUseRootSeed</a></div><div class="ttdeci">void setUseRootSeed(bool useIt=true)</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00081">RunManager.h:81</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunManager_html_a6c8e41229a8413f98e87dd973f877a92"><div class="ttname"><a href="classldmx_1_1RunManager.html#a6c8e41229a8413f98e87dd973f877a92">ldmx::RunManager::physicsListFactory_</a></div><div class="ttdeci">G4PhysListFactory physicsListFactory_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00096">RunManager.h:96</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunManager_html_a2b0952717f7d3a9bcb07b2fd9cf23e46"><div class="ttname"><a href="classldmx_1_1RunManager.html#a2b0952717f7d3a9bcb07b2fd9cf23e46">ldmx::RunManager::isPWEnabled_</a></div><div class="ttdeci">bool isPWEnabled_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00103">RunManager.h:103</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunManager_html_ac7529b38836f07bb97dd684d9b5da496"><div class="ttname"><a href="classldmx_1_1RunManager.html#ac7529b38836f07bb97dd684d9b5da496">ldmx::RunManager::useRootSeed_</a></div><div class="ttdeci">bool useRootSeed_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00111">RunManager.h:111</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunManager_html_a3ba9ed0ff17b0138f702cb9f103e6ea9"><div class="ttname"><a href="classldmx_1_1RunManager.html#a3ba9ed0ff17b0138f702cb9f103e6ea9">ldmx::RunManager::parallelWorldPath_</a></div><div class="ttdeci">std::string parallelWorldPath_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00106">RunManager.h:106</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunManager_html_a943ec3e066e23a0d20be69d1bbbe4780"><div class="ttname"><a href="classldmx_1_1RunManager.html#a943ec3e066e23a0d20be69d1bbbe4780">ldmx::RunManager::setUseRootSeed</a></div><div class="ttdeci">void setUseRootSeed(bool useIt=true)</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00082">RunManager.h:82</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunManager_html_a6c8e41229a8413f98e87dd973f877a92"><div class="ttname"><a href="classldmx_1_1RunManager.html#a6c8e41229a8413f98e87dd973f877a92">ldmx::RunManager::physicsListFactory_</a></div><div class="ttdeci">G4PhysListFactory physicsListFactory_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00097">RunManager.h:97</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunManager_html_adbc528596fecdb04d23dbd68263f31e3"><div class="ttname"><a href="classldmx_1_1RunManager.html#adbc528596fecdb04d23dbd68263f31e3">ldmx::RunManager::conditionsIntf_</a></div><div class="ttdeci">ConditionsInterface &amp; conditionsIntf_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00115">RunManager.h:115</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Parameters_html_a3b66add92c7331ca071eca9c423ea9e9"><div class="ttname"><a href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">ldmx::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00090">Parameters.h:90</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunManager_html_a0e91812db1ebe5eb38fda57ea7628612"><div class="ttname"><a href="classldmx_1_1RunManager.html#a0e91812db1ebe5eb38fda57ea7628612">ldmx::RunManager::setupPhysics</a></div><div class="ttdeci">void setupPhysics()</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8cxx_source.html#l00051">RunManager.cxx:51</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunManager_html_a1b7e02efd0765d7651521f5eaf7985b0"><div class="ttname"><a href="classldmx_1_1RunManager.html#a1b7e02efd0765d7651521f5eaf7985b0">ldmx::RunManager::getDetectorConstruction</a></div><div class="ttdeci">DetectorConstruction * getDetectorConstruction()</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8cxx_source.html#l00148">RunManager.cxx:148</a></div></div>

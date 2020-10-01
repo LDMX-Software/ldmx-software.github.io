@@ -57,13 +57,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af8443a5516f448a47e1890dbc5cf4927"><td class="memItemLeft" align="right" valign="top"><a id="af8443a5516f448a47e1890dbc5cf4927"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>EcalFakeSimHits</b> (const std::string &amp;name, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;p)</td></tr>
 <tr class="separator:af8443a5516f448a47e1890dbc5cf4927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ff6a2c7ffd1970247d7df1e29efcf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1test_1_1EcalFakeSimHits.html#af8ff6a2c7ffd1970247d7df1e29efcf0">beforeNewRun</a> (<a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;header)</td></tr>
+<tr class="separator:af8ff6a2c7ffd1970247d7df1e29efcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a39516f0b390c30ff8cc91d6284e2bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1test_1_1EcalFakeSimHits.html#a2a39516f0b390c30ff8cc91d6284e2bb">produce</a> (<a class="el" href="classldmx_1_1Event.html">Event</a> &amp;event) final override</td></tr>
 <tr class="separator:a2a39516f0b390c30ff8cc91d6284e2bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classldmx_1_1Producer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classldmx_1_1Producer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classldmx_1_1Producer.html">ldmx::Producer</a></td></tr>
 <tr class="memitem:abd1f979d49afb16c520ca66840d174cc inherit pub_methods_classldmx_1_1Producer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Producer.html#abd1f979d49afb16c520ca66840d174cc">Producer</a> (const std::string &amp;name, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td></tr>
 <tr class="separator:abd1f979d49afb16c520ca66840d174cc inherit pub_methods_classldmx_1_1Producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc2ce996ba778390b218c4fdbb48cb41 inherit pub_methods_classldmx_1_1Producer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Producer.html#abc2ce996ba778390b218c4fdbb48cb41">beforeNewRun</a> (<a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;header)</td></tr>
-<tr class="separator:abc2ce996ba778390b218c4fdbb48cb41 inherit pub_methods_classldmx_1_1Producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classldmx_1_1EventProcessor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classldmx_1_1EventProcessor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classldmx_1_1EventProcessor.html">ldmx::EventProcessor</a></td></tr>
 <tr class="memitem:ab1d17dd7b596699bbcc7837b4b7ffa7a inherit pub_methods_classldmx_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">EventProcessor</a> (const std::string &amp;name, <a class="el" href="classldmx_1_1Process.html">Process</a> &amp;process)</td></tr>
 <tr class="separator:ab1d17dd7b596699bbcc7837b4b7ffa7a inherit pub_methods_classldmx_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,6 +141,47 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00028">28</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af8ff6a2c7ffd1970247d7df1e29efcf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ff6a2c7ffd1970247d7df1e29efcf0">&#9670;&nbsp;</a></span>beforeNewRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ldmx::test::EcalFakeSimHits::beforeNewRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Handle allowing producers to modify run headers before the run begins </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td><a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a> for <a class="el" href="classldmx_1_1Producer.html" title="Base class for a module which produces a data product.">Producer</a> to add parameters to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classldmx_1_1Producer.html#abc2ce996ba778390b218c4fdbb48cb41">ldmx::Producer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00047">47</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                             {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            header.setDetectorName(<span class="stringliteral">&quot;ldmx-det-v12&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00056">ldmx::RunHeader::setDetectorName()</a>.</p>
+
+</div>
+</div>
 <a id="a2a39516f0b390c30ff8cc91d6284e2bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a39516f0b390c30ff8cc91d6284e2bb">&#9670;&nbsp;</a></span>produce()</h2>
 
@@ -173,48 +214,48 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Implements <a class="el" href="classldmx_1_1Producer.html#a7ac942786d11a4768ad430d52ba6a427">ldmx::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00047">47</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                  {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            std::vector&lt;SimCalorimeterHit&gt; pretendSimHits;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">//fill pretend sim hits with a range of simulated energies</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">int</span> cell(0), module(0), layer(0);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">double</span> currEnergy{<a class="code" href="classldmx_1_1test_1_1EcalFakeSimHits.html#aba1b607d752df62e8f2bd6af1100ff8d">minEnergy_</a>};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">while</span> ( currEnergy &lt; <a class="code" href="classldmx_1_1test_1_1EcalFakeSimHits.html#a6becd6b8fd793fb7cd0a3c77b2b5f61c">maxEnergy_</a> ) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="comment">//TODO test several contribs</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="comment">//  right now, not a big deal because we just do an energy weight average anyways</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                SimCalorimeterHit currHit;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="comment">//distribute indices across distince IDs</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="comment">//  need to be careful to not exceed max count of subparts</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                EcalID id(layer,module,cell);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                currHit.setID( <span class="keywordtype">id</span>.raw() );</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                currHit.addContrib(</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        -1 <span class="comment">//incidentID</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        , -1 <span class="comment">// trackID</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        , 0 <span class="comment">// pdg ID</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        , currEnergy <span class="comment">// edep</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        , 1. <span class="comment">//time</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        );</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                pretendSimHits.push_back( currHit );</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                currEnergy += <a class="code" href="classldmx_1_1test_1_1EcalFakeSimHits.html#a470ad19141abce99cc1f167a5171b3bf">energyStep_</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                cell++;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">if</span> ( cell &gt; 300 ) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    cell = 0;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    module++;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">if</span> ( module &gt; 7 ) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    module = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    layer++;</div>
+<p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00051">51</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                  {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            std::vector&lt;SimCalorimeterHit&gt; pretendSimHits;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">//fill pretend sim hits with a range of simulated energies</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">int</span> cell(0), module(0), layer(0);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">double</span> currEnergy{<a class="code" href="classldmx_1_1test_1_1EcalFakeSimHits.html#aba1b607d752df62e8f2bd6af1100ff8d">minEnergy_</a>};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">while</span> ( currEnergy &lt; <a class="code" href="classldmx_1_1test_1_1EcalFakeSimHits.html#a6becd6b8fd793fb7cd0a3c77b2b5f61c">maxEnergy_</a> ) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="comment">//TODO test several contribs</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="comment">//  right now, not a big deal because we just do an energy weight average anyways</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                SimCalorimeterHit currHit;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="comment">//distribute indices across distince IDs</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="comment">//  need to be careful to not exceed max count of subparts</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                EcalID id(layer,module,cell);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                currHit.setID( <span class="keywordtype">id</span>.raw() );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                currHit.addContrib(</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        -1 <span class="comment">//incidentID</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        , -1 <span class="comment">// trackID</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        , 0 <span class="comment">// pdg ID</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        , currEnergy <span class="comment">// edep</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        , 1. <span class="comment">//time</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                pretendSimHits.push_back( currHit );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                currEnergy += <a class="code" href="classldmx_1_1test_1_1EcalFakeSimHits.html#a470ad19141abce99cc1f167a5171b3bf">energyStep_</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                cell++;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">if</span> ( cell &gt; 300 ) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    cell = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    module++;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="comment">//needs to be correct collection name</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            REQUIRE_NOTHROW(event.add( <span class="stringliteral">&quot;EcalSimHits&quot;</span> , pretendSimHits ));</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> ( module &gt; 7 ) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    module = 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    layer++;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="comment">//needs to be correct collection name</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            REQUIRE_NOTHROW(event.add( <span class="stringliteral">&quot;EcalSimHits&quot;</span> , pretendSimHits ));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classldmx_1_1SimCalorimeterHit.html#a7899e3d68af42c07c36c358d332caee8">ldmx::SimCalorimeterHit::addContrib()</a>, <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00034">energyStep_</a>, <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00031">maxEnergy_</a>, <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00040">minEnergy_</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00098">ldmx::SimCalorimeterHit::setID()</a>.</p>
 
@@ -244,7 +285,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00040">40</a> of file <a class="el" href="EcalDigiPipelineTest_8cxx_source.html">EcalDigiPipelineTest.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00047">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00051">produce()</a>.</p>
 
 </div>
 </div>

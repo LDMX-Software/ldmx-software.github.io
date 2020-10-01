@@ -113,9 +113,9 @@ const std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memI
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a0fadcc25cf87b8a2c0ae1cdc5ff9cd79"><td class="memItemLeft" align="right" valign="top"><a id="a0fadcc25cf87b8a2c0ae1cdc5ff9cd79"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ClassDef</b> (<a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a>, 2)</td></tr>
-<tr class="separator:a0fadcc25cf87b8a2c0ae1cdc5ff9cd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0d28ccaba710ec740ba7db94f46dfcc"><td class="memItemLeft" align="right" valign="top"><a id="ab0d28ccaba710ec740ba7db94f46dfcc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ClassDef</b> (<a class="el" href="classldmx_1_1RunHeader.html">RunHeader</a>, 3)</td></tr>
+<tr class="separator:ab0d28ccaba710ec740ba7db94f46dfcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -169,7 +169,7 @@ Friends</h2></td></tr>
 <p>Constructor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">runNumber</td><td>The run number. </td></tr>
+    <tr><td class="paramname">runNumber</td><td>The run number uniquely identifying this run </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,7 +266,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00065">65</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#a660bedca6eb1ffd4aa99976a6aa0c9e8">description_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00212">description_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00211">description_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
 
@@ -299,9 +299,9 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00053">53</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#a51f97a00c7585c0d4181158ea68c8bf3">detectorName_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00209">detectorName_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00208">detectorName_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00041">ldmx::EcalGeometryProvider::onNewRun()</a>, and <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
 
 </div>
 </div>
@@ -337,12 +337,12 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value The parameter value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00131">131</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#a8eb967192842a53c6f841f9de9ab38ba">floatParameters_</a>.at(name);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00130">130</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#a8eb967192842a53c6f841f9de9ab38ba">floatParameters_</a>.at(name);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00230">floatParameters_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00229">floatParameters_</a>.</p>
 
 </div>
 </div>
@@ -383,7 +383,7 @@ Friends</h2></td></tr>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#ad45e800ea3b3dc111c05fda9cc85afa9">intParameters_</a>.at(name); </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00227">intParameters_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00226">intParameters_</a>.</p>
 
 </div>
 </div>
@@ -415,7 +415,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00090">90</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#afef91e887d8eeaff42087c87b3dce370">runEnd_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00218">runEnd_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00217">runEnd_</a>.</p>
 
 </div>
 </div>
@@ -446,7 +446,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00050">50</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#aefdcecbf34fbd1338ee8325f52c8c287">runNumber_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00206">runNumber_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00205">runNumber_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RandomNumberSeedService_8cxx_source.html#l00042">ldmx::RandomNumberSeedService::onNewRun()</a>, <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>, and <a class="el" href="EventFile_8cxx_source.html#l00302">ldmx::EventFile::writeRunHeader()</a>.</p>
 
@@ -480,7 +480,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00076">76</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#ad8c47e09e69e92457842aba40ceb7fcc">runStart_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00215">runStart_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00214">runStart_</a>.</p>
 
 </div>
 </div>
@@ -511,7 +511,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00062">62</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#a1969bcaee94cfbcc43465deea3cafe4b">softwareTag_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00224">softwareTag_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00223">softwareTag_</a>.</p>
 
 </div>
 </div>
@@ -547,12 +547,12 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value The parameter value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00156">156</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                                                      {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#aa35a7960875b5db9aecd289cbd397721">stringParameters_</a>.at(name);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00155">155</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                                                      {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1RunHeader.html#aa35a7960875b5db9aecd289cbd397721">stringParameters_</a>.at(name);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00233">stringParameters_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00232">stringParameters_</a>.</p>
 
 </div>
 </div>
@@ -578,6 +578,8 @@ Friends</h2></td></tr>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="RootPersistencyManager_8cxx_source.html#l00064">ldmx::RootPersistencyManager::Store()</a>.</p>
 
 </div>
 </div>
@@ -609,9 +611,9 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00068">68</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{ <a class="code" href="classldmx_1_1RunHeader.html#a660bedca6eb1ffd4aa99976a6aa0c9e8">description_</a> = des; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00212">description_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00211">description_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00127">ldmx::Simulator::beforeNewRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00126">ldmx::Simulator::beforeNewRun()</a>.</p>
 
 </div>
 </div>
@@ -643,9 +645,9 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00056">56</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <a class="code" href="classldmx_1_1RunHeader.html#a51f97a00c7585c0d4181158ea68c8bf3">detectorName_</a> = det; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00209">detectorName_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00208">detectorName_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00127">ldmx::Simulator::beforeNewRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalDigiPipelineTest_8cxx_source.html#l00047">ldmx::test::EcalFakeSimHits::beforeNewRun()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00126">ldmx::Simulator::beforeNewRun()</a>.</p>
 
 </div>
 </div>
@@ -686,19 +688,19 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the parameter. </td></tr>
+    <tr><td class="paramname">value</td><td>The value of the parameter. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>value The parameter value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00146">146</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                                                       {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <a class="code" href="classldmx_1_1RunHeader.html#a8eb967192842a53c6f841f9de9ab38ba">floatParameters_</a>[name] = value;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00145">145</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <a class="code" href="classldmx_1_1RunHeader.html#a8eb967192842a53c6f841f9de9ab38ba">floatParameters_</a>[name] = value;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00230">floatParameters_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00229">floatParameters_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00127">ldmx::Simulator::beforeNewRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00126">ldmx::Simulator::beforeNewRun()</a>.</p>
 
 </div>
 </div>
@@ -743,16 +745,15 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The parameter value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00121">121</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                                                   { </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <a class="code" href="classldmx_1_1RunHeader.html#ad45e800ea3b3dc111c05fda9cc85afa9">intParameters_</a>[name] = value;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00120">120</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                                   { </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <a class="code" href="classldmx_1_1RunHeader.html#ad45e800ea3b3dc111c05fda9cc85afa9">intParameters_</a>[name] = value;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00227">intParameters_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00226">intParameters_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00127">ldmx::Simulator::beforeNewRun()</a>, <a class="el" href="RandomNumberSeedService_8cxx_source.html#l00042">ldmx::RandomNumberSeedService::onNewRun()</a>, and <a class="el" href="RootPersistencyManager_8cxx_source.html#l00064">ldmx::RootPersistencyManager::Store()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00126">ldmx::Simulator::beforeNewRun()</a>, <a class="el" href="RandomNumberSeedService_8cxx_source.html#l00042">ldmx::RandomNumberSeedService::onNewRun()</a>, and <a class="el" href="RootPersistencyManager_8cxx_source.html#l00064">ldmx::RootPersistencyManager::Store()</a>.</p>
 
 </div>
 </div>
@@ -790,7 +791,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00097">97</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{ <a class="code" href="classldmx_1_1RunHeader.html#afef91e887d8eeaff42087c87b3dce370">runEnd_</a> = runEnd; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00218">runEnd_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00217">runEnd_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00100">ldmx::Process::run()</a>.</p>
 
@@ -830,7 +831,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00083">83</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{ <a class="code" href="classldmx_1_1RunHeader.html#ad8c47e09e69e92457842aba40ceb7fcc">runStart_</a> = runStart; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00215">runStart_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00214">runStart_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00100">ldmx::Process::run()</a>.</p>
 
@@ -873,19 +874,19 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the parameter. </td></tr>
+    <tr><td class="paramname">value</td><td>The value of the parameter. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>value The parameter value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00171">171</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                                                            {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <a class="code" href="classldmx_1_1RunHeader.html#aa35a7960875b5db9aecd289cbd397721">stringParameters_</a>[name] = value;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00170">170</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                                                            {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <a class="code" href="classldmx_1_1RunHeader.html#aa35a7960875b5db9aecd289cbd397721">stringParameters_</a>[name] = value;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00233">stringParameters_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00232">stringParameters_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00127">ldmx::Simulator::beforeNewRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00126">ldmx::Simulator::beforeNewRun()</a>.</p>
 
 </div>
 </div>
@@ -931,7 +932,7 @@ Friends</h2></td></tr>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        s &lt;&lt; <span class="stringliteral">&quot;}&quot;</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00230">floatParameters_</a>, <a class="el" href="RunHeader_8h_source.html#l00065">getDescription()</a>, <a class="el" href="RunHeader_8h_source.html#l00053">getDetectorName()</a>, <a class="el" href="RunHeader_8h_source.html#l00050">getRunNumber()</a>, <a class="el" href="RunHeader_8h_source.html#l00227">intParameters_</a>, and <a class="el" href="RunHeader_8h_source.html#l00233">stringParameters_</a>.</p>
+<p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00229">floatParameters_</a>, <a class="el" href="RunHeader_8h_source.html#l00065">getDescription()</a>, <a class="el" href="RunHeader_8h_source.html#l00053">getDetectorName()</a>, <a class="el" href="RunHeader_8h_source.html#l00050">getRunNumber()</a>, <a class="el" href="RunHeader_8h_source.html#l00226">intParameters_</a>, and <a class="el" href="RunHeader_8h_source.html#l00232">stringParameters_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunHeader_8cxx_source.html#l00035">Print()</a>.</p>
 
@@ -983,11 +984,11 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>modified ostream </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00198">198</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                                                                 {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                h.<a class="code" href="classldmx_1_1RunHeader.html#a2f4418ca0ae49365fb621f32007d881d">stream</a>(s);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00197">197</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                                                                 {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                h.<a class="code" href="classldmx_1_1RunHeader.html#a2f4418ca0ae49365fb621f32007d881d">stream</a>(s);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1013,7 +1014,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Run description. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00212">212</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00211">211</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00065">getDescription()</a>, and <a class="el" href="RunHeader_8h_source.html#l00068">setDescription()</a>.</p>
 
@@ -1040,7 +1041,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Detector name. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00209">209</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00208">208</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00053">getDetectorName()</a>, and <a class="el" href="RunHeader_8h_source.html#l00056">setDetectorName()</a>.</p>
 
@@ -1067,9 +1068,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Map of float parameters. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00230">230</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00229">229</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00131">getFloatParameter()</a>, <a class="el" href="RunHeader_8h_source.html#l00136">getFloatParameters()</a>, <a class="el" href="RunHeader_8h_source.html#l00146">setFloatParameter()</a>, and <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00130">getFloatParameter()</a>, <a class="el" href="RunHeader_8h_source.html#l00135">getFloatParameters()</a>, <a class="el" href="RunHeader_8h_source.html#l00145">setFloatParameter()</a>, and <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
 
 </div>
 </div>
@@ -1094,9 +1095,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Map of int parameters. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00227">227</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00226">226</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00105">getIntParameter()</a>, <a class="el" href="RunHeader_8h_source.html#l00110">getIntParameters()</a>, <a class="el" href="RunHeader_8h_source.html#l00121">setIntParameter()</a>, and <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00105">getIntParameter()</a>, <a class="el" href="RunHeader_8h_source.html#l00110">getIntParameters()</a>, <a class="el" href="RunHeader_8h_source.html#l00120">setIntParameter()</a>, and <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
 
 </div>
 </div>
@@ -1121,7 +1122,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Run number. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00206">206</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00205">205</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00050">getRunNumber()</a>.</p>
 
@@ -1148,7 +1149,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>git SHA-1 hash associated with the software tag used to generate this file. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00224">224</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00223">223</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00062">getSoftwareTag()</a>.</p>
 
@@ -1175,9 +1176,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Map of string parameters. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00233">233</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RunHeader_8h_source.html#l00232">232</a> of file <a class="el" href="RunHeader_8h_source.html">RunHeader.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00156">getStringParameter()</a>, <a class="el" href="RunHeader_8h_source.html#l00161">getStringParameters()</a>, <a class="el" href="RunHeader_8h_source.html#l00171">setStringParameter()</a>, and <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunHeader_8h_source.html#l00155">getStringParameter()</a>, <a class="el" href="RunHeader_8h_source.html#l00160">getStringParameters()</a>, <a class="el" href="RunHeader_8h_source.html#l00170">setStringParameter()</a>, and <a class="el" href="RunHeader_8cxx_source.html#l00018">stream()</a>.</p>
 
 </div>
 </div>
@@ -1187,17 +1188,17 @@ Friends</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_a2f4418ca0ae49365fb621f32007d881d"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a2f4418ca0ae49365fb621f32007d881d">ldmx::RunHeader::stream</a></div><div class="ttdeci">void stream(std::ostream &amp;s) const</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8cxx_source.html#l00018">RunHeader.cxx:18</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_afef91e887d8eeaff42087c87b3dce370"><div class="ttname"><a href="classldmx_1_1RunHeader.html#afef91e887d8eeaff42087c87b3dce370">ldmx::RunHeader::runEnd_</a></div><div class="ttdeci">int runEnd_</div><div class="ttdoc">Run end in seconds since epoch.</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00218">RunHeader.h:218</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_ad45e800ea3b3dc111c05fda9cc85afa9"><div class="ttname"><a href="classldmx_1_1RunHeader.html#ad45e800ea3b3dc111c05fda9cc85afa9">ldmx::RunHeader::intParameters_</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; intParameters_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00227">RunHeader.h:227</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_afef91e887d8eeaff42087c87b3dce370"><div class="ttname"><a href="classldmx_1_1RunHeader.html#afef91e887d8eeaff42087c87b3dce370">ldmx::RunHeader::runEnd_</a></div><div class="ttdeci">int runEnd_</div><div class="ttdoc">Run end in seconds since epoch.</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00217">RunHeader.h:217</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_ad45e800ea3b3dc111c05fda9cc85afa9"><div class="ttname"><a href="classldmx_1_1RunHeader.html#ad45e800ea3b3dc111c05fda9cc85afa9">ldmx::RunHeader::intParameters_</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; intParameters_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00226">RunHeader.h:226</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_afe7d7953641fa1edd6d2a77ceb685d0e"><div class="ttname"><a href="classldmx_1_1RunHeader.html#afe7d7953641fa1edd6d2a77ceb685d0e">ldmx::RunHeader::getRunNumber</a></div><div class="ttdeci">int getRunNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00050">RunHeader.h:50</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_a1969bcaee94cfbcc43465deea3cafe4b"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a1969bcaee94cfbcc43465deea3cafe4b">ldmx::RunHeader::softwareTag_</a></div><div class="ttdeci">std::string softwareTag_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00224">RunHeader.h:224</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_a660bedca6eb1ffd4aa99976a6aa0c9e8"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a660bedca6eb1ffd4aa99976a6aa0c9e8">ldmx::RunHeader::description_</a></div><div class="ttdeci">std::string description_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00212">RunHeader.h:212</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_ad8c47e09e69e92457842aba40ceb7fcc"><div class="ttname"><a href="classldmx_1_1RunHeader.html#ad8c47e09e69e92457842aba40ceb7fcc">ldmx::RunHeader::runStart_</a></div><div class="ttdeci">int runStart_</div><div class="ttdoc">Run start in seconds since epoch.</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00215">RunHeader.h:215</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_a1969bcaee94cfbcc43465deea3cafe4b"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a1969bcaee94cfbcc43465deea3cafe4b">ldmx::RunHeader::softwareTag_</a></div><div class="ttdeci">std::string softwareTag_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00223">RunHeader.h:223</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_a660bedca6eb1ffd4aa99976a6aa0c9e8"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a660bedca6eb1ffd4aa99976a6aa0c9e8">ldmx::RunHeader::description_</a></div><div class="ttdeci">std::string description_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00211">RunHeader.h:211</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_ad8c47e09e69e92457842aba40ceb7fcc"><div class="ttname"><a href="classldmx_1_1RunHeader.html#ad8c47e09e69e92457842aba40ceb7fcc">ldmx::RunHeader::runStart_</a></div><div class="ttdeci">int runStart_</div><div class="ttdoc">Run start in seconds since epoch.</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00214">RunHeader.h:214</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_a92ea11769b4aca7fd5be120660ece95e"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a92ea11769b4aca7fd5be120660ece95e">ldmx::RunHeader::getDescription</a></div><div class="ttdeci">const std::string &amp; getDescription() const</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00065">RunHeader.h:65</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_a51f97a00c7585c0d4181158ea68c8bf3"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a51f97a00c7585c0d4181158ea68c8bf3">ldmx::RunHeader::detectorName_</a></div><div class="ttdeci">std::string detectorName_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00209">RunHeader.h:209</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_aa35a7960875b5db9aecd289cbd397721"><div class="ttname"><a href="classldmx_1_1RunHeader.html#aa35a7960875b5db9aecd289cbd397721">ldmx::RunHeader::stringParameters_</a></div><div class="ttdeci">std::map&lt; std::string, std::string &gt; stringParameters_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00233">RunHeader.h:233</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_aefdcecbf34fbd1338ee8325f52c8c287"><div class="ttname"><a href="classldmx_1_1RunHeader.html#aefdcecbf34fbd1338ee8325f52c8c287">ldmx::RunHeader::runNumber_</a></div><div class="ttdeci">int runNumber_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00206">RunHeader.h:206</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_a8eb967192842a53c6f841f9de9ab38ba"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a8eb967192842a53c6f841f9de9ab38ba">ldmx::RunHeader::floatParameters_</a></div><div class="ttdeci">std::map&lt; std::string, float &gt; floatParameters_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00230">RunHeader.h:230</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_a51f97a00c7585c0d4181158ea68c8bf3"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a51f97a00c7585c0d4181158ea68c8bf3">ldmx::RunHeader::detectorName_</a></div><div class="ttdeci">std::string detectorName_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00208">RunHeader.h:208</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_aa35a7960875b5db9aecd289cbd397721"><div class="ttname"><a href="classldmx_1_1RunHeader.html#aa35a7960875b5db9aecd289cbd397721">ldmx::RunHeader::stringParameters_</a></div><div class="ttdeci">std::map&lt; std::string, std::string &gt; stringParameters_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00232">RunHeader.h:232</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_aefdcecbf34fbd1338ee8325f52c8c287"><div class="ttname"><a href="classldmx_1_1RunHeader.html#aefdcecbf34fbd1338ee8325f52c8c287">ldmx::RunHeader::runNumber_</a></div><div class="ttdeci">int runNumber_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00205">RunHeader.h:205</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_a8eb967192842a53c6f841f9de9ab38ba"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a8eb967192842a53c6f841f9de9ab38ba">ldmx::RunHeader::floatParameters_</a></div><div class="ttdeci">std::map&lt; std::string, float &gt; floatParameters_</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00229">RunHeader.h:229</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_abb433b4f8f2b0bd6a9eb5e1a0b9c5d43"><div class="ttname"><a href="classldmx_1_1RunHeader.html#abb433b4f8f2b0bd6a9eb5e1a0b9c5d43">ldmx::RunHeader::getDetectorName</a></div><div class="ttdeci">const std::string &amp; getDetectorName() const</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00053">RunHeader.h:53</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
