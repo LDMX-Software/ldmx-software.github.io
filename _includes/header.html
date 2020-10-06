@@ -1,29 +1,24 @@
 <header>
     <div class="box">
+        <a href="{{ '/' | relative_url }}" >
+            <img src="{{ 'img/logo.png' | relative_url }}" width="183.75" height="45.5" alt="ldmx-sw Logo" >
+        </a>
         <nav>
             <ul>
-                <li>
-                    <a href="{{ '/' | relative_url }}" >
-                        <img src="{{ 'img/logo.png' | relative_url }}" width="183.75" height="45.5" alt="ldmx-sw Logo" >
-                    </a>
-                </li>
-
                 {% for p in site.data.nav %}
                 <li
-                    {% if p.link == page.url %} class="current" {% endif %} 
-                >
+                    {% if p.link == page.url %} class="current" {% endif %} >
                     <a href="{{ p.link | relative_url }}">{{ p.title }} </a>
                 </li>
                 {% endfor %}
             </ul>
         </nav>
         <nav>
-        <ul>
-            <li><a href="{{ site.repository }}/releases/tag/v{{ site.version }}">v{{ site.version }}</a></li>
-            <li><a href="{{ site.repository }}">GitHub</a></li>
-        </ul>
+            <ul>
+                <li><a href="{{ site.repository }}/releases/tag/v{{ site.version }}">v{{ site.version }}</a></li>
+                <li><a href="{{ site.repository }}">GitHub</a></li>
+            </ul>
         </nav>
     </div>
-
 </header>
 
