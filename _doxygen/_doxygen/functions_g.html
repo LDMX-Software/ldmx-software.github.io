@@ -151,7 +151,9 @@ $(function() {
 , <a class="el" href="classldmx_1_1TrigScintID.html#ad721a51005f1ff15239a05d5b1b33f78">ldmx::TrigScintID</a>
 </li>
 <li>getBeamEfrac()
-: <a class="el" href="classldmx_1_1TrigScintHit.html#acfd9be1d1308dd64a527f9ac33e88fb3">ldmx::TrigScintHit</a>
+: <a class="el" href="classldmx_1_1TrigScintCluster.html#ac94efd03d9be97580438c09eb396d466">ldmx::TrigScintCluster</a>
+, <a class="el" href="classldmx_1_1TrigScintHit.html#acfd9be1d1308dd64a527f9ac33e88fb3">ldmx::TrigScintHit</a>
+, <a class="el" href="classldmx_1_1TrigScintTrack.html#a1207b971a7ff0422b0f7952b77ffd4a3">ldmx::TrigScintTrack</a>
 </li>
 <li>getBitMask()
 : <a class="el" href="classldmx_1_1IDField.html#ad8f205b384ab2dc385e8254b59d19ec9">ldmx::IDField</a>
@@ -198,6 +200,22 @@ $(function() {
 <li>getCellUV()
 : <a class="el" href="classldmx_1_1EcalID.html#a7c6e56886a068d52e43bba848b0d033b">ldmx::EcalID</a>
 , <a class="el" href="classldmx_1_1EcalTriggerID.html#a2dafd62ca8193e0ca4b8894fc3914306">ldmx::EcalTriggerID</a>
+</li>
+<li>getCentroid()
+: <a class="el" href="classldmx_1_1TrigScintCluster.html#adc0d3f7ec3f2cc2356d7f6244914f1c8">ldmx::TrigScintCluster</a>
+, <a class="el" href="classldmx_1_1TrigScintTrack.html#a5323dae480a58aba66c7f79ad1f6688e">ldmx::TrigScintTrack</a>
+</li>
+<li>getCentroidX()
+: <a class="el" href="classldmx_1_1TrigScintCluster.html#a7327fd0192c267b0e35ef1e1478e87ba">ldmx::TrigScintCluster</a>
+, <a class="el" href="classldmx_1_1TrigScintTrack.html#a287870b4dca8673f4fafae20900617da">ldmx::TrigScintTrack</a>
+</li>
+<li>getCentroidY()
+: <a class="el" href="classldmx_1_1TrigScintCluster.html#ac26ac4c629a2c9d517d564b1d26a8364">ldmx::TrigScintCluster</a>
+, <a class="el" href="classldmx_1_1TrigScintTrack.html#ad0bb5126948792231a7d9ac44003ea17">ldmx::TrigScintTrack</a>
+</li>
+<li>getCentroidZ()
+: <a class="el" href="classldmx_1_1TrigScintCluster.html#a5c1b407d1144617981a68cc1ac7f1387">ldmx::TrigScintCluster</a>
+, <a class="el" href="classldmx_1_1TrigScintTrack.html#a626e9ab5f1ea644a2b09d8f5f355e08c">ldmx::TrigScintTrack</a>
 </li>
 <li>getCharge()
 : <a class="el" href="classldmx_1_1SimParticle.html#a06022c1f652516b8fe81f0e4b7b435a0">ldmx::SimParticle</a>
@@ -248,6 +266,9 @@ $(function() {
 <li>getConditions()
 : <a class="el" href="classldmx_1_1EventProcessor.html#a8f0fa227968a00b25ff99311a5e36663">ldmx::EventProcessor</a>
 , <a class="el" href="classldmx_1_1Process.html#a34f87b8814c4d6821187a55f5b527c0d">ldmx::Process</a>
+</li>
+<li>getConstituents()
+: <a class="el" href="classldmx_1_1TrigScintTrack.html#af5aafe05ad3932e5b52db814687b2970">ldmx::TrigScintTrack</a>
 </li>
 <li>getContrib()
 : <a class="el" href="classldmx_1_1SimCalorimeterHit.html#a6f5cc61053300b17a4a5a4b52b33f3d5">ldmx::SimCalorimeterHit</a>
@@ -309,6 +330,7 @@ $(function() {
 , <a class="el" href="classldmx_1_1SimParticle.html#a2b1cc687cebced244614ba2e84acbb17">ldmx::SimParticle</a>
 , <a class="el" href="classldmx_1_1SimTrackerHit.html#a886d2f3cf26dcf1ff779dc0ec072a9b9">ldmx::SimTrackerHit</a>
 , <a class="el" href="classldmx_1_1Trajectory.html#acd5117529959fa944153d9c02f817f13">ldmx::Trajectory</a>
+, <a class="el" href="classldmx_1_1TrigScintCluster.html#a6e00345ffdb1dda77e44920b9901632f">ldmx::TrigScintCluster</a>
 </li>
 <li>getEvent()
 : <a class="el" href="classldmx_1_1EventFile.html#afd9653f814baa7bb2e07ba5398e9396e">ldmx::EventFile</a>
@@ -408,6 +430,9 @@ $(function() {
 <li>getHitCollections()
 : <a class="el" href="classldmx_1_1EventObjects.html#a94e25a075cda050cd2fc04a982ae6810">ldmx::EventObjects</a>
 </li>
+<li>getHitIDs()
+: <a class="el" href="classldmx_1_1TrigScintCluster.html#afbf167d00fed63576c619c35e4eec0d4">ldmx::TrigScintCluster</a>
+</li>
 <li>getHitPosition()
 : <a class="el" href="classldmx_1_1EcalSD.html#adccc9d198b2a5e1683dd09feda054aad">ldmx::EcalSD</a>
 </li>
@@ -490,7 +515,7 @@ $(function() {
 : <a class="el" href="classldmx_1_1MagneticFieldStore.html#a75371c8a924ce6ae4f1e85f055ba68d7">ldmx::MagneticFieldStore</a>
 </li>
 <li>getMap()
-: <a class="el" href="classldmx_1_1Event.html#ab7e2b90e6c180754fc9e89b25f294201">ldmx::Event</a>
+: <a class="el" href="classldmx_1_1Event.html#aa70a03b8a6d8a453946d2f330103eb0f">ldmx::Event</a>
 </li>
 <li>getMass()
 : <a class="el" href="classldmx_1_1SimParticle.html#a0e4772adac5cf9091cdb7069fa2debd4">ldmx::SimParticle</a>
@@ -529,6 +554,7 @@ $(function() {
 : <a class="el" href="classldmx_1_1G4TrackerHit.html#ac1d35d1f45c836828dbd7a76f2fea452">ldmx::G4TrackerHit</a>
 , <a class="el" href="classldmx_1_1SimParticle.html#aeb5c0baeb6671f768002ab952cae7924">ldmx::SimParticle</a>
 , <a class="el" href="classldmx_1_1SimTrackerHit.html#a3c6e901dabdbef3a6118c907e4122d5f">ldmx::SimTrackerHit</a>
+, <a class="el" href="classldmx_1_1TrigScintTrack.html#a1318fd4d7cc6a8def0e624d88db0db81">ldmx::TrigScintTrack</a>
 </li>
 <li>getMother()
 : <a class="el" href="classldmx_1_1LHEParticle.html#a94c42bcf618bf92ce1de3ed268902f01">ldmx::LHEParticle</a>
@@ -542,6 +568,12 @@ $(function() {
 , <a class="el" href="classldmx_1_1DetectorHeader.html#a04f3dd3a9a7238e1c0ee95b9c7ba2698">ldmx::DetectorHeader</a>
 , <a class="el" href="classldmx_1_1EventProcessor.html#ab3448c57acf7c6489e18ed95c0b0165c">ldmx::EventProcessor</a>
 , <a class="el" href="classldmx_1_1TriggerResult.html#a0ce730c028e02a3daca67af91a50792b">ldmx::TriggerResult</a>
+</li>
+<li>getNclusters()
+: <a class="el" href="classldmx_1_1TrigScintTrack.html#a673c4c05a00c008dbc29360d5840ca54">ldmx::TrigScintTrack</a>
+</li>
+<li>getNHits()
+: <a class="el" href="classldmx_1_1TrigScintCluster.html#a132acbb117d4eb5d1bde543562ee03dc">ldmx::TrigScintCluster</a>
 </li>
 <li>getNN()
 : <a class="el" href="classldmx_1_1EcalHexReadout.html#a2825ec01b21a6f697bf03c3d98fb304a">ldmx::EcalHexReadout</a>
@@ -571,7 +603,7 @@ $(function() {
 : <a class="el" href="classldmx_1_1LHEEvent.html#a57965f3f1542f746babf2a2eeba40df5">ldmx::LHEEvent</a>
 </li>
 <li>getObject()
-: <a class="el" href="classldmx_1_1Event.html#af50f75e65d050788dd84a7bdb7e9debd">ldmx::Event</a>
+: <a class="el" href="classldmx_1_1Event.html#ac16d9598679ef8494b418ed9231789f1">ldmx::Event</a>
 </li>
 <li>getOutputNames()
 : <a class="el" href="classldmx_1_1Ort_1_1ONNXRuntime.html#afd0241400d0ad04b3b534609803f1711">ldmx::Ort::ONNXRuntime</a>
@@ -580,7 +612,7 @@ $(function() {
 : <a class="el" href="classldmx_1_1Ort_1_1ONNXRuntime.html#ad8d04d9fea8533910da01e4e256af9d1">ldmx::Ort::ONNXRuntime</a>
 </li>
 <li>getParameter()
-: <a class="el" href="classldmx_1_1Parameters.html#a06df271d25db17a2f83baacfad2dcd8c">ldmx::Parameters</a>
+: <a class="el" href="classldmx_1_1Parameters.html#a3b66add92c7331ca071eca9c423ea9e9">ldmx::Parameters</a>
 </li>
 <li>getParent()
 : <a class="el" href="classldmx_1_1TrackMap.html#af4531cec69228e71c9b46dfd26d8dbca">ldmx::TrackMap</a>
@@ -621,6 +653,7 @@ $(function() {
 </li>
 <li>getPE()
 : <a class="el" href="classldmx_1_1HcalHit.html#adcaaa51f7523883ce888dd2adbf11fb1">ldmx::HcalHit</a>
+, <a class="el" href="classldmx_1_1TrigScintCluster.html#a1b4f9f46fb4c68f59a5a764823e5a9db">ldmx::TrigScintCluster</a>
 </li>
 <li>GetPoint()
 : <a class="el" href="classldmx_1_1Trajectory.html#ae0989283efb44cb19ff93f7bcbe66ddd">ldmx::Trajectory</a>
@@ -669,6 +702,18 @@ $(function() {
 <li>getRecoObjects()
 : <a class="el" href="classldmx_1_1EventObjects.html#a10e1ba8dd5f5556c59922f7e22f06a84">ldmx::EventObjects</a>
 </li>
+<li>getResidual()
+: <a class="el" href="classldmx_1_1TrigScintTrack.html#afa54aa649b8fb4232aacf76ebf30123a">ldmx::TrigScintTrack</a>
+</li>
+<li>getResidualX()
+: <a class="el" href="classldmx_1_1TrigScintTrack.html#ae066df67ebbdc5537104f2f075547098">ldmx::TrigScintTrack</a>
+</li>
+<li>getResidualY()
+: <a class="el" href="classldmx_1_1TrigScintTrack.html#ac94182dd06f6edd562f226c50bfc7e71">ldmx::TrigScintTrack</a>
+</li>
+<li>getResidualZ()
+: <a class="el" href="classldmx_1_1TrigScintTrack.html#a456c9d208824b06c3fc3c47a31e22757">ldmx::TrigScintTrack</a>
+</li>
 <li>getRotAngle()
 : <a class="el" href="classldmx_1_1DetectorGeometry.html#a52dc85c49164af146423310f05b80e16">ldmx::DetectorGeometry</a>
 </li>
@@ -710,6 +755,7 @@ $(function() {
 </li>
 <li>getSeed()
 : <a class="el" href="classldmx_1_1RandomNumberSeedService.html#ab3ee6db4ccda6f572c639e5f3bcb4b8c">ldmx::RandomNumberSeedService</a>
+, <a class="el" href="classldmx_1_1TrigScintCluster.html#a14dca91df1515b4c071332305cdece08">ldmx::TrigScintCluster</a>
 </li>
 <li>getSeedNames()
 : <a class="el" href="classldmx_1_1RandomNumberSeedService.html#ad319f4757fedab49d9a31841659c0131">ldmx::RandomNumberSeedService</a>
@@ -750,6 +796,7 @@ $(function() {
 , <a class="el" href="classldmx_1_1SimCalorimeterHit.html#a45055c682a9cdb7164d3725e570439c6">ldmx::SimCalorimeterHit</a>
 , <a class="el" href="classldmx_1_1SimParticle.html#a25f09de861cbdbf3ba2a9651331fad8d">ldmx::SimParticle</a>
 , <a class="el" href="classldmx_1_1SimTrackerHit.html#ac59e5d767a17f4f4ac461012d5c8037d">ldmx::SimTrackerHit</a>
+, <a class="el" href="classldmx_1_1TrigScintCluster.html#a5d2f3fbaac4f869cb4b34ef1bd59c473">ldmx::TrigScintCluster</a>
 </li>
 <li>getTimestamp()
 : <a class="el" href="classldmx_1_1EventHeader.html#a8a0f41f497ae17b7bcf693428cba0bdb">ldmx::EventHeader</a>
