@@ -284,7 +284,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Pure virtual getCondition function. Must be implemented by any <a class="el" href="classldmx_1_1Conditions.html" title="Container and cache for conditions and conditions providers.">Conditions</a> providers. </p>
 
-<p>Implemented in <a class="el" href="classldmx_1_1RandomNumberSeedService.html#accf20afbc29b4f5bd81976202b1cc46e">ldmx::RandomNumberSeedService</a>, <a class="el" href="classldmx_1_1EcalGeometryProvider.html#a5d57c8177523c8c446e74bebbeb884e3">ldmx::EcalGeometryProvider</a>, and <a class="el" href="classldmx_1_1SimpleCSVTableProvider.html#aeb0a12524a901eb0c5c54e88219cba47">ldmx::SimpleCSVTableProvider</a>.</p>
+<p>Implemented in <a class="el" href="classldmx_1_1RandomNumberSeedService.html#accf20afbc29b4f5bd81976202b1cc46e">ldmx::RandomNumberSeedService</a>, <a class="el" href="classldmx_1_1EcalTriggerGeometryProvider.html#aa13e21d169f6d216a7925c5a1a8086ce">ldmx::EcalTriggerGeometryProvider</a>, <a class="el" href="classldmx_1_1EcalGeometryProvider.html#a5d57c8177523c8c446e74bebbeb884e3">ldmx::EcalGeometryProvider</a>, and <a class="el" href="classldmx_1_1SimpleCSVTableProvider.html#aeb0a12524a901eb0c5c54e88219cba47">ldmx::SimpleCSVTableProvider</a>.</p>
 
 </div>
 </div>
@@ -503,7 +503,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Called by conditions system when done with a conditions object, appropriate point for cleanup. </p><dl class="section note"><dt>Note</dt><dd>Default behavior is to delete the object! </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classldmx_1_1RandomNumberSeedService.html#accdca8f7076f5474ceca984df79bd073">ldmx::RandomNumberSeedService</a>, and <a class="el" href="classldmx_1_1EcalGeometryProvider.html#a3ab73d4b1f304142bb9156addf20e5b2">ldmx::EcalGeometryProvider</a>.</p>
+<p>Reimplemented in <a class="el" href="classldmx_1_1RandomNumberSeedService.html#accdca8f7076f5474ceca984df79bd073">ldmx::RandomNumberSeedService</a>, <a class="el" href="classldmx_1_1EcalTriggerGeometryProvider.html#a8380961853a0a4859742748126ae259d">ldmx::EcalTriggerGeometryProvider</a>, and <a class="el" href="classldmx_1_1EcalGeometryProvider.html#a3ab73d4b1f304142bb9156addf20e5b2">ldmx::EcalGeometryProvider</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="ConditionsObjectProvider_8h_source.html#l00079">79</a> of file <a class="el" href="ConditionsObjectProvider_8h_source.html">ConditionsObjectProvider.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                                   {</div>
@@ -555,6 +555,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Conditions_8cxx_source.html#l00042">ldmx::Conditions::getConditionIOV()</a>, <a class="el" href="Conditions_8cxx_source.html#l00049">ldmx::Conditions::getConditionPtr()</a>, <a class="el" href="Process_8h_source.html#l00080">ldmx::Process::getConditions()</a>, and <a class="el" href="ConditionsObjectProvider_8h_source.html#l00135">process_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="EcalTriggerGeometry_8cxx_source.html#l00160">ldmx::EcalTriggerGeometryProvider::getCondition()</a>.</p>
 
 </div>
 </div>
