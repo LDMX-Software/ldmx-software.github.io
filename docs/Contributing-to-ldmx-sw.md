@@ -30,4 +30,5 @@ If you plan on starting a major (sub)project within the repository like adding a
 In ldmx-sw we follow the [Google Style Guide](https://google.github.io/styleguide/cppguide.html). Some helpful configurations for popular text editors are listed below.
 
 - [emacs](https://raw.githubusercontent.com/google/styleguide/gh-pages/google-c-style.el)
-- [vim](https://github.com/google/vim-codefmt)
+- [google/vim-codefmt](https://github.com/google/vim-codefmt)
+- [rhysd/vim-clang-format](https://github.com/rhysd/vim-clang-format)
