@@ -78,6 +78,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abebe52c7ead450d3162e8cf4c88a3e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18c201441a441989c0e0f828f55c4a61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a> () const</td></tr>
 <tr class="separator:a18c201441a441989c0e0f828f55c4a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f61fc866cebef91d073024c956be55"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ad4f61fc866cebef91d073024c956be55">raw</a> () const</td></tr>
+<tr class="separator:ad4f61fc866cebef91d073024c956be55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -256,7 +258,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                        <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ac324f3f30ae2d437ca761eb6bfa28830">first</a>(); <span class="comment">//calibration mode</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00168">first()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00107">isTOTComplete()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00177">secon()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00177">first()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00107">isTOTComplete()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00186">secon()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00018">ldmx::EcalTrigPrimDigiProducer::produce()</a>.</p>
 
@@ -293,7 +295,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ac324f3f30ae2d437ca761eb6bfa28830">first</a>();</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00168">first()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00177">first()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>.</p>
 
@@ -324,12 +326,12 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <p>Get the first 10-bit measurement out of the sample</p>
 <dl class="section return"><dt>Returns</dt><dd>10-bit measurement at first position in sample </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00168">168</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                      {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a8befc129c0324361a3a31d5632ab4109">TEN_BIT_MASK</a> &amp; ( <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">word_</a> &gt;&gt; <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a49c84f8975bf63d41e39cf90a42a8b2d">FIRSTMEAS_POS</a> );</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00177">177</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                      {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a8befc129c0324361a3a31d5632ab4109">TEN_BIT_MASK</a> &amp; ( <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">word_</a> &gt;&gt; <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a49c84f8975bf63d41e39cf90a42a8b2d">FIRSTMEAS_POS</a> );</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00409">ldmx::HgcrocDigiCollection::FIRSTMEAS_POS</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00400">ldmx::HgcrocDigiCollection::TEN_BIT_MASK</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00184">word_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00415">ldmx::HgcrocDigiCollection::FIRSTMEAS_POS</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00406">ldmx::HgcrocDigiCollection::TEN_BIT_MASK</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00193">word_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00156">adc_t()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00144">adc_tm1()</a>.</p>
 
@@ -365,9 +367,9 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        <span class="keywordflow">return</span> (<a class="code" href="classldmx_1_1HgcrocDigiCollection.html#ab3a66b347fcd8e0bf929d24ab328476a">ONE_BIT_MASK</a> &amp; ( <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">word_</a> &gt;&gt; <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a1367b8c9128a893446055de20bf564b1">SECONFLAG_POS</a> ));</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00397">ldmx::HgcrocDigiCollection::ONE_BIT_MASK</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00406">ldmx::HgcrocDigiCollection::SECONFLAG_POS</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00184">word_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00403">ldmx::HgcrocDigiCollection::ONE_BIT_MASK</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00412">ldmx::HgcrocDigiCollection::SECONFLAG_POS</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00193">word_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00156">adc_t()</a>, <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00018">ldmx::EcalTrigPrimDigiProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00156">adc_t()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00254">ldmx::HgcrocDigiCollection::HgcrocDigi::isADC()</a>, <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00018">ldmx::EcalTrigPrimDigiProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -401,9 +403,43 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        <span class="keywordflow">return</span> (<a class="code" href="classldmx_1_1HgcrocDigiCollection.html#ab3a66b347fcd8e0bf929d24ab328476a">ONE_BIT_MASK</a> &amp; ( <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">word_</a> &gt;&gt; <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a272c75ffa57d49b889db4f10df7107dd">FIRSTFLAG_POS</a> ));</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00403">ldmx::HgcrocDigiCollection::FIRSTFLAG_POS</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00397">ldmx::HgcrocDigiCollection::ONE_BIT_MASK</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00184">word_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00409">ldmx::HgcrocDigiCollection::FIRSTFLAG_POS</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00403">ldmx::HgcrocDigiCollection::ONE_BIT_MASK</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00193">word_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00254">ldmx::HgcrocDigiCollection::HgcrocDigi::isADC()</a>, and <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<a id="ad4f61fc866cebef91d073024c956be55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4f61fc866cebef91d073024c956be55">&#9670;&nbsp;</a></span>raw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ldmx::HgcrocDigiCollection::Sample::raw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the raw value of this sample</p>
+<dl class="section return"><dt>Returns</dt><dd>32-bit full value fo the sample </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00166">166</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                         {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">word_</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00193">word_</a>.</p>
 
 </div>
 </div>
@@ -432,12 +468,12 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <p>Get the second 10-bit measurement out of the sample</p>
 <dl class="section return"><dt>Returns</dt><dd>10-bit measurement at second position in sample </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00177">177</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                      {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a8befc129c0324361a3a31d5632ab4109">TEN_BIT_MASK</a> &amp; ( <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">word_</a> &gt;&gt; <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#ac449d0feeffb3bf89c34f41f67e89856">SECONMEAS_POS</a> );</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00186">186</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                      {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a8befc129c0324361a3a31d5632ab4109">TEN_BIT_MASK</a> &amp; ( <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">word_</a> &gt;&gt; <a class="code" href="classldmx_1_1HgcrocDigiCollection.html#ac449d0feeffb3bf89c34f41f67e89856">SECONMEAS_POS</a> );</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00412">ldmx::HgcrocDigiCollection::SECONMEAS_POS</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00400">ldmx::HgcrocDigiCollection::TEN_BIT_MASK</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00184">word_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00418">ldmx::HgcrocDigiCollection::SECONMEAS_POS</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00406">ldmx::HgcrocDigiCollection::TEN_BIT_MASK</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00193">word_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00156">adc_t()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00131">tot()</a>.</p>
 
@@ -473,7 +509,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        <span class="keywordflow">return</span> (<a class="code" href="classldmx_1_1HgcrocDigiCollection.html#a8befc129c0324361a3a31d5632ab4109">TEN_BIT_MASK</a> &amp; <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">word_</a>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00400">ldmx::HgcrocDigiCollection::TEN_BIT_MASK</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00184">word_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00406">ldmx::HgcrocDigiCollection::TEN_BIT_MASK</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00193">word_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>.</p>
 
@@ -513,9 +549,9 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        <span class="keywordflow">return</span> seconMeas;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00177">secon()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00186">secon()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00018">ldmx::EcalTrigPrimDigiProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8cxx_source.html#l00069">operator&lt;&lt;()</a>, <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00018">ldmx::EcalTrigPrimDigiProducer::produce()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00279">ldmx::HgcrocDigiCollection::HgcrocDigi::tot()</a>.</p>
 
 </div>
 </div>
@@ -523,16 +559,16 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <li>Event/include/Event/<a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ab3a66b347fcd8e0bf929d24ab328476a"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ab3a66b347fcd8e0bf929d24ab328476a">ldmx::HgcrocDigiCollection::ONE_BIT_MASK</a></div><div class="ttdeci">static const int ONE_BIT_MASK</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00397">HgcrocDigiCollection.h:397</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ab3a66b347fcd8e0bf929d24ab328476a"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ab3a66b347fcd8e0bf929d24ab328476a">ldmx::HgcrocDigiCollection::ONE_BIT_MASK</a></div><div class="ttdeci">static const int ONE_BIT_MASK</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00403">HgcrocDigiCollection.h:403</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_af303f0015272f8f6387c3fd83140548a"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#af303f0015272f8f6387c3fd83140548a">ldmx::HgcrocDigiCollection::Sample::isTOTComplete</a></div><div class="ttdeci">bool isTOTComplete() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00107">HgcrocDigiCollection.h:107</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a49c84f8975bf63d41e39cf90a42a8b2d"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a49c84f8975bf63d41e39cf90a42a8b2d">ldmx::HgcrocDigiCollection::FIRSTMEAS_POS</a></div><div class="ttdeci">static const int FIRSTMEAS_POS</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00409">HgcrocDigiCollection.h:409</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ac449d0feeffb3bf89c34f41f67e89856"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ac449d0feeffb3bf89c34f41f67e89856">ldmx::HgcrocDigiCollection::SECONMEAS_POS</a></div><div class="ttdeci">static const int SECONMEAS_POS</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00412">HgcrocDigiCollection.h:412</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_a51c4298090bcf71964013ce39d2060ce"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a51c4298090bcf71964013ce39d2060ce">ldmx::HgcrocDigiCollection::Sample::secon</a></div><div class="ttdeci">int secon() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00177">HgcrocDigiCollection.h:177</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a1367b8c9128a893446055de20bf564b1"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a1367b8c9128a893446055de20bf564b1">ldmx::HgcrocDigiCollection::SECONFLAG_POS</a></div><div class="ttdeci">static const int SECONFLAG_POS</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00406">HgcrocDigiCollection.h:406</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a8befc129c0324361a3a31d5632ab4109"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a8befc129c0324361a3a31d5632ab4109">ldmx::HgcrocDigiCollection::TEN_BIT_MASK</a></div><div class="ttdeci">static const int TEN_BIT_MASK</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00400">HgcrocDigiCollection.h:400</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_ac324f3f30ae2d437ca761eb6bfa28830"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ac324f3f30ae2d437ca761eb6bfa28830">ldmx::HgcrocDigiCollection::Sample::first</a></div><div class="ttdeci">int first() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00168">HgcrocDigiCollection.h:168</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a272c75ffa57d49b889db4f10df7107dd"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a272c75ffa57d49b889db4f10df7107dd">ldmx::HgcrocDigiCollection::FIRSTFLAG_POS</a></div><div class="ttdeci">static const int FIRSTFLAG_POS</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00403">HgcrocDigiCollection.h:403</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_a9e15f837979859c56aa593e78b735524"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">ldmx::HgcrocDigiCollection::Sample::word_</a></div><div class="ttdeci">uint32_t word_</div><div class="ttdoc">The actual 32-bit word spit out by the chip.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00184">HgcrocDigiCollection.h:184</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a49c84f8975bf63d41e39cf90a42a8b2d"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a49c84f8975bf63d41e39cf90a42a8b2d">ldmx::HgcrocDigiCollection::FIRSTMEAS_POS</a></div><div class="ttdeci">static const int FIRSTMEAS_POS</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00415">HgcrocDigiCollection.h:415</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ac449d0feeffb3bf89c34f41f67e89856"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ac449d0feeffb3bf89c34f41f67e89856">ldmx::HgcrocDigiCollection::SECONMEAS_POS</a></div><div class="ttdeci">static const int SECONMEAS_POS</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00418">HgcrocDigiCollection.h:418</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_a51c4298090bcf71964013ce39d2060ce"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a51c4298090bcf71964013ce39d2060ce">ldmx::HgcrocDigiCollection::Sample::secon</a></div><div class="ttdeci">int secon() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00186">HgcrocDigiCollection.h:186</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a1367b8c9128a893446055de20bf564b1"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a1367b8c9128a893446055de20bf564b1">ldmx::HgcrocDigiCollection::SECONFLAG_POS</a></div><div class="ttdeci">static const int SECONFLAG_POS</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00412">HgcrocDigiCollection.h:412</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a8befc129c0324361a3a31d5632ab4109"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a8befc129c0324361a3a31d5632ab4109">ldmx::HgcrocDigiCollection::TEN_BIT_MASK</a></div><div class="ttdeci">static const int TEN_BIT_MASK</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00406">HgcrocDigiCollection.h:406</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_ac324f3f30ae2d437ca761eb6bfa28830"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ac324f3f30ae2d437ca761eb6bfa28830">ldmx::HgcrocDigiCollection::Sample::first</a></div><div class="ttdeci">int first() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00177">HgcrocDigiCollection.h:177</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a272c75ffa57d49b889db4f10df7107dd"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a272c75ffa57d49b889db4f10df7107dd">ldmx::HgcrocDigiCollection::FIRSTFLAG_POS</a></div><div class="ttdeci">static const int FIRSTFLAG_POS</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00409">HgcrocDigiCollection.h:409</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_a9e15f837979859c56aa593e78b735524"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a9e15f837979859c56aa593e78b735524">ldmx::HgcrocDigiCollection::Sample::word_</a></div><div class="ttdeci">uint32_t word_</div><div class="ttdoc">The actual 32-bit word spit out by the chip.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00193">HgcrocDigiCollection.h:193</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>
