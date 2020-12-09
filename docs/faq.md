@@ -41,6 +41,9 @@ python analysis.py sim_output.root #this analysis uses the local ROOT install an
 On recent versions of the mac operating system, you need to re-install command line tools.
 [This stackexchange question](https://stackoverflow.com/questions/58280652/git-doesnt-work-on-macos-catalina-xcrun-error-invalid-active-developer-path) outlines a simple solution.
 
+### On macOS, I get a failure when I try to run the docker containers.
+The default terminal on macOS is `tcsh`, but the environment setup script assumes that you are using `bash`. You should look at [this article](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/) for how to change your default shell to `bash` so that the ldmx environment script works.
+
 ### I can't compile and I get a "No such file or directory" error.
 LDMX software is broken up into several different `git` repositories that are then pulled into a central repository _ldmx-sw_ as "submodules".
 In order for you to get the code in the submodules, you need to tell `git` that you want it. There are two simple ways to do this.
