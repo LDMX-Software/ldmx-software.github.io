@@ -75,7 +75,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Printing of event objects.</p>
 <p>This method requires all event objects to have a Print method defined. </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00549">549</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00551">551</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8be72ef1d0cbc701f67df4d670a1f554"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8be72ef1d0cbc701f67df4d670a1f554">&#9670;&nbsp;</a></span>printPassenger()</h2>
@@ -103,8 +103,8 @@ Private Attributes</h2></td></tr>
 <p>Constructor</p>
 <p>Sets verbosity </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00557">557</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;: <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a>(verbosity) { }</div>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00559">559</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;: <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a>(verbosity) { }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -136,22 +136,22 @@ template&lt;typename Key , typename Val &gt; </div>
 </div><div class="memdoc">
 <p>Prints size and contents of all maps depending on verbosity. </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00581">581</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                                                                    { </div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 1 ) {</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Size: &quot;</span> &lt;&lt; m.size() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                        }</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 2 ) {</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Contents:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;keyVal : m ) {</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                                std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> &lt;&lt; keyVal.first &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span>;</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                                keyVal.second.Print();</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;                            }</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                            std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                        }</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                    }</div>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00583">583</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                                                                    { </div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 1 ) {</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Size: &quot;</span> &lt;&lt; m.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                        }</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 2 ) {</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Contents:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;keyVal : m ) {</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;                                std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> &lt;&lt; keyVal.first &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span>;</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                                keyVal.second.Print();</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                            }</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                            std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                        }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Event_8h_source.html#l00605">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="Event_8h_source.html#l00607">verbosity_</a>.</p>
 
 </div>
 </div>
@@ -182,22 +182,22 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Prints size and contents of all vectors depending on verbosity. </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00563">563</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                                                                   { </div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 1 ) {</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Size: &quot;</span> &lt;&lt; vec.size() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                        }</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 2 ) {</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Contents:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                            <span class="keywordflow">for</span> ( <span class="keyword">const</span> T &amp;obj : vec ) {</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                                std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span>;</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                                obj.Print();</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                            }</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                            std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                        }</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                    }</div>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00565">565</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                                                                   { </div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 1 ) {</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Size: &quot;</span> &lt;&lt; vec.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                        }</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 2 ) {</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                            std::cout &lt;&lt; <span class="stringliteral">&quot;Contents:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                            <span class="keywordflow">for</span> ( <span class="keyword">const</span> T &amp;obj : vec ) {</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                                std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span>;</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                                obj.Print();</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                            }</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                            std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                        }</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Event_8h_source.html#l00605">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="Event_8h_source.html#l00607">verbosity_</a>.</p>
 
 </div>
 </div>
@@ -228,12 +228,12 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Just prints the object if verbosity is nonzero. </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00599">599</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                                                        { </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 1 ) obj.Print(); </div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                    }</div>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00601">601</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                                                        { </div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">verbosity_</a> &gt; 1 ) obj.Print(); </div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Event_8h_source.html#l00605">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="Event_8h_source.html#l00607">verbosity_</a>.</p>
 
 </div>
 </div>
@@ -259,9 +259,9 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Flag for how much to print </p>
 
-<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00605">605</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Event_8h_source.html#l00607">607</a> of file <a class="el" href="Event_8h_source.html">Event.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Event_8h_source.html#l00563">operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Event_8h_source.html#l00565">operator()()</a>.</p>
 
 </div>
 </div>
@@ -269,7 +269,7 @@ template&lt;typename T &gt; </div>
 <li>Framework/include/Framework/<a class="el" href="Event_8h_source.html">Event.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1Event_1_1printPassenger_html_ae2dcc5bcb61607d47eb8621ea0552e2a"><div class="ttname"><a href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">ldmx::Event::printPassenger::verbosity_</a></div><div class="ttdeci">int verbosity_</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00605">Event.h:605</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Event_1_1printPassenger_html_ae2dcc5bcb61607d47eb8621ea0552e2a"><div class="ttname"><a href="classldmx_1_1Event_1_1printPassenger.html#ae2dcc5bcb61607d47eb8621ea0552e2a">ldmx::Event::printPassenger::verbosity_</a></div><div class="ttdeci">int verbosity_</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00607">Event.h:607</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

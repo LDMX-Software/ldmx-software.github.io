@@ -61,44 +61,42 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//   LDMX   //</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//----------//</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AnalysisUtils_8h.html">Tools/AnalysisUtils.h</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventDef_8h.html">Event/EventDef.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*~~~~~~~~~~~~~~~*/</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*   Framework   */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/*~~~~~~~~~~~~~~~*/</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Event_8h.html">Framework/Event.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventProcessor_8h.html">Framework/EventProcessor.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;Framework/Parameters.h&quot;</span> </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> { </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classldmx_1_1RecoilTrackerDQM.html">   31</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classldmx_1_1RecoilTrackerDQM.html">RecoilTrackerDQM</a> : <span class="keyword">public</span> <a class="code" href="classldmx_1_1Analyzer.html">Analyzer</a> { </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">public</span>: </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#a593c79f86b2a5cc0056456ea2649ec04">RecoilTrackerDQM</a>(<span class="keyword">const</span> std::string &amp;name, <a class="code" href="classldmx_1_1Process.html">Process</a> &amp;process);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#acf636aa5d28f8e0461861e78e01f432f">~RecoilTrackerDQM</a>(); </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#a9a3ac8dc5e5d417254c126f79274f478">configure</a>(<a class="code" href="classldmx_1_1Parameters.html">Parameters</a>&amp; parameters) <span class="keyword">final</span> <span class="keyword">override</span>; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#ab325b0e40c550dcb4fae45c1b725dd10">analyze</a>(<span class="keyword">const</span> <a class="code" href="classldmx_1_1Event.html">Event</a>&amp; event);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#a9c65b1028710ab0a054d1e28ca974bf2">onProcessStart</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }; <span class="comment">// RecoilTrackerDQM </span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// ldmx</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif // _DQM_RECOIL_TRACKER_DQM_H_</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/*~~~~~~~~~~~~~~~*/</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*   Framework   */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*~~~~~~~~~~~~~~~*/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Event_8h.html">Framework/Event.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventProcessor_8h.html">Framework/EventProcessor.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;Framework/Configure/Parameters.h&quot;</span> </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> { </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classldmx_1_1RecoilTrackerDQM.html">   30</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classldmx_1_1RecoilTrackerDQM.html">RecoilTrackerDQM</a> : <span class="keyword">public</span> <a class="code" href="classldmx_1_1Analyzer.html">Analyzer</a> { </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">public</span>: </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#a593c79f86b2a5cc0056456ea2649ec04">RecoilTrackerDQM</a>(<span class="keyword">const</span> std::string &amp;name, <a class="code" href="classldmx_1_1Process.html">Process</a> &amp;process);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#acf636aa5d28f8e0461861e78e01f432f">~RecoilTrackerDQM</a>(); </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#a9a3ac8dc5e5d417254c126f79274f478">configure</a>(<a class="code" href="classldmx_1_1Parameters.html">Parameters</a>&amp; parameters) <span class="keyword">final</span> <span class="keyword">override</span>; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#ab325b0e40c550dcb4fae45c1b725dd10">analyze</a>(<span class="keyword">const</span> <a class="code" href="classldmx_1_1Event.html">Event</a>&amp; event);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1RecoilTrackerDQM.html#a9c65b1028710ab0a054d1e28ca974bf2">onProcessStart</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }; <span class="comment">// RecoilTrackerDQM </span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// ldmx</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif // _DQM_RECOIL_TRACKER_DQM_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1RecoilTrackerDQM_html_acf636aa5d28f8e0461861e78e01f432f"><div class="ttname"><a href="classldmx_1_1RecoilTrackerDQM.html#acf636aa5d28f8e0461861e78e01f432f">ldmx::RecoilTrackerDQM::~RecoilTrackerDQM</a></div><div class="ttdeci">~RecoilTrackerDQM()</div><div class="ttdef"><b>Definition:</b> <a href="RecoilTrackerDQM_8cxx_source.html#l00016">RecoilTrackerDQM.cxx:16</a></div></div>
-<div class="ttc" id="aEventDef_8h_html"><div class="ttname"><a href="EventDef_8h.html">EventDef.h</a></div><div class="ttdoc">Headers to be processed when creating the ROOT dictionary.</div></div>
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Analyzer_html"><div class="ttname"><a href="classldmx_1_1Analyzer.html">ldmx::Analyzer</a></div><div class="ttdoc">Base class for a module which does not produce a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00298">EventProcessor.h:298</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RecoilTrackerDQM_html"><div class="ttname"><a href="classldmx_1_1RecoilTrackerDQM.html">ldmx::RecoilTrackerDQM</a></div><div class="ttdef"><b>Definition:</b> <a href="RecoilTrackerDQM_8h_source.html#l00031">RecoilTrackerDQM.h:31</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Analyzer_html"><div class="ttname"><a href="classldmx_1_1Analyzer.html">ldmx::Analyzer</a></div><div class="ttdoc">Base class for a module which does not produce a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00294">EventProcessor.h:294</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RecoilTrackerDQM_html"><div class="ttname"><a href="classldmx_1_1RecoilTrackerDQM.html">ldmx::RecoilTrackerDQM</a></div><div class="ttdef"><b>Definition:</b> <a href="RecoilTrackerDQM_8h_source.html#l00030">RecoilTrackerDQM.h:30</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Parameters_html"><div class="ttname"><a href="classldmx_1_1Parameters.html">ldmx::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00026">Parameters.h:26</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00038">Event.h:38</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00040">Event.h:40</a></div></div>
 <div class="ttc" id="aEvent_8h_html"><div class="ttname"><a href="Event_8h.html">Event.h</a></div><div class="ttdoc">Class implementing an event buffer system for storing event data.</div></div>
 <div class="ttc" id="aAnalysisUtils_8h_html"><div class="ttname"><a href="AnalysisUtils_8h.html">AnalysisUtils.h</a></div><div class="ttdoc">Collection of utility functions useful for analysis.</div></div>
 <div class="ttc" id="aclassldmx_1_1RecoilTrackerDQM_html_ab325b0e40c550dcb4fae45c1b725dd10"><div class="ttname"><a href="classldmx_1_1RecoilTrackerDQM.html#ab325b0e40c550dcb4fae45c1b725dd10">ldmx::RecoilTrackerDQM::analyze</a></div><div class="ttdeci">void analyze(const Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="RecoilTrackerDQM_8cxx_source.html#l00025">RecoilTrackerDQM.cxx:25</a></div></div>

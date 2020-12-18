@@ -97,7 +97,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container and cache for conditions and conditions providers. </p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00040">40</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00041">41</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a983c4f8bd80866ac7208e805ddd0a174"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a983c4f8bd80866ac7208e805ddd0a174">&#9670;&nbsp;</a></span>Conditions()</h2>
@@ -146,8 +146,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Class destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00052">52</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{;}</div>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00053">53</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -208,7 +208,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PluginFactory_8cxx_source.html#l00065">ldmx::PluginFactory::createConditionsObjectProvider()</a>, <a class="el" href="ConditionsObjectProvider_8h_source.html#l00108">ldmx::ConditionsObjectProvider::getConditionObjectName()</a>, <a class="el" href="PluginFactory_8h_source.html#l00033">ldmx::PluginFactory::getInstance()</a>, <a class="el" href="Conditions_8h_source.html#l00116">process_</a>, and <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="PluginFactory_8cxx_source.html#l00065">ldmx::PluginFactory::createConditionsObjectProvider()</a>, <a class="el" href="ConditionsObjectProvider_8h_source.html#l00108">ldmx::ConditionsObjectProvider::getConditionObjectName()</a>, <a class="el" href="PluginFactory_8h_source.html#l00033">ldmx::PluginFactory::getInstance()</a>, <a class="el" href="Conditions_8h_source.html#l00117">process_</a>, and <a class="el" href="Conditions_8h_source.html#l00120">providerMap_</a>.</p>
 
 </div>
 </div>
@@ -253,14 +253,14 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>const reference to conditions object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00081">81</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                         {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>T&amp;<span class="keyword">&gt;</span>(*<a class="code" href="classldmx_1_1Conditions.html#a82be41f80c9ecabb081187f14da1a299">getConditionPtr</a>(condition_name));    </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00082">82</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                         {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>T&amp;<span class="keyword">&gt;</span>(*<a class="code" href="classldmx_1_1Conditions.html#a82be41f80c9ecabb081187f14da1a299">getConditionPtr</a>(condition_name));    </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Conditions_8cxx_source.html#l00049">getConditionPtr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EventProcessor_8h_source.html#l00153">ldmx::EventProcessor::getCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EventProcessor_8h_source.html#l00142">ldmx::EventProcessor::getCondition()</a>.</p>
 
 </div>
 </div>
@@ -296,7 +296,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">return</span> cacheptr-&gt;second.iov;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00134">cache_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00135">cache_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ConditionsObjectProvider_8cxx_source.html#l00013">ldmx::ConditionsObjectProvider::requestParentCondition()</a>.</p>
 
@@ -383,9 +383,9 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00134">cache_</a>, <a class="el" href="Process_8h_source.html#l00070">ldmx::Process::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00072">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="EventHeader_8h_source.html#l00080">ldmx::EventHeader::getRun()</a>, <a class="el" href="Conditions_8h_source.html#l00126">ldmx::Conditions::CacheEntry::iov</a>, <a class="el" href="EventHeader_8h_source.html#l00106">ldmx::EventHeader::isRealData()</a>, <a class="el" href="Conditions_8h_source.html#l00130">ldmx::Conditions::CacheEntry::obj</a>, <a class="el" href="Conditions_8h_source.html#l00116">process_</a>, <a class="el" href="Conditions_8h_source.html#l00128">ldmx::Conditions::CacheEntry::provider</a>, and <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00135">cache_</a>, <a class="el" href="Process_8h_source.html#l00068">ldmx::Process::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00077">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="EventHeader_8h_source.html#l00085">ldmx::EventHeader::getRun()</a>, <a class="el" href="Conditions_8h_source.html#l00127">ldmx::Conditions::CacheEntry::iov</a>, <a class="el" href="EventHeader_8h_source.html#l00111">ldmx::EventHeader::isRealData()</a>, <a class="el" href="Conditions_8h_source.html#l00131">ldmx::Conditions::CacheEntry::obj</a>, <a class="el" href="Conditions_8h_source.html#l00117">process_</a>, <a class="el" href="Conditions_8h_source.html#l00129">ldmx::Conditions::CacheEntry::provider</a>, and <a class="el" href="Conditions_8h_source.html#l00120">providerMap_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Conditions_8h_source.html#l00081">getCondition()</a>, and <a class="el" href="ConditionsObjectProvider_8cxx_source.html#l00013">ldmx::ConditionsObjectProvider::requestParentCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Conditions_8h_source.html#l00082">getCondition()</a>, and <a class="el" href="ConditionsObjectProvider_8cxx_source.html#l00013">ldmx::ConditionsObjectProvider::requestParentCondition()</a>.</p>
 
 </div>
 </div>
@@ -412,9 +412,9 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ptr.second-&gt;onNewRun(rh);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00120">providerMap_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00100">ldmx::Process::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00112">ldmx::Process::run()</a>.</p>
 
 </div>
 </div>
@@ -440,7 +440,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ptr.second-&gt;onProcessEnd();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00120">providerMap_</a>.</p>
 
 </div>
 </div>
@@ -466,9 +466,9 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ptr.second-&gt;onProcessStart();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00119">providerMap_</a>.</p>
+<p class="reference">References <a class="el" href="Conditions_8h_source.html#l00120">providerMap_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00100">ldmx::Process::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Process_8cxx_source.html#l00112">ldmx::Process::run()</a>.</p>
 
 </div>
 </div>
@@ -494,7 +494,7 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <p><a class="el" href="classldmx_1_1Conditions.html" title="Container and cache for conditions and conditions providers.">Conditions</a> cache </p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00134">134</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00135">135</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00042">getConditionIOV()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00049">getConditionPtr()</a>.</p>
 
@@ -521,7 +521,7 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <p>Handle to the <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00116">116</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00117">117</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00011">createConditionsObjectProvider()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00049">getConditionPtr()</a>.</p>
 
@@ -548,7 +548,7 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <p>Map of who provides which condition </p>
 
-<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00119">119</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Conditions_8h_source.html#l00120">120</a> of file <a class="el" href="Conditions_8h_source.html">Conditions.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Conditions_8cxx_source.html#l00011">createConditionsObjectProvider()</a>, <a class="el" href="Conditions_8cxx_source.html#l00049">getConditionPtr()</a>, <a class="el" href="Conditions_8cxx_source.html#l00037">onNewRun()</a>, <a class="el" href="Conditions_8cxx_source.html#l00032">onProcessEnd()</a>, and <a class="el" href="Conditions_8cxx_source.html#l00027">onProcessStart()</a>.</p>
 
@@ -556,16 +556,16 @@ template&lt;class T &gt; </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Framework/include/Framework/<a class="el" href="Conditions_8h_source.html">Conditions.h</a></li>
-<li>Framework/src/<a class="el" href="Conditions_8cxx_source.html">Conditions.cxx</a></li>
+<li>Framework/src/Framework/<a class="el" href="Conditions_8cxx_source.html">Conditions.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1Process_html_a6c28887c34232b4bd3201202511f22d9"><div class="ttname"><a href="classldmx_1_1Process.html#a6c28887c34232b4bd3201202511f22d9">ldmx::Process::getEventHeader</a></div><div class="ttdeci">const EventHeader * getEventHeader() const</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00070">Process.h:70</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Process_html_a6c28887c34232b4bd3201202511f22d9"><div class="ttname"><a href="classldmx_1_1Process.html#a6c28887c34232b4bd3201202511f22d9">ldmx::Process::getEventHeader</a></div><div class="ttdeci">const EventHeader * getEventHeader() const</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00068">Process.h:68</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Conditions_html_a82be41f80c9ecabb081187f14da1a299"><div class="ttname"><a href="classldmx_1_1Conditions.html#a82be41f80c9ecabb081187f14da1a299">ldmx::Conditions::getConditionPtr</a></div><div class="ttdeci">const ConditionsObject * getConditionPtr(const std::string &amp;condition_name)</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8cxx_source.html#l00049">Conditions.cxx:49</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Conditions_html_a015797d7075c02af443f2ba23a46ace7"><div class="ttname"><a href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">ldmx::Conditions::providerMap_</a></div><div class="ttdeci">std::map&lt; std::string, ConditionsObjectProvider * &gt; providerMap_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00119">Conditions.h:119</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Conditions_html_a071d1b1c0d1ef8d5a4458d9948582ac9"><div class="ttname"><a href="classldmx_1_1Conditions.html#a071d1b1c0d1ef8d5a4458d9948582ac9">ldmx::Conditions::process_</a></div><div class="ttdeci">Process &amp; process_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00116">Conditions.h:116</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Conditions_html_a015797d7075c02af443f2ba23a46ace7"><div class="ttname"><a href="classldmx_1_1Conditions.html#a015797d7075c02af443f2ba23a46ace7">ldmx::Conditions::providerMap_</a></div><div class="ttdeci">std::map&lt; std::string, ConditionsObjectProvider * &gt; providerMap_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00120">Conditions.h:120</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Conditions_html_a071d1b1c0d1ef8d5a4458d9948582ac9"><div class="ttname"><a href="classldmx_1_1Conditions.html#a071d1b1c0d1ef8d5a4458d9948582ac9">ldmx::Conditions::process_</a></div><div class="ttdeci">Process &amp; process_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00117">Conditions.h:117</a></div></div>
 <div class="ttc" id="aclassldmx_1_1PluginFactory_html_a725214b6a848f1e3973152c739a1b8c6"><div class="ttname"><a href="classldmx_1_1PluginFactory.html#a725214b6a848f1e3973152c739a1b8c6">ldmx::PluginFactory::createConditionsObjectProvider</a></div><div class="ttdeci">ConditionsObjectProvider * createConditionsObjectProvider(const std::string &amp;classname, const std::string &amp;objName, const std::string &amp;tagname, const Parameters &amp;params, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="PluginFactory_8cxx_source.html#l00065">PluginFactory.cxx:65</a></div></div>
 <div class="ttc" id="aclassldmx_1_1ConditionsObjectProvider_html_a0a8b3736d41408e55fc4ddc31200096e"><div class="ttname"><a href="classldmx_1_1ConditionsObjectProvider.html#a0a8b3736d41408e55fc4ddc31200096e">ldmx::ConditionsObjectProvider::getConditionObjectName</a></div><div class="ttdeci">const std::string &amp; getConditionObjectName() const</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObjectProvider_8h_source.html#l00108">ConditionsObjectProvider.h:108</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Conditions_html_a973eea971438f89a0b6c60bf1dac4a06"><div class="ttname"><a href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">ldmx::Conditions::cache_</a></div><div class="ttdeci">std::map&lt; std::string, CacheEntry &gt; cache_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00134">Conditions.h:134</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Conditions_html_a973eea971438f89a0b6c60bf1dac4a06"><div class="ttname"><a href="classldmx_1_1Conditions.html#a973eea971438f89a0b6c60bf1dac4a06">ldmx::Conditions::cache_</a></div><div class="ttdeci">std::map&lt; std::string, CacheEntry &gt; cache_</div><div class="ttdef"><b>Definition:</b> <a href="Conditions_8h_source.html#l00135">Conditions.h:135</a></div></div>
 <div class="ttc" id="aclassldmx_1_1PluginFactory_html_ad879f248850c202d98df0f784c25ca92"><div class="ttname"><a href="classldmx_1_1PluginFactory.html#ad879f248850c202d98df0f784c25ca92">ldmx::PluginFactory::getInstance</a></div><div class="ttdeci">static PluginFactory &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="PluginFactory_8h_source.html#l00033">PluginFactory.h:33</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>

@@ -129,7 +129,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="textblock"><p><a class="el" href="classBase.html">Base</a> class for a module which does not produce a data product. </p>
 <dl class="section note"><dt>Note</dt><dd>This class processes a constant copy of the event which cannot be updated. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00298">298</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00294">294</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a292d214965c667249fe4e1cf400ff444"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a292d214965c667249fe4e1cf400ff444">&#9670;&nbsp;</a></span>Analyzer()</h2>
@@ -168,8 +168,8 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <dd>
 The provided name should not be the class name, but rather a logical label for this instance of the class, as more than one copy of a given class can be loaded into a <a class="el" href="classldmx_1_1Process.html" title="Class which represents the process under execution.">Process</a> with different parameters. Names should not include whitespace or special characters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00062">62</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;: <a class="code" href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">EventProcessor</a>(name,process) {}</div>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8cxx_source.html#l00068">68</a> of file <a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    : <a class="code" href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">EventProcessor</a>(name, process) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -204,7 +204,7 @@ The provided name should not be the class name, but rather a logical label for t
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classldmx_1_1EcalDigiVerifier.html#a89b5f6695fcffee6d2053cd1c9344230">ldmx::EcalDigiVerifier</a>, <a class="el" href="classldmx_1_1test_1_1TestAnalyzer.html#ad7140a76454face1f899bdccd3938092">ldmx::test::TestAnalyzer</a>, <a class="el" href="classldmx_1_1test_1_1ecal_1_1EcalCheckEnergyReconstruction.html#a34eaf8ba8588c95f3f99c6a545bb4039">ldmx::test::ecal::EcalCheckEnergyReconstruction</a>, <a class="el" href="classldmx_1_1PhotoNuclearDQM.html#a9e069b7c597d2ef982e2404c5d146597">ldmx::PhotoNuclearDQM</a>, <a class="el" href="classldmx_1_1TrigScintHitDQM.html#ad62cb03fb201f42417069d3f2aec048d">ldmx::TrigScintHitDQM</a>, <a class="el" href="classldmx_1_1TrigScintDQM.html#a2369ebb1fc53ed916b629f4a1ccf37f7">ldmx::TrigScintDQM</a>, <a class="el" href="classldmx_1_1RecoilTrackerDQM.html#ab325b0e40c550dcb4fae45c1b725dd10">ldmx::RecoilTrackerDQM</a>, and <a class="el" href="classldmx_1_1HCalDQM.html#a4226670f0844477f8401b3a21f43ea54">ldmx::HCalDQM</a>.</p>
+<p>Implemented in <a class="el" href="classecal_1_1test_1_1EcalCheckEnergyReconstruction.html#ae1a624957d1395157f33f3d3984e0035">ecal::test::EcalCheckEnergyReconstruction</a>, <a class="el" href="classldmx_1_1EcalDigiVerifier.html#a89b5f6695fcffee6d2053cd1c9344230">ldmx::EcalDigiVerifier</a>, <a class="el" href="classldmx_1_1test_1_1TestAnalyzer.html#ad7140a76454face1f899bdccd3938092">ldmx::test::TestAnalyzer</a>, <a class="el" href="classldmx_1_1PhotoNuclearDQM.html#a9e069b7c597d2ef982e2404c5d146597">ldmx::PhotoNuclearDQM</a>, <a class="el" href="classldmx_1_1TrigScintHitDQM.html#ad62cb03fb201f42417069d3f2aec048d">ldmx::TrigScintHitDQM</a>, <a class="el" href="classldmx_1_1TrigScintDQM.html#a2369ebb1fc53ed916b629f4a1ccf37f7">ldmx::TrigScintDQM</a>, <a class="el" href="classldmx_1_1RecoilTrackerDQM.html#ab325b0e40c550dcb4fae45c1b725dd10">ldmx::RecoilTrackerDQM</a>, and <a class="el" href="classldmx_1_1HCalDQM.html#a4226670f0844477f8401b3a21f43ea54">ldmx::HCalDQM</a>.</p>
 
 </div>
 </div>
@@ -230,13 +230,13 @@ The provided name should not be the class name, but rather a logical label for t
 </div><div class="memdoc">
 <p>Constant used to track <a class="el" href="classldmx_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a> types by the <a class="el" href="classldmx_1_1PluginFactory.html" title="Singleton module factory that creates EventProcessor objects.">PluginFactory</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00303">303</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00298">298</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Framework/include/Framework/<a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a></li>
-<li>Framework/src/<a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a></li>
+<li>Framework/src/Framework/<a class="el" href="EventProcessor_8cxx_source.html">EventProcessor.cxx</a></li>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab1d17dd7b596699bbcc7837b4b7ffa7a"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab1d17dd7b596699bbcc7837b4b7ffa7a">ldmx::EventProcessor::EventProcessor</a></div><div class="ttdeci">EventProcessor(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00011">EventProcessor.cxx:11</a></div></div>

@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.8.20"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>LDMX Software: Framework/src/EventFile.cxx Source File</title>
+		<title>LDMX Software: Framework/src/Framework/EventFile.cxx Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -39,7 +39,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bcbb2cf9a3d3d83e5515c82071a07177.html">Framework</a></li><li class="navelem"><a class="el" href="dir_789eab27568de29e5ef4e65af023cceb.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_bcbb2cf9a3d3d83e5515c82071a07177.html">Framework</a></li><li class="navelem"><a class="el" href="dir_789eab27568de29e5ef4e65af023cceb.html">src</a></li><li class="navelem"><a class="el" href="dir_6840bc5e4186b3cc09725ba5af41590e.html">Framework</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -47,390 +47,406 @@ $(function() {
 <div class="title">EventFile.cxx</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span> </div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;TTreeReader.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// LDMX</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventFile_8h.html">Framework/EventFile.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventConstants_8h.html">Recon/Event/EventConstants.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Event_8h.html">Framework/Event.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Framework/Exception.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventConstants_8h.html">Event/EventConstants.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RunHeader_8h.html">Event/RunHeader.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventFile_8h.html">Framework/EventFile.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Framework/Exception/Exception.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;Framework/RunHeader.h&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">   14</a></span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">EventFile::EventFile</a>(<span class="keyword">const</span> std::string&amp; filename, <a class="code" href="classldmx_1_1EventFile.html">EventFile</a>* parent, <span class="keywordtype">bool</span> isOutputFile, <span class="keywordtype">bool</span> isSingleOutput, <span class="keywordtype">int</span> compressionSetting) : </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                fileName_(filename), parent_(parent), isOutputFile_(isOutputFile), isSingleOutput_(isSingleOutput) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="comment">//we are writting out so open the file and make sure it is writable</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a> = <span class="keyword">new</span> TFile(<a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a>.c_str(), <span class="stringliteral">&quot;RECREATE&quot;</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;IsOpen() or !<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;IsWritable()) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                EXCEPTION_RAISE(<span class="stringliteral">&quot;FileError&quot;</span>, <span class="stringliteral">&quot;Output file &#39;&quot;</span> + <a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a> + <span class="stringliteral">&quot;&#39; is not writable.&quot;</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="comment">//set compression settings</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="comment">//  Check out the TFile constructor for explanation of how this integer is built</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="comment">//  Short Reference: setting = 100*algorithem + level</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="comment">//  algorithm = 0 ==&gt; use global default</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;SetCompressionSettings(compressionSetting);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span>( <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a> ) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="comment">//output file when there are input files</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="comment">//  might be drop/keep rules, so we should have these rules to make sure it works</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">   14</a></span>&#160;<a class="code" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">EventFile::EventFile</a>(<span class="keyword">const</span> std::string &amp;filename, <a class="code" href="classldmx_1_1EventFile.html">EventFile</a> *parent,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                     <span class="keywordtype">bool</span> isOutputFile, <span class="keywordtype">bool</span> isSingleOutput,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                     <span class="keywordtype">int</span> compressionSetting)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    : fileName_(filename), parent_(parent), isOutputFile_(isOutputFile),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      isSingleOutput_(isSingleOutput) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// we are writting out so open the file and make sure it is writable</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a> = <span class="keyword">new</span> TFile(<a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a>.c_str(), <span class="stringliteral">&quot;RECREATE&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;IsOpen() or !<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;IsWritable()) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;FileError&quot;</span>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                      <span class="stringliteral">&quot;Output file &#39;&quot;</span> + <a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a> + <span class="stringliteral">&quot;&#39; is not writable.&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// set compression settings</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//  Check out the TFile constructor for explanation of how this integer is</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//  built Short Reference: setting = 100*algorithem + level algorithm = 0</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//  ==&gt; use global default</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;SetCompressionSettings(compressionSetting);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="comment">//turn everything on</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="comment">//  hypothetically could turn everything off? Doesn&#39;t work for some reason?</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#ab7e55d71653ac39fb05dc194be45302b">preCloneRules_</a>.emplace_back( <span class="stringliteral">&quot;*&quot;</span> , <span class="keyword">true</span> );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="comment">//except EventHeader (copies over to output)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#ab7e55d71653ac39fb05dc194be45302b">preCloneRules_</a>.emplace_back( <span class="stringliteral">&quot;EventHeader*&quot;</span> , <span class="keyword">true</span> );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="comment">//reactivate all branches so default behavior is drop</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#ab9d89264a5d512fa79e2630909afc3d6">reactivateRules_</a>.push_back( <span class="stringliteral">&quot;*&quot;</span> );</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">//open file with only reading enabled</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a> = <span class="keyword">new</span> TFile(<a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a>.c_str());</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">//double check that file is open</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;IsOpen()) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                EXCEPTION_RAISE(<span class="stringliteral">&quot;FileError&quot;</span>, <span class="stringliteral">&quot;Input file &#39;&quot;</span> + <a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a> + <span class="stringliteral">&quot;&#39; is not readable or does not exist.&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> = (TTree*) (<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;Get( <a class="code" href="classldmx_1_1EventConstants.html#adef82b0410adf3e5908baf4554949726">EventConstants::EVENT_TREE_NAME</a>.c_str() ));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                EXCEPTION_RAISE(<span class="stringliteral">&quot;FileError&quot;</span> ,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <span class="stringliteral">&quot;File &#39;&quot;</span> + <a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a> + <span class="stringliteral">&quot;&#39; does not have a TTree named &#39;&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        + <a class="code" href="classldmx_1_1EventConstants.html#adef82b0410adf3e5908baf4554949726">EventConstants::EVENT_TREE_NAME</a> + <span class="stringliteral">&quot;&#39; in it.&quot;</span> );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a> = <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;GetEntriesFast();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">importRunHeaders</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a81df8d054e056b8340a20b9b4305cea2">   65</a></span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">EventFile::EventFile</a>(<span class="keyword">const</span> std::string&amp; filename) :</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html">EventFile</a>(filename,nullptr,false,false,-1) { }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="comment">// output file when there are input files</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="comment">//  might be drop/keep rules, so we should have these rules to make sure</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="comment">//  it works</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="comment">// turn everything on</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="comment">//  hypothetically could turn everything off? Doesn&#39;t work for some</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="comment">//  reason?</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a786aebd2a065e638e64f3ec6a7c64933">preCloneRules_</a>.emplace_back(<span class="stringliteral">&quot;*&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="comment">// except EventHeader (copies over to output)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a786aebd2a065e638e64f3ec6a7c64933">preCloneRules_</a>.emplace_back(<span class="stringliteral">&quot;EventHeader*&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="comment">// reactivate all branches so default behavior is drop</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a88e7717418933d65dc932cb74dadb790">reactivateRules_</a>.push_back(<span class="stringliteral">&quot;*&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// open file with only reading enabled</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a> = <span class="keyword">new</span> TFile(<a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a>.c_str());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// double check that file is open</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;IsOpen()) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;FileError&quot;</span>, <span class="stringliteral">&quot;Input file &#39;&quot;</span> + <a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a> +</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                       <span class="stringliteral">&quot;&#39; is not readable or does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> = (TTree *)(<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;Get(<a class="code" href="classldmx_1_1EventConstants.html#adef82b0410adf3e5908baf4554949726">EventConstants::EVENT_TREE_NAME</a>.c_str()));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;FileError&quot;</span>,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                      <span class="stringliteral">&quot;File &#39;&quot;</span> + <a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a> + <span class="stringliteral">&quot;&#39; does not have a TTree named &#39;&quot;</span> +</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                          <a class="code" href="classldmx_1_1EventConstants.html#adef82b0410adf3e5908baf4554949726">EventConstants::EVENT_TREE_NAME</a> + <span class="stringliteral">&quot;&#39; in it.&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a> = <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;GetEntriesFast();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a925f7593c7b66a60e68dfbb447b56ece">   68</a></span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">EventFile::EventFile</a>(<span class="keyword">const</span> std::string&amp; filename, <span class="keywordtype">int</span> compressionSetting) :</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html">EventFile</a>(filename,nullptr,true,true,compressionSetting) { }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">importRunHeaders</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#ade104d100018f651272699f3847e62b2">   71</a></span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">EventFile::EventFile</a>(<span class="keyword">const</span> std::string&amp; filename, <a class="code" href="classldmx_1_1EventFile.html">EventFile</a>* parent, <span class="keywordtype">bool</span> isSingleOutput, <span class="keywordtype">int</span> compressionSetting) :</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html">EventFile</a>(filename,parent,true,isSingleOutput,compressionSetting) { }</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a81df8d054e056b8340a20b9b4305cea2">   71</a></span>&#160;<a class="code" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">EventFile::EventFile</a>(<span class="keyword">const</span> std::string &amp;filename)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    : <a class="code" href="classldmx_1_1EventFile.html">EventFile</a>(filename, nullptr, false, false, -1) {}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a9999632efb2af6d0e720c8070bd9e384">   74</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#a9999632efb2af6d0e720c8070bd9e384">EventFile::addDrop</a>(<span class="keyword">const</span> std::string&amp; rule) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> offset;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">bool</span> isKeep=<span class="keyword">false</span>,isDrop=<span class="keyword">false</span>,isIgnore=<span class="keyword">false</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">size_t</span> i = rule.find(<span class="stringliteral">&quot;keep&quot;</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span>( i != std::string::npos ){</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            offset = i+4 ;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            isKeep = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        i = rule.find(<span class="stringliteral">&quot;drop&quot;</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span>( i != std::string::npos ){</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            offset = i+4 ;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            isDrop = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        i = rule.find(<span class="stringliteral">&quot;ignore&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span>( i != std::string::npos ){</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            offset = i+6 ;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            isIgnore = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">//more than one of (keep,drop,ignore) was provided =&gt; not valid rule</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span>( <span class="keywordtype">int</span>(isKeep) + <span class="keywordtype">int</span>(isDrop) + <span class="keywordtype">int</span>(isIgnore) != 1 ) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::string srule = rule.substr(offset);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">for</span> (i = srule.find_first_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>); i != std::string::npos; i = srule.find_first_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>))</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            srule.erase(i, 1);</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a925f7593c7b66a60e68dfbb447b56ece">   74</a></span>&#160;<a class="code" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">EventFile::EventFile</a>(<span class="keyword">const</span> std::string &amp;filename, <span class="keywordtype">int</span> compressionSetting)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    : <a class="code" href="classldmx_1_1EventFile.html">EventFile</a>(filename, nullptr, true, true, compressionSetting) {}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#ade104d100018f651272699f3847e62b2">   77</a></span>&#160;<a class="code" href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">EventFile::EventFile</a>(<span class="keyword">const</span> std::string &amp;filename, <a class="code" href="classldmx_1_1EventFile.html">EventFile</a> *parent,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                     <span class="keywordtype">bool</span> isSingleOutput, <span class="keywordtype">int</span> compressionSetting)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    : <a class="code" href="classldmx_1_1EventFile.html">EventFile</a>(filename, parent, true, isSingleOutput, compressionSetting) {}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a9999632efb2af6d0e720c8070bd9e384">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#a9999632efb2af6d0e720c8070bd9e384">EventFile::addDrop</a>(<span class="keyword">const</span> std::string &amp;rule) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">int</span> offset;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">bool</span> isKeep = <span class="keyword">false</span>, isDrop = <span class="keyword">false</span>, isIgnore = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">size_t</span> i = rule.find(<span class="stringliteral">&quot;keep&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">if</span> (i != std::string::npos) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    offset = i + 4;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    isKeep = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  i = rule.find(<span class="stringliteral">&quot;drop&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">if</span> (i != std::string::npos) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    offset = i + 4;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    isDrop = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  i = rule.find(<span class="stringliteral">&quot;ignore&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span> (i != std::string::npos) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    offset = i + 6;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    isIgnore = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">//name of branch is not given</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (srule.length() == 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//add wild card at end for matching purposes</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (srule.back() != <span class="charliteral">&#39;*&#39;</span>) srule += <span class="stringliteral">&quot;.*&quot;</span>; <span class="comment">//add wildcard to back</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span>( isKeep ) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="comment">//turn both the input and output tree&#39;s on</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="comment">//root needs . removed otherwise it gets cranky</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            srule.erase( std::remove( srule.begin(), srule.end(), <span class="charliteral">&#39;.&#39;</span> ) , srule.end() );</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#ab7e55d71653ac39fb05dc194be45302b">preCloneRules_</a>.emplace_back( srule , <span class="keyword">true</span> );</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="comment">//this branch will then be copied over into output tree and be active</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>( isIgnore ) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment">//don&#39;t even read it from the input file</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="comment">//root needs . removed otherwise it gets cranky</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            srule.erase( std::remove( srule.begin(), srule.end(), <span class="charliteral">&#39;.&#39;</span> ) , srule.end() );</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#ab7e55d71653ac39fb05dc194be45302b">preCloneRules_</a>.emplace_back( srule , <span class="keyword">false</span> );</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="comment">//these branches won&#39;t be copied over into output tree</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( isDrop ) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="comment">//drop means allowing it on reading but not writing</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="comment">// pass these regex to event bus so Event::add knows</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#af832a9aad3b964b9c966b2422c777c52">addDrop</a>( srule ); <span class="comment">//requires event_ to be set</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="comment">//root needs . removed otherwise it gets cranky</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            srule.erase( std::remove( srule.begin(), srule.end(), <span class="charliteral">&#39;.&#39;</span> ) , srule.end() );</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#ab7e55d71653ac39fb05dc194be45302b">preCloneRules_</a>.emplace_back( srule , <span class="keyword">false</span> );</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="comment">//these branches won&#39;t be copied over into output tree</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="comment">//reactivate input branch after clone</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#ab9d89264a5d512fa79e2630909afc3d6">reactivateRules_</a>.push_back( srule );</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a700fc26f0395c03733f7dab36f4b1918">  133</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classldmx_1_1EventFile.html#a700fc26f0395c03733f7dab36f4b1918">EventFile::nextEvent</a>(<span class="keywordtype">bool</span> storeCurrentEvent) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">// more than one of (keep,drop,ignore) was provided =&gt; not valid rule</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">if</span> (<span class="keywordtype">int</span>(isKeep) + <span class="keywordtype">int</span>(isDrop) + <span class="keywordtype">int</span>(isIgnore) != 1)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  std::string srule = rule.substr(offset);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">for</span> (i = srule.find_first_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>); i != std::string::npos;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;       i = srule.find_first_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>))</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    srule.erase(i, 1);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// name of branch is not given</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span> (srule.length() == 0)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="comment">// add wild card at end for matching purposes</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">if</span> (srule.back() != <span class="charliteral">&#39;*&#39;</span>)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    srule += <span class="stringliteral">&quot;.*&quot;</span>; <span class="comment">// add wildcard to back</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordflow">if</span> (isKeep) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// turn both the input and output tree&#39;s on</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// root needs . removed otherwise it gets cranky</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    srule.erase(std::remove(srule.begin(), srule.end(), <span class="charliteral">&#39;.&#39;</span>), srule.end());</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a786aebd2a065e638e64f3ec6a7c64933">preCloneRules_</a>.emplace_back(srule, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// this branch will then be copied over into output tree and be active</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isIgnore) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// don&#39;t even read it from the input file</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// root needs . removed otherwise it gets cranky</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    srule.erase(std::remove(srule.begin(), srule.end(), <span class="charliteral">&#39;.&#39;</span>), srule.end());</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a786aebd2a065e638e64f3ec6a7c64933">preCloneRules_</a>.emplace_back(srule, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// these branches won&#39;t be copied over into output tree</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isDrop) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// drop means allowing it on reading but not writing</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// pass these regex to event bus so Event::add knows</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#af832a9aad3b964b9c966b2422c777c52">addDrop</a>(srule); <span class="comment">// requires event_ to be set</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> &lt; 0 &amp;&amp; <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                EXCEPTION_RAISE(<span class="stringliteral">&quot;EventFile&quot;</span>, <span class="stringliteral">&quot;No event tree in the file&quot;</span>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment">//Only clone parent tree if either</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="comment">//  1) There is no tree setup yet (first input file)</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="comment">//  2) This is not single output (new input file --&gt; new output file)</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">if</span> ( !<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> or !<a class="code" href="classldmx_1_1EventFile.html#a7977c046b7bcaa5b2fff72b7868ba4ba">isSingleOutput_</a> ) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="comment">//clones parent_-&gt;tree_ to our tree_ keeping drop/keep rules in mind</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="comment">//clone tree (only copies over branches that are active on input tree)</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;cd(); <span class="comment">//go into output file</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; rulePair : <a class="code" href="classldmx_1_1EventFile.html#ab7e55d71653ac39fb05dc194be45302b">preCloneRules_</a> )</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;SetBranchStatus( rulePair.first.c_str() , rulePair.second );</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;CloneTree(0);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="comment">//reactivate any drop branches (drop) on input tree</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; rule : <a class="code" href="classldmx_1_1EventFile.html#ab9d89264a5d512fa79e2630909afc3d6">reactivateRules_</a> ) </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;SetBranchStatus( rule.c_str(), 1 );</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// root needs . removed otherwise it gets cranky</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    srule.erase(std::remove(srule.begin(), srule.end(), <span class="charliteral">&#39;.&#39;</span>), srule.end());</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a786aebd2a065e638e64f3ec6a7c64933">preCloneRules_</a>.emplace_back(srule, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// these branches won&#39;t be copied over into output tree</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">// reactivate input branch after clone</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a88e7717418933d65dc932cb74dadb790">reactivateRules_</a>.push_back(srule);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a700fc26f0395c03733f7dab36f4b1918">  144</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classldmx_1_1EventFile.html#a700fc26f0395c03733f7dab36f4b1918">EventFile::nextEvent</a>(<span class="keywordtype">bool</span> storeCurrentEvent) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> &lt; 0 &amp;&amp; <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;EventFile&quot;</span>, <span class="stringliteral">&quot;No event tree in the file&quot;</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// Only clone parent tree if either</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">//  1) There is no tree setup yet (first input file)</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">//  2) This is not single output (new input file --&gt; new output file)</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> or !<a class="code" href="classldmx_1_1EventFile.html#a7977c046b7bcaa5b2fff72b7868ba4ba">isSingleOutput_</a>) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="comment">// clones parent_-&gt;tree_ to our tree_ keeping drop/keep rules in mind</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      <span class="comment">// clone tree (only copies over branches that are active on input tree)</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#aeb6e77999eda07eb0fe982b26ae21bc0">setInputTree</a>( <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> );</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#aeb50beac0c46a2625be9a714792fd212">setOutputTree</a>( <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> );</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">// close up the last event</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> &gt;= 0) {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a69b205d38550fa7cb86cd83f5ea3f03f">beforeFill</a>();</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="keywordflow">if</span> (storeCurrentEvent) <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;Fill(); <span class="comment">// fill the clones...</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a957a3e7a16d18853ca2c4620c41079cc">Clear</a>();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a4dbd978cf3b1f71ce348a5797c7137e7">onEndOfEvent</a>();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a700fc26f0395c03733f7dab36f4b1918">nextEvent</a>()) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;GetEntry(<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a027f7eaf41f469c005d8688f98debeea">nextEvent</a>();</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a>++;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;cd(); <span class="comment">// go into output file</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;rulePair : <a class="code" href="classldmx_1_1EventFile.html#a786aebd2a065e638e64f3ec6a7c64933">preCloneRules_</a>)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;SetBranchStatus(rulePair.first.c_str(),</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                        rulePair.second);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;CloneTree(0);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <span class="comment">// reactivate any drop branches (drop) on input tree</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;rule : <a class="code" href="classldmx_1_1EventFile.html#a88e7717418933d65dc932cb74dadb790">reactivateRules_</a>)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;SetBranchStatus(rule.c_str(), 1);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#aeb6e77999eda07eb0fe982b26ae21bc0">setInputTree</a>(<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#aeb50beac0c46a2625be9a714792fd212">setOutputTree</a>(<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="comment">// close up the last event</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> &gt;= 0) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a69b205d38550fa7cb86cd83f5ea3f03f">beforeFill</a>();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      <span class="keywordflow">if</span> (storeCurrentEvent)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;Fill(); <span class="comment">// fill the clones...</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a957a3e7a16d18853ca2c4620c41079cc">Clear</a>();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a4dbd978cf3b1f71ce348a5797c7137e7">onEndOfEvent</a>();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="comment">// if we are reading, move the pointer</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> + 1 &gt;= <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a>) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>++;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;LoadTree(<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a700fc26f0395c03733f7dab36f4b1918">nextEvent</a>()) {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;GetEntry(<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a027f7eaf41f469c005d8688f98debeea">nextEvent</a>();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a>++;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a027f7eaf41f469c005d8688f98debeea">nextEvent</a>();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// if we are reading, move the pointer</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>++;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a>++;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a00f574b6f84af0822aae1e14b595a7d9">  211</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#a00f574b6f84af0822aae1e14b595a7d9">EventFile::setupEvent</a>(<a class="code" href="classldmx_1_1Event.html">Event</a>* evt) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a> = evt;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> &amp;&amp; !<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> = <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#ab7966e9baab8b61f7fc60cc7504931df">createTree</a>();</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> = 0;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a> = 0;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#aeb6e77999eda07eb0fe982b26ae21bc0">setInputTree</a>(<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#aeb6e77999eda07eb0fe982b26ae21bc0">setInputTree</a>(<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#acb30b4cd94a2bb6fd464b234446e2399">  228</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#acb30b4cd94a2bb6fd464b234446e2399">EventFile::updateParent</a>(<a class="code" href="classldmx_1_1EventFile.html">EventFile</a>* parent) { </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a> = parent; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        TTree* parentTree = (TTree *)<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;Get(<span class="stringliteral">&quot;LDMX_Events&quot;</span>);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">if</span> ( parentTree ) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="comment">//Enter output file</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;cd();</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="comment">//need to turn on/off the same branches as in the initial setup...</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; rulePair : <a class="code" href="classldmx_1_1EventFile.html#ab7e55d71653ac39fb05dc194be45302b">preCloneRules_</a> )</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;SetBranchStatus( rulePair.first.c_str() , rulePair.second );</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="comment">//Copy over addresses from the new parent</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            parentTree-&gt;CopyAddresses( <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> );</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="comment">//and reactivate any dropping rules</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; rule : <a class="code" href="classldmx_1_1EventFile.html#ab9d89264a5d512fa79e2630909afc3d6">reactivateRules_</a> )</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;SetBranchStatus( rule.c_str() , 1 );</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="comment">//Reset the entry index with the new parent index</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment">//import run headers from new input file</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">importRunHeaders</a>();</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#af4e66ac6abe569321caea270475abbde">  259</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#af4e66ac6abe569321caea270475abbde">EventFile::close</a>() {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">//MEMORY &#39;Conditional jump or move depends on uninitialised values&#39; when closing TFile and/or writing TTree</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">//  TFile::Close --&gt; TDirectoryFile::Close --&gt; ~TTree</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">//MEMORY &#39;Syscall param write(buf) points to uninitialised byte(s)&#39;</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">//  when writing TTree below</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="comment">//  From filling TTree in nextEvent</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="comment">// Before an output file, the Event tree needs to be written. </span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;Write();</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="comment">//store the run map into the output tree</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> + 1 &gt;= <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a>) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>++;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;LoadTree(<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#a027f7eaf41f469c005d8688f98debeea">nextEvent</a>();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>++;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a>++;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a00f574b6f84af0822aae1e14b595a7d9">  223</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#a00f574b6f84af0822aae1e14b595a7d9">EventFile::setupEvent</a>(<a class="code" href="classldmx_1_1Event.html">Event</a> *evt) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a> = evt;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> &amp;&amp; !<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a> = <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#ab7966e9baab8b61f7fc60cc7504931df">createTree</a>();</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> = 0;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">entries_</a> = 0;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#aeb6e77999eda07eb0fe982b26ae21bc0">setInputTree</a>(<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">event_</a>-&gt;<a class="code" href="classldmx_1_1Event.html#aeb6e77999eda07eb0fe982b26ae21bc0">setInputTree</a>(<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#acb30b4cd94a2bb6fd464b234446e2399">  240</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#acb30b4cd94a2bb6fd464b234446e2399">EventFile::updateParent</a>(<a class="code" href="classldmx_1_1EventFile.html">EventFile</a> *parent) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a> = parent;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  TTree *parentTree = (TTree *)<a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;Get(<span class="stringliteral">&quot;LDMX_Events&quot;</span>);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keywordflow">if</span> (parentTree) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">// Enter output file</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;cd();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">// need to turn on/off the same branches as in the initial setup...</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;rulePair : <a class="code" href="classldmx_1_1EventFile.html#a786aebd2a065e638e64f3ec6a7c64933">preCloneRules_</a>)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;SetBranchStatus(rulePair.first.c_str(), rulePair.second);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">// Copy over addresses from the new parent</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    parentTree-&gt;CopyAddresses(<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// and reactivate any dropping rules</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;rule : <a class="code" href="classldmx_1_1EventFile.html#a88e7717418933d65dc932cb74dadb790">reactivateRules_</a>)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;SetBranchStatus(rule.c_str(), 1);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">// Reset the entry index with the new parent index</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a> = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ientry_</a>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="comment">// import run headers from new input file</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <a class="code" href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">importRunHeaders</a>();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="comment">// Check for the existence of the run tree in the file. </span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="comment">// If it already exists, throw an exception.</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="comment">// TODO: Tree name shouldn&#39;t be hardcoded. Is this check really necessary?</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keyword">auto</span> runTree{<span class="keyword">static_cast&lt;</span>TTree*<span class="keyword">&gt;</span>(<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;Get(<span class="stringliteral">&quot;LDMX_Run&quot;</span>))};</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordflow">if</span> (runTree) {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                EXCEPTION_RAISE(</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                        <span class="stringliteral">&quot;RunTree&quot;</span>,</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                        <span class="stringliteral">&quot;RunTree &#39;LDMX_Run&#39; already exists in output file &#39;&quot;</span> + <a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a> + <span class="stringliteral">&quot;&#39;.&quot;</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        );</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            runTree = <span class="keyword">new</span> TTree(<span class="stringliteral">&quot;LDMX_Run&quot;</span>, <span class="stringliteral">&quot;LDMX run header&quot;</span>);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="comment">//create the branch on this tree</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <a class="code" href="classldmx_1_1RunHeader.html">RunHeader</a> *theHandle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            runTree-&gt;Branch(<span class="stringliteral">&quot;RunHeader&quot;</span>, EventConstants::RUN_HEADER.c_str(), &amp;theHandle, 32000, 3);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="comment">//copy over the run headers into the tree</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordflow">for</span>( <span class="keyword">auto</span>&amp; [ num , header_pair ] : <a class="code" href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">runMap_</a> ) {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                theHandle = header_pair.second;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                runTree-&gt;Fill();</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keywordflow">if</span> (header_pair.first) <span class="keyword">delete</span> header_pair.second; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            runTree-&gt;Write();</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="comment">// Close the file</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;Close();</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    }</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a28e41b06c7bac00ed0c4d1fbd471f2e3">  302</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#a28e41b06c7bac00ed0c4d1fbd471f2e3">EventFile::writeRunHeader</a>(<a class="code" href="classldmx_1_1RunHeader.html">RunHeader</a>&amp; runHeader) {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordtype">int</span> runNumber = runHeader.<a class="code" href="classldmx_1_1RunHeader.html#afe7d7953641fa1edd6d2a77ceb685d0e">getRunNumber</a>();</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">runMap_</a>.find(runNumber) != <a class="code" href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">runMap_</a>.end() ) {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            EXCEPTION_RAISE( <span class="stringliteral">&quot;RunMap&quot;</span> , </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    <span class="stringliteral">&quot;Run map already contains a run with number &#39;&quot;</span> + std::to_string(runNumber)</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    + <span class="stringliteral">&quot;&#39;.&quot;</span> );</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        }</div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#af4e66ac6abe569321caea270475abbde">  271</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#af4e66ac6abe569321caea270475abbde">EventFile::close</a>() {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="comment">// MEMORY &#39;Conditional jump or move depends on uninitialised values&#39; when</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="comment">// closing TFile and/or writing TTree</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="comment">//  TFile::Close --&gt; TDirectoryFile::Close --&gt; ~TTree</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="comment">// MEMORY &#39;Syscall param write(buf) points to uninitialised byte(s)&#39;</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="comment">//  when writing TTree below</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="comment">//  From filling TTree in nextEvent</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="comment">// Before an output file, the Event tree needs to be written.</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <a class="code" href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">tree_</a>-&gt;Write();</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">// store the run map into the output tree</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="comment">// Check for the existence of the run tree in the file.</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// If it already exists, throw an exception.</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// TODO: Tree name shouldn&#39;t be hardcoded. Is this check really necessary?</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keyword">auto</span> runTree{<span class="keyword">static_cast&lt;</span>TTree *<span class="keyword">&gt;</span>(<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;Get(<span class="stringliteral">&quot;LDMX_Run&quot;</span>))};</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">if</span> (runTree) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      EXCEPTION_RAISE(<span class="stringliteral">&quot;RunTree&quot;</span>,</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                      <span class="stringliteral">&quot;RunTree &#39;LDMX_Run&#39; already exists in output file &#39;&quot;</span> +</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                          <a class="code" href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">fileName_</a> + <span class="stringliteral">&quot;&#39;.&quot;</span>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    runTree = <span class="keyword">new</span> TTree(<span class="stringliteral">&quot;LDMX_Run&quot;</span>, <span class="stringliteral">&quot;LDMX run header&quot;</span>);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// create the branch on this tree</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="classldmx_1_1RunHeader.html">RunHeader</a> *theHandle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    runTree-&gt;Branch(<span class="stringliteral">&quot;RunHeader&quot;</span>, EventConstants::RUN_HEADER.c_str(), &amp;theHandle,</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    32000, 3);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="comment">// copy over the run headers into the tree</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[num, header_pair] : <a class="code" href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">runMap_</a>) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      theHandle = header_pair.second;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      runTree-&gt;Fill();</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      <span class="keywordflow">if</span> (header_pair.first)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keyword">delete</span> header_pair.second;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    runTree-&gt;Write();</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  }</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">runMap_</a>[runNumber] = std::make_pair(<span class="keyword">false</span>,&amp;runHeader);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    }</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a6bfa6abec781a2895d6a91192d8f7111">  317</a></span>&#160;    <a class="code" href="classldmx_1_1RunHeader.html">RunHeader</a>&amp; <a class="code" href="classldmx_1_1EventFile.html#a6bfa6abec781a2895d6a91192d8f7111">EventFile::getRunHeader</a>(<span class="keywordtype">int</span> runNumber) {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">runMap_</a>.find(runNumber) != <a class="code" href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">runMap_</a>.end()) {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <span class="keywordflow">return</span> *(<a class="code" href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">runMap_</a>.at(runNumber).second);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            EXCEPTION_RAISE(<span class="stringliteral">&quot;DataError&quot;</span>, <span class="stringliteral">&quot;No run header exists for &quot;</span> + std::to_string(runNumber) + <span class="stringliteral">&quot; in the run map.&quot;</span>);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="comment">// Close the file</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>-&gt;Close();</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a28e41b06c7bac00ed0c4d1fbd471f2e3">  316</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#a28e41b06c7bac00ed0c4d1fbd471f2e3">EventFile::writeRunHeader</a>(<a class="code" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;runHeader) {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <span class="keywordtype">int</span> runNumber = runHeader.<a class="code" href="classldmx_1_1RunHeader.html#afe7d7953641fa1edd6d2a77ceb685d0e">getRunNumber</a>();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">runMap_</a>.find(runNumber) != <a class="code" href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">runMap_</a>.end()) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    EXCEPTION_RAISE(<span class="stringliteral">&quot;RunMap&quot;</span>, <span class="stringliteral">&quot;Run map already contains a run with number &#39;&quot;</span> +</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                  std::to_string(runNumber) + <span class="stringliteral">&quot;&#39;.&quot;</span>);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  }</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">  325</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">EventFile::importRunHeaders</a>() {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <a class="code" href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">runMap_</a>[runNumber] = std::make_pair(<span class="keyword">false</span>, &amp;runHeader);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="comment">//choose which file to import from</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keyword">auto</span> theImportFile{<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>}; <span class="comment">//if this is an input file</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a> and <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a> and <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a> ) </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            theImportFile = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>; <span class="comment">//output file with input parent to read from</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a> )</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">return</span>; <span class="comment">//output file, no input parent to read from</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">if</span> (theImportFile) {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="comment">//the file exist</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            TTreeReader oldRunTree( <span class="stringliteral">&quot;LDMX_Run&quot;</span> , theImportFile );</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            TTreeReaderValue&lt;RunHeader&gt; oldRunHeader( oldRunTree , <span class="stringliteral">&quot;RunHeader&quot;</span> );</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="comment">//TODO check that setup went correctly</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="keywordflow">while</span>( oldRunTree.Next() ) {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="comment">//copy input run tree into run map</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <a class="code" href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">runMap_</a>[ oldRunHeader-&gt;getRunNumber() ] = std::make_pair(<span class="keyword">true</span>,<span class="keyword">new</span> <a class="code" href="classldmx_1_1RunHeader.html">RunHeader</a>(*oldRunHeader));</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        }</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#a6bfa6abec781a2895d6a91192d8f7111">  330</a></span>&#160;<a class="code" href="classldmx_1_1RunHeader.html">RunHeader</a> &amp;<a class="code" href="classldmx_1_1EventFile.html#a6bfa6abec781a2895d6a91192d8f7111">EventFile::getRunHeader</a>(<span class="keywordtype">int</span> runNumber) {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">runMap_</a>.find(runNumber) != <a class="code" href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">runMap_</a>.end()) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">return</span> *(<a class="code" href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">runMap_</a>.at(runNumber).second);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    EXCEPTION_RAISE(<span class="stringliteral">&quot;DataError&quot;</span>, <span class="stringliteral">&quot;No run header exists for &quot;</span> +</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                     std::to_string(runNumber) +</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                     <span class="stringliteral">&quot; in the run map.&quot;</span>);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">  340</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">EventFile::importRunHeaders</a>() {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  <span class="comment">// choose which file to import from</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="keyword">auto</span> theImportFile{<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>}; <span class="comment">// if this is an input file</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a> and <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a> and <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    theImportFile = <a class="code" href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">parent_</a>-&gt;<a class="code" href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">file_</a>; <span class="comment">// output file with input parent to read</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                    <span class="comment">// from</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">isOutputFile_</a>)</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">return</span>; <span class="comment">// output file, no input parent to read from</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <span class="keywordflow">if</span> (theImportFile) {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="comment">// the file exist</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    TTreeReader oldRunTree(<span class="stringliteral">&quot;LDMX_Run&quot;</span>, theImportFile);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    TTreeReaderValue&lt;RunHeader&gt; oldRunHeader(oldRunTree, <span class="stringliteral">&quot;RunHeader&quot;</span>);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="comment">// TODO check that setup went correctly</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">while</span> (oldRunTree.Next()) {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      <span class="comment">// copy input run tree into run map</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      <a class="code" href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">runMap_</a>[oldRunHeader-&gt;getRunNumber()] =</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;          std::make_pair(<span class="keyword">true</span>, <span class="keyword">new</span> <a class="code" href="classldmx_1_1RunHeader.html">RunHeader</a>(*oldRunHeader));</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;} <span class="comment">// namespace ldmx</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a88e7717418933d65dc932cb74dadb790"><div class="ttname"><a href="classldmx_1_1EventFile.html#a88e7717418933d65dc932cb74dadb790">ldmx::EventFile::reactivateRules_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; reactivateRules_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00253">EventFile.h:253</a></div></div>
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_acb30b4cd94a2bb6fd464b234446e2399"><div class="ttname"><a href="classldmx_1_1EventFile.html#acb30b4cd94a2bb6fd464b234446e2399">ldmx::EventFile::updateParent</a></div><div class="ttdeci">void updateParent(EventFile *parent)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00228">EventFile.cxx:228</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_af4e66ac6abe569321caea270475abbde"><div class="ttname"><a href="classldmx_1_1EventFile.html#af4e66ac6abe569321caea270475abbde">ldmx::EventFile::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00259">EventFile.cxx:259</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_acb30b4cd94a2bb6fd464b234446e2399"><div class="ttname"><a href="classldmx_1_1EventFile.html#acb30b4cd94a2bb6fd464b234446e2399">ldmx::EventFile::updateParent</a></div><div class="ttdeci">void updateParent(EventFile *parent)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00240">EventFile.cxx:240</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_af4e66ac6abe569321caea270475abbde"><div class="ttname"><a href="classldmx_1_1EventFile.html#af4e66ac6abe569321caea270475abbde">ldmx::EventFile::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00271">EventFile.cxx:271</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventFile_html_ad298cfe9ed3d660099e0699e530a737f"><div class="ttname"><a href="classldmx_1_1EventFile.html#ad298cfe9ed3d660099e0699e530a737f">ldmx::EventFile::EventFile</a></div><div class="ttdeci">EventFile(const std::string &amp;filename, EventFile *parent, bool isOutputFile, bool isSingleOutput, int compressionSetting)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00014">EventFile.cxx:14</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventFile_html"><div class="ttname"><a href="classldmx_1_1EventFile.html">ldmx::EventFile</a></div><div class="ttdoc">Manages a file of events.</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00030">EventFile.h:30</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a700fc26f0395c03733f7dab36f4b1918"><div class="ttname"><a href="classldmx_1_1EventFile.html#a700fc26f0395c03733f7dab36f4b1918">ldmx::EventFile::nextEvent</a></div><div class="ttdeci">bool nextEvent(bool storeCurrentEvent=true)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00133">EventFile.cxx:133</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a5887074742b6823dbe40ea79423971ce"><div class="ttname"><a href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">ldmx::EventFile::isOutputFile_</a></div><div class="ttdeci">bool isOutputFile_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00216">EventFile.h:216</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a7977c046b7bcaa5b2fff72b7868ba4ba"><div class="ttname"><a href="classldmx_1_1EventFile.html#a7977c046b7bcaa5b2fff72b7868ba4ba">ldmx::EventFile::isSingleOutput_</a></div><div class="ttdeci">bool isSingleOutput_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00219">EventFile.h:219</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a700fc26f0395c03733f7dab36f4b1918"><div class="ttname"><a href="classldmx_1_1EventFile.html#a700fc26f0395c03733f7dab36f4b1918">ldmx::EventFile::nextEvent</a></div><div class="ttdeci">bool nextEvent(bool storeCurrentEvent=true)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00144">EventFile.cxx:144</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a5887074742b6823dbe40ea79423971ce"><div class="ttname"><a href="classldmx_1_1EventFile.html#a5887074742b6823dbe40ea79423971ce">ldmx::EventFile::isOutputFile_</a></div><div class="ttdeci">bool isOutputFile_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00221">EventFile.h:221</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a7977c046b7bcaa5b2fff72b7868ba4ba"><div class="ttname"><a href="classldmx_1_1EventFile.html#a7977c046b7bcaa5b2fff72b7868ba4ba">ldmx::EventFile::isSingleOutput_</a></div><div class="ttdeci">bool isSingleOutput_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00224">EventFile.h:224</a></div></div>
 <div class="ttc" id="aEventFile_8h_html"><div class="ttname"><a href="EventFile_8h.html">EventFile.h</a></div><div class="ttdoc">Class for managing a file of events.</div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html_afe7d7953641fa1edd6d2a77ceb685d0e"><div class="ttname"><a href="classldmx_1_1RunHeader.html#afe7d7953641fa1edd6d2a77ceb685d0e">ldmx::RunHeader::getRunNumber</a></div><div class="ttdeci">int getRunNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00050">RunHeader.h:50</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a1b439eecffc66ce6a13b2b0ea7dd1ceb"><div class="ttname"><a href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">ldmx::EventFile::parent_</a></div><div class="ttdeci">EventFile * parent_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00228">EventFile.h:228</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a9999632efb2af6d0e720c8070bd9e384"><div class="ttname"><a href="classldmx_1_1EventFile.html#a9999632efb2af6d0e720c8070bd9e384">ldmx::EventFile::addDrop</a></div><div class="ttdeci">void addDrop(const std::string &amp;rule)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00074">EventFile.cxx:74</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a3c904f467c6038efd83e3499e916c71c"><div class="ttname"><a href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">ldmx::EventFile::tree_</a></div><div class="ttdeci">TTree * tree_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00225">EventFile.h:225</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html_afe7d7953641fa1edd6d2a77ceb685d0e"><div class="ttname"><a href="classldmx_1_1RunHeader.html#afe7d7953641fa1edd6d2a77ceb685d0e">ldmx::RunHeader::getRunNumber</a></div><div class="ttdeci">int getRunNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00043">RunHeader.h:43</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a1b439eecffc66ce6a13b2b0ea7dd1ceb"><div class="ttname"><a href="classldmx_1_1EventFile.html#a1b439eecffc66ce6a13b2b0ea7dd1ceb">ldmx::EventFile::parent_</a></div><div class="ttdeci">EventFile * parent_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00233">EventFile.h:233</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a9999632efb2af6d0e720c8070bd9e384"><div class="ttname"><a href="classldmx_1_1EventFile.html#a9999632efb2af6d0e720c8070bd9e384">ldmx::EventFile::addDrop</a></div><div class="ttdeci">void addDrop(const std::string &amp;rule)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00081">EventFile.cxx:81</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a3c904f467c6038efd83e3499e916c71c"><div class="ttname"><a href="classldmx_1_1EventFile.html#a3c904f467c6038efd83e3499e916c71c">ldmx::EventFile::tree_</a></div><div class="ttdeci">TTree * tree_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00230">EventFile.h:230</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_a027f7eaf41f469c005d8688f98debeea"><div class="ttname"><a href="classldmx_1_1Event.html#a027f7eaf41f469c005d8688f98debeea">ldmx::Event::nextEvent</a></div><div class="ttdeci">bool nextEvent()</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00122">Event.cxx:122</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_ab7e55d71653ac39fb05dc194be45302b"><div class="ttname"><a href="classldmx_1_1EventFile.html#ab7e55d71653ac39fb05dc194be45302b">ldmx::EventFile::preCloneRules_</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; std::string, bool &gt; &gt; preCloneRules_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00239">EventFile.h:239</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_a957a3e7a16d18853ca2c4620c41079cc"><div class="ttname"><a href="classldmx_1_1Event.html#a957a3e7a16d18853ca2c4620c41079cc">ldmx::Event::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00135">Event.cxx:135</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a83d98087abc2c22dd10ca176775a7a75"><div class="ttname"><a href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">ldmx::EventFile::event_</a></div><div class="ttdeci">Event * event_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00231">EventFile.h:231</a></div></div>
-<div class="ttc" id="aclassldmx_1_1RunHeader_html"><div class="ttname"><a href="classldmx_1_1RunHeader.html">ldmx::RunHeader</a></div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00028">RunHeader.h:28</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a83d98087abc2c22dd10ca176775a7a75"><div class="ttname"><a href="classldmx_1_1EventFile.html#a83d98087abc2c22dd10ca176775a7a75">ldmx::EventFile::event_</a></div><div class="ttdeci">Event * event_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00236">EventFile.h:236</a></div></div>
+<div class="ttc" id="aclassldmx_1_1RunHeader_html"><div class="ttname"><a href="classldmx_1_1RunHeader.html">ldmx::RunHeader</a></div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00022">RunHeader.h:22</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_a69b205d38550fa7cb86cd83f5ea3f03f"><div class="ttname"><a href="classldmx_1_1Event.html#a69b205d38550fa7cb86cd83f5ea3f03f">ldmx::Event::beforeFill</a></div><div class="ttdeci">void beforeFill()</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00128">Event.cxx:128</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00038">Event.h:38</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00040">Event.h:40</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_ab7966e9baab8b61f7fc60cc7504931df"><div class="ttname"><a href="classldmx_1_1Event.html#ab7966e9baab8b61f7fc60cc7504931df">ldmx::Event::createTree</a></div><div class="ttdeci">TTree * createTree()</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00082">Event.cxx:82</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_aeb50beac0c46a2625be9a714792fd212"><div class="ttname"><a href="classldmx_1_1Event.html#aeb50beac0c46a2625be9a714792fd212">ldmx::Event::setOutputTree</a></div><div class="ttdeci">void setOutputTree(TTree *tree)</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00088">Event.cxx:88</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_ab5d511f6982e89b1bc7607e71c2113ff"><div class="ttname"><a href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">ldmx::EventFile::fileName_</a></div><div class="ttdeci">std::string fileName_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00213">EventFile.h:213</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_af51d6f18ff3c77fc6865c777b7518ab9"><div class="ttname"><a href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">ldmx::EventFile::importRunHeaders</a></div><div class="ttdeci">void importRunHeaders()</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00325">EventFile.cxx:325</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_ae61043439a9f1bce8686ad1013a19e27"><div class="ttname"><a href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">ldmx::EventFile::entries_</a></div><div class="ttdeci">Long64_t entries_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00207">EventFile.h:207</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_ab5d511f6982e89b1bc7607e71c2113ff"><div class="ttname"><a href="classldmx_1_1EventFile.html#ab5d511f6982e89b1bc7607e71c2113ff">ldmx::EventFile::fileName_</a></div><div class="ttdeci">std::string fileName_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00218">EventFile.h:218</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_af51d6f18ff3c77fc6865c777b7518ab9"><div class="ttname"><a href="classldmx_1_1EventFile.html#af51d6f18ff3c77fc6865c777b7518ab9">ldmx::EventFile::importRunHeaders</a></div><div class="ttdeci">void importRunHeaders()</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00340">EventFile.cxx:340</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_ae61043439a9f1bce8686ad1013a19e27"><div class="ttname"><a href="classldmx_1_1EventFile.html#ae61043439a9f1bce8686ad1013a19e27">ldmx::EventFile::entries_</a></div><div class="ttdeci">Long64_t entries_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00212">EventFile.h:212</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_a4dbd978cf3b1f71ce348a5797c7137e7"><div class="ttname"><a href="classldmx_1_1Event.html#a4dbd978cf3b1f71ce348a5797c7137e7">ldmx::Event::onEndOfEvent</a></div><div class="ttdeci">void onEndOfEvent()</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00143">Event.cxx:143</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_ab9d89264a5d512fa79e2630909afc3d6"><div class="ttname"><a href="classldmx_1_1EventFile.html#ab9d89264a5d512fa79e2630909afc3d6">ldmx::EventFile::reactivateRules_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; reactivateRules_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00248">EventFile.h:248</a></div></div>
 <div class="ttc" id="aEvent_8h_html"><div class="ttname"><a href="Event_8h.html">Event.h</a></div><div class="ttdoc">Class implementing an event buffer system for storing event data.</div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a6bfa6abec781a2895d6a91192d8f7111"><div class="ttname"><a href="classldmx_1_1EventFile.html#a6bfa6abec781a2895d6a91192d8f7111">ldmx::EventFile::getRunHeader</a></div><div class="ttdeci">RunHeader &amp; getRunHeader(int runNumber)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00317">EventFile.cxx:317</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a3f2945ea9ec1a90548a5375d355c0e9b"><div class="ttname"><a href="classldmx_1_1EventFile.html#a3f2945ea9ec1a90548a5375d355c0e9b">ldmx::EventFile::runMap_</a></div><div class="ttdeci">std::map&lt; int, std::pair&lt; bool, RunHeader * &gt; &gt; runMap_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00259">EventFile.h:259</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a28e41b06c7bac00ed0c4d1fbd471f2e3"><div class="ttname"><a href="classldmx_1_1EventFile.html#a28e41b06c7bac00ed0c4d1fbd471f2e3">ldmx::EventFile::writeRunHeader</a></div><div class="ttdeci">void writeRunHeader(RunHeader &amp;runHeader)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00302">EventFile.cxx:302</a></div></div>
-<div class="ttc" id="aRunHeader_8h_html"><div class="ttname"><a href="RunHeader_8h.html">RunHeader.h</a></div><div class="ttdoc">Class encapsulating run information such as run #, detector etc.</div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a00f574b6f84af0822aae1e14b595a7d9"><div class="ttname"><a href="classldmx_1_1EventFile.html#a00f574b6f84af0822aae1e14b595a7d9">ldmx::EventFile::setupEvent</a></div><div class="ttdeci">void setupEvent(Event *evt)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00211">EventFile.cxx:211</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a6bfa6abec781a2895d6a91192d8f7111"><div class="ttname"><a href="classldmx_1_1EventFile.html#a6bfa6abec781a2895d6a91192d8f7111">ldmx::EventFile::getRunHeader</a></div><div class="ttdeci">RunHeader &amp; getRunHeader(int runNumber)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00330">EventFile.cxx:330</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a786aebd2a065e638e64f3ec6a7c64933"><div class="ttname"><a href="classldmx_1_1EventFile.html#a786aebd2a065e638e64f3ec6a7c64933">ldmx::EventFile::preCloneRules_</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; std::string, bool &gt; &gt; preCloneRules_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00244">EventFile.h:244</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a28e41b06c7bac00ed0c4d1fbd471f2e3"><div class="ttname"><a href="classldmx_1_1EventFile.html#a28e41b06c7bac00ed0c4d1fbd471f2e3">ldmx::EventFile::writeRunHeader</a></div><div class="ttdeci">void writeRunHeader(RunHeader &amp;runHeader)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00316">EventFile.cxx:316</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a00f574b6f84af0822aae1e14b595a7d9"><div class="ttname"><a href="classldmx_1_1EventFile.html#a00f574b6f84af0822aae1e14b595a7d9">ldmx::EventFile::setupEvent</a></div><div class="ttdeci">void setupEvent(Event *evt)</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8cxx_source.html#l00223">EventFile.cxx:223</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_aeb6e77999eda07eb0fe982b26ae21bc0"><div class="ttname"><a href="classldmx_1_1Event.html#aeb6e77999eda07eb0fe982b26ae21bc0">ldmx::Event::setInputTree</a></div><div class="ttdeci">void setInputTree(TTree *tree)</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00092">Event.cxx:92</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_aa6c9fc572f508882bcf83c9b5391b2d6"><div class="ttname"><a href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">ldmx::EventFile::file_</a></div><div class="ttdeci">TFile * file_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00222">EventFile.h:222</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventFile_html_a87573585ee6c5f11b54f8adb087513be"><div class="ttname"><a href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ldmx::EventFile::ientry_</a></div><div class="ttdeci">Long64_t ientry_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00210">EventFile.h:210</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_ab5784169aa66375f38916efed9c8ed91"><div class="ttname"><a href="classldmx_1_1EventFile.html#ab5784169aa66375f38916efed9c8ed91">ldmx::EventFile::runMap_</a></div><div class="ttdeci">std::map&lt; int, std::pair&lt; bool, RunHeader * &gt; &gt; runMap_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00265">EventFile.h:265</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_aa6c9fc572f508882bcf83c9b5391b2d6"><div class="ttname"><a href="classldmx_1_1EventFile.html#aa6c9fc572f508882bcf83c9b5391b2d6">ldmx::EventFile::file_</a></div><div class="ttdeci">TFile * file_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00227">EventFile.h:227</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventFile_html_a87573585ee6c5f11b54f8adb087513be"><div class="ttname"><a href="classldmx_1_1EventFile.html#a87573585ee6c5f11b54f8adb087513be">ldmx::EventFile::ientry_</a></div><div class="ttdeci">Long64_t ientry_</div><div class="ttdef"><b>Definition:</b> <a href="EventFile_8h_source.html#l00215">EventFile.h:215</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Event_html_af832a9aad3b964b9c966b2422c777c52"><div class="ttname"><a href="classldmx_1_1Event.html#af832a9aad3b964b9c966b2422c777c52">ldmx::Event::addDrop</a></div><div class="ttdeci">void addDrop(const std::string &amp;exp)</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cxx_source.html#l00020">Event.cxx:20</a></div></div>
 <div class="ttc" id="aEventConstants_8h_html"><div class="ttname"><a href="EventConstants_8h.html">EventConstants.h</a></div><div class="ttdoc">Class providing string constants for the event model.</div></div>
 <div class="ttc" id="aclassldmx_1_1EventConstants_html_adef82b0410adf3e5908baf4554949726"><div class="ttname"><a href="classldmx_1_1EventConstants.html#adef82b0410adf3e5908baf4554949726">ldmx::EventConstants::EVENT_TREE_NAME</a></div><div class="ttdeci">static const std::string EVENT_TREE_NAME</div><div class="ttdef"><b>Definition:</b> <a href="EventConstants_8h_source.html#l00025">EventConstants.h:25</a></div></div>

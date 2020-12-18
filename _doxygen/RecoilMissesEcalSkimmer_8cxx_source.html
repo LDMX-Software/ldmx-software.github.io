@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.8.20"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>LDMX Software: EventProc/src/RecoilMissesEcalSkimmer.cxx Source File</title>
+		<title>LDMX Software: Recon/src/Recon/Skims/RecoilMissesEcalSkimmer.cxx Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -39,7 +39,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c4fccb5149467cc0776562c09eb6c09d.html">EventProc</a></li><li class="navelem"><a class="el" href="dir_8927bbb8bc32a6e63b1a56fd18f7b3db.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_46a84d21197eed6cd77b110371b4eb09.html">Recon</a></li><li class="navelem"><a class="el" href="dir_4eb28bbde8624b4cd1c84150f4687995.html">src</a></li><li class="navelem"><a class="el" href="dir_a4331ffbcaaa2cfd3e6ab7449b1d51f7.html">Recon</a></li><li class="navelem"><a class="el" href="dir_0380d119df49152d40ffb59cb100f2c2.html">Skims</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -48,7 +48,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="RecoilMissesEcalSkimmer_8cxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RecoilMissesEcalSkimmer_8h.html">EventProc/RecoilMissesEcalSkimmer.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RecoilMissesEcalSkimmer_8h.html">Recon/Skims/RecoilMissesEcalSkimmer.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> { </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
@@ -68,7 +68,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">auto</span> [recoilTrackID, recoilElectron] = Analysis::getRecoil(particleMap);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// Get the collection of simulated Ecal hits from the event. </span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> std::vector&lt;SimCalorimeterHit&gt; ecalSimHits = <span class="keyword">event</span>.getCollection&lt;<a class="code" href="classldmx_1_1SimCalorimeterHit.html">SimCalorimeterHit</a>&gt;(EventConstants::ECAL_SIM_HITS);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> std::vector&lt;SimCalorimeterHit&gt; ecalSimHits = <span class="keyword">event</span>.getCollection&lt;<a class="code" href="classldmx_1_1SimCalorimeterHit.html">SimCalorimeterHit</a>&gt;(<span class="stringliteral">&quot;EcalSimHits&quot;</span>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;       </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// Loop through the Ecal hits and check if the recoil electron is </span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// associated with any of them.  If there are any recoil electron hits</span></div>
@@ -105,14 +105,14 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<a class="code" href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a>(<a class="code" href="namespaceldmx.html">ldmx</a>, RecoilMissesEcalSkimmer);</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aEventProcessor_8h_html_a7896421cd58ee79a1eb300ec836c6c92"><div class="ttname"><a href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a></div><div class="ttdeci">#define DECLARE_PRODUCER_NS(NS, CLASS)</div><div class="ttdoc">Macro which allows the framework to construct a producer given its name during configuration.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00354">EventProcessor.h:354</a></div></div>
+<div class="ttc" id="aEventProcessor_8h_html_a7896421cd58ee79a1eb300ec836c6c92"><div class="ttname"><a href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a></div><div class="ttdeci">#define DECLARE_PRODUCER_NS(NS, CLASS)</div><div class="ttdoc">Macro which allows the framework to construct a producer given its name during configuration.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00373">EventProcessor.h:373</a></div></div>
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
 <div class="ttc" id="astructldmx_1_1SimCalorimeterHit_1_1Contrib_html_a00a3b95345574518ef7fef56fa2ada9f"><div class="ttname"><a href="structldmx_1_1SimCalorimeterHit_1_1Contrib.html#a00a3b95345574518ef7fef56fa2ada9f">ldmx::SimCalorimeterHit::Contrib::trackID</a></div><div class="ttdeci">int trackID</div><div class="ttdoc">track ID of this contributor</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00054">SimCalorimeterHit.h:54</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00171">EventProcessor.h:171</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00161">EventProcessor.h:161</a></div></div>
 <div class="ttc" id="aRecoilMissesEcalSkimmer_8h_html"><div class="ttname"><a href="RecoilMissesEcalSkimmer_8h.html">RecoilMissesEcalSkimmer.h</a></div><div class="ttdoc">Processor used to select events where the recoil electron misses the Ecal.</div></div>
 <div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a></div><div class="ttdoc">Stores simulated calorimeter hit information.</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00031">SimCalorimeterHit.h:31</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00038">Event.h:38</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Producer_html"><div class="ttname"><a href="classldmx_1_1Producer.html">ldmx::Producer</a></div><div class="ttdoc">Base class for a module which produces a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00257">EventProcessor.h:257</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00040">Event.h:40</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Producer_html"><div class="ttname"><a href="classldmx_1_1Producer.html">ldmx::Producer</a></div><div class="ttdoc">Base class for a module which produces a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00252">EventProcessor.h:252</a></div></div>
 <div class="ttc" id="astructldmx_1_1SimCalorimeterHit_1_1Contrib_html"><div class="ttname"><a href="structldmx_1_1SimCalorimeterHit_1_1Contrib.html">ldmx::SimCalorimeterHit::Contrib</a></div><div class="ttdoc">Information about a contribution to the hit in the associated cell.</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00039">SimCalorimeterHit.h:39</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RecoilMissesEcalSkimmer_html_a6225128d04f337f4af2b94c734e9d415"><div class="ttname"><a href="classldmx_1_1RecoilMissesEcalSkimmer.html#a6225128d04f337f4af2b94c734e9d415">ldmx::RecoilMissesEcalSkimmer::~RecoilMissesEcalSkimmer</a></div><div class="ttdeci">~RecoilMissesEcalSkimmer()</div><div class="ttdef"><b>Definition:</b> <a href="RecoilMissesEcalSkimmer_8cxx_source.html#l00016">RecoilMissesEcalSkimmer.cxx:16</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Process_html"><div class="ttname"><a href="classldmx_1_1Process.html">ldmx::Process</a></div><div class="ttdoc">Class which represents the process under execution.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00035">Process.h:35</a></div></div>

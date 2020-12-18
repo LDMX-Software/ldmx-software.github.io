@@ -65,50 +65,48 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*~~~~~~~~~~~~~~~*/</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Event_8h.html">Framework/Event.h</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventProcessor_8h.html">Framework/EventProcessor.h</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;Framework/Parameters.h&quot;</span> </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;Framework/Configure/Parameters.h&quot;</span> </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AnalysisUtils_8h.html">Tools/AnalysisUtils.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventDef_8h.html">Event/EventDef.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> { </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classldmx_1_1HCalDQM.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classldmx_1_1HCalDQM.html">HCalDQM</a> : <span class="keyword">public</span> <a class="code" href="classldmx_1_1Analyzer.html">Analyzer</a> { </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">public</span>: </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classldmx_1_1HCalDQM.html#ac7e8267010273c1dce83c6365060ba4c">HCalDQM</a>(<span class="keyword">const</span> std::string &amp;name, <a class="code" href="classldmx_1_1Process.html">Process</a> &amp;process);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classldmx_1_1HCalDQM.html#afa1148cf7f8c83e598ba0ba96e0fdefd">   34</a></span>&#160;            <a class="code" href="classldmx_1_1HCalDQM.html#afa1148cf7f8c83e598ba0ba96e0fdefd">~HCalDQM</a>() { }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1HCalDQM.html#a1552bdb5ea2f7673397c8d15bfe931fc">configure</a>(<a class="code" href="classldmx_1_1Parameters.html">Parameters</a>&amp; parameters) <span class="keyword">final</span> <span class="keyword">override</span>; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1HCalDQM.html#a4226670f0844477f8401b3a21f43ea54">analyze</a>(<span class="keyword">const</span> <a class="code" href="classldmx_1_1Event.html">Event</a>&amp; event);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classldmx_1_1HCalDQM.html#a72ee63bd8371d3821817da2035ccaeee">   53</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="classldmx_1_1HCalDQM.html#a72ee63bd8371d3821817da2035ccaeee">maxPEThreshold_</a>{5}; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// ldmx</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif // _DQM_HCAL_DQM_H_</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceldmx.html">ldmx</a> { </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classldmx_1_1HCalDQM.html">   25</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classldmx_1_1HCalDQM.html">HCalDQM</a> : <span class="keyword">public</span> <a class="code" href="classldmx_1_1Analyzer.html">Analyzer</a> { </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">public</span>: </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classldmx_1_1HCalDQM.html#ac7e8267010273c1dce83c6365060ba4c">HCalDQM</a>(<span class="keyword">const</span> std::string &amp;name, <a class="code" href="classldmx_1_1Process.html">Process</a> &amp;process);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classldmx_1_1HCalDQM.html#afa1148cf7f8c83e598ba0ba96e0fdefd">   33</a></span>&#160;            <a class="code" href="classldmx_1_1HCalDQM.html#afa1148cf7f8c83e598ba0ba96e0fdefd">~HCalDQM</a>() { }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1HCalDQM.html#a1552bdb5ea2f7673397c8d15bfe931fc">configure</a>(<a class="code" href="classldmx_1_1Parameters.html">Parameters</a>&amp; parameters) <span class="keyword">final</span> <span class="keyword">override</span>; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classldmx_1_1HCalDQM.html#a4226670f0844477f8401b3a21f43ea54">analyze</a>(<span class="keyword">const</span> <a class="code" href="classldmx_1_1Event.html">Event</a>&amp; event);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classldmx_1_1HCalDQM.html#a72ee63bd8371d3821817da2035ccaeee">   52</a></span>&#160;            <span class="keywordtype">float</span> <a class="code" href="classldmx_1_1HCalDQM.html#a72ee63bd8371d3821817da2035ccaeee">maxPEThreshold_</a>{5}; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;} <span class="comment">// ldmx</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif // _DQM_HCAL_DQM_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1HCalDQM_html"><div class="ttname"><a href="classldmx_1_1HCalDQM.html">ldmx::HCalDQM</a></div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8h_source.html#l00026">HCalDQM.h:26</a></div></div>
-<div class="ttc" id="aEventDef_8h_html"><div class="ttname"><a href="EventDef_8h.html">EventDef.h</a></div><div class="ttdoc">Headers to be processed when creating the ROOT dictionary.</div></div>
+<div class="ttc" id="aclassldmx_1_1HCalDQM_html"><div class="ttname"><a href="classldmx_1_1HCalDQM.html">ldmx::HCalDQM</a></div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8h_source.html#l00025">HCalDQM.h:25</a></div></div>
 <div class="ttc" id="anamespaceldmx_html"><div class="ttname"><a href="namespaceldmx.html">ldmx</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="DarkBremFilter_8h_source.html#l00033">DarkBremFilter.h:33</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Analyzer_html"><div class="ttname"><a href="classldmx_1_1Analyzer.html">ldmx::Analyzer</a></div><div class="ttdoc">Base class for a module which does not produce a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00298">EventProcessor.h:298</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HCalDQM_html_a72ee63bd8371d3821817da2035ccaeee"><div class="ttname"><a href="classldmx_1_1HCalDQM.html#a72ee63bd8371d3821817da2035ccaeee">ldmx::HCalDQM::maxPEThreshold_</a></div><div class="ttdeci">float maxPEThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8h_source.html#l00053">HCalDQM.h:53</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Analyzer_html"><div class="ttname"><a href="classldmx_1_1Analyzer.html">ldmx::Analyzer</a></div><div class="ttdoc">Base class for a module which does not produce a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00294">EventProcessor.h:294</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HCalDQM_html_a72ee63bd8371d3821817da2035ccaeee"><div class="ttname"><a href="classldmx_1_1HCalDQM.html#a72ee63bd8371d3821817da2035ccaeee">ldmx::HCalDQM::maxPEThreshold_</a></div><div class="ttdeci">float maxPEThreshold_</div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8h_source.html#l00052">HCalDQM.h:52</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HCalDQM_html_ac7e8267010273c1dce83c6365060ba4c"><div class="ttname"><a href="classldmx_1_1HCalDQM.html#ac7e8267010273c1dce83c6365060ba4c">ldmx::HCalDQM::HCalDQM</a></div><div class="ttdeci">HCalDQM(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8cxx_source.html#l00006">HCalDQM.cxx:6</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Parameters_html"><div class="ttname"><a href="classldmx_1_1Parameters.html">ldmx::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00026">Parameters.h:26</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00038">Event.h:38</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Event_html"><div class="ttname"><a href="classldmx_1_1Event.html">ldmx::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00040">Event.h:40</a></div></div>
 <div class="ttc" id="aEvent_8h_html"><div class="ttname"><a href="Event_8h.html">Event.h</a></div><div class="ttdoc">Class implementing an event buffer system for storing event data.</div></div>
 <div class="ttc" id="aAnalysisUtils_8h_html"><div class="ttname"><a href="AnalysisUtils_8h.html">AnalysisUtils.h</a></div><div class="ttdoc">Collection of utility functions useful for analysis.</div></div>
 <div class="ttc" id="aclassldmx_1_1HCalDQM_html_a4226670f0844477f8401b3a21f43ea54"><div class="ttname"><a href="classldmx_1_1HCalDQM.html#a4226670f0844477f8401b3a21f43ea54">ldmx::HCalDQM::analyze</a></div><div class="ttdeci">void analyze(const Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8cxx_source.html#l00012">HCalDQM.cxx:12</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HCalDQM_html_a1552bdb5ea2f7673397c8d15bfe931fc"><div class="ttname"><a href="classldmx_1_1HCalDQM.html#a1552bdb5ea2f7673397c8d15bfe931fc">ldmx::HCalDQM::configure</a></div><div class="ttdeci">void configure(Parameters &amp;parameters) final override</div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8cxx_source.html#l00009">HCalDQM.cxx:9</a></div></div>
 <div class="ttc" id="aclassldmx_1_1Process_html"><div class="ttname"><a href="classldmx_1_1Process.html">ldmx::Process</a></div><div class="ttdoc">Class which represents the process under execution.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00035">Process.h:35</a></div></div>
 <div class="ttc" id="aEventProcessor_8h_html"><div class="ttname"><a href="EventProcessor_8h.html">EventProcessor.h</a></div><div class="ttdoc">Base classes for all user event processing components to extend.</div></div>
-<div class="ttc" id="aclassldmx_1_1HCalDQM_html_afa1148cf7f8c83e598ba0ba96e0fdefd"><div class="ttname"><a href="classldmx_1_1HCalDQM.html#afa1148cf7f8c83e598ba0ba96e0fdefd">ldmx::HCalDQM::~HCalDQM</a></div><div class="ttdeci">~HCalDQM()</div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8h_source.html#l00034">HCalDQM.h:34</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HCalDQM_html_afa1148cf7f8c83e598ba0ba96e0fdefd"><div class="ttname"><a href="classldmx_1_1HCalDQM.html#afa1148cf7f8c83e598ba0ba96e0fdefd">ldmx::HCalDQM::~HCalDQM</a></div><div class="ttdeci">~HCalDQM()</div><div class="ttdef"><b>Definition:</b> <a href="HCalDQM_8h_source.html#l00033">HCalDQM.h:33</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

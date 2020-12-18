@@ -276,7 +276,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Determines if event is vetoable using ECAL hit information. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalVetoProcessor_8h_source.html#l00029">29</a> of file <a class="el" href="EcalVetoProcessor_8h_source.html">EcalVetoProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalVetoProcessor_8h_source.html#l00030">30</a> of file <a class="el" href="EcalVetoProcessor_8h_source.html">EcalVetoProcessor.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aab15251610ce86123764bde86058cfcf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab15251610ce86123764bde86058cfcf">&#9670;&nbsp;</a></span>configure()</h2>
@@ -346,7 +346,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        rec_pass_name_  = parameters.getParameter&lt; std::string &gt;(<span class="stringliteral">&quot;rec_pass_name&quot;</span>);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00138">collectionName_</a>, and <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>.</p>
+<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00139">collectionName_</a>, and <a class="el" href="Parameters_8h_source.html#l00090">ldmx::Parameters::getParameter()</a>.</p>
 
 </div>
 </div>
@@ -385,10 +385,10 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Wrappers for ecalHexReadout functions. See hitToPair(). Necessary to easily combine cellID with moduleID to get unique ID of hit in layer. In future: combine celID+moduleID+layerID. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalVetoProcessor_8h_source.html#l00058">58</a> of file <a class="el" href="EcalVetoProcessor_8h_source.html">EcalVetoProcessor.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                       {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">return</span> hexReadout_-&gt;<a class="code" href="classldmx_1_1EcalHexReadout.html#a1d10081ac0818753db568097c765a4d8">isNN</a>(centroidID, probeID);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="EcalVetoProcessor_8h_source.html#l00059">59</a> of file <a class="el" href="EcalVetoProcessor_8h_source.html">EcalVetoProcessor.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> hexReadout_-&gt;<a class="code" href="classldmx_1_1EcalHexReadout.html#a1d10081ac0818753db568097c765a4d8">isNN</a>(centroidID, probeID);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="EcalHexReadout_8h_source.html#l00286">ldmx::EcalHexReadout::isNN()</a>.</p>
 
@@ -733,7 +733,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    hexReadout_=0;</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00138">collectionName_</a>, <a class="el" href="Event_8h_source.html#l00103">ldmx::Event::exists()</a>, <a class="el" href="EcalVetoResult_8h_source.html#l00074">ldmx::EcalVetoResult::passesVeto()</a>, <a class="el" href="SimSpecialID_8h_source.html#l00080">ldmx::SimSpecialID::plane()</a>, <a class="el" href="EventProcessor_8h_source.html#l00171">ldmx::EventProcessor::setStorageHint()</a>, and <a class="el" href="classldmx_1_1EcalVetoResult.html#a82f2c6a79562982dba06d0a57a9822f5">ldmx::EcalVetoResult::setVariables()</a>.</p>
+<p class="reference">References <a class="el" href="EcalVetoProcessor_8h_source.html#l00139">collectionName_</a>, <a class="el" href="Event_8h_source.html#l00105">ldmx::Event::exists()</a>, <a class="el" href="EcalVetoResult_8h_source.html#l00069">ldmx::EcalVetoResult::passesVeto()</a>, <a class="el" href="SimSpecialID_8h_source.html#l00080">ldmx::SimSpecialID::plane()</a>, <a class="el" href="EventProcessor_8h_source.html#l00161">ldmx::EventProcessor::setStorageHint()</a>, and <a class="el" href="classldmx_1_1EcalVetoResult.html#a82f2c6a79562982dba06d0a57a9822f5">ldmx::EcalVetoResult::setVariables()</a>.</p>
 
 </div>
 </div>
@@ -759,7 +759,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Name of the collection which will containt the results. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalVetoProcessor_8h_source.html#l00138">138</a> of file <a class="el" href="EcalVetoProcessor_8h_source.html">EcalVetoProcessor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EcalVetoProcessor_8h_source.html#l00139">139</a> of file <a class="el" href="EcalVetoProcessor_8h_source.html">EcalVetoProcessor.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalVetoProcessor_8cxx_source.html#l00064">configure()</a>, and <a class="el" href="EcalVetoProcessor_8cxx_source.html#l00120">produce()</a>.</p>
 
@@ -767,11 +767,11 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Ecal/include/Ecal/<a class="el" href="EcalVetoProcessor_8h_source.html">EcalVetoProcessor.h</a></li>
-<li>Ecal/src/<a class="el" href="EcalVetoProcessor_8cxx_source.html">EcalVetoProcessor.cxx</a></li>
+<li>Ecal/src/Ecal/<a class="el" href="EcalVetoProcessor_8cxx_source.html">EcalVetoProcessor.cxx</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassldmx_1_1EcalVetoProcessor_html_ae1ca3b290398e52c4fac3986a2c05461"><div class="ttname"><a href="classldmx_1_1EcalVetoProcessor.html#ae1ca3b290398e52c4fac3986a2c05461">ldmx::EcalVetoProcessor::collectionName_</a></div><div class="ttdeci">std::string collectionName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalVetoProcessor_8h_source.html#l00138">EcalVetoProcessor.h:138</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00171">EventProcessor.h:171</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalVetoProcessor_html_ae1ca3b290398e52c4fac3986a2c05461"><div class="ttname"><a href="classldmx_1_1EcalVetoProcessor.html#ae1ca3b290398e52c4fac3986a2c05461">ldmx::EcalVetoProcessor::collectionName_</a></div><div class="ttdeci">std::string collectionName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalVetoProcessor_8h_source.html#l00139">EcalVetoProcessor.h:139</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EventProcessor_html_ab38afea01d11e6c540b3646717ed33a5"><div class="ttname"><a href="classldmx_1_1EventProcessor.html#ab38afea01d11e6c540b3646717ed33a5">ldmx::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(ldmx::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00161">EventProcessor.h:161</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHexReadout_html_a1d10081ac0818753db568097c765a4d8"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html#a1d10081ac0818753db568097c765a4d8">ldmx::EcalHexReadout::isNN</a></div><div class="ttdeci">bool isNN(EcalID centroid, EcalID probe) const</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00286">EcalHexReadout.h:286</a></div></div>
 <!-- start footer part -->
 		<script src="custom.js"></script>
