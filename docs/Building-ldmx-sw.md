@@ -12,7 +12,7 @@ layout: default
 - Clone the repo: `git clone --recursive https://github.com/LDMX-Software/ldmx-sw.git`
   - The `--recursive` flag is _very important_ because there are several necessary parts of _ldmx-sw_ stored in separate git repositories.
 - Setup the environment: `source ldmx-sw/scripts/ldmx-env.sh`
-  - Must occur in a `bash` terminal (the default on iOS and Ubuntu systems)
+  - Must occur in a `bash` terminal (the default on Ubuntu systems and available on iOS)
   - Downloads the latest development docker image, so it may take some time (a few minutes) on the first run
   - Must be re-run whenever a new terminal is opened
 - Make a build directory: `cd ldmx-sw; mkdir build; cd build;`
@@ -22,12 +22,13 @@ layout: default
 
 ---
 
-Building ldmx-sw will require the installation of several dependencies. The following guide will walk you through the installation of those dependencies as well as ldmx-sw.
+Building ldmx-sw will require the installation of several dependencies. The following guide will walk you through the installation of those dependencies as well as ldmx-sw. **This is your final warning.**
 
 ## Supported Platforms
 * Linux 
     * __Tested on__: RedHat6 and CentOS7 with devtoolset-6/8, OpenSuse > 42.1, Ubuntu > 18.0)
 * Building on MacOS outside the container is not supported.
+* Building on Windows outside the container is not even close to supported.
 
 ## Required Tools
 
