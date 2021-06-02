@@ -22,7 +22,10 @@ layout: default
 
 ---
 
-Building ldmx-sw will require the installation of several dependencies. The following guide will walk you through the installation of those dependencies as well as ldmx-sw. **This is your final warning.**
+Building ldmx-sw will require the installation of several dependencies. 
+The following guide will walk you through the installation of those dependencies as well as ldmx-sw. 
+**This is your final warning.**
+These instructions are not being maintained because we are standardizing on the container build.
 
 ## Supported Platforms
 * Linux 

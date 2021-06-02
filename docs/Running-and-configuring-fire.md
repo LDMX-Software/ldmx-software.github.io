@@ -2,19 +2,20 @@
 layout: default
 ---
 
-The `fire` application is used for simulation, reconstruction, and analysis of data from the LDMX experiment.  The application receives its configuration for a given purpose by interpreting a python script which contains instructions about what C++ code to run and what parameters to run.  The python script is _not_ run for each event, but instead is used to determine the configuration of the C++ code which is run for each event.
+The `fire` application is used for simulation, reconstruction, and analysis of data from the LDMX experiment.  The application receives its configuration for a given purpose by interpreting a python script which contains instructions about what C++ code to run and what parameters to use.  The python script is _not_ run for each event, but instead is used to determine the configuration of the C++ code which is run for each event.
 
 ## Brief summary of running `fire`
 
 From the commandline, the application is run as follows:
 
-    $ fire {configuration_script.py} [arguments for configuration script]
+    $ ldmx fire {configuration_script.py} [arguments for configuration script]
 
 The configuration script language is discussed in more detail below.
 
 ### Configuration script arguments
 
-Arguments after the `.py` file on the commandline will be passed to the script as normal arguments to the python script.  These can be used in many ways to adjust the behavior of the script.  Some examples are given below in the Tips and Tricks section.
+Arguments after the `.py` file on the commandline will be passed to the script as normal arguments to any python script.
+These can be used in many ways to adjust the behavior of the script.  Some examples are given below in the Tips and Tricks section.
 
 ## The Process Object
 
@@ -25,7 +26,8 @@ In the example above, the pass name is `practice`, so the line which constructs 
 p = ldmxcfg.Process("practice")
 ```
 
-Here is a list of all the process options and what they control.
+Here is a list of some of the most important process options and what they control.
+It is encouraged to browse the python modules themselves for all the details, but you can also call `help(ldmxcfg.Process)` in `python` to see the documentation.
 
 - `passName` (string)
    - **required** Given in the constructor, tag for the process as a whole.

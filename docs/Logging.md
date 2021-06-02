@@ -46,13 +46,13 @@ There is _a lot_ going on under the hood for this logging library, but I can giv
 //myClass.h
 #include "Exception/Logger.h" //<-- defines the macros you need
 class myClass {
-    public:
-        void someFunctionThatLogs() {
-            ldmx_log(info) << "I can log!"; //<-- macro that calls theLog_
-        }
-    private:
-        /** enable logging for myClass */
-        enableLogging("myClass") //<-- macro that declares and defines theLog_
+ public:
+  void someFunctionThatLogs() {
+    ldmx_log(info) << "I can log!"; //<-- macro that calls theLog_
+  }
+ private:
+  /** enable logging for myClass */
+  enableLogging("myClass") //<-- macro that declares and defines theLog_
 };
 ```
 Notice that the macro `enableLogging` is _in the class declaration_. It needs to be here because it declares and defines the member variable `theLog_` --- it is good practice to keep `theLog_` private, so put the macro in the `private` branch of your class declaration. You can provide any channel name to `enableLogging` that you wish, but the class name is a good name to default to.

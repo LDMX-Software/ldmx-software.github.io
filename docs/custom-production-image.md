@@ -20,21 +20,33 @@ The common denominator in these methods is that you *need* to have a DockerHub r
 1. Make a repository in your account for your production image (name it something related to your project)
 
 ### Method 1: Use GitHub Actions
-With version v3.0.0 of ldmx-sw, whenever a commit is pushed to the GitHub repository of ldmx-sw, certain actions are run that check if the code can compile and run ldmx-sw.
+With version v3.0.0-alpha of ldmx-sw, whenever a commit is pushed to the GitHub repository of ldmx-sw, certain actions are run that check if the code can compile and run ldmx-sw.
 Part of these actions include compiling the code into a production image, so all that's left for you to do is to tell the action where to push the constructed image to.
 This first method is convenient for users who don't have access to a computer with docker installed.
 
+**Deprecation Warning**: Soon the method with which to build a custom production image will change.
+After [PR 990](https://github.com/LDMX-Software/ldmx-sw/pull/990) is merged, 
+you will create a custom production image by manually launching the GitHub action instead of pushing new files to your source tree.
+
 #### Requirements
-- Your development branch must be based off of the v3.0.0 (or later) release. _At minimum_, you need to have the same `.github/workflows/build_test_docs.yml` action file.
+- Your development branch must have the `.github/workflows/build_test_docs.yml` file from `trunk`.
+```bash
+git checkout trunk -- .github/workflows/build_test_docs.yml
+```
+- Your development branch must be able to be compiled in the same manner as `trunk` (same cmake and make commands)
+- Your development branch must be able to be compiled with the `ldmx/dev:latest` version of the development image
+
+#### Requirements (after PR 990 merge)
+- Your development branch must be able to be compiled in the same manner as `trunk` (same cmake and make commands)
 
 #### Steps
-2. Add `omarmoreno` as a [collaborator](https://docs.docker.com/docker-hub/repos/#collaborators-and-their-role) on the new repository you created (This is the username that will be pushing any generated production images to DockerHub).
+2. Add `omarmoreno` as a [collaborator](https://docs.docker.com/docker-hub/repos/#collaborators-and-their-role) on the new repository you created 
+   (This is the username that will be pushing any generated production images to DockerHub).
 3. Create the file `.github/workflows/production_image_repo` in _ldmx-sw_ and put your repository name in it. The full repository name should look like `username/repo_name`.
 ```
 # helpful bash command for doing this
 echo username/repo_name > .github/workflows/production_image_repo
 ```
-
 4. Commit the new file to your branch and push it to GitHub. You should see your production image appear on your DockerHub after about 20 min. You can look at the [Actions page of ldmx-sw](https://github.com/LDMX-Software/ldmx-sw/actions) to see how it is progressing.
 ```
 git add .github/workflows/production_image_repo
@@ -43,6 +55,19 @@ git commit -m "attaching my produciton image repo to this branch"
 
 Using this method, each commit that you push to this branch will push a new version of the production container with your developments to DockerHub. This new version will be named `edge` as well as have a name corresponding to the git SHA of the commit.
 
+#### Steps (after PR 990 merge)
+2. Add `omarmoreno` as a [collaborator](https://docs.docker.com/docker-hub/repos/#collaborators-and-their-role) on the new repository you created 
+   (This is the username that will be pushing any generated production images to DockerHub).
+3. Go to the [GitHub Actions page](https://github.com/LDMX-Software/ldmx-sw/actions).
+4. Click on "Build Production Image" workflow name
+5. Select "Run Workflow" and input your values for the three parameters
+   - `repo`: **required** DockerHub repository that you want the image to be pushed to (same as repo you created earlier - e.g. `tomeichlersmith/eat`)
+   - `branch`: (optional) name of branch you want to be compiled into the production image (e.g. `iss420-my-cool-devs`, default is `trunk`)
+   - `tag`: (optional) helpful name to call this version of your production image (e.g. `post-bug-fix`, default is `edge`)
+
+Using this method, the production image will be built on your input branch **only** when you "dispatch" the workflow manually.
+The new version of the production image will be tagged with the input tag you give it as well as the GitHub commit SHA of the branch you are building.
+
 ### Method 2: Manually on your Own Computer
 
 This method is helpful for users who want to have more control over what is pushed to DockerHub.
@@ -50,6 +75,7 @@ For example, you may wish to include other code in the production image (not jus
 
 #### Requirements
 - `docker` installed on a computer (call this the local computer)
+- Time : it takes anywhere from 20min to an hour to build an image
 
 #### Steps
 2. Double check your developments are all good. Make sure you can compile, install, and run _ldmx-sw_ the way that you want to using a development container.

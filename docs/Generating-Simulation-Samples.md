@@ -10,7 +10,7 @@ Running the simulation is just like any other producer in ldmx-sw. In your pytho
 from LDMX.SimCore.simulator import simulator
 mySimulator = simulator( "mySimulator" ) #create the simulator object
 ```
-You can write your own detector description in the gdml format (if you want), but ldmx-sw already comes with several versions of the LDMX detector description. These versions are installed with it and can be accessed with some python (+ cmake!) magic:
+You can write your own detector description in the gdml format (if you want), but ldmx-sw already comes with several versions of the LDMX detector description. These versions are installed with it and can be accessed with some python (+ cmake!) code:
 ```python
 mySimulator.setDetector( 'ldmx-det-v12' )
 ```
@@ -34,10 +34,11 @@ p.maxEvents = 10
 p.outputFiles = [ "mySimulatorOutput.root" ]
 ```
 
-Run: `fire myConfig.py` or `ldmx fire myConfig.py` if using the docker installation.
+Run: `ldmx fire myConfig.py`
 
 ### Other Available Templates
-There are a lot of commonly used aspects of the simulation, so we have incorporated these common "templates" into the python interface for the simulation. This section is focused on listing these available templates and how to access them.
+There are a lot of commonly used aspects of the simulation, so we have incorporated these common "templates" into the python interface for the simulation. 
+This section is focused on listing these available templates and how to access them.
 
 #### Generators
 Access with: `from LDMX.SimCore import generators`.
@@ -88,20 +89,21 @@ mySim.generators = [ generators.single_4gev_e_upstream_tagger() ]
 mySim.runNumber = 9001
 mySim.description = 'I am a basic working example!'
 
-# import template reconstruction processors
-from LDMX.Ecal import digi
-from LDMX.EventProc import hcal
-
-# can also modify templates before adding them to sequence
-myHcalDigis = hcal.HcalDigiProducer('myHcalDigis')
-myHcalDigis.meanNoise = 0.05 #default is 0.02
-
-# tell the process what sequence to do the processors in
+# import chip/geometry conditions
+import LDMX.Ecal.ecal_hardcoded_conditions
+import LDMX.Hcal.HcalGeometry
+import LDMX.Hcal.hcal_hardcoded_conditions
+# import processor templates
+import LDMX.Ecal.digi as ecal_digi
+import LDMX.Hcal.digi as hcal_digi
+# add them to the sequence
 p.sequence = [
     mySim,
-    digi.EcalDigiProducer(), digi.EcalRecProducer(),
-    myHcalDigis
-]
+    ecal_digi.EcalDigiProducer(),
+    ecal_digi.EcalRecProducer(),
+    hcal_digi.HcalDigiProducer(),
+    hcal_digi.HcalRecProducer()
+    ]
 
 # During production (simulation), maxEvents is used as the number
 # of events to simulate.

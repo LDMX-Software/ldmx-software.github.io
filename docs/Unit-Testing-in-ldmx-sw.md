@@ -2,9 +2,15 @@
 layout: default
 ---
 
-In ldmx-sw we use an external tool for our testing framework: [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top)
+In ldmx-sw we use an several tools for our testing framework: 
+- [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top)
+- [ctest](https://cmake.org/cmake/help/latest/manual/ctest.1.html)
+- [GitHub Actions](https://github.com/features/actions)
 
+# Catch2 Basics 
 This testing framework allows us to write several different testing functions throughout all of ldmx-sw, which are then compiled into one executable: `run_test`. This executable has several command line options, all of which are detailed in Catch2's [reference documentation](https://github.com/catchorg/Catch2/blob/master/docs/Readme.md#top). This documentation does an excellent job detailing how to write new tests and how to have your tests do a variety of tasks; please refer to that documentation when you wish to write a test.
+
+By default, we add `run_test` as an executable to the list of tests that `ctest` should run.
 
 The basic idea behind Unit Testing is to make sure that we change only what we want to change. The compiler in C++ does a good job of catching syntax errors and writing tests using this package allows us to test the run-time behavior of `fire` in a similar way.
 
@@ -35,24 +41,23 @@ Just to give you an example, here is a basic test that would be compiled into th
  *  - I can compile my own test.
  */
 TEST_CASE( "My first test can compile." , "[MyModule][meta-test]" ) {
-    
-    std::cout << "My first test!" << std::endl;
+  std::cout << "My first test!" << std::endl;
 
-    // this will pass
-    CHECK( 2 == 1 + 1 );
+  // this will pass
+  CHECK( 2 == 1 + 1 );
 
-    // this will fail but continue processing
-    CHECK( 2 == 1 );
+  // this will fail but continue processing
+  CHECK( 2 == 1 );
 
-    // this will fail and end processing
-    REQUIRE( 2 == 1 );
+  // this will fail and end processing
+  REQUIRE( 2 == 1 );
 
-    // this will not be run
-    std::cout << "I won't get here!" << std::endl;
+  // this will not be run
+  std::cout << "I won't get here!" << std::endl;
 } //my test
 ```
 
-# Testing Event Processors
+## Testing Event Processors
 The complicated nature of how we use our event processors is complicated to test. Here I outline a basic structure for writing a test to check a specific processor (or a series of processors).
 
 The basic idea is to set up special processors to setup what your processor should see and to check what it produces.
@@ -73,15 +78,15 @@ namespace test {
  * check later in the processing.
  */
 class SetupTestForMyProcessor : public Producer {
-    public:
-        SetupTestForMyProcessor(const std::string &name,Process &p) : Producer(name,p) { }
-        ~SetupTestForMyProcessor() { }
-        
-        void produce(Event &event) final override {
-            //put any collections that your processor(s) use into the event bus
-            //make sure these collections have a specific form that you can test easily
-            //  (no random-ness)
-        }
+ public:
+  SetupTestForMyProcessor(const std::string &name,Process &p) : Producer(name,p) { }
+  ~SetupTestForMyProcessor() { }
+  
+  void produce(Event &event) final override {
+    //put any collections that your processor(s) use into the event bus
+    //make sure these collections have a specific form that you can test easily
+    //  (no random-ness)
+  }
 }; //SetupTestForMyProcessor
 
 /**
@@ -92,14 +97,14 @@ class SetupTestForMyProcessor : public Producer {
  * up processor and the objects created by your processor(s).
  */
 class CheckMyProcessor : public Analyzer {
-    public:
-        CheckMyProcessor(const std::string &name,Process &p) : Producer(name,p) { }
-        ~CheckMyProcessor() { }
-        
-        void analyze(const Event &event) final override {
-            //Use CHECK macros to see if the event objects
-            // that your processor(s) produced are what you expect
-        }
+ public:
+  CheckMyProcessor(const std::string &name,Process &p) : Producer(name,p) { }
+  ~CheckMyProcessor() { }
+  
+  void analyze(const Event &event) final override {
+    //Use CHECK macros to see if the event objects
+    // that your processor(s) produced are what you expect
+  }
 }; //SetupTestForMyProcessor
 
 } //test
@@ -117,34 +122,39 @@ DECLARE_ANALYZER_NS(ldmx::test,CheckMyProcessor)
  * to ConfigurePython to make a process which we then run.
  */
 TEST_CASE( "Testing the full running of MyProcessor" , "[MyModule]" ) {
+  const std::string config_file{"/tmp/my_processor_test.py"};
+  std::ofstream cf( config_file );
 
-    const std::string config_file{"/tmp/my_processor_test.py"};
-    std::ofstream cf( config_file );
+  cf << "from LDMX.Framework import ldmxcfg" << std::endl;
+  cf << "p = ldmxcfg.Process( 'testMyProcessor' )" << std::endl;
+  cf << "p.maxEvents = 1" << std::endl;
+  cf << "p.outputFiles = [ '/tmp/my_processor_test.root' ]" << std::endl;
+  cf << "p.sequence = [" << std::endl;
+  cf << "    ldmxcfg.Producer('Setup','ldmx::test::SetupTestForMyProcessor','MyModule')," << std::endl;
+  cf << "    #put your processor(s) here " << std::endl;
+  cf << "    , ldmxcfg.Analyzer('Check','ldmx::test::CheckMyProcessor','MyModule')," << std::endl;
+  cf << "    ]" << std::endl;
 
-    cf << "from LDMX.Framework import ldmxcfg" << std::endl;
-    cf << "p = ldmxcfg.Process( 'testMyProcessor' )" << std::endl;
-    cf << "p.maxEvents = 1" << std::endl;
-    cf << "p.outputFiles = [ '/tmp/my_processor_test.root' ]" << std::endl;
-    cf << "p.sequence = [" << std::endl;
-    cf << "    ldmxcfg.Producer('Setup','ldmx::test::SetupTestForMyProcessor','MyModule')," << std::endl;
-    cf << "    #put your processor(s) here " << std::endl;
-    cf << "    , ldmxcfg.Analyzer('Check','ldmx::test::CheckMyProcessor','MyModule')," << std::endl;
-    cf << "    ]" << std::endl;
+  /* debug pause before running
+  cf << "p.pause()" << std::endl;
+  */
 
-    /* debug pause before running
-    cf << "p.pause()" << std::endl;
-    */
+  cf.close();
 
-    cf.close();
+  char **args;
+  ldmx::ProcessHandle p;
 
-    char **args;
-    ldmx::ProcessHandle p;
-
-    ldmx::ConfigurePython cfg( config_file , args , 0 );
-    REQUIRE_NOTHROW(p = cfg.makeProcess());
-    p->run();
-
+  ldmx::ConfigurePython cfg( config_file , args , 0 );
+  REQUIRE_NOTHROW(p = cfg.makeProcess());
+  p->run();
 }
 
 ```
 
+# ctest in ldmx-sw
+Currently, we add different Catch2-tests grouped by which module they are in to the general `ctest` command to run together.
+Further development could include other tests to be attached to `ctest`.
+
+# GitHub Actions and ldmx-sw
+We use a variety of GitHub actions to write several different GitHub workflows to not only test ldmx-sw, but also generate documentation and build production images.
+A good starting place to look at these actions is in the [.github/workflows](https://github.com/LDMX-Software/ldmx-sw/tree/trunk/.github/workflows) directory of ldmx-sw.

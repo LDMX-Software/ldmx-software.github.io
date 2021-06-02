@@ -2,6 +2,35 @@
 layout: default
 ---
 
+# Modern ldmx-sw
+
+The signal generation is done by using a custom Geant4 physics process to interact with a "model" for how dark brem occurs.
+Currently, we only have one "model" defined (the `VertexLibraryModel`), but the code structure allows for creating other models without changes to the physics process.
+
+The dark brem process is configured using its own Python configuration class defined in the `LDMX.SimCore.dark_brem` module.
+By default, the simulation is defined with a dark brem configuration that has the signal generation disabled.
+The dark brem model _also_ has its own Python configuration class in order to pass it parameters.
+In order to enable the signal generation, we "activate" the dark brem process by providing the mass of the dark photon in MeV and a model for the dark brem.
+
+A standard example used is given here, this is just a code snipet where `sim` is a pre-defined `simulator` object.
+```python
+#Activiate dark bremming with a certain A' mass and LHE library
+from LDMX.SimCore import dark_brem
+db_model = dark_brem.VertexLibraryModel( lhe )
+db_model.threshold = 2. #GeV - minimum energy electron needs to have to dark brem
+db_model.epsilon   = 0.01 #decrease epsilon from one to help with Geant4 biasing calculations
+sim.dark_brem.activate( ap_mass , db_model )
+```
+
+Usually the dark brem process needs to be biased so that the interaction occurs within the region of interest 
+and at a frequent enough rate so we aren't wasting too much CPU time simulating events that aren't interesting.
+
+A first discussion of the configurable parameters of the process and this first model is provided on 
+[DocDB Document Number 6555](https://projects-docdb.fnal.gov/cgi-bin/private/ShowDocument?docid=6555).
+
+---
+# v2.3.0 ldmx-sw
+
 **Deprecation Warning:** Drastic updates are planned to the signal simulation and will be apart of ldmx-sw version 3.0.
 
 The signal generation is done by a custom Geant4 physics process. This custom physics process `G4eDarkBremsstrahlung` has a corresponding model `G4eDarkBremsstrahlungModel` which handles most of the simulation work. The physics list entry `APrimePhysics` and the process are mainly there to conform to Geant4's framework and pass parameters to the model.

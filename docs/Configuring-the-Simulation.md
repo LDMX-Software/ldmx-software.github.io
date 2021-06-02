@@ -44,19 +44,33 @@ Parameter | Type | Accessed By | Description
 `biasing_threshold` | double | DetectorConstruction | Minium energy threshold to bias (MeV)
 `biasing_factor` | int | DetectorConstruction | Factor to multiply cross-section by
 
+In v3.0.0 of ldmx-sw, we transitioned the biasing operators to be configured by their own Python classes.
+Those operators are stored in the `SimCore.bias_operators` module and are attached to the `simulator` class similar to generators and actions.
+```python
+# config script snippet example for biasing
+from LDMX.SimCore import bias_operators
+# Enable and configure the biasing
+#   In order to conform to older samples,
+#   we can only attach to some of the volumes in the ecal
+#   so we ask for this operator to be attached to the 'old_ecal'
+sim.biasing_operators = [ 
+  bias_operators.PhotoNuclear('old_ecal',450.,2500.,only_children_of_primary = True) ]
+```
+
 ### Dark Brem Process (Signal)
 
 The signal generation is done by enabling the dark bremsstrahlung process in Geant4.
-We do this using the following parameters.
-
-Parameter | Type | Accessed By | Description
---- | --- | --- | ---
-`APrimeMass` | double | APrimePhysics | (**required**) mass of A' to simulate with (MeV)
-`darkbrem_madgraphfilepath` | string | APrimePhysics | (**required**) full path to a LHE file with dark brem vertices in it (mass of A' must match)
-`darkbrem_method` | int | APrimePhysics | decision on how to interpret the LHE vertices
-`darkbrem_globalxsecfactor` | double | APrimePhysics | scaling number to multiply the cross section for the dark brem everywhere
-
+We do this using another Python configuration class `DarkBrem` in the `SimCore.dark_brem` module.
 A more full description of the Dark Brem process and how these parameters affect its abilities is described [on its own page]({% link docs/Dark-Brem-Signal-Process.md %}).
+The most direct way of starting the dark brem process is to simply activate by providing the minimal parameters for it to run.
+```python
+# config script snipet example for dark brem
+from LDMX.SimCore import dark_brem
+db_model = dark_brem.VertexLibraryModel( lhe )
+db_model.threshold = 2. #GeV - minimum energy electron needs to have to dark brem
+db_model.epsilon   = 0.01 #decrease epsilon from one to help with Geant4 biasing calculations
+sim.dark_brem.activate( ap_mass , db_model )
+```
 
 UserActions
 ---
