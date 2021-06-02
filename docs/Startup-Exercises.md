@@ -16,10 +16,25 @@ The most up-to-date instructions can be found [on the ldmx-sw README](https://gi
 Make sure the installation was built and linked correctly by running the test application.
 This should return a message describing saying that several tests passed, for example:
 ```bash
-$ ldmx run_test
-===============================================================================
-All tests passed (6 assertions in 1 test case)
+$ cd build
+$ ldmx ctest
+Test project /home/tom/ldmx/ldmx-sw/build
+    Start 1: Framework
+1/6 Test #1: Framework ........................   Passed    2.63 sec
+    Start 2: DetDescr
+2/6 Test #2: DetDescr .........................   Passed    0.17 sec
+    Start 3: Conditions
+3/6 Test #3: Conditions .......................   Passed    0.30 sec
+    Start 4: Ecal
+4/6 Test #4: Ecal .............................   Passed    2.41 sec
+    Start 5: Hcal
+5/6 Test #5: Hcal .............................   Passed   32.68 sec
+    Start 6: SimCore
+6/6 Test #6: SimCore ..........................   Passed   13.13 sec
 
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =  51.35 sec
 ```
 
 ## 1. Practice using `fire`
@@ -63,14 +78,7 @@ You can write your own processors in a branch of the [analysis repository](https
 This repo requires you to provide it a path to your ldmx-sw installation, but after that, you don't need to compile ldmx-sw anymore!
 
 Write your own `Analyzer` that makes some sort of histogram. 
-The default example is the `DummyAnalyzer` in the `Framework` module. 
-You can also generate an analyzer template using the `NewProcessor.py` script 
-in the `utils` directory of the `ldmx-sw-scripts` [repository](https://github.com/LDMX-Software/ldmx-sw-scripts). 
-You'll need to check this out if you'd  like to use it:
-
-`git clone https://github.com/LDMX-Software/ldmx-sw-scripts.git`
-
-A more specific exercise is given below.
+A good method of starting a new Analyzer is to simply copy an existing analyzer and change its file names and class name.
 
 ### Goal: Fill a Histogram with the Transverse Momenta of All Particles
 
