@@ -26,6 +26,17 @@ Finally, [submit a pull request](https://github.com/LDMX-Software/ldmx-sw/compar
 
 If you plan on starting a major (sub)project within the repository like adding a new code module, you should give advance notice and explain your plains beforehand. :) A good way to do this is to create a new issue. This allows the rest of the code development team to see what your plan is and offer comments/questions.
 
+### After Opening a PR
+After opening a PR, several different tests are run using [our GitHub Actions](https://github.com/LDMX-Software/ldmx-sw/actions). One of these tests, the "Recon Validation" takes about three hours to run, so it shouldn't be run on every commit pushed to a pull request. Instead, it is run when the PR is created or when marked "Ready for Review". This enables the following workflow for validating PRs.
+
+1. Check if any of the tests failed. If no tests failed, you are all set to [request another developer to review it](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review)!
+2. If any of the tests failed, click on that test to look at what happened.
+3. You may need to download some "artifacts" to look at any validation plots that were generated to help with your debugging.
+4. If the tests show a bug that you need to fix, [convert your PR to a draft](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request#converting-a-pull-request-to-a-draft) (if it isn't already). If the tests fail but you are confident your changes are the correct version (perhaps you fixed a bug that shows up in the reference histograms), then request another developer's review.
+5. Make changes and locally test them to see fix the bugs the test revealed.
+6. Pushing these changes will trigger some basic tests on GitHub, but to trigger the more in-depth validation, mark your PR as "Ready for Review".
+7. Go back to step 1.
+
 ## Code Style
 In ldmx-sw we follow the [Google Style Guide](https://google.github.io/styleguide/cppguide.html). Some helpful configurations for popular text editors are listed below.
 
