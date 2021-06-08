@@ -54,7 +54,13 @@ For example, you may wish to include other code in the production image (not jus
 cd ldmx-sw
 docker build . -t docker-user-name/docker-repo-name:some-tag
 ```
-4. If the build finishes without any glaring errors, push it to your repository on Docker Hub.
+4. (Optional) You can also build ldmx-analysis into your production image if you have analyses you want to include. Notice that the `BASE_IMG` is the image you just built with ldmx-sw. If you only have analyses and you no changes to ldmx-sw, you could substitute a standard production image build for the `BASE_IMG` (e.g. `ldmx/pro:latest`).
+```
+cd ldmx-analysis
+docker build . --build-arg BASE_IMG=docker-user-name/docker-repo-name:some-tag \
+  -t docker-user-name/docker-repo-name:som-tag-with-ana
+```
+5. If the build finishes without any glaring errors, push it to your repository on Docker Hub.
 _Note: If you haven't yet, you may need to `docker login` on your computer for this to work._
 ```
 docker push docker-user-name/docker-repo-name:some-tag
