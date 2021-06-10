@@ -67,30 +67,6 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;TrigScint/Event/TrigScintTrack.h&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventHeader_8h.html">Framework/EventHeader.h</a>&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;Framework/RunHeader.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;variant&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">typedef</span> std::variant&lt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt; ldmx::CalorimeterHit &gt;,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classldmx_1_1TriggerResult.html">ldmx::TriggerResult</a>,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::vector&lt; ldmx::HgcrocTrigDigi &gt;,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::vector&lt; ldmx::SimCalorimeterHit &gt;,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::vector&lt; ldmx::SimTrackerHit &gt;,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::map&lt; int, ldmx::SimParticle &gt;,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classldmx_1_1ClusterAlgoResult.html">ldmx::ClusterAlgoResult</a>,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classldmx_1_1EcalVetoResult.html">ldmx::EcalVetoResult</a>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classldmx_1_1EcalDigiCollection.html">ldmx::EcalDigiCollection</a>,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::vector&lt; ldmx::EcalCluster &gt;,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::vector&lt; ldmx::EcalHit &gt;,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classldmx_1_1HcalVetoResult.html">ldmx::HcalVetoResult</a>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt; ldmx::HcalHit &gt;,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::vector&lt; ldmx::TrigScintHit &gt;,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::vector&lt; trigscint::TrigScintQIEDigis &gt;,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::vector&lt; ldmx::TrigScintCluster &gt;,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::vector&lt; ldmx::TrigScintTrack &gt;,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classldmx_1_1EventHeader.html">ldmx::EventHeader</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;&gt; EventBusPassenger;</div>
 <div class="ttc" id="aCalorimeterHit_8h_html"><div class="ttname"><a href="CalorimeterHit_8h.html">CalorimeterHit.h</a></div><div class="ttdoc">Class that represents a reconstructed hit in a calorimeter cell within the detector.</div></div>
 <div class="ttc" id="aClusterAlgoResult_8h_html"><div class="ttname"><a href="ClusterAlgoResult_8h.html">ClusterAlgoResult.h</a></div><div class="ttdoc">Class that holds details about the clustering algorithm as a whole.</div></div>
 <div class="ttc" id="aEcalCluster_8h_html"><div class="ttname"><a href="EcalCluster_8h.html">EcalCluster.h</a></div><div class="ttdoc">Class that stores cluster information from the ECal.</div></div>
@@ -103,13 +79,6 @@ $(function() {
 <div class="ttc" id="aSimCalorimeterHit_8h_html"><div class="ttname"><a href="SimCalorimeterHit_8h.html">SimCalorimeterHit.h</a></div><div class="ttdoc">Class which stores simulated calorimeter hit information.</div></div>
 <div class="ttc" id="aSimTrackerHit_8h_html"><div class="ttname"><a href="SimTrackerHit_8h.html">SimTrackerHit.h</a></div><div class="ttdoc">Class which encapsulates information from a hit in a simulated tracking detector.</div></div>
 <div class="ttc" id="aTriggerResult_8h_html"><div class="ttname"><a href="TriggerResult_8h.html">TriggerResult.h</a></div><div class="ttdoc">Class that represents the trigger decision (pass/fail) for reconstruction.</div></div>
-<div class="ttc" id="aclassldmx_1_1ClusterAlgoResult_html"><div class="ttname"><a href="classldmx_1_1ClusterAlgoResult.html">ldmx::ClusterAlgoResult</a></div><div class="ttdoc">Contains details about the clustering algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="ClusterAlgoResult_8h_source.html#l00025">ClusterAlgoResult.h:25</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalDigiCollection_html"><div class="ttname"><a href="classldmx_1_1EcalDigiCollection.html">ldmx::EcalDigiCollection</a></div><div class="ttdoc">Represents a collection of the ECal digi hits.</div><div class="ttdef"><b>Definition:</b> <a href="EcalDigiCollection_8h_source.html#l00057">EcalDigiCollection.h:57</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalVetoResult_html"><div class="ttname"><a href="classldmx_1_1EcalVetoResult.html">ldmx::EcalVetoResult</a></div><div class="ttdef"><b>Definition:</b> <a href="EcalVetoResult_8h_source.html#l00024">EcalVetoResult.h:24</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EventHeader_html"><div class="ttname"><a href="classldmx_1_1EventHeader.html">ldmx::EventHeader</a></div><div class="ttdoc">Provides header information an event such as event number and timestamp.</div><div class="ttdef"><b>Definition:</b> <a href="EventHeader_8h_source.html#l00027">EventHeader.h:27</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalVetoResult_html"><div class="ttname"><a href="classldmx_1_1HcalVetoResult.html">ldmx::HcalVetoResult</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalVetoResult_8h_source.html#l00023">HcalVetoResult.h:23</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a></div><div class="ttdoc">Represents a collection of the digi hits readout by an HGCROC.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00042">HgcrocDigiCollection.h:42</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TriggerResult_html"><div class="ttname"><a href="classldmx_1_1TriggerResult.html">ldmx::TriggerResult</a></div><div class="ttdoc">Represents the trigger decision (pass/fail) for reconstruction.</div><div class="ttdef"><b>Definition:</b> <a href="TriggerResult_8h_source.html#l00025">TriggerResult.h:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

@@ -259,7 +259,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                               {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="comment">// Check if the collection of reconstructed ECal hits exist.  If not,</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">// don&#39;t bother processing the event.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">if</span> (!event.<a class="code" href="classframework_1_1Event.html#a49d8de12599f7a90354619f3ddae2fdd">exists</a>(<span class="stringliteral">&quot;EcalRecHits&quot;</span>)) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">if</span> (!event.<a class="code" href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">exists</a>(<span class="stringliteral">&quot;EcalRecHits&quot;</span>)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">// Get the collection of digitized ECal hits from the event</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">const</span> std::vector&lt;ldmx::EcalHit&gt; hits =</div>
@@ -271,11 +271,11 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    hit.<a class="code" href="classldmx_1_1EcalHit.html#ae56dd677682642003ef37a6959eaf655">Print</a>();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="ttc" id="aclassframework_1_1Event_html_a49d8de12599f7a90354619f3ddae2fdd"><div class="ttname"><a href="classframework_1_1Event.html#a49d8de12599f7a90354619f3ddae2fdd">framework::Event::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00096">Event.h:96</a></div></div>
+<div class="ttc" id="aclassframework_1_1Event_html_a7e65967eea5ac3172852838f1c8f266a"><div class="ttname"><a href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">framework::Event::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name, const std::string &amp;passName=&quot;&quot;) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00105">Event.h:105</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHit_html"><div class="ttname"><a href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a></div><div class="ttdoc">Stores reconstructed hit information from the ECAL.</div><div class="ttdef"><b>Definition:</b> <a href="EcalHit_8h_source.html#l00019">EcalHit.h:19</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHit_html_ae56dd677682642003ef37a6959eaf655"><div class="ttname"><a href="classldmx_1_1EcalHit.html#ae56dd677682642003ef37a6959eaf655">ldmx::EcalHit::Print</a></div><div class="ttdeci">void Print() const</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Event_8h_source.html#l00096">framework::Event::exists()</a>, and <a class="el" href="classldmx_1_1EcalHit.html#ae56dd677682642003ef37a6959eaf655">ldmx::EcalHit::Print()</a>.</p>
+<p class="reference">References <a class="el" href="Event_8h_source.html#l00105">framework::Event::exists()</a>, and <a class="el" href="classldmx_1_1EcalHit.html#ae56dd677682642003ef37a6959eaf655">ldmx::EcalHit::Print()</a>.</p>
 
 </div>
 </div>

@@ -139,7 +139,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00123">123</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00127">127</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a43df1673f1412c5117152470881acb10"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43df1673f1412c5117152470881acb10">&#9670;&nbsp;</a></span>beforeNewRun()</h2>
@@ -173,10 +173,10 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Reimplemented from <a class="el" href="classframework_1_1Producer.html#a8b68d090cd4e50c3c572825bc57bebff">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00151">151</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                           {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    header.<a class="code" href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">setDetectorName</a>(<span class="stringliteral">&quot;ldmx-det-v12&quot;</span>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00155">155</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                           {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    header.<a class="code" href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">setDetectorName</a>(<span class="stringliteral">&quot;ldmx-det-v12&quot;</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  }</div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_a42e321c3639bb8fc2021ae0d8664744c"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">ldmx::RunHeader::setDetectorName</a></div><div class="ttdeci">void setDetectorName(const std::string &amp;det)</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00048">RunHeader.h:48</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="RunHeader_8h_source.html#l00048">ldmx::RunHeader::setDetectorName()</a>.</p>
@@ -215,38 +215,38 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00155">155</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                                     {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// put in a single sim hit</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    std::vector&lt;ldmx::SimCalorimeterHit&gt; pretendSimHits(1);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// We hard-code the position of one hit: back hcal, layer 1, strip 31</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// This real simHit position is obtained by looking at calorimeter</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// SimHits of a 4 GeV muon shoot through the beamline</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> id(0, 1, 31);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    pretendSimHits[0].setPosition(-6.70265, 3.70265, 879);  <span class="comment">// mm</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    pretendSimHits[0].setID(<span class="keywordtype">id</span>.raw());</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    pretendSimHits[0].addContrib(</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        -1,           <span class="comment">// incidentID</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        -1,           <span class="comment">// trackID</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        0,            <span class="comment">// pdg ID</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="classhcal_1_1test_1_1HcalFakeSimHits.html#ab81d00176e5c549c2e1d837fcf5ad51e">currEnergy_</a>,  <span class="comment">// edep</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        2.96628  <span class="comment">// time - 299mm is about 1ns from target and in middle of HCal</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    );</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// needs to be correct collection name</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// REQUIRE_NOTHROW(event.add(&quot;HcalSimHits&quot;, pretendSimHits));</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    REQUIRE_NOTHROW(event.<a class="code" href="classframework_1_1Event.html#ac918976a55348416ece18de00dc91333">add</a>(<span class="stringliteral">&quot;HcalFakeSimHits&quot;</span>, pretendSimHits));</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="classhcal_1_1test_1_1HcalFakeSimHits.html#ab81d00176e5c549c2e1d837fcf5ad51e">currEnergy_</a> += <a class="code" href="classhcal_1_1test_1_1HcalFakeSimHits.html#afd7123ae82e84a4b90fac01c6fb15f3d">energyStep_</a>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  }</div>
-<div class="ttc" id="aclassframework_1_1Event_html_ac918976a55348416ece18de00dc91333"><div class="ttname"><a href="classframework_1_1Event.html#ac918976a55348416ece18de00dc91333">framework::Event::add</a></div><div class="ttdeci">void add(const std::string &amp;collectionName, T &amp;obj)</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00127">Event.h:127</a></div></div>
-<div class="ttc" id="aclasshcal_1_1test_1_1HcalFakeSimHits_html_ab81d00176e5c549c2e1d837fcf5ad51e"><div class="ttname"><a href="classhcal_1_1test_1_1HcalFakeSimHits.html#ab81d00176e5c549c2e1d837fcf5ad51e">hcal::test::HcalFakeSimHits::currEnergy_</a></div><div class="ttdeci">double currEnergy_</div><div class="ttdoc">current energy of the sim hit we are on</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiPipelineTest_8cxx_source.html#l00144">HcalDigiPipelineTest.cxx:144</a></div></div>
-<div class="ttc" id="aclasshcal_1_1test_1_1HcalFakeSimHits_html_afd7123ae82e84a4b90fac01c6fb15f3d"><div class="ttname"><a href="classhcal_1_1test_1_1HcalFakeSimHits.html#afd7123ae82e84a4b90fac01c6fb15f3d">hcal::test::HcalFakeSimHits::energyStep_</a></div><div class="ttdeci">const double energyStep_</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiPipelineTest_8cxx_source.html#l00141">HcalDigiPipelineTest.cxx:141</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00159">159</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                                     {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// put in a single sim hit</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    std::vector&lt;ldmx::SimCalorimeterHit&gt; pretendSimHits(1);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// We hard-code the position of one hit: back hcal, layer 1, strip 31</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// This real simHit position is obtained by looking at calorimeter</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// SimHits of a 4 GeV muon shoot through the beamline</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> id(0, 1, 31);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    pretendSimHits[0].setPosition(-6.70265, 3.70265, 879);  <span class="comment">// mm</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    pretendSimHits[0].setID(<span class="keywordtype">id</span>.raw());</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    pretendSimHits[0].addContrib(</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        -1,           <span class="comment">// incidentID</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        -1,           <span class="comment">// trackID</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        0,            <span class="comment">// pdg ID</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="classhcal_1_1test_1_1HcalFakeSimHits.html#ab81d00176e5c549c2e1d837fcf5ad51e">currEnergy_</a>,  <span class="comment">// edep</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        2.96628  <span class="comment">// time - 299mm is about 1ns from target and in middle of HCal</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// needs to be correct collection name</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// REQUIRE_NOTHROW(event.add(&quot;HcalSimHits&quot;, pretendSimHits));</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    REQUIRE_NOTHROW(event.<a class="code" href="classframework_1_1Event.html#ac918976a55348416ece18de00dc91333">add</a>(<span class="stringliteral">&quot;HcalFakeSimHits&quot;</span>, pretendSimHits));</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <a class="code" href="classhcal_1_1test_1_1HcalFakeSimHits.html#ab81d00176e5c549c2e1d837fcf5ad51e">currEnergy_</a> += <a class="code" href="classhcal_1_1test_1_1HcalFakeSimHits.html#afd7123ae82e84a4b90fac01c6fb15f3d">energyStep_</a>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  }</div>
+<div class="ttc" id="aclassframework_1_1Event_html_ac918976a55348416ece18de00dc91333"><div class="ttname"><a href="classframework_1_1Event.html#ac918976a55348416ece18de00dc91333">framework::Event::add</a></div><div class="ttdeci">void add(const std::string &amp;collectionName, T &amp;obj)</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00145">Event.h:145</a></div></div>
+<div class="ttc" id="aclasshcal_1_1test_1_1HcalFakeSimHits_html_ab81d00176e5c549c2e1d837fcf5ad51e"><div class="ttname"><a href="classhcal_1_1test_1_1HcalFakeSimHits.html#ab81d00176e5c549c2e1d837fcf5ad51e">hcal::test::HcalFakeSimHits::currEnergy_</a></div><div class="ttdeci">double currEnergy_</div><div class="ttdoc">current energy of the sim hit we are on</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiPipelineTest_8cxx_source.html#l00148">HcalDigiPipelineTest.cxx:148</a></div></div>
+<div class="ttc" id="aclasshcal_1_1test_1_1HcalFakeSimHits_html_afd7123ae82e84a4b90fac01c6fb15f3d"><div class="ttname"><a href="classhcal_1_1test_1_1HcalFakeSimHits.html#afd7123ae82e84a4b90fac01c6fb15f3d">hcal::test::HcalFakeSimHits::energyStep_</a></div><div class="ttdeci">const double energyStep_</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiPipelineTest_8cxx_source.html#l00145">HcalDigiPipelineTest.cxx:145</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalID_html"><div class="ttname"><a href="classldmx_1_1HcalID.html">ldmx::HcalID</a></div><div class="ttdoc">Implements detector ids for HCal subdetector.</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00019">HcalID.h:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00144">currEnergy_</a>, and <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00141">energyStep_</a>.</p>
+<p class="reference">References <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00148">currEnergy_</a>, and <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00145">energyStep_</a>.</p>
 
 </div>
 </div>
@@ -272,9 +272,9 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>The step between energies is calculated depending on the min, max energy and the total number of sim hits you desire. [MeV] </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00141">141</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00145">145</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00155">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00159">produce()</a>.</p>
 
 </div>
 </div>
@@ -299,7 +299,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Maximum energy to make a simulated hit for [MeV] </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00129">129</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00133">133</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
 
 </div>
 </div>
@@ -324,7 +324,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Minimum energy to make a sim hit for [MeV] Needs to be above readout threshold (after internal HcalDigi's calculation) </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00135">135</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00139">139</a> of file <a class="el" href="HcalDigiPipelineTest_8cxx_source.html">HcalDigiPipelineTest.cxx</a>.</p>
 
 </div>
 </div>

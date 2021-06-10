@@ -55,112 +55,115 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Process_8h.html">Framework/Process.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;catch.hpp&quot;</span>  <span class="comment">//for TEST_CASE, REQUIRE, and other Catch2 macros</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>hcal {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>test {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> MAX_ENERGY_PERCENT_ERROR_ZPOSITION = 20;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> MAX_ENERGY_PERCENT_ERROR_XPOSITION = 20;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> MAX_ENERGY_PERCENT_ERROR_YPOSITION = 20;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classhcal_1_1test_1_1HcalCheckPositionMap.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html">HcalCheckPositionMap</a> : <span class="keyword">public</span> <a class="code" href="classframework_1_1Analyzer.html">framework::Analyzer</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html">HcalCheckPositionMap</a>(<span class="keyword">const</span> std::string &amp;name, <a class="code" href="classframework_1_1Process.html">framework::Process</a> &amp;p)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      : <a class="code" href="classframework_1_1Analyzer.html">framework::Analyzer</a>(name, p) {}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  ~<a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html">HcalCheckPositionMap</a>() {}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classhcal_1_1test_1_1HcalCheckPositionMap.html#a3f40f801650415ad72ec0dbab8e3f4b4">   34</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html#a3f40f801650415ad72ec0dbab8e3f4b4">onProcessStart</a>() final<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SimCalorimeterHit_8h.html">SimCore/Event/SimCalorimeterHit.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>hcal {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>test {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> MAX_ENERGY_PERCENT_ERROR_ZPOSITION = 20;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> MAX_ENERGY_PERCENT_ERROR_XPOSITION = 20;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> MAX_ENERGY_PERCENT_ERROR_YPOSITION = 20;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classhcal_1_1test_1_1HcalCheckPositionMap.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html">HcalCheckPositionMap</a> : <span class="keyword">public</span> <a class="code" href="classframework_1_1Analyzer.html">framework::Analyzer</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html">HcalCheckPositionMap</a>(<span class="keyword">const</span> std::string &amp;name, <a class="code" href="classframework_1_1Process.html">framework::Process</a> &amp;p)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      : <a class="code" href="classframework_1_1Analyzer.html">framework::Analyzer</a>(name, p) {}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  ~<a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html">HcalCheckPositionMap</a>() {}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classhcal_1_1test_1_1HcalCheckPositionMap.html#aa79a7ef6e6910936f0ee416384731c26">   36</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html#aa79a7ef6e6910936f0ee416384731c26">analyze</a>(<span class="keyword">const</span> <a class="code" href="classframework_1_1Event.html">framework::Event</a> &amp;event) <span class="keyword">final</span> <span class="keyword">override</span> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> simHits =</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">event</span>.getCollection&lt;<a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&gt;(<span class="stringliteral">&quot;HcalSimHits&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    CHECK(simHits.size() &gt; 0);</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classhcal_1_1test_1_1HcalCheckPositionMap.html#a3f40f801650415ad72ec0dbab8e3f4b4">   36</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html#a3f40f801650415ad72ec0dbab8e3f4b4">onProcessStart</a>() final<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classhcal_1_1test_1_1HcalCheckPositionMap.html#aa79a7ef6e6910936f0ee416384731c26">   38</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classhcal_1_1test_1_1HcalCheckPositionMap.html#aa79a7ef6e6910936f0ee416384731c26">analyze</a>(<span class="keyword">const</span> <a class="code" href="classframework_1_1Event.html">framework::Event</a> &amp;event) <span class="keyword">final</span> <span class="keyword">override</span> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> simHits =</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">event</span>.getCollection&lt;<a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&gt;(<span class="stringliteral">&quot;HcalSimHits&quot;</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ihit = 0; ihit &lt; simHits.size(); ihit++) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keyword">auto</span> hit = simHits.at(ihit);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordtype">double</span> x = hit.getPosition()[0];</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordtype">double</span> y = hit.getPosition()[1];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordtype">double</span> z = hit.getPosition()[2];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hitID = hit.getID();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <a class="code" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> detID(hitID);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">int</span> section = detID.section();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordtype">int</span> layer = detID.<a class="code" href="classldmx_1_1HcalID.html#a166e1dbe38b589bdfceb990b4efb1e49">layer</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordtype">int</span> strip = detID.<a class="code" href="classldmx_1_1HcalID.html#a5a85a3f3b025f7e2a0527c8296aa6b0a">strip</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="comment">// get the Hcal geometry</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;hcalGeometry = getCondition&lt;ldmx::HcalGeometry&gt;(</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          <a class="code" href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="comment">// get position</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keyword">auto</span> positionMap = hcalGeometry.getStripCenterPosition(detID);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keyword">auto</span> target_z =</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;          Approx(z).epsilon(MAX_ENERGY_PERCENT_ERROR_ZPOSITION / 100);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      CHECK(positionMap.Z() == target_z);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (layer % 2 == 1) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          <span class="keyword">auto</span> target_y =</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;              Approx(y).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          CHECK(positionMap.Y() == target_y);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          <span class="keyword">auto</span> target_x =</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;              Approx(x).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          CHECK(positionMap.X() == target_x);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::TOP) ||</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            (section == ldmx::HcalID::HcalSection::BOTTOM)) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          <span class="keyword">auto</span> target_y =</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              Approx(y).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          CHECK(positionMap.Y() == target_y);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::LEFT) ||</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                   (section == ldmx::HcalID::HcalSection::RIGHT)) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          <span class="keyword">auto</span> target_x =</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;              Approx(x).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          CHECK(positionMap.X() == target_x);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};  <span class="comment">// HcalCheckPositionMap</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}  <span class="comment">// namespace test</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}  <span class="comment">// namespace hcal</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<a class="code" href="EventProcessor_8h.html#a00619d14de42943dbef1fd43e4f8c5e1">DECLARE_ANALYZER_NS</a>(hcal::test, HcalCheckPositionMap)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    CHECK(simHits.size() &gt; 0);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ihit = 0; ihit &lt; simHits.size(); ihit++) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keyword">auto</span> hit = simHits.at(ihit);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordtype">double</span> x = hit.getPosition()[0];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordtype">double</span> y = hit.getPosition()[1];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordtype">double</span> z = hit.getPosition()[2];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hitID = hit.getID();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <a class="code" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> detID(hitID);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordtype">int</span> section = detID.section();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">int</span> layer = detID.<a class="code" href="classldmx_1_1HcalID.html#a166e1dbe38b589bdfceb990b4efb1e49">layer</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordtype">int</span> strip = detID.<a class="code" href="classldmx_1_1HcalID.html#a5a85a3f3b025f7e2a0527c8296aa6b0a">strip</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="comment">// get the Hcal geometry</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;hcalGeometry = getCondition&lt;ldmx::HcalGeometry&gt;(</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          <a class="code" href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="comment">// get position</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keyword">auto</span> positionMap = hcalGeometry.getStripCenterPosition(detID);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keyword">auto</span> target_z =</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          Approx(z).epsilon(MAX_ENERGY_PERCENT_ERROR_ZPOSITION / 100);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      CHECK(positionMap.Z() == target_z);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (layer % 2 == 1) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          <span class="keyword">auto</span> target_y =</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;              Approx(y).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          CHECK(positionMap.Y() == target_y);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          <span class="keyword">auto</span> target_x =</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;              Approx(x).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          CHECK(positionMap.X() == target_x);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::TOP) ||</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            (section == ldmx::HcalID::HcalSection::BOTTOM)) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          <span class="keyword">auto</span> target_y =</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              Approx(y).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          CHECK(positionMap.Y() == target_y);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::LEFT) ||</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                   (section == ldmx::HcalID::HcalSection::RIGHT)) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          <span class="keyword">auto</span> target_x =</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;              Approx(x).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          CHECK(positionMap.X() == target_x);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};  <span class="comment">// HcalCheckPositionMap</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}  <span class="comment">// namespace test</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}  <span class="comment">// namespace hcal</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<a class="code" href="DetectorIDTest_8cxx.html#af5bbfc04bae9d86d6492bdd3823eb784">TEST_CASE</a>(<span class="stringliteral">&quot;Hcal Geometry test&quot;</span>, <span class="stringliteral">&quot;[Hcal][functionality]&quot;</span>) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">const</span> std::string config_file{<span class="stringliteral">&quot;hcal_geometry_test_config.py&quot;</span>};</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">char</span> **args;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="namespaceframework.html#a548efdd3e0acc7f4da72ecfbd5c46e6f">framework::ProcessHandle</a> p;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="classframework_1_1ConfigurePython.html">framework::ConfigurePython</a> cfg(config_file, args, 0);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  REQUIRE_NOTHROW(p = cfg.makeProcess());</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  p-&gt;run();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<a class="code" href="EventProcessor_8h.html#a00619d14de42943dbef1fd43e4f8c5e1">DECLARE_ANALYZER_NS</a>(hcal::test, HcalCheckPositionMap)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<a class="code" href="DetectorIDTest_8cxx.html#af5bbfc04bae9d86d6492bdd3823eb784">TEST_CASE</a>(<span class="stringliteral">&quot;Hcal Geometry test&quot;</span>, <span class="stringliteral">&quot;[Hcal][functionality]&quot;</span>) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">const</span> std::string config_file{<span class="stringliteral">&quot;hcal_geometry_test_config.py&quot;</span>};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">char</span> **args;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="namespaceframework.html#a548efdd3e0acc7f4da72ecfbd5c46e6f">framework::ProcessHandle</a> p;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="classframework_1_1ConfigurePython.html">framework::ConfigurePython</a> cfg(config_file, args, 0);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  REQUIRE_NOTHROW(p = cfg.makeProcess());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  p-&gt;run();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="ttc" id="aDetectorIDTest_8cxx_html_af5bbfc04bae9d86d6492bdd3823eb784"><div class="ttname"><a href="DetectorIDTest_8cxx.html#af5bbfc04bae9d86d6492bdd3823eb784">TEST_CASE</a></div><div class="ttdeci">TEST_CASE(&quot;DetectorID&quot;, &quot;[DetDescr][functionality]&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="DetectorIDTest_8cxx_source.html#l00022">DetectorIDTest.cxx:22</a></div></div>
 <div class="ttc" id="aEventProcessor_8h_html"><div class="ttname"><a href="EventProcessor_8h.html">EventProcessor.h</a></div><div class="ttdoc">Base classes for all user event processing components to extend.</div></div>
 <div class="ttc" id="aEventProcessor_8h_html_a00619d14de42943dbef1fd43e4f8c5e1"><div class="ttname"><a href="EventProcessor_8h.html#a00619d14de42943dbef1fd43e4f8c5e1">DECLARE_ANALYZER_NS</a></div><div class="ttdeci">#define DECLARE_ANALYZER_NS(NS, CLASS)</div><div class="ttdoc">Macro which allows the framework to construct an analyzer given its name during configuration.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00391">EventProcessor.h:391</a></div></div>
 <div class="ttc" id="aHcalGeometry_8h_html"><div class="ttname"><a href="HcalGeometry_8h.html">HcalGeometry.h</a></div><div class="ttdoc">Class that translates HCal ID into positions of strip hits.</div></div>
 <div class="ttc" id="aHcalID_8h_html"><div class="ttname"><a href="HcalID_8h.html">HcalID.h</a></div><div class="ttdoc">Class that defines an HCal sensitive detector.</div></div>
 <div class="ttc" id="aProcess_8h_html"><div class="ttname"><a href="Process_8h.html">Process.h</a></div><div class="ttdoc">Class which represents the process under execution.</div></div>
+<div class="ttc" id="aSimCalorimeterHit_8h_html"><div class="ttname"><a href="SimCalorimeterHit_8h.html">SimCalorimeterHit.h</a></div><div class="ttdoc">Class which stores simulated calorimeter hit information.</div></div>
 <div class="ttc" id="aclassframework_1_1Analyzer_html"><div class="ttname"><a href="classframework_1_1Analyzer.html">framework::Analyzer</a></div><div class="ttdoc">Base class for a module which does not produce a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00293">EventProcessor.h:293</a></div></div>
 <div class="ttc" id="aclassframework_1_1ConfigurePython_html"><div class="ttname"><a href="classframework_1_1ConfigurePython.html">framework::ConfigurePython</a></div><div class="ttdoc">Utility class which reads/executes a python script and creates a Process object based on the input.</div><div class="ttdef"><b>Definition:</b> <a href="ConfigurePython_8h_source.html#l00019">ConfigurePython.h:19</a></div></div>
 <div class="ttc" id="aclassframework_1_1Event_html"><div class="ttname"><a href="classframework_1_1Event.html">framework::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00040">Event.h:40</a></div></div>
 <div class="ttc" id="aclassframework_1_1Process_html"><div class="ttname"><a href="classframework_1_1Process.html">framework::Process</a></div><div class="ttdoc">Class which represents the process under execution.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00035">Process.h:35</a></div></div>
-<div class="ttc" id="aclasshcal_1_1test_1_1HcalCheckPositionMap_html"><div class="ttname"><a href="classhcal_1_1test_1_1HcalCheckPositionMap.html">hcal::test::HcalCheckPositionMap</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometryTest_8cxx_source.html#l00028">HcalGeometryTest.cxx:28</a></div></div>
-<div class="ttc" id="aclasshcal_1_1test_1_1HcalCheckPositionMap_html_a3f40f801650415ad72ec0dbab8e3f4b4"><div class="ttname"><a href="classhcal_1_1test_1_1HcalCheckPositionMap.html#a3f40f801650415ad72ec0dbab8e3f4b4">hcal::test::HcalCheckPositionMap::onProcessStart</a></div><div class="ttdeci">void onProcessStart() final override</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometryTest_8cxx_source.html#l00034">HcalGeometryTest.cxx:34</a></div></div>
-<div class="ttc" id="aclasshcal_1_1test_1_1HcalCheckPositionMap_html_aa79a7ef6e6910936f0ee416384731c26"><div class="ttname"><a href="classhcal_1_1test_1_1HcalCheckPositionMap.html#aa79a7ef6e6910936f0ee416384731c26">hcal::test::HcalCheckPositionMap::analyze</a></div><div class="ttdeci">void analyze(const framework::Event &amp;event) final override</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometryTest_8cxx_source.html#l00036">HcalGeometryTest.cxx:36</a></div></div>
+<div class="ttc" id="aclasshcal_1_1test_1_1HcalCheckPositionMap_html"><div class="ttname"><a href="classhcal_1_1test_1_1HcalCheckPositionMap.html">hcal::test::HcalCheckPositionMap</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometryTest_8cxx_source.html#l00030">HcalGeometryTest.cxx:30</a></div></div>
+<div class="ttc" id="aclasshcal_1_1test_1_1HcalCheckPositionMap_html_a3f40f801650415ad72ec0dbab8e3f4b4"><div class="ttname"><a href="classhcal_1_1test_1_1HcalCheckPositionMap.html#a3f40f801650415ad72ec0dbab8e3f4b4">hcal::test::HcalCheckPositionMap::onProcessStart</a></div><div class="ttdeci">void onProcessStart() final override</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometryTest_8cxx_source.html#l00036">HcalGeometryTest.cxx:36</a></div></div>
+<div class="ttc" id="aclasshcal_1_1test_1_1HcalCheckPositionMap_html_aa79a7ef6e6910936f0ee416384731c26"><div class="ttname"><a href="classhcal_1_1test_1_1HcalCheckPositionMap.html#aa79a7ef6e6910936f0ee416384731c26">hcal::test::HcalCheckPositionMap::analyze</a></div><div class="ttdeci">void analyze(const framework::Event &amp;event) final override</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometryTest_8cxx_source.html#l00038">HcalGeometryTest.cxx:38</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a509523c5f18a53d16be9d6a79e6e590a"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static constexpr const char * CONDITIONS_OBJECT_NAME</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00042">HcalGeometry.h:42</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalID_html"><div class="ttname"><a href="classldmx_1_1HcalID.html">ldmx::HcalID</a></div><div class="ttdoc">Implements detector ids for HCal subdetector.</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00019">HcalID.h:19</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalID_html_a166e1dbe38b589bdfceb990b4efb1e49"><div class="ttname"><a href="classldmx_1_1HcalID.html#a166e1dbe38b589bdfceb990b4efb1e49">ldmx::HcalID::layer</a></div><div class="ttdeci">int layer() const</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00088">HcalID.h:88</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalID_html_a5a85a3f3b025f7e2a0527c8296aa6b0a"><div class="ttname"><a href="classldmx_1_1HcalID.html#a5a85a3f3b025f7e2a0527c8296aa6b0a">ldmx::HcalID::strip</a></div><div class="ttdeci">int strip() const</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00106">HcalID.h:106</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a></div><div class="ttdoc">Stores simulated calorimeter hit information.</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00031">SimCalorimeterHit.h:31</a></div></div>
-<div class="ttc" id="anamespaceframework_html_a548efdd3e0acc7f4da72ecfbd5c46e6f"><div class="ttname"><a href="namespaceframework.html#a548efdd3e0acc7f4da72ecfbd5c46e6f">framework::ProcessHandle</a></div><div class="ttdeci">std::unique_ptr&lt; Process &gt; ProcessHandle</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00209">Process.h:209</a></div></div>
+<div class="ttc" id="anamespaceframework_html_a548efdd3e0acc7f4da72ecfbd5c46e6f"><div class="ttname"><a href="namespaceframework.html#a548efdd3e0acc7f4da72ecfbd5c46e6f">framework::ProcessHandle</a></div><div class="ttdeci">std::unique_ptr&lt; Process &gt; ProcessHandle</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00232">Process.h:232</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

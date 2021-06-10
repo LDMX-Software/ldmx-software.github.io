@@ -163,8 +163,8 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00008">8</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html">EcalTrigPrimDigiProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    : <a class="code" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a>(name, process) {}</div>
+<p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00009">9</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html">EcalTrigPrimDigiProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    : <a class="code" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a>(name, process) {}</div>
 <div class="ttc" id="aclassframework_1_1Producer_html_a27ea7492352028e450f24f4750c62e1b"><div class="ttname"><a href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">framework::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00068">EventProcessor.cxx:68</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -198,13 +198,13 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a21156f6f3954394925e9a265de9d702a">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00012">12</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html">EcalTrigPrimDigiProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                                      {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#a2f13568c9d6e6c8e211cf82978034eb5">digiCollName_</a> = ps.<a class="code" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;digiCollName&quot;</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#abb7d2569704856b5c9a61398be484f9b">digiPassName_</a> = ps.<a class="code" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;digiPassName&quot;</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#aaf767b049d8cd5e5443978a507ac9d03">condObjName_</a> =</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      ps.<a class="code" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;condObjName&quot;</span>, <span class="stringliteral">&quot;EcalTrigPrimDigiConditions&quot;</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00013">13</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html">EcalTrigPrimDigiProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                                      {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#a2f13568c9d6e6c8e211cf82978034eb5">digiCollName_</a> = ps.<a class="code" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;digiCollName&quot;</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#abb7d2569704856b5c9a61398be484f9b">digiPassName_</a> = ps.<a class="code" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;digiPassName&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#aaf767b049d8cd5e5443978a507ac9d03">condObjName_</a> =</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      ps.<a class="code" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;condObjName&quot;</span>, <span class="stringliteral">&quot;EcalTrigPrimDigiConditions&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="ttc" id="aclassecal_1_1EcalTrigPrimDigiProducer_html_a2f13568c9d6e6c8e211cf82978034eb5"><div class="ttname"><a href="classecal_1_1EcalTrigPrimDigiProducer.html#a2f13568c9d6e6c8e211cf82978034eb5">ecal::EcalTrigPrimDigiProducer::digiCollName_</a></div><div class="ttdeci">std::string digiCollName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalTrigPrimDigiProducer_8h_source.html#l00050">EcalTrigPrimDigiProducer.h:50</a></div></div>
 <div class="ttc" id="aclassecal_1_1EcalTrigPrimDigiProducer_html_aaf767b049d8cd5e5443978a507ac9d03"><div class="ttname"><a href="classecal_1_1EcalTrigPrimDigiProducer.html#aaf767b049d8cd5e5443978a507ac9d03">ecal::EcalTrigPrimDigiProducer::condObjName_</a></div><div class="ttdeci">std::string condObjName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalTrigPrimDigiProducer_8h_source.html#l00056">EcalTrigPrimDigiProducer.h:56</a></div></div>
 <div class="ttc" id="aclassecal_1_1EcalTrigPrimDigiProducer_html_abb7d2569704856b5c9a61398be484f9b"><div class="ttname"><a href="classecal_1_1EcalTrigPrimDigiProducer.html#abb7d2569704856b5c9a61398be484f9b">ecal::EcalTrigPrimDigiProducer::digiPassName_</a></div><div class="ttdeci">std::string digiPassName_</div><div class="ttdef"><b>Definition:</b> <a href="EcalTrigPrimDigiProducer_8h_source.html#l00053">EcalTrigPrimDigiProducer.h:53</a></div></div>
@@ -241,52 +241,52 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00019">19</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html">EcalTrigPrimDigiProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                            {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">const</span> EcalTriggerGeometry&amp; geom = getCondition&lt;EcalTriggerGeometry&gt;(</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      EcalTriggerGeometry::CONDITIONS_OBJECT_NAME);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">const</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>&amp; ecalDigis =</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keyword">event</span>.getObject&lt;<a class="code" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>&gt;(<a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#a2f13568c9d6e6c8e211cf82978034eb5">digiCollName_</a>, <a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#abb7d2569704856b5c9a61398be484f9b">digiPassName_</a>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">// get the calibration object</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">const</span> <a class="code" href="classconditions_1_1IntegerTableCondition.html">conditions::IntegerTableCondition</a>&amp; conditions =</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      getCondition&lt;conditions::IntegerTableCondition&gt;(<a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#aaf767b049d8cd5e5443978a507ac9d03">condObjName_</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">// construct the calculator...</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="classldmx_1_1HgcrocTriggerCalculations.html">ldmx::HgcrocTriggerCalculations</a> calc(conditions);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// Loop over the digis</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ix = 0; ix &lt; ecalDigis.<a class="code" href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">getNumDigis</a>(); ix++) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">ldmx::HgcrocDigiCollection::HgcrocDigi</a> pdigi = ecalDigis.<a class="code" href="classldmx_1_1HgcrocDigiCollection.html#ad70741a9275ebf3fe2af1243f90ac807">getDigi</a>(ix);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// std::cout &lt;&lt; EcalID(pdigi.id()) &lt;&lt; pdigi &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classldmx_1_1EcalTriggerID.html">ldmx::EcalTriggerID</a> tid = geom.belongsTo(<a class="code" href="classldmx_1_1EcalID.html">ldmx::EcalID</a>(pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a90592de7d5c274bca3cc36c84043412e">id</a>()));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (!tid.<a class="code" href="classldmx_1_1DetectorID.html#a479293bbb81f85d51a3980a66d329848">null</a>()) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordtype">int</span> tot = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">if</span> (pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a0a6245ff7b09524d037d76c552adfd8e">soi</a>().<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#af303f0015272f8f6387c3fd83140548a">isTOTComplete</a>()) tot = pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a0a6245ff7b09524d037d76c552adfd8e">soi</a>().<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a6f320e86c12b372c397cd15536abda31">tot</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      calc.addDigi(pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a90592de7d5c274bca3cc36c84043412e">id</a>(), tid.<a class="code" href="classldmx_1_1DetectorID.html#ac0abca97b23c9a83516479c8ab910138">raw</a>(), pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a0a6245ff7b09524d037d76c552adfd8e">soi</a>().<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a>(), tot);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// Now, we compress the digis</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  calc.compressDigis(9);  <span class="comment">// 9 is the number for Ecal...</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> std::map&lt;unsigned int, uint8_t&gt;&amp; results = calc.compressedEnergies();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  ldmx::HgcrocTrigDigiCollection tdigis;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> result : results) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (result.second &gt; 0) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      tdigis.push_back(<a class="code" href="classldmx_1_1HgcrocTrigDigi.html">ldmx::HgcrocTrigDigi</a>(result.first, result.second));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="comment">// std::cout &lt;&lt; EcalTriggerID(result.first) &lt;&lt; &quot;  &quot; &lt;&lt; tdigis.back() &lt;&lt;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="comment">// std::endl;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// std::cout &lt;&lt; ecalDigis.size() &lt;&lt; &quot; &quot; &lt;&lt; tdigis.size() &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">event</span>.add(<a class="code" href="classframework_1_1EventProcessor.html#a9467d0d35043af7ed66a6b46cbca85ca">getName</a>(), tdigis);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00020">20</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html">EcalTrigPrimDigiProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                            {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">const</span> EcalTriggerGeometry&amp; geom = getCondition&lt;EcalTriggerGeometry&gt;(</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      EcalTriggerGeometry::CONDITIONS_OBJECT_NAME);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">const</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>&amp; ecalDigis =</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keyword">event</span>.getObject&lt;<a class="code" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>&gt;(<a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#a2f13568c9d6e6c8e211cf82978034eb5">digiCollName_</a>, <a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#abb7d2569704856b5c9a61398be484f9b">digiPassName_</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">// get the calibration object</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">const</span> <a class="code" href="classconditions_1_1IntegerTableCondition.html">conditions::IntegerTableCondition</a>&amp; conditions =</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      getCondition&lt;conditions::IntegerTableCondition&gt;(<a class="code" href="classecal_1_1EcalTrigPrimDigiProducer.html#aaf767b049d8cd5e5443978a507ac9d03">condObjName_</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// construct the calculator...</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classldmx_1_1HgcrocTriggerCalculations.html">ldmx::HgcrocTriggerCalculations</a> calc(conditions);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Loop over the digis</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ix = 0; ix &lt; ecalDigis.<a class="code" href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">getNumDigis</a>(); ix++) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">ldmx::HgcrocDigiCollection::HgcrocDigi</a> pdigi = ecalDigis.<a class="code" href="classldmx_1_1HgcrocDigiCollection.html#ad70741a9275ebf3fe2af1243f90ac807">getDigi</a>(ix);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// std::cout &lt;&lt; EcalID(pdigi.id()) &lt;&lt; pdigi &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classldmx_1_1EcalTriggerID.html">ldmx::EcalTriggerID</a> tid = geom.belongsTo(<a class="code" href="classldmx_1_1EcalID.html">ldmx::EcalID</a>(pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a90592de7d5c274bca3cc36c84043412e">id</a>()));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (!tid.<a class="code" href="classldmx_1_1DetectorID.html#a479293bbb81f85d51a3980a66d329848">null</a>()) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordtype">int</span> tot = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">if</span> (pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a0a6245ff7b09524d037d76c552adfd8e">soi</a>().<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#af303f0015272f8f6387c3fd83140548a">isTOTComplete</a>()) tot = pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a0a6245ff7b09524d037d76c552adfd8e">soi</a>().<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a6f320e86c12b372c397cd15536abda31">tot</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      calc.addDigi(pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a90592de7d5c274bca3cc36c84043412e">id</a>(), tid.<a class="code" href="classldmx_1_1DetectorID.html#ac0abca97b23c9a83516479c8ab910138">raw</a>(), pdigi.<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#a0a6245ff7b09524d037d76c552adfd8e">soi</a>().<a class="code" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a>(), tot);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// Now, we compress the digis</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  calc.compressDigis(9);  <span class="comment">// 9 is the number for Ecal...</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">const</span> std::map&lt;unsigned int, uint8_t&gt;&amp; results = calc.compressedEnergies();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ldmx::HgcrocTrigDigiCollection tdigis;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> result : results) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (result.second &gt; 0) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      tdigis.push_back(<a class="code" href="classldmx_1_1HgcrocTrigDigi.html">ldmx::HgcrocTrigDigi</a>(result.first, result.second));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="comment">// std::cout &lt;&lt; EcalTriggerID(result.first) &lt;&lt; &quot;  &quot; &lt;&lt; tdigis.back() &lt;&lt;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="comment">// std::endl;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// std::cout &lt;&lt; ecalDigis.size() &lt;&lt; &quot; &quot; &lt;&lt; tdigis.size() &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">event</span>.add(<a class="code" href="classframework_1_1EventProcessor.html#a9467d0d35043af7ed66a6b46cbca85ca">getName</a>(), tdigis);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="ttc" id="aclassconditions_1_1IntegerTableCondition_html"><div class="ttname"><a href="classconditions_1_1IntegerTableCondition.html">conditions::IntegerTableCondition</a></div><div class="ttdef"><b>Definition:</b> <a href="SimpleTableCondition_8h_source.html#l00200">SimpleTableCondition.h:200</a></div></div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_a9467d0d35043af7ed66a6b46cbca85ca"><div class="ttname"><a href="classframework_1_1EventProcessor.html#a9467d0d35043af7ed66a6b46cbca85ca">framework::EventProcessor::getName</a></div><div class="ttdeci">std::string getName() const</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00188">EventProcessor.h:188</a></div></div>
 <div class="ttc" id="aclassldmx_1_1DetectorID_html_a479293bbb81f85d51a3980a66d329848"><div class="ttname"><a href="classldmx_1_1DetectorID.html#a479293bbb81f85d51a3980a66d329848">ldmx::DetectorID::null</a></div><div class="ttdeci">bool null() const</div><div class="ttdef"><b>Definition:</b> <a href="DetectorID_8h_source.html#l00059">DetectorID.h:59</a></div></div>
@@ -333,7 +333,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8h_source.html#l00056">56</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8h_source.html">EcalTrigPrimDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00012">configure()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00019">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00013">configure()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00020">produce()</a>.</p>
 
 </div>
 </div>
@@ -360,7 +360,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8h_source.html#l00050">50</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8h_source.html">EcalTrigPrimDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00012">configure()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00019">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00013">configure()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00020">produce()</a>.</p>
 
 </div>
 </div>
@@ -387,7 +387,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="EcalTrigPrimDigiProducer_8h_source.html#l00053">53</a> of file <a class="el" href="EcalTrigPrimDigiProducer_8h_source.html">EcalTrigPrimDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00012">configure()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00019">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00013">configure()</a>, and <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00020">produce()</a>.</p>
 
 </div>
 </div>

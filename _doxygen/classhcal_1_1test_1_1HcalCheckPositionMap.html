@@ -126,7 +126,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <li>Position of HcalHit from the HcalGeometry map matches SimCalorimeterHit with the same ID The SimHits are all generated at the same energy (1 MIP) for consistency. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometryTest_8cxx_source.html#l00028">28</a> of file <a class="el" href="HcalGeometryTest_8cxx_source.html">HcalGeometryTest.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometryTest_8cxx_source.html#l00030">30</a> of file <a class="el" href="HcalGeometryTest_8cxx_source.html">HcalGeometryTest.cxx</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa79a7ef6e6910936f0ee416384731c26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa79a7ef6e6910936f0ee416384731c26">&#9670;&nbsp;</a></span>analyze()</h2>
@@ -160,61 +160,61 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Implements <a class="el" href="classframework_1_1Analyzer.html#ac923a649608165fd21183ede074695ab">framework::Analyzer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometryTest_8cxx_source.html#l00036">36</a> of file <a class="el" href="HcalGeometryTest_8cxx_source.html">HcalGeometryTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                           {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> simHits =</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">event</span>.getCollection&lt;<a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&gt;(<span class="stringliteral">&quot;HcalSimHits&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    CHECK(simHits.size() &gt; 0);</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometryTest_8cxx_source.html#l00038">38</a> of file <a class="el" href="HcalGeometryTest_8cxx_source.html">HcalGeometryTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                           {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> simHits =</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">event</span>.getCollection&lt;<a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&gt;(<span class="stringliteral">&quot;HcalSimHits&quot;</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ihit = 0; ihit &lt; simHits.size(); ihit++) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keyword">auto</span> hit = simHits.at(ihit);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordtype">double</span> x = hit.getPosition()[0];</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordtype">double</span> y = hit.getPosition()[1];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordtype">double</span> z = hit.getPosition()[2];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hitID = hit.getID();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <a class="code" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> detID(hitID);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">int</span> section = detID.section();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordtype">int</span> layer = detID.layer();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordtype">int</span> strip = detID.strip();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="comment">// get the Hcal geometry</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;hcalGeometry = getCondition&lt;ldmx::HcalGeometry&gt;(</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          <a class="code" href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="comment">// get position</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keyword">auto</span> positionMap = hcalGeometry.getStripCenterPosition(detID);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keyword">auto</span> target_z =</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;          Approx(z).epsilon(MAX_ENERGY_PERCENT_ERROR_ZPOSITION / 100);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      CHECK(positionMap.Z() == target_z);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (layer % 2 == 1) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          <span class="keyword">auto</span> target_y =</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;              Approx(y).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          CHECK(positionMap.Y() == target_y);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          <span class="keyword">auto</span> target_x =</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;              Approx(x).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          CHECK(positionMap.X() == target_x);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::TOP) ||</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            (section == ldmx::HcalID::HcalSection::BOTTOM)) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          <span class="keyword">auto</span> target_y =</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              Approx(y).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          CHECK(positionMap.Y() == target_y);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::LEFT) ||</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                   (section == ldmx::HcalID::HcalSection::RIGHT)) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          <span class="keyword">auto</span> target_x =</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;              Approx(x).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          CHECK(positionMap.X() == target_x);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    CHECK(simHits.size() &gt; 0);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ihit = 0; ihit &lt; simHits.size(); ihit++) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keyword">auto</span> hit = simHits.at(ihit);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordtype">double</span> x = hit.getPosition()[0];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordtype">double</span> y = hit.getPosition()[1];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordtype">double</span> z = hit.getPosition()[2];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hitID = hit.getID();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <a class="code" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> detID(hitID);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordtype">int</span> section = detID.section();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">int</span> layer = detID.layer();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordtype">int</span> strip = detID.strip();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="comment">// get the Hcal geometry</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;hcalGeometry = getCondition&lt;ldmx::HcalGeometry&gt;(</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          <a class="code" href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="comment">// get position</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keyword">auto</span> positionMap = hcalGeometry.getStripCenterPosition(detID);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keyword">auto</span> target_z =</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          Approx(z).epsilon(MAX_ENERGY_PERCENT_ERROR_ZPOSITION / 100);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      CHECK(positionMap.Z() == target_z);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (layer % 2 == 1) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          <span class="keyword">auto</span> target_y =</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;              Approx(y).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          CHECK(positionMap.Y() == target_y);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          <span class="keyword">auto</span> target_x =</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;              Approx(x).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          CHECK(positionMap.X() == target_x);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::TOP) ||</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            (section == ldmx::HcalID::HcalSection::BOTTOM)) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          <span class="keyword">auto</span> target_y =</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              Approx(y).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          CHECK(positionMap.Y() == target_y);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::LEFT) ||</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                   (section == ldmx::HcalID::HcalSection::RIGHT)) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          <span class="keyword">auto</span> target_x =</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;              Approx(x).epsilon(MAX_ENERGY_PERCENT_ERROR_YPOSITION / 100);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          CHECK(positionMap.X() == target_x);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
 <div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a509523c5f18a53d16be9d6a79e6e590a"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static constexpr const char * CONDITIONS_OBJECT_NAME</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00042">HcalGeometry.h:42</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalID_html"><div class="ttname"><a href="classldmx_1_1HcalID.html">ldmx::HcalID</a></div><div class="ttdoc">Implements detector ids for HCal subdetector.</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00019">HcalID.h:19</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a></div><div class="ttdoc">Stores simulated calorimeter hit information.</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00031">SimCalorimeterHit.h:31</a></div></div>
@@ -249,8 +249,8 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#ab54bb3abaafcb4f4b4b42d0a2ff616a9">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometryTest_8cxx_source.html#l00034">34</a> of file <a class="el" href="HcalGeometryTest_8cxx_source.html">HcalGeometryTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{}</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometryTest_8cxx_source.html#l00036">36</a> of file <a class="el" href="HcalGeometryTest_8cxx_source.html">HcalGeometryTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
