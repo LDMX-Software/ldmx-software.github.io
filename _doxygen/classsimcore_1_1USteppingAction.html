@@ -194,11 +194,10 @@ std::vector&lt; <a class="el" href="classsimcore_1_1UserAction.html">UserAction<
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      }           <span class="comment">// creator exists</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }             <span class="comment">// loop over secondaries</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }               <span class="comment">// secondaries list was created</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// now stepping actions can use getEventInfo()-&gt;wasLastStep{P,E}N()</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">//  to determine if last step was PN or EN</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; steppingAction : <a class="code" href="classsimcore_1_1USteppingAction.html#a5e20b37c9043c906b02e7c22f02c60ca">steppingActions_</a>) steppingAction-&gt;stepping(step);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// now stepping actions can use getEventInfo()-&gt;wasLastStep{P,E}N()</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">//  to determine if last step was PN or EN</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; steppingAction : <a class="code" href="classsimcore_1_1USteppingAction.html#a5e20b37c9043c906b02e7c22f02c60ca">steppingActions_</a>) steppingAction-&gt;stepping(step);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00046">simcore::UserEventInformation::incWeight()</a>, and <a class="el" href="USteppingAction_8h_source.html#l00053">steppingActions_</a>.</p>
 

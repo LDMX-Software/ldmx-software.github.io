@@ -85,53 +85,52 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// tagged as PN photos will be processed. The track is currently only</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// tagged by the UserAction ECalProcessFilter which needs to be run</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// before this UserAction.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">auto</span> trackInfo{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="classsimcore_1_1UserTrackInformation.html">simcore::UserTrackInformation</a>*<span class="keyword">&gt;</span>(track-&gt;GetUserInformation())};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span> ((trackInfo != <span class="keyword">nullptr</span>) &amp;&amp; !trackInfo-&gt;isPNGamma()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// Get the PN photon daughters.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">auto</span> secondaries{step-&gt;GetSecondary()};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Loop through all of the secondaries and check for the product of</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// interest.  This is done by getting the PDG ID of a daughter and</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// checking that it&#39;s in the vector of PDG IDs passed to this</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// UserAction.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">bool</span> productFound{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; secondary : *secondaries) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Get the PDG ID of the track</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">auto</span> pdgID{std::abs(secondary-&gt;GetParticleDefinition()-&gt;GetPDGEncoding())};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Check if the PDG ID is in the list of products of interest</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (std::find(<a class="code" href="classbiasing_1_1PhotoNuclearProductsFilter.html#a30ced5aabf82ab4b30d7ac64c29d19e9">productsPdgID_</a>.begin(), <a class="code" href="classbiasing_1_1PhotoNuclearProductsFilter.html#a30ced5aabf82ab4b30d7ac64c29d19e9">productsPdgID_</a>.end(), pdgID) !=</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classbiasing_1_1PhotoNuclearProductsFilter.html#a30ced5aabf82ab4b30d7ac64c29d19e9">productsPdgID_</a>.end()) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      productFound = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// If the product of interest was not found, kill the track and abort</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// the event.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">if</span> (!productFound) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// Once the PN gamma has been procesed, untag it so its not reprocessed</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// again.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  trackInfo-&gt;<a class="code" href="classsimcore_1_1UserTrackInformation.html#ad82512c4d2af5303363838765fea3091">tagPNGamma</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}  <span class="comment">// namespace biasing</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;DECLARE_ACTION(biasing, PhotoNuclearProductsFilter)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">auto</span> trackInfo{<a class="code" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a>(track)};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">if</span> ((trackInfo != <span class="keyword">nullptr</span>) &amp;&amp; !trackInfo-&gt;isPNGamma()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// Get the PN photon daughters.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">auto</span> secondaries{step-&gt;GetSecondary()};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// Loop through all of the secondaries and check for the product of</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// interest.  This is done by getting the PDG ID of a daughter and</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// checking that it&#39;s in the vector of PDG IDs passed to this</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// UserAction.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">bool</span> productFound{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; secondary : *secondaries) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Get the PDG ID of the track</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">auto</span> pdgID{std::abs(secondary-&gt;GetParticleDefinition()-&gt;GetPDGEncoding())};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Check if the PDG ID is in the list of products of interest</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (std::find(<a class="code" href="classbiasing_1_1PhotoNuclearProductsFilter.html#a30ced5aabf82ab4b30d7ac64c29d19e9">productsPdgID_</a>.begin(), <a class="code" href="classbiasing_1_1PhotoNuclearProductsFilter.html#a30ced5aabf82ab4b30d7ac64c29d19e9">productsPdgID_</a>.end(), pdgID) !=</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classbiasing_1_1PhotoNuclearProductsFilter.html#a30ced5aabf82ab4b30d7ac64c29d19e9">productsPdgID_</a>.end()) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      productFound = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// If the product of interest was not found, kill the track and abort</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// the event.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (!productFound) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// Once the PN gamma has been procesed, untag it so its not reprocessed</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// again.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  trackInfo-&gt;<a class="code" href="classsimcore_1_1UserTrackInformation.html#ad82512c4d2af5303363838765fea3091">tagPNGamma</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}  <span class="comment">// namespace biasing</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;DECLARE_ACTION(biasing, PhotoNuclearProductsFilter)</div>
 <div class="ttc" id="aclassbiasing_1_1PhotoNuclearProductsFilter_html_a046f3ba457c1f700f5aded73847e5a54"><div class="ttname"><a href="classbiasing_1_1PhotoNuclearProductsFilter.html#a046f3ba457c1f700f5aded73847e5a54">biasing::PhotoNuclearProductsFilter::stepping</a></div><div class="ttdeci">void stepping(const G4Step *step) final override</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearProductsFilter_8cxx_source.html#l00030">PhotoNuclearProductsFilter.cxx:30</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1PhotoNuclearProductsFilter_html_a2de7c416efb0bd97527a35cbe16038bc"><div class="ttname"><a href="classbiasing_1_1PhotoNuclearProductsFilter.html#a2de7c416efb0bd97527a35cbe16038bc">biasing::PhotoNuclearProductsFilter::~PhotoNuclearProductsFilter</a></div><div class="ttdeci">~PhotoNuclearProductsFilter()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearProductsFilter_8cxx_source.html#l00028">PhotoNuclearProductsFilter.cxx:28</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1PhotoNuclearProductsFilter_html_a30ced5aabf82ab4b30d7ac64c29d19e9"><div class="ttname"><a href="classbiasing_1_1PhotoNuclearProductsFilter.html#a30ced5aabf82ab4b30d7ac64c29d19e9">biasing::PhotoNuclearProductsFilter::productsPdgID_</a></div><div class="ttdeci">std::vector&lt; int &gt; productsPdgID_</div><div class="ttdoc">Container to hold the PDG IDs of products of interest.</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearProductsFilter_8h_source.html#l00060">PhotoNuclearProductsFilter.h:60</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1PhotoNuclearProductsFilter_html_a9471c3105ef305cb38710536876227f8"><div class="ttname"><a href="classbiasing_1_1PhotoNuclearProductsFilter.html#a9471c3105ef305cb38710536876227f8">biasing::PhotoNuclearProductsFilter::PhotoNuclearProductsFilter</a></div><div class="ttdeci">PhotoNuclearProductsFilter(const std::string &amp;name, framework::config::Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearProductsFilter_8cxx_source.html#l00022">PhotoNuclearProductsFilter.cxx:22</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html">simcore::UserTrackInformation</a></div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8h_source.html#l00012">UserTrackInformation.h:12</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_ad82512c4d2af5303363838765fea3091"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#ad82512c4d2af5303363838765fea3091">simcore::UserTrackInformation::tagPNGamma</a></div><div class="ttdeci">void tagPNGamma(bool isPNGamma=true)</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8h_source.html#l00072">UserTrackInformation.h:72</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_a05d99ef5ad9cc9e31abcfb5505bc2b9e"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a></div><div class="ttdeci">static UserTrackInformation * get(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8cxx_source.html#l00010">UserTrackInformation.cxx:10</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_ad82512c4d2af5303363838765fea3091"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#ad82512c4d2af5303363838765fea3091">simcore::UserTrackInformation::tagPNGamma</a></div><div class="ttdeci">void tagPNGamma(bool isPNGamma=true)</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8h_source.html#l00101">UserTrackInformation.h:101</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

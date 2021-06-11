@@ -47,56 +47,125 @@ $(function() {
 <div class="title">TrackMap.cxx</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TrackMap_8h.html">SimCore/TrackMap.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;SimCore/TrackMap.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Geant4</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;G4Event.hh&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;G4EventManager.hh&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// LDMX</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Trajectory_8h.html">SimCore/Trajectory.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>simcore {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classsimcore_1_1TrackMap.html#aa4b0e570536c28f940a90edf27f4deac">   12</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classsimcore_1_1TrackMap.html#aa4b0e570536c28f940a90edf27f4deac">TrackMap::findIncident</a>(G4int trackID) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">int</span> currTrackID = trackID;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">bool</span> foundIncident = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">while</span> (not foundIncident) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classsimcore_1_1TrackMap.html#a42db09623325192026f1218af87107a4">contains</a>(currTrackID)) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <span class="comment">// currTrackID is not a primary and has parent stored</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      currTrackID = this-&gt;<a class="code" href="classsimcore_1_1TrackMap.html#af8786964d5bb5ea84ad167a69d5c63a0">getParent</a>(currTrackID);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classsimcore_1_1TrackMap.html#a1c6fed7d7825845b85b208d2805d5a0c">hasTrajectory</a>(currTrackID)) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">// curr track ID is being stored</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">auto</span> region{this-&gt;<a class="code" href="classsimcore_1_1TrackMap.html#a35cbd5c8506766b4bb5f42b21d163cbe">getTrajectory</a>(currTrackID)-&gt;getVertexRegion()};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (region.find(<span class="stringliteral">&quot;Calorimeter&quot;</span>) == std::string::npos) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;          <span class="comment">// curr track originated outside cal region</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          foundIncident = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="comment">// curr Track ID is a primary and has already been</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="comment">// checked above, give up</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      foundIncident = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">return</span> currTrackID;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>simcore {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classsimcore_1_1TrackMap.html#ada353df3b799ca06e53601d7c0eed577">    9</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimcore_1_1TrackMap.html#ada353df3b799ca06e53601d7c0eed577">TrackMap::insert</a>(<span class="keyword">const</span> G4Track* track) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="classsimcore_1_1TrackMap.html#a05b8b1c8a634a301ffdfb232cd9dc52a">ancestry_</a>[track-&gt;GetTrackID()] = std::make_pair(track-&gt;GetParentID(),<a class="code" href="classsimcore_1_1TrackMap.html#ab51b0f53451543dda3e3f32169b32675">isInCalorimeterRegion</a>(track));</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="classsimcore_1_1TrackMap.html#a6e8313b41d210eb585f32104e8efffcc">descendents_</a>[track-&gt;GetParentID()].push_back(track-&gt;GetTrackID());</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classsimcore_1_1TrackMap.html#adf371c28a8853b88b268823185c7ee8a">   14</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classsimcore_1_1TrackMap.html#adf371c28a8853b88b268823185c7ee8a">TrackMap::findIncident</a>(G4int trackID)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">int</span> currTrackID = trackID;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">bool</span> foundIncident{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">while</span> (not foundIncident) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">auto</span> &amp;[parentID, inCalRegion] = <a class="code" href="classsimcore_1_1TrackMap.html#a05b8b1c8a634a301ffdfb232cd9dc52a">ancestry_</a>.at(currTrackID);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (not inCalRegion or parentID == 0) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="comment">// current track ID is nearest ancestor</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <span class="comment">// originating outside cal region</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="comment">// or is a primary particle</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      foundIncident = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="comment">// still in cal region, keep going</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      currTrackID = parentID;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> currTrackID;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classsimcore_1_1TrackMap.html#a987632720c8a4dcd34438445e48ecaa0">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimcore_1_1TrackMap.html#a987632720c8a4dcd34438445e48ecaa0">TrackMap::save</a>(<span class="keyword">const</span> G4Track* track) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// create sim particle in map, keep reference to the newly created particle</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a>&amp; particle{<a class="code" href="classsimcore_1_1TrackMap.html#a99275f25372f121a6d1e4ebfddaf3296">particle_map_</a>[track-&gt;GetTrackID()]};</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classsimcore_1_1TrackMap.html#a0416efc74239b58f7ccb39abd461bc6b">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimcore_1_1TrackMap.html#a0416efc74239b58f7ccb39abd461bc6b">TrackMap::clear</a>() {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="classsimcore_1_1TrackMap.html#adccda072a44277ce5439ffaca0c23474">trajectoryMap_</a>.clear();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="classsimcore_1_1TrackMap.html#a83ecef29516c5aed15342c0218b325e1">trackIDMap_</a>.clear();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}  <span class="comment">// namespace simcore</span></div>
-<div class="ttc" id="aTrackMap_8h_html"><div class="ttname"><a href="TrackMap_8h.html">TrackMap.h</a></div><div class="ttdoc">Class which defines a map of track ID to parent ID and Trajectory.</div></div>
-<div class="ttc" id="aTrajectory_8h_html"><div class="ttname"><a href="Trajectory_8h.html">Trajectory.h</a></div><div class="ttdoc">Class providing Trajectory implementation for storing track info.</div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a0416efc74239b58f7ccb39abd461bc6b"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a0416efc74239b58f7ccb39abd461bc6b">simcore::TrackMap::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00036">TrackMap.cxx:36</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a1c6fed7d7825845b85b208d2805d5a0c"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a1c6fed7d7825845b85b208d2805d5a0c">simcore::TrackMap::hasTrajectory</a></div><div class="ttdeci">bool hasTrajectory(G4int trackID) const</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00062">TrackMap.h:62</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a35cbd5c8506766b4bb5f42b21d163cbe"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a35cbd5c8506766b4bb5f42b21d163cbe">simcore::TrackMap::getTrajectory</a></div><div class="ttdeci">Trajectory * getTrajectory(G4int trackID) const</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00095">TrackMap.h:95</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a42db09623325192026f1218af87107a4"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a42db09623325192026f1218af87107a4">simcore::TrackMap::contains</a></div><div class="ttdeci">bool contains(G4int trackID) const</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00078">TrackMap.h:78</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a83ecef29516c5aed15342c0218b325e1"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a83ecef29516c5aed15342c0218b325e1">simcore::TrackMap::trackIDMap_</a></div><div class="ttdeci">TrackIDMap trackIDMap_</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00110">TrackMap.h:110</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_aa4b0e570536c28f940a90edf27f4deac"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#aa4b0e570536c28f940a90edf27f4deac">simcore::TrackMap::findIncident</a></div><div class="ttdeci">int findIncident(G4int trackID)</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00012">TrackMap.cxx:12</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_adccda072a44277ce5439ffaca0c23474"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#adccda072a44277ce5439ffaca0c23474">simcore::TrackMap::trajectoryMap_</a></div><div class="ttdeci">Trajectory::TrajectoryMap trajectoryMap_</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00113">TrackMap.h:113</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_af8786964d5bb5ea84ad167a69d5c63a0"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#af8786964d5bb5ea84ad167a69d5c63a0">simcore::TrackMap::getParent</a></div><div class="ttdeci">int getParent(int trackID) const</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00087">TrackMap.h:87</a></div></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// TODO: default gen status?</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  particle.setGenStatus(0);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// Update the gen status from the primary particle.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">if</span> (track-&gt;GetDynamicParticle()-&gt;GetPrimaryParticle() != NULL) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    G4VUserPrimaryParticleInformation* primaryInfo =</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        track-&gt;GetDynamicParticle()-&gt;GetPrimaryParticle()-&gt;GetUserInformation();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (primaryInfo != NULL) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      particle.setGenStatus(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;          ((<a class="code" href="classsimcore_1_1UserPrimaryParticleInformation.html">UserPrimaryParticleInformation</a>*)primaryInfo)-&gt;getHepEvtStatus());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">auto</span> particle_def{track-&gt;GetDefinition()};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  particle.setPdgID(particle_def-&gt;GetPDGEncoding());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  particle.setCharge(particle_def-&gt;GetPDGCharge());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  particle.setMass(track-&gt;GetDynamicParticle()-&gt;GetMass());</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  particle.setEnergy(track-&gt;GetVertexKineticEnergy()+track-&gt;GetDynamicParticle()-&gt;GetMass());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">auto</span> track_info{<a class="code" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">UserTrackInformation::get</a>(track)};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  particle.setVertexVolume(track_info-&gt;getVertexVolume());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">auto</span> vert{track-&gt;GetVertexPosition()};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  particle.setVertex(vert.x(), vert.y(), vert.z());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  particle.setTime(track_info-&gt;getVertexTime());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">auto</span> init_momentum{track_info-&gt;<a class="code" href="classsimcore_1_1UserTrackInformation.html#ac761df43c7d9ce5aa6d0bf0f4eb7f2ee">getInitialMomentum</a>()};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  particle.setMomentum(init_momentum.x(), init_momentum.y(), init_momentum.z());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">const</span> G4VProcess* process{track-&gt;GetCreatorProcess()};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">if</span> (process) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> G4String&amp; name{process-&gt;GetProcessName()};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    particle.setProcessType(<a class="code" href="classldmx_1_1SimParticle.html#a9017ca6a3b598240f491afa452018de1">ldmx::SimParticle::findProcessType</a>(name));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    particle.setProcessType(ldmx::SimParticle::ProcessType::unknown);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// track&#39;s current kinematics is its end point kinematics</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">//  because we are assuming this track is being stopped/killed</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">auto</span> momentum{track-&gt;GetMomentum()};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  particle.setEndPointMomentum(momentum.x(), momentum.y(), momentum.z());</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">auto</span> end_pt{track-&gt;GetPosition()};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  particle.setEndPoint(end_pt.x(), end_pt.y(), end_pt.z());</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classsimcore_1_1TrackMap.html#abf3d5c14645119e25914a681e221cde9">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimcore_1_1TrackMap.html#abf3d5c14645119e25914a681e221cde9">TrackMap::traceAncestry</a>() {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; [<span class="keywordtype">id</span>, particle] : <a class="code" href="classsimcore_1_1TrackMap.html#a99275f25372f121a6d1e4ebfddaf3296">particle_map_</a>) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    particle.addParent(<a class="code" href="classsimcore_1_1TrackMap.html#a05b8b1c8a634a301ffdfb232cd9dc52a">ancestry_</a>.at(<span class="keywordtype">id</span>).first);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;child : <a class="code" href="classsimcore_1_1TrackMap.html#a6e8313b41d210eb585f32104e8efffcc">descendents_</a>[<span class="keywordtype">id</span>]) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      particle.addDaughter(child);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classsimcore_1_1TrackMap.html#a0416efc74239b58f7ccb39abd461bc6b">  100</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classsimcore_1_1TrackMap.html#a0416efc74239b58f7ccb39abd461bc6b">TrackMap::clear</a>() {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="classsimcore_1_1TrackMap.html#a05b8b1c8a634a301ffdfb232cd9dc52a">ancestry_</a>.clear();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="classsimcore_1_1TrackMap.html#a6e8313b41d210eb585f32104e8efffcc">descendents_</a>.clear();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="classsimcore_1_1TrackMap.html#a99275f25372f121a6d1e4ebfddaf3296">particle_map_</a>.clear();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classsimcore_1_1TrackMap.html#ab51b0f53451543dda3e3f32169b32675">  106</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classsimcore_1_1TrackMap.html#ab51b0f53451543dda3e3f32169b32675">TrackMap::isInCalorimeterRegion</a>(<span class="keyword">const</span> G4Track* track)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keyword">auto</span> region{track-&gt;GetLogicalVolumeAtVertex()-&gt;GetRegion()-&gt;GetName()};</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordflow">return</span> region.contains(<span class="stringliteral">&quot;Calorimeter&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}  <span class="comment">// namespace simcore</span></div>
+<div class="ttc" id="aclassldmx_1_1SimParticle_html"><div class="ttname"><a href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a></div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00023">SimParticle.h:23</a></div></div>
+<div class="ttc" id="aclassldmx_1_1SimParticle_html_a9017ca6a3b598240f491afa452018de1"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a9017ca6a3b598240f491afa452018de1">ldmx::SimParticle::findProcessType</a></div><div class="ttdeci">static ProcessType findProcessType(std::string processName)</div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a0416efc74239b58f7ccb39abd461bc6b"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a0416efc74239b58f7ccb39abd461bc6b">simcore::TrackMap::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00100">TrackMap.cxx:100</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a05b8b1c8a634a301ffdfb232cd9dc52a"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a05b8b1c8a634a301ffdfb232cd9dc52a">simcore::TrackMap::ancestry_</a></div><div class="ttdeci">std::unordered_map&lt; int, std::pair&lt; int, bool &gt; &gt; ancestry_</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00128">TrackMap.h:128</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a6e8313b41d210eb585f32104e8efffcc"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a6e8313b41d210eb585f32104e8efffcc">simcore::TrackMap::descendents_</a></div><div class="ttdeci">std::unordered_map&lt; int, std::vector&lt; int &gt; &gt; descendents_</div><div class="ttdoc">descendents map of particles in event (parent -&gt; children)</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00131">TrackMap.h:131</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a987632720c8a4dcd34438445e48ecaa0"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a987632720c8a4dcd34438445e48ecaa0">simcore::TrackMap::save</a></div><div class="ttdeci">void save(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00032">TrackMap.cxx:32</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a99275f25372f121a6d1e4ebfddaf3296"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a99275f25372f121a6d1e4ebfddaf3296">simcore::TrackMap::particle_map_</a></div><div class="ttdeci">std::map&lt; int, ldmx::SimParticle &gt; particle_map_</div><div class="ttdoc">map of SimParticles that will be stored</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00134">TrackMap.h:134</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_ab51b0f53451543dda3e3f32169b32675"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#ab51b0f53451543dda3e3f32169b32675">simcore::TrackMap::isInCalorimeterRegion</a></div><div class="ttdeci">bool isInCalorimeterRegion(const G4Track *track) const</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00106">TrackMap.cxx:106</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_abf3d5c14645119e25914a681e221cde9"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#abf3d5c14645119e25914a681e221cde9">simcore::TrackMap::traceAncestry</a></div><div class="ttdeci">void traceAncestry()</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00084">TrackMap.cxx:84</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_ada353df3b799ca06e53601d7c0eed577"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#ada353df3b799ca06e53601d7c0eed577">simcore::TrackMap::insert</a></div><div class="ttdeci">void insert(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00009">TrackMap.cxx:9</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_adf371c28a8853b88b268823185c7ee8a"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#adf371c28a8853b88b268823185c7ee8a">simcore::TrackMap::findIncident</a></div><div class="ttdeci">int findIncident(int trackID) const</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00014">TrackMap.cxx:14</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1UserPrimaryParticleInformation_html"><div class="ttname"><a href="classsimcore_1_1UserPrimaryParticleInformation.html">simcore::UserPrimaryParticleInformation</a></div><div class="ttdoc">Defines extra information attached to a Geant4 primary particle.</div><div class="ttdef"><b>Definition:</b> <a href="UserPrimaryParticleInformation_8h_source.html#l00019">UserPrimaryParticleInformation.h:20</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_a05d99ef5ad9cc9e31abcfb5505bc2b9e"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a></div><div class="ttdeci">static UserTrackInformation * get(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8cxx_source.html#l00010">UserTrackInformation.cxx:10</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_ac761df43c7d9ce5aa6d0bf0f4eb7f2ee"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#ac761df43c7d9ce5aa6d0bf0f4eb7f2ee">simcore::UserTrackInformation::getInitialMomentum</a></div><div class="ttdeci">const G4ThreeVector &amp; getInitialMomentum() const</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8h_source.html#l00108">UserTrackInformation.h:108</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
