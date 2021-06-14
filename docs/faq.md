@@ -5,6 +5,22 @@ layout: default
 # What the F.A.Q.?
 Frequent issues and potholes that new collaborators run into while starting their work with LDMX software.
 
+### My display isn't working when using Windoze and WSL!
+
+You probably are seeing an error that looks like:
+
+```
+$ ldmx rootbrowse
+Error in <TGClient::TGClient>: can't open display ":0", switching to batch mode...
+In case you run from a remote ssh session, reconnect with ssh -Y
+Press enter to exit.
+```
+
+The solution to this is two-fold.
+
+1. Install an X11-server on Windoze (_outside_ WSL) so that the display programs inside WSL have something to send their information to. [X410](https://x410.dev/) is a common one, but there are many options.
+2. Make sure your environment script (`scripts/ldmx-env.sh`) has updates to the environment allowing you to connect directly to the server. These updates are on [PR #997](https://github.com/LDMX-Software/ldmx-sw/pull/997) and could be manually copied if you aren't yet comfortable with `git`.
+
 ### Is it okay for me to use tools outside the container? I have been informed to only use the container when working on LDMX.
 The container is focused on being a well-defined and well-tested environment for ldmx-sw, but it may not be able to accomodate every aspect of your workflow. For example, my specific workflow can be outlined with the following commands (not a tutorial, just an outline for explanatory purposes):
 

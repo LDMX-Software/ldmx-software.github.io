@@ -4,19 +4,41 @@ layout: default
 
 # Start-Up Exercises
 
-This page assumes you (the reader) already has experience with `git` and `C++` in order to focus on the specifics of `ldmx-sw`. 
+This page assumes you (the reader) already has some experience with `git` and the command line.
 If you are not as experienced with either of these, 
 then you may need to use more resources than this guide to gain an understanding of `ldmx-sw`.
+
+- [Git Started](https://mareichler-spra.github.io/GitStarted/) using `git`
+- [Windows Subsystem for Linux](https://wiki.ubuntu.com/WSL) for Windoze users
+- [Getting Started with the Terminal](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/)
 
 ## 0. Installation and Test Run
 
 Follow the instructions on how to install ldmx-sw to build an installation on your local computer.
 The most up-to-date instructions can be found [on the ldmx-sw README](https://github.com/LDMX-Software/ldmx-sw/blob/master/README.md).
+The basic flow of building and installing ldmx-sw is below.
+The big steps break down into a series of terminal commands that you will use often.
+
+1. Get the source code (either by downloading or writing) - The `--recurisve` flag is _very_ important because of the way we package our code in `git`
+```bash
+git clone --recursive https://github.com/LDMX-Software/ldmx-sw.git
+```
+2. Configure the build to your system and your source - The `source scripts/ldmx-env.sh` is called "sourcing the environment script" and can be done earlier if the code is already on your computer.
+```bash
+cd ldmx-sw
+source scripts/ldmx-env.sh
+mkdir build
+cd build
+ldmx cmake ..
+```
+3. Compile and Install the code - This also needs to be inside the `build` directory.
+```bash
+ldmx make install
+```
 
 Make sure the installation was built and linked correctly by running the test application.
 This should return a message describing saying that several tests passed, for example:
 ```bash
-$ cd build
 $ ldmx ctest
 Test project /home/tom/ldmx/ldmx-sw/build
     Start 1: Framework
@@ -59,7 +81,49 @@ Mess around with the parameters and look at the processors used in that script t
 There are already several processors in _ldmx-sw_ that have a template python module that you can import into your config.
 Most processors that have this sort of template put into their module's `python` directory.
 
-## 2. Analyze a sample using `fire`
+## 2. Analyze a Sample using `python3`
+
+One of the quickest ways to open up a file with events in it and start making plots is by writing a python-based analysis.
+The benefits of using a python-based analysis are that the analysis script is easier to develop; however,
+you do not have access to all of the tools that are coded into the C++ implementation of ldmx-sw so these analysese are limited.
+
+A very basic pythnon analysis is given below.
+The `EventTree` module is a recent addition to ldmx-sw and is not available in older (pre v3.0.0) versions.
+
+```python
+"""A short and basic python analysis in ldmx-sw"""
+
+from LDMX.Framework import EventTree
+import sys
+
+# use the first command line argument as the input file
+tree = EventTree.EventTree(sys.argv[1])
+
+for event in tree:
+    event.EventHeader.Print()
+```
+
+which you would run on the command line using the `ldmx` command defined after sourcing the environment script.
+```bash
+$ ldmx python3 my-analysis.py file-to-analyze.root
+```
+
+All this script will do is loop through the events in the file and print-out the event header for each one.
+The event header only has the basic information of the event's number, weight, timestamp, and run number.
+Obviously, this "analysis" is not very interesting. How can we improve upon it?
+
+### Exercise: Fill a histogram of simulated energy deposits in the ECal.
+
+Now that you have a basic template for looping through an event tree,
+try to modify the above python script such that you can print-out a histogram of the energy deposits in the ECal.
+
+_Hints_:
+- The list of simulated hits in the ECal are called `EcalSimHits`, so you can get them with `event.EcalSimHits`.
+  - Other objects in the event exist - use `ldmx rootbrowse file-to-analyze.root` to browse the file!
+- ROOT's documentation isn't great, but [this "simple" histogram-filling file](https://root.cern.ch/doc/master/hsimple_8py.html) is a place you can look for code examples
+
+
+## 3. Analyze a sample using `fire`
 
 ### General Description of Processing in `fire`
 
@@ -70,7 +134,6 @@ Each file contains a line of buses and each bus stops at each processor in the s
 Each processor can go onto the bus making additions or just getting information before the bus proceeds to the next processor in the sequence. 
 A processor that is allowed to add objects to the bus are called _producers_ while a processor that is not allowed to add objects is called an _analyzer_. 
 The event bus can contain singular objects or Standard Template Library (STL) collections of objects. 
-Objects that can be in the event bus are called `EventBusPassenger`s and are listed in the `Event/include/EventDef.h` file. 
 
 ### Exercise
 
@@ -82,10 +145,11 @@ A good method of starting a new Analyzer is to simply copy an existing analyzer 
 
 ### Goal: Fill a Histogram with the Transverse Momenta of All Particles
 
-1. Use the `NewProcessor.py` script to generate a new analyzer in your branch of ldmx-analysis.
+1. Copy an existing analyzer's header and source files to your own files and clean out all the old code (renaming where necessary).
+   - "renaming where necessary" is deceptively simple, reach out for some help on slack if you are unfamiliar with C++!
 2. Make sure your new processor can be added to the processing sequence by having it print "Hello World" to the screen for each event. You will need to add your new processor to a python configuration file (like you used above) and have the processor in the sequence provided to the ldmx process.
-3. Look at `DummyAnalyzer` to see how to list all of the products in each of your events. Get your analyzer to print out the PDG IDs of all of the simulated particles for each of the events in your sample.
-4. Now that you have the collection of simulated particles in your analyzer, have your analyzer fill a histogram of the transverse momentum of each of the simulated particles. The `DummyAnalyzer` also fills a simple histogram, but it does not use the collection of simulated particles.
+3. Determine how to access the SimParticles from the event. (Browsing the code-base for other processors which do this is a common method!)
+4. Now that you have the collection of simulated particles in your analyzer, have your analyzer fill a histogram of the transverse momentum of each of the simulated particles.
 
 Now you've gotten a basic analyzer running and filling histograms!
 You can go forward and start making more interesting histograms from the objects that other processors put into the event.
@@ -95,7 +159,7 @@ The rest of these exercises are much more code-heavy.
 If you are not developing for _ldmx-sw_, 
 you can take a break from these exercises now and start writing your own physics analyses using what you have learned.
 
-## 3. Construct a Producer using a pre-defined event object
+## 4. Construct a Producer using a pre-defined event object
 
 All of the event objects that can be added to the event bus are in the `Event` module. 
 You've probably already used a few of them while practicing making an analyzer in the previous exercise. 
@@ -104,11 +168,11 @@ Most of the event objects are highly specialized, but a simpler one to use to pr
 
 ### Goal: Write your own HCal Veto
 
-0. There is already an implementation of an HCal Veto: `EventProc::HcalVetoProcessor`. Look at it to gain some inspiration.
+0. There is already an implementation of an HCal Veto: `Hcal::HcalVetoProcessor`. Look at it to gain some inspiration.
 1. Look through the header and source files for `HcalVetoResult` to make sure you understand the aspects of this class.
-2. Generate a new producer template using `NewProcessor.py` and make sure that it can be added to the processing sequence by having it print the number of `HcalHits` in each event.
-3. Design your veto. Look at the `DummyProducer` and `HcalVetoProcessor` to find out different ways to add your object to the event bus.
-4. Make sure your new object is being stored in the output file by opening it in `root`.
+2. Generate a new producer by copying an existing one and make sure that it can be added to the processing sequence by having it print the number of `HcalHits` in each event.
+3. Design your veto. Look at the `HcalVetoProcessor` to find out how to add your object to the event bus.
+4. Make sure your new object is being stored in the output file by opening it with `ldmx rootbrowse`.
 
 #### Bonus:
 5. There is a way to tell `fire` to skip an event (i.e. not save it in the output file) from within a processor. Can you make your veto actually skip events that would have failed to pass it? Hint: You have to put new code in both your producer's source file *and* your python configuration file. Hint: We usually call this process "skimming".
