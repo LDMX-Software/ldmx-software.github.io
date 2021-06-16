@@ -116,10 +116,11 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// add number of electrons to event header. allow for it to be unset (-1)</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">event</span>.getEventHeader().setIntParameter(<span class="stringliteral">&quot;nElectrons&quot;</span>, nElectrons);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}  <span class="comment">// namespace recon</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a>(recon, ElectronCounter)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">event</span>.setElectronCount(nElectrons);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace recon</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<a class="code" href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a>(recon, ElectronCounter)</div>
 <div class="ttc" id="aEventProcessor_8h_html_a7896421cd58ee79a1eb300ec836c6c92"><div class="ttname"><a href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a></div><div class="ttdeci">#define DECLARE_PRODUCER_NS(NS, CLASS)</div><div class="ttdoc">Macro which allows the framework to construct a producer given its name during configuration.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00371">EventProcessor.h:371</a></div></div>
 <div class="ttc" id="aclassframework_1_1Event_html"><div class="ttname"><a href="classframework_1_1Event.html">framework::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00040">Event.h:40</a></div></div>
 <div class="ttc" id="aclassframework_1_1Event_html_a7e65967eea5ac3172852838f1c8f266a"><div class="ttname"><a href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">framework::Event::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name, const std::string &amp;passName=&quot;&quot;) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00105">Event.h:105</a></div></div>

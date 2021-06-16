@@ -328,7 +328,8 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// add number of electrons to event header. allow for it to be unset (-1)</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">event</span>.getEventHeader().setIntParameter(<span class="stringliteral">&quot;nElectrons&quot;</span>, nElectrons);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">event</span>.setElectronCount(nElectrons);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="ttc" id="aclassframework_1_1Event_html_a7e65967eea5ac3172852838f1c8f266a"><div class="ttname"><a href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">framework::Event::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name, const std::string &amp;passName=&quot;&quot;) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00105">Event.h:105</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TrigScintTrack_html"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a></div><div class="ttdoc">Represents a track of trigger scintillator clusters.</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00021">TrigScintTrack.h:21</a></div></div>
 </div><!-- fragment -->
