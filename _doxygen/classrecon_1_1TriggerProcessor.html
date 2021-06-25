@@ -318,7 +318,11 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 <p>Run the trigger algorithm and create a TriggerResult object to contain info about the trigger decision such as pass/fail, number of saved variables, etc. param event The event to run trigger algorithm on. </p>
 <p>Grab the Ecal hit collection for the given event</p>
-<p>unless we have more electrons than expected, pull threshold from the list. otherwise, set as (threshold_for_1e + nExtraElectrons*beamE) note that the "overflow" formula here is too naive. it should be a fct( nElectrons, 1e_thr, beamE), taking how sigma evolves with multiplicity into account. a simple scaling might suffice there too assume energy cuts are listed as [ Ecut_1e, Ecut_2e, ... ]</p>
+<p>There are three scenarios:</p><ol type="1">
+<li>No Incoming Electrons - If the electron count is 0 or negative (undetermined), then we set the sum-energy cut to zero so the event always fails.</li>
+<li>Num Electrons Listed in Thresholds - Pull cut from list</li>
+<li>More electrons than listed - Set threshold as 'threshold_for_1e + nExtraElectrons*beamEnergy' Note that the "overflow" formula here is too naive. It should be a fct( nElectrons, 1e_thr, beamE), taking how sigma evolves with multiplicity into account. a simple scaling might suffice there too assuming energy cuts are listed as [ Ecut_1e, Ecut_2e, ... ]</li>
+</ol>
 <p>Loop over all ecal hits in the given event</p>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
@@ -331,59 +335,61 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">// number of electrons in this event</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> nElectrons{<span class="keyword">event</span>.getElectronCount()};</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">double</span> layerESumCut{0.};</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">if</span> (nElectrons &lt;= <a class="code" href="classrecon_1_1TriggerProcessor.html#ade2bbc98d97c2520db798b3e4d951733">layerESumCuts_</a>.size())</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    layerESumCut = <a class="code" href="classrecon_1_1TriggerProcessor.html#ade2bbc98d97c2520db798b3e4d951733">layerESumCuts_</a>.at(nElectrons - 1);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    layerESumCut = <a class="code" href="classrecon_1_1TriggerProcessor.html#ade2bbc98d97c2520db798b3e4d951733">layerESumCuts_</a>.at(0) + (nElectrons - 1) * <a class="code" href="classrecon_1_1TriggerProcessor.html#ae4b85c9a3fa3189f16a0c2c2c1dd162c">beamEnergy_</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got trigger energy cut &quot;</span> &lt;&lt; layerESumCut &lt;&lt; <span class="stringliteral">&quot; for &quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                  &lt;&lt; nElectrons &lt;&lt; <span class="stringliteral">&quot; electrons counted in the event.&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  std::vector&lt;double&gt; layerDigiE(100, 0.0);  <span class="comment">// big empty vector..</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a>&amp; hit : ecalRecHits) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classldmx_1_1EcalID.html">ldmx::EcalID</a> id(hit.getID());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (<span class="keywordtype">id</span>.layer() &lt; layerDigiE.size()) {  <span class="comment">// just to be safe...</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1TriggerProcessor.html#a8f1a5f35b5a1adc02b2baf457b01ebda">mode_</a> == 0) {  <span class="comment">// Sum over all cells in a given layer</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        layerDigiE[<span class="keywordtype">id</span>.layer()] += hit.getEnergy();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1TriggerProcessor.html#a8f1a5f35b5a1adc02b2baf457b01ebda">mode_</a> == 1) {  <span class="comment">// Sum over cells in central tower only</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                <span class="comment">// std::pair&lt;float, float&gt; xyPos =</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// hit-&gt;getCellCentroidXYPair(hit-&gt;getID()); float cellRadius =</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// sqrt(pow(xyPos.first, 2) + pow(xyPos.second, 2)); if (cellRadius &lt;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// MAGICNUMBERHERE) {</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">//    layerDigiE[hit-&gt;getLayer()] += hit-&gt;getEnergy();</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">//}</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">float</span> layerSum = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">bool</span> pass = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iL = <a class="code" href="classrecon_1_1TriggerProcessor.html#a5eecfdb3665d1cc67d4876e12a8f780e">startLayer_</a>; iL &lt; <a class="code" href="classrecon_1_1TriggerProcessor.html#afab9a80b275d238a4edd32980136c56f">endLayer_</a>; ++iL) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    layerSum += layerDigiE[iL];</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  pass = (layerSum &lt;= layerESumCut);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got trigger energy sum &quot;</span> &lt;&lt; layerSum</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;; and decision is pass = &quot;</span> &lt;&lt; pass;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">double</span> layerESumCut{0.};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> (nElectrons &lt;= 0)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    layerESumCut = 0.; <span class="comment">// always fail if no electrons</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nElectrons &lt;= <a class="code" href="classrecon_1_1TriggerProcessor.html#ade2bbc98d97c2520db798b3e4d951733">layerESumCuts_</a>.size())</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    layerESumCut = <a class="code" href="classrecon_1_1TriggerProcessor.html#ade2bbc98d97c2520db798b3e4d951733">layerESumCuts_</a>.at(nElectrons - 1);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    layerESumCut = <a class="code" href="classrecon_1_1TriggerProcessor.html#ade2bbc98d97c2520db798b3e4d951733">layerESumCuts_</a>.at(0) + (nElectrons - 1) * <a class="code" href="classrecon_1_1TriggerProcessor.html#ae4b85c9a3fa3189f16a0c2c2c1dd162c">beamEnergy_</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got trigger energy cut &quot;</span> &lt;&lt; layerESumCut &lt;&lt; <span class="stringliteral">&quot; for &quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                  &lt;&lt; nElectrons &lt;&lt; <span class="stringliteral">&quot; electrons counted in the event.&quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  std::vector&lt;double&gt; layerDigiE(100, 0.0);  <span class="comment">// big empty vector..</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a>&amp; hit : ecalRecHits) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classldmx_1_1EcalID.html">ldmx::EcalID</a> id(hit.getID());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (<span class="keywordtype">id</span>.layer() &lt; layerDigiE.size()) {  <span class="comment">// just to be safe...</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1TriggerProcessor.html#a8f1a5f35b5a1adc02b2baf457b01ebda">mode_</a> == 0) {  <span class="comment">// Sum over all cells in a given layer</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        layerDigiE[<span class="keywordtype">id</span>.layer()] += hit.getEnergy();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1TriggerProcessor.html#a8f1a5f35b5a1adc02b2baf457b01ebda">mode_</a> == 1) {  <span class="comment">// Sum over cells in central tower only</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                <span class="comment">// std::pair&lt;float, float&gt; xyPos =</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// hit-&gt;getCellCentroidXYPair(hit-&gt;getID()); float cellRadius =</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// sqrt(pow(xyPos.first, 2) + pow(xyPos.second, 2)); if (cellRadius &lt;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">// MAGICNUMBERHERE) {</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">//    layerDigiE[hit-&gt;getLayer()] += hit-&gt;getEnergy();</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">//}</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">float</span> layerSum = 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">bool</span> pass = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="classldmx_1_1TriggerResult.html">ldmx::TriggerResult</a> result;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#a66ad625eaa94cbf33251b7f7b139d5e0">set</a>(<a class="code" href="classrecon_1_1TriggerProcessor.html#ae15eb123215a6c83e0aa54662a20af3b">algoName_</a>, pass, 4);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">setAlgoVar</a>(0, layerSum);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">setAlgoVar</a>(1, layerESumCut);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">setAlgoVar</a>(2, <a class="code" href="classrecon_1_1TriggerProcessor.html#afab9a80b275d238a4edd32980136c56f">endLayer_</a> - <a class="code" href="classrecon_1_1TriggerProcessor.html#a5eecfdb3665d1cc67d4876e12a8f780e">startLayer_</a>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">setAlgoVar</a>(3, nElectrons);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">event</span>.add(<a class="code" href="classrecon_1_1TriggerProcessor.html#a880f45c9369a50d4e74927437a8b994a">outputColl_</a>, result);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// mark the event</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">if</span> (pass)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">setStorageHint</a>(framework::hint_shouldKeep);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">setStorageHint</a>(framework::hint_shouldDrop);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iL = <a class="code" href="classrecon_1_1TriggerProcessor.html#a5eecfdb3665d1cc67d4876e12a8f780e">startLayer_</a>; iL &lt; <a class="code" href="classrecon_1_1TriggerProcessor.html#afab9a80b275d238a4edd32980136c56f">endLayer_</a>; ++iL) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    layerSum += layerDigiE[iL];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  pass = (layerSum &lt;= layerESumCut);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got trigger energy sum &quot;</span> &lt;&lt; layerSum</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;; and decision is pass = &quot;</span> &lt;&lt; pass;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="classldmx_1_1TriggerResult.html">ldmx::TriggerResult</a> result;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#a66ad625eaa94cbf33251b7f7b139d5e0">set</a>(<a class="code" href="classrecon_1_1TriggerProcessor.html#ae15eb123215a6c83e0aa54662a20af3b">algoName_</a>, pass, 4);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">setAlgoVar</a>(0, layerSum);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">setAlgoVar</a>(1, layerESumCut);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">setAlgoVar</a>(2, <a class="code" href="classrecon_1_1TriggerProcessor.html#afab9a80b275d238a4edd32980136c56f">endLayer_</a> - <a class="code" href="classrecon_1_1TriggerProcessor.html#a5eecfdb3665d1cc67d4876e12a8f780e">startLayer_</a>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  result.<a class="code" href="classldmx_1_1TriggerResult.html#af63404d01b3529ff5fb45d1587072b3a">setAlgoVar</a>(3, nElectrons);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">event</span>.add(<a class="code" href="classrecon_1_1TriggerProcessor.html#a880f45c9369a50d4e74927437a8b994a">outputColl_</a>, result);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">// mark the event</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span> (pass)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">setStorageHint</a>(framework::hint_shouldKeep);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">setStorageHint</a>(framework::hint_shouldDrop);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_a2f93ec80a4207c3847d629482e81989d"><div class="ttname"><a href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">framework::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(framework::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00160">EventProcessor.h:160</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHit_html"><div class="ttname"><a href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a></div><div class="ttdoc">Stores reconstructed hit information from the ECAL.</div><div class="ttdef"><b>Definition:</b> <a href="EcalHit_8h_source.html#l00019">EcalHit.h:19</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalID_html"><div class="ttname"><a href="classldmx_1_1EcalID.html">ldmx::EcalID</a></div><div class="ttdoc">Extension of DetectorID providing access to ECal layers and cell numbers in a hex grid.</div><div class="ttdef"><b>Definition:</b> <a href="EcalID_8h_source.html#l00020">EcalID.h:20</a></div></div>
