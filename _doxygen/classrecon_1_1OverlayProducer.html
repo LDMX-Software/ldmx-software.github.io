@@ -365,28 +365,28 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#ab54bb3abaafcb4f4b4b42d0a2ff616a9">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="OverlayProducer_8cxx_source.html#l00386">386</a> of file <a class="el" href="OverlayProducer_8cxx_source.html">OverlayProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                                     {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;onProcessStart() &quot;</span>;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  }</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  <span class="comment">// replace by this line once the corresponding tweak to EventFile is ready:</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a> =</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;      std::make_unique&lt;framework::EventFile&gt;(<a class="code" href="classrecon_1_1OverlayProducer.html#a81f15ab0396bac3bb26fdb9d0b30ff22">params_</a>, <a class="code" href="classrecon_1_1OverlayProducer.html#a0dbd9669144ad1f76b142b15b76692bb">overlayFileName_</a>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a>-&gt;setupEvent(&amp;<a class="code" href="classrecon_1_1OverlayProducer.html#a96d8cd99504f5f0384ee99f83b0ddcad">overlayEvent_</a>);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  <span class="comment">// we update the iterator at the end of each event. so do this once here to</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  <span class="comment">// grab the first event in the processor</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;onProcessStart () successful. Used input file: &quot;</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                    &lt;&lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a>-&gt;getFileName();</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;onProcessStart () successful. Got event info: &quot;</span>;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a>-&gt;getEvent()-&gt;Print();</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  }</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="OverlayProducer_8cxx_source.html#l00391">391</a> of file <a class="el" href="OverlayProducer_8cxx_source.html">OverlayProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                                     {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;onProcessStart() &quot;</span>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  <span class="comment">// replace by this line once the corresponding tweak to EventFile is ready:</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  <a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a> =</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;      std::make_unique&lt;framework::EventFile&gt;(<a class="code" href="classrecon_1_1OverlayProducer.html#a81f15ab0396bac3bb26fdb9d0b30ff22">params_</a>, <a class="code" href="classrecon_1_1OverlayProducer.html#a0dbd9669144ad1f76b142b15b76692bb">overlayFileName_</a>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a>-&gt;setupEvent(&amp;<a class="code" href="classrecon_1_1OverlayProducer.html#a96d8cd99504f5f0384ee99f83b0ddcad">overlayEvent_</a>);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="comment">// we update the iterator at the end of each event. so do this once here to</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  <span class="comment">// grab the first event in the processor</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;onProcessStart () successful. Used input file: &quot;</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                    &lt;&lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a>-&gt;getFileName();</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;onProcessStart () successful. Got event info: &quot;</span>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a>-&gt;getEvent()-&gt;Print();</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="OverlayProducer_8h_source.html#l00083">overlayEvent_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00078">overlayFile_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00073">overlayFileName_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00068">params_</a>, and <a class="el" href="OverlayProducer_8h_source.html#l00173">verbosity_</a>.</p>
 
@@ -419,6 +419,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <p>The collections have to be specified separately as a list of SimCalorimeterHit collections and a list of SimTrackerHit collections.</p>
 <p>The collection name is parsed for "Ecal" to be flagged as a collection which needs overlay hits to be added as contribs. This is currently hardwired.</p>
 <p>The resulting collections inherit the input collection name, with an appended string "Overlay". This name is also currently hardwired. </p>
+<p>Go to next overlay event This overlay file has been configured to loop back to the beginning of the TTree when it reaches the end. This means nextEvent() will only return false if an error is occurred or if the overlay file is mis-configured.</p>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
@@ -559,176 +560,175 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">float</span> bunchTimeOffset = <a class="code" href="classrecon_1_1OverlayProducer.html#a7656fa545946f041b4cfc838842c9266">bunchSpacing_</a> * bunchOffset;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iEv = 0; iEv &lt; nEvsOverlay; iEv++) {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <span class="comment">// a pileup event wide time offset to be applied to all its hits.</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <span class="keywordtype">float</span> timeOffset = <a class="code" href="classrecon_1_1OverlayProducer.html#a4a0e8ff73303c03a99ba1dc33f83fb61">rndmTime_</a>-&gt;Gaus(<a class="code" href="classrecon_1_1OverlayProducer.html#a7d4c515ea528ee4efebece4b419f3871">timeMean_</a>, <a class="code" href="classrecon_1_1OverlayProducer.html#aba18fc2354cede52dd928017347f7ba1">timeSigma_</a>);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      timeOffset += bunchTimeOffset;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in overlay loop: overlaying event &quot;</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        &lt;&lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a96d8cd99504f5f0384ee99f83b0ddcad">overlayEvent_</a>.<a class="code" href="classframework_1_1Event.html#ad8bfc57bcc950019d3244f17e84e4601">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>()</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;which is &quot;</span> &lt;&lt; iEv + 1 &lt;&lt; <span class="stringliteral">&quot; out of &quot;</span> &lt;&lt; nEvsOverlay</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;\n\thit time offset is &quot;</span> &lt;&lt; timeOffset &lt;&lt; <span class="stringliteral">&quot; ns&quot;</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;\n\tbunch position offset is &quot;</span> &lt;&lt; bunchOffset</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;, leading to a total time offset of &quot;</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                        &lt;&lt; bunchTimeOffset &lt;&lt; <span class="stringliteral">&quot; ns&quot;</span>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      <span class="comment">/* ----------- first do the SimCalorimeterHits overlay ----------- */</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      <span class="comment">// again get the calo hits collections that we want to overlay</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      <span class="keywordflow">for</span> (uint iColl = 0; iColl &lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>.size(); iColl++) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="comment">// for now, Ecal and only Ecal uses contribs</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordtype">bool</span> needsContribsAdded = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">if</span> (strstr(<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl].c_str(), <span class="stringliteral">&quot;Ecal&quot;</span>))</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;          needsContribsAdded = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        std::vector&lt;ldmx::SimCalorimeterHit&gt; overlayHits =</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <a class="code" href="classrecon_1_1OverlayProducer.html#a96d8cd99504f5f0384ee99f83b0ddcad">overlayEvent_</a>.<a class="code" href="classframework_1_1Event.html#a808b17741d072084528328fae224f00c">getCollection</a>&lt;<a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&gt;(</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl], <a class="code" href="classrecon_1_1OverlayProducer.html#a0736bc5ae8a8a925e895fb3674aeb73b">overlayPassName_</a>);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      <span class="keywordflow">if</span> (!<a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a>-&gt;nextEvent()) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        ldmx_log(error) &lt;&lt; <span class="stringliteral">&quot;At sim event &quot;</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        &lt;&lt; <span class="keyword">event</span>.getEventHeader().getEventNumber()</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;: couldn&#39;t read next overlay event!&quot;</span>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <span class="comment">// a pileup event wide time offset to be applied to all its hits.</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      <span class="keywordtype">float</span> timeOffset = <a class="code" href="classrecon_1_1OverlayProducer.html#a4a0e8ff73303c03a99ba1dc33f83fb61">rndmTime_</a>-&gt;Gaus(<a class="code" href="classrecon_1_1OverlayProducer.html#a7d4c515ea528ee4efebece4b419f3871">timeMean_</a>, <a class="code" href="classrecon_1_1OverlayProducer.html#aba18fc2354cede52dd928017347f7ba1">timeSigma_</a>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      timeOffset += bunchTimeOffset;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in overlay loop: overlaying event &quot;</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        &lt;&lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a96d8cd99504f5f0384ee99f83b0ddcad">overlayEvent_</a>.<a class="code" href="classframework_1_1Event.html#ad8bfc57bcc950019d3244f17e84e4601">getEventHeader</a>().<a class="code" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>()</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;which is &quot;</span> &lt;&lt; iEv + 1 &lt;&lt; <span class="stringliteral">&quot; out of &quot;</span> &lt;&lt; nEvsOverlay</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;\n\thit time offset is &quot;</span> &lt;&lt; timeOffset &lt;&lt; <span class="stringliteral">&quot; ns&quot;</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;\n\tbunch position offset is &quot;</span> &lt;&lt; bunchOffset</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;, leading to a total time offset of &quot;</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                        &lt;&lt; bunchTimeOffset &lt;&lt; <span class="stringliteral">&quot; ns&quot;</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      }</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in loop: size of overlay hits vector is &quot;</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                        &lt;&lt; overlayHits.size();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        std::string outCollName = <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] + <span class="stringliteral">&quot;Overlay&quot;</span>;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in loop: printing overlay event: &quot;</span>;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <span class="comment">/* ----------- first do the SimCalorimeterHits overlay ----------- */</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="comment">// again get the calo hits collections that we want to overlay</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <span class="keywordflow">for</span> (uint iColl = 0; iColl &lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>.size(); iColl++) {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// for now, Ecal and only Ecal uses contribs</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordtype">bool</span> needsContribsAdded = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">if</span> (strstr(<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl].c_str(), <span class="stringliteral">&quot;Ecal&quot;</span>))</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;          needsContribsAdded = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a> &amp;overlayHit : overlayHits) {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) overlayHit.Print();</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">float</span> overlayTime = overlayHit.getTime() + timeOffset;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;          overlayHit.setTime(overlayTime);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;          <span class="keywordflow">if</span> (needsContribsAdded) {  <span class="comment">// special treatment for (for now only)</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                                     <span class="comment">// ecal</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordtype">int</span> overlayHitID = overlayHit.getID();</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">if</span> (hitMap.find(overlayHitID) ==</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                hitMap.end()) {  <span class="comment">// there wasn&#39;t already a simhit in this id</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;              hitMap[overlayHitID] = <a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;              hitMap[overlayHitID].setID(overlayHitID);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;              std::vector&lt;float&gt; hitPos = overlayHit.getPosition();</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;              hitMap[overlayHitID].setPosition(hitPos[0], hitPos[1], hitPos[2]);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="comment">// add the overlay hit (as a) contrib</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="comment">// incidentID = -1000, trackID = -1000, pdgCode = 0  &lt;-- these are</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="comment">// set in the header for now but could be parameters</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            hitMap[overlayHitID].addContrib(<a class="code" href="classrecon_1_1OverlayProducer.html#a45e054309e9d01d8f4e2689c5acd3d36">overlayIncidentID_</a>, overlayTrackID_,</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                            overlayPdgCode_,</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                                            overlayHit.getEdep(), overlayTime);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;          }  <span class="comment">// if add overlay as contribs</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;          <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            caloCollectionMap[outCollName].push_back(overlayHit);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;              ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Adding non-Ecal overlay hit to outhit vector &quot;</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                              &lt;&lt; outCollName;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;          }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        }  <span class="comment">// over overlay calo simhit collection</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">if</span> (!needsContribsAdded)</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Nhits in overlay collection &quot;</span> &lt;&lt; outCollName</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                          &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; caloCollectionMap[outCollName].size();</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      }  <span class="comment">// over caloCollections</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      <span class="comment">/* ----------- now do simtracker hits overlay ----------- */</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      <span class="comment">// get the SimTrackerHit collections that we want to overlay</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;coll : <a class="code" href="classrecon_1_1OverlayProducer.html#af9ae0715ad48bba2b6911de7871b65e8">trackerCollections_</a>) {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keyword">auto</span> overlayTrackerHits{</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <a class="code" href="classrecon_1_1OverlayProducer.html#a96d8cd99504f5f0384ee99f83b0ddcad">overlayEvent_</a>.<a class="code" href="classframework_1_1Event.html#a808b17741d072084528328fae224f00c">getCollection</a>&lt;<a class="code" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a>&gt;(coll,</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                                             <a class="code" href="classrecon_1_1OverlayProducer.html#a0736bc5ae8a8a925e895fb3674aeb73b">overlayPassName_</a>)};</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in loop: size of overlay hits vector is &quot;</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                        &lt;&lt; overlayTrackerHits.size();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        std::vector&lt;ldmx::SimCalorimeterHit&gt; overlayHits =</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <a class="code" href="classrecon_1_1OverlayProducer.html#a96d8cd99504f5f0384ee99f83b0ddcad">overlayEvent_</a>.<a class="code" href="classframework_1_1Event.html#a808b17741d072084528328fae224f00c">getCollection</a>&lt;<a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&gt;(</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl], <a class="code" href="classrecon_1_1OverlayProducer.html#a0736bc5ae8a8a925e895fb3674aeb73b">overlayPassName_</a>);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in loop: size of overlay hits vector is &quot;</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                        &lt;&lt; overlayHits.size();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        std::string outCollName = <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] + <span class="stringliteral">&quot;Overlay&quot;</span>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in loop: printing overlay event: &quot;</span>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a> &amp;overlayHit : overlayHits) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) overlayHit.Print();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">float</span> overlayTime = overlayHit.getTime() + timeOffset;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;          overlayHit.setTime(overlayTime);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;          <span class="keywordflow">if</span> (needsContribsAdded) {  <span class="comment">// special treatment for (for now only)</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                     <span class="comment">// ecal</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordtype">int</span> overlayHitID = overlayHit.getID();</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keywordflow">if</span> (hitMap.find(overlayHitID) ==</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                hitMap.end()) {  <span class="comment">// there wasn&#39;t already a simhit in this id</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;              hitMap[overlayHitID] = <a class="code" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>();</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;              hitMap[overlayHitID].setID(overlayHitID);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;              std::vector&lt;float&gt; hitPos = overlayHit.getPosition();</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;              hitMap[overlayHitID].setPosition(hitPos[0], hitPos[1], hitPos[2]);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="comment">// add the overlay hit (as a) contrib</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="comment">// incidentID = -1000, trackID = -1000, pdgCode = 0  &lt;-- these are</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="comment">// set in the header for now but could be parameters</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            hitMap[overlayHitID].addContrib(<a class="code" href="classrecon_1_1OverlayProducer.html#a45e054309e9d01d8f4e2689c5acd3d36">overlayIncidentID_</a>, overlayTrackID_,</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                            overlayPdgCode_,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                            overlayHit.getEdep(), overlayTime);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;          }  <span class="comment">// if add overlay as contribs</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;          <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            caloCollectionMap[outCollName].push_back(overlayHit);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2)</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;              ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Adding non-Ecal overlay hit to outhit vector &quot;</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                              &lt;&lt; outCollName;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;          }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }  <span class="comment">// over overlay calo simhit collection</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">if</span> (!needsContribsAdded)</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Nhits in overlay collection &quot;</span> &lt;&lt; outCollName</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                          &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; caloCollectionMap[outCollName].size();</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keyword">auto</span> outCollName{coll + <span class="stringliteral">&quot;Overlay&quot;</span>};</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      }  <span class="comment">// over caloCollections</span></div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in loop: printing overlay event: &quot;</span>;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        }</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;overlayHit : overlayTrackerHits) {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;          <span class="keyword">auto</span> overlayTime{overlayHit.getTime() + timeOffset};</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;          overlayHit.setTime(overlayTime);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;          trackerCollectionMap[outCollName].push_back(overlayHit);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            overlayHit.<a class="code" href="classldmx_1_1SimTrackerHit.html#aae4cc91adad2e546e882d5581f30e74e">Print</a>();</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Adding tracker overlay hit to outhit vector &quot;</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                            &lt;&lt; outCollName;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;          }  <span class="comment">// verbose</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        }    <span class="comment">// over overlay tracker simhit collection</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Nhits in overlay collection &quot;</span> &lt;&lt; outCollName &lt;&lt; <span class="stringliteral">&quot;: &quot;</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        &lt;&lt; trackerCollectionMap[outCollName].size();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;      }  <span class="comment">// over trackerCollections</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;      <span class="comment">// update the event number. here, possibly the event counter gets reset to</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;      <span class="comment">// 0, if we hit the end of the pileup event tree.</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      <span class="keywordflow">if</span> (!<a class="code" href="classrecon_1_1OverlayProducer.html#a02c1155cfb0813096e053bd94c7ba0cc">overlayFile_</a>-&gt;nextEvent()) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        ldmx_log(error) &lt;&lt; <span class="stringliteral">&quot;At sim event &quot;</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                        &lt;&lt; <span class="keyword">event</span>.getEventHeader().getEventNumber()</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;: couldn&#39;t read next overlay event!&quot;</span>;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;      }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }  <span class="comment">// over overlay events</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  }    <span class="comment">// over bunches</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      <span class="comment">/* ----------- now do simtracker hits overlay ----------- */</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      <span class="comment">// get the SimTrackerHit collections that we want to overlay</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;coll : <a class="code" href="classrecon_1_1OverlayProducer.html#af9ae0715ad48bba2b6911de7871b65e8">trackerCollections_</a>) {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keyword">auto</span> overlayTrackerHits{</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <a class="code" href="classrecon_1_1OverlayProducer.html#a96d8cd99504f5f0384ee99f83b0ddcad">overlayEvent_</a>.<a class="code" href="classframework_1_1Event.html#a808b17741d072084528328fae224f00c">getCollection</a>&lt;<a class="code" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a>&gt;(coll,</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                                                             <a class="code" href="classrecon_1_1OverlayProducer.html#a0736bc5ae8a8a925e895fb3674aeb73b">overlayPassName_</a>)};</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in loop: size of overlay hits vector is &quot;</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                        &lt;&lt; overlayTrackerHits.size();</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keyword">auto</span> outCollName{coll + <span class="stringliteral">&quot;Overlay&quot;</span>};</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in loop: printing overlay event: &quot;</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;overlayHit : overlayTrackerHits) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;          <span class="keyword">auto</span> overlayTime{overlayHit.getTime() + timeOffset};</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;          overlayHit.setTime(overlayTime);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;          trackerCollectionMap[outCollName].push_back(overlayHit);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            overlayHit.<a class="code" href="classldmx_1_1SimTrackerHit.html#aae4cc91adad2e546e882d5581f30e74e">Print</a>();</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Adding tracker overlay hit to outhit vector &quot;</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                            &lt;&lt; outCollName;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;          }  <span class="comment">// verbose</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }    <span class="comment">// over overlay tracker simhit collection</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Nhits in overlay collection &quot;</span> &lt;&lt; outCollName &lt;&lt; <span class="stringliteral">&quot;: &quot;</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                        &lt;&lt; trackerCollectionMap[outCollName].size();</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="comment">// after all events are done, the ecal hitmap is final and can be written to</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <span class="comment">// the event output</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <span class="keywordflow">for</span> (uint iColl = 0; iColl &lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>.size(); iColl++) {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="comment">// loop through collection names to find the right collection name</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// add overlaid ecal hits as contribs/from hitmap rather than as copied</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// simhits</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">if</span> (strstr(<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl].c_str(), <span class="stringliteral">&quot;Ecal&quot;</span>)) {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2)</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Hits in hitmap after overlay of &quot;</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                        &lt;&lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] &lt;&lt; <span class="stringliteral">&quot;Overlay :&quot;</span>;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;mapHit : hitMap) {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) mapHit.second.Print();</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">if</span> (caloCollectionMap.find(<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] + <span class="stringliteral">&quot;Overlay&quot;</span>) ==</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            caloCollectionMap.end()) {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Adding first hit from hit map as first outhit &quot;</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                             <span class="stringliteral">&quot;vector to caloCollectionMap&quot;</span>;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;          caloCollectionMap[<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] + <span class="stringliteral">&quot;Overlay&quot;</span>] = {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;              mapHit.second};</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;          caloCollectionMap[<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] + <span class="stringliteral">&quot;Overlay&quot;</span>].push_back(</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;              mapHit.second);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;      <span class="keywordflow">break</span>;  <span class="comment">// for now we only have one hitMap: for Ecal. so no need looking</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;              <span class="comment">// further after we got a match</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    }         <span class="comment">// isEcal</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  }           <span class="comment">// second loop over collections, to collect hits from hitmap</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <span class="comment">// done collecting hits.</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  <span class="comment">// this should be added to the sim file, so to &quot;event&quot;</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="comment">// once for each hit type</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[name, coll] : caloCollectionMap) {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Writing &quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot; to event bus.&quot;</span>;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;List of hits added: &quot;</span>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;hit : coll) hit.Print();</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keyword">event</span>.add(name, coll);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[name, coll] : trackerCollectionMap) {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Writing &quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot; to event bus.&quot;</span>;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;List of hits added: &quot;</span>;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;hit : coll) hit.Print();</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    }</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keyword">event</span>.add(name, coll);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;}</div>
-<div class="ttc" id="aclassframework_1_1Event_html_a808b17741d072084528328fae224f00c"><div class="ttname"><a href="classframework_1_1Event.html#a808b17741d072084528328fae224f00c">framework::Event::getCollection</a></div><div class="ttdeci">const std::vector&lt; ContentType &gt; &amp; getCollection(const std::string &amp;collectionName, const std::string &amp;passName=&quot;&quot;) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00349">Event.h:349</a></div></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;      }  <span class="comment">// over trackerCollections</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }  <span class="comment">// over overlay events</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  }    <span class="comment">// over bunches</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="comment">// after all events are done, the ecal hitmap is final and can be written to</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="comment">// the event output</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <span class="keywordflow">for</span> (uint iColl = 0; iColl &lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>.size(); iColl++) {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// loop through collection names to find the right collection name</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">// add overlaid ecal hits as contribs/from hitmap rather than as copied</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">// simhits</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">if</span> (strstr(<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl].c_str(), <span class="stringliteral">&quot;Ecal&quot;</span>)) {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2)</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Hits in hitmap after overlay of &quot;</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                        &lt;&lt; <a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] &lt;&lt; <span class="stringliteral">&quot;Overlay :&quot;</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;mapHit : hitMap) {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) mapHit.second.Print();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">if</span> (caloCollectionMap.find(<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] + <span class="stringliteral">&quot;Overlay&quot;</span>) ==</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            caloCollectionMap.end()) {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Adding first hit from hit map as first outhit &quot;</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                             <span class="stringliteral">&quot;vector to caloCollectionMap&quot;</span>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;          caloCollectionMap[<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] + <span class="stringliteral">&quot;Overlay&quot;</span>] = {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;              mapHit.second};</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;          caloCollectionMap[<a class="code" href="classrecon_1_1OverlayProducer.html#a2205db8ef8271d145c2b19ffef396f52">caloCollections_</a>[iColl] + <span class="stringliteral">&quot;Overlay&quot;</span>].push_back(</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;              mapHit.second);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;      }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;      <span class="keywordflow">break</span>;  <span class="comment">// for now we only have one hitMap: for Ecal. so no need looking</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;              <span class="comment">// further after we got a match</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    }         <span class="comment">// isEcal</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  }           <span class="comment">// second loop over collections, to collect hits from hitmap</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  <span class="comment">// done collecting hits.</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="comment">// this should be added to the sim file, so to &quot;event&quot;</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <span class="comment">// once for each hit type</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[name, coll] : caloCollectionMap) {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Writing &quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot; to event bus.&quot;</span>;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;List of hits added: &quot;</span>;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;hit : coll) hit.Print();</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keyword">event</span>.add(name, coll);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[name, coll] : trackerCollectionMap) {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Writing &quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot; to event bus.&quot;</span>;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classrecon_1_1OverlayProducer.html#a2cffa0b7248b6adc427461db12478319">verbosity_</a> &gt; 2) {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;List of hits added: &quot;</span>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;hit : coll) hit.Print();</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keyword">event</span>.add(name, coll);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  }</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
+<div class="ttc" id="aclassframework_1_1Event_html_a808b17741d072084528328fae224f00c"><div class="ttname"><a href="classframework_1_1Event.html#a808b17741d072084528328fae224f00c">framework::Event::getCollection</a></div><div class="ttdeci">const std::vector&lt; ContentType &gt; &amp; getCollection(const std::string &amp;collectionName, const std::string &amp;passName=&quot;&quot;) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00366">Event.h:366</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventHeader_html_a8152a5d36972d1c0671ee54a0bf1a794"><div class="ttname"><a href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">ldmx::EventHeader::getEventNumber</a></div><div class="ttdeci">int getEventNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="EventHeader_8h_source.html#l00076">EventHeader.h:76</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a></div><div class="ttdoc">Stores simulated calorimeter hit information.</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00031">SimCalorimeterHit.h:31</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_af20ad7848d15ee64334922fec873d8d1"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#af20ad7848d15ee64334922fec873d8d1">ldmx::SimCalorimeterHit::Print</a></div><div class="ttdeci">void Print() const</div></div>
@@ -737,7 +737,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <div class="ttc" id="aclassrecon_1_1OverlayProducer_html_a45e054309e9d01d8f4e2689c5acd3d36"><div class="ttname"><a href="classrecon_1_1OverlayProducer.html#a45e054309e9d01d8f4e2689c5acd3d36">recon::OverlayProducer::overlayIncidentID_</a></div><div class="ttdeci">int overlayIncidentID_</div><div class="ttdef"><b>Definition:</b> <a href="OverlayProducer_8h_source.html#l00181">OverlayProducer.h:181</a></div></div>
 <div class="ttc" id="aclassrecon_1_1OverlayProducer_html_a4a0e8ff73303c03a99ba1dc33f83fb61"><div class="ttname"><a href="classrecon_1_1OverlayProducer.html#a4a0e8ff73303c03a99ba1dc33f83fb61">recon::OverlayProducer::rndmTime_</a></div><div class="ttdeci">std::unique_ptr&lt; TRandom2 &gt; rndmTime_</div><div class="ttdef"><b>Definition:</b> <a href="OverlayProducer_8h_source.html#l00136">OverlayProducer.h:136</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="OverlayProducer_8h_source.html#l00154">bunchSpacing_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00089">caloCollections_</a>, <a class="el" href="RandomNumberSeedService_8h_source.html#l00037">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="OverlayProducer_8h_source.html#l00111">doPoissonIT_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00117">doPoissonOOT_</a>, <a class="el" href="Event_8h_source.html#l00349">framework::Event::getCollection()</a>, <a class="el" href="Event_8h_source.html#l00057">framework::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00076">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="OverlayProducer_8h_source.html#l00161">nEarlier_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00168">nLater_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00083">overlayEvent_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00078">overlayFile_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00181">overlayIncidentID_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00100">overlayPassName_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00122">poissonMu_</a>, <a class="el" href="classldmx_1_1SimCalorimeterHit.html#af20ad7848d15ee64334922fec873d8d1">ldmx::SimCalorimeterHit::Print()</a>, <a class="el" href="classldmx_1_1SimTrackerHit.html#aae4cc91adad2e546e882d5581f30e74e">ldmx::SimTrackerHit::Print()</a>, <a class="el" href="OverlayProducer_8h_source.html#l00129">rndm_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00136">rndmTime_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00105">simPassName_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00149">timeMean_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00142">timeSigma_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00095">trackerCollections_</a>, and <a class="el" href="OverlayProducer_8h_source.html#l00173">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="OverlayProducer_8h_source.html#l00154">bunchSpacing_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00089">caloCollections_</a>, <a class="el" href="RandomNumberSeedService_8h_source.html#l00037">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="OverlayProducer_8h_source.html#l00111">doPoissonIT_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00117">doPoissonOOT_</a>, <a class="el" href="Event_8h_source.html#l00366">framework::Event::getCollection()</a>, <a class="el" href="Event_8h_source.html#l00057">framework::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00076">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="OverlayProducer_8h_source.html#l00161">nEarlier_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00168">nLater_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00083">overlayEvent_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00078">overlayFile_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00181">overlayIncidentID_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00100">overlayPassName_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00122">poissonMu_</a>, <a class="el" href="classldmx_1_1SimCalorimeterHit.html#af20ad7848d15ee64334922fec873d8d1">ldmx::SimCalorimeterHit::Print()</a>, <a class="el" href="classldmx_1_1SimTrackerHit.html#aae4cc91adad2e546e882d5581f30e74e">ldmx::SimTrackerHit::Print()</a>, <a class="el" href="OverlayProducer_8h_source.html#l00129">rndm_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00136">rndmTime_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00105">simPassName_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00149">timeMean_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00142">timeSigma_</a>, <a class="el" href="OverlayProducer_8h_source.html#l00095">trackerCollections_</a>, and <a class="el" href="OverlayProducer_8h_source.html#l00173">verbosity_</a>.</p>
 
 </div>
 </div>
@@ -927,7 +927,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="OverlayProducer_8h_source.html#l00083">83</a> of file <a class="el" href="OverlayProducer_8h_source.html">OverlayProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OverlayProducer_8cxx_source.html#l00060">onNewRun()</a>, <a class="el" href="OverlayProducer_8cxx_source.html#l00386">onProcessStart()</a>, and <a class="el" href="OverlayProducer_8cxx_source.html#l00080">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OverlayProducer_8cxx_source.html#l00060">onNewRun()</a>, <a class="el" href="OverlayProducer_8cxx_source.html#l00391">onProcessStart()</a>, and <a class="el" href="OverlayProducer_8cxx_source.html#l00080">produce()</a>.</p>
 
 </div>
 </div>
@@ -954,7 +954,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="OverlayProducer_8h_source.html#l00078">78</a> of file <a class="el" href="OverlayProducer_8h_source.html">OverlayProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OverlayProducer_8cxx_source.html#l00060">onNewRun()</a>, <a class="el" href="OverlayProducer_8cxx_source.html#l00386">onProcessStart()</a>, and <a class="el" href="OverlayProducer_8cxx_source.html#l00080">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OverlayProducer_8cxx_source.html#l00060">onNewRun()</a>, <a class="el" href="OverlayProducer_8cxx_source.html#l00391">onProcessStart()</a>, and <a class="el" href="OverlayProducer_8cxx_source.html#l00080">produce()</a>.</p>
 
 </div>
 </div>
@@ -981,7 +981,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="OverlayProducer_8h_source.html#l00073">73</a> of file <a class="el" href="OverlayProducer_8h_source.html">OverlayProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OverlayProducer_8cxx_source.html#l00009">configure()</a>, and <a class="el" href="OverlayProducer_8cxx_source.html#l00386">onProcessStart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OverlayProducer_8cxx_source.html#l00009">configure()</a>, and <a class="el" href="OverlayProducer_8cxx_source.html#l00391">onProcessStart()</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1251,7 @@ logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 <p class="definition">Definition at line <a class="el" href="OverlayProducer_8h_source.html#l00173">173</a> of file <a class="el" href="OverlayProducer_8h_source.html">OverlayProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OverlayProducer_8cxx_source.html#l00009">configure()</a>, <a class="el" href="OverlayProducer_8cxx_source.html#l00386">onProcessStart()</a>, and <a class="el" href="OverlayProducer_8cxx_source.html#l00080">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OverlayProducer_8cxx_source.html#l00009">configure()</a>, <a class="el" href="OverlayProducer_8cxx_source.html#l00391">onProcessStart()</a>, and <a class="el" href="OverlayProducer_8cxx_source.html#l00080">produce()</a>.</p>
 
 </div>
 </div>
