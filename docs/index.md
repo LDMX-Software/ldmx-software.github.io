@@ -20,7 +20,7 @@ layout: default
     - [Basic Session held in May 2021](https://indico.fnal.gov/event/49207/)
     - [Advanced Session held in May 2021](https://indico.fnal.gov/event/49208/)
     - [Basic Session held in June 2021](https://indico.fnal.gov/event/49212/)
-    - [Advanced Session held in June 2021](ihttps://indico.fnal.gov/event/49213/)
+    - [Advanced Session held in June 2021](https://indico.fnal.gov/event/49213/)
   - [Exercises]({% link docs/Startup-Exercises.md %})
 
 # All the Details
