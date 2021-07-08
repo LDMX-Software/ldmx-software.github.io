@@ -33,3 +33,4 @@ layout: default
 - [Unit Testing]({% link docs/Unit-Testing-in-ldmx-sw.md %})
 - [C++ API Reference]({% link _doxygen/index.html %})
 - [Python API Reference]({% link _sphinx/index.html %})
+- [Merging PRs in ldmx-sw]({% link docs/merging-prs.md %})
