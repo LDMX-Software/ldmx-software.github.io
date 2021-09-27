@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.9.2"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>LDMX Software: ecal::MyClusterWeight Class Reference</title>
+		<title>LDMX Software: Ecal/include/Ecal/MyClusterWeight.h Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -40,62 +40,27 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>ecal</b></li><li class="navelem"><a class="el" href="classecal_1_1MyClusterWeight.html">MyClusterWeight</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_f725b3c61c8cd94501dd7e29c36c23f9.html">Ecal</a></li><li class="navelem"><a class="el" href="dir_60bb3a512e11865637d12b900e3b6cc4.html">include</a></li><li class="navelem"><a class="el" href="dir_943d90598ce6173d867c3e552719ccaf.html">Ecal</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classecal_1_1MyClusterWeight-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ecal::MyClusterWeight Class Reference</div></div>
+  <div class="headertitle"><div class="title">MyClusterWeight.h</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a240216da48c27573a6dfb1bbee0d630c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1MyClusterWeight.html#a240216da48c27573a6dfb1bbee0d630c">operator()</a> (const <a class="el" href="classecal_1_1WorkingCluster.html">WorkingCluster</a> &amp;a, const <a class="el" href="classecal_1_1WorkingCluster.html">WorkingCluster</a> &amp;b)</td></tr>
-<tr class="separator:a240216da48c27573a6dfb1bbee0d630c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Ecal_2include_2Ecal_2MyClusterWeight_8h_source.html#l00010">10</a> of file <a class="el" href="Ecal_2include_2Ecal_2MyClusterWeight_8h_source.html">MyClusterWeight.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a240216da48c27573a6dfb1bbee0d630c" name="a240216da48c27573a6dfb1bbee0d630c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a240216da48c27573a6dfb1bbee0d630c">&#9670;&nbsp;</a></span>operator()()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double ecal::MyClusterWeight::operator() </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classecal_1_1WorkingCluster.html">WorkingCluster</a> &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classecal_1_1WorkingCluster.html">WorkingCluster</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Ecal_2include_2Ecal_2MyClusterWeight_8h_source.html#l00012">12</a> of file <a class="el" href="Ecal_2include_2Ecal_2MyClusterWeight_8h_source.html">MyClusterWeight.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                               {  <span class="comment">// returns weighting function, where smallest</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef ECAL_MYCLUSTERWEIGHT_H_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define ECAL_MYCLUSTERWEIGHT_H_</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Ecal/WorkingCluster.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>ecal {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classecal_1_1MyClusterWeight.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="classecal_1_1MyClusterWeight.html">MyClusterWeight</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keywordtype">double</span> operator()(</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      <span class="keyword">const</span> <a class="code hl_class" href="classecal_1_1WorkingCluster.html">WorkingCluster</a>&amp; a,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      <span class="keyword">const</span> <a class="code hl_class" href="classecal_1_1WorkingCluster.html">WorkingCluster</a>&amp; b) {  <span class="comment">// returns weighting function, where smallest</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                                  <span class="comment">// weights will be combined first</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">double</span> rmol = 10.00;    <span class="comment">// Moliere radius of detector, roughly. In mm</span></div>
@@ -134,13 +99,13 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <span class="keywordflow">return</span> weightT;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>Ecal/include/Ecal/<a class="el" href="Ecal_2include_2Ecal_2MyClusterWeight_8h_source.html">MyClusterWeight.h</a></li>
-</ul>
-</div><!-- contents -->
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}  <span class="comment">// namespace ecal</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassecal_1_1MyClusterWeight_html"><div class="ttname"><a href="classecal_1_1MyClusterWeight.html">ecal::MyClusterWeight</a></div><div class="ttdef"><b>Definition:</b> <a href="Ecal_2include_2Ecal_2MyClusterWeight_8h_source.html#l00010">MyClusterWeight.h:10</a></div></div>
+<div class="ttc" id="aclassecal_1_1WorkingCluster_html"><div class="ttname"><a href="classecal_1_1WorkingCluster.html">ecal::WorkingCluster</a></div><div class="ttdef"><b>Definition:</b> <a href="Ecal_2include_2Ecal_2WorkingCluster_8h_source.html#l00015">WorkingCluster.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>
