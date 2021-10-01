@@ -355,17 +355,17 @@ Private Attributes</h2></td></tr>
 </ul>
 </li>
 </ol>
-<h4><a class="anchor" id="autotoc_md11"></a>
+<h4><a class="anchor" id="autotoc_md13"></a>
 ADC Mode</h4>
 <p >Here, we measure the height of the pulse once per clock cycle. This leaves us with nADCs_ samples for each digitized hit. The voltage measurements are converted to ADC counts using the parameter gain_.</p>
 <p >The time of arrival (TOA) is zero unless the amplitude is greater than toaThreshold_. Then the TOA is set to the point the pulse crosses the toaThreshold_ with respect to the current clock window. The time measurements are converted to clock counts using 2^10=1024 and clockCycle_.</p>
 <p >Both the tot_complete_ and tot_progress_ flags are set to false for all the samples.</p>
-<h4><a class="anchor" id="autotoc_md12"></a>
+<h4><a class="anchor" id="autotoc_md14"></a>
 TOT Mode</h4>
 <p >Here, we measure how long the chip is in saturation. This is calculated using the drain rate and assuming a linear drain of the charge off of the chip.</p>
 <p >The charge deposited on the chip is converted from the pulse triggering TOT without including the pedestal. The pedestal is included in the pulse when determining if the pulse should enter TOT mode.</p>
 <p >Thus, TOT = charge deposited / drain rate and TOA is calculated as before, seeing when the pulse crossed the TOA threshold.</p>
-<h4><a class="anchor" id="autotoc_md13"></a>
+<h4><a class="anchor" id="autotoc_md15"></a>
 Pulse Measurement</h4>
 <p >All "measurements" of the pulse use the object <a class="el" href="classldmx_1_1HgcrocEmulator_1_1CompositePulse.html">CompositePulse</a>. This function incorporates the pedestal_ and linearly adds all the pulses at a variety of times. The pulses at different times are "merged" upon addition to the composite pulse depending on how close they are. This is done in a single pass, so we might end up with pulses closer than the provided separation time.</p>
 <dl class="section note"><dt>Note</dt><dd>For more realism, some chip parameters should change depending on the chip they are coming from. This should be modified here, with a package of "HgcrocConditions" passed to this function to configure the emulator before digitizing.</dd></dl>
