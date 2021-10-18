@@ -123,9 +123,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aabca34029532a2759966208b5dc77a40"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aabca34029532a2759966208b5dc77a40"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classframework_1_1Bus_1_1Passenger.html#aabca34029532a2759966208b5dc77a40">post_update</a> (<a class="el" href="structframework_1_1Bus_1_1Passenger_1_1the__type.html">the_type</a>&lt; T &gt; t)</td></tr>
 <tr class="separator:aabca34029532a2759966208b5dc77a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae916d1460bf12288ab6e615616349d66"><td class="memTemplParams" colspan="2">template&lt;typename Content &gt; </td></tr>
-<tr class="memitem:ae916d1460bf12288ab6e615616349d66"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classframework_1_1Bus_1_1Passenger.html#ae916d1460bf12288ab6e615616349d66">post_update</a> (<a class="el" href="structframework_1_1Bus_1_1Passenger_1_1the__type.html">the_type</a>&lt; std::vector&lt; Content &gt; &gt; t)</td></tr>
-<tr class="separator:ae916d1460bf12288ab6e615616349d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5937cc044311bbafd92ef133f1e409c2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a5937cc044311bbafd92ef133f1e409c2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classframework_1_1Bus_1_1Passenger.html#a5937cc044311bbafd92ef133f1e409c2">stream</a> (<a class="el" href="structframework_1_1Bus_1_1Passenger_1_1the__type.html">the_type</a>&lt; T &gt; t, std::ostream &amp;s) const</td></tr>
 <tr class="separator:a5937cc044311bbafd92ef133f1e409c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1348,53 +1345,8 @@ template&lt;typename BaggageType &gt; </div>
 
 </div>
 </div>
-<a id="ae916d1460bf12288ab6e615616349d66" name="ae916d1460bf12288ab6e615616349d66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae916d1460bf12288ab6e615616349d66">&#9670;&nbsp;</a></span>post_update() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename BaggageType &gt; </div>
-<div class="memtemplate">
-template&lt;typename Content &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classframework_1_1Bus_1_1Passenger.html">framework::Bus::Passenger</a>&lt; BaggageType &gt;::post_update </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structframework_1_1Bus_1_1Passenger_1_1the__type.html">the_type</a>&lt; std::vector&lt; Content &gt; &gt;&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >For std::vector, use the sort method after the contents are updated.</p>
-<dl class="section note"><dt>Note</dt><dd>This is where we require that any contents of vectors have the operator&lt; defined.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t</td><td>Unused, only helping compiler choose the correct method </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Bus_8h_source.html#l00681">681</a> of file <a class="el" href="Bus_8h_source.html">Bus.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>                                                     {</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>      std::sort(<a class="code hl_variable" href="classframework_1_1Bus_1_1Passenger.html#a8a754509d772243b7720d3443b751509">baggage_</a>-&gt;begin(), <a class="code hl_variable" href="classframework_1_1Bus_1_1Passenger.html#a8a754509d772243b7720d3443b751509">baggage_</a>-&gt;end());</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="Bus_8h_source.html#l00745">framework::Bus::Passenger&lt; BaggageType &gt;::baggage_</a>.</p>
-
-</div>
-</div>
 <a id="aabca34029532a2759966208b5dc77a40" name="aabca34029532a2759966208b5dc77a40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabca34029532a2759966208b5dc77a40">&#9670;&nbsp;</a></span>post_update() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aabca34029532a2759966208b5dc77a40">&#9670;&nbsp;</a></span>post_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1637,7 +1589,14 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Stream a basic type that has its own definition of 'operator&lt;&lt;'.</p>
+<p >For std::vector, use the sort method after the contents are updated.</p>
+<dl class="section note"><dt>Note</dt><dd>This is where we require that any contents of vectors have the operator&lt; defined.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Unused, only helping compiler choose the correct method template &lt;typename Content&gt; void post_update(the_type&lt;std::vector&lt;Content&gt;&gt; t) { std::sort(baggage_-&gt;begin(), baggage_-&gt;end()); } Stream a basic type that has its own definition of 'operator&lt;&lt;'.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section note"><dt>Note</dt><dd>Here is where we require that all event bus objects (not inside a vector or map) need the 'operatore&lt;&lt;' defined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1782,7 +1741,7 @@ template&lt;typename BaggageType &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Bus_8h_source.html#l00745">745</a> of file <a class="el" href="Bus_8h_source.html">Bus.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Bus_8h_source.html#l00436">framework::Bus::Passenger&lt; BaggageType &gt;::attach()</a>, <a class="el" href="Bus_8h_source.html#l00474">framework::Bus::Passenger&lt; BaggageType &gt;::attachBasic()</a>, <a class="el" href="Bus_8h_source.html#l00595">framework::Bus::Passenger&lt; BaggageType &gt;::clear()</a>, <a class="el" href="Bus_8h_source.html#l00349">framework::Bus::Passenger&lt; BaggageType &gt;::get()</a>, <a class="el" href="Bus_8h_source.html#l00681">framework::Bus::Passenger&lt; BaggageType &gt;::post_update()</a>, <a class="el" href="Bus_8h_source.html#l00712">framework::Bus::Passenger&lt; BaggageType &gt;::stream()</a>, <a class="el" href="Bus_8h_source.html#l00362">framework::Bus::Passenger&lt; BaggageType &gt;::update()</a>, and <a class="el" href="Bus_8h_source.html#l00315">framework::Bus::Passenger&lt; BaggageType &gt;::~Passenger()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Bus_8h_source.html#l00436">framework::Bus::Passenger&lt; BaggageType &gt;::attach()</a>, <a class="el" href="Bus_8h_source.html#l00474">framework::Bus::Passenger&lt; BaggageType &gt;::attachBasic()</a>, <a class="el" href="Bus_8h_source.html#l00595">framework::Bus::Passenger&lt; BaggageType &gt;::clear()</a>, <a class="el" href="Bus_8h_source.html#l00349">framework::Bus::Passenger&lt; BaggageType &gt;::get()</a>, <a class="el" href="Bus_8h_source.html#l00712">framework::Bus::Passenger&lt; BaggageType &gt;::stream()</a>, <a class="el" href="Bus_8h_source.html#l00362">framework::Bus::Passenger&lt; BaggageType &gt;::update()</a>, and <a class="el" href="Bus_8h_source.html#l00315">framework::Bus::Passenger&lt; BaggageType &gt;::~Passenger()</a>.</p>
 
 </div>
 </div>
