@@ -47,6 +47,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -101,10 +102,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b3d61c215051fb8e88b2453acb2efcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection.html#a5b3d61c215051fb8e88b2453acb2efcb">end</a> ()</td></tr>
 <tr class="separator:a5b3d61c215051fb8e88b2453acb2efcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abae017912db240f233edb0e0a9e11781"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection.html#abae017912db240f233edb0e0a9e11781">getVersion</a> ()</td></tr>
+<tr class="separator:abae017912db240f233edb0e0a9e11781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf0ebcbf932af30c236cc7a246a7a67"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection.html#a2bf0ebcbf932af30c236cc7a246a7a67">setVersion</a> (int v)</td></tr>
+<tr class="separator:a2bf0ebcbf932af30c236cc7a246a7a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aa3d89d41dfdc90f20cf0ef2b16f8ba5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection.html#aa3d89d41dfdc90f20cf0ef2b16f8ba5b">ClassDef</a> (<a class="el" href="classldmx_1_1HgcrocDigiCollection.html">HgcrocDigiCollection</a>, 2)</td></tr>
-<tr class="separator:aa3d89d41dfdc90f20cf0ef2b16f8ba5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1ce4682bc5855eaac7c5f5e06d959be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection.html#ab1ce4682bc5855eaac7c5f5e06d959be">ClassDef</a> (<a class="el" href="classldmx_1_1HgcrocDigiCollection.html">HgcrocDigiCollection</a>, 3)</td></tr>
+<tr class="separator:ab1ce4682bc5855eaac7c5f5e06d959be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -131,6 +139,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a49c84f8975bf63d41e39cf90a42a8b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac449d0feeffb3bf89c34f41f67e89856"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection.html#ac449d0feeffb3bf89c34f41f67e89856">SECONMEAS_POS</a> = 10</td></tr>
 <tr class="separator:ac449d0feeffb3bf89c34f41f67e89856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a16cb71ccf62fdf9e926e8435cd986d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocDigiCollection.html#a2a16cb71ccf62fdf9e926e8435cd986d">version_</a></td></tr>
+<tr class="separator:a2a16cb71ccf62fdf9e926e8435cd986d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Represents a collection of the digi hits readout by an HGCROC. </p>
@@ -165,8 +175,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Class constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00306">306</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00326">326</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -194,8 +204,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Class destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00311">311</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00331">331</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -235,7 +245,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">hcal::HcalRawDecoder::produce()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -264,13 +274,13 @@ Static Private Attributes</h2></td></tr>
 <p >The beginning of this collection.</p>
 <p >We just point the user to the zero'th entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00453">453</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>{ <span class="keywordflow">return</span> iterator(*<span class="keyword">this</span>, 0); }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00487">487</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>{ <span class="keywordflow">return</span> iterator(*<span class="keyword">this</span>, 0); }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa3d89d41dfdc90f20cf0ef2b16f8ba5b" name="aa3d89d41dfdc90f20cf0ef2b16f8ba5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3d89d41dfdc90f20cf0ef2b16f8ba5b">&#9670;&nbsp;</a></span>ClassDef()</h2>
+<a id="ab1ce4682bc5855eaac7c5f5e06d959be" name="ab1ce4682bc5855eaac7c5f5e06d959be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ce4682bc5855eaac7c5f5e06d959be">&#9670;&nbsp;</a></span>ClassDef()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,7 +297,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">2&#160;</td>
+          <td class="paramtype">3&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -350,11 +360,11 @@ Static Private Attributes</h2></td></tr>
 <p >The end of this collection</p>
 <p >The end of the collection is the number of digis stored in it. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00461">461</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>{ <span class="keywordflow">return</span> iterator(*<span class="keyword">this</span>, <a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">getNumDigis</a>()); }</div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ae3580a8a632b91b0ff4265346cc74715"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">ldmx::HgcrocDigiCollection::getNumDigis</a></div><div class="ttdeci">unsigned int getNumDigis() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00382">HgcrocDigiCollection.h:382</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00495">495</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>{ <span class="keywordflow">return</span> iterator(*<span class="keyword">this</span>, <a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">getNumDigis</a>()); }</div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ae3580a8a632b91b0ff4265346cc74715"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">ldmx::HgcrocDigiCollection::getNumDigis</a></div><div class="ttdeci">unsigned int getNumDigis() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00416">HgcrocDigiCollection.h:416</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00382">getNumDigis()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00416">getNumDigis()</a>.</p>
 
 </div>
 </div>
@@ -386,7 +396,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">HgcrocDigi</a> package with accessors </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00231">hcal::test::HcalCheckReconstruction::analyze()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00438">ldmx::HgcrocDigiCollection::iterator::operator*()</a>, <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00020">ecal::EcalTrigPrimDigiProducer::produce()</a>, and <a class="el" href="HcalTrigPrimDigiProducer_8cxx_source.html#l00022">hcal::HcalTrigPrimDigiProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiPipelineTest_8cxx_source.html#l00231">hcal::test::HcalCheckReconstruction::analyze()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00472">ldmx::HgcrocDigiCollection::iterator::operator*()</a>, <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00020">ecal::EcalTrigPrimDigiProducer::produce()</a>, and <a class="el" href="HcalTrigPrimDigiProducer_8cxx_source.html#l00022">hcal::HcalTrigPrimDigiProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -414,13 +424,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get total number of digis </p><dl class="section return"><dt>Returns</dt><dd>unsigned int number of digis </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00382">382</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#ab1fbbf940b158c7380c5b502f8c54171">channelIDs_</a>.size(); }</div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ab1fbbf940b158c7380c5b502f8c54171"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ab1fbbf940b158c7380c5b502f8c54171">ldmx::HgcrocDigiCollection::channelIDs_</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; channelIDs_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00484">HgcrocDigiCollection.h:484</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00416">416</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#ab1fbbf940b158c7380c5b502f8c54171">channelIDs_</a>.size(); }</div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ab1fbbf940b158c7380c5b502f8c54171"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ab1fbbf940b158c7380c5b502f8c54171">ldmx::HgcrocDigiCollection::channelIDs_</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; channelIDs_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00518">HgcrocDigiCollection.h:518</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00484">channelIDs_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00518">channelIDs_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00461">end()</a>, <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00020">ecal::EcalTrigPrimDigiProducer::produce()</a>, <a class="el" href="HcalTrigPrimDigiProducer_8cxx_source.html#l00022">hcal::HcalTrigPrimDigiProducer::produce()</a>, <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>, and <a class="el" href="HcalRecProducer_8cxx_source.html#l00110">hcal::HcalRecProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00495">end()</a>, <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, <a class="el" href="EcalTrigPrimDigiProducer_8cxx_source.html#l00020">ecal::EcalTrigPrimDigiProducer::produce()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">hcal::HcalRawDecoder::produce()</a>, <a class="el" href="HcalTrigPrimDigiProducer_8cxx_source.html#l00022">hcal::HcalTrigPrimDigiProducer::produce()</a>, <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>, and <a class="el" href="HcalRecProducer_8cxx_source.html#l00110">hcal::HcalRecProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -448,13 +458,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get number of samples per digi </p><dl class="section return"><dt>Returns</dt><dd>unsigned int number of samples per digi </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00333">333</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#a4161d98c89cd483583d01968697bc3c1">numSamplesPerDigi_</a>; }</div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a4161d98c89cd483583d01968697bc3c1"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a4161d98c89cd483583d01968697bc3c1">ldmx::HgcrocDigiCollection::numSamplesPerDigi_</a></div><div class="ttdeci">unsigned int numSamplesPerDigi_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00490">HgcrocDigiCollection.h:490</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00367">367</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#a4161d98c89cd483583d01968697bc3c1">numSamplesPerDigi_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a4161d98c89cd483583d01968697bc3c1"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a4161d98c89cd483583d01968697bc3c1">ldmx::HgcrocDigiCollection::numSamplesPerDigi_</a></div><div class="ttdeci">unsigned int numSamplesPerDigi_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00524">HgcrocDigiCollection.h:524</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00490">numSamplesPerDigi_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00524">numSamplesPerDigi_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00242">ldmx::HgcrocDigiCollection::HgcrocDigi::end()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00262">ldmx::HgcrocDigiCollection::HgcrocDigi::end()</a>.</p>
 
 </div>
 </div>
@@ -482,13 +492,47 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get index of sample of interest </p><dl class="section return"><dt>Returns</dt><dd>unsigned int index for SOI </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00348">348</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#ae454f121841b2a32dbc18cf2e9b39372">sampleOfInterest_</a>; }</div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ae454f121841b2a32dbc18cf2e9b39372"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ae454f121841b2a32dbc18cf2e9b39372">ldmx::HgcrocDigiCollection::sampleOfInterest_</a></div><div class="ttdeci">unsigned int sampleOfInterest_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00493">HgcrocDigiCollection.h:493</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00382">382</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#ae454f121841b2a32dbc18cf2e9b39372">sampleOfInterest_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ae454f121841b2a32dbc18cf2e9b39372"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ae454f121841b2a32dbc18cf2e9b39372">ldmx::HgcrocDigiCollection::sampleOfInterest_</a></div><div class="ttdeci">unsigned int sampleOfInterest_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00527">HgcrocDigiCollection.h:527</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00493">sampleOfInterest_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00527">sampleOfInterest_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00286">ldmx::HgcrocDigiCollection::HgcrocDigi::soi()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00306">ldmx::HgcrocDigiCollection::HgcrocDigi::soi()</a>.</p>
+
+</div>
+</div>
+<a id="abae017912db240f233edb0e0a9e11781" name="abae017912db240f233edb0e0a9e11781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abae017912db240f233edb0e0a9e11781">&#9670;&nbsp;</a></span>getVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int ldmx::HgcrocDigiCollection::getVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Get the version of ROC we have read </p><dl class="section return"><dt>Returns</dt><dd>int version number of ROC </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00353">353</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#a2a16cb71ccf62fdf9e926e8435cd986d">version_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a2a16cb71ccf62fdf9e926e8435cd986d"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a2a16cb71ccf62fdf9e926e8435cd986d">ldmx::HgcrocDigiCollection::version_</a></div><div class="ttdeci">static int version_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00530">HgcrocDigiCollection.h:530</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00530">version_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00171">ldmx::HgcrocDigiCollection::Sample::adc_t()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00126">ldmx::HgcrocDigiCollection::Sample::toa()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00144">ldmx::HgcrocDigiCollection::Sample::tot()</a>.</p>
 
 </div>
 </div>
@@ -541,15 +585,15 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00339">339</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                                            {</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#a4161d98c89cd483583d01968697bc3c1">numSamplesPerDigi_</a> = n;</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00373">373</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                                            {</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#a4161d98c89cd483583d01968697bc3c1">numSamplesPerDigi_</a> = n;</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00490">numSamplesPerDigi_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00524">numSamplesPerDigi_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">hcal::HcalRawDecoder::produce()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -585,15 +629,52 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00392">392</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>                                                {</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#ae454f121841b2a32dbc18cf2e9b39372">sampleOfInterest_</a> = n;</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00527">sampleOfInterest_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">hcal::HcalRawDecoder::produce()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
+
+</div>
+</div>
+<a id="a2bf0ebcbf932af30c236cc7a246a7a67" name="a2bf0ebcbf932af30c236cc7a246a7a67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf0ebcbf932af30c236cc7a246a7a67">&#9670;&nbsp;</a></span>setVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ldmx::HgcrocDigiCollection::setVersion </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Set the version of the ROC we have read </p>
+
 <p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00358">358</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                                                {</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#ae454f121841b2a32dbc18cf2e9b39372">sampleOfInterest_</a> = n;</div>
+<div class="fragment"><div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                                {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#a2a16cb71ccf62fdf9e926e8435cd986d">version_</a> = v;</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00493">sampleOfInterest_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00530">version_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HCalRawDigi_8cxx_source.html#l00020">dqm::HCalRawDigi::analyze()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">hcal::HcalRawDecoder::produce()</a>.</p>
 
 </div>
 </div>
@@ -621,10 +702,10 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get total number of digis </p><dl class="section return"><dt>Returns</dt><dd>unsigned int number of digis </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00388">388</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#ab1fbbf940b158c7380c5b502f8c54171">channelIDs_</a>.size(); }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00422">422</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection.html#ab1fbbf940b158c7380c5b502f8c54171">channelIDs_</a>.size(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00484">channelIDs_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00518">channelIDs_</a>.</p>
 
 </div>
 </div>
@@ -650,9 +731,9 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >list of channel IDs that we have digis for </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00484">484</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00518">518</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00382">getNumDigis()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00388">size()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00416">getNumDigis()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00422">size()</a>.</p>
 
 </div>
 </div>
@@ -677,7 +758,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Bit position of first flag </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00471">471</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00505">505</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00105">ldmx::HgcrocDigiCollection::Sample::isTOTinProgress()</a>.</p>
 
@@ -704,9 +785,9 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Bit position of first measurement </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00477">477</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00511">511</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00181">ldmx::HgcrocDigiCollection::Sample::first()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00195">ldmx::HgcrocDigiCollection::Sample::first()</a>.</p>
 
 </div>
 </div>
@@ -731,9 +812,9 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >number of samples for each digi </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00490">490</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00524">524</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00333">getNumSamplesPerDigi()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00339">setNumSamplesPerDigi()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00367">getNumSamplesPerDigi()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00373">setNumSamplesPerDigi()</a>.</p>
 
 </div>
 </div>
@@ -758,7 +839,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Mask for lowest order bit in an int </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00465">465</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00499">499</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00116">ldmx::HgcrocDigiCollection::Sample::isTOTComplete()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00105">ldmx::HgcrocDigiCollection::Sample::isTOTinProgress()</a>.</p>
 
@@ -785,9 +866,9 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >index for the sample of interest in the samples list </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00493">493</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00527">527</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00348">getSampleOfInterestIndex()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00358">setSampleOfInterestIndex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00382">getSampleOfInterestIndex()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00392">setSampleOfInterestIndex()</a>.</p>
 
 </div>
 </div>
@@ -812,7 +893,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >list of samples that we have been given </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00487">487</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00521">521</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
 </div>
 </div>
@@ -837,7 +918,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Bit position of second flag </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00474">474</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00508">508</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00116">ldmx::HgcrocDigiCollection::Sample::isTOTComplete()</a>.</p>
 
@@ -864,9 +945,9 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Bit position of second measurement </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00480">480</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00514">514</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00188">ldmx::HgcrocDigiCollection::Sample::secon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00202">ldmx::HgcrocDigiCollection::Sample::secon()</a>.</p>
 
 </div>
 </div>
@@ -891,9 +972,36 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Mask for lowest order ten bits in an int </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00468">468</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00502">502</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00181">ldmx::HgcrocDigiCollection::Sample::first()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00188">ldmx::HgcrocDigiCollection::Sample::secon()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00126">ldmx::HgcrocDigiCollection::Sample::toa()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00195">ldmx::HgcrocDigiCollection::Sample::first()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00202">ldmx::HgcrocDigiCollection::Sample::secon()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00208">ldmx::HgcrocDigiCollection::Sample::third()</a>.</p>
+
+</div>
+</div>
+<a id="a2a16cb71ccf62fdf9e926e8435cd986d" name="a2a16cb71ccf62fdf9e926e8435cd986d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a16cb71ccf62fdf9e926e8435cd986d">&#9670;&nbsp;</a></span>version_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ldmx::HgcrocDigiCollection::version_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >version of the ROC we have read </p>
+
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00530">530</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00353">getVersion()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00358">setVersion()</a>.</p>
 
 </div>
 </div>
