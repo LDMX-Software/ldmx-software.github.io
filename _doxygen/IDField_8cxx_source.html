@@ -69,17 +69,17 @@ $(function() {
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classldmx_1_1IDField.html#ad8f205b384ab2dc385e8254b59d19ec9">   20</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="classldmx_1_1IDField.html#ad8f205b384ab2dc385e8254b59d19ec9">IDField::getBitMask</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1IDField.html#abbc771ee8008dede7725150300f9d83e">bitMask</a>; }</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classldmx_1_1IDField.html#ab616f2b9dcb7c6ad96f8098ef417d44a">   22</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="classldmx_1_1IDField.html#ab616f2b9dcb7c6ad96f8098ef417d44a">IDField::createBitMask</a>(<span class="keywordtype">unsigned</span> startBit, <span class="keywordtype">unsigned</span> endBit) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">unsigned</span> mask = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">unsigned</span> <a class="code hl_struct" href="structmask.html">mask</a> = 0;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="classldmx_1_1IDField.html#ab8f428b97e233c733bafdc9f97d63668">startBit</a>; i &lt;= <a class="code hl_variable" href="classldmx_1_1IDField.html#adcb94761174291ae50bc0e64be03b9ec">endBit</a>; i++) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    mask |= 1 &lt;&lt; i;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_struct" href="structmask.html">mask</a> |= 1 &lt;&lt; i;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">return</span> mask;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="structmask.html">mask</a>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classldmx_1_1IDField.html#a3a89973eb1c6bba8693d0a73c5eb3fcc">   30</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="classldmx_1_1IDField.html#a3a89973eb1c6bba8693d0a73c5eb3fcc">IDField::countOnes</a>(<span class="keywordtype">unsigned</span> mask) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classldmx_1_1IDField.html#a3a89973eb1c6bba8693d0a73c5eb3fcc">   30</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="classldmx_1_1IDField.html#a3a89973eb1c6bba8693d0a73c5eb3fcc">IDField::countOnes</a>(<span class="keywordtype">unsigned</span> <a class="code hl_struct" href="structmask.html">mask</a>) {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">unsigned</span> rv = 0;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 32; i++)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (mask &amp; (1 &lt;&lt; i)) rv++;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structmask.html">mask</a> &amp; (1 &lt;&lt; i)) rv++;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordflow">return</span> rv;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
@@ -97,6 +97,7 @@ $(function() {
 <div class="ttc" id="aclassldmx_1_1IDField_html_adcda4a45cdf6ea0723ac8f556625e424"><div class="ttname"><a href="classldmx_1_1IDField.html#adcda4a45cdf6ea0723ac8f556625e424">ldmx::IDField::index</a></div><div class="ttdeci">unsigned index</div><div class="ttdef"><b>Definition:</b> <a href="IDField_8h_source.html#l00089">IDField.h:89</a></div></div>
 <div class="ttc" id="aclassldmx_1_1IDField_html_aed4524b56bede224ee6c51f78a241940"><div class="ttname"><a href="classldmx_1_1IDField.html#aed4524b56bede224ee6c51f78a241940">ldmx::IDField::getFieldName</a></div><div class="ttdeci">const std::string &amp; getFieldName()</div><div class="ttdef"><b>Definition:</b> <a href="IDField_8cxx_source.html#l00012">IDField.cxx:12</a></div></div>
 <div class="ttc" id="aclassldmx_1_1IDField_html_afcf94004df6949e0fa768fcc8c1de188"><div class="ttname"><a href="classldmx_1_1IDField.html#afcf94004df6949e0fa768fcc8c1de188">ldmx::IDField::getEndBit</a></div><div class="ttdeci">unsigned getEndBit()</div><div class="ttdef"><b>Definition:</b> <a href="IDField_8cxx_source.html#l00018">IDField.cxx:18</a></div></div>
+<div class="ttc" id="astructmask_html"><div class="ttname"><a href="structmask.html">mask</a></div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00009">QIEStream.h:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
