@@ -100,12 +100,16 @@ Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a2f292009d7eaaa5d5ec2a0102e4fa062"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#a2f292009d7eaaa5d5ec2a0102e4fa062">TRIGID_POS</a> {0}</td></tr>
 <tr class="separator:a2f292009d7eaaa5d5ec2a0102e4fa062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc1786de11dcc3e65f5c7c7be1963c4"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#a9cc1786de11dcc3e65f5c7c7be1963c4">ERROR_POS</a> {1}</td></tr>
+<tr class="memitem:adaef03a51ac859df95bd164c66de90e9"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#adaef03a51ac859df95bd164c66de90e9">TRIGID_LEN_BYTES</a> {2}</td></tr>
+<tr class="separator:adaef03a51ac859df95bd164c66de90e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc1786de11dcc3e65f5c7c7be1963c4"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#a9cc1786de11dcc3e65f5c7c7be1963c4">ERROR_POS</a> { TRIGID_POS+TRIGID_LEN_BYTES}</td></tr>
 <tr class="separator:a9cc1786de11dcc3e65f5c7c7be1963c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc249e34d78ca582f367e94ac979b982"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#acc249e34d78ca582f367e94ac979b982">CHECKSUM_POS</a> {2}</td></tr>
+<tr class="memitem:a42e954404d66d5dd4b403dc16d47051e"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#a42e954404d66d5dd4b403dc16d47051e">ERROR_LEN_BYTES</a> {1}</td></tr>
+<tr class="separator:a42e954404d66d5dd4b403dc16d47051e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc249e34d78ca582f367e94ac979b982"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#acc249e34d78ca582f367e94ac979b982">CHECKSUM_POS</a> {ERROR_POS+ERROR_LEN_BYTES}</td></tr>
 <tr class="separator:acc249e34d78ca582f367e94ac979b982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44bfc37b3b4fabf15212e3e147eea2df"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#a44bfc37b3b4fabf15212e3e147eea2df">FLAG_SIZE</a> {1}</td></tr>
-<tr class="separator:a44bfc37b3b4fabf15212e3e147eea2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39416fa0fa48967ef240e000548059d"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#aa39416fa0fa48967ef240e000548059d">FLAG_SIZE_BITS</a> {1}</td></tr>
+<tr class="separator:aa39416fa0fa48967ef240e000548059d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b5b2f98648ff9024c9023e43158d0e2"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#a8b5b2f98648ff9024c9023e43158d0e2">CRC0_ERR_POS</a> {0}</td></tr>
 <tr class="separator:a8b5b2f98648ff9024c9023e43158d0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa529d5e3565210e5a24c5e4e5b6e003a"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEStream.html#aa529d5e3565210e5a24c5e4e5b6e003a">CRC1_ERR_POS</a> {1}</td></tr>
@@ -191,9 +195,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00068">68</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#a77d94806c6a977495e76f24f33917801">adcs_</a>; }</div>
-<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_a77d94806c6a977495e76f24f33917801"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#a77d94806c6a977495e76f24f33917801">trigscint::QIEStream::adcs_</a></div><div class="ttdeci">std::vector&lt; int &gt; adcs_</div><div class="ttdoc">Analog to Digital counts.</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00133">QIEStream.h:133</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_a77d94806c6a977495e76f24f33917801"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#a77d94806c6a977495e76f24f33917801">trigscint::QIEStream::adcs_</a></div><div class="ttdeci">std::vector&lt; int &gt; adcs_</div><div class="ttdoc">Analog to Digital counts.</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00136">QIEStream.h:136</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00133">adcs_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00136">adcs_</a>.</p>
 
 </div>
 </div>
@@ -223,9 +227,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00058">58</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#adff4f5ce2e3b8e4ec6e9b988b8d4db92">chanID_</a>; }</div>
-<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_adff4f5ce2e3b8e4ec6e9b988b8d4db92"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#adff4f5ce2e3b8e4ec6e9b988b8d4db92">trigscint::QIEStream::chanID_</a></div><div class="ttdeci">int chanID_</div><div class="ttdoc">detector channel ID (bar nb)</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00128">QIEStream.h:128</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_adff4f5ce2e3b8e4ec6e9b988b8d4db92"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#adff4f5ce2e3b8e4ec6e9b988b8d4db92">trigscint::QIEStream::chanID_</a></div><div class="ttdeci">int chanID_</div><div class="ttdoc">detector channel ID (bar nb)</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00132">QIEStream.h:132</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00128">chanID_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00132">chanID_</a>.</p>
 
 </div>
 </div>
@@ -255,9 +259,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00079">79</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#a2bc4d6a6363b9be0679adc7442a6a3b5">cids_</a>; }</div>
-<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_a2bc4d6a6363b9be0679adc7442a6a3b5"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#a2bc4d6a6363b9be0679adc7442a6a3b5">trigscint::QIEStream::cids_</a></div><div class="ttdeci">std::vector&lt; int &gt; cids_</div><div class="ttdoc">Capacitor IDs.</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00137">QIEStream.h:137</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_a2bc4d6a6363b9be0679adc7442a6a3b5"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#a2bc4d6a6363b9be0679adc7442a6a3b5">trigscint::QIEStream::cids_</a></div><div class="ttdeci">std::vector&lt; int &gt; cids_</div><div class="ttdoc">Capacitor IDs.</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00140">QIEStream.h:140</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00137">cids_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00140">cids_</a>.</p>
 
 </div>
 </div>
@@ -287,9 +291,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00063">63</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#a31d946decf1b844305de879d549d31c6">electronicsID_</a>; }</div>
-<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_a31d946decf1b844305de879d549d31c6"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#a31d946decf1b844305de879d549d31c6">trigscint::QIEStream::electronicsID_</a></div><div class="ttdeci">int electronicsID_</div><div class="ttdoc">electronics ID</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00130">QIEStream.h:130</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_a31d946decf1b844305de879d549d31c6"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#a31d946decf1b844305de879d549d31c6">trigscint::QIEStream::electronicsID_</a></div><div class="ttdeci">int electronicsID_</div><div class="ttdoc">electronics ID</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00134">QIEStream.h:134</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00130">electronicsID_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00134">electronicsID_</a>.</p>
 
 </div>
 </div>
@@ -319,9 +323,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00073">73</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#ac910a8428a16922325fda650b393f97a">tdcs_</a>; }</div>
-<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_ac910a8428a16922325fda650b393f97a"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#ac910a8428a16922325fda650b393f97a">trigscint::QIEStream::tdcs_</a></div><div class="ttdeci">std::vector&lt; int &gt; tdcs_</div><div class="ttdoc">Time to Digital counts.</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00135">QIEStream.h:135</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1QIEStream_html_ac910a8428a16922325fda650b393f97a"><div class="ttname"><a href="classtrigscint_1_1QIEStream.html#ac910a8428a16922325fda650b393f97a">trigscint::QIEStream::tdcs_</a></div><div class="ttdeci">std::vector&lt; int &gt; tdcs_</div><div class="ttdoc">Time to Digital counts.</div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00138">QIEStream.h:138</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00135">tdcs_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00138">tdcs_</a>.</p>
 
 </div>
 </div>
@@ -355,7 +359,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#adff4f5ce2e3b8e4ec6e9b988b8d4db92">chanID_</a> &lt; rhs.chanID_;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00128">chanID_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00132">chanID_</a>.</p>
 
 </div>
 </div>
@@ -411,7 +415,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00096">96</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{ <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#a77d94806c6a977495e76f24f33917801">adcs_</a> = adc; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00133">adcs_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00136">adcs_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEDecoder_8cxx_source.html#l00056">trigscint::QIEDecoder::produce()</a>, and <a class="el" href="QIEEncoder_8cxx_source.html#l00055">trigscint::QIEEncoder::produce()</a>.</p>
 
@@ -445,7 +449,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00085">85</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{ <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#adff4f5ce2e3b8e4ec6e9b988b8d4db92">chanID_</a> = chanid; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00128">chanID_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00132">chanID_</a>.</p>
 
 </div>
 </div>
@@ -482,7 +486,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00109">109</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{ <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#a2bc4d6a6363b9be0679adc7442a6a3b5">cids_</a> = cid; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00137">cids_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00140">cids_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEDecoder_8cxx_source.html#l00056">trigscint::QIEDecoder::produce()</a>, and <a class="el" href="QIEEncoder_8cxx_source.html#l00055">trigscint::QIEEncoder::produce()</a>.</p>
 
@@ -516,7 +520,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00090">90</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{ <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#a31d946decf1b844305de879d549d31c6">electronicsID_</a> = elecid; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00130">electronicsID_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00134">electronicsID_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEEncoder_8cxx_source.html#l00055">trigscint::QIEEncoder::produce()</a>.</p>
 
@@ -555,7 +559,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00102">102</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 <div class="fragment"><div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>{ <a class="code hl_variable" href="classtrigscint_1_1QIEStream.html#ac910a8428a16922325fda650b393f97a">tdcs_</a> = tdc; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00135">tdcs_</a>.</p>
+<p class="reference">References <a class="el" href="QIEStream_8h_source.html#l00138">tdcs_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEDecoder_8cxx_source.html#l00056">trigscint::QIEDecoder::produce()</a>, and <a class="el" href="QIEEncoder_8cxx_source.html#l00055">trigscint::QIEEncoder::produce()</a>.</p>
 
@@ -584,7 +588,7 @@ Private Attributes</h2></td></tr>
 
 <p>Analog to Digital counts. </p>
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00133">133</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00136">136</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEStream_8h_source.html#l00068">getADC()</a>, and <a class="el" href="QIEStream_8h_source.html#l00096">setADC()</a>.</p>
 
@@ -612,7 +616,7 @@ Private Attributes</h2></td></tr>
 
 <p>detector channel ID (bar nb) </p>
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00128">128</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00132">132</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEStream_8h_source.html#l00058">getChannelID()</a>, <a class="el" href="QIEStream_8h_source.html#l00051">operator&lt;()</a>, and <a class="el" href="QIEStream_8h_source.html#l00085">setChannelID()</a>.</p>
 
@@ -628,7 +632,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int trigscint::QIEStream::CHECKSUM_POS {2}</td>
+          <td class="memname">const int trigscint::QIEStream::CHECKSUM_POS {ERROR_POS+ERROR_LEN_BYTES}</td>
         </tr>
       </table>
   </td>
@@ -638,7 +642,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00117">117</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00120">120</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -662,7 +666,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00123">123</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00126">126</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -686,7 +690,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00122">122</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00125">125</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -712,7 +716,7 @@ Private Attributes</h2></td></tr>
 
 <p>Capacitor IDs. </p>
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00137">137</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00140">140</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEStream_8h_source.html#l00079">getCID()</a>, and <a class="el" href="QIEStream_8h_source.html#l00109">setCID()</a>.</p>
 
@@ -738,7 +742,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00120">120</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00123">123</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -762,7 +766,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00121">121</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00124">124</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -788,9 +792,33 @@ Private Attributes</h2></td></tr>
 
 <p>electronics ID </p>
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00130">130</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00134">134</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEStream_8h_source.html#l00063">getElectronicsID()</a>, and <a class="el" href="QIEStream_8h_source.html#l00090">setElectronicsID()</a>.</p>
+
+</div>
+</div>
+<a id="a42e954404d66d5dd4b403dc16d47051e" name="a42e954404d66d5dd4b403dc16d47051e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e954404d66d5dd4b403dc16d47051e">&#9670;&nbsp;</a></span>ERROR_LEN_BYTES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int trigscint::QIEStream::ERROR_LEN_BYTES {1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00119">119</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -804,7 +832,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int trigscint::QIEStream::ERROR_POS {1}</td>
+          <td class="memname">const int trigscint::QIEStream::ERROR_POS { TRIGID_POS+TRIGID_LEN_BYTES}</td>
         </tr>
       </table>
   </td>
@@ -814,12 +842,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00116">116</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00118">118</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
-<a id="a44bfc37b3b4fabf15212e3e147eea2df" name="a44bfc37b3b4fabf15212e3e147eea2df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44bfc37b3b4fabf15212e3e147eea2df">&#9670;&nbsp;</a></span>FLAG_SIZE</h2>
+<a id="aa39416fa0fa48967ef240e000548059d" name="aa39416fa0fa48967ef240e000548059d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39416fa0fa48967ef240e000548059d">&#9670;&nbsp;</a></span>FLAG_SIZE_BITS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -828,7 +856,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int trigscint::QIEStream::FLAG_SIZE {1}</td>
+          <td class="memname">const int trigscint::QIEStream::FLAG_SIZE_BITS {1}</td>
         </tr>
       </table>
   </td>
@@ -838,7 +866,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00119">119</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00122">122</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -862,7 +890,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00124">124</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00128">128</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -888,9 +916,33 @@ Private Attributes</h2></td></tr>
 
 <p>Time to Digital counts. </p>
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00135">135</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00138">138</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QIEStream_8h_source.html#l00073">getTDC()</a>, and <a class="el" href="QIEStream_8h_source.html#l00102">setTDC()</a>.</p>
+
+</div>
+</div>
+<a id="adaef03a51ac859df95bd164c66de90e9" name="adaef03a51ac859df95bd164c66de90e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaef03a51ac859df95bd164c66de90e9">&#9670;&nbsp;</a></span>TRIGID_LEN_BYTES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int trigscint::QIEStream::TRIGID_LEN_BYTES {2}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00117">117</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
@@ -914,7 +966,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00115">115</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEStream_8h_source.html#l00116">116</a> of file <a class="el" href="QIEStream_8h_source.html">QIEStream.h</a>.</p>
 
 </div>
 </div>
