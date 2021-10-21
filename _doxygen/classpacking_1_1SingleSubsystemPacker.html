@@ -46,7 +46,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classpacking_1_1SingleSubsystemPacker-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">packing::SingleSubsystemPacker Class Reference</div></div>
@@ -103,12 +102,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ed5966370da67ee0c89f7d6f9c8436d inherit pub_methods_classframework_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1EventProcessor.html#a5ed5966370da67ee0c89f7d6f9c8436d">createHistograms</a> (const std::vector&lt; <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &gt; &amp;histos)</td></tr>
 <tr class="separator:a5ed5966370da67ee0c89f7d6f9c8436d inherit pub_methods_classframework_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ab404408cd2335e327658562ab88075c3"><td class="memTemplParams" colspan="2">template&lt;typename WordType &gt; </td></tr>
-<tr class="memitem:ab404408cd2335e327658562ab88075c3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemPacker.html#ab404408cd2335e327658562ab88075c3">write</a> (const <a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event)</td></tr>
-<tr class="separator:ab404408cd2335e327658562ab88075c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a323a940631cfac54fe9adf4bcba9c8d4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemPacker.html#a323a940631cfac54fe9adf4bcba9c8d4">input_name_</a></td></tr>
@@ -117,9 +110,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a0fb2427201e8fdb9edb2269d237de64e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemPacker.html#a0fb2427201e8fdb9edb2269d237de64e">input_pass_</a></td></tr>
 <tr class="memdesc:a0fb2427201e8fdb9edb2269d237de64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">buffer object pass on event bus  <a href="classpacking_1_1SingleSubsystemPacker.html#a0fb2427201e8fdb9edb2269d237de64e">More...</a><br /></td></tr>
 <tr class="separator:a0fb2427201e8fdb9edb2269d237de64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd091c748ac5407278195995daf2c01a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemPacker.html#acd091c748ac5407278195995daf2c01a">num_bytes_per_word_</a></td></tr>
-<tr class="memdesc:acd091c748ac5407278195995daf2c01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of bytes in a single word  <a href="classpacking_1_1SingleSubsystemPacker.html#acd091c748ac5407278195995daf2c01a">More...</a><br /></td></tr>
-<tr class="separator:acd091c748ac5407278195995daf2c01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a267332235fb5963f1b4145546097bc91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpacking_1_1utility_1_1Writer.html">utility::Writer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">writer_</a></td></tr>
 <tr class="memdesc:a267332235fb5963f1b4145546097bc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">raw data file we are reading  <a href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">More...</a><br /></td></tr>
 <tr class="separator:a267332235fb5963f1b4145546097bc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,34 +247,19 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Analyzer.html#ac923a649608165fd21183ede074695ab">framework::Analyzer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00014">14</a> of file <a class="el" href="SingleSubsystemPacker_8cxx_source.html">SingleSubsystemPacker.cxx</a>.</p>
-<div class="fragment"><div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                                                               {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">writer_</a>) <a class="code hl_function" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a>();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">switch</span>(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#acd091c748ac5407278195995daf2c01a">num_bytes_per_word_</a>) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">case</span> 1 :</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      write&lt;uint8_t&gt;(event);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">case</span> 2 :</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      write&lt;uint16_t&gt;(event);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">case</span> 4 :</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      write&lt;uint32_t&gt;(event);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">case</span> 8 :</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      write&lt;uint64_t&gt;(event);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;BadConfig&quot;</span>,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>          <span class="stringliteral">&quot;Unable to handle &quot;</span>+std::to_string(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#acd091c748ac5407278195995daf2c01a">num_bytes_per_word_</a>)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>          +<span class="stringliteral">&quot; bytes per word.&quot;</span>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00013">13</a> of file <a class="el" href="SingleSubsystemPacker_8cxx_source.html">SingleSubsystemPacker.cxx</a>.</p>
+<div class="fragment"><div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                                               {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">writer_</a>) <a class="code hl_function" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">auto</span> buff{<span class="keyword">event</span>.getCollection&lt;uint8_t&gt;(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a323a940631cfac54fe9adf4bcba9c8d4">input_name_</a>,<a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a0fb2427201e8fdb9edb2269d237de64e">input_pass_</a>)};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">writer_</a> &lt;&lt; buff;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_a8d42387da8fbb2d1f01f5ecebb64dd7d"><div class="ttname"><a href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">framework::EventProcessor::abortEvent</a></div><div class="ttdeci">void abortEvent()</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00213">EventProcessor.h:213</a></div></div>
-<div class="ttc" id="aclasspacking_1_1SingleSubsystemPacker_html_a267332235fb5963f1b4145546097bc91"><div class="ttname"><a href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">packing::SingleSubsystemPacker::writer_</a></div><div class="ttdeci">utility::Writer writer_</div><div class="ttdoc">raw data file we are reading</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemPacker_8h_source.html#l00062">SingleSubsystemPacker.h:62</a></div></div>
-<div class="ttc" id="aclasspacking_1_1SingleSubsystemPacker_html_acd091c748ac5407278195995daf2c01a"><div class="ttname"><a href="classpacking_1_1SingleSubsystemPacker.html#acd091c748ac5407278195995daf2c01a">packing::SingleSubsystemPacker::num_bytes_per_word_</a></div><div class="ttdeci">int num_bytes_per_word_</div><div class="ttdoc">number of bytes in a single word</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemPacker_8h_source.html#l00058">SingleSubsystemPacker.h:58</a></div></div>
+<div class="ttc" id="aclasspacking_1_1SingleSubsystemPacker_html_a0fb2427201e8fdb9edb2269d237de64e"><div class="ttname"><a href="classpacking_1_1SingleSubsystemPacker.html#a0fb2427201e8fdb9edb2269d237de64e">packing::SingleSubsystemPacker::input_pass_</a></div><div class="ttdeci">std::string input_pass_</div><div class="ttdoc">buffer object pass on event bus</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemPacker_8h_source.html#l00044">SingleSubsystemPacker.h:44</a></div></div>
+<div class="ttc" id="aclasspacking_1_1SingleSubsystemPacker_html_a267332235fb5963f1b4145546097bc91"><div class="ttname"><a href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">packing::SingleSubsystemPacker::writer_</a></div><div class="ttdeci">utility::Writer writer_</div><div class="ttdoc">raw data file we are reading</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemPacker_8h_source.html#l00048">SingleSubsystemPacker.h:48</a></div></div>
+<div class="ttc" id="aclasspacking_1_1SingleSubsystemPacker_html_a323a940631cfac54fe9adf4bcba9c8d4"><div class="ttname"><a href="classpacking_1_1SingleSubsystemPacker.html#a323a940631cfac54fe9adf4bcba9c8d4">packing::SingleSubsystemPacker::input_name_</a></div><div class="ttdeci">std::string input_name_</div><div class="ttdoc">buffer object name on event bus</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemPacker_8h_source.html#l00042">SingleSubsystemPacker.h:42</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00213">framework::EventProcessor::abortEvent()</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00058">num_bytes_per_word_</a>, and <a class="el" href="SingleSubsystemPacker_8h_source.html#l00062">writer_</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00213">framework::EventProcessor::abortEvent()</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00042">input_name_</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00044">input_pass_</a>, and <a class="el" href="SingleSubsystemPacker_8h_source.html#l00048">writer_</a>.</p>
 
 </div>
 </div>
@@ -324,53 +299,13 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00007">7</a> of file <a class="el" href="SingleSubsystemPacker_8cxx_source.html">SingleSubsystemPacker.cxx</a>.</p>
 <div class="fragment"><div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>                                                                   {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">writer_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Writer.html#aee6429b2fe1ecc42660b075896a97f8f">open</a>(ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;raw_file&quot;</span>));</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#acd091c748ac5407278195995daf2c01a">num_bytes_per_word_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;num_bytes_per_word&quot;</span>);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a323a940631cfac54fe9adf4bcba9c8d4">input_name_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_name&quot;</span>);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a0fb2427201e8fdb9edb2269d237de64e">input_pass_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass&quot;</span>);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a323a940631cfac54fe9adf4bcba9c8d4">input_name_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_name&quot;</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a0fb2427201e8fdb9edb2269d237de64e">input_pass_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass&quot;</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclasspacking_1_1SingleSubsystemPacker_html_a0fb2427201e8fdb9edb2269d237de64e"><div class="ttname"><a href="classpacking_1_1SingleSubsystemPacker.html#a0fb2427201e8fdb9edb2269d237de64e">packing::SingleSubsystemPacker::input_pass_</a></div><div class="ttdeci">std::string input_pass_</div><div class="ttdoc">buffer object pass on event bus</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemPacker_8h_source.html#l00056">SingleSubsystemPacker.h:56</a></div></div>
-<div class="ttc" id="aclasspacking_1_1SingleSubsystemPacker_html_a323a940631cfac54fe9adf4bcba9c8d4"><div class="ttname"><a href="classpacking_1_1SingleSubsystemPacker.html#a323a940631cfac54fe9adf4bcba9c8d4">packing::SingleSubsystemPacker::input_name_</a></div><div class="ttdeci">std::string input_name_</div><div class="ttdoc">buffer object name on event bus</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemPacker_8h_source.html#l00054">SingleSubsystemPacker.h:54</a></div></div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1Writer_html_aee6429b2fe1ecc42660b075896a97f8f"><div class="ttname"><a href="classpacking_1_1utility_1_1Writer.html#aee6429b2fe1ecc42660b075896a97f8f">packing::utility::Writer::open</a></div><div class="ttdeci">void open(const std::string &amp;file_name)</div><div class="ttdef"><b>Definition:</b> <a href="Writer_8h_source.html#l00037">Writer.h:37</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00054">input_name_</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00056">input_pass_</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00058">num_bytes_per_word_</a>, <a class="el" href="Writer_8h_source.html#l00037">packing::utility::Writer::open()</a>, and <a class="el" href="SingleSubsystemPacker_8h_source.html#l00062">writer_</a>.</p>
-
-</div>
-</div>
-<a id="ab404408cd2335e327658562ab88075c3" name="ab404408cd2335e327658562ab88075c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab404408cd2335e327658562ab88075c3">&#9670;&nbsp;</a></span>write()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename WordType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void packing::SingleSubsystemPacker::write </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Write the buffer retrieved from the event bus using the input type as the word type and the configured object/pass names. </p>
-
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8h_source.html#l00047">47</a> of file <a class="el" href="SingleSubsystemPacker_8h_source.html">SingleSubsystemPacker.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                                          {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">auto</span> buff{<span class="keyword">event</span>.getCollection&lt;WordType&gt;(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a323a940631cfac54fe9adf4bcba9c8d4">input_name_</a>,<a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a0fb2427201e8fdb9edb2269d237de64e">input_pass_</a>)};</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_variable" href="classpacking_1_1SingleSubsystemPacker.html#a267332235fb5963f1b4145546097bc91">writer_</a> &lt;&lt; buff;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="SingleSubsystemPacker_8h_source.html#l00054">input_name_</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00056">input_pass_</a>, and <a class="el" href="SingleSubsystemPacker_8h_source.html#l00062">writer_</a>.</p>
+<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00042">input_name_</a>, <a class="el" href="SingleSubsystemPacker_8h_source.html#l00044">input_pass_</a>, <a class="el" href="Writer_8h_source.html#l00037">packing::utility::Writer::open()</a>, and <a class="el" href="SingleSubsystemPacker_8h_source.html#l00048">writer_</a>.</p>
 
 </div>
 </div>
@@ -397,9 +332,9 @@ template&lt;typename WordType &gt; </div>
 
 <p>buffer object name on event bus </p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8h_source.html#l00054">54</a> of file <a class="el" href="SingleSubsystemPacker_8h_source.html">SingleSubsystemPacker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8h_source.html#l00042">42</a> of file <a class="el" href="SingleSubsystemPacker_8h_source.html">SingleSubsystemPacker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00007">configure()</a>, and <a class="el" href="SingleSubsystemPacker_8h_source.html#l00047">write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00013">analyze()</a>, and <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00007">configure()</a>.</p>
 
 </div>
 </div>
@@ -425,37 +360,9 @@ template&lt;typename WordType &gt; </div>
 
 <p>buffer object pass on event bus </p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8h_source.html#l00056">56</a> of file <a class="el" href="SingleSubsystemPacker_8h_source.html">SingleSubsystemPacker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8h_source.html#l00044">44</a> of file <a class="el" href="SingleSubsystemPacker_8h_source.html">SingleSubsystemPacker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00007">configure()</a>, and <a class="el" href="SingleSubsystemPacker_8h_source.html#l00047">write()</a>.</p>
-
-</div>
-</div>
-<a id="acd091c748ac5407278195995daf2c01a" name="acd091c748ac5407278195995daf2c01a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd091c748ac5407278195995daf2c01a">&#9670;&nbsp;</a></span>num_bytes_per_word_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int packing::SingleSubsystemPacker::num_bytes_per_word_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>number of bytes in a single word </p>
-
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8h_source.html#l00058">58</a> of file <a class="el" href="SingleSubsystemPacker_8h_source.html">SingleSubsystemPacker.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00014">analyze()</a>, and <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00007">configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00013">analyze()</a>, and <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00007">configure()</a>.</p>
 
 </div>
 </div>
@@ -481,9 +388,9 @@ template&lt;typename WordType &gt; </div>
 
 <p>raw data file we are reading </p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8h_source.html#l00062">62</a> of file <a class="el" href="SingleSubsystemPacker_8h_source.html">SingleSubsystemPacker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemPacker_8h_source.html#l00048">48</a> of file <a class="el" href="SingleSubsystemPacker_8h_source.html">SingleSubsystemPacker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00014">analyze()</a>, <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00007">configure()</a>, and <a class="el" href="SingleSubsystemPacker_8h_source.html#l00047">write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00013">analyze()</a>, and <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00007">configure()</a>.</p>
 
 </div>
 </div>
