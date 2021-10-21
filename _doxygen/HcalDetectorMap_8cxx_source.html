@@ -106,27 +106,31 @@ $(function() {
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      link += 1;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      chan -= 32;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> detid(0 <span class="comment">/*section - only one section during test beam*/</span>, </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Plane&quot;</span>) <span class="comment">/*layer*/</span>,</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Bar&quot;</span>) <span class="comment">/*strip*/</span>,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Quadbar&quot;</span>)-1 <span class="comment">/*end??*/</span>); <span class="comment">//Quadbar given as 1 or 2</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eleid(</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        0 <span class="comment">/*fpga - only one FPGA during test beam*/</span>,</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        link <span class="comment">/*fiber*/</span>,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        chan <span class="comment">/*channel*/</span>);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#ad9dafa53443d9e9cb6b1c0519c9fda5d">exists</a>(eleid)) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      std::stringstream ss;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      ss &lt;&lt; <span class="stringliteral">&quot;Two different mappings for electronics channel &quot;</span> &lt;&lt; eleid;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;DuplicateMapping&quot;</span>, ss.str());</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#a4d2168a8ac89c74900d592ba22e20549">addEntry</a>(eleid, detid);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}  <span class="comment">// namespace hcal</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><a class="code hl_define" href="ConditionsObjectProvider_8h.html#aaeb8657c83391f6c661d1f66391af4b9">DECLARE_CONDITIONS_PROVIDER_NS</a>(hcal, HcalDetectorMapLoader);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// one quadbar groups 4 strips and each quadbar is connected to 2 CMBs - one in each end</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">int</span> end = csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;CMB&quot;</span>)%2;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span>(end==0) end=1; <span class="comment">// negative end (?)</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">else</span> end=0; <span class="comment">// positive end (?)</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> detid(0 <span class="comment">/*section - only one section during test beam*/</span>, </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Plane&quot;</span>) <span class="comment">/*layer*/</span>,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Bar&quot;</span>) <span class="comment">/*strip*/</span>,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        end <span class="comment">/*end??*/</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eleid(</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        0 <span class="comment">/*fpga - only one FPGA during test beam*/</span>,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        link <span class="comment">/*fiber*/</span>,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        chan <span class="comment">/*channel*/</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#ad9dafa53443d9e9cb6b1c0519c9fda5d">exists</a>(eleid)) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      std::stringstream ss;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      ss &lt;&lt; <span class="stringliteral">&quot;Two different mappings for electronics channel &quot;</span> &lt;&lt; eleid;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;DuplicateMapping&quot;</span>, ss.str());</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#a4d2168a8ac89c74900d592ba22e20549">addEntry</a>(eleid, detid);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}  <span class="comment">// namespace hcal</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><a class="code hl_define" href="ConditionsObjectProvider_8h.html#aaeb8657c83391f6c661d1f66391af4b9">DECLARE_CONDITIONS_PROVIDER_NS</a>(hcal, HcalDetectorMapLoader);</div>
 <div class="ttc" id="aConditionsObjectProvider_8h_html"><div class="ttname"><a href="ConditionsObjectProvider_8h.html">ConditionsObjectProvider.h</a></div><div class="ttdoc">Base class for provider of conditions information like pedestals, gains, electronics maps,...</div></div>
 <div class="ttc" id="aConditionsObjectProvider_8h_html_aaeb8657c83391f6c661d1f66391af4b9"><div class="ttname"><a href="ConditionsObjectProvider_8h.html#aaeb8657c83391f6c661d1f66391af4b9">DECLARE_CONDITIONS_PROVIDER_NS</a></div><div class="ttdeci">#define DECLARE_CONDITIONS_PROVIDER_NS(NS, CLASS)</div><div class="ttdoc">Macro which allows the framework to construct a producer given its name during configuration.</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObjectProvider_8h_source.html#l00184">ConditionsObjectProvider.h:184</a></div></div>
 <div class="ttc" id="aEventHeader_8h_html"><div class="ttname"><a href="EventHeader_8h.html">EventHeader.h</a></div><div class="ttdoc">Class that provides header information about an event such as event number and timestamp.</div></div>
