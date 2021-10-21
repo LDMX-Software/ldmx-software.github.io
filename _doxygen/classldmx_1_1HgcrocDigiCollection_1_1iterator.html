@@ -88,7 +88,7 @@ Private Attributes</h2></td></tr>
 <p >We inherit from the standard iterator class and tag this iterator as one that de-references to an <a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">HgcrocDigi</a>.</p>
 <p >Internally, we are merely keeping track of the index of the digi in the collection and only getting the digi when the iterator is asked to de-reference. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00445">445</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00442">442</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a01855cff39060c1096dc1841ea48504a" name="a01855cff39060c1096dc1841ea48504a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01855cff39060c1096dc1841ea48504a">&#9670;&nbsp;</a></span>iterator()</h2>
@@ -126,10 +126,10 @@ Private Attributes</h2></td></tr>
 
 <p>Connect the parent collection with an index to this iterator. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00449">449</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        : <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#aec80397e317ab71592234a2c61a7fd00">coll_</a>{c}, <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">digi_index_</a>{index} {}</div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1iterator_html_ad3fee12739269f73d6089e43fc0a508b"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">ldmx::HgcrocDigiCollection::iterator::digi_index_</a></div><div class="ttdeci">long digi_index_</div><div class="ttdoc">the index of the digi this iterator represents</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00476">HgcrocDigiCollection.h:476</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1iterator_html_aec80397e317ab71592234a2c61a7fd00"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#aec80397e317ab71592234a2c61a7fd00">ldmx::HgcrocDigiCollection::iterator::coll_</a></div><div class="ttdeci">HgcrocDigiCollection &amp; coll_</div><div class="ttdoc">the parent collection this iterator is looping over</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00478">HgcrocDigiCollection.h:478</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00446">446</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        : <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#aec80397e317ab71592234a2c61a7fd00">coll_</a>{c}, <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">digi_index_</a>{index} {}</div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1iterator_html_ad3fee12739269f73d6089e43fc0a508b"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">ldmx::HgcrocDigiCollection::iterator::digi_index_</a></div><div class="ttdeci">long digi_index_</div><div class="ttdoc">the index of the digi this iterator represents</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00473">HgcrocDigiCollection.h:473</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1iterator_html_aec80397e317ab71592234a2c61a7fd00"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#aec80397e317ab71592234a2c61a7fd00">ldmx::HgcrocDigiCollection::iterator::coll_</a></div><div class="ttdeci">HgcrocDigiCollection &amp; coll_</div><div class="ttdoc">the parent collection this iterator is looping over</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00475">HgcrocDigiCollection.h:475</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -160,8 +160,8 @@ Private Attributes</h2></td></tr>
 
 <p>Check if two iterators are not on the same index. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00467">467</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00464">464</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,11 +189,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >De-reference this iterator by using the parent collection to get the actual digi at the index </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00472">472</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#aec80397e317ab71592234a2c61a7fd00">coll_</a>.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad70741a9275ebf3fe2af1243f90ac807">getDigi</a>(<a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">digi_index_</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00469">469</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#aec80397e317ab71592234a2c61a7fd00">coll_</a>.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad70741a9275ebf3fe2af1243f90ac807">getDigi</a>(<a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">digi_index_</a>); }</div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ad70741a9275ebf3fe2af1243f90ac807"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ad70741a9275ebf3fe2af1243f90ac807">ldmx::HgcrocDigiCollection::getDigi</a></div><div class="ttdeci">const HgcrocDigi getDigi(unsigned int digiIndex) const</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00478">coll_</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00476">digi_index_</a>, and <a class="el" href="classldmx_1_1HgcrocDigiCollection.html#ad70741a9275ebf3fe2af1243f90ac807">ldmx::HgcrocDigiCollection::getDigi()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00475">coll_</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00473">digi_index_</a>, and <a class="el" href="classldmx_1_1HgcrocDigiCollection.html#ad70741a9275ebf3fe2af1243f90ac807">ldmx::HgcrocDigiCollection::getDigi()</a>.</p>
 
 </div>
 </div>
@@ -222,13 +222,13 @@ Private Attributes</h2></td></tr>
 
 <p>Increment the digi index and return the iterator afterwards. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00452">452</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>                           {</div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>      <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">digi_index_</a>++;</div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00449">449</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>                           {</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>      <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">digi_index_</a>++;</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00476">digi_index_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00473">digi_index_</a>.</p>
 
 </div>
 </div>
@@ -258,13 +258,13 @@ Private Attributes</h2></td></tr>
 
 <p>Increment the digi index and return the iterator before. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00457">457</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>                             {</div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>      <a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#a01855cff39060c1096dc1841ea48504a">iterator</a> retval = *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>      ++(*this);</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>      <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    }</div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1iterator_html_a01855cff39060c1096dc1841ea48504a"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#a01855cff39060c1096dc1841ea48504a">ldmx::HgcrocDigiCollection::iterator::iterator</a></div><div class="ttdeci">iterator(HgcrocDigiCollection &amp;c, long index=0)</div><div class="ttdoc">Connect the parent collection with an index to this iterator.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00449">HgcrocDigiCollection.h:449</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00454">454</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>                             {</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>      <a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#a01855cff39060c1096dc1841ea48504a">iterator</a> retval = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>      ++(*this);</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>      <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>    }</div>
+<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1iterator_html_a01855cff39060c1096dc1841ea48504a"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#a01855cff39060c1096dc1841ea48504a">ldmx::HgcrocDigiCollection::iterator::iterator</a></div><div class="ttdeci">iterator(HgcrocDigiCollection &amp;c, long index=0)</div><div class="ttdoc">Connect the parent collection with an index to this iterator.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00446">HgcrocDigiCollection.h:446</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -294,12 +294,12 @@ Private Attributes</h2></td></tr>
 
 <p>Check if two iterators are on the same index. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00463">463</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>                                          {</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">digi_index_</a> == other.digi_index_;</div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00460">460</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>                                          {</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocDigiCollection_1_1iterator.html#ad3fee12739269f73d6089e43fc0a508b">digi_index_</a> == other.digi_index_;</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00476">digi_index_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00473">digi_index_</a>.</p>
 
 </div>
 </div>
@@ -326,9 +326,9 @@ Private Attributes</h2></td></tr>
 
 <p>the parent collection this iterator is looping over </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00478">478</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00475">475</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00472">operator*()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00469">operator*()</a>.</p>
 
 </div>
 </div>
@@ -354,9 +354,9 @@ Private Attributes</h2></td></tr>
 
 <p>the index of the digi this iterator represents </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00476">476</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocDigiCollection_8h_source.html#l00473">473</a> of file <a class="el" href="HgcrocDigiCollection_8h_source.html">HgcrocDigiCollection.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00472">operator*()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00452">operator++()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00463">operator==()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocDigiCollection_8h_source.html#l00469">operator*()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00449">operator++()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00460">operator==()</a>.</p>
 
 </div>
 </div>

@@ -232,35 +232,28 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p >we can do this incrementing of channel indices because the decoder uses a map which sorts by electronic ID and then adds the digis in sequence, so the order from event to event is the same esp without zero supp</p>
+<p >we can do this incrementing of channel indices because the decoder uses a map which sorts by electronic ID and then adds the digis in sequence, so the order from event to event is the same without zero supp</p>
 
 <p>Implements <a class="el" href="classframework_1_1Analyzer.html#ac923a649608165fd21183ede074695ab">framework::Analyzer</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="HCalRawDigi_8cxx_source.html#l00023">23</a> of file <a class="el" href="HCalRawDigi_8cxx_source.html">HCalRawDigi.cxx</a>.</p>
 <div class="fragment"><div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                                                     {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="comment">// need to tell collection to decode in v2 style</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">// TODO make stored in ROOT file</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a2bf0ebcbf932af30c236cc7a246a7a67">ldmx::HgcrocDigiCollection::setVersion</a>(2);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">auto</span> digis{<span class="keyword">event</span>.getObject&lt;<a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>&gt;(input_name_,input_pass_)};</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i_digi{1}; </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; digi : digis) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i_sample{0};</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; sample : digi) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;adc_by_channel_sample&quot;</span>+std::to_string(i_sample),</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>          i_digi,sample.adc_t());</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      i_sample++;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    i_digi++;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">auto</span> digis{<span class="keyword">event</span>.getObject&lt;<a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>&gt;(input_name_,input_pass_)};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i_digi{1}; </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; digi : digis) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i_sample{0}; i_sample &lt; digis.getNumSamplesPerDigi(); i_sample++) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;adc_by_channel_sample&quot;</span>+std::to_string(i_sample),</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>          i_digi,digi.at(i_sample).adc_t());</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    i_digi++;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_ae8a2bfe0849be1531e195438c1eaba4c"><div class="ttname"><a href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">framework::EventProcessor::histograms_</a></div><div class="ttdeci">HistogramHelper histograms_</div><div class="ttdoc">Interface class for making and filling histograms.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00216">EventProcessor.h:216</a></div></div>
 <div class="ttc" id="aclassframework_1_1HistogramHelper_html_a43c753c04a441dc6ae654bc48ff47198"><div class="ttname"><a href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">framework::HistogramHelper::fill</a></div><div class="ttdeci">void fill(const std::string &amp;name, const double &amp;val)</div><div class="ttdef"><b>Definition:</b> <a href="Histograms_8h_source.html#l00166">Histograms.h:166</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a></div><div class="ttdoc">Represents a collection of the digi hits readout by an HGCROC.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00042">HgcrocDigiCollection.h:42</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a2bf0ebcbf932af30c236cc7a246a7a67"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a2bf0ebcbf932af30c236cc7a246a7a67">ldmx::HgcrocDigiCollection::setVersion</a></div><div class="ttdeci">static void setVersion(int v)</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00358">HgcrocDigiCollection.h:358</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Histograms_8h_source.html#l00166">framework::HistogramHelper::fill()</a>, <a class="el" href="EventProcessor_8h_source.html#l00216">framework::EventProcessor::histograms_</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00358">ldmx::HgcrocDigiCollection::setVersion()</a>.</p>
+<p class="reference">References <a class="el" href="Histograms_8h_source.html#l00166">framework::HistogramHelper::fill()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00216">framework::EventProcessor::histograms_</a>.</p>
 
 </div>
 </div>
