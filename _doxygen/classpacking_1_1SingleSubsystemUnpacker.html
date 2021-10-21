@@ -67,11 +67,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a17c135a658da75bcc275e3e36fe8714c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55d5c17776e978a1055247dcb7d2048f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemUnpacker.html#a55d5c17776e978a1055247dcb7d2048f">produce</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event) final override</td></tr>
 <tr class="separator:a55d5c17776e978a1055247dcb7d2048f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a629740fc51a42a602771e1f11f6d076f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemUnpacker.html#a629740fc51a42a602771e1f11f6d076f">beforeNewRun</a> (<a class="el" href="classldmx_1_1RunHeader.html">ldmx::RunHeader</a> &amp;rh) final override</td></tr>
+<tr class="separator:a629740fc51a42a602771e1f11f6d076f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classframework_1_1Producer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classframework_1_1Producer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classframework_1_1Producer.html">framework::Producer</a></td></tr>
 <tr class="memitem:a27ea7492352028e450f24f4750c62e1b inherit pub_methods_classframework_1_1Producer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a> (const std::string &amp;name, <a class="el" href="classframework_1_1Process.html">Process</a> &amp;process)</td></tr>
 <tr class="separator:a27ea7492352028e450f24f4750c62e1b inherit pub_methods_classframework_1_1Producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b68d090cd4e50c3c572825bc57bebff inherit pub_methods_classframework_1_1Producer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1Producer.html#a8b68d090cd4e50c3c572825bc57bebff">beforeNewRun</a> (<a class="el" href="classldmx_1_1RunHeader.html">ldmx::RunHeader</a> &amp;header)</td></tr>
-<tr class="separator:a8b68d090cd4e50c3c572825bc57bebff inherit pub_methods_classframework_1_1Producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classframework_1_1EventProcessor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classframework_1_1EventProcessor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classframework_1_1EventProcessor.html">framework::EventProcessor</a></td></tr>
 <tr class="memitem:a7b079c9d4c0ac12bd9d1342073a6ae19 inherit pub_methods_classframework_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1EventProcessor.html#a7b079c9d4c0ac12bd9d1342073a6ae19">EventProcessor</a> (const std::string &amp;name, <a class="el" href="classframework_1_1Process.html">Process</a> &amp;process)</td></tr>
 <tr class="separator:a7b079c9d4c0ac12bd9d1342073a6ae19 inherit pub_methods_classframework_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +122,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8c09484354e95daad8b958a8ca2f811e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemUnpacker.html#a8c09484354e95daad8b958a8ca2f811e">output_name_</a></td></tr>
 <tr class="memdesc:a8c09484354e95daad8b958a8ca2f811e"><td class="mdescLeft">&#160;</td><td class="mdescRight">destination object name  <a href="classpacking_1_1SingleSubsystemUnpacker.html#a8c09484354e95daad8b958a8ca2f811e">More...</a><br /></td></tr>
 <tr class="separator:a8c09484354e95daad8b958a8ca2f811e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e08d735b304b44bb7e2813c509689e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemUnpacker.html#a12e08d735b304b44bb7e2813c509689e">detector_name_</a></td></tr>
+<tr class="memdesc:a12e08d735b304b44bb7e2813c509689e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector file name.  <a href="classpacking_1_1SingleSubsystemUnpacker.html#a12e08d735b304b44bb7e2813c509689e">More...</a><br /></td></tr>
+<tr class="separator:a12e08d735b304b44bb7e2813c509689e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2080296cdabe80648451201fc363f951"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpacking_1_1utility_1_1Reader.html">utility::Reader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a></td></tr>
 <tr class="memdesc:a2080296cdabe80648451201fc363f951"><td class="mdescLeft">&#160;</td><td class="mdescRight">raw data file we are reading  <a href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">More...</a><br /></td></tr>
 <tr class="separator:a2080296cdabe80648451201fc363f951"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,6 +229,48 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a629740fc51a42a602771e1f11f6d076f" name="a629740fc51a42a602771e1f11f6d076f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a629740fc51a42a602771e1f11f6d076f">&#9670;&nbsp;</a></span>beforeNewRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void packing::SingleSubsystemUnpacker::beforeNewRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classldmx_1_1RunHeader.html">ldmx::RunHeader</a> &amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Handle allowing producers to modify run headers before the run begins </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>RunHeader for Producer to add parameters to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classframework_1_1Producer.html#a8b68d090cd4e50c3c572825bc57bebff">framework::Producer</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00007">7</a> of file <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html">SingleSubsystemUnpacker.cxx</a>.</p>
+<div class="fragment"><div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>                                                            {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  rh.setDetectorName(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a12e08d735b304b44bb7e2813c509689e">detector_name_</a>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_a12e08d735b304b44bb7e2813c509689e"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#a12e08d735b304b44bb7e2813c509689e">packing::SingleSubsystemUnpacker::detector_name_</a></div><div class="ttdeci">std::string detector_name_</div><div class="ttdoc">Detector file name.</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00067">SingleSubsystemUnpacker.h:67</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00067">detector_name_</a>, and <a class="el" href="RunHeader_8h_source.html#l00048">ldmx::RunHeader::setDetectorName()</a>.</p>
+
+</div>
+</div>
 <a id="a17c135a658da75bcc275e3e36fe8714c" name="a17c135a658da75bcc275e3e36fe8714c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17c135a658da75bcc275e3e36fe8714c">&#9670;&nbsp;</a></span>configure()</h2>
 
@@ -259,21 +304,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a21156f6f3954394925e9a265de9d702a">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00007">7</a> of file <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html">SingleSubsystemUnpacker.cxx</a>.</p>
-<div class="fragment"><div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>                                                                     {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#a3f079b5932b585a729b22e653e8a8b20">open</a>(ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;raw_file&quot;</span>));</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2df41c30b0a7b2edfc212b11abed7122">num_words_per_event_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;num_words_per_event&quot;</span>);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#ab1e771fe5353c91ac20f7b469e2c2cc5">num_bytes_per_word_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;num_bytes_per_word&quot;</span>);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a8c09484354e95daad8b958a8ca2f811e">output_name_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;output_name&quot;</span>);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00011">11</a> of file <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html">SingleSubsystemUnpacker.cxx</a>.</p>
+<div class="fragment"><div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                                                                     {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#a3f079b5932b585a729b22e653e8a8b20">open</a>(ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;raw_file&quot;</span>));</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2df41c30b0a7b2edfc212b11abed7122">num_words_per_event_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;num_words_per_event&quot;</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#ab1e771fe5353c91ac20f7b469e2c2cc5">num_bytes_per_word_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;num_bytes_per_word&quot;</span>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a8c09484354e95daad8b958a8ca2f811e">output_name_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;output_name&quot;</span>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a12e08d735b304b44bb7e2813c509689e">detector_name_</a>=ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;detector_name&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_a2080296cdabe80648451201fc363f951"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">packing::SingleSubsystemUnpacker::reader_</a></div><div class="ttdeci">utility::Reader reader_</div><div class="ttdoc">raw data file we are reading</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00067">SingleSubsystemUnpacker.h:67</a></div></div>
-<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_a2df41c30b0a7b2edfc212b11abed7122"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#a2df41c30b0a7b2edfc212b11abed7122">packing::SingleSubsystemUnpacker::num_words_per_event_</a></div><div class="ttdeci">int num_words_per_event_</div><div class="ttdoc">number of words per event to get from file</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00059">SingleSubsystemUnpacker.h:59</a></div></div>
-<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_a8c09484354e95daad8b958a8ca2f811e"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#a8c09484354e95daad8b958a8ca2f811e">packing::SingleSubsystemUnpacker::output_name_</a></div><div class="ttdeci">std::string output_name_</div><div class="ttdoc">destination object name</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00063">SingleSubsystemUnpacker.h:63</a></div></div>
-<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_ab1e771fe5353c91ac20f7b469e2c2cc5"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#ab1e771fe5353c91ac20f7b469e2c2cc5">packing::SingleSubsystemUnpacker::num_bytes_per_word_</a></div><div class="ttdeci">int num_bytes_per_word_</div><div class="ttdoc">number of bytes in each word</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00061">SingleSubsystemUnpacker.h:61</a></div></div>
+<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_a2080296cdabe80648451201fc363f951"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">packing::SingleSubsystemUnpacker::reader_</a></div><div class="ttdeci">utility::Reader reader_</div><div class="ttdoc">raw data file we are reading</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00071">SingleSubsystemUnpacker.h:71</a></div></div>
+<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_a2df41c30b0a7b2edfc212b11abed7122"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#a2df41c30b0a7b2edfc212b11abed7122">packing::SingleSubsystemUnpacker::num_words_per_event_</a></div><div class="ttdeci">int num_words_per_event_</div><div class="ttdoc">number of words per event to get from file</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00061">SingleSubsystemUnpacker.h:61</a></div></div>
+<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_a8c09484354e95daad8b958a8ca2f811e"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#a8c09484354e95daad8b958a8ca2f811e">packing::SingleSubsystemUnpacker::output_name_</a></div><div class="ttdeci">std::string output_name_</div><div class="ttdoc">destination object name</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00065">SingleSubsystemUnpacker.h:65</a></div></div>
+<div class="ttc" id="aclasspacking_1_1SingleSubsystemUnpacker_html_ab1e771fe5353c91ac20f7b469e2c2cc5"><div class="ttname"><a href="classpacking_1_1SingleSubsystemUnpacker.html#ab1e771fe5353c91ac20f7b469e2c2cc5">packing::SingleSubsystemUnpacker::num_bytes_per_word_</a></div><div class="ttdeci">int num_bytes_per_word_</div><div class="ttdoc">number of bytes in each word</div><div class="ttdef"><b>Definition:</b> <a href="SingleSubsystemUnpacker_8h_source.html#l00063">SingleSubsystemUnpacker.h:63</a></div></div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1Reader_html_a3f079b5932b585a729b22e653e8a8b20"><div class="ttname"><a href="classpacking_1_1utility_1_1Reader.html#a3f079b5932b585a729b22e653e8a8b20">packing::utility::Reader::open</a></div><div class="ttdeci">void open(const std::string &amp;file_name)</div><div class="ttdef"><b>Definition:</b> <a href="Reader_8h_source.html#l00037">Reader.h:37</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00061">num_bytes_per_word_</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00059">num_words_per_event_</a>, <a class="el" href="Reader_8h_source.html#l00037">packing::utility::Reader::open()</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00063">output_name_</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00067">reader_</a>.</p>
+<p class="reference">References <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00067">detector_name_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00063">num_bytes_per_word_</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00061">num_words_per_event_</a>, <a class="el" href="Reader_8h_source.html#l00037">packing::utility::Reader::open()</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00065">output_name_</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00071">reader_</a>.</p>
 
 </div>
 </div>
@@ -310,33 +356,33 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00014">14</a> of file <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html">SingleSubsystemUnpacker.cxx</a>.</p>
-<div class="fragment"><div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                                                           {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a> or <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#a6b5ae36ce746cc77969bbafb0a0d661f">eof</a>()) <a class="code hl_function" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a>();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">switch</span>(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#ab1e771fe5353c91ac20f7b469e2c2cc5">num_bytes_per_word_</a>) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">case</span> 1 :</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      read&lt;uint8_t&gt;(event);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">case</span> 2 :</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      read&lt;uint16_t&gt;(event);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">case</span> 4 :</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      read&lt;uint32_t&gt;(event);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">case</span> 8 :</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      read&lt;uint64_t&gt;(event);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;BadConfig&quot;</span>,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>          <span class="stringliteral">&quot;Unable to handle &quot;</span>+std::to_string(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#ab1e771fe5353c91ac20f7b469e2c2cc5">num_bytes_per_word_</a>)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>          +<span class="stringliteral">&quot; bytes per word.&quot;</span>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00019">19</a> of file <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html">SingleSubsystemUnpacker.cxx</a>.</p>
+<div class="fragment"><div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                                                           {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a> or <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#a6b5ae36ce746cc77969bbafb0a0d661f">eof</a>()) <a class="code hl_function" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">switch</span>(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#ab1e771fe5353c91ac20f7b469e2c2cc5">num_bytes_per_word_</a>) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">case</span> 1 :</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      read&lt;uint8_t&gt;(event);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">case</span> 2 :</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      read&lt;uint16_t&gt;(event);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">case</span> 4 :</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      read&lt;uint32_t&gt;(event);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">case</span> 8 :</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      read&lt;uint64_t&gt;(event);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;BadConfig&quot;</span>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>          <span class="stringliteral">&quot;Unable to handle &quot;</span>+std::to_string(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#ab1e771fe5353c91ac20f7b469e2c2cc5">num_bytes_per_word_</a>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>          +<span class="stringliteral">&quot; bytes per word.&quot;</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_a8d42387da8fbb2d1f01f5ecebb64dd7d"><div class="ttname"><a href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">framework::EventProcessor::abortEvent</a></div><div class="ttdeci">void abortEvent()</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00213">EventProcessor.h:213</a></div></div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1Reader_html_a6b5ae36ce746cc77969bbafb0a0d661f"><div class="ttname"><a href="classpacking_1_1utility_1_1Reader.html#a6b5ae36ce746cc77969bbafb0a0d661f">packing::utility::Reader::eof</a></div><div class="ttdeci">bool eof()</div><div class="ttdef"><b>Definition:</b> <a href="Reader_8h_source.html#l00215">Reader.h:215</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00213">framework::EventProcessor::abortEvent()</a>, <a class="el" href="Reader_8h_source.html#l00215">packing::utility::Reader::eof()</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00061">num_bytes_per_word_</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00067">reader_</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00213">framework::EventProcessor::abortEvent()</a>, <a class="el" href="Reader_8h_source.html#l00215">packing::utility::Reader::eof()</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00063">num_bytes_per_word_</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00071">reader_</a>.</p>
 
 </div>
 </div>
@@ -367,23 +413,51 @@ template&lt;typename WordType &gt; </div>
 </div><div class="memdoc">
 <p >Read the configured number of words of the input type from the file and put that buffer onto the event bus with the configured output_name_. </p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00047">47</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                                   {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::vector&lt;WordType&gt; buff;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#ac4ef5c66f5fed00f03944ddb0ce452f5">read</a>(buff, <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2df41c30b0a7b2edfc212b11abed7122">num_words_per_event_</a>)) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;MalForm&quot;</span>,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="stringliteral">&quot;Raw file provided was unable to read &quot;</span>+std::to_string(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2df41c30b0a7b2edfc212b11abed7122">num_words_per_event_</a>)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        +<span class="stringliteral">&quot; bytes in an event.&quot;</span>);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">event</span>.add(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a8c09484354e95daad8b958a8ca2f811e">output_name_</a>, buff);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00049">49</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                   {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::vector&lt;WordType&gt; buff;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2080296cdabe80648451201fc363f951">reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#ac4ef5c66f5fed00f03944ddb0ce452f5">read</a>(buff, <a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2df41c30b0a7b2edfc212b11abed7122">num_words_per_event_</a>)) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;MalForm&quot;</span>,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="stringliteral">&quot;Raw file provided was unable to read &quot;</span>+std::to_string(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a2df41c30b0a7b2edfc212b11abed7122">num_words_per_event_</a>)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        +<span class="stringliteral">&quot; bytes in an event.&quot;</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">event</span>.add(<a class="code hl_variable" href="classpacking_1_1SingleSubsystemUnpacker.html#a8c09484354e95daad8b958a8ca2f811e">output_name_</a>, buff);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1Reader_html_ac4ef5c66f5fed00f03944ddb0ce452f5"><div class="ttname"><a href="classpacking_1_1utility_1_1Reader.html#ac4ef5c66f5fed00f03944ddb0ce452f5">packing::utility::Reader::read</a></div><div class="ttdeci">Reader &amp; read(WordType *w, std::size_t count)</div><div class="ttdef"><b>Definition:</b> <a href="Reader_8h_source.html#l00113">Reader.h:113</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00059">num_words_per_event_</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00063">output_name_</a>, <a class="el" href="Reader_8h_source.html#l00113">packing::utility::Reader::read()</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00067">reader_</a>.</p>
+<p class="reference">References <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00061">num_words_per_event_</a>, <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00065">output_name_</a>, <a class="el" href="Reader_8h_source.html#l00113">packing::utility::Reader::read()</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00071">reader_</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a12e08d735b304b44bb7e2813c509689e" name="a12e08d735b304b44bb7e2813c509689e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e08d735b304b44bb7e2813c509689e">&#9670;&nbsp;</a></span>detector_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string packing::SingleSubsystemUnpacker::detector_name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Detector file name. </p>
+
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00067">67</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00007">beforeNewRun()</a>, and <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00011">configure()</a>.</p>
+
+</div>
+</div>
 <a id="ab1e771fe5353c91ac20f7b469e2c2cc5" name="ab1e771fe5353c91ac20f7b469e2c2cc5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1e771fe5353c91ac20f7b469e2c2cc5">&#9670;&nbsp;</a></span>num_bytes_per_word_</h2>
 
@@ -406,9 +480,9 @@ template&lt;typename WordType &gt; </div>
 
 <p>number of bytes in each word </p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00061">61</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00063">63</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00007">configure()</a>, and <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00014">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00011">configure()</a>, and <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00019">produce()</a>.</p>
 
 </div>
 </div>
@@ -434,9 +508,9 @@ template&lt;typename WordType &gt; </div>
 
 <p>number of words per event to get from file </p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00059">59</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00061">61</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00007">configure()</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00047">read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00011">configure()</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00049">read()</a>.</p>
 
 </div>
 </div>
@@ -462,9 +536,9 @@ template&lt;typename WordType &gt; </div>
 
 <p>destination object name </p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00063">63</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00065">65</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00007">configure()</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00047">read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00011">configure()</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00049">read()</a>.</p>
 
 </div>
 </div>
@@ -490,9 +564,9 @@ template&lt;typename WordType &gt; </div>
 
 <p>raw data file we are reading </p>
 
-<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00067">67</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00071">71</a> of file <a class="el" href="SingleSubsystemUnpacker_8h_source.html">SingleSubsystemUnpacker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00007">configure()</a>, <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00014">produce()</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00047">read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00011">configure()</a>, <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00019">produce()</a>, and <a class="el" href="SingleSubsystemUnpacker_8h_source.html#l00049">read()</a>.</p>
 
 </div>
 </div>
