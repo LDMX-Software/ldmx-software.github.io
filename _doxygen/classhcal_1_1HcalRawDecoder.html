@@ -310,8 +310,13 @@ Additional Inherited Members</h2></td></tr>
 <p >Common Mode Channels 10 | 0000000000 | Common Mode ADC 0 (10) | Common Mode ADC 1 (10)</p>
 <p >DAQ Channels</p>
 <p >Generate Packed Electronics ID Link Index i_link Channel ID channel_id ROC ID roc_id FPGA ID fpga are all available. For now, we just generate a dummy mapping using the link and channel indices.</p>
+<p >The subfields for the electronics ID infrastructure need to start from 0 and count up. This means we need to subtract some of the fields by their lowest value before inputting them into the EID.</p>
+<p >TODO fix hardcoded starting value</p>
+<p >roc_id-256 is the ssame as i_link = is this a coincidence? or should we change the second input to be the link index</p>
 <p >Translation</p>
 <p >Now the HgcrocDigiCollection::Sample class handles the unpacking of individual samples; however, we still need to translate electronic IDs into detector IDs.</p>
+<p >DO NOTHING skip hits where the EID aren't in the detector mapping no zero supp during test beam on the front-end, so channels that aren't connected to anything are still being readout. std::cout &lt;&lt; "EID(" &lt;&lt; eid.fiber() &lt;&lt; "," &lt;&lt; eid.elink() &lt;&lt; "," &lt;&lt; eid.channel() &lt;&lt; ") "; for (auto&amp; s : digi) std::cout &lt;&lt; <a class="el" href="structhcal_1_1debug_1_1hex.html">debug::hex</a>(s.raw()) &lt;&lt; " "; std::cout &lt;&lt; std::endl;</p>
+<p >no EID translation, just add the digis to the digi collection with their raw electronic ID TODO: remove this, we shouldn't be able to get past the decoding stage without translating the EID into a detector ID to avoid confusion in recon</p>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
@@ -459,74 +464,63 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>          link_crc &lt;&lt; w;</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>          <span class="comment">//std::cout &lt;&lt; &quot; : DAQ Channel &quot;;</span></div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>          <span class="comment">//std::cout &lt;&lt; fpga &lt;&lt; &quot; &quot; &lt;&lt; roc_id &lt;&lt; &quot; &quot; &lt;&lt; channel_id &lt;&lt; &quot; &quot;;</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>          <span class="comment">// TODO fix hardcoded starting value</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>          <span class="comment">//  roc_id-256 is the ssame as i_link = is this a coincidence?</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>          <span class="comment">//  or should we change the second input to be the link index</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>          <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eid(fpga, roc_id-256, channel_id);</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>          <span class="comment">//std::cout &lt;&lt; eid.index();</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>          <span class="comment">// copy data into EID-&gt;sample map</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>          eid_to_samples[eid].emplace_back(w);</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        }  <span class="comment">// type of channel</span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="comment">//std::cout &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      }  <span class="comment">// loop over channels (j in Table 4)</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      <span class="comment">//std::cout &lt;&lt; &quot;done looping through channels&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    }  <span class="comment">// loop over links</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="comment">// another CRC checksum from FPGA</span></div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    reader_ &gt;&gt; w;</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    uint32_t crc = w;</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="comment">//std::cout &lt;&lt; &quot;FPGA Checksum : &quot; &lt;&lt; debug::hex(fpga_crc.get()) &lt;&lt; &quot; =? &quot; &lt;&lt; debug::hex(crc) &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="comment">/* TODO</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment">     *  fix calculation of FPGA checksum</span></div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="comment">     *  I can&#39;t figure out why it isn&#39;t matching, but there</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment">     *  is definitely a word here where the FPGA checksum would be.</span></div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment">    if (fpga_crc.get() != crc) {</span></div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment">      EXCEPTION_RAISE(</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="comment">          &quot;BadCRC&quot;,</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="comment">          &quot;Our calculated FPGA checksum doesn&#39;t match the one read in.&quot;);</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">    }</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  }</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a> digis;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  <span class="comment">// assume all channels have same number of samples</span></div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">setNumSamplesPerDigi</a>(eid_to_samples.begin()-&gt;second.size());</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">setSampleOfInterestIndex</a>(0);  <span class="comment">// TODO configurable</span></div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#abe9ba46a6f93aedf901a6d8209ea0408">setVersion</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a>);</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a>) {</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keyword">auto</span> detmap{</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        getCondition&lt;HcalDetectorMap&gt;(<a class="code hl_variable" href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">HcalDetectorMap::CONDITIONS_OBJECT_NAME</a>)};</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>      <span class="comment">// The electronics map returns an empty ID of the correct</span></div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>      <span class="comment">// type when the electronics ID is not found.</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>      <span class="comment">//  need to check if the electronics ID exists</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>      <span class="comment">//  TODO: do we want to end processing if this happens?</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>      <span class="keywordflow">if</span> (detmap.exists(eid)) {</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        uint32_t did_raw = detmap.get(eid).raw();</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(did_raw, digi);</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        <span class="comment">// DO NOTHING</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        <span class="comment">//  skip hits where the EID aren&#39;t in the detector mapping</span></div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="comment">//  DO WE ACTUALLY WANT TO DO THIS?</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>      }</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    }</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="comment">// no EID translation, just add the digis to the digi collection</span></div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="comment">// with their raw electronic ID</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <span class="comment">// TODO: remove this, we shouldn&#39;t be able to get past</span></div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="comment">//       the decoding stage without translating the EID</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="comment">//       into a detector ID to avoid confusion in recon</span></div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>      digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(eid.raw(), digi);</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    }</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  }</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  <span class="comment">//std::cout &lt;&lt; &quot;adding &quot; &lt;&lt; digis.getNumDigis() &lt;&lt; &quot; digis each with &quot; &lt;&lt; digis.getNumSamplesPerDigi() &lt;&lt; &quot; samples to event bus&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a>, digis);</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>}  <span class="comment">// produce</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>          <span class="comment">//std::cout &lt;&lt; fpga &lt;&lt; &quot; &quot; &lt;&lt; roc_id-256 &lt;&lt; &quot; &quot; &lt;&lt; channel_id &lt;&lt; &quot; &quot;;</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment"></span>          <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eid(fpga-1, roc_id-256, channel_id);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>          <span class="comment">//std::cout &lt;&lt; eid.index();</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>          <span class="comment">// copy data into EID-&gt;sample map</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>          eid_to_samples[eid].emplace_back(w);</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        }  <span class="comment">// type of channel</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="comment">//std::cout &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      }  <span class="comment">// loop over channels (j in Table 4)</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      <span class="comment">//std::cout &lt;&lt; &quot;done looping through channels&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    }  <span class="comment">// loop over links</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="comment">// another CRC checksum from FPGA</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    reader_ &gt;&gt; w;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    uint32_t crc = w;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="comment">//std::cout &lt;&lt; &quot;FPGA Checksum : &quot; &lt;&lt; debug::hex(fpga_crc.get()) &lt;&lt; &quot; =? &quot; &lt;&lt; debug::hex(crc) &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="comment">/* TODO</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">     *  fix calculation of FPGA checksum</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="comment">     *  I can&#39;t figure out why it isn&#39;t matching, but there</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="comment">     *  is definitely a word here where the FPGA checksum would be.</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="comment">    if (fpga_crc.get() != crc) {</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="comment">      EXCEPTION_RAISE(</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="comment">          &quot;BadCRC&quot;,</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="comment">          &quot;Our calculated FPGA checksum doesn&#39;t match the one read in.&quot;);</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment">    }</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  }</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a> digis;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  <span class="comment">// assume all channels have same number of samples</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">setNumSamplesPerDigi</a>(eid_to_samples.begin()-&gt;second.size());</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">setSampleOfInterestIndex</a>(0);  <span class="comment">// TODO configurable</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#abe9ba46a6f93aedf901a6d8209ea0408">setVersion</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a>);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a>) {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">auto</span> detmap{</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        getCondition&lt;HcalDetectorMap&gt;(<a class="code hl_variable" href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">HcalDetectorMap::CONDITIONS_OBJECT_NAME</a>)};</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>      <span class="comment">// The electronics map returns an empty ID of the correct</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>      <span class="comment">// type when the electronics ID is not found.</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>      <span class="comment">//  need to check if the electronics ID exists</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>      <span class="comment">//  TODO: do we want to end processing if this happens?</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>      <span class="keywordflow">if</span> (detmap.exists(eid)) {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        uint32_t did_raw = detmap.get(eid).raw();</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(did_raw, digi);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>      }</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    }</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>      digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(eid.raw(), digi);</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    }</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  }</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  <span class="comment">//std::cout &lt;&lt; &quot;adding &quot; &lt;&lt; digis.getNumDigis() &lt;&lt; &quot; digis each with &quot; &lt;&lt; digis.getNumSamplesPerDigi() &lt;&lt; &quot; samples to event bus&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a>, digis);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>}  <span class="comment">// produce</span></div>
 <div class="ttc" id="aclasshcal_1_1HcalDetectorMap_html_a64e9061e89c3d90fae0bdece25648f2c"><div class="ttname"><a href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">hcal::HcalDetectorMap::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static constexpr const char * CONDITIONS_OBJECT_NAME</div><div class="ttdoc">The name of the EID &lt;-&gt; DetID map for the ECal.</div><div class="ttdef"><b>Definition:</b> <a href="HcalDetectorMap_8h_source.html#l00037">HcalDetectorMap.h:37</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalElectronicsID_html"><div class="ttname"><a href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a></div><div class="ttdoc">Identifies a location in the Hcal readout chain.</div><div class="ttdef"><b>Definition:</b> <a href="HcalElectronicsID_8h_source.html#l00022">HcalElectronicsID.h:22</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a></div><div class="ttdoc">Represents a collection of the digi hits readout by an HGCROC.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00042">HgcrocDigiCollection.h:42</a></div></div>

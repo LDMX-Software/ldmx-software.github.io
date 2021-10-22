@@ -85,28 +85,31 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt;<br />
-class ldmx::PackedIndex&lt; m0, m1, m2 &gt;</div><p >A maximally-packed index of upto four different fields.</p>
+class ldmx::PackedIndex&lt; m0, m1, m2 &gt;</div><p >A maximally-packed index of up to four different fields.</p>
+<p >We can pack an index with different fields by knowing each field's modulus or the number of different values the field can have.</p>
+<p >For example, if a field has values 0, 1, 2, 3 then its modulus is four.</p>
+<p >The maths underlying this packing also assumes that values start with 0 and count up.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"></td><td></td></tr>
   </table>
   </dd>
 </dl>
-<p>in] m0 modulus of field 0 (i.e. its maximum value) </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>in] m0 modulus of field 0 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"></td><td></td></tr>
   </table>
   </dd>
 </dl>
-<p>in] m1 modulus of field 1 (i.e. its maximum value) optional </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>in] m1 modulus of field 1, optional </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"></td><td></td></tr>
   </table>
   </dd>
 </dl>
-<p>in] m2 modulus of field 2 (i.e. its maximum value) optional </p>
+<p>in] m2 modulus of field 2, optional </p>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00023">23</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00032">32</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a14871c701d74346cd8406ad2d7113bc2" name="a14871c701d74346cd8406ad2d7113bc2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14871c701d74346cd8406ad2d7113bc2">&#9670;&nbsp;</a></span>PackedIndex() <span class="overload">[1/2]</span></h2>
@@ -168,13 +171,13 @@ template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00039">39</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                                                                                      {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>=v0+v1*m0+v2*m0*m1+v3*m0*m1*m2;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  }</div>
-<div class="ttc" id="aclassldmx_1_1PackedIndex_html_aafe9d085a47d8848393602a586324bd0"><div class="ttname"><a href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">ldmx::PackedIndex::index_</a></div><div class="ttdeci">uint32_t index_</div><div class="ttdoc">The 32-bit integer that is storing our fields.</div><div class="ttdef"><b>Definition:</b> <a href="PackedIndex_8h_source.html#l00060">PackedIndex.h:60</a></div></div>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00048">48</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                                                                      {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>=v0+v1*m0+v2*m0*m1+v3*m0*m1*m2;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="ttc" id="aclassldmx_1_1PackedIndex_html_aafe9d085a47d8848393602a586324bd0"><div class="ttname"><a href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">ldmx::PackedIndex::index_</a></div><div class="ttdeci">uint32_t index_</div><div class="ttdoc">The 32-bit integer that is storing our fields.</div><div class="ttdef"><b>Definition:</b> <a href="PackedIndex_8h_source.html#l00069">PackedIndex.h:69</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00060">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
+<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00069">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
 
 </div>
 </div>
@@ -206,9 +209,9 @@ template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt; </div>
 
 <p>Constructor from index value. </p>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00044">44</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>: <a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>{<a class="code hl_function" href="classldmx_1_1PackedIndex.html#ae41b64e2414c74282e0a175fc6c785a2">value</a>} {}</div>
-<div class="ttc" id="aclassldmx_1_1PackedIndex_html_ae41b64e2414c74282e0a175fc6c785a2"><div class="ttname"><a href="classldmx_1_1PackedIndex.html#ae41b64e2414c74282e0a175fc6c785a2">ldmx::PackedIndex::value</a></div><div class="ttdeci">uint32_t value() const</div><div class="ttdoc">Get the fully packed index.</div><div class="ttdef"><b>Definition:</b> <a href="PackedIndex_8h_source.html#l00056">PackedIndex.h:56</a></div></div>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00053">53</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>: <a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>{<a class="code hl_function" href="classldmx_1_1PackedIndex.html#ae41b64e2414c74282e0a175fc6c785a2">value</a>} {}</div>
+<div class="ttc" id="aclassldmx_1_1PackedIndex_html_ae41b64e2414c74282e0a175fc6c785a2"><div class="ttname"><a href="classldmx_1_1PackedIndex.html#ae41b64e2414c74282e0a175fc6c785a2">ldmx::PackedIndex::value</a></div><div class="ttdeci">uint32_t value() const</div><div class="ttdoc">Get the fully packed index.</div><div class="ttdef"><b>Definition:</b> <a href="PackedIndex_8h_source.html#l00065">PackedIndex.h:65</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -240,10 +243,10 @@ template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt; </div>
 
 <p>Get the value of field 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00047">47</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>%m0; }</div>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00056">56</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>%m0; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00060">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
+<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00069">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00092">ldmx::EcalElectronicsID::channel()</a>, and <a class="el" href="HcalElectronicsID_8h_source.html#l00087">ldmx::HcalElectronicsID::channel()</a>.</p>
 
@@ -276,10 +279,10 @@ template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt; </div>
 
 <p>Get the value of field 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00049">49</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>/m0)%m1; }</div>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00058">58</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>/m0)%m1; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00060">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
+<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00069">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00087">ldmx::EcalElectronicsID::elink()</a>, and <a class="el" href="HcalElectronicsID_8h_source.html#l00082">ldmx::HcalElectronicsID::elink()</a>.</p>
 
@@ -312,10 +315,10 @@ template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt; </div>
 
 <p>Get the value of field 2. </p>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00051">51</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>/(m0*m1))%m2; }</div>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00060">60</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>/(m0*m1))%m2; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00060">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
+<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00069">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00082">ldmx::EcalElectronicsID::fiber()</a>, and <a class="el" href="HcalElectronicsID_8h_source.html#l00077">ldmx::HcalElectronicsID::fiber()</a>.</p>
 
@@ -348,10 +351,10 @@ template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt; </div>
 
 <p>Get the value of field 3. </p>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00053">53</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>/(m0*m1*m2)); }</div>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00062">62</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{ <span class="keywordflow">return</span> (<a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>/(m0*m1*m2)); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00060">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
+<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00069">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
 
 </div>
 </div>
@@ -382,10 +385,10 @@ template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt; </div>
 
 <p>Get the fully packed index. </p>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00056">56</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00065">65</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1PackedIndex.html#aafe9d085a47d8848393602a586324bd0">index_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00060">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
+<p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00069">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::index_</a>.</p>
 
 </div>
 </div>
@@ -414,9 +417,9 @@ template&lt;unsigned int m0, unsigned int m1 = 0, unsigned int m2 = 0&gt; </div>
 
 <p>The 32-bit integer that is storing our fields. </p>
 
-<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00060">60</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PackedIndex_8h_source.html#l00069">69</a> of file <a class="el" href="PackedIndex_8h_source.html">PackedIndex.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PackedIndex_8h_source.html#l00047">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field0()</a>, <a class="el" href="PackedIndex_8h_source.html#l00049">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field1()</a>, <a class="el" href="PackedIndex_8h_source.html#l00051">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field2()</a>, <a class="el" href="PackedIndex_8h_source.html#l00053">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field3()</a>, <a class="el" href="PackedIndex_8h_source.html#l00039">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::PackedIndex()</a>, and <a class="el" href="PackedIndex_8h_source.html#l00056">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PackedIndex_8h_source.html#l00056">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field0()</a>, <a class="el" href="PackedIndex_8h_source.html#l00058">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field1()</a>, <a class="el" href="PackedIndex_8h_source.html#l00060">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field2()</a>, <a class="el" href="PackedIndex_8h_source.html#l00062">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field3()</a>, <a class="el" href="PackedIndex_8h_source.html#l00048">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::PackedIndex()</a>, and <a class="el" href="PackedIndex_8h_source.html#l00065">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::value()</a>.</p>
 
 </div>
 </div>
