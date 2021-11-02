@@ -60,6 +60,35 @@ On recent versions of the mac operating system, you need to re-install command l
 ### On macOS, I get a failure when I try to run the docker containers.
 The default terminal on macOS is `tcsh`, but the environment setup script assumes that you are using `bash`. You should look at [this article](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/) for how to change your default shell to `bash` so that the ldmx environment script works.
 
+### On macOS, I get a error when trying to use tab completion.
+This error looks like
+```
+ldmx <tab>-bash: compopt: command not found
+```
+where `<tab>` stands for you pressing the tab key.
+This error arises because the default version of `bash` shipped with MacOS is pretty old,
+for example, MacOS Monterey ships with bash version 3.2 (the current is 5+!).
+
+You can get around this issue by simply updating the version of `bash` you are using.
+Since the terminal is pretty low-level, you will unfortunately need to also manually override the default bash.
+
+1. Install a newer version of bash. This command uses [homebrew](https://brew.sh/) to install `bash`.
+```
+brew install bash
+```
+2. Add the newer bash to the list of shells you can use.
+```
+sudo echo /usr/local/bin/bash >> /etc/shells
+```
+3. Change your default shell to the newer version
+```
+chsh -s /usr/local/bin/bash $USER
+```
+
+You can double check your current shell's bash version by running `echo $BASH_VERSION`.
+
+This answer was based on a helpful [stackexchange answer](https://apple.stackexchange.com/questions/224511/how-to-use-bash-as-default-shell).
+
 ### I can't compile and I get a "No such file or directory" error.
 LDMX software is broken up into several different `git` repositories that are then pulled into a central repository _ldmx-sw_ as "submodules".
 In order for you to get the code in the submodules, you need to tell `git` that you want it. There are two simple ways to do this.
