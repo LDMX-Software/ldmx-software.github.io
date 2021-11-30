@@ -58,266 +58,237 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="HcalDetectorMap_8h.html">Hcal/HcalDetectorMap.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Packing/Utility/BufferReader.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Packing/Utility/CRC.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;Packing/Utility/Mask.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="HgcrocDigiCollection_8h.html">Recon/Event/HgcrocDigiCollection.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>hcal {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>utility {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classhcal_1_1utility_1_1Reader.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classhcal_1_1utility_1_1Reader.html">Reader</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;buffer_;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  std::size_t i_word_;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  uint32_t next() {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    uint32_t w = buffer_.at(i_word_) | </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                 (buffer_.at(i_word_ + 1) &lt;&lt; 8) |</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                 (buffer_.at(i_word_ + 2) &lt;&lt; 16) |</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                 (buffer_.at(i_word_ + 3) &lt;&lt; 24);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    i_word_ += 4;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> w;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="classhcal_1_1utility_1_1Reader.html">Reader</a>(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; b) : buffer_{b}, i_word_{0} {}</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">operator</span> bool() {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> (i_word_ &lt; buffer_.size());</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="classhcal_1_1utility_1_1Reader.html">Reader</a>&amp; operator&gt;&gt;(uint32_t&amp; w) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (*<span class="keyword">this</span>)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      w = next();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};  <span class="comment">// Reader</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}  <span class="comment">// namespace utility</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">namespace </span>debug {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structhcal_1_1debug_1_1hex.html">   50</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structhcal_1_1debug_1_1hex.html">hex</a> {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  uint32_t word_;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_struct" href="structhcal_1_1debug_1_1hex.html">hex</a>(uint32_t w) : word_{w} {}</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}  <span class="comment">// namespace debug</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">inline</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_struct" href="structhcal_1_1debug_1_1hex.html">debug::hex</a>&amp; h) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  os &lt;&lt; <span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; std::setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; std::setw(8) &lt;&lt; std::hex &lt;&lt; h.word_</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>     &lt;&lt; std::dec;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordflow">return</span> os;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classhcal_1_1HcalRawDecoder.html#ae35faf8fdf781e876c41d3d6b6590a0a">   63</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classhcal_1_1HcalRawDecoder.html#ae35faf8fdf781e876c41d3d6b6590a0a">HcalRawDecoder::configure</a>(<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp; ps) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_name&quot;</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">input_pass_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass&quot;</span>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;output_name&quot;</span>);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;roc_version&quot;</span>);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;translate_eid&quot;</span>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classhcal_1_1HcalRawDecoder.html#ac1e9dcd37913b26a5dc655ddb50539f8">   71</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classhcal_1_1HcalRawDecoder.html#ac1e9dcd37913b26a5dc655ddb50539f8">HcalRawDecoder::produce</a>(<a class="code hl_class" href="classframework_1_1Event.html">framework::Event</a>&amp; event) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> common_mode_channel = <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a> == 2 ? 19 : 1;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">static</span> uint32_t head1, head2, w;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <a class="code hl_class" href="classhcal_1_1utility_1_1Reader.html">utility::Reader</a> reader_{<span class="keyword">event</span>.getCollection&lt;uint8_t&gt;(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a>, <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">input_pass_</a>)};</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">// fill map of **electronic** IDs to the digis that were read out</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  std::map&lt;<a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a>,</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>           std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt;&gt;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      eid_to_samples;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">while</span> (reader_ &gt;&gt; head1 &gt;&gt; head2) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (head1 == 0x11111111 and head2 == 0xbeef2021) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      <span class="comment">/* whole event header word looks like</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">       *</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">       * VERSION (4) | FPGA ID (8) | NSAMPLES (4) | LEN (16)</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">       */</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      uint32_t whole_event_header;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      reader_ &gt;&gt; whole_event_header;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      uint32_t version  = (whole_event_header &gt;&gt; 28) &amp; packing::utility::mask&lt;4&gt;;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      uint32_t fpga     = (whole_event_header &gt;&gt; 20) &amp; packing::utility::mask&lt;8&gt;;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      uint32_t nsamples = (whole_event_header &gt;&gt; 16) &amp; packing::utility::mask&lt;4&gt;;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      uint32_t eventlen = whole_event_header &amp; packing::utility::mask&lt;16&gt;;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <span class="comment">// sample counters</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      std::vector&lt;uint32_t&gt; length_per_sample(nsamples, 0);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">for</span> (uint32_t i_sample{0}; i_sample &lt; nsamples; i_sample++) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span> (i_sample%2 == 0) {</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>          reader_ &gt;&gt; w;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        uint32_t shift_in_word = 16*(i_sample%2);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        length_per_sample[i_sample] = (w &gt;&gt; shift_in_word) &amp; packing::utility::mask&lt;12&gt;;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="comment">// read first sample headers</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      reader_ &gt;&gt; head1 &gt;&gt; head2;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (head1 == 0xd07e2021 and head2 == 0x12345678) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="comment">// these are the special footer words at the end,</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <span class="comment">//  done with event</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_class" href="classpacking_1_1utility_1_1CRC.html">packing::utility::CRC</a> fpga_crc;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    fpga_crc &lt;&lt; head1;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="comment">//std::cout &lt;&lt; debug::hex(head1) &lt;&lt; &quot; : &quot;;</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    uint32_t version = (head1 &gt;&gt; 28) &amp; packing::utility::mask&lt;4&gt;;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="comment">//std::cout &lt;&lt; &quot;version &quot; &lt;&lt; version &lt;&lt; std::flush;</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    uint32_t one{1};</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">if</span> (version != one)</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;VersMis&quot;</span>,</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                      <span class="stringliteral">&quot;HcalRawDecoder only knows version 1 of DAQ format.&quot;</span>);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    uint32_t fpga = (head1 &gt;&gt; 20) &amp; packing::utility::mask&lt;8&gt;;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    uint32_t nlinks = (head1 &gt;&gt; 14) &amp; packing::utility::mask&lt;6&gt;;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    uint32_t len = head1 &amp; packing::utility::mask&lt;12&gt;;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="comment">//std::cout &lt;&lt; &quot;, fpga: &quot; &lt;&lt; fpga &lt;&lt; &quot;, nlinks: &quot; &lt;&lt; nlinks &lt;&lt; &quot;, len: &quot; &lt;&lt; len &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    fpga_crc &lt;&lt; head2;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="comment">//std::cout &lt;&lt; debug::hex(head2) &lt;&lt; &quot; : &quot;;</span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    uint32_t bx_id = (head2 &gt;&gt; 20) &amp; packing::utility::mask&lt;12&gt;;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    uint32_t rreq = (head2 &gt;&gt; 10) &amp; packing::utility::mask&lt;10&gt;;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    uint32_t orbit = head2 &amp; packing::utility::mask&lt;10&gt;;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">//std::cout &lt;&lt; &quot;bx_id: &quot; &lt;&lt; bx_id &lt;&lt; &quot;, rreq: &quot; &lt;&lt; rreq &lt;&lt; &quot;, orbit: &quot; &lt;&lt; orbit &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;Packing/Utility/Hex.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;Packing/Utility/Mask.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="HgcrocDigiCollection_8h.html">Recon/Event/HgcrocDigiCollection.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>hcal {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// we are using 32-bit words here</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using</span> hex = <a class="code hl_struct" href="structpacking_1_1utility_1_1hex.html">packing::utility::hex&lt;uint32_t&gt;</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using</span> BufferReader = <a class="code hl_class" href="classpacking_1_1utility_1_1BufferReader.html">packing::utility::BufferReader&lt;uint32_t&gt;</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classhcal_1_1HcalRawDecoder.html#ae35faf8fdf781e876c41d3d6b6590a0a">   22</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classhcal_1_1HcalRawDecoder.html#ae35faf8fdf781e876c41d3d6b6590a0a">HcalRawDecoder::configure</a>(<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp; ps) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_name&quot;</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">input_pass_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass&quot;</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;output_name&quot;</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;roc_version&quot;</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;translate_eid&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classhcal_1_1HcalRawDecoder.html#ac1e9dcd37913b26a5dc655ddb50539f8">   30</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classhcal_1_1HcalRawDecoder.html#ac1e9dcd37913b26a5dc655ddb50539f8">HcalRawDecoder::produce</a>(<a class="code hl_class" href="classframework_1_1Event.html">framework::Event</a>&amp; event) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> common_mode_channel = <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a> == 2 ? 19 : 1;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">static</span> uint32_t head1, head2, w;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_class" href="classpacking_1_1utility_1_1BufferReader.html">BufferReader</a> reader{<span class="keyword">event</span>.getCollection&lt;uint8_t&gt;(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a>, <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">input_pass_</a>)};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">// fill map of **electronic** IDs to the digis that were read out</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  std::map&lt;<a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a>,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>           std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt;&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      eid_to_samples;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">while</span> (reader &gt;&gt; head1 &gt;&gt; head2) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (head1 == 0x11111111 and head2 == 0xbeef2021) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="comment">/* whole event header word looks like</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">       *</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">       * VERSION (4) | FPGA ID (8) | NSAMPLES (4) | LEN (16)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">       */</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      uint32_t whole_event_header;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      reader &gt;&gt; whole_event_header;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      uint32_t version = (whole_event_header &gt;&gt; 28) &amp; packing::utility::mask&lt;4&gt;;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      uint32_t fpga = (whole_event_header &gt;&gt; 20) &amp; packing::utility::mask&lt;8&gt;;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      uint32_t nsamples =</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>          (whole_event_header &gt;&gt; 16) &amp; packing::utility::mask&lt;4&gt;;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      uint32_t eventlen = whole_event_header &amp; packing::utility::mask&lt;16&gt;;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="comment">// sample counters</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      std::vector&lt;uint32_t&gt; length_per_sample(nsamples, 0);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <span class="keywordflow">for</span> (uint32_t i_sample{0}; i_sample &lt; nsamples; i_sample++) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> (i_sample % 2 == 0) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          reader &gt;&gt; w;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        uint32_t shift_in_word = 16 * (i_sample % 2);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        length_per_sample[i_sample] =</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            (w &gt;&gt; shift_in_word) &amp; packing::utility::mask&lt;12&gt;;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <span class="comment">// read first sample headers</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      reader &gt;&gt; head1 &gt;&gt; head2;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (head1 == 0xd07e2021 and head2 == 0x12345678) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <span class="comment">// these are the special footer words at the end,</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="comment">//  done with event</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_class" href="classpacking_1_1utility_1_1CRC.html">packing::utility::CRC</a> fpga_crc;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    fpga_crc &lt;&lt; head1;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    std::cout &lt;&lt; <a class="code hl_struct" href="structpacking_1_1utility_1_1hex.html">hex</a>(head1) &lt;&lt; <span class="stringliteral">&quot; : &quot;</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    uint32_t version = (head1 &gt;&gt; 28) &amp; packing::utility::mask&lt;4&gt;;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// std::cout &lt;&lt; &quot;version &quot; &lt;&lt; version &lt;&lt; std::flush;</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    uint32_t one{1};</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (version != one)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;VersMis&quot;</span>,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                      <span class="stringliteral">&quot;HcalRawDecoder only knows version 1 of DAQ format.&quot;</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    uint32_t fpga = (head1 &gt;&gt; 20) &amp; packing::utility::mask&lt;8&gt;;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    uint32_t nlinks = (head1 &gt;&gt; 14) &amp; packing::utility::mask&lt;6&gt;;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    uint32_t len = head1 &amp; packing::utility::mask&lt;12&gt;;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">// std::cout &lt;&lt; &quot;, fpga: &quot; &lt;&lt; fpga &lt;&lt; &quot;, nlinks: &quot; &lt;&lt; nlinks &lt;&lt; &quot;, len: &quot; &lt;&lt;</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="comment">// len &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    fpga_crc &lt;&lt; head2;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// std::cout &lt;&lt; hex(head2) &lt;&lt; &quot; : &quot;;</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    uint32_t bx_id = (head2 &gt;&gt; 20) &amp; packing::utility::mask&lt;12&gt;;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    uint32_t rreq = (head2 &gt;&gt; 10) &amp; packing::utility::mask&lt;10&gt;;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    uint32_t orbit = head2 &amp; packing::utility::mask&lt;10&gt;;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// std::cout &lt;&lt; &quot;bx_id: &quot; &lt;&lt; bx_id &lt;&lt; &quot;, rreq: &quot; &lt;&lt; rreq &lt;&lt; &quot;, orbit: &quot; &lt;&lt;</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">// orbit &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    std::vector&lt;uint32_t&gt; length_per_link(nlinks, 0);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">for</span> (uint32_t i_link{0}; i_link &lt; nlinks; i_link++) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      <span class="keywordflow">if</span> (i_link % 4 == 0) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        reader &gt;&gt; w;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        fpga_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="comment">// std::cout &lt;&lt; hex(w) &lt;&lt; &quot; : Four Link Pack &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      uint32_t shift_in_word = 8 * (i_link % 4);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      <span class="keywordtype">bool</span> rid_ok = (w &gt;&gt; (shift_in_word + 7)) &amp; packing::utility::mask&lt;1&gt; == 1;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordtype">bool</span> cdc_ok = (w &gt;&gt; (shift_in_word + 6)) &amp; packing::utility::mask&lt;1&gt; == 1;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      length_per_link[i_link] =</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>          (w &gt;&gt; shift_in_word) &amp; packing::utility::mask&lt;6&gt;;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="comment">// std::cout &lt;&lt; &quot;  Link &quot; &lt;&lt; i_link &lt;&lt; &quot; readout &quot; &lt;&lt;</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      <span class="comment">// length_per_link.at(i_link) &lt;&lt; &quot; channels&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">for</span> (uint32_t i_link{0}; i_link &lt; nlinks; i_link++) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="comment">// move on from last word counting links or previous link</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      <span class="comment">// std::cout &lt;&lt; &quot;RO Link &quot; &lt;&lt; i_link &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      <a class="code hl_class" href="classpacking_1_1utility_1_1CRC.html">packing::utility::CRC</a> link_crc;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      reader &gt;&gt; w;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      fpga_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      link_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      uint32_t roc_id = (w &gt;&gt; 16) &amp; packing::utility::mask&lt;16&gt;;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keywordtype">bool</span> crc_ok = (w &gt;&gt; 15) &amp; packing::utility::mask&lt;1&gt; == 1;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="comment">// std::cout &lt;&lt; hex(w) &lt;&lt; &quot; : roc_id &quot; &lt;&lt; roc_id &lt;&lt; &quot;, crc_ok (v2</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      <span class="comment">// always false) &quot; &lt;&lt; std::boolalpha &lt;&lt; crc_ok &lt;&lt; std::endl;</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    std::vector&lt;uint32_t&gt; length_per_link(nlinks, 0);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">for</span> (uint32_t i_link{0}; i_link &lt; nlinks; i_link++) {</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      <span class="keywordflow">if</span> (i_link % 4 == 0) {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        reader_ &gt;&gt; w;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        fpga_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="comment">//std::cout &lt;&lt; debug::hex(w) &lt;&lt; &quot; : Four Link Pack &quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      }</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      uint32_t shift_in_word = 8 * (i_link % 4);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      <span class="keywordtype">bool</span> rid_ok = (w &gt;&gt; (shift_in_word + 7)) &amp; packing::utility::mask&lt;1&gt; == 1;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      <span class="keywordtype">bool</span> cdc_ok = (w &gt;&gt; (shift_in_word + 6)) &amp; packing::utility::mask&lt;1&gt; == 1;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      length_per_link[i_link] =</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>          (w &gt;&gt; shift_in_word) &amp; packing::utility::mask&lt;6&gt;;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="comment">//std::cout &lt;&lt; &quot;  Link &quot; &lt;&lt; i_link &lt;&lt; &quot; readout &quot; &lt;&lt; length_per_link.at(i_link) &lt;&lt; &quot; channels&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordflow">for</span> (uint32_t i_link{0}; i_link &lt; nlinks; i_link++) {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      <span class="comment">// move on from last word counting links or previous link</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      <span class="comment">//std::cout &lt;&lt; &quot;RO Link &quot; &lt;&lt; i_link &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <a class="code hl_class" href="classpacking_1_1utility_1_1CRC.html">packing::utility::CRC</a> link_crc;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      reader_ &gt;&gt; w;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      fpga_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      link_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      uint32_t roc_id = (w &gt;&gt; 16) &amp; packing::utility::mask&lt;16&gt;;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      <span class="keywordtype">bool</span> crc_ok = (w &gt;&gt; 15) &amp; packing::utility::mask&lt;1&gt; == 1;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      <span class="comment">//std::cout &lt;&lt; debug::hex(w) &lt;&lt; &quot; : roc_id &quot; &lt;&lt; roc_id &lt;&lt; &quot;, crc_ok (v2 always false) &quot; &lt;&lt; std::boolalpha &lt;&lt; crc_ok &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      <span class="comment">// get readout map from the last 8 bits of this word</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      <span class="comment">// and the entire next word</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      std::bitset&lt;40&gt; ro_map = w &amp; packing::utility::mask&lt;8&gt;;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      ro_map &lt;&lt;= 32;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      reader_ &gt;&gt; w;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      fpga_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      link_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      ro_map |= w;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      <span class="comment">//std::cout &lt;&lt; &quot;Start looping through channels...&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      <span class="comment">// loop through channels on this link,</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      <span class="comment">//  since some channels may have been suppressed because of low</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      <span class="comment">//  amplitude the channel ID is not the same as the index it</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      <span class="comment">//  is listed in.</span></div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>      <span class="keywordtype">int</span> channel_id{-1};</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>      <span class="keywordflow">for</span> (uint32_t j{0}; j &lt; length_per_link.at(i_link) - 2; j++) {</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="comment">// skip zero-suppressed channel IDs</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keywordflow">do</span> {</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>          channel_id++;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        } <span class="keywordflow">while</span> (channel_id &lt; 40 and not ro_map.test(channel_id));</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="comment">// next word is this channel</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        reader_ &gt;&gt; w;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        fpga_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="comment">//std::cout &lt;&lt; debug::hex(w) &lt;&lt; &quot; &quot; &lt;&lt; channel_id;</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keywordflow">if</span> (channel_id == 0) {</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>          <span class="comment">//std::cout &lt;&lt; &quot; : ROC Header&quot;;</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>          link_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>          uint32_t bx_id = (w &gt;&gt; 16) &amp; packing::utility::mask&lt;12&gt;;</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>          uint32_t short_event = (w &gt;&gt; 10) &amp; packing::utility::mask&lt;6&gt;;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>          uint32_t short_orbit = (w &gt;&gt; 7) &amp; packing::utility::mask&lt;3&gt;;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>          uint32_t hamming_errs = (w &gt;&gt; 4) &amp; packing::utility::mask&lt;3&gt;;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (channel_id == common_mode_channel) {</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>          link_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>          <span class="comment">//std::cout &lt;&lt; &quot; : Common Mode&quot;;</span></div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (channel_id == 39) {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>          <span class="comment">// CRC checksum from ROC</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>          uint32_t crc = w;</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>          <span class="comment">//std::cout &lt;&lt; &quot; : CRC checksum  : &quot; &lt;&lt; debug::hex(link_crc.get()) &lt;&lt; &quot; =? &quot; &lt;&lt; debug::hex(crc);</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>          <span class="comment">/*</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment">          if (link_crc.get() != crc) {</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment">            EXCEPTION_RAISE(&quot;BadCRC&quot;,</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment">                            &quot;Our calculated link checksum doesn&#39;t match the &quot;</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="comment">                            &quot;one from raw data.&quot;);</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="comment">          }</span></div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="comment">          */</span></div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>          link_crc &lt;&lt; w;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>          <span class="comment">//std::cout &lt;&lt; &quot; : DAQ Channel &quot;;</span></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>          <span class="comment">//std::cout &lt;&lt; fpga &lt;&lt; &quot; &quot; &lt;&lt; roc_id-256 &lt;&lt; &quot; &quot; &lt;&lt; channel_id &lt;&lt; &quot; &quot;;</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment"></span>          <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eid(fpga-1, roc_id-256, channel_id);</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>          <span class="comment">//std::cout &lt;&lt; eid.index();</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>          <span class="comment">// copy data into EID-&gt;sample map</span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>          eid_to_samples[eid].emplace_back(w);</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        }  <span class="comment">// type of channel</span></div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="comment">//std::cout &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      }  <span class="comment">// loop over channels (j in Table 4)</span></div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      <span class="comment">//std::cout &lt;&lt; &quot;done looping through channels&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    }  <span class="comment">// loop over links</span></div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="comment">// another CRC checksum from FPGA</span></div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    reader_ &gt;&gt; w;</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    uint32_t crc = w;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="comment">//std::cout &lt;&lt; &quot;FPGA Checksum : &quot; &lt;&lt; debug::hex(fpga_crc.get()) &lt;&lt; &quot; =? &quot; &lt;&lt; debug::hex(crc) &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="comment">/* TODO</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">     *  fix calculation of FPGA checksum</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="comment">     *  I can&#39;t figure out why it isn&#39;t matching, but there</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="comment">     *  is definitely a word here where the FPGA checksum would be.</span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="comment">    if (fpga_crc.get() != crc) {</span></div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="comment">      EXCEPTION_RAISE(</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="comment">          &quot;BadCRC&quot;,</span></div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="comment">          &quot;Our calculated FPGA checksum doesn&#39;t match the one read in.&quot;);</span></div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment">    }</span></div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  }</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a> digis;</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  <span class="comment">// assume all channels have same number of samples</span></div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">setNumSamplesPerDigi</a>(eid_to_samples.begin()-&gt;second.size());</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">setSampleOfInterestIndex</a>(0);  <span class="comment">// TODO configurable</span></div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#abe9ba46a6f93aedf901a6d8209ea0408">setVersion</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a>);</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a>) {</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">auto</span> detmap{</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        getCondition&lt;HcalDetectorMap&gt;(<a class="code hl_variable" href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">HcalDetectorMap::CONDITIONS_OBJECT_NAME</a>)};</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>      <span class="comment">// The electronics map returns an empty ID of the correct</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>      <span class="comment">// type when the electronics ID is not found.</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>      <span class="comment">//  need to check if the electronics ID exists</span></div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>      <span class="comment">//  TODO: do we want to end processing if this happens?</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>      <span class="keywordflow">if</span> (detmap.exists(eid)) {</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        uint32_t did_raw = detmap.get(eid).raw();</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(did_raw, digi);</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>      }</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    }</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>      digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(eid.raw(), digi);</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    }</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  }</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  <span class="comment">//std::cout &lt;&lt; &quot;adding &quot; &lt;&lt; digis.getNumDigis() &lt;&lt; &quot; digis each with &quot; &lt;&lt; digis.getNumSamplesPerDigi() &lt;&lt; &quot; samples to event bus&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a>, digis);</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>}  <span class="comment">// produce</span></div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>}  <span class="comment">// namespace hcal</span></div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span> </div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><a class="code hl_define" href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a>(hcal, HcalRawDecoder);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      <span class="comment">// get readout map from the last 8 bits of this word</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      <span class="comment">// and the entire next word</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      std::bitset&lt;40&gt; ro_map = w &amp; packing::utility::mask&lt;8&gt;;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      ro_map &lt;&lt;= 32;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      reader &gt;&gt; w;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      fpga_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      link_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      ro_map |= w;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      <span class="comment">// std::cout &lt;&lt; &quot;Start looping through channels...&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      <span class="comment">// loop through channels on this link,</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      <span class="comment">//  since some channels may have been suppressed because of low</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="comment">//  amplitude the channel ID is not the same as the index it</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      <span class="comment">//  is listed in.</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      <span class="keywordtype">int</span> channel_id{-1};</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      <span class="keywordflow">for</span> (uint32_t j{0}; j &lt; length_per_link.at(i_link) - 2; j++) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="comment">// skip zero-suppressed channel IDs</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">do</span> {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>          channel_id++;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        } <span class="keywordflow">while</span> (channel_id &lt; 40 and not ro_map.test(channel_id));</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="comment">// next word is this channel</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        reader &gt;&gt; w;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        fpga_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="comment">// std::cout &lt;&lt; hex(w) &lt;&lt; &quot; &quot; &lt;&lt; channel_id;</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">if</span> (channel_id == 0) {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>          <span class="comment">// std::cout &lt;&lt; &quot; : ROC Header&quot;;</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>          link_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>          uint32_t bx_id = (w &gt;&gt; 16) &amp; packing::utility::mask&lt;12&gt;;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>          uint32_t short_event = (w &gt;&gt; 10) &amp; packing::utility::mask&lt;6&gt;;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>          uint32_t short_orbit = (w &gt;&gt; 7) &amp; packing::utility::mask&lt;3&gt;;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>          uint32_t hamming_errs = (w &gt;&gt; 4) &amp; packing::utility::mask&lt;3&gt;;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (channel_id == common_mode_channel) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>          link_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>          <span class="comment">// std::cout &lt;&lt; &quot; : Common Mode&quot;;</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (channel_id == 39) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>          <span class="comment">// CRC checksum from ROC</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>          uint32_t crc = w;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>          <span class="comment">// std::cout &lt;&lt; &quot; : CRC checksum  : &quot; &lt;&lt; hex(link_crc.get()) &lt;&lt;</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>          <span class="comment">// &quot; =? &quot; &lt;&lt; hex(crc);</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>          <span class="comment">/*</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">          if (link_crc.get() != crc) {</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">            EXCEPTION_RAISE(&quot;BadCRC&quot;,</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">                            &quot;Our calculated link checksum doesn&#39;t match the &quot;</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">                            &quot;one from raw data.&quot;);</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">          }</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">          */</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>          link_crc &lt;&lt; w;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>          <span class="comment">// std::cout &lt;&lt; &quot; : DAQ Channel &quot;;</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>          <span class="comment">// std::cout &lt;&lt; fpga &lt;&lt; &quot; &quot; &lt;&lt; roc_id-256 &lt;&lt; &quot; &quot; &lt;&lt; channel_id &lt;&lt; &quot; &quot;;</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment"></span>          <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eid(fpga - 1, roc_id - 256, channel_id);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>          <span class="comment">// std::cout &lt;&lt; eid.index();</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>          <span class="comment">// copy data into EID-&gt;sample map</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>          eid_to_samples[eid].emplace_back(w);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }  <span class="comment">// type of channel</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="comment">// std::cout &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>      }  <span class="comment">// loop over channels (j in Table 4)</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>      <span class="comment">// std::cout &lt;&lt; &quot;done looping through channels&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    }  <span class="comment">// loop over links</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="comment">// another CRC checksum from FPGA</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    reader &gt;&gt; w;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    uint32_t crc = w;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="comment">// std::cout &lt;&lt; &quot;FPGA Checksum : &quot; &lt;&lt; hex(fpga_crc.get()) &lt;&lt; &quot; =? &quot;</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="comment">// &lt;&lt; hex(crc) &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="comment">/* TODO</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">     *  fix calculation of FPGA checksum</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment">     *  I can&#39;t figure out why it isn&#39;t matching, but there</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="comment">     *  is definitely a word here where the FPGA checksum would be.</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="comment">    if (fpga_crc.get() != crc) {</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment">      EXCEPTION_RAISE(</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment">          &quot;BadCRC&quot;,</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">          &quot;Our calculated FPGA checksum doesn&#39;t match the one read in.&quot;);</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="comment">    }</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  }</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a> digis;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="comment">// assume all channels have same number of samples</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">setNumSamplesPerDigi</a>(eid_to_samples.begin()-&gt;second.size());</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">setSampleOfInterestIndex</a>(0);  <span class="comment">// TODO configurable</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#abe9ba46a6f93aedf901a6d8209ea0408">setVersion</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a>);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a>) {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keyword">auto</span> detmap{</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        getCondition&lt;HcalDetectorMap&gt;(<a class="code hl_variable" href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">HcalDetectorMap::CONDITIONS_OBJECT_NAME</a>)};</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      <span class="comment">// The electronics map returns an empty ID of the correct</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>      <span class="comment">// type when the electronics ID is not found.</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      <span class="comment">//  need to check if the electronics ID exists</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      <span class="comment">//  TODO: do we want to end processing if this happens?</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      <span class="keywordflow">if</span> (detmap.exists(eid)) {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        uint32_t did_raw = detmap.get(eid).raw();</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(did_raw, digi);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>      digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(eid.raw(), digi);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  }</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>  <span class="comment">// std::cout &lt;&lt; &quot;adding &quot; &lt;&lt; digis.getNumDigis() &lt;&lt; &quot; digis each with &quot; &lt;&lt;</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  <span class="comment">// digis.getNumSamplesPerDigi() &lt;&lt; &quot; samples to event bus&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a>, digis);</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>}  <span class="comment">// produce</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>}  <span class="comment">// namespace hcal</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><a class="code hl_define" href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a>(hcal, HcalRawDecoder);</div>
 <div class="ttc" id="aEventProcessor_8h_html_a7896421cd58ee79a1eb300ec836c6c92"><div class="ttname"><a href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a></div><div class="ttdeci">#define DECLARE_PRODUCER_NS(NS, CLASS)</div><div class="ttdoc">Macro which allows the framework to construct a producer given its name during configuration.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00371">EventProcessor.h:371</a></div></div>
 <div class="ttc" id="aHcalDetectorMap_8h_html"><div class="ttname"><a href="HcalDetectorMap_8h.html">HcalDetectorMap.h</a></div><div class="ttdoc">Class which contains logic for how the detector items connect to and relate with the reconstruction c...</div></div>
 <div class="ttc" id="aHcalID_8h_html"><div class="ttname"><a href="HcalID_8h.html">HcalID.h</a></div><div class="ttdoc">Class that defines an HCal sensitive detector.</div></div>
@@ -328,20 +299,20 @@ $(function() {
 <div class="ttc" id="aclasshcal_1_1HcalDetectorMap_html_a64e9061e89c3d90fae0bdece25648f2c"><div class="ttname"><a href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">hcal::HcalDetectorMap::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static constexpr const char * CONDITIONS_OBJECT_NAME</div><div class="ttdoc">The name of the EID &lt;-&gt; DetID map for the ECal.</div><div class="ttdef"><b>Definition:</b> <a href="HcalDetectorMap_8h_source.html#l00037">HcalDetectorMap.h:37</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a1766b565bb28b0371c13bc13ff34ea06"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">hcal::HcalRawDecoder::output_name_</a></div><div class="ttdeci">std::string output_name_</div><div class="ttdoc">output object to put onto event bus</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8h_source.html#l00043">HcalRawDecoder.h:43</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a62743465d086472fa7bad74011dac3c6"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">hcal::HcalRawDecoder::input_name_</a></div><div class="ttdeci">std::string input_name_</div><div class="ttdoc">input object of encoded data</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8h_source.html#l00039">HcalRawDecoder.h:39</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ac1e9dcd37913b26a5dc655ddb50539f8"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ac1e9dcd37913b26a5dc655ddb50539f8">hcal::HcalRawDecoder::produce</a></div><div class="ttdeci">virtual void produce(framework::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00071">HcalRawDecoder.cxx:71</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ac1e9dcd37913b26a5dc655ddb50539f8"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ac1e9dcd37913b26a5dc655ddb50539f8">hcal::HcalRawDecoder::produce</a></div><div class="ttdeci">virtual void produce(framework::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00030">HcalRawDecoder.cxx:30</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ac4858afd454e79477c71f6426f09901a"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">hcal::HcalRawDecoder::translate_eid_</a></div><div class="ttdeci">bool translate_eid_</div><div class="ttdoc">are get translating electronic IDs?</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8h_source.html#l00047">HcalRawDecoder.h:47</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ae2d6d2472517d99dc354918d409662be"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">hcal::HcalRawDecoder::roc_version_</a></div><div class="ttdeci">int roc_version_</div><div class="ttdoc">version of HGC ROC we are decoding</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8h_source.html#l00045">HcalRawDecoder.h:45</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ae2f62ffa4149345dac777f7ebdccdab1"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">hcal::HcalRawDecoder::input_pass_</a></div><div class="ttdeci">std::string input_pass_</div><div class="ttdoc">input pass of creating encoded data</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8h_source.html#l00041">HcalRawDecoder.h:41</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ae35faf8fdf781e876c41d3d6b6590a0a"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ae35faf8fdf781e876c41d3d6b6590a0a">hcal::HcalRawDecoder::configure</a></div><div class="ttdeci">virtual void configure(framework::config::Parameters &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00063">HcalRawDecoder.cxx:63</a></div></div>
-<div class="ttc" id="aclasshcal_1_1utility_1_1Reader_html"><div class="ttname"><a href="classhcal_1_1utility_1_1Reader.html">hcal::utility::Reader</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00022">HcalRawDecoder.cxx:22</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalElectronicsID_html"><div class="ttname"><a href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a></div><div class="ttdoc">Identifies a location in the Hcal readout chain.</div><div class="ttdef"><b>Definition:</b> <a href="HcalElectronicsID_8h_source.html#l00022">HcalElectronicsID.h:22</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ae35faf8fdf781e876c41d3d6b6590a0a"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ae35faf8fdf781e876c41d3d6b6590a0a">hcal::HcalRawDecoder::configure</a></div><div class="ttdeci">virtual void configure(framework::config::Parameters &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00022">HcalRawDecoder.cxx:22</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalElectronicsID_html"><div class="ttname"><a href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a></div><div class="ttdoc">Identifies a location in the Hcal readout chain.</div><div class="ttdef"><b>Definition:</b> <a href="HcalElectronicsID_8h_source.html#l00026">HcalElectronicsID.h:26</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a></div><div class="ttdoc">Represents a collection of the digi hits readout by an HGCROC.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00042">HgcrocDigiCollection.h:42</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_a710b705f129831a7029b9b42c3dcdf23"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">ldmx::HgcrocDigiCollection::setNumSamplesPerDigi</a></div><div class="ttdeci">void setNumSamplesPerDigi(unsigned int n)</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00369">HgcrocDigiCollection.h:369</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_aa7400fd63b92e03d22f94898630f1f77"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">ldmx::HgcrocDigiCollection::setSampleOfInterestIndex</a></div><div class="ttdeci">void setSampleOfInterestIndex(unsigned int n)</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00388">HgcrocDigiCollection.h:388</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_abe9ba46a6f93aedf901a6d8209ea0408"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#abe9ba46a6f93aedf901a6d8209ea0408">ldmx::HgcrocDigiCollection::setVersion</a></div><div class="ttdeci">void setVersion(int v)</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00354">HgcrocDigiCollection.h:354</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ad6607762651c38c82453a787dd2da582"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">ldmx::HgcrocDigiCollection::addDigi</a></div><div class="ttdeci">void addDigi(unsigned int id, const std::vector&lt; Sample &gt; &amp;digi)</div></div>
+<div class="ttc" id="aclasspacking_1_1utility_1_1BufferReader_html"><div class="ttname"><a href="classpacking_1_1utility_1_1BufferReader.html">packing::utility::BufferReader</a></div><div class="ttdef"><b>Definition:</b> <a href="BufferReader_8h_source.html#l00034">BufferReader.h:34</a></div></div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1CRC_html"><div class="ttname"><a href="classpacking_1_1utility_1_1CRC.html">packing::utility::CRC</a></div><div class="ttdef"><b>Definition:</b> <a href="CRC_8h_source.html#l00050">CRC.h:50</a></div></div>
-<div class="ttc" id="astructhcal_1_1debug_1_1hex_html"><div class="ttname"><a href="structhcal_1_1debug_1_1hex.html">hcal::debug::hex</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00050">HcalRawDecoder.cxx:50</a></div></div>
+<div class="ttc" id="astructpacking_1_1utility_1_1hex_html"><div class="ttname"><a href="structpacking_1_1utility_1_1hex.html">packing::utility::hex</a></div><div class="ttdef"><b>Definition:</b> <a href="Hex_8h_source.html#l00018">Hex.h:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

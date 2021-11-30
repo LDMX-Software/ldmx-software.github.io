@@ -61,8 +61,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ab0cc9810ab811850915e33a484de151d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classldmx_1_1PackedIndex.html">PackedIndex</a>&lt; 38, 48 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalElectronicsID.html#ab0cc9810ab811850915e33a484de151d">Index</a></td></tr>
-<tr class="separator:ab0cc9810ab811850915e33a484de151d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d68d8128993b43f72ed90917bd380c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classldmx_1_1PackedIndex.html">PackedIndex</a>&lt; 38, 48, 97 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1EcalElectronicsID.html#a33d68d8128993b43f72ed90917bd380c">Index</a></td></tr>
+<tr class="separator:a33d68d8128993b43f72ed90917bd380c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classldmx_1_1DetectorID"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classldmx_1_1DetectorID')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classldmx_1_1DetectorID.html">ldmx::DetectorID</a></td></tr>
 <tr class="memitem:a7784849028a64e04a4cc8e392ae90867 inherit pub_types_classldmx_1_1DetectorID"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1DetectorID.html#a7784849028a64e04a4cc8e392ae90867">RawValue</a></td></tr>
 <tr class="separator:a7784849028a64e04a4cc8e392ae90867 inherit pub_types_classldmx_1_1DetectorID"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,14 +142,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00027">27</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="ab0cc9810ab811850915e33a484de151d" name="ab0cc9810ab811850915e33a484de151d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0cc9810ab811850915e33a484de151d">&#9670;&nbsp;</a></span>Index</h2>
+<a id="a33d68d8128993b43f72ed90917bd380c" name="a33d68d8128993b43f72ed90917bd380c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d68d8128993b43f72ed90917bd380c">&#9670;&nbsp;</a></span>Index</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classldmx_1_1PackedIndex.html">PackedIndex</a>&lt;38,48&gt; <a class="el" href="classldmx_1_1PackedIndex.html">ldmx::EcalElectronicsID::Index</a></td>
+          <td class="memname">typedef <a class="el" href="classldmx_1_1PackedIndex.html">PackedIndex</a>&lt;38,48,97&gt; <a class="el" href="classldmx_1_1PackedIndex.html">ldmx::EcalElectronicsID::Index</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -212,12 +212,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Create from raw number </p>
+<p >Create from raw number</p>
+<p >Importantly, this is NOT the <a class="el" href="classldmx_1_1PackedIndex.html">PackedIndex</a> value, it is the entire raw value including the subsystem ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00044">44</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                                    : <a class="code hl_function" href="classldmx_1_1DetectorID.html#af72923d48236ef23b7599f2ec9248645">DetectorID</a>(rawid) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    SUBDETECTORID_TEST(<span class="stringliteral">&quot;EcalElectronicsID&quot;</span>, EID_ECAL);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00047">47</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                                    : <a class="code hl_function" href="classldmx_1_1DetectorID.html#af72923d48236ef23b7599f2ec9248645">DetectorID</a>(rawid) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    SUBDETECTORID_TEST(<span class="stringliteral">&quot;EcalElectronicsID&quot;</span>, EID_ECAL);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -246,10 +247,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Create from a <a class="el" href="classldmx_1_1DetectorID.html" title="Defines a 32-bit packed ID for uniquely identifying hits and detector components.">DetectorID</a>, but check </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00051">51</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                         : <a class="code hl_function" href="classldmx_1_1DetectorID.html#af72923d48236ef23b7599f2ec9248645">DetectorID</a>(<span class="keywordtype">id</span>) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    SUBDETECTORID_TEST(<span class="stringliteral">&quot;EcalElectronicsID&quot;</span>, EID_ECAL);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00054">54</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                                         : <a class="code hl_function" href="classldmx_1_1DetectorID.html#af72923d48236ef23b7599f2ec9248645">DetectorID</a>(<span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    SUBDETECTORID_TEST(<span class="stringliteral">&quot;EcalElectronicsID&quot;</span>, EID_ECAL);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -294,18 +295,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Create from pieces </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00058">58</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      : <a class="code hl_function" href="classldmx_1_1DetectorID.html#af72923d48236ef23b7599f2ec9248645">DetectorID</a>(EID_ECAL, 0) {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Index <a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a3395fd165b9c6c20dbe8a08ebf9e42c8">index</a>(<a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a61146486c194199042cb498252cb2cf3">channel</a>,<a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a025350fae7b1a051f2b2e365f99f2402">elink</a>,<a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a8922bbd3737428e63beeb9390340fe20">fiber</a>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a> |= <a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a3395fd165b9c6c20dbe8a08ebf9e42c8">index</a>.value();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00061">61</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      : <a class="code hl_function" href="classldmx_1_1DetectorID.html#af72923d48236ef23b7599f2ec9248645">DetectorID</a>(EID_ECAL, 0) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Index <a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a3395fd165b9c6c20dbe8a08ebf9e42c8">index</a>(<a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a61146486c194199042cb498252cb2cf3">channel</a>,<a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a025350fae7b1a051f2b2e365f99f2402">elink</a>,<a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a8922bbd3737428e63beeb9390340fe20">fiber</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a> |= <a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a3395fd165b9c6c20dbe8a08ebf9e42c8">index</a>.value();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
 <div class="ttc" id="aclassldmx_1_1DetectorID_html_ae6e9c21db391a35f38cb5b626d8e4d15"><div class="ttname"><a href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">ldmx::DetectorID::id_</a></div><div class="ttdeci">RawValue id_</div><div class="ttdoc">The raw, packed value of the ID.</div><div class="ttdef"><b>Definition:</b> <a href="DetectorID_8h_source.html#l00083">DetectorID.h:83</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a025350fae7b1a051f2b2e365f99f2402"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a025350fae7b1a051f2b2e365f99f2402">ldmx::EcalElectronicsID::elink</a></div><div class="ttdeci">int elink() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00087">EcalElectronicsID.h:87</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a3395fd165b9c6c20dbe8a08ebf9e42c8"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a3395fd165b9c6c20dbe8a08ebf9e42c8">ldmx::EcalElectronicsID::index</a></div><div class="ttdeci">unsigned int index() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00097">EcalElectronicsID.h:97</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a61146486c194199042cb498252cb2cf3"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a61146486c194199042cb498252cb2cf3">ldmx::EcalElectronicsID::channel</a></div><div class="ttdeci">int channel() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00092">EcalElectronicsID.h:92</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a8922bbd3737428e63beeb9390340fe20"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a8922bbd3737428e63beeb9390340fe20">ldmx::EcalElectronicsID::fiber</a></div><div class="ttdeci">int fiber() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00082">EcalElectronicsID.h:82</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a025350fae7b1a051f2b2e365f99f2402"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a025350fae7b1a051f2b2e365f99f2402">ldmx::EcalElectronicsID::elink</a></div><div class="ttdeci">int elink() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00090">EcalElectronicsID.h:90</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a3395fd165b9c6c20dbe8a08ebf9e42c8"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a3395fd165b9c6c20dbe8a08ebf9e42c8">ldmx::EcalElectronicsID::index</a></div><div class="ttdeci">unsigned int index() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00100">EcalElectronicsID.h:100</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a61146486c194199042cb498252cb2cf3"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a61146486c194199042cb498252cb2cf3">ldmx::EcalElectronicsID::channel</a></div><div class="ttdeci">int channel() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00095">EcalElectronicsID.h:95</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a8922bbd3737428e63beeb9390340fe20"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a8922bbd3737428e63beeb9390340fe20">ldmx::EcalElectronicsID::fiber</a></div><div class="ttdeci">int fiber() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00085">EcalElectronicsID.h:85</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalElectronicsID_8h_source.html#l00092">channel()</a>, <a class="el" href="EcalElectronicsID_8h_source.html#l00087">elink()</a>, <a class="el" href="EcalElectronicsID_8h_source.html#l00082">fiber()</a>, <a class="el" href="DetectorID_8h_source.html#l00083">ldmx::DetectorID::id_</a>, and <a class="el" href="EcalElectronicsID_8h_source.html#l00097">index()</a>.</p>
+<p class="reference">References <a class="el" href="EcalElectronicsID_8h_source.html#l00095">channel()</a>, <a class="el" href="EcalElectronicsID_8h_source.html#l00090">elink()</a>, <a class="el" href="EcalElectronicsID_8h_source.html#l00085">fiber()</a>, <a class="el" href="DetectorID_8h_source.html#l00083">ldmx::DetectorID::id_</a>, and <a class="el" href="EcalElectronicsID_8h_source.html#l00100">index()</a>.</p>
 
 </div>
 </div>
@@ -334,12 +335,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the value of the fiber from the ID. </p><dl class="section return"><dt>Returns</dt><dd>The value of the fiber field. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00092">92</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{ <span class="keywordflow">return</span> Index(<a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a>&amp;INDEX_MASK).field0(); }</div>
+<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00095">95</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{ <span class="keywordflow">return</span> Index(<a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a>&amp;INDEX_MASK).field0(); }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00056">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field0()</a>, and <a class="el" href="DetectorID_8h_source.html#l00083">ldmx::DetectorID::id_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00058">EcalElectronicsID()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00061">EcalElectronicsID()</a>.</p>
 
 </div>
 </div>
@@ -367,12 +368,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the value of the fiber from the ID. </p><dl class="section return"><dt>Returns</dt><dd>The value of the fiber field. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00087">87</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{ <span class="keywordflow">return</span> Index(<a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a>&amp;INDEX_MASK).field1(); }</div>
+<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00090">90</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{ <span class="keywordflow">return</span> Index(<a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a>&amp;INDEX_MASK).field1(); }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00058">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field1()</a>, and <a class="el" href="DetectorID_8h_source.html#l00083">ldmx::DetectorID::id_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00058">EcalElectronicsID()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00061">EcalElectronicsID()</a>.</p>
 
 </div>
 </div>
@@ -400,12 +401,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the value of the fiber from the ID. </p><dl class="section return"><dt>Returns</dt><dd>The value of the fiber field. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00082">82</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{ <span class="keywordflow">return</span> Index(<a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a>&amp;INDEX_MASK).field2(); }</div>
+<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00085">85</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{ <span class="keywordflow">return</span> Index(<a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a>&amp;INDEX_MASK).field2(); }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="PackedIndex_8h_source.html#l00060">ldmx::PackedIndex&lt; m0, m1, m2 &gt;::field2()</a>, and <a class="el" href="DetectorID_8h_source.html#l00083">ldmx::DetectorID::id_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00058">EcalElectronicsID()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00061">EcalElectronicsID()</a>.</p>
 
 </div>
 </div>
@@ -435,15 +436,15 @@ Additional Inherited Members</h2></td></tr>
 <p >Construct an electronics id from an index</p>
 <p >This looks ugly (and it is) because we already have a constructor that uses the unsigned int type. This means we need a different static method for translating something we know to be an EID index rather than a full DetID raw value. </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00072">72</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                                           {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a2c0037976e5349673b730ca731ad2330">EcalElectronicsID</a> eid;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    eid.id_|=<a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a3395fd165b9c6c20dbe8a08ebf9e42c8">index</a>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> eid;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00075">75</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                                           {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a2c0037976e5349673b730ca731ad2330">EcalElectronicsID</a> eid;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    eid.id_|=<a class="code hl_function" href="classldmx_1_1EcalElectronicsID.html#a3395fd165b9c6c20dbe8a08ebf9e42c8">index</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">return</span> eid;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  }</div>
 <div class="ttc" id="aclassldmx_1_1EcalElectronicsID_html_a2c0037976e5349673b730ca731ad2330"><div class="ttname"><a href="classldmx_1_1EcalElectronicsID.html#a2c0037976e5349673b730ca731ad2330">ldmx::EcalElectronicsID::EcalElectronicsID</a></div><div class="ttdeci">EcalElectronicsID()</div><div class="ttdef"><b>Definition:</b> <a href="EcalElectronicsID_8h_source.html#l00039">EcalElectronicsID.h:39</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="DetectorID_8h_source.html#l00083">ldmx::DetectorID::id_</a>, and <a class="el" href="EcalElectronicsID_8h_source.html#l00097">index()</a>.</p>
+<p class="reference">References <a class="el" href="DetectorID_8h_source.html#l00083">ldmx::DetectorID::id_</a>, and <a class="el" href="EcalElectronicsID_8h_source.html#l00100">index()</a>.</p>
 
 </div>
 </div>
@@ -471,12 +472,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the compact index value </p>
 
-<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00097">97</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a>&amp;INDEX_MASK; }</div>
+<p class="definition">Definition at line <a class="el" href="EcalElectronicsID_8h_source.html#l00100">100</a> of file <a class="el" href="EcalElectronicsID_8h_source.html">EcalElectronicsID.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1DetectorID.html#ae6e9c21db391a35f38cb5b626d8e4d15">id_</a>&amp;INDEX_MASK; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="DetectorID_8h_source.html#l00083">ldmx::DetectorID::id_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00058">EcalElectronicsID()</a>, and <a class="el" href="EcalElectronicsID_8h_source.html#l00072">idFromIndex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalElectronicsID_8h_source.html#l00061">EcalElectronicsID()</a>, and <a class="el" href="EcalElectronicsID_8h_source.html#l00075">idFromIndex()</a>.</p>
 
 </div>
 </div>
