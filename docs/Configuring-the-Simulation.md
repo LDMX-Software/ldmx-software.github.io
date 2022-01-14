@@ -26,6 +26,15 @@ Parameter | Type | Accessed By | Description
 `enableHitContribs` | bool | RootPersistencyManager | Should the simulation allow for the different contributors to an ECal hit be stored?
 `compressHitContribs` | bool | RootPersistencyManager | Should the simulation compress the contributors by combining any contributors with the same PDG ID?
 
+Note: In earlier versions of LDMX-sw, you would set the `runNumber` parameter in
+the simulator. The `runNumber` is a unique number (int) that identifies this
+run. In current versions of LDMX-sw, the `runNumber` is set as a parameter to
+the process directly. In other words, along the lines of
+```python
+p = ldmxcfg.Process("simulation")
+p.runNumber = 9001
+```
+
 ### Biasing
 
 Biasing is helpful for efficiently simulating the detector's response to various events.
