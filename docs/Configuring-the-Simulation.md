@@ -18,7 +18,6 @@ Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
 `detector` | string | Simulator | Full path to detector gdml description
 `description` | string | Simulator and RootPersistencyManager | Concise phrase describing this simulation in a human-readable way
-`runNumber` | int | Simulator and RootPersistencyManager | Unique number identifying this run
 `verbosity` | int | Simulator | Integer flag describing how verbose to be
 `scoringPlanes` | string | RunManager | Full path to scoring plane gdml description
 `randomSeeds` | vector of ints | Simulator | Lists random seeds to pass to Geant4
