@@ -80,7 +80,7 @@ from LDMX.Framework import ldmxcfg
 p = ldmxcfg.Process( "sim" )
 
 # Set the unique number that identifies this run
-p.runNumber = 9001 
+p.run = 9001 
 # import a template simulator and change some of its parameters
 from LDMX.SimCore import generators
 from LDMX.SimCore import simulator

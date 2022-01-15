@@ -28,17 +28,18 @@ Parameter | Type | Accessed By | Description
 
 Note: In earlier versions of LDMX-sw, you would set the `runNumber` parameter in
 the simulator. The `runNumber` is a unique number (int) that identifies this
-run. In current versions of LDMX-sw, the `runNumber` is set as a parameter to
+run. In current versions of LDMX-sw, the `runNumber` is called `run` and is set as a parameter to
 the process directly. In other words, along the lines of
 ```python
 p = ldmxcfg.Process("simulation")
-p.runNumber = 9001
+p.run = 9001
 ```
 
 ### Biasing
 
-Biasing is helpful for efficiently simulating the detector's response to various events.
-The biasing parameters are given directly to the simulation and are listed below.
+Biasing is helpful for efficiently simulating the detector's response to various
+events. The biasing parameters are given directly to the simulation and are
+listed below.
 
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
