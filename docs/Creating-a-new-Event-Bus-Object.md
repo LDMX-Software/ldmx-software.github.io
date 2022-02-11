@@ -32,3 +32,10 @@ Method | Description
 These should be the minimum requirements that allow you to `add` and `get` your class to/from the event bus.
 
 Note: ROOT has a weird way of keeping track of class "versions" so if you change your class, you may need to increment the number in the ClassDef command by one in order to force ROOT to recognize the newer "version" of your class. You can reset this incrementation by deleting the ldmx install and build and recompiling from scratch.
+
+### Clean Environment
+If you are adding a new object after already developing with ldmx-sw, you will need to remove some auto-generated files so that the cmake system can "detect" your new event bus object. The easiest way to do this is to delete your build directory and then go into the Framework module and use `git` to clean it:
+```
+cd Framework
+git clean -xxfd
+```
