@@ -124,6 +124,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a1766b565bb28b0371c13bc13ff34ea06"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a></td></tr>
 <tr class="memdesc:a1766b565bb28b0371c13bc13ff34ea06"><td class="mdescLeft">&#160;</td><td class="mdescRight">output object to put onto event bus  <a href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">More...</a><br /></td></tr>
 <tr class="separator:a1766b565bb28b0371c13bc13ff34ea06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01be7b9afb6ad869d9c0cf1ec061a554"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalRawDecoder.html#a01be7b9afb6ad869d9c0cf1ec061a554">detector_name_</a></td></tr>
+<tr class="memdesc:a01be7b9afb6ad869d9c0cf1ec061a554"><td class="mdescLeft">&#160;</td><td class="mdescRight">the detector name if we are reading from a file  <a href="classhcal_1_1HcalRawDecoder.html#a01be7b9afb6ad869d9c0cf1ec061a554">More...</a><br /></td></tr>
+<tr class="separator:a01be7b9afb6ad869d9c0cf1ec061a554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2d6d2472517d99dc354918d409662be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a></td></tr>
 <tr class="memdesc:ae2d6d2472517d99dc354918d409662be"><td class="mdescLeft">&#160;</td><td class="mdescRight">version of HGC ROC we are decoding  <a href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">More...</a><br /></td></tr>
 <tr class="separator:ae2d6d2472517d99dc354918d409662be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,17 +235,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1Producer.html#a8b68d090cd4e50c3c572825bc57bebff">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00517">517</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  517</span>                                                   {</div>
-<div class="line"><span class="lineno">  518</span>  <span class="comment">// if we are reading from a file, we need to provide the detector name</span></div>
-<div class="line"><span class="lineno">  519</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">read_from_file_</a>) {</div>
-<div class="line"><span class="lineno">  520</span>    rh.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">setDetectorName</a>(<span class="stringliteral">&quot;DNE&quot;</span>);</div>
-<div class="line"><span class="lineno">  521</span>  }</div>
-<div class="line"><span class="lineno">  522</span>}</div>
-<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a119d231da32e350a0ac61dac26cd7fc3"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">hcal::HcalRawDecoder::read_from_file_</a></div><div class="ttdeci">bool read_from_file_</div><div class="ttdoc">is the input_name a file or an event object</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00498">HcalRawDecoder.cxx:498</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00520">520</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  520</span>                                                   {</div>
+<div class="line"><span class="lineno">  521</span>  <span class="comment">// if we are reading from a file, we need to provide the detector name</span></div>
+<div class="line"><span class="lineno">  522</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">read_from_file_</a>) {</div>
+<div class="line"><span class="lineno">  523</span>    rh.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">setDetectorName</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a01be7b9afb6ad869d9c0cf1ec061a554">detector_name_</a>);</div>
+<div class="line"><span class="lineno">  524</span>  }</div>
+<div class="line"><span class="lineno">  525</span>}</div>
+<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a01be7b9afb6ad869d9c0cf1ec061a554"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a01be7b9afb6ad869d9c0cf1ec061a554">hcal::HcalRawDecoder::detector_name_</a></div><div class="ttdeci">std::string detector_name_</div><div class="ttdoc">the detector name if we are reading from a file</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00494">HcalRawDecoder.cxx:494</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a119d231da32e350a0ac61dac26cd7fc3"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">hcal::HcalRawDecoder::read_from_file_</a></div><div class="ttdeci">bool read_from_file_</div><div class="ttdoc">is the input_name a file or an event object</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00500">HcalRawDecoder.cxx:500</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_a42e321c3639bb8fc2021ae0d8664744c"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">ldmx::RunHeader::setDetectorName</a></div><div class="ttdeci">void setDetectorName(const std::string &amp;det)</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00048">RunHeader.h:48</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalRawDecoder_8cxx_source.html#l00498">read_from_file_</a>, and <a class="el" href="RunHeader_8h_source.html#l00048">ldmx::RunHeader::setDetectorName()</a>.</p>
+<p class="reference">References <a class="el" href="HcalRawDecoder_8cxx_source.html#l00494">detector_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00500">read_from_file_</a>, and <a class="el" href="RunHeader_8h_source.html#l00048">ldmx::RunHeader::setDetectorName()</a>.</p>
 
 </div>
 </div>
@@ -281,28 +285,29 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a21156f6f3954394925e9a265de9d702a">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00504">504</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  504</span>                                                            {</div>
-<div class="line"><span class="lineno">  505</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a> = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;input_name&quot;</span>);</div>
-<div class="line"><span class="lineno">  506</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">input_pass_</a> = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass&quot;</span>);</div>
-<div class="line"><span class="lineno">  507</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a> = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;output_name&quot;</span>);</div>
-<div class="line"><span class="lineno">  508</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a> = ps.getParameter&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;roc_version&quot;</span>);</div>
-<div class="line"><span class="lineno">  509</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a> = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;translate_eid&quot;</span>);</div>
-<div class="line"><span class="lineno">  510</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">read_from_file_</a> = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;read_from_file&quot;</span>);</div>
-<div class="line"><span class="lineno">  511</span> </div>
-<div class="line"><span class="lineno">  512</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">read_from_file_</a>) {</div>
-<div class="line"><span class="lineno">  513</span>    <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">file_reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#a3f079b5932b585a729b22e653e8a8b20">open</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a>);</div>
-<div class="line"><span class="lineno">  514</span>  } </div>
-<div class="line"><span class="lineno">  515</span>}</div>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">506</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  506</span>                                                            {</div>
+<div class="line"><span class="lineno">  507</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a> = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;input_name&quot;</span>);</div>
+<div class="line"><span class="lineno">  508</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">input_pass_</a> = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass&quot;</span>);</div>
+<div class="line"><span class="lineno">  509</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a> = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;output_name&quot;</span>);</div>
+<div class="line"><span class="lineno">  510</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a> = ps.getParameter&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;roc_version&quot;</span>);</div>
+<div class="line"><span class="lineno">  511</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a> = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;translate_eid&quot;</span>);</div>
+<div class="line"><span class="lineno">  512</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">read_from_file_</a> = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;read_from_file&quot;</span>);</div>
+<div class="line"><span class="lineno">  513</span>  <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a01be7b9afb6ad869d9c0cf1ec061a554">detector_name_</a> = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;detector_name&quot;</span>);</div>
+<div class="line"><span class="lineno">  514</span> </div>
+<div class="line"><span class="lineno">  515</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">read_from_file_</a>) {</div>
+<div class="line"><span class="lineno">  516</span>    <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">file_reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#a3f079b5932b585a729b22e653e8a8b20">open</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a>);</div>
+<div class="line"><span class="lineno">  517</span>  } </div>
+<div class="line"><span class="lineno">  518</span>}</div>
 <div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a1766b565bb28b0371c13bc13ff34ea06"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">hcal::HcalRawDecoder::output_name_</a></div><div class="ttdeci">std::string output_name_</div><div class="ttdoc">output object to put onto event bus</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00492">HcalRawDecoder.cxx:492</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a62743465d086472fa7bad74011dac3c6"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">hcal::HcalRawDecoder::input_name_</a></div><div class="ttdeci">std::string input_name_</div><div class="ttdoc">input object of encoded data</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00488">HcalRawDecoder.cxx:488</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a693196e84aabd7060558dfbc915133ab"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">hcal::HcalRawDecoder::file_reader_</a></div><div class="ttdeci">packing::utility::Reader file_reader_</div><div class="ttdoc">the file reader (if we are doing that)</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00501">HcalRawDecoder.cxx:501</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ac4858afd454e79477c71f6426f09901a"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">hcal::HcalRawDecoder::translate_eid_</a></div><div class="ttdeci">bool translate_eid_</div><div class="ttdoc">are get translating electronic IDs?</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00496">HcalRawDecoder.cxx:496</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ae2d6d2472517d99dc354918d409662be"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">hcal::HcalRawDecoder::roc_version_</a></div><div class="ttdeci">int roc_version_</div><div class="ttdoc">version of HGC ROC we are decoding</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00494">HcalRawDecoder.cxx:494</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_a693196e84aabd7060558dfbc915133ab"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">hcal::HcalRawDecoder::file_reader_</a></div><div class="ttdeci">packing::utility::Reader file_reader_</div><div class="ttdoc">the file reader (if we are doing that)</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00503">HcalRawDecoder.cxx:503</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ac4858afd454e79477c71f6426f09901a"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">hcal::HcalRawDecoder::translate_eid_</a></div><div class="ttdeci">bool translate_eid_</div><div class="ttdoc">are get translating electronic IDs?</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00498">HcalRawDecoder.cxx:498</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ae2d6d2472517d99dc354918d409662be"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">hcal::HcalRawDecoder::roc_version_</a></div><div class="ttdeci">int roc_version_</div><div class="ttdoc">version of HGC ROC we are decoding</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00496">HcalRawDecoder.cxx:496</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalRawDecoder_html_ae2f62ffa4149345dac777f7ebdccdab1"><div class="ttname"><a href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">hcal::HcalRawDecoder::input_pass_</a></div><div class="ttdeci">std::string input_pass_</div><div class="ttdoc">input pass of creating encoded data</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00490">HcalRawDecoder.cxx:490</a></div></div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1Reader_html_a3f079b5932b585a729b22e653e8a8b20"><div class="ttname"><a href="classpacking_1_1utility_1_1Reader.html#a3f079b5932b585a729b22e653e8a8b20">packing::utility::Reader::open</a></div><div class="ttdeci">void open(const std::string &amp;file_name)</div><div class="ttdef"><b>Definition:</b> <a href="Reader_8h_source.html#l00037">Reader.h:37</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalRawDecoder_8cxx_source.html#l00501">file_reader_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00488">input_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00490">input_pass_</a>, <a class="el" href="Reader_8h_source.html#l00037">packing::utility::Reader::open()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00492">output_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00498">read_from_file_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00494">roc_version_</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00496">translate_eid_</a>.</p>
+<p class="reference">References <a class="el" href="HcalRawDecoder_8cxx_source.html#l00494">detector_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00503">file_reader_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00488">input_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00490">input_pass_</a>, <a class="el" href="Reader_8h_source.html#l00037">packing::utility::Reader::open()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00492">output_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00500">read_from_file_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00496">roc_version_</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00498">translate_eid_</a>.</p>
 
 </div>
 </div>
@@ -338,59 +343,59 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">524</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  524</span>                                                  {</div>
-<div class="line"><span class="lineno">  525</span> </div>
-<div class="line"><span class="lineno">  526</span>  std::map&lt;<a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a>,</div>
-<div class="line"><span class="lineno">  527</span>           std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt;&gt;</div>
-<div class="line"><span class="lineno">  528</span>      eid_to_samples;</div>
-<div class="line"><span class="lineno">  529</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">read_from_file_</a>) {</div>
-<div class="line"><span class="lineno">  530</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">file_reader_</a> or <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">file_reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#a6b5ae36ce746cc77969bbafb0a0d661f">eof</a>()) <a class="code hl_function" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a>();</div>
-<div class="line"><span class="lineno">  531</span>    eid_to_samples = this-&gt;<a class="code hl_function" href="classhcal_1_1HcalRawDecoder.html#a18667da77bde1f240b170e60f4da1412">read</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">file_reader_</a>);</div>
-<div class="line"><span class="lineno">  532</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  533</span>    <a class="code hl_class" href="classhcal_1_1utility_1_1Reader.html">hcal::utility::Reader</a> bus_reader(event.<a class="code hl_function" href="classframework_1_1Event.html#a114c2b1849dc2223d2077fe1f1ae0294">getCollection</a>&lt;uint8_t&gt;(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a>, <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">input_pass_</a>));</div>
-<div class="line"><span class="lineno">  534</span>    eid_to_samples = this-&gt;<a class="code hl_function" href="classhcal_1_1HcalRawDecoder.html#a18667da77bde1f240b170e60f4da1412">read</a>(bus_reader);</div>
-<div class="line"><span class="lineno">  535</span>  }</div>
-<div class="line"><span class="lineno">  536</span> </div>
-<div class="line"><span class="lineno">  537</span>  <a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a> digis;</div>
-<div class="line"><span class="lineno">  538</span>  <span class="comment">// assume all channels have same number of samples</span></div>
-<div class="line"><span class="lineno">  539</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">setNumSamplesPerDigi</a>(eid_to_samples.begin()-&gt;second.size());</div>
-<div class="line"><span class="lineno">  540</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">setSampleOfInterestIndex</a>(0);  <span class="comment">// TODO configurable</span></div>
-<div class="line"><span class="lineno">  541</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#abe9ba46a6f93aedf901a6d8209ea0408">setVersion</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a>);</div>
-<div class="line"><span class="lineno">  542</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a>) {</div>
-<div class="line"><span class="lineno">  550</span><span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><span class="lineno">  551</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Translating EIDs into DetIDs. Printing skipped EIDs...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  552</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  553</span>    <span class="keyword">auto</span> detmap{</div>
-<div class="line"><span class="lineno">  554</span>        getCondition&lt;HcalDetectorMap&gt;(<a class="code hl_variable" href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">HcalDetectorMap::CONDITIONS_OBJECT_NAME</a>)};</div>
-<div class="line"><span class="lineno">  555</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
-<div class="line"><span class="lineno">  556</span>      <span class="comment">// The electronics map returns an empty ID of the correct</span></div>
-<div class="line"><span class="lineno">  557</span>      <span class="comment">// type when the electronics ID is not found.</span></div>
-<div class="line"><span class="lineno">  558</span>      <span class="comment">//  need to check if the electronics ID exists</span></div>
-<div class="line"><span class="lineno">  559</span>      <span class="comment">//  TODO: do we want to end processing if this happens?</span></div>
-<div class="line"><span class="lineno">  560</span>      <span class="keywordflow">if</span> (detmap.exists(eid)) {</div>
-<div class="line"><span class="lineno">  561</span>        uint32_t did_raw = detmap.get(eid).raw();</div>
-<div class="line"><span class="lineno">  562</span>        digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(did_raw, digi);</div>
-<div class="line"><span class="lineno">  563</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  570</span><span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><span class="lineno">  571</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;EID(&quot;</span> &lt;&lt; eid.fiber() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; eid.elink() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; eid.channel() &lt;&lt; <span class="stringliteral">&quot;) &quot;</span>;</div>
-<div class="line"><span class="lineno">  572</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; s : digi) std::cout &lt;&lt; debug::hex(s.raw()) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">  573</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  574</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  575</span>      }</div>
-<div class="line"><span class="lineno">  576</span>    }</div>
-<div class="line"><span class="lineno">  577</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  585</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
-<div class="line"><span class="lineno">  586</span>      digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(eid.raw(), digi);</div>
-<div class="line"><span class="lineno">  587</span>    }</div>
-<div class="line"><span class="lineno">  588</span>  }</div>
-<div class="line"><span class="lineno">  589</span> </div>
-<div class="line"><span class="lineno">  590</span><span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><span class="lineno">  591</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;adding &quot;</span> &lt;&lt; digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">getNumDigis</a>() &lt;&lt; <span class="stringliteral">&quot; digis each with &quot;</span> &lt;&lt; digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a49b29a90c1b5595c224362ae682474ae">getNumSamplesPerDigi</a>() &lt;&lt; <span class="stringliteral">&quot; samples to event bus&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  592</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  593</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a>, digis);</div>
-<div class="line"><span class="lineno">  594</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  595</span>}  <span class="comment">// produce</span></div>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">527</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  527</span>                                                  {</div>
+<div class="line"><span class="lineno">  528</span> </div>
+<div class="line"><span class="lineno">  529</span>  std::map&lt;<a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a>,</div>
+<div class="line"><span class="lineno">  530</span>           std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt;&gt;</div>
+<div class="line"><span class="lineno">  531</span>      eid_to_samples;</div>
+<div class="line"><span class="lineno">  532</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a119d231da32e350a0ac61dac26cd7fc3">read_from_file_</a>) {</div>
+<div class="line"><span class="lineno">  533</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">file_reader_</a> or <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">file_reader_</a>.<a class="code hl_function" href="classpacking_1_1utility_1_1Reader.html#a6b5ae36ce746cc77969bbafb0a0d661f">eof</a>()) <a class="code hl_function" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a>();</div>
+<div class="line"><span class="lineno">  534</span>    eid_to_samples = this-&gt;<a class="code hl_function" href="classhcal_1_1HcalRawDecoder.html#a18667da77bde1f240b170e60f4da1412">read</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a693196e84aabd7060558dfbc915133ab">file_reader_</a>);</div>
+<div class="line"><span class="lineno">  535</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  536</span>    <a class="code hl_class" href="classhcal_1_1utility_1_1Reader.html">hcal::utility::Reader</a> bus_reader(event.<a class="code hl_function" href="classframework_1_1Event.html#a114c2b1849dc2223d2077fe1f1ae0294">getCollection</a>&lt;uint8_t&gt;(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a62743465d086472fa7bad74011dac3c6">input_name_</a>, <a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2f62ffa4149345dac777f7ebdccdab1">input_pass_</a>));</div>
+<div class="line"><span class="lineno">  537</span>    eid_to_samples = this-&gt;<a class="code hl_function" href="classhcal_1_1HcalRawDecoder.html#a18667da77bde1f240b170e60f4da1412">read</a>(bus_reader);</div>
+<div class="line"><span class="lineno">  538</span>  }</div>
+<div class="line"><span class="lineno">  539</span> </div>
+<div class="line"><span class="lineno">  540</span>  <a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a> digis;</div>
+<div class="line"><span class="lineno">  541</span>  <span class="comment">// assume all channels have same number of samples</span></div>
+<div class="line"><span class="lineno">  542</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">setNumSamplesPerDigi</a>(eid_to_samples.begin()-&gt;second.size());</div>
+<div class="line"><span class="lineno">  543</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">setSampleOfInterestIndex</a>(0);  <span class="comment">// TODO configurable</span></div>
+<div class="line"><span class="lineno">  544</span>  digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#abe9ba46a6f93aedf901a6d8209ea0408">setVersion</a>(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ae2d6d2472517d99dc354918d409662be">roc_version_</a>);</div>
+<div class="line"><span class="lineno">  545</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#ac4858afd454e79477c71f6426f09901a">translate_eid_</a>) {</div>
+<div class="line"><span class="lineno">  553</span><span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><span class="lineno">  554</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Translating EIDs into DetIDs. Printing skipped EIDs...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  555</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  556</span>    <span class="keyword">auto</span> detmap{</div>
+<div class="line"><span class="lineno">  557</span>        getCondition&lt;HcalDetectorMap&gt;(<a class="code hl_variable" href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">HcalDetectorMap::CONDITIONS_OBJECT_NAME</a>)};</div>
+<div class="line"><span class="lineno">  558</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
+<div class="line"><span class="lineno">  559</span>      <span class="comment">// The electronics map returns an empty ID of the correct</span></div>
+<div class="line"><span class="lineno">  560</span>      <span class="comment">// type when the electronics ID is not found.</span></div>
+<div class="line"><span class="lineno">  561</span>      <span class="comment">//  need to check if the electronics ID exists</span></div>
+<div class="line"><span class="lineno">  562</span>      <span class="comment">//  TODO: do we want to end processing if this happens?</span></div>
+<div class="line"><span class="lineno">  563</span>      <span class="keywordflow">if</span> (detmap.exists(eid)) {</div>
+<div class="line"><span class="lineno">  564</span>        uint32_t did_raw = detmap.get(eid).raw();</div>
+<div class="line"><span class="lineno">  565</span>        digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(did_raw, digi);</div>
+<div class="line"><span class="lineno">  566</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  573</span><span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><span class="lineno">  574</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;EID(&quot;</span> &lt;&lt; eid.fiber() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; eid.elink() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; eid.channel() &lt;&lt; <span class="stringliteral">&quot;) &quot;</span>;</div>
+<div class="line"><span class="lineno">  575</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; s : digi) std::cout &lt;&lt; debug::hex(s.raw()) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">  576</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  577</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  578</span>      }</div>
+<div class="line"><span class="lineno">  579</span>    }</div>
+<div class="line"><span class="lineno">  580</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  588</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [eid, digi] : eid_to_samples) {</div>
+<div class="line"><span class="lineno">  589</span>      digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(eid.raw(), digi);</div>
+<div class="line"><span class="lineno">  590</span>    }</div>
+<div class="line"><span class="lineno">  591</span>  }</div>
+<div class="line"><span class="lineno">  592</span> </div>
+<div class="line"><span class="lineno">  593</span><span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><span class="lineno">  594</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;adding &quot;</span> &lt;&lt; digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">getNumDigis</a>() &lt;&lt; <span class="stringliteral">&quot; digis each with &quot;</span> &lt;&lt; digis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a49b29a90c1b5595c224362ae682474ae">getNumSamplesPerDigi</a>() &lt;&lt; <span class="stringliteral">&quot; samples to event bus&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  595</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  596</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalRawDecoder.html#a1766b565bb28b0371c13bc13ff34ea06">output_name_</a>, digis);</div>
+<div class="line"><span class="lineno">  597</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  598</span>}  <span class="comment">// produce</span></div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_a8d42387da8fbb2d1f01f5ecebb64dd7d"><div class="ttname"><a href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">framework::EventProcessor::abortEvent</a></div><div class="ttdeci">void abortEvent()</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00213">EventProcessor.h:213</a></div></div>
 <div class="ttc" id="aclassframework_1_1Event_html_a114c2b1849dc2223d2077fe1f1ae0294"><div class="ttname"><a href="classframework_1_1Event.html#a114c2b1849dc2223d2077fe1f1ae0294">framework::Event::getCollection</a></div><div class="ttdeci">const std::vector&lt; ContentType &gt; &amp; getCollection(const std::string &amp;collectionName, const std::string &amp;passName=&quot;&quot;) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00366">Event.h:366</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalDetectorMap_html_a64e9061e89c3d90fae0bdece25648f2c"><div class="ttname"><a href="classhcal_1_1HcalDetectorMap.html#a64e9061e89c3d90fae0bdece25648f2c">hcal::HcalDetectorMap::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static constexpr const char * CONDITIONS_OBJECT_NAME</div><div class="ttdoc">The name of the EID &lt;-&gt; DetID map for the ECal.</div><div class="ttdef"><b>Definition:</b> <a href="HcalDetectorMap_8h_source.html#l00037">HcalDetectorMap.h:37</a></div></div>
@@ -406,7 +411,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html_ae3580a8a632b91b0ff4265346cc74715"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">ldmx::HgcrocDigiCollection::getNumDigis</a></div><div class="ttdeci">unsigned int getNumDigis() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00412">HgcrocDigiCollection.h:412</a></div></div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1Reader_html_a6b5ae36ce746cc77969bbafb0a0d661f"><div class="ttname"><a href="classpacking_1_1utility_1_1Reader.html#a6b5ae36ce746cc77969bbafb0a0d661f">packing::utility::Reader::eof</a></div><div class="ttdeci">bool eof()</div><div class="ttdef"><b>Definition:</b> <a href="Reader_8h_source.html#l00215">Reader.h:215</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00213">framework::EventProcessor::abortEvent()</a>, <a class="el" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">ldmx::HgcrocDigiCollection::addDigi()</a>, <a class="el" href="HcalDetectorMap_8h_source.html#l00037">hcal::HcalDetectorMap::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="Reader_8h_source.html#l00215">packing::utility::Reader::eof()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00501">file_reader_</a>, <a class="el" href="Event_8h_source.html#l00366">framework::Event::getCollection()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00412">ldmx::HgcrocDigiCollection::getNumDigis()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00363">ldmx::HgcrocDigiCollection::getNumSamplesPerDigi()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00488">input_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00490">input_pass_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00492">output_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">read()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00498">read_from_file_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00494">roc_version_</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00369">ldmx::HgcrocDigiCollection::setNumSamplesPerDigi()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00388">ldmx::HgcrocDigiCollection::setSampleOfInterestIndex()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00354">ldmx::HgcrocDigiCollection::setVersion()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00496">translate_eid_</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00213">framework::EventProcessor::abortEvent()</a>, <a class="el" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">ldmx::HgcrocDigiCollection::addDigi()</a>, <a class="el" href="HcalDetectorMap_8h_source.html#l00037">hcal::HcalDetectorMap::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="Reader_8h_source.html#l00215">packing::utility::Reader::eof()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00503">file_reader_</a>, <a class="el" href="Event_8h_source.html#l00366">framework::Event::getCollection()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00412">ldmx::HgcrocDigiCollection::getNumDigis()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00363">ldmx::HgcrocDigiCollection::getNumSamplesPerDigi()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00488">input_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00490">input_pass_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00492">output_name_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">read()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00500">read_from_file_</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00496">roc_version_</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00369">ldmx::HgcrocDigiCollection::setNumSamplesPerDigi()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00388">ldmx::HgcrocDigiCollection::setSampleOfInterestIndex()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00354">ldmx::HgcrocDigiCollection::setVersion()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00498">translate_eid_</a>.</p>
 
 </div>
 </div>
@@ -789,13 +794,41 @@ template&lt;typename ReaderType &gt; </div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1CRC_html"><div class="ttname"><a href="classpacking_1_1utility_1_1CRC.html">packing::utility::CRC</a></div><div class="ttdef"><b>Definition:</b> <a href="CRC_8h_source.html#l00050">CRC.h:50</a></div></div>
 <div class="ttc" id="aclasspacking_1_1utility_1_1CRC_html_a39bd7de79bc06f86ad7b9e1c8e68dbee"><div class="ttname"><a href="classpacking_1_1utility_1_1CRC.html#a39bd7de79bc06f86ad7b9e1c8e68dbee">packing::utility::CRC::get</a></div><div class="ttdeci">uint32_t get()</div><div class="ttdef"><b>Definition:</b> <a href="CRC_8h_source.html#l00108">CRC.h:108</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalElectronicsID_8h_source.html#l00091">ldmx::HcalElectronicsID::channel()</a>, <a class="el" href="HcalElectronicsID_8h_source.html#l00086">ldmx::HcalElectronicsID::elink()</a>, <a class="el" href="HcalElectronicsID_8h_source.html#l00081">ldmx::HcalElectronicsID::fiber()</a>, <a class="el" href="CRC_8h_source.html#l00108">packing::utility::CRC::get()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00494">roc_version_</a>.</p>
+<p class="reference">References <a class="el" href="HcalElectronicsID_8h_source.html#l00091">ldmx::HcalElectronicsID::channel()</a>, <a class="el" href="HcalElectronicsID_8h_source.html#l00086">ldmx::HcalElectronicsID::elink()</a>, <a class="el" href="HcalElectronicsID_8h_source.html#l00081">ldmx::HcalElectronicsID::fiber()</a>, <a class="el" href="CRC_8h_source.html#l00108">packing::utility::CRC::get()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00496">roc_version_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">produce()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a01be7b9afb6ad869d9c0cf1ec061a554" name="a01be7b9afb6ad869d9c0cf1ec061a554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01be7b9afb6ad869d9c0cf1ec061a554">&#9670;&nbsp;</a></span>detector_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string hcal::HcalRawDecoder::detector_name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the detector name if we are reading from a file </p>
+
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00494">494</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00520">beforeNewRun()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">configure()</a>.</p>
+
+</div>
+</div>
 <a id="a693196e84aabd7060558dfbc915133ab" name="a693196e84aabd7060558dfbc915133ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a693196e84aabd7060558dfbc915133ab">&#9670;&nbsp;</a></span>file_reader_</h2>
 
@@ -818,9 +851,9 @@ template&lt;typename ReaderType &gt; </div>
 
 <p>the file reader (if we are doing that) </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00501">501</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00503">503</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00504">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">produce()</a>.</p>
 
 </div>
 </div>
@@ -848,7 +881,7 @@ template&lt;typename ReaderType &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00488">488</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00504">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">produce()</a>.</p>
 
 </div>
 </div>
@@ -876,7 +909,7 @@ template&lt;typename ReaderType &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00490">490</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00504">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">produce()</a>.</p>
 
 </div>
 </div>
@@ -904,7 +937,7 @@ template&lt;typename ReaderType &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00492">492</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00504">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">produce()</a>.</p>
 
 </div>
 </div>
@@ -930,9 +963,9 @@ template&lt;typename ReaderType &gt; </div>
 
 <p>is the input_name a file or an event object </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00498">498</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00500">500</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00517">beforeNewRun()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00504">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00520">beforeNewRun()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">produce()</a>.</p>
 
 </div>
 </div>
@@ -958,9 +991,9 @@ template&lt;typename ReaderType &gt; </div>
 
 <p>version of HGC ROC we are decoding </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00494">494</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00496">496</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00504">configure()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">produce()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">configure()</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">produce()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">read()</a>.</p>
 
 </div>
 </div>
@@ -986,9 +1019,9 @@ template&lt;typename ReaderType &gt; </div>
 
 <p>are get translating electronic IDs? </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00496">496</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00498">498</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00504">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00524">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00506">configure()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00527">produce()</a>.</p>
 
 </div>
 </div>
