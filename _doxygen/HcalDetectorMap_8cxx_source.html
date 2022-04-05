@@ -95,52 +95,53 @@ $(function() {
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#a738c0630c3611575587856dc1a09da50">clear</a>();</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_class" href="classconditions_1_1StreamCSVLoader.html">conditions::StreamCSVLoader</a> csv(connections_table);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">while</span> (csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a01cbd79f0bb35a0e5c66029fbdc3af50">nextRow</a>()) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">int</span> hgcroc = csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;HGCROC&quot;</span>);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> chan   = csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Channel&quot;</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">int</span> link = 2*(hgcroc-1); <span class="comment">// link count starts from 0</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (chan &gt;= 36) {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      link += 1;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      chan -= 36;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// one quadbar groups 4 strips and each quadbar is connected to 2 CMBs - one in each end</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">int</span> end = csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;CMB&quot;</span>)%2;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span>(end==0) end=1; <span class="comment">// negative end (?)</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">else</span> end=0; <span class="comment">// positive end (?)</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// The Bar field in the map represents a numbering *within a quadbar* not</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// the strip number.</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">// This gives correct range for the strip numbers [0,7] and [0,11] but the</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// actual order of the quadbars has to be checked</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">auto</span> QuadBar {csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;QuadBar&quot;</span>)};</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">auto</span> BarNumber {csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Bar&quot;</span>)};</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// Strip = (4 - Bar) + 4 * (QuadBar - 1)</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// QuadBar starts at 1 so we need to subtract to get first value</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// to be zero</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keyword">auto</span> strip { (4 - BarNumber) + 4 * (QuadBar - 1)};</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> detid(0 <span class="comment">/*section - only one section during test beam*/</span>, </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Plane&quot;</span>) <span class="comment">/*layer*/</span>,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        strip                   <span class="comment">/*strip*/</span>,</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        end <span class="comment">/*end*/</span>);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eleid(</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        0 <span class="comment">/*polarfire fpga - only one Polarfire during test beam*/</span>,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        link <span class="comment">/*elink*/</span>,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        chan <span class="comment">/*channel*/</span>);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#ad9dafa53443d9e9cb6b1c0519c9fda5d">exists</a>(eleid)) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      std::stringstream ss;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      ss &lt;&lt; <span class="stringliteral">&quot;Two different mappings for electronics channel &quot;</span> &lt;&lt; eleid;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;DuplicateMapping&quot;</span>, ss.str());</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#a4d2168a8ac89c74900d592ba22e20549">addEntry</a>(eleid, detid);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  }</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}  <span class="comment">// namespace hcal</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><a class="code hl_define" href="ConditionsObjectProvider_8h.html#aaeb8657c83391f6c661d1f66391af4b9">DECLARE_CONDITIONS_PROVIDER_NS</a>(hcal, HcalDetectorMapLoader);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">int</span> polarfire = csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Polarfire&quot;</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> hgcroc = csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;HGCROC&quot;</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> chan   = csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Channel&quot;</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">int</span> link = 2*hgcroc; <span class="comment">// link count starts from 0</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (chan &gt;= 36) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      link += 1;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      chan -= 36;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">// one quadbar groups 4 strips and each quadbar is connected to 2 CMBs - one in each end</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">int</span> end = csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;CMB&quot;</span>)%2;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span>(end==0) end=1; <span class="comment">// negative end (?)</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">else</span> end=0; <span class="comment">// positive end (?)</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// The Bar field in the map represents a numbering *within a quadbar* not</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">// the strip number.</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// This gives correct range for the strip numbers [0,7] and [0,11] but the</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// actual order of the quadbars has to be checked</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">auto</span> QuadBar {csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;QuadBar&quot;</span>)};</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">auto</span> BarNumber {csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Bar&quot;</span>)};</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// Strip = (4 - Bar) + 4 * (QuadBar - 1)</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// QuadBar starts at 1 so we need to subtract to get first value</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// to be zero</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">auto</span> strip { (4 - BarNumber) + 4 * (QuadBar - 1)};</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> detid(0 <span class="comment">/*section - only one section during test beam*/</span>, </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        csv.<a class="code hl_function" href="classconditions_1_1GeneralCSVLoader.html#a4e60728d2a1bc2ccf60b10c13c4c4a22">getInteger</a>(<span class="stringliteral">&quot;Plane&quot;</span>) <span class="comment">/*layer*/</span>,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        strip                   <span class="comment">/*strip*/</span>,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        end <span class="comment">/*end*/</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eleid(</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        polarfire <span class="comment">/*polarfire fpga*/</span>,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        link <span class="comment">/*elink*/</span>,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        chan <span class="comment">/*channel*/</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#ad9dafa53443d9e9cb6b1c0519c9fda5d">exists</a>(eleid)) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      std::stringstream ss;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      ss &lt;&lt; <span class="stringliteral">&quot;Two different mappings for electronics channel &quot;</span> &lt;&lt; eleid;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;DuplicateMapping&quot;</span>, ss.str());</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#a4d2168a8ac89c74900d592ba22e20549">addEntry</a>(eleid, detid);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}  <span class="comment">// namespace hcal</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><a class="code hl_define" href="ConditionsObjectProvider_8h.html#aaeb8657c83391f6c661d1f66391af4b9">DECLARE_CONDITIONS_PROVIDER_NS</a>(hcal, HcalDetectorMapLoader);</div>
 <div class="ttc" id="aConditionsObjectProvider_8h_html"><div class="ttname"><a href="ConditionsObjectProvider_8h.html">ConditionsObjectProvider.h</a></div><div class="ttdoc">Base class for provider of conditions information like pedestals, gains, electronics maps,...</div></div>
 <div class="ttc" id="aConditionsObjectProvider_8h_html_aaeb8657c83391f6c661d1f66391af4b9"><div class="ttname"><a href="ConditionsObjectProvider_8h.html#aaeb8657c83391f6c661d1f66391af4b9">DECLARE_CONDITIONS_PROVIDER_NS</a></div><div class="ttdeci">#define DECLARE_CONDITIONS_PROVIDER_NS(NS, CLASS)</div><div class="ttdoc">Macro which allows the framework to construct a producer given its name during configuration.</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObjectProvider_8h_source.html#l00184">ConditionsObjectProvider.h:184</a></div></div>
 <div class="ttc" id="aEventHeader_8h_html"><div class="ttname"><a href="EventHeader_8h.html">EventHeader.h</a></div><div class="ttdoc">Class that provides header information about an event such as event number and timestamp.</div></div>
