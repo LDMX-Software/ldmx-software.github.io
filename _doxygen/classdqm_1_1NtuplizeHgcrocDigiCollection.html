@@ -292,7 +292,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   73</span>      <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eid(d.id());</div>
 <div class="line"><span class="lineno">   74</span>      fpga_ = eid.fiber();</div>
 <div class="line"><span class="lineno">   75</span>      link_ = eid.elink();</div>
-<div class="line"><span class="lineno">   76</span>      channel_ = eid.channel() + 1; <span class="comment">// undo shift of channel numbers down to zero-based</span></div>
+<div class="line"><span class="lineno">   76</span>      channel_ = eid.channel();</div>
 <div class="line"><span class="lineno">   77</span>      index_ = eid.index();</div>
 <div class="line"><span class="lineno">   78</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">   79</span>      <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> detid(d.id());</div>
