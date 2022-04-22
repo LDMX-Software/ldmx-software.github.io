@@ -314,49 +314,51 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   31</span>  SimQIE qie;</div>
 <div class="line"><span class="lineno">   32</span> </div>
 <div class="line"><span class="lineno">   33</span>  <span class="comment">// Ensure the sample of interest &lt;4</span></div>
-<div class="line"><span class="lineno">   34</span>  <span class="keywordflow">if</span>(<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>&gt;3) {</div>
-<div class="line"><span class="lineno">   35</span>    ldmx_log(error)&lt;&lt;<span class="stringliteral">&quot;sample_of_interest_ should be one of 0,1,2,3\n&quot;</span></div>
-<div class="line"><span class="lineno">   36</span>           &lt;&lt;<span class="stringliteral">&quot;Currently, sample_of_interest = &quot;</span>&lt;&lt;<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a></div>
-<div class="line"><span class="lineno">   37</span>           &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   39</span>  }</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>  <span class="comment">// looper over sim hits and aggregate energy depositions</span></div>
-<div class="line"><span class="lineno">   42</span>  <span class="comment">// for each detID</span></div>
-<div class="line"><span class="lineno">   43</span>  <span class="keyword">const</span> <span class="keyword">auto</span> digis{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classtrigscint_1_1TrigScintQIEDigis.html">trigscint::TrigScintQIEDigis</a>&gt;(</div>
-<div class="line"><span class="lineno">   44</span>      <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a7a540a3398e264c7a28dd6135c89c23c">inputCollection_</a>, <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a17b18871a45322cf5963b3c7cae43567">inputPassName_</a>)};</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>  std::vector&lt;ldmx::TrigScintHit&gt; trigScintHits;</div>
-<div class="line"><span class="lineno">   47</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;digi : digis) {</div>
-<div class="line"><span class="lineno">   48</span>    <a class="code hl_class" href="classldmx_1_1TrigScintHit.html">ldmx::TrigScintHit</a> hit;</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keyword">auto</span> adc{digi.getADC()};</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keyword">auto</span> tdc{digi.getTDC()};</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#aeb368aa551f239713f3baefa5e386c7f">setModuleID</a>(0);</div>
-<div class="line"><span class="lineno">   53</span>    hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a3e1b6459b41657964016fce562e89354">setBarID</a>(digi.getChanID());</div>
-<div class="line"><span class="lineno">   54</span>    hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a77e6ba1a96895f94c519207ff52f3781">setBeamEfrac</a>(-1.);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a5cd5e530e62a0629b6f3209f77974fd9">setAmplitude</a>(qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>]) +</div>
-<div class="line"><span class="lineno">   57</span>                     qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>+1]));  <span class="comment">// femptocoulombs</span></div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (tdc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>] &gt; 49)</div>
-<div class="line"><span class="lineno">   60</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">setTime</a>(-999.);</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   62</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">setTime</a>(tdc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>] * 0.5);</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a63067db3972e32ed26f2b3a5ea8e46f8">setEnergy</a>((qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>])+</div>
-<div class="line"><span class="lineno">   65</span>           qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>+1])-<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a90e5ce68509b4169429a6e3c59fe3c82">pedestal_</a>)</div>
-<div class="line"><span class="lineno">   66</span>          *6250. / <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a4a90dd6799fc0b8f46445d9a9dee8c7b">gain_</a> * <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a6cac03a58b731c6c5a3a2d792580b463">mevPerMip_</a> / <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a656bce706fb256c5553e6949a7b67e81">pePerMip_</a>);  <span class="comment">// MeV</span></div>
-<div class="line"><span class="lineno">   67</span>    hit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#afb0fb16907e79bc046832be2384e75a6">setPE</a>((qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>])+</div>
-<div class="line"><span class="lineno">   68</span>           qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>+1]) - <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a90e5ce68509b4169429a6e3c59fe3c82">pedestal_</a>)</div>
-<div class="line"><span class="lineno">   69</span>          *6250. / <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a4a90dd6799fc0b8f46445d9a9dee8c7b">gain_</a>);</div>
-<div class="line"><span class="lineno">   70</span>    trigScintHits.push_back(hit);</div>
-<div class="line"><span class="lineno">   71</span>  }</div>
-<div class="line"><span class="lineno">   72</span>  <span class="comment">// Create the container to hold the</span></div>
-<div class="line"><span class="lineno">   73</span>  <span class="comment">// digitized trigger scintillator hits.</span></div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#af777b1d1ccfa1b8a630e4fa274acd8d2">outputCollection_</a>, trigScintHits);</div>
-<div class="line"><span class="lineno">   76</span>}</div>
+<div class="line"><span class="lineno">   34</span>  <span class="comment">/* // this assumes we are in well-behaved simulation land, not test beam wilderness  </span></div>
+<div class="line"><span class="lineno">   35</span><span class="comment">  if(sample_of_interest_&gt;3) {</span></div>
+<div class="line"><span class="lineno">   36</span><span class="comment">    ldmx_log(error)&lt;&lt;&quot;sample_of_interest_ should be one of 0,1,2,3\n&quot;</span></div>
+<div class="line"><span class="lineno">   37</span><span class="comment">           &lt;&lt;&quot;Currently, sample_of_interest = &quot;&lt;&lt;sample_of_interest_</span></div>
+<div class="line"><span class="lineno">   38</span><span class="comment">           &lt;&lt;&quot;\n&quot;;</span></div>
+<div class="line"><span class="lineno">   39</span><span class="comment">    return;</span></div>
+<div class="line"><span class="lineno">   40</span><span class="comment">  }</span></div>
+<div class="line"><span class="lineno">   41</span><span class="comment">  */</span></div>
+<div class="line"><span class="lineno">   42</span>  </div>
+<div class="line"><span class="lineno">   43</span>  <span class="comment">// looper over sim hits and aggregate energy depositions</span></div>
+<div class="line"><span class="lineno">   44</span>  <span class="comment">// for each detID</span></div>
+<div class="line"><span class="lineno">   45</span>  <span class="keyword">const</span> <span class="keyword">auto</span> digis{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classtrigscint_1_1TrigScintQIEDigis.html">trigscint::TrigScintQIEDigis</a>&gt;(</div>
+<div class="line"><span class="lineno">   46</span>      <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a7a540a3398e264c7a28dd6135c89c23c">inputCollection_</a>, <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a17b18871a45322cf5963b3c7cae43567">inputPassName_</a>)};</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>  std::vector&lt;ldmx::TrigScintHit&gt; trigScintHits;</div>
+<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;digi : digis) {</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_class" href="classldmx_1_1TrigScintHit.html">ldmx::TrigScintHit</a> hit;</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keyword">auto</span> adc{digi.getADC()};</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keyword">auto</span> tdc{digi.getTDC()};</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#aeb368aa551f239713f3baefa5e386c7f">setModuleID</a>(0);</div>
+<div class="line"><span class="lineno">   55</span>    hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a3e1b6459b41657964016fce562e89354">setBarID</a>(digi.getChanID());</div>
+<div class="line"><span class="lineno">   56</span>    hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a77e6ba1a96895f94c519207ff52f3781">setBeamEfrac</a>(-1.);</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a5cd5e530e62a0629b6f3209f77974fd9">setAmplitude</a>(qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>]) +</div>
+<div class="line"><span class="lineno">   59</span>                     qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>+1]));  <span class="comment">// femptocoulombs</span></div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (tdc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>] &gt; 49)</div>
+<div class="line"><span class="lineno">   62</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">setTime</a>(-999.);</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   64</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">setTime</a>(tdc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>] * 0.5);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a63067db3972e32ed26f2b3a5ea8e46f8">setEnergy</a>((qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>])+</div>
+<div class="line"><span class="lineno">   67</span>           qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>+1])-<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a90e5ce68509b4169429a6e3c59fe3c82">pedestal_</a>)</div>
+<div class="line"><span class="lineno">   68</span>          *6250. / <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a4a90dd6799fc0b8f46445d9a9dee8c7b">gain_</a> * <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a6cac03a58b731c6c5a3a2d792580b463">mevPerMip_</a> / <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a656bce706fb256c5553e6949a7b67e81">pePerMip_</a>);  <span class="comment">// MeV</span></div>
+<div class="line"><span class="lineno">   69</span>    hit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#afb0fb16907e79bc046832be2384e75a6">setPE</a>((qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>])+</div>
+<div class="line"><span class="lineno">   70</span>           qie.ADC2Q(adc[<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#ae37f9631c697681cb3437be8d8fea668">sample_of_interest_</a>+1]) - <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a90e5ce68509b4169429a6e3c59fe3c82">pedestal_</a>)</div>
+<div class="line"><span class="lineno">   71</span>          *6250. / <a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#a4a90dd6799fc0b8f46445d9a9dee8c7b">gain_</a>);</div>
+<div class="line"><span class="lineno">   72</span>    trigScintHits.push_back(hit);</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
+<div class="line"><span class="lineno">   74</span>  <span class="comment">// Create the container to hold the</span></div>
+<div class="line"><span class="lineno">   75</span>  <span class="comment">// digitized trigger scintillator hits.</span></div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classtrigscint_1_1TrigScintRecHitProducer.html#af777b1d1ccfa1b8a630e4fa274acd8d2">outputCollection_</a>, trigScintHits);</div>
+<div class="line"><span class="lineno">   78</span>}</div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a590256945dbfaa97d2528b9f260b6760"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">ldmx::CalorimeterHit::setTime</a></div><div class="ttdeci">void setTime(float time)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00099">CalorimeterHit.h:99</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a5cd5e530e62a0629b6f3209f77974fd9"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a5cd5e530e62a0629b6f3209f77974fd9">ldmx::CalorimeterHit::setAmplitude</a></div><div class="ttdeci">void setAmplitude(float amplitude)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00073">CalorimeterHit.h:73</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a63067db3972e32ed26f2b3a5ea8e46f8"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a63067db3972e32ed26f2b3a5ea8e46f8">ldmx::CalorimeterHit::setEnergy</a></div><div class="ttdeci">void setEnergy(float energy)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00087">CalorimeterHit.h:87</a></div></div>

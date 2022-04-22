@@ -131,6 +131,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a50c4881ee2c7d52efcfe28754ee11fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7cfe8506f99e2463e08ae0a6ed1eab7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEDecoder.html#ab7cfe8506f99e2463e08ae0a6ed1eab7">nChannels_</a> {50}</td></tr>
 <tr class="separator:ab7cfe8506f99e2463e08ae0a6ed1eab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af23be006b2f22b60e378b75cf87363ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEDecoder.html#af23be006b2f22b60e378b75cf87363ac">nSamples_</a> {5}</td></tr>
+<tr class="separator:af23be006b2f22b60e378b75cf87363ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad463527f41722e4ad1b4bcd80016f324"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1QIEDecoder.html#ad463527f41722e4ad1b4bcd80016f324">isRealData_</a> {false}</td></tr>
+<tr class="separator:ad463527f41722e4ad1b4bcd80016f324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -156,7 +160,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00016">16</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00017">17</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a267b588c28d8d838ae7c29f622c2ecb9" name="a267b588c28d8d838ae7c29f622c2ecb9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a267b588c28d8d838ae7c29f622c2ecb9">&#9670;&nbsp;</a></span>QIEDecoder()</h2>
@@ -192,8 +196,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00018">18</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>      : <a class="code hl_function" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a>(name, process) {}</div>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00019">19</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>      : <a class="code hl_function" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a>(name, process) {}</div>
 <div class="ttc" id="aclassframework_1_1Producer_html_a27ea7492352028e450f24f4750c62e1b"><div class="ttname"><a href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">framework::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00068">EventProcessor.cxx:68</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -252,54 +256,58 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a21156f6f3954394925e9a265de9d702a">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00008">8</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>                                     {</div>
-<div class="line"><span class="lineno">   10</span>  <span class="comment">// Configure this instance of the encoder</span></div>
-<div class="line"><span class="lineno">   11</span>   outputCollection_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;output_collection&quot;</span>);</div>
-<div class="line"><span class="lineno">   12</span>   inputCollection_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_collection&quot;</span>);</div>
-<div class="line"><span class="lineno">   13</span>   inputPassName_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass_name&quot;</span>);</div>
-<div class="line"><span class="lineno">   14</span>   <a class="code hl_variable" href="classtrigscint_1_1QIEDecoder.html#a29e80f15ebd502d5c16165e29dc57f12">channelMapFileName_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;channel_map_file&quot;</span>);</div>
-<div class="line"><span class="lineno">   15</span>   nChannels_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;number_channels&quot;</span>);</div>
-<div class="line"><span class="lineno">   16</span>   verbose_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;verbose&quot;</span>);</div>
-<div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>   ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;In configure, got parameters:&quot;</span> &lt;&lt;</div>
-<div class="line"><span class="lineno">   19</span>     <span class="stringliteral">&quot;\noutput_collection = &quot;</span> &lt;&lt; outputCollection_ &lt;&lt;</div>
-<div class="line"><span class="lineno">   20</span>     <span class="stringliteral">&quot;\ninput_collection = &quot;</span> &lt;&lt; inputCollection_ &lt;&lt;</div>
-<div class="line"><span class="lineno">   21</span>     <span class="stringliteral">&quot;\ninput_pass_name  = &quot;</span> &lt;&lt; inputPassName_ &lt;&lt;</div>
-<div class="line"><span class="lineno">   22</span>     <span class="stringliteral">&quot;\nchannel_map_file = &quot;</span> &lt;&lt;  <a class="code hl_variable" href="classtrigscint_1_1QIEDecoder.html#a29e80f15ebd502d5c16165e29dc57f12">channelMapFileName_</a> &lt;&lt;</div>
-<div class="line"><span class="lineno">   23</span>     <span class="stringliteral">&quot;\nnumber_channels  = &quot;</span> &lt;&lt;  nChannels_ &lt;&lt;</div>
-<div class="line"><span class="lineno">   24</span>     <span class="stringliteral">&quot;\nverbose          = &quot;</span> &lt;&lt; verbose_ ;</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>   channelMapFile_.open(<a class="code hl_variable" href="classtrigscint_1_1QIEDecoder.html#a29e80f15ebd502d5c16165e29dc57f12">channelMapFileName_</a>, std::ios::in);</div>
-<div class="line"><span class="lineno">   27</span>   <span class="keywordflow">if</span> (! channelMapFile_.is_open() ){</div>
-<div class="line"><span class="lineno">   28</span>     EXCEPTION_RAISE(<span class="stringliteral">&quot;BadMapFile&quot;</span>,  <span class="stringliteral">&quot;The channel mapping file cannot be opened.&quot;</span>); <span class="comment">// &lt;-- appears this needs implementing first </span></div>
-<div class="line"><span class="lineno">   29</span>     ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;The channel mapping file cannot be opened.&quot;</span>;</div>
-<div class="line"><span class="lineno">   30</span>     <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   31</span>   }</div>
-<div class="line"><span class="lineno">   32</span>   <span class="keywordtype">int</span> chID, elID;</div>
-<div class="line"><span class="lineno">   33</span>   <span class="keywordflow">while</span> (! channelMapFile_.eof() ){</div>
-<div class="line"><span class="lineno">   34</span>     channelMapFile_ &gt;&gt; elID &gt;&gt; chID ;</div>
-<div class="line"><span class="lineno">   35</span>     <span class="comment">// make the map based on electronics ID, to look up channel ID.</span></div>
-<div class="line"><span class="lineno">   36</span>     <span class="comment">// the reason is, we will only know the elecID from the position</span></div>
-<div class="line"><span class="lineno">   37</span>     <span class="comment">// of the word in the stream. so these need to be strictly ordered.</span></div>
-<div class="line"><span class="lineno">   38</span>     <span class="comment">// writing the right bar in the right position is easier if we can just</span></div>
-<div class="line"><span class="lineno">   39</span>     <span class="comment">// read this map from beginning to end.</span></div>
-<div class="line"><span class="lineno">   40</span>     <span class="comment">// barID can always be set, or looked up, as a property of the digi.</span></div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>     <span class="comment">// here make the elecID the key (other way around when encoding)</span></div>
-<div class="line"><span class="lineno">   43</span>     channelMap_.insert(std::pair&lt;int,int&gt;(elID, chID));</div>
-<div class="line"><span class="lineno">   44</span>     ldmx_log(debug) &lt;&lt; elID &lt;&lt; <span class="stringliteral">&quot;  chID &quot;</span> &lt;&lt; chID ;</div>
-<div class="line"><span class="lineno">   45</span>   }</div>
-<div class="line"><span class="lineno">   46</span>   channelMapFile_.close();</div>
-<div class="line"><span class="lineno">   47</span>   <span class="keywordflow">if</span> (elID != nChannels_ - 1 )</div>
-<div class="line"><span class="lineno">   48</span>     ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;The set number of channels &quot;</span> &lt;&lt; nChannels_ &lt;&lt; <span class="stringliteral">&quot; seems not to match the number from the map (+1) :&quot;</span> &lt;&lt; elID; </div>
-<div class="line"><span class="lineno">   49</span>   <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   50</span>   </div>
-<div class="line"><span class="lineno">   51</span> }</div>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00009">9</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>                                     {</div>
+<div class="line"><span class="lineno">   11</span>  <span class="comment">// Configure this instance of the encoder</span></div>
+<div class="line"><span class="lineno">   12</span>   outputCollection_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;output_collection&quot;</span>);</div>
+<div class="line"><span class="lineno">   13</span>   inputCollection_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_collection&quot;</span>);</div>
+<div class="line"><span class="lineno">   14</span>   inputPassName_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass_name&quot;</span>);</div>
+<div class="line"><span class="lineno">   15</span>   <a class="code hl_variable" href="classtrigscint_1_1QIEDecoder.html#a29e80f15ebd502d5c16165e29dc57f12">channelMapFileName_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;channel_map_file&quot;</span>);</div>
+<div class="line"><span class="lineno">   16</span>   nChannels_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;number_channels&quot;</span>);</div>
+<div class="line"><span class="lineno">   17</span>   nSamples_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;number_time_samples&quot;</span>);</div>
+<div class="line"><span class="lineno">   18</span>   isRealData_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;is_real_data&quot;</span>);</div>
+<div class="line"><span class="lineno">   19</span>   verbose_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;verbose&quot;</span>);</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>   ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;In configure, got parameters:&quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno">   22</span>     <span class="stringliteral">&quot;\noutput_collection = &quot;</span> &lt;&lt; outputCollection_ &lt;&lt;</div>
+<div class="line"><span class="lineno">   23</span>     <span class="stringliteral">&quot;\ninput_collection = &quot;</span> &lt;&lt; inputCollection_ &lt;&lt;</div>
+<div class="line"><span class="lineno">   24</span>     <span class="stringliteral">&quot;\ninput_pass_name  = &quot;</span> &lt;&lt; inputPassName_ &lt;&lt;</div>
+<div class="line"><span class="lineno">   25</span>     <span class="stringliteral">&quot;\nchannel_map_file = &quot;</span> &lt;&lt;  <a class="code hl_variable" href="classtrigscint_1_1QIEDecoder.html#a29e80f15ebd502d5c16165e29dc57f12">channelMapFileName_</a> &lt;&lt;</div>
+<div class="line"><span class="lineno">   26</span>     <span class="stringliteral">&quot;\nnumber_channels  = &quot;</span> &lt;&lt;  nChannels_ &lt;&lt;</div>
+<div class="line"><span class="lineno">   27</span>     <span class="stringliteral">&quot;\nnumber_time_samples  = &quot;</span> &lt;&lt;  nSamples_ &lt;&lt;</div>
+<div class="line"><span class="lineno">   28</span>     <span class="stringliteral">&quot;\nis_real_data  = &quot;</span> &lt;&lt;  isRealData_ &lt;&lt;</div>
+<div class="line"><span class="lineno">   29</span>     <span class="stringliteral">&quot;\nverbose          = &quot;</span> &lt;&lt; verbose_ ;</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>   channelMapFile_.open(<a class="code hl_variable" href="classtrigscint_1_1QIEDecoder.html#a29e80f15ebd502d5c16165e29dc57f12">channelMapFileName_</a>, std::ios::in);</div>
+<div class="line"><span class="lineno">   32</span>   <span class="keywordflow">if</span> (! channelMapFile_.is_open() ){</div>
+<div class="line"><span class="lineno">   33</span>     EXCEPTION_RAISE(<span class="stringliteral">&quot;BadMapFile&quot;</span>,  <span class="stringliteral">&quot;The channel mapping file cannot be opened.&quot;</span>); <span class="comment">// &lt;-- appears this needs implementing first </span></div>
+<div class="line"><span class="lineno">   34</span>     ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;The channel mapping file cannot be opened.&quot;</span>;</div>
+<div class="line"><span class="lineno">   35</span>     <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   36</span>   }</div>
+<div class="line"><span class="lineno">   37</span>   <span class="keywordtype">int</span> chID, elID;</div>
+<div class="line"><span class="lineno">   38</span>   <span class="keywordflow">while</span> (! channelMapFile_.eof() ){</div>
+<div class="line"><span class="lineno">   39</span>     channelMapFile_ &gt;&gt; elID &gt;&gt; chID ;</div>
+<div class="line"><span class="lineno">   40</span>     <span class="comment">// make the map based on electronics ID, to look up channel ID.</span></div>
+<div class="line"><span class="lineno">   41</span>     <span class="comment">// the reason is, we will only know the elecID from the position</span></div>
+<div class="line"><span class="lineno">   42</span>     <span class="comment">// of the word in the stream. so these need to be strictly ordered.</span></div>
+<div class="line"><span class="lineno">   43</span>     <span class="comment">// writing the right bar in the right position is easier if we can just</span></div>
+<div class="line"><span class="lineno">   44</span>     <span class="comment">// read this map from beginning to end.</span></div>
+<div class="line"><span class="lineno">   45</span>     <span class="comment">// barID can always be set, or looked up, as a property of the digi.</span></div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>     <span class="comment">// here make the elecID the key (other way around when encoding)</span></div>
+<div class="line"><span class="lineno">   48</span>     channelMap_.insert(std::pair&lt;int,int&gt;(elID, chID));</div>
+<div class="line"><span class="lineno">   49</span>     ldmx_log(debug) &lt;&lt; elID &lt;&lt; <span class="stringliteral">&quot;  chID &quot;</span> &lt;&lt; chID ;</div>
+<div class="line"><span class="lineno">   50</span>   }</div>
+<div class="line"><span class="lineno">   51</span>   channelMapFile_.close();</div>
+<div class="line"><span class="lineno">   52</span>   <span class="keywordflow">if</span> (elID != nChannels_ - 1 )</div>
+<div class="line"><span class="lineno">   53</span>     ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;The set number of channels &quot;</span> &lt;&lt; nChannels_ &lt;&lt; <span class="stringliteral">&quot; seems not to match the number from the map (+1) :&quot;</span> &lt;&lt; elID; </div>
+<div class="line"><span class="lineno">   54</span>   <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   55</span>   </div>
+<div class="line"><span class="lineno">   56</span> }</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1QIEDecoder_html_a29e80f15ebd502d5c16165e29dc57f12"><div class="ttname"><a href="classtrigscint_1_1QIEDecoder.html#a29e80f15ebd502d5c16165e29dc57f12">trigscint::QIEDecoder::channelMapFileName_</a></div><div class="ttdeci">std::string channelMapFileName_</div><div class="ttdoc">the channel mapping</div><div class="ttdef"><b>Definition:</b> <a href="QIEDecoder_8h_source.html#l00045">QIEDecoder.h:45</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1QIEDecoder_html_a29e80f15ebd502d5c16165e29dc57f12"><div class="ttname"><a href="classtrigscint_1_1QIEDecoder.html#a29e80f15ebd502d5c16165e29dc57f12">trigscint::QIEDecoder::channelMapFileName_</a></div><div class="ttdeci">std::string channelMapFileName_</div><div class="ttdoc">the channel mapping</div><div class="ttdef"><b>Definition:</b> <a href="QIEDecoder_8h_source.html#l00046">QIEDecoder.h:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="QIEDecoder_8h_source.html#l00045">channelMapFileName_</a>, and <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>.</p>
+<p class="reference">References <a class="el" href="QIEDecoder_8h_source.html#l00046">channelMapFileName_</a>, and <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>.</p>
 
 </div>
 </div>
@@ -326,12 +334,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00191">191</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  191</span>                             {</div>
-<div class="line"><span class="lineno">  192</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Closing file!&quot;</span>;</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  195</span>}</div>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00250">250</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>                             {</div>
+<div class="line"><span class="lineno">  251</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Closing file!&quot;</span>;</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  254</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -358,12 +366,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00185">185</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>                            {</div>
-<div class="line"><span class="lineno">  186</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Opening file!&quot;</span>;</div>
-<div class="line"><span class="lineno">  187</span>  </div>
-<div class="line"><span class="lineno">  188</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  189</span>}</div>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00244">244</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  244</span>                            {</div>
+<div class="line"><span class="lineno">  245</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Opening file!&quot;</span>;</div>
+<div class="line"><span class="lineno">  246</span>  </div>
+<div class="line"><span class="lineno">  247</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  248</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -393,12 +401,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a527ebdf1fe665011964d9ce42a5521ad">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00203">203</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  203</span>                              {</div>
-<div class="line"><span class="lineno">  204</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Process ends!&quot;</span>;</div>
-<div class="line"><span class="lineno">  205</span> </div>
-<div class="line"><span class="lineno">  206</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  207</span>}</div>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00262">262</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  262</span>                              {</div>
+<div class="line"><span class="lineno">  263</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Process ends!&quot;</span>;</div>
+<div class="line"><span class="lineno">  264</span> </div>
+<div class="line"><span class="lineno">  265</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  266</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -428,12 +436,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#ab54bb3abaafcb4f4b4b42d0a2ff616a9">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00197">197</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  197</span>                                {</div>
-<div class="line"><span class="lineno">  198</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Process starts!&quot;</span>;</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  201</span>}</div>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00256">256</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  256</span>                                {</div>
+<div class="line"><span class="lineno">  257</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Process starts!&quot;</span>;</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  260</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -469,143 +477,197 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00053">53</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                {</div>
-<div class="line"><span class="lineno">   54</span>    ldmx_log(debug)</div>
-<div class="line"><span class="lineno">   55</span>      &lt;&lt; <span class="stringliteral">&quot;QIEDecoder: produce() starts! Event number: &quot;</span></div>
-<div class="line"><span class="lineno">   56</span>      &lt;&lt; <span class="keyword">event</span>.getEventHeader().getEventNumber();</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>  <span class="keywordtype">int</span> nSamp = QIEStream::NUM_SAMPLES ;</div>
-<div class="line"><span class="lineno">   59</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;num samples = &quot;</span> &lt;&lt; nSamp;</div>
-<div class="line"><span class="lineno">   60</span>    </div>
-<div class="line"><span class="lineno">   61</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Looking up input collection &quot;</span> &lt;&lt; inputCollection_ &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; inputPassName_;</div>
-<div class="line"><span class="lineno">   62</span>  <span class="keyword">const</span> <span class="keyword">auto</span> eventStream{<span class="keyword">event</span>.getCollection&lt;uint8_t&gt;( inputCollection_, inputPassName_)};</div>
-<div class="line"><span class="lineno">   63</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got input collection&quot;</span> &lt;&lt; inputCollection_ &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; inputPassName_;</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>  <span class="comment">// trigger ID event number</span></div>
-<div class="line"><span class="lineno">   66</span>  <span class="comment">// this is the one word that spans several bytes </span></div>
-<div class="line"><span class="lineno">   67</span>  uint16_t triggerID =0; <span class="comment">// =eventStream.at(QIEStream::TRIGID_POS);</span></div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iW = 0 ; iW &lt; QIEStream::TRIGID_LEN_BYTES; iW++) {</div>
-<div class="line"><span class="lineno">   70</span>    <span class="comment">//assume the whole 2B are written as a single 16 bits word</span></div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordtype">int</span> pos = QIEStream::TRIGID_POS+(QIEStream::TRIGID_LEN_BYTES -1 - iW);</div>
-<div class="line"><span class="lineno">   72</span>    uint8_t tIDword = eventStream.at( pos );</div>
-<div class="line"><span class="lineno">   73</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;trigger word at position &quot;</span> &lt;&lt; pos &lt;&lt; <span class="stringliteral">&quot; (with iW = &quot;</span> &lt;&lt; iW &lt;&lt; <span class="stringliteral">&quot;) = &quot;</span> &lt;&lt; std::bitset&lt;8&gt;(tIDword ) ;</div>
-<div class="line"><span class="lineno">   74</span>    triggerID |= (tIDword &lt;&lt; iW*8); <span class="comment">//shift by a byte at a time</span></div>
-<div class="line"><span class="lineno">   75</span>  }</div>
-<div class="line"><span class="lineno">   76</span>  </div>
-<div class="line"><span class="lineno">   77</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; got triggerID &quot;</span> &lt;&lt; std::bitset&lt;16&gt;(triggerID) ; <span class="comment">//eventStream.at(0);</span></div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>  <span class="keywordflow">if</span> ( triggerID != event.<a class="code hl_function" href="classframework_1_1Event.html#aa2ea48f0c859b63a622c93e3ed2e355a">getEventHeader</a>().<a class="code hl_function" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>() ) {</div>
-<div class="line"><span class="lineno">   80</span>    <span class="comment">// this probably only applies to digi emulation,</span></div>
-<div class="line"><span class="lineno">   81</span>    <span class="comment">// unless an event number is explicitly set in unpacking</span></div>
-<div class="line"><span class="lineno">   82</span>    ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;Got event number mismatch: framework reports &quot;</span> &lt;&lt;</div>
-<div class="line"><span class="lineno">   83</span>      <span class="keyword">event</span>.getEventHeader().getEventNumber() &lt;&lt;<span class="stringliteral">&quot;, stream says &quot;</span> &lt;&lt; triggerID ;</div>
-<div class="line"><span class="lineno">   84</span>  }</div>
-<div class="line"><span class="lineno">   85</span>  <span class="comment">// error word </span></div>
-<div class="line"><span class="lineno">   86</span>  <span class="comment">/* the error word contains </span></div>
-<div class="line"><span class="lineno">   87</span><span class="comment">     - 4 trailing reserved 0&#39;s, for now</span></div>
-<div class="line"><span class="lineno">   88</span><span class="comment">     - isCIDunsync : if there is a mismatch between CID reported by channels within the same time sample </span></div>
-<div class="line"><span class="lineno">   89</span><span class="comment">     - isCIDskipped : if there is a gap in the CID increment of a channel beweeen samples </span></div>
-<div class="line"><span class="lineno">   90</span><span class="comment">     - isCRC0malformed : if there was an issue with CRC from fiber0</span></div>
-<div class="line"><span class="lineno">   91</span><span class="comment">     - isCRC1malformed : if there was an issue with CRC from fiber1</span></div>
-<div class="line"><span class="lineno">   92</span><span class="comment">  */</span></div>
-<div class="line"><span class="lineno">   93</span>  uint8_t flags = eventStream.at(QIEStream::ERROR_POS);  </div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>  <span class="keywordtype">bool</span> isCIDskipped { (flags &gt;&gt; QIEStream::CID_SKIP_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::FLAG_SIZE_BITS&gt;::m</a>};</div>
-<div class="line"><span class="lineno">   96</span>  <span class="keywordtype">bool</span> isCIDunsync { (flags &gt;&gt; QIEStream::CID_UNSYNC_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::FLAG_SIZE_BITS&gt;::m</a>};</div>
-<div class="line"><span class="lineno">   97</span>  <span class="keywordtype">bool</span> isCRC1malformed{ (flags &gt;&gt; QIEStream::CRC1_ERR_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::FLAG_SIZE_BITS&gt;::m</a>};</div>
-<div class="line"><span class="lineno">   98</span>  <span class="keywordtype">bool</span> isCRC0malformed{ (flags &gt;&gt; QIEStream::CRC0_ERR_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::FLAG_SIZE_BITS&gt;::m</a>};</div>
-<div class="line"><span class="lineno">   99</span>  <span class="comment">//checksum</span></div>
-<div class="line"><span class="lineno">  100</span>  uint8_t referenceChecksum = 30;  <span class="comment">// really, this is just a random number for now. TODO&gt; implement a checksum set/get </span></div>
-<div class="line"><span class="lineno">  101</span>  <span class="keywordtype">int</span> checksum = eventStream.at(QIEStream::CHECKSUM_POS);</div>
-<div class="line"><span class="lineno">  102</span>  <span class="keywordflow">if</span> ( checksum != referenceChecksum) </div>
-<div class="line"><span class="lineno">  103</span>    ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;Got checksum mismatch: expected &quot;</span> &lt;&lt; (int)referenceChecksum &lt;&lt; <span class="stringliteral">&quot;, stream says &quot;</span> &lt;&lt; checksum ;</div>
-<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">if</span> (isCIDunsync)</div>
-<div class="line"><span class="lineno">  105</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Found unsynced CIDs!&quot;</span>;</div>
-<div class="line"><span class="lineno">  106</span>  <span class="keywordflow">if</span> (isCIDskipped)</div>
-<div class="line"><span class="lineno">  107</span>    ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;Found skipped CIDs!&quot;</span> ;</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>  <span class="comment">/* -- TS event header done; read the channel contents -- */</span></div>
-<div class="line"><span class="lineno">  110</span>  std::vector&lt;trigscint::TrigScintQIEDigis&gt; outDigis;</div>
-<div class="line"><span class="lineno">  111</span>  std::map &lt; int, std::vector&lt;int&gt;&gt; ADCmap;</div>
-<div class="line"><span class="lineno">  112</span>  std::map &lt; int, std::vector&lt;int&gt;&gt; TDCmap;</div>
-<div class="line"><span class="lineno">  113</span>  </div>
-<div class="line"><span class="lineno">  114</span>  <span class="comment">// read in words from the stream. line them up per channel and time sample.</span></div>
-<div class="line"><span class="lineno">  115</span>  <span class="comment">// channels are in the electronics ordering </span></div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>  <span class="keywordtype">int</span> iWstart = std::max( std::max(QIEStream::ERROR_POS, QIEStream::CHECKSUM_POS),</div>
-<div class="line"><span class="lineno">  118</span>                          QIEStream::TRIGID_POS+(QIEStream::TRIGID_LEN_BYTES)) +1;  <span class="comment">//probably overkill :D should be 4 </span></div>
-<div class="line"><span class="lineno">  119</span>  <span class="keywordtype">int</span> nWords = nSamp*nChannels_*2 + iWstart; <span class="comment">//1 ADC, 1 TDC per channel per sample, + the words in the header</span></div>
-<div class="line"><span class="lineno">  120</span>  <span class="keywordtype">int</span> iWord = iWstart;</div>
-<div class="line"><span class="lineno">  121</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Event parsing starts at vector idx &quot;</span> &lt;&lt; iWstart &lt;&lt; <span class="stringliteral">&quot; and nWords = &quot;</span> &lt;&lt; nWords; </div>
-<div class="line"><span class="lineno">  122</span>  <span class="comment">// outer loop: over nSamples</span></div>
-<div class="line"><span class="lineno">  123</span>  <span class="comment">// inner loop over nChannels to get ADCs, then repeat to get TDCs</span></div>
-<div class="line"><span class="lineno">  124</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iS = 0; iS &lt; nSamp; iS++) {                                                                                                     </div>
-<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iQ = 0; iQ &lt; nChannels_ ; iQ++) {</div>
-<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">if</span> ( iWord &gt;= nWords ) {</div>
-<div class="line"><span class="lineno">  127</span>        ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;More words than expected! Breaking ADC loop in sample &quot;</span> &lt;&lt; iS &lt;&lt; <span class="stringliteral">&quot; at iQ = &quot;</span> &lt;&lt; iQ;</div>
-<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  129</span>      }</div>
-<div class="line"><span class="lineno">  130</span>      uint8_t val = eventStream.at(iWord);</div>
-<div class="line"><span class="lineno">  131</span>      <span class="keywordflow">if</span> (val &gt; 0) {    <span class="comment">//add only the digis with non-zero ADC value</span></div>
-<div class="line"><span class="lineno">  132</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;got ADC value &quot;</span> &lt;&lt; (unsigned)val &lt;&lt; <span class="stringliteral">&quot; at channel (elec) idx &quot;</span> &lt;&lt; iQ ;</div>
-<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">if</span> ( ADCmap.find( iQ ) == ADCmap.end() ) { <span class="comment">// we have a new channel </span></div>
-<div class="line"><span class="lineno">  134</span>          std::vector &lt;int &gt; adcs(nSamp, 0);</div>
-<div class="line"><span class="lineno">  135</span>          ADCmap.insert(std::pair&lt;<span class="keywordtype">int</span>, std::vector &lt;int&gt; &gt;(iQ, adcs));</div>
-<div class="line"><span class="lineno">  136</span>        }</div>
-<div class="line"><span class="lineno">  137</span>        ADCmap[ iQ ].at(iS) = val;</div>
-<div class="line"><span class="lineno">  138</span>      }</div>
-<div class="line"><span class="lineno">  139</span>      iWord++;</div>
-<div class="line"><span class="lineno">  140</span>    }</div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iQ = 0; iQ &lt; nChannels_ ; iQ++) {</div>
-<div class="line"><span class="lineno">  142</span>      <span class="keywordflow">if</span> ( iWord &gt;= nWords ) {</div>
-<div class="line"><span class="lineno">  143</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;More words than expected! Breaking TDC loop in sample &quot;</span> &lt;&lt; iS &lt;&lt; <span class="stringliteral">&quot; at iQ = &quot;</span> &lt;&lt; iQ;</div>
-<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  145</span>      }</div>
-<div class="line"><span class="lineno">  146</span>      uint8_t val = eventStream.at(iWord);</div>
-<div class="line"><span class="lineno">  147</span>      <span class="keywordflow">if</span> (val &gt; 0) { <span class="comment">// TODO: check if this channel is also present in ADC map? in the end? </span></div>
-<div class="line"><span class="lineno">  148</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;got TDC value &quot;</span> &lt;&lt; (unsigned)val &lt;&lt; <span class="stringliteral">&quot; at channel (elec) idx &quot;</span> &lt;&lt; iQ ;;</div>
-<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">if</span> ( TDCmap.find( iQ ) == TDCmap.end() ) { <span class="comment">// we have a new channel </span></div>
-<div class="line"><span class="lineno">  150</span>          std::vector &lt;int &gt; tdcs(nSamp, 0);</div>
-<div class="line"><span class="lineno">  151</span>          TDCmap.insert(std::pair&lt;<span class="keywordtype">int</span>, std::vector &lt;int&gt; &gt;(iQ, tdcs));</div>
-<div class="line"><span class="lineno">  152</span>        }</div>
-<div class="line"><span class="lineno">  153</span>        <span class="comment">//this is LETDC; only the two most significant bits included</span></div>
-<div class="line"><span class="lineno">  154</span>        <span class="comment">// they are shipped as least significant bits --&gt; shift them </span></div>
-<div class="line"><span class="lineno">  155</span>        TDCmap[ iQ ].at(iS) = val*16;  </div>
-<div class="line"><span class="lineno">  156</span>      }</div>
-<div class="line"><span class="lineno">  157</span>      iWord++;</div>
-<div class="line"><span class="lineno">  158</span>    }</div>
-<div class="line"><span class="lineno">  159</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Done with sample &quot;</span> &lt;&lt; iS ;</div>
-<div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>  }</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Done reading in header, ADC and TDC for event &quot;</span> &lt;&lt; (unsigned)triggerID ;</div>
-<div class="line"><span class="lineno">  164</span>  <span class="keywordflow">for</span> (std::map&lt;<span class="keywordtype">int</span>, std::vector&lt;int&gt;&gt;::iterator itr = ADCmap.begin(); itr != ADCmap.end(); ++itr) {</div>
-<div class="line"><span class="lineno">  165</span>    TrigScintQIEDigis  digi;</div>
-<div class="line"><span class="lineno">  166</span>    digi.setADC( itr-&gt;second );</div>
-<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">if</span> (channelMap_.find( itr-&gt;first ) == channelMap_.end() ) {</div>
-<div class="line"><span class="lineno">  168</span>      ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;Couldn&#39;t find the bar ID corresponding to electronics ID &quot;</span> &lt;&lt; itr-&gt;first &lt;&lt; <span class="stringliteral">&quot;!! Skipping.&quot;</span> ;</div>
-<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  170</span>    }</div>
-<div class="line"><span class="lineno">  171</span>    <span class="keywordtype">int</span> bar = channelMap_[itr-&gt;first];</div>
-<div class="line"><span class="lineno">  172</span>    digi.setChanID( bar );</div>
-<div class="line"><span class="lineno">  173</span>    digi.setTDC( TDCmap[itr-&gt;first] );</div>
-<div class="line"><span class="lineno">  174</span>    outDigis.push_back( digi );</div>
-<div class="line"><span class="lineno">  175</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Iterator points to key &quot;</span> &lt;&lt; itr-&gt;first</div>
-<div class="line"><span class="lineno">  176</span>                    &lt;&lt; <span class="stringliteral">&quot; and mapped channel supposedly  is &quot;</span> &lt;&lt; bar ;</div>
-<div class="line"><span class="lineno">  177</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Made digi with barID = &quot;</span> &lt;&lt; digi.getChanID()</div>
-<div class="line"><span class="lineno">  178</span>                    &lt;&lt; <span class="stringliteral">&quot;, third adc value &quot;</span> &lt;&lt; digi.getADC().at(2)</div>
-<div class="line"><span class="lineno">  179</span>                    &lt;&lt; <span class="stringliteral">&quot; and third tdc &quot;</span> &lt;&lt; digi.getTDC().at(2) ;</div>
-<div class="line"><span class="lineno">  180</span>  }</div>
-<div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>  <span class="keyword">event</span>.add(outputCollection_, outDigis);</div>
-<div class="line"><span class="lineno">  183</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8cxx_source.html#l00058">58</a> of file <a class="el" href="QIEDecoder_8cxx_source.html">QIEDecoder.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>                                                {</div>
+<div class="line"><span class="lineno">   59</span>    ldmx_log(debug)</div>
+<div class="line"><span class="lineno">   60</span>      &lt;&lt; <span class="stringliteral">&quot;QIEDecoder: produce() starts! Event number: &quot;</span></div>
+<div class="line"><span class="lineno">   61</span>      &lt;&lt; <span class="keyword">event</span>.getEventHeader().getEventNumber();</div>
+<div class="line"><span class="lineno">   62</span>    </div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">//  ldmx::EventHeader *eh = (ldmx::EventHeader*)event.getEventHeaderPtr();</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="comment">//eh-&gt;setIsRealData(isRealData_); //doesn&#39;t help</span></div>
+<div class="line"><span class="lineno">   65</span>    </div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">/*   // comment for now, requires pushing change ot EventHeader</span></div>
+<div class="line"><span class="lineno">   67</span><span class="comment">    event.getEventHeader().setIsRealData(isRealData_);</span></div>
+<div class="line"><span class="lineno">   68</span><span class="comment">    ldmx_log(debug) &lt;&lt; &quot;Decoder bool isRealData = &quot; &lt;&lt; isRealData_ &lt;&lt; &quot; and after attempt of setting it, event header returns &quot; &lt;&lt;  event.getEventHeader().isRealData();</span></div>
+<div class="line"><span class="lineno">   69</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">   70</span>      <span class="comment">//turns out this need to be configurable for now, to read real data</span></div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordtype">int</span> nSamp = nSamples_; <span class="comment">//QIEStream::NUM_SAMPLES ;  </span></div>
+<div class="line"><span class="lineno">   72</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;num samples = &quot;</span> &lt;&lt; nSamp;</div>
+<div class="line"><span class="lineno">   73</span>    </div>
+<div class="line"><span class="lineno">   74</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Looking up input collection &quot;</span> &lt;&lt; inputCollection_ &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; inputPassName_;</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keyword">const</span> <span class="keyword">auto</span> eventStream{<span class="keyword">event</span>.getCollection&lt;uint8_t&gt;( inputCollection_, inputPassName_)};</div>
+<div class="line"><span class="lineno">   76</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got input collection&quot;</span> &lt;&lt; inputCollection_ &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; inputPassName_;</div>
+<div class="line"><span class="lineno">   77</span>    </div>
+<div class="line"><span class="lineno">   78</span>    </div>
+<div class="line"><span class="lineno">   79</span>  uint32_t timeEpoch=0;</div>
+<div class="line"><span class="lineno">   80</span>  <span class="comment">//these don&#39;t have to be in any particular order, position is anyway looked up from definition in header</span></div>
+<div class="line"><span class="lineno">   81</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iW = 0 ; iW &lt; QIEStream::TIMESTAMP_LEN_BYTES; iW++) {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordtype">int</span> pos = QIEStream::TIMESTAMP_POS + iW;</div>
+<div class="line"><span class="lineno">   83</span>    uint8_t timeWord = eventStream.at( pos );</div>
+<div class="line"><span class="lineno">   84</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;time stamp word at position &quot;</span> &lt;&lt; pos &lt;&lt; <span class="stringliteral">&quot; (with iW = &quot;</span> &lt;&lt; iW &lt;&lt; <span class="stringliteral">&quot;) = &quot;</span> &lt;&lt; std::bitset&lt;8&gt;(timeWord ) ;</div>
+<div class="line"><span class="lineno">   85</span>    timeEpoch |= (timeWord &lt;&lt; iW*8); <span class="comment">//shift by a byte at a time</span></div>
+<div class="line"><span class="lineno">   86</span>  }</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>  uint32_t timeClock=0;</div>
+<div class="line"><span class="lineno">   89</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iW = 0 ; iW &lt; QIEStream::TIMESTAMPCLOCK_LEN_BYTES; iW++) {</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordtype">int</span> pos = QIEStream::TIMESTAMPCLOCK_POS + iW;</div>
+<div class="line"><span class="lineno">   91</span>    uint8_t timeWord = eventStream.at( pos );</div>
+<div class="line"><span class="lineno">   92</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;time stamp ns word at position &quot;</span> &lt;&lt; pos &lt;&lt; <span class="stringliteral">&quot; (with iW = &quot;</span> &lt;&lt; iW &lt;&lt; <span class="stringliteral">&quot;) = &quot;</span> &lt;&lt; std::bitset&lt;8&gt;(timeWord ) ;</div>
+<div class="line"><span class="lineno">   93</span>    timeClock |= (timeWord &lt;&lt; iW*8); <span class="comment">//shift by a byte at a time</span></div>
+<div class="line"><span class="lineno">   94</span>  }</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>  uint32_t timeSpill=0;</div>
+<div class="line"><span class="lineno">   97</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Before starting, timeSpill = &quot;</span> &lt;&lt; timeSpill &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; std::bitset&lt;64&gt;(timeSpill) &lt;&lt; <span class="stringliteral">&quot;, or, &quot;</span> &lt;&lt; std::hex &lt;&lt; timeSpill &lt;&lt; std::dec &lt;&lt; <span class="stringliteral">&quot;) counts since start of spill&quot;</span>;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iW = 0 ; iW &lt; QIEStream::TIMESINCESPILL_LEN_BYTES; iW++) {</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordtype">int</span> pos = QIEStream::TIMESINCESPILL_POS + iW;</div>
+<div class="line"><span class="lineno">  101</span>    uint8_t timeWord = eventStream.at( pos );</div>
+<div class="line"><span class="lineno">  102</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;time since spill word at position &quot;</span> &lt;&lt; pos &lt;&lt; <span class="stringliteral">&quot; (with iW = &quot;</span> &lt;&lt; iW &lt;&lt; <span class="stringliteral">&quot;) = &quot;</span> &lt;&lt; std::bitset&lt;8&gt;(timeWord ) ;</div>
+<div class="line"><span class="lineno">  103</span>    timeSpill |= (timeWord &lt;&lt; iW*8); <span class="comment">//shift by a byte at a time</span></div>
+<div class="line"><span class="lineno">  104</span>  }</div>
+<div class="line"><span class="lineno">  105</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;time stamp words are : &quot;</span> &lt;&lt; timeEpoch &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; std::bitset&lt;64&gt;(timeEpoch) &lt;&lt; <span class="stringliteral">&quot;) and &quot;</span> &lt;&lt; timeClock &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; std::bitset&lt;64&gt;(timeClock) &lt;&lt; <span class="stringliteral">&quot;) clock ticks, and &quot;</span> &lt;&lt; timeSpill &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; std::bitset&lt;64&gt;(timeSpill) &lt;&lt; <span class="stringliteral">&quot;, or, &quot;</span> &lt;&lt; std::hex &lt;&lt; timeSpill &lt;&lt; std::dec &lt;&lt; <span class="stringliteral">&quot;) counts since start of spill&quot;</span>;</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>  <span class="keywordtype">int</span> sigBitsSkip=6; <span class="comment">//the first 6 bits are part of something else. </span></div>
+<div class="line"><span class="lineno">  108</span>  <span class="keywordtype">int</span> divisor=TMath::Power(2, 32-sigBitsSkip);</div>
+<div class="line"><span class="lineno">  109</span>  timeSpill=timeSpill%divisor; <span class="comment">//remove them by taking remainder in division by the values of the last skipped bit</span></div>
+<div class="line"><span class="lineno">  110</span>  <span class="comment">//timeSpill=timeSpill/spillTimeConv_;</span></div>
+<div class="line"><span class="lineno">  111</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;After taking it mod 2^&quot;</span> &lt;&lt; 32-sigBitsSkip &lt;&lt; <span class="stringliteral">&quot; (which is &quot;</span> &lt;&lt; divisor &lt;&lt; <span class="stringliteral">&quot;, spill time is &quot;</span> &lt;&lt; timeSpill;</div>
+<div class="line"><span class="lineno">  112</span>  <span class="keyword">event</span>.getEventHeader().setIntParameter(<span class="stringliteral">&quot;timeSinceSpill&quot;</span>, timeSpill);</div>
+<div class="line"><span class="lineno">  113</span>  <span class="comment">//  event.getEventHeader().setTimeSinceSpill(timeSpill); //not working </span></div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>  TTimeStamp *timeStamp = <span class="keyword">new</span> TTimeStamp(timeEpoch);</div>
+<div class="line"><span class="lineno">  116</span>  <span class="comment">//  timeStamp-&gt;SetNanoSec(timeClock); //not sure about this one...</span></div>
+<div class="line"><span class="lineno">  117</span>  <span class="keyword">event</span>.getEventHeader().setTimestamp(*timeStamp);</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>  <span class="comment">// trigger ID event number</span></div>
+<div class="line"><span class="lineno">  120</span>  uint32_t triggerID =0; </div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iW = 0 ; iW &lt; QIEStream::TRIGID_LEN_BYTES; iW++) {</div>
+<div class="line"><span class="lineno">  123</span>    <span class="comment">//assume the whole 3B are written as a single 24 bits word</span></div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordtype">int</span> pos = QIEStream::TRIGID_POS+iW;</div>
+<div class="line"><span class="lineno">  125</span>    uint8_t tIDword = eventStream.at( pos );</div>
+<div class="line"><span class="lineno">  126</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;trigger word at position &quot;</span> &lt;&lt; pos &lt;&lt; <span class="stringliteral">&quot; (with iW = &quot;</span> &lt;&lt; iW &lt;&lt; <span class="stringliteral">&quot;) = &quot;</span> &lt;&lt; std::bitset&lt;8&gt;(tIDword ) ;</div>
+<div class="line"><span class="lineno">  127</span>    triggerID |= (tIDword &lt;&lt; iW*8); <span class="comment">//shift by a byte at a time</span></div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+<div class="line"><span class="lineno">  129</span>  </div>
+<div class="line"><span class="lineno">  130</span>  <span class="comment">//  ldmx_log(debug) &lt;&lt; &quot; got triggerID &quot; &lt;&lt; std::bitset&lt;16&gt;(triggerID) ; //eventStream.at(0);</span></div>
+<div class="line"><span class="lineno">  131</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; got triggerID &quot;</span> &lt;&lt; std::bitset&lt;32&gt;(triggerID) ; <span class="comment">//eventStream.at(0);</span></div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>  <span class="keywordflow">if</span> ( triggerID != event.<a class="code hl_function" href="classframework_1_1Event.html#aa2ea48f0c859b63a622c93e3ed2e355a">getEventHeader</a>().<a class="code hl_function" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>() ) {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="comment">// this probably only applies to digi emulation,</span></div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">// unless an event number is explicitly set in unpacking</span></div>
+<div class="line"><span class="lineno">  136</span>    ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;Got event number mismatch: framework reports &quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno">  137</span>      <span class="keyword">event</span>.getEventHeader().getEventNumber() &lt;&lt;<span class="stringliteral">&quot;, stream says &quot;</span> &lt;&lt; triggerID ;</div>
+<div class="line"><span class="lineno">  138</span>  }</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>  <span class="comment">// error word </span></div>
+<div class="line"><span class="lineno">  141</span>  <span class="comment">/* the error word contains </span></div>
+<div class="line"><span class="lineno">  142</span><span class="comment">     - 4 trailing reserved 0&#39;s, for now</span></div>
+<div class="line"><span class="lineno">  143</span><span class="comment">     - isCIDunsync : if there is a mismatch between CID reported by channels within the same time sample </span></div>
+<div class="line"><span class="lineno">  144</span><span class="comment">     - isCIDskipped : if there is a gap in the CID increment of a channel beweeen samples </span></div>
+<div class="line"><span class="lineno">  145</span><span class="comment">     - isCRC0malformed : if there was an issue with CRC from fiber0</span></div>
+<div class="line"><span class="lineno">  146</span><span class="comment">     - isCRC1malformed : if there was an issue with CRC from fiber1</span></div>
+<div class="line"><span class="lineno">  147</span><span class="comment">  */</span></div>
+<div class="line"><span class="lineno">  148</span>  uint8_t flags = eventStream.at(QIEStream::ERROR_POS);  </div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordtype">bool</span> isCIDskipped { (flags &gt;&gt; QIEStream::CID_SKIP_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::FLAG_SIZE_BITS&gt;::m</a>};</div>
+<div class="line"><span class="lineno">  151</span>  <span class="keywordtype">bool</span> isCIDunsync { (flags &gt;&gt; QIEStream::CID_UNSYNC_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::FLAG_SIZE_BITS&gt;::m</a>};</div>
+<div class="line"><span class="lineno">  152</span>  <span class="keywordtype">bool</span> isCRC1malformed{ (flags &gt;&gt; QIEStream::CRC1_ERR_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::FLAG_SIZE_BITS&gt;::m</a>};</div>
+<div class="line"><span class="lineno">  153</span>  <span class="keywordtype">bool</span> isCRC0malformed{ (flags &gt;&gt; QIEStream::CRC0_ERR_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::FLAG_SIZE_BITS&gt;::m</a>};</div>
+<div class="line"><span class="lineno">  154</span>  <span class="comment">//checksum</span></div>
+<div class="line"><span class="lineno">  155</span>  uint8_t referenceChecksum = 0;  <span class="comment">// really, this is just empty for now. TODO&gt; implement a checksum set/get </span></div>
+<div class="line"><span class="lineno">  156</span>  <span class="keywordtype">int</span> checksum{ (flags &gt;&gt; QIEStream::CHECKSUM_POS) &amp; <a class="code hl_struct" href="structmask8.html">mask8&lt;QIEStream::CHECKSUM_SIZE_BITS&gt;::m</a>}; <span class="comment">//eventStream.at(QIEStream::CRC0_ERR_POS) QIEStream::CHECKSUM_POS);</span></div>
+<div class="line"><span class="lineno">  157</span>  <span class="keywordflow">if</span> ( checksum != referenceChecksum) </div>
+<div class="line"><span class="lineno">  158</span>    ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;Got checksum mismatch: expected &quot;</span> &lt;&lt; (int)referenceChecksum &lt;&lt; <span class="stringliteral">&quot;, stream says &quot;</span> &lt;&lt; checksum ;</div>
+<div class="line"><span class="lineno">  159</span>  <span class="keywordflow">if</span> (isCIDunsync)</div>
+<div class="line"><span class="lineno">  160</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Found unsynced CIDs!&quot;</span>;</div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordflow">if</span> (isCIDskipped)</div>
+<div class="line"><span class="lineno">  162</span>    ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;Found skipped CIDs!&quot;</span> ;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>  <span class="comment">/* -- TS event header done; read the channel contents -- */</span></div>
+<div class="line"><span class="lineno">  165</span>  std::vector&lt;trigscint::TrigScintQIEDigis&gt; outDigis;</div>
+<div class="line"><span class="lineno">  166</span>  std::map &lt; int, std::vector&lt;int&gt;&gt; ADCmap;</div>
+<div class="line"><span class="lineno">  167</span>  std::map &lt; int, std::vector&lt;int&gt;&gt; TDCmap;</div>
+<div class="line"><span class="lineno">  168</span>  </div>
+<div class="line"><span class="lineno">  169</span>  <span class="comment">// read in words from the stream. line them up per channel and time sample.</span></div>
+<div class="line"><span class="lineno">  170</span>  <span class="comment">// channels are in the electronics ordering </span></div>
+<div class="line"><span class="lineno">  171</span>  <span class="keywordtype">int</span> iWstart = std::max( std::max(QIEStream::ERROR_POS, QIEStream::CHECKSUM_POS),</div>
+<div class="line"><span class="lineno">  172</span>                          QIEStream::TRIGID_POS+(QIEStream::TRIGID_LEN_BYTES)) +1;  <span class="comment">//make sure we&#39;re at end of header</span></div>
+<div class="line"><span class="lineno">  173</span>  <span class="keywordtype">int</span> nWords = nSamp*nChannels_*2 + iWstart; <span class="comment">//1 ADC, 1 TDC per channel per sample, + the words in the header</span></div>
+<div class="line"><span class="lineno">  174</span>  <span class="keywordtype">int</span> iWord = iWstart;</div>
+<div class="line"><span class="lineno">  175</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Event parsing starts at vector idx &quot;</span> &lt;&lt; iWstart &lt;&lt; <span class="stringliteral">&quot; and nWords = &quot;</span> &lt;&lt; nWords; </div>
+<div class="line"><span class="lineno">  176</span>  <span class="comment">// outer loop: over nSamples</span></div>
+<div class="line"><span class="lineno">  177</span>  <span class="comment">// inner loop over nChannels to get ADCs, then repeat to get TDCs</span></div>
+<div class="line"><span class="lineno">  178</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iS = 0; iS &lt; nSamp; iS++) {                                                                                                     </div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iQ = 0; iQ &lt; nChannels_ ; iQ++) {</div>
+<div class="line"><span class="lineno">  180</span>      <span class="keywordflow">if</span> ( iWord &gt;= nWords ) {</div>
+<div class="line"><span class="lineno">  181</span>        ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;More words than expected! Breaking ADC loop in sample &quot;</span> &lt;&lt; iS &lt;&lt; <span class="stringliteral">&quot; at iQ = &quot;</span> &lt;&lt; iQ;</div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  183</span>      }</div>
+<div class="line"><span class="lineno">  184</span>      uint8_t val = eventStream.at(iWord);</div>
+<div class="line"><span class="lineno">  185</span>      <span class="keywordflow">if</span> (val &gt; 0) {    <span class="comment">//add only the digis with non-zero ADC value</span></div>
+<div class="line"><span class="lineno">  186</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;got ADC value &quot;</span> &lt;&lt; (unsigned)val &lt;&lt; <span class="stringliteral">&quot; at channel (elec) idx &quot;</span> &lt;&lt; iQ ;</div>
+<div class="line"><span class="lineno">  187</span>          <span class="keywordflow">if</span> ( ADCmap.find( iQ ) == ADCmap.end() ) { <span class="comment">// we have a new channel </span></div>
+<div class="line"><span class="lineno">  188</span>          std::vector &lt;int &gt; adcs(nSamp, 0);</div>
+<div class="line"><span class="lineno">  189</span>          ADCmap.insert(std::pair&lt;<span class="keywordtype">int</span>, std::vector &lt;int&gt; &gt;(iQ, adcs));</div>
+<div class="line"><span class="lineno">  190</span>        }</div>
+<div class="line"><span class="lineno">  191</span>        ADCmap[ iQ ].at(iS) = val;</div>
+<div class="line"><span class="lineno">  192</span>      }</div>
+<div class="line"><span class="lineno">  193</span>      iWord++;</div>
+<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iQ = 0; iQ &lt; nChannels_ ; iQ++) {</div>
+<div class="line"><span class="lineno">  196</span>      <span class="keywordflow">if</span> ( iWord &gt;= nWords ) {</div>
+<div class="line"><span class="lineno">  197</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;More words than expected! Breaking TDC loop in sample &quot;</span> &lt;&lt; iS &lt;&lt; <span class="stringliteral">&quot; at iQ = &quot;</span> &lt;&lt; iQ;</div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  199</span>      }</div>
+<div class="line"><span class="lineno">  200</span>      uint8_t val = eventStream.at(iWord);</div>
+<div class="line"><span class="lineno">  201</span>      <span class="keywordflow">if</span> (val &gt; 0) { <span class="comment">// TODO: check if this channel is also present in ADC map? in the end? </span></div>
+<div class="line"><span class="lineno">  202</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;got TDC value &quot;</span> &lt;&lt; (unsigned)val &lt;&lt; <span class="stringliteral">&quot; at channel (elec) idx &quot;</span> &lt;&lt; iQ ;;</div>
+<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">if</span> ( TDCmap.find( iQ ) == TDCmap.end() ) { <span class="comment">// we have a new channel </span></div>
+<div class="line"><span class="lineno">  204</span>          std::vector &lt;int &gt; tdcs(nSamp, 0);</div>
+<div class="line"><span class="lineno">  205</span>          TDCmap.insert(std::pair&lt;<span class="keywordtype">int</span>, std::vector &lt;int&gt; &gt;(iQ, tdcs));</div>
+<div class="line"><span class="lineno">  206</span>        }</div>
+<div class="line"><span class="lineno">  207</span>        <span class="comment">//this is LETDC; only the two most significant bits included</span></div>
+<div class="line"><span class="lineno">  208</span>        <span class="comment">// they are shipped as least significant bits --&gt; shift them </span></div>
+<div class="line"><span class="lineno">  209</span>        TDCmap[ iQ ].at(iS) = (val+1)*16;  <span class="comment">// want LE TDC = 3 to correspond to 64 &gt; 49 (which is maxTDC in sim)</span></div>
+<div class="line"><span class="lineno">  210</span>      }</div>
+<div class="line"><span class="lineno">  211</span>      iWord++;</div>
+<div class="line"><span class="lineno">  212</span>    }</div>
+<div class="line"><span class="lineno">  213</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Done with sample &quot;</span> &lt;&lt; iS ;</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>  }</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Done reading in header, ADC and TDC for event &quot;</span> &lt;&lt; (unsigned)triggerID ;</div>
+<div class="line"><span class="lineno">  218</span>  <span class="keywordflow">for</span> (std::map&lt;<span class="keywordtype">int</span>, std::vector&lt;int&gt;&gt;::iterator itr = ADCmap.begin(); itr != ADCmap.end(); ++itr) {</div>
+<div class="line"><span class="lineno">  219</span>    TrigScintQIEDigis  digi;</div>
+<div class="line"><span class="lineno">  220</span>    digi.setADC( itr-&gt;second );</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">if</span> (channelMap_.find( itr-&gt;first ) == channelMap_.end() ) {</div>
+<div class="line"><span class="lineno">  222</span>      ldmx_log(fatal) &lt;&lt; <span class="stringliteral">&quot;Couldn&#39;t find the bar ID corresponding to electronics ID &quot;</span> &lt;&lt; itr-&gt;first &lt;&lt; <span class="stringliteral">&quot;!! Skipping.&quot;</span> ;</div>
+<div class="line"><span class="lineno">  223</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  224</span>    }</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordtype">int</span> bar = channelMap_[itr-&gt;first];</div>
+<div class="line"><span class="lineno">  226</span>    digi.setElecID( itr-&gt;first );</div>
+<div class="line"><span class="lineno">  227</span>    digi.setChanID( bar );</div>
+<div class="line"><span class="lineno">  228</span>    digi.setTDC( TDCmap[itr-&gt;first] );</div>
+<div class="line"><span class="lineno">  229</span>    digi.setTimeSinceSpill(timeSpill);</div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">if</span> (bar == 0)</div>
+<div class="line"><span class="lineno">  231</span>      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;for bar 0, got time since spill &quot;</span>&lt;&lt; digi.getTimeSinceSpill();</div>
+<div class="line"><span class="lineno">  232</span>    outDigis.push_back( digi );</div>
+<div class="line"><span class="lineno">  233</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Iterator points to key &quot;</span> &lt;&lt; itr-&gt;first</div>
+<div class="line"><span class="lineno">  234</span>                    &lt;&lt; <span class="stringliteral">&quot; and mapped channel supposedly  is &quot;</span> &lt;&lt; bar ;</div>
+<div class="line"><span class="lineno">  235</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Made digi with elecID = &quot;</span> &lt;&lt; digi.getElecID()</div>
+<div class="line"><span class="lineno">  236</span>                    &lt;&lt; <span class="stringliteral">&quot;, barID = &quot;</span> &lt;&lt; digi.getChanID()</div>
+<div class="line"><span class="lineno">  237</span>                    &lt;&lt; <span class="stringliteral">&quot;, third adc value &quot;</span> &lt;&lt; digi.getADC().at(2)</div>
+<div class="line"><span class="lineno">  238</span>                    &lt;&lt; <span class="stringliteral">&quot; and third tdc &quot;</span> &lt;&lt; digi.getTDC().at(2) ;</div>
+<div class="line"><span class="lineno">  239</span>  }</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>  <span class="keyword">event</span>.add(outputCollection_, outDigis);</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
 <div class="ttc" id="aclassframework_1_1Event_html_aa2ea48f0c859b63a622c93e3ed2e355a"><div class="ttname"><a href="classframework_1_1Event.html#aa2ea48f0c859b63a622c93e3ed2e355a">framework::Event::getEventHeader</a></div><div class="ttdeci">ldmx::EventHeader &amp; getEventHeader()</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00057">Event.h:57</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventHeader_html_a8152a5d36972d1c0671ee54a0bf1a794"><div class="ttname"><a href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">ldmx::EventHeader::getEventNumber</a></div><div class="ttdeci">int getEventNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="EventHeader_8h_source.html#l00076">EventHeader.h:76</a></div></div>
 <div class="ttc" id="astructmask8_html"><div class="ttname"><a href="structmask8.html">mask8</a></div><div class="ttdef"><b>Definition:</b> <a href="QIEStream_8h_source.html#l00014">QIEStream.h:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrigScintQIEDigis_8h_source.html#l00050">trigscint::TrigScintQIEDigis::getADC()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00045">trigscint::TrigScintQIEDigis::getChanID()</a>, <a class="el" href="Event_8h_source.html#l00057">framework::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00076">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00055">trigscint::TrigScintQIEDigis::getTDC()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00071">trigscint::TrigScintQIEDigis::setADC()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00065">trigscint::TrigScintQIEDigis::setChanID()</a>, and <a class="el" href="TrigScintQIEDigis_8h_source.html#l00077">trigscint::TrigScintQIEDigis::setTDC()</a>.</p>
+<p class="reference">References <a class="el" href="TrigScintQIEDigis_8h_source.html#l00055">trigscint::TrigScintQIEDigis::getADC()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00045">trigscint::TrigScintQIEDigis::getChanID()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00050">trigscint::TrigScintQIEDigis::getElecID()</a>, <a class="el" href="Event_8h_source.html#l00057">framework::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00076">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00060">trigscint::TrigScintQIEDigis::getTDC()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00077">trigscint::TrigScintQIEDigis::getTimeSinceSpill()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00095">trigscint::TrigScintQIEDigis::setADC()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00083">trigscint::TrigScintQIEDigis::setChanID()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00088">trigscint::TrigScintQIEDigis::setElecID()</a>, <a class="el" href="TrigScintQIEDigis_8h_source.html#l00101">trigscint::TrigScintQIEDigis::setTDC()</a>, and <a class="el" href="TrigScintQIEDigis_8h_source.html#l00071">trigscint::TrigScintQIEDigis::setTimeSinceSpill()</a>.</p>
 
 </div>
 </div>
@@ -630,7 +692,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00047">47</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00048">48</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 
 </div>
 </div>
@@ -654,7 +716,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00046">46</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00047">47</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 
 </div>
 </div>
@@ -680,9 +742,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>the channel mapping </p>
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00045">45</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00046">46</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QIEDecoder_8cxx_source.html#l00008">configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QIEDecoder_8cxx_source.html#l00009">configure()</a>.</p>
 
 </div>
 </div>
@@ -706,7 +768,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00050">50</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00051">51</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 
 </div>
 </div>
@@ -730,7 +792,31 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00052">52</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00053">53</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+
+</div>
+</div>
+<a id="ad463527f41722e4ad1b4bcd80016f324" name="ad463527f41722e4ad1b4bcd80016f324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad463527f41722e4ad1b4bcd80016f324">&#9670;&nbsp;</a></span>isRealData_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool trigscint::QIEDecoder::isRealData_ {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00063">63</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 
 </div>
 </div>
@@ -754,7 +840,31 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00058">58</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00059">59</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+
+</div>
+</div>
+<a id="af23be006b2f22b60e378b75cf87363ac" name="af23be006b2f22b60e378b75cf87363ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23be006b2f22b60e378b75cf87363ac">&#9670;&nbsp;</a></span>nSamples_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trigscint::QIEDecoder::nSamples_ {5}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00061">61</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 
 </div>
 </div>
@@ -778,7 +888,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00051">51</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00052">52</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 
 </div>
 </div>
@@ -802,7 +912,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00055">55</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QIEDecoder_8h_source.html#l00056">56</a> of file <a class="el" href="QIEDecoder_8h_source.html">QIEDecoder.h</a>.</p>
 
 </div>
 </div>
