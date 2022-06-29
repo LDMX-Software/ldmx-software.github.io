@@ -6,11 +6,20 @@ layout: default
 
 > _Note:_ This method is _highly_ recommended. The extra details below are not for the faint of heart.
 
+### Windows Comments
+- If you are running on a Microsoft Windows system, it is _necessary_ for you to do all of the steps below within Windows Subsystem for Linux (WSL). The permissions system that docker relies on in order to effectively run the containers is not supported by Windoze. (While GitBash and the Command Prompt can look similar to other terminals, make sure to open a WSL terminal --- often labeled "Ubuntu").
+- _As of this writing, you cannot use a VPN and connect to the internet from within WSL_
+- The "docker daemon" needs to be running. On most systems, this program starts automatically when the computer is booted. You can check if the docker daemon is running by trying to run a simple docker container. If it is not running, you will need to start it manually. 
+- Docker Desktop outside WSL needs to be running to be able to use docker inside WSL? (question mark because unsure)
+
+## Procedure
 - [Install the docker engine](https://docs.docker.com/engine/install/)
   - [singularity](https://sylabs.io/guides/3.5/user-guide/) is also supported if you can't install and/or don't want to install docker.
+  - If you are on Windows, make sure to use the WSL2 backend for docker
 - (on Linux systems) [Manage docker as non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
 - Clone the repo: `git clone --recursive https://github.com/LDMX-Software/ldmx-sw.git`
   - The `--recursive` flag is _very important_ because there are several necessary parts of _ldmx-sw_ stored in separate git repositories.
+  - This is where you first would open a terminal unless otherwise instructed in the docker installation instructions. **Remember to use a WSL terminal if you are on Windows**
 - Setup the environment: `source ldmx-sw/scripts/ldmx-env.sh`
   - Must occur in a `bash` terminal (the default on Ubuntu systems and available on iOS)
   - Downloads the latest development docker image, so it may take some time (a few minutes) on the first run
