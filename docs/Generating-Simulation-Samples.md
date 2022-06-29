@@ -79,6 +79,8 @@ from LDMX.Framework import ldmxcfg
 # Create the necessary process object (call this pass "sim")
 p = ldmxcfg.Process( "sim" )
 
+# Set the unique number that identifies this run
+p.run = 9001 
 # import a template simulator and change some of its parameters
 from LDMX.SimCore import generators
 from LDMX.SimCore import simulator
@@ -86,7 +88,6 @@ from LDMX.SimCore import simulator
 mySim = simulator.simulator( "mySim" )
 mySim.setDetector( 'ldmx-det-v12' )
 mySim.generators = [ generators.single_4gev_e_upstream_tagger() ]
-mySim.runNumber = 9001
 mySim.description = 'I am a basic working example!'
 
 # import chip/geometry conditions

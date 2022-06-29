@@ -32,6 +32,10 @@ It is encouraged to browse the python modules themselves for all the details, bu
 - `passName` (string)
    - **required** Given in the constructor, tag for the process as a whole.
    - For example: `"10MeVSignal"` for a simulation of a 10MeV A'
+- `run` (integer)
+  - Unique number identifying the run 
+  - For example: `9001`
+  - Default is `0`
 - `maxEvents` (integer)
    - Maximum number of events to run for
    - Required for Production Mode (no input files)
