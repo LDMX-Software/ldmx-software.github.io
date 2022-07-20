@@ -178,8 +178,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalWABVetoProcessor_8cxx_source.html#l00017">17</a> of file <a class="el" href="HcalWABVetoProcessor_8cxx_source.html">HcalWABVetoProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>        : <a class="code hl_function" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a>(name, process) {}</div>
+<p class="definition">Definition at line <a class="el" href="HcalWABVetoProcessor_8cxx_source.html#l00018">18</a> of file <a class="el" href="HcalWABVetoProcessor_8cxx_source.html">HcalWABVetoProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>    : <a class="code hl_function" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a>(name, process) {}</div>
 <div class="ttc" id="aclassframework_1_1Producer_html_a27ea7492352028e450f24f4750c62e1b"><div class="ttname"><a href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">framework::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00068">EventProcessor.cxx:68</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -200,8 +200,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalWABVetoProcessor_8cxx_source.html#l00021">21</a> of file <a class="el" href="HcalWABVetoProcessor_8cxx_source.html">HcalWABVetoProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="HcalWABVetoProcessor_8cxx_source.html#l00022">22</a> of file <a class="el" href="HcalWABVetoProcessor_8cxx_source.html">HcalWABVetoProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -239,18 +239,25 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a21156f6f3954394925e9a265de9d702a">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalWABVetoProcessor_8cxx_source.html#l00023">23</a> of file <a class="el" href="HcalWABVetoProcessor_8cxx_source.html">HcalWABVetoProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                                              {</div>
-<div class="line"><span class="lineno">   24</span>        maxtotalEnergyCompare_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;max_total_energy_compare&quot;</span>);</div>
-<div class="line"><span class="lineno">   25</span>        mintotalEnergyCompare_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;min_total_energy_compare&quot;</span>);</div>
-<div class="line"><span class="lineno">   26</span>        maxnClusters_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;n_clusters&quot;</span>);</div>
-<div class="line"><span class="lineno">   27</span>        maxMeanHitsPerCluster_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;mean_hits_per_cluster&quot;</span>);</div>
-<div class="line"><span class="lineno">   28</span>        maxMeanEnergyPerCluster_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;mean_energy_per_cluster&quot;</span>);</div>
-<div class="line"><span class="lineno">   29</span>        outputCollName_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;outputCollName&quot;</span>);</div>
-<div class="line"><span class="lineno">   30</span>        inputHCALClusterCollName_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;inputHCALClusterCollName&quot;</span>);</div>
-<div class="line"><span class="lineno">   31</span>        inputHCALHitCollName_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;inputHCALHitCollName&quot;</span>);</div>
-<div class="line"><span class="lineno">   32</span>        inputECALHitCollName_  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;inputECALHitCollName&quot;</span>);</div>
-<div class="line"><span class="lineno">   33</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="HcalWABVetoProcessor_8cxx_source.html#l00024">24</a> of file <a class="el" href="HcalWABVetoProcessor_8cxx_source.html">HcalWABVetoProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>                                           {</div>
+<div class="line"><span class="lineno">   26</span>  maxtotalEnergyCompare_ =</div>
+<div class="line"><span class="lineno">   27</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;max_total_energy_compare&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>  mintotalEnergyCompare_ =</div>
+<div class="line"><span class="lineno">   29</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;min_total_energy_compare&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span>  maxnClusters_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;n_clusters&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>  maxMeanHitsPerCluster_ =</div>
+<div class="line"><span class="lineno">   32</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;mean_hits_per_cluster&quot;</span>);</div>
+<div class="line"><span class="lineno">   33</span>  maxMeanEnergyPerCluster_ =</div>
+<div class="line"><span class="lineno">   34</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;mean_energy_per_cluster&quot;</span>);</div>
+<div class="line"><span class="lineno">   35</span>  outputCollName_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;outputCollName&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>  inputHCALClusterCollName_ =</div>
+<div class="line"><span class="lineno">   37</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;inputHCALClusterCollName&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>  inputHCALHitCollName_ =</div>
+<div class="line"><span class="lineno">   39</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;inputHCALHitCollName&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>  inputECALHitCollName_ =</div>
+<div class="line"><span class="lineno">   41</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;inputECALHitCollName&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>.</p>
@@ -290,75 +297,78 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalWABVetoProcessor_8cxx_source.html#l00035">35</a> of file <a class="el" href="HcalWABVetoProcessor_8cxx_source.html">HcalWABVetoProcessor.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>                                                            {</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>        <span class="comment">// Get the collection of sim particles from the event</span></div>
-<div class="line"><span class="lineno">   38</span>        <span class="comment">//HCAL:</span></div>
-<div class="line"><span class="lineno">   39</span>        <span class="keyword">const</span> std::vector&lt;ldmx::HcalHit&gt; hcalRecHits =</div>
-<div class="line"><span class="lineno">   40</span>        <span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a>&gt;(inputHCALHitCollName_);</div>
-<div class="line"><span class="lineno">   41</span>        <span class="comment">//ECAL:</span></div>
-<div class="line"><span class="lineno">   42</span>        <span class="keyword">const</span> std::vector&lt;ldmx::EcalHit&gt; ecalRecHits =</div>
-<div class="line"><span class="lineno">   43</span>        <span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a>&gt;(inputECALHitCollName_);</div>
-<div class="line"><span class="lineno">   44</span>        <span class="comment">//Clusters:</span></div>
-<div class="line"><span class="lineno">   45</span>        <span class="keyword">const</span> std::vector&lt;ldmx::HcalCluster&gt; hcalClusters =</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1HcalCluster.html">ldmx::HcalCluster</a>&gt;(inputHCALClusterCollName_);</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>        <span class="comment">// Loop over all of the Hcal hits and calculate to total photoelectrons</span></div>
-<div class="line"><span class="lineno">   49</span>        <span class="comment">// in the event.</span></div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordtype">float</span> totalHCALEnergy{0};</div>
-<div class="line"><span class="lineno">   51</span>        <span class="keywordtype">float</span> totalECALEnergy{0};</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordtype">float</span> maxPE{-1000};</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a> *maxPEHit;</div>
-<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a> &amp;hcalHit : hcalRecHits) {</div>
-<div class="line"><span class="lineno">   55</span>                <span class="keywordflow">if</span> (hcalHit.isNoise()==0){</div>
-<div class="line"><span class="lineno">   56</span>                        totalHCALEnergy += hcalHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#adcaaa51f7523883ce888dd2adbf11fb1">getPE</a>();</div>
-<div class="line"><span class="lineno">   57</span>                }</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>                <span class="comment">// Find the maximum PE in the list</span></div>
-<div class="line"><span class="lineno">   60</span>                <span class="keywordflow">if</span> (maxPE &lt; hcalHit.getPE()) {</div>
-<div class="line"><span class="lineno">   61</span>                  maxPE = hcalHit.getPE();</div>
-<div class="line"><span class="lineno">   62</span>                  maxPEHit = &amp;hcalHit;</div>
-<div class="line"><span class="lineno">   63</span>                }</div>
-<div class="line"><span class="lineno">   64</span>            }</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a> &amp;ecalHit : ecalRecHits) {</div>
-<div class="line"><span class="lineno">   67</span>                <span class="keywordflow">if</span> (ecalHit.isNoise()==0){</div>
-<div class="line"><span class="lineno">   68</span>                        totalECALEnergy += ecalHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a012c0a9e98e27dcd16135caa7141e9eb">getEnergy</a>();</div>
-<div class="line"><span class="lineno">   69</span>                }</div>
-<div class="line"><span class="lineno">   70</span>            }</div>
-<div class="line"><span class="lineno">   71</span>        std::vector&lt;double&gt; nhits;</div>
-<div class="line"><span class="lineno">   72</span>        std::vector&lt;double&gt; energies;</div>
-<div class="line"><span class="lineno">   73</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nClusters = 0;</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1HcalCluster.html">ldmx::HcalCluster</a> &amp;hcalCluster : hcalClusters) {</div>
-<div class="line"><span class="lineno">   75</span>                nClusters += 1;</div>
-<div class="line"><span class="lineno">   76</span>                energies.push_back(hcalCluster.getEnergy());</div>
-<div class="line"><span class="lineno">   77</span>                nhits.push_back(hcalCluster.getNHits());</div>
-<div class="line"><span class="lineno">   78</span>            }</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordtype">double</span> meanEnergy = std::accumulate(energies.begin(), energies.end(), 0.0) / energies.size();</div>
-<div class="line"><span class="lineno">   81</span>        <span class="keywordtype">double</span> meanNhits = std::accumulate(nhits.begin(), nhits.end(), 0.0) / nhits.size();</div>
-<div class="line"><span class="lineno">   82</span>        <span class="keywordtype">bool</span> passesEnergyCombo = (((totalECALEnergy + totalHCALEnergy) &lt; maxtotalEnergyCompare_) );</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordtype">bool</span> passesnClusters = (nClusters &lt; maxnClusters_);</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordtype">bool</span> passesNHits = ((meanNhits &lt;  maxMeanHitsPerCluster_) or isnan(meanNhits) );</div>
-<div class="line"><span class="lineno">   85</span>        <span class="keywordtype">bool</span> passesEnergy =  ((meanEnergy &lt; maxMeanEnergyPerCluster_) or isnan(meanEnergy) );</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>        <span class="comment">//total veto:</span></div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordtype">bool</span> passesVeto = (passesEnergyCombo and passesnClusters and passesNHits and passesEnergy);</div>
-<div class="line"><span class="lineno">   89</span>        <span class="comment">//set result:</span></div>
-<div class="line"><span class="lineno">   90</span>        <a class="code hl_class" href="classldmx_1_1HcalVetoResult.html">ldmx::HcalVetoResult</a> result;</div>
-<div class="line"><span class="lineno">   91</span>        result.<a class="code hl_function" href="classldmx_1_1HcalVetoResult.html#aae01cda9596862312a6071644fa480e9">setVetoResult</a>(passesVeto);</div>
-<div class="line"><span class="lineno">   92</span>        result.<a class="code hl_function" href="classldmx_1_1HcalVetoResult.html#aeb942197f9f1bc310d217f7804e1610d">setMaxPEHit</a>(*maxPEHit);</div>
-<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (passesVeto) {</div>
-<div class="line"><span class="lineno">   94</span>            <a class="code hl_function" href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">setStorageHint</a>(framework::hint_shouldKeep);</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   97</span>           <a class="code hl_function" href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">setStorageHint</a>(framework::hint_shouldDrop);</div>
-<div class="line"><span class="lineno">   98</span>        }</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>        <span class="keyword">event</span>.add(outputCollName_, result);</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="HcalWABVetoProcessor_8cxx_source.html#l00044">44</a> of file <a class="el" href="HcalWABVetoProcessor_8cxx_source.html">HcalWABVetoProcessor.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                        {</div>
+<div class="line"><span class="lineno">   45</span>  <span class="comment">// Get the collection of sim particles from the event</span></div>
+<div class="line"><span class="lineno">   46</span>  <span class="comment">// HCAL:</span></div>
+<div class="line"><span class="lineno">   47</span>  <span class="keyword">const</span> std::vector&lt;ldmx::HcalHit&gt; hcalRecHits =</div>
+<div class="line"><span class="lineno">   48</span>      <span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a>&gt;(inputHCALHitCollName_);</div>
+<div class="line"><span class="lineno">   49</span>  <span class="comment">// ECAL:</span></div>
+<div class="line"><span class="lineno">   50</span>  <span class="keyword">const</span> std::vector&lt;ldmx::EcalHit&gt; ecalRecHits =</div>
+<div class="line"><span class="lineno">   51</span>      <span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a>&gt;(inputECALHitCollName_);</div>
+<div class="line"><span class="lineno">   52</span>  <span class="comment">// Clusters:</span></div>
+<div class="line"><span class="lineno">   53</span>  <span class="keyword">const</span> std::vector&lt;ldmx::HcalCluster&gt; hcalClusters =</div>
+<div class="line"><span class="lineno">   54</span>      <span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1HcalCluster.html">ldmx::HcalCluster</a>&gt;(inputHCALClusterCollName_);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <span class="comment">// Loop over all of the Hcal hits and calculate to total photoelectrons</span></div>
+<div class="line"><span class="lineno">   57</span>  <span class="comment">// in the event.</span></div>
+<div class="line"><span class="lineno">   58</span>  <span class="keywordtype">float</span> totalHCALEnergy{0};</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keywordtype">float</span> totalECALEnergy{0};</div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordtype">float</span> maxPE{-1000};</div>
+<div class="line"><span class="lineno">   61</span>  <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a> *maxPEHit;</div>
+<div class="line"><span class="lineno">   62</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a> &amp;hcalHit : hcalRecHits) {</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (hcalHit.isNoise() == 0) {</div>
+<div class="line"><span class="lineno">   64</span>      totalHCALEnergy += hcalHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#adcaaa51f7523883ce888dd2adbf11fb1">getPE</a>();</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">// Find the maximum PE in the list</span></div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (maxPE &lt; hcalHit.getPE()) {</div>
+<div class="line"><span class="lineno">   69</span>      maxPE = hcalHit.getPE();</div>
+<div class="line"><span class="lineno">   70</span>      maxPEHit = &amp;hcalHit;</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+<div class="line"><span class="lineno">   72</span>  }</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a> &amp;ecalHit : ecalRecHits) {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (ecalHit.isNoise() == 0) {</div>
+<div class="line"><span class="lineno">   76</span>      totalECALEnergy += ecalHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a012c0a9e98e27dcd16135caa7141e9eb">getEnergy</a>();</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
+<div class="line"><span class="lineno">   79</span>  std::vector&lt;double&gt; nhits;</div>
+<div class="line"><span class="lineno">   80</span>  std::vector&lt;double&gt; energies;</div>
+<div class="line"><span class="lineno">   81</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nClusters = 0;</div>
+<div class="line"><span class="lineno">   82</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1HcalCluster.html">ldmx::HcalCluster</a> &amp;hcalCluster : hcalClusters) {</div>
+<div class="line"><span class="lineno">   83</span>    nClusters += 1;</div>
+<div class="line"><span class="lineno">   84</span>    energies.push_back(hcalCluster.getEnergy());</div>
+<div class="line"><span class="lineno">   85</span>    nhits.push_back(hcalCluster.getNHits());</div>
+<div class="line"><span class="lineno">   86</span>  }</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>  <span class="keywordtype">double</span> meanEnergy =</div>
+<div class="line"><span class="lineno">   89</span>      std::accumulate(energies.begin(), energies.end(), 0.0) / energies.size();</div>
+<div class="line"><span class="lineno">   90</span>  <span class="keywordtype">double</span> meanNhits =</div>
+<div class="line"><span class="lineno">   91</span>      std::accumulate(nhits.begin(), nhits.end(), 0.0) / nhits.size();</div>
+<div class="line"><span class="lineno">   92</span>  <span class="keywordtype">bool</span> passesEnergyCombo =</div>
+<div class="line"><span class="lineno">   93</span>      (((totalECALEnergy + totalHCALEnergy) &lt; maxtotalEnergyCompare_));</div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordtype">bool</span> passesnClusters = (nClusters &lt; maxnClusters_);</div>
+<div class="line"><span class="lineno">   95</span>  <span class="keywordtype">bool</span> passesNHits = ((meanNhits &lt; maxMeanHitsPerCluster_) or isnan(meanNhits));</div>
+<div class="line"><span class="lineno">   96</span>  <span class="keywordtype">bool</span> passesEnergy =</div>
+<div class="line"><span class="lineno">   97</span>      ((meanEnergy &lt; maxMeanEnergyPerCluster_) or isnan(meanEnergy));</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>  <span class="comment">// total veto:</span></div>
+<div class="line"><span class="lineno">  100</span>  <span class="keywordtype">bool</span> passesVeto =</div>
+<div class="line"><span class="lineno">  101</span>      (passesEnergyCombo and passesnClusters and passesNHits and passesEnergy);</div>
+<div class="line"><span class="lineno">  102</span>  <span class="comment">// set result:</span></div>
+<div class="line"><span class="lineno">  103</span>  <a class="code hl_class" href="classldmx_1_1HcalVetoResult.html">ldmx::HcalVetoResult</a> result;</div>
+<div class="line"><span class="lineno">  104</span>  result.<a class="code hl_function" href="classldmx_1_1HcalVetoResult.html#aae01cda9596862312a6071644fa480e9">setVetoResult</a>(passesVeto);</div>
+<div class="line"><span class="lineno">  105</span>  result.<a class="code hl_function" href="classldmx_1_1HcalVetoResult.html#aeb942197f9f1bc310d217f7804e1610d">setMaxPEHit</a>(*maxPEHit);</div>
+<div class="line"><span class="lineno">  106</span>  <span class="keywordflow">if</span> (passesVeto) {</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_function" href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">setStorageHint</a>(framework::hint_shouldKeep);</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">setStorageHint</a>(framework::hint_shouldDrop);</div>
+<div class="line"><span class="lineno">  111</span>  }</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>  <span class="keyword">event</span>.add(outputCollName_, result);</div>
+<div class="line"><span class="lineno">  114</span>}</div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_a2f93ec80a4207c3847d629482e81989d"><div class="ttname"><a href="classframework_1_1EventProcessor.html#a2f93ec80a4207c3847d629482e81989d">framework::EventProcessor::setStorageHint</a></div><div class="ttdeci">void setStorageHint(framework::StorageControlHint hint)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00160">EventProcessor.h:160</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a012c0a9e98e27dcd16135caa7141e9eb"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a012c0a9e98e27dcd16135caa7141e9eb">ldmx::CalorimeterHit::getEnergy</a></div><div class="ttdeci">float getEnergy() const</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00080">CalorimeterHit.h:80</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHit_html"><div class="ttname"><a href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a></div><div class="ttdoc">Stores reconstructed hit information from the ECAL.</div><div class="ttdef"><b>Definition:</b> <a href="EcalHit_8h_source.html#l00019">EcalHit.h:19</a></div></div>

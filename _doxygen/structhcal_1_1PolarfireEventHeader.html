@@ -95,11 +95,17 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a48daac61cd04edda67f7ce72dab4b6aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhcal_1_1PolarfireEventHeader.html#a48daac61cd04edda67f7ce72dab4b6aa">mm</a></td></tr>
 <tr class="memdesc:a48daac61cd04edda67f7ce72dab4b6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">minute run started  <a href="structhcal_1_1PolarfireEventHeader.html#a48daac61cd04edda67f7ce72dab4b6aa">More...</a><br /></td></tr>
 <tr class="separator:a48daac61cd04edda67f7ce72dab4b6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6c91af571fff548c75486d1dc749cb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhcal_1_1PolarfireEventHeader.html#a3c6c91af571fff548c75486d1dc749cb">good_bxheader</a></td></tr>
+<tr class="memdesc:a3c6c91af571fff548c75486d1dc749cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">quality of link headers  <a href="structhcal_1_1PolarfireEventHeader.html#a3c6c91af571fff548c75486d1dc749cb">More...</a><br /></td></tr>
+<tr class="separator:a3c6c91af571fff548c75486d1dc749cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2150d1f6a51446f5b41172684819154"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhcal_1_1PolarfireEventHeader.html#ac2150d1f6a51446f5b41172684819154">good_trailer</a></td></tr>
+<tr class="memdesc:ac2150d1f6a51446f5b41172684819154"><td class="mdescLeft">&#160;</td><td class="mdescRight">quality of link trailers  <a href="structhcal_1_1PolarfireEventHeader.html#ac2150d1f6a51446f5b41172684819154">More...</a><br /></td></tr>
+<tr class="separator:ac2150d1f6a51446f5b41172684819154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Struct to help interface between raw decoder read function and putting stuff onto event bus </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00070">70</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00066">66</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9f6e2bdcd8d40cfbff6c5f2085ee5dca" name="a9f6e2bdcd8d40cfbff6c5f2085ee5dca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f6e2bdcd8d40cfbff6c5f2085ee5dca">&#9670;&nbsp;</a></span>board()</h2>
@@ -138,35 +144,39 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">99</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   99</span>                                                             {</div>
-<div class="line"><span class="lineno">  100</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;Version&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a355dd4614b3ae5859bdfa60f345e1de9">version</a>);</div>
-<div class="line"><span class="lineno">  101</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;FPGA&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ac918dd3d7c77a3f130efc058c0e81084">fpga</a>);</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;NSamples&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ad164c7d4cac40939ef8101fb71a7a076">nsamples</a>);</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;Spill&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a2deba42c3e77ff266d6880222e1aa6be">spill</a>);</div>
-<div class="line"><span class="lineno">  104</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;Ticks&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#aa08dcd6d6be2feb0da6716d97e16fa86">ticks</a>);</div>
-<div class="line"><span class="lineno">  105</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;Bunch&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#aedc60bd66be029e27f0969431e3ee830">bunch</a>);</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;Number&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a701e81078c9d4cc0f36dc426fdfe8712">number</a>);</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;Run&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#adac5b07650760ddc9756eaa4d397fca9">run</a>);</div>
-<div class="line"><span class="lineno">  108</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;DD&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ab44e13266c4fe865120d63b9b2cba861">DD</a>);</div>
-<div class="line"><span class="lineno">  109</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;MM&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ae48d34412bad6d7ef47c57c2a2f687ab">MM</a>);</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;hh&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a227fae3edfef1302b7c5e8c6791ee0ba">hh</a>);</div>
-<div class="line"><span class="lineno">  111</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;mm&quot;</span>,<a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a48daac61cd04edda67f7ce72dab4b6aa">mm</a>);</div>
-<div class="line"><span class="lineno">  112</span>  }</div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a227fae3edfef1302b7c5e8c6791ee0ba"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a227fae3edfef1302b7c5e8c6791ee0ba">hcal::PolarfireEventHeader::hh</a></div><div class="ttdeci">int hh</div><div class="ttdoc">hour run started</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00092">HcalRawDecoder.cxx:92</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a2deba42c3e77ff266d6880222e1aa6be"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a2deba42c3e77ff266d6880222e1aa6be">hcal::PolarfireEventHeader::spill</a></div><div class="ttdeci">int spill</div><div class="ttdoc">spill number</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00078">HcalRawDecoder.cxx:78</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a355dd4614b3ae5859bdfa60f345e1de9"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a355dd4614b3ae5859bdfa60f345e1de9">hcal::PolarfireEventHeader::version</a></div><div class="ttdeci">int version</div><div class="ttdoc">version of daq format</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00072">HcalRawDecoder.cxx:72</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a48daac61cd04edda67f7ce72dab4b6aa"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a48daac61cd04edda67f7ce72dab4b6aa">hcal::PolarfireEventHeader::mm</a></div><div class="ttdeci">int mm</div><div class="ttdoc">minute run started</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00094">HcalRawDecoder.cxx:94</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a701e81078c9d4cc0f36dc426fdfe8712"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a701e81078c9d4cc0f36dc426fdfe8712">hcal::PolarfireEventHeader::number</a></div><div class="ttdeci">int number</div><div class="ttdoc">event number according to this polarfire</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00084">HcalRawDecoder.cxx:84</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_aa08dcd6d6be2feb0da6716d97e16fa86"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#aa08dcd6d6be2feb0da6716d97e16fa86">hcal::PolarfireEventHeader::ticks</a></div><div class="ttdeci">int ticks</div><div class="ttdoc">number of 5MHz ticks since spill</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00080">HcalRawDecoder.cxx:80</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ab44e13266c4fe865120d63b9b2cba861"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ab44e13266c4fe865120d63b9b2cba861">hcal::PolarfireEventHeader::DD</a></div><div class="ttdeci">int DD</div><div class="ttdoc">day of month run started</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00088">HcalRawDecoder.cxx:88</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ac918dd3d7c77a3f130efc058c0e81084"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ac918dd3d7c77a3f130efc058c0e81084">hcal::PolarfireEventHeader::fpga</a></div><div class="ttdeci">int fpga</div><div class="ttdoc">id for polarfire</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00074">HcalRawDecoder.cxx:74</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ad164c7d4cac40939ef8101fb71a7a076"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ad164c7d4cac40939ef8101fb71a7a076">hcal::PolarfireEventHeader::nsamples</a></div><div class="ttdeci">int nsamples</div><div class="ttdoc">number of samples</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00076">HcalRawDecoder.cxx:76</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_adac5b07650760ddc9756eaa4d397fca9"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#adac5b07650760ddc9756eaa4d397fca9">hcal::PolarfireEventHeader::run</a></div><div class="ttdeci">int run</div><div class="ttdoc">run number according to this polarfire</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00086">HcalRawDecoder.cxx:86</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ae48d34412bad6d7ef47c57c2a2f687ab"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ae48d34412bad6d7ef47c57c2a2f687ab">hcal::PolarfireEventHeader::MM</a></div><div class="ttdeci">int MM</div><div class="ttdoc">month run started</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00090">HcalRawDecoder.cxx:90</a></div></div>
-<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_aedc60bd66be029e27f0969431e3ee830"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#aedc60bd66be029e27f0969431e3ee830">hcal::PolarfireEventHeader::bunch</a></div><div class="ttdeci">int bunch</div><div class="ttdoc">bunch number according to this polarfire</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00082">HcalRawDecoder.cxx:82</a></div></div>
+<div class="line"><span class="lineno">  100</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;Version&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a355dd4614b3ae5859bdfa60f345e1de9">version</a>);</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;FPGA&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ac918dd3d7c77a3f130efc058c0e81084">fpga</a>);</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;NSamples&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ad164c7d4cac40939ef8101fb71a7a076">nsamples</a>);</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;Spill&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a2deba42c3e77ff266d6880222e1aa6be">spill</a>);</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;Ticks&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#aa08dcd6d6be2feb0da6716d97e16fa86">ticks</a>);</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;Bunch&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#aedc60bd66be029e27f0969431e3ee830">bunch</a>);</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;Number&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a701e81078c9d4cc0f36dc426fdfe8712">number</a>);</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;Run&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#adac5b07650760ddc9756eaa4d397fca9">run</a>);</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;DD&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ab44e13266c4fe865120d63b9b2cba861">DD</a>);</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;MM&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ae48d34412bad6d7ef47c57c2a2f687ab">MM</a>);</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;hh&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a227fae3edfef1302b7c5e8c6791ee0ba">hh</a>);</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keyword">event</span>.add(prefix + <span class="stringliteral">&quot;mm&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a48daac61cd04edda67f7ce72dab4b6aa">mm</a>);</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;GoodLinkHeader&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#a3c6c91af571fff548c75486d1dc749cb">good_bxheader</a>);</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keyword">event</span>.add(prefix+<span class="stringliteral">&quot;GoodLinkTrailer&quot;</span>, <a class="code hl_variable" href="structhcal_1_1PolarfireEventHeader.html#ac2150d1f6a51446f5b41172684819154">good_trailer</a>);</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a227fae3edfef1302b7c5e8c6791ee0ba"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a227fae3edfef1302b7c5e8c6791ee0ba">hcal::PolarfireEventHeader::hh</a></div><div class="ttdeci">int hh</div><div class="ttdoc">hour run started</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00088">HcalRawDecoder.cxx:88</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a2deba42c3e77ff266d6880222e1aa6be"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a2deba42c3e77ff266d6880222e1aa6be">hcal::PolarfireEventHeader::spill</a></div><div class="ttdeci">int spill</div><div class="ttdoc">spill number</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00074">HcalRawDecoder.cxx:74</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a355dd4614b3ae5859bdfa60f345e1de9"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a355dd4614b3ae5859bdfa60f345e1de9">hcal::PolarfireEventHeader::version</a></div><div class="ttdeci">int version</div><div class="ttdoc">version of daq format</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00068">HcalRawDecoder.cxx:68</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a3c6c91af571fff548c75486d1dc749cb"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a3c6c91af571fff548c75486d1dc749cb">hcal::PolarfireEventHeader::good_bxheader</a></div><div class="ttdeci">std::vector&lt; bool &gt; good_bxheader</div><div class="ttdoc">quality of link headers</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00092">HcalRawDecoder.cxx:92</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a48daac61cd04edda67f7ce72dab4b6aa"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a48daac61cd04edda67f7ce72dab4b6aa">hcal::PolarfireEventHeader::mm</a></div><div class="ttdeci">int mm</div><div class="ttdoc">minute run started</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00090">HcalRawDecoder.cxx:90</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_a701e81078c9d4cc0f36dc426fdfe8712"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#a701e81078c9d4cc0f36dc426fdfe8712">hcal::PolarfireEventHeader::number</a></div><div class="ttdeci">int number</div><div class="ttdoc">event number according to this polarfire</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00080">HcalRawDecoder.cxx:80</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_aa08dcd6d6be2feb0da6716d97e16fa86"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#aa08dcd6d6be2feb0da6716d97e16fa86">hcal::PolarfireEventHeader::ticks</a></div><div class="ttdeci">int ticks</div><div class="ttdoc">number of 5MHz ticks since spill</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00076">HcalRawDecoder.cxx:76</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ab44e13266c4fe865120d63b9b2cba861"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ab44e13266c4fe865120d63b9b2cba861">hcal::PolarfireEventHeader::DD</a></div><div class="ttdeci">int DD</div><div class="ttdoc">day of month run started</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00084">HcalRawDecoder.cxx:84</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ac2150d1f6a51446f5b41172684819154"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ac2150d1f6a51446f5b41172684819154">hcal::PolarfireEventHeader::good_trailer</a></div><div class="ttdeci">std::vector&lt; bool &gt; good_trailer</div><div class="ttdoc">quality of link trailers</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00094">HcalRawDecoder.cxx:94</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ac918dd3d7c77a3f130efc058c0e81084"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ac918dd3d7c77a3f130efc058c0e81084">hcal::PolarfireEventHeader::fpga</a></div><div class="ttdeci">int fpga</div><div class="ttdoc">id for polarfire</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00070">HcalRawDecoder.cxx:70</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ad164c7d4cac40939ef8101fb71a7a076"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ad164c7d4cac40939ef8101fb71a7a076">hcal::PolarfireEventHeader::nsamples</a></div><div class="ttdeci">int nsamples</div><div class="ttdoc">number of samples</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00072">HcalRawDecoder.cxx:72</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_adac5b07650760ddc9756eaa4d397fca9"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#adac5b07650760ddc9756eaa4d397fca9">hcal::PolarfireEventHeader::run</a></div><div class="ttdeci">int run</div><div class="ttdoc">run number according to this polarfire</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00082">HcalRawDecoder.cxx:82</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_ae48d34412bad6d7ef47c57c2a2f687ab"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#ae48d34412bad6d7ef47c57c2a2f687ab">hcal::PolarfireEventHeader::MM</a></div><div class="ttdeci">int MM</div><div class="ttdoc">month run started</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00086">HcalRawDecoder.cxx:86</a></div></div>
+<div class="ttc" id="astructhcal_1_1PolarfireEventHeader_html_aedc60bd66be029e27f0969431e3ee830"><div class="ttname"><a href="structhcal_1_1PolarfireEventHeader.html#aedc60bd66be029e27f0969431e3ee830">hcal::PolarfireEventHeader::bunch</a></div><div class="ttdeci">int bunch</div><div class="ttdoc">bunch number according to this polarfire</div><div class="ttdef"><b>Definition:</b> <a href="HcalRawDecoder_8cxx_source.html#l00078">HcalRawDecoder.cxx:78</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalRawDecoder_8cxx_source.html#l00082">bunch</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">DD</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00074">fpga</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00092">hh</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00090">MM</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00094">mm</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00076">nsamples</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00084">number</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00086">run</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00078">spill</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00080">ticks</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00072">version</a>.</p>
+<p class="reference">References <a class="el" href="HcalRawDecoder_8cxx_source.html#l00078">bunch</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00084">DD</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00070">fpga</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00092">good_bxheader</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00094">good_trailer</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">hh</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00086">MM</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00090">mm</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00072">nsamples</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00080">number</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00082">run</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00074">spill</a>, <a class="el" href="HcalRawDecoder_8cxx_source.html#l00076">ticks</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00068">version</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00578">hcal::HcalRawDecoder::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00624">hcal::HcalRawDecoder::produce()</a>.</p>
 
 </div>
 </div>
@@ -185,9 +195,9 @@ Public Attributes</h2></td></tr>
 
 <p>bunch number according to this polarfire </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00082">82</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00078">78</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -205,9 +215,9 @@ Public Attributes</h2></td></tr>
 
 <p>day of month run started </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">88</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00084">84</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -225,9 +235,49 @@ Public Attributes</h2></td></tr>
 
 <p>id for polarfire </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00074">74</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00070">70</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
+
+</div>
+</div>
+<a id="a3c6c91af571fff548c75486d1dc749cb" name="a3c6c91af571fff548c75486d1dc749cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6c91af571fff548c75486d1dc749cb">&#9670;&nbsp;</a></span>good_bxheader</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;bool&gt; hcal::PolarfireEventHeader::good_bxheader</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>quality of link headers </p>
+
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00092">92</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
+
+</div>
+</div>
+<a id="ac2150d1f6a51446f5b41172684819154" name="ac2150d1f6a51446f5b41172684819154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2150d1f6a51446f5b41172684819154">&#9670;&nbsp;</a></span>good_trailer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;bool&gt; hcal::PolarfireEventHeader::good_trailer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>quality of link trailers </p>
+
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00094">94</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -245,9 +295,9 @@ Public Attributes</h2></td></tr>
 
 <p>hour run started </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00092">92</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00088">88</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -265,9 +315,9 @@ Public Attributes</h2></td></tr>
 
 <p>month run started </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00090">90</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00086">86</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -285,9 +335,9 @@ Public Attributes</h2></td></tr>
 
 <p>minute run started </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00094">94</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00090">90</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -305,9 +355,9 @@ Public Attributes</h2></td></tr>
 
 <p>number of samples </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00076">76</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00072">72</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -325,9 +375,9 @@ Public Attributes</h2></td></tr>
 
 <p>event number according to this polarfire </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00084">84</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00080">80</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -345,9 +395,9 @@ Public Attributes</h2></td></tr>
 
 <p>run number according to this polarfire </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00086">86</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00082">82</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -365,9 +415,9 @@ Public Attributes</h2></td></tr>
 
 <p>spill number </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00078">78</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00074">74</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -385,9 +435,9 @@ Public Attributes</h2></td></tr>
 
 <p>number of 5MHz ticks since spill </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00080">80</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00076">76</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
@@ -405,9 +455,9 @@ Public Attributes</h2></td></tr>
 
 <p>version of daq format </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00072">72</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalRawDecoder_8cxx_source.html#l00068">68</a> of file <a class="el" href="HcalRawDecoder_8cxx_source.html">HcalRawDecoder.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00137">hcal::HcalRawDecoder::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalRawDecoder_8cxx_source.html#l00099">board()</a>, and <a class="el" href="HcalRawDecoder_8cxx_source.html#l00140">hcal::HcalRawDecoder::read()</a>.</p>
 
 </div>
 </div>
