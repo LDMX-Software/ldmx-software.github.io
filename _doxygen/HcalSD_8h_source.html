@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.9.4"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>LDMX Software: SimCore/include/SimCore/HcalSD.h Source File</title>
+		<title>LDMX Software: SimCore/include/SimCore/SDs/HcalSD.h Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -40,7 +40,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d764adcdf188058460d8947cee0814f0.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_525e6fd522401a8b765cd7a918925d70.html">include</a></li><li class="navelem"><a class="el" href="dir_12633c54d4771685671f9f4e90bad08f.html">SimCore</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d764adcdf188058460d8947cee0814f0.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_525e6fd522401a8b765cd7a918925d70.html">include</a></li><li class="navelem"><a class="el" href="dir_12633c54d4771685671f9f4e90bad08f.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_d4c0315a9d9fb8eb957898e9a37c44a4.html">SDs</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -53,46 +53,70 @@ $(function() {
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*~~~~~~~~~~~~~~*/</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/*   DetDescr   */</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*~~~~~~~~~~~~~~*/</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="HcalGeometry_8h.html">DetDescr/HcalGeometry.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;SimCore/CalorimeterSD.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;SimCore/ConditionsInterface.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// Forward declarations</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span>G4Step;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span>G4TouchableHistory;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;SimCore/SensitiveDetector.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="SimCalorimeterHit_8h.html">SimCore/Event/SimCalorimeterHit.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="TrackingAction_8h.html">SimCore/G4User/TrackingAction.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;SimCore/TrackMap.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span>simcore {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>simcore {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classsimcore_1_1HcalSD.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classsimcore_1_1HcalSD.html">HcalSD</a> : <span class="keyword">public</span> <a class="code hl_class" href="classsimcore_1_1CalorimeterSD.html">CalorimeterSD</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_function" href="classsimcore_1_1HcalSD.html#a249df3edd93788bf4f3424966fc536cf">HcalSD</a>(G4String name, G4String collectionName, <span class="keywordtype">int</span> subDetID,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>         <a class="code hl_class" href="classsimcore_1_1ConditionsInterface.html">ConditionsInterface</a>&amp; ci);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_function" href="classsimcore_1_1HcalSD.html#a5b862d8a2cb5f40be7c0081ca260b1d2">~HcalSD</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  G4bool <a class="code hl_function" href="classsimcore_1_1HcalSD.html#a8844218cc4fadf2be22dd96b63a04826">ProcessHits</a>(G4Step* aStep, G4TouchableHistory* ROhist);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="comment">// TODO: document!</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">double</span> birksc1_;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="comment">// TODO: document!</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">double</span> birksc2_;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classsimcore_1_1HcalSD.html#addd7b272ce718bdcbe7e6b0c84a1c815">   51</a></span>  <a class="code hl_class" href="classsimcore_1_1ConditionsInterface.html">ConditionsInterface</a>&amp; <a class="code hl_variable" href="classsimcore_1_1HcalSD.html#addd7b272ce718bdcbe7e6b0c84a1c815">conditionsIntf_</a>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};  <span class="comment">// HcalSD</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}  <span class="comment">// namespace simcore</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif  </span><span class="comment">// SIMCORE_HCALSD_H</span></div>
-<div class="ttc" id="aHcalGeometry_8h_html"><div class="ttname"><a href="HcalGeometry_8h.html">HcalGeometry.h</a></div><div class="ttdoc">Class that translates HCal ID into positions of strip hits.</div></div>
-<div class="ttc" id="aclasssimcore_1_1CalorimeterSD_html"><div class="ttname"><a href="classsimcore_1_1CalorimeterSD.html">simcore::CalorimeterSD</a></div><div class="ttdoc">Basic calorimeter sensitive detector.</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterSD_8h_source.html#l00020">CalorimeterSD.h:20</a></div></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classsimcore_1_1HcalSD.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="classsimcore_1_1HcalSD.html">HcalSD</a> : <span class="keyword">public</span> <a class="code hl_class" href="classsimcore_1_1SensitiveDetector.html">SensitiveDetector</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classsimcore_1_1HcalSD.html#a62900c73fd3641da25ba72f128aa2890">   20</a></span>  <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code hl_variable" href="classsimcore_1_1HcalSD.html#a62900c73fd3641da25ba72f128aa2890">COLLECTION_NAME</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_function" href="classsimcore_1_1HcalSD.html#a9f640fbe3b5979ec27a22c2a010cbeb4">HcalSD</a>(<span class="keyword">const</span> std::string&amp; name, <a class="code hl_class" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a>&amp; ci,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>         <span class="keyword">const</span> <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp; params);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_function" href="classsimcore_1_1HcalSD.html#a5b862d8a2cb5f40be7c0081ca260b1d2">~HcalSD</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classsimcore_1_1HcalSD.html#a52ce731bf4bc096c20d0c0916845259b">   41</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimcore_1_1HcalSD.html#a52ce731bf4bc096c20d0c0916845259b">isSensDet</a>(G4LogicalVolume* volume) <span class="keyword">const</span> <span class="keyword">final</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">auto</span> region = volume-&gt;GetRegion();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (region and region-&gt;GetName().contains(<span class="stringliteral">&quot;CalorimeterRegion&quot;</span>)) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keywordflow">return</span> volume-&gt;GetName().contains(<span class="stringliteral">&quot;ScintBox&quot;</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">virtual</span> G4bool <a class="code hl_function" href="classsimcore_1_1HcalSD.html#a39d5e61b0b77ddff9c2efea486ec17f7">ProcessHits</a>(G4Step* aStep,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                             G4TouchableHistory* ROhist) <span class="keyword">final</span> <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classsimcore_1_1HcalSD.html#ac6b6a78c02f7ccb7ada8f6de9ab09b4a">   62</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classsimcore_1_1HcalSD.html#ac6b6a78c02f7ccb7ada8f6de9ab09b4a">saveHits</a>(<a class="code hl_class" href="classframework_1_1Event.html">framework::Event</a>&amp; event) <span class="keyword">final</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">event</span>.add(<a class="code hl_variable" href="classsimcore_1_1HcalSD.html#a62900c73fd3641da25ba72f128aa2890">COLLECTION_NAME</a>, hits_);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classsimcore_1_1HcalSD.html#afd643578143657988a27ead69dd6fb37">   66</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classsimcore_1_1HcalSD.html#afd643578143657988a27ead69dd6fb37">EndOfEvent</a>() final<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    hits_.clear();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="comment">// TODO: document!</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordtype">double</span> birksc1_;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// TODO: document!</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">double</span> birksc2_;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">// collection of hits to write to event bus</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  std::vector&lt;ldmx::SimCalorimeterHit&gt; hits_;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};  <span class="comment">// HcalSD</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}  <span class="comment">// namespace simcore</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif  </span><span class="comment">// SIMCORE_HCALSD_H</span></div>
+<div class="ttc" id="aSimCalorimeterHit_8h_html"><div class="ttname"><a href="SimCalorimeterHit_8h.html">SimCalorimeterHit.h</a></div><div class="ttdoc">Class which stores simulated calorimeter hit information.</div></div>
+<div class="ttc" id="aTrackingAction_8h_html"><div class="ttname"><a href="TrackingAction_8h.html">TrackingAction.h</a></div><div class="ttdoc">Class which implements the user tracking action.</div></div>
+<div class="ttc" id="aclassframework_1_1Event_html"><div class="ttname"><a href="classframework_1_1Event.html">framework::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00040">Event.h:40</a></div></div>
+<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1ConditionsInterface_html"><div class="ttname"><a href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a></div><div class="ttdoc">Handle to the conditions system, provided at construction to classes which require it.</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsInterface_8h_source.html#l00021">ConditionsInterface.h:21</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1HcalSD_html"><div class="ttname"><a href="classsimcore_1_1HcalSD.html">simcore::HcalSD</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8h_source.html#l00019">HcalSD.h:19</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1HcalSD_html_a249df3edd93788bf4f3424966fc536cf"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#a249df3edd93788bf4f3424966fc536cf">simcore::HcalSD::HcalSD</a></div><div class="ttdeci">HcalSD(G4String name, G4String collectionName, int subDetID, ConditionsInterface &amp;ci)</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8cxx_source.html#l00023">HcalSD.cxx:23</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1HcalSD_html_a5b862d8a2cb5f40be7c0081ca260b1d2"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#a5b862d8a2cb5f40be7c0081ca260b1d2">simcore::HcalSD::~HcalSD</a></div><div class="ttdeci">~HcalSD()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8cxx_source.html#l00030">HcalSD.cxx:30</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1HcalSD_html_a8844218cc4fadf2be22dd96b63a04826"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#a8844218cc4fadf2be22dd96b63a04826">simcore::HcalSD::ProcessHits</a></div><div class="ttdeci">G4bool ProcessHits(G4Step *aStep, G4TouchableHistory *ROhist)</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8cxx_source.html#l00032">HcalSD.cxx:32</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1HcalSD_html_addd7b272ce718bdcbe7e6b0c84a1c815"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#addd7b272ce718bdcbe7e6b0c84a1c815">simcore::HcalSD::conditionsIntf_</a></div><div class="ttdeci">ConditionsInterface &amp; conditionsIntf_</div><div class="ttdoc">ConditionsInterface.</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8h_source.html#l00051">HcalSD.h:51</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1HcalSD_html"><div class="ttname"><a href="classsimcore_1_1HcalSD.html">simcore::HcalSD</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8h_source.html#l00017">HcalSD.h:17</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1HcalSD_html_a39d5e61b0b77ddff9c2efea486ec17f7"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#a39d5e61b0b77ddff9c2efea486ec17f7">simcore::HcalSD::ProcessHits</a></div><div class="ttdeci">virtual G4bool ProcessHits(G4Step *aStep, G4TouchableHistory *ROhist) final override</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8cxx_source.html#l00028">HcalSD.cxx:28</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1HcalSD_html_a52ce731bf4bc096c20d0c0916845259b"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#a52ce731bf4bc096c20d0c0916845259b">simcore::HcalSD::isSensDet</a></div><div class="ttdeci">bool isSensDet(G4LogicalVolume *volume) const final override</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8h_source.html#l00041">HcalSD.h:41</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1HcalSD_html_a5b862d8a2cb5f40be7c0081ca260b1d2"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#a5b862d8a2cb5f40be7c0081ca260b1d2">simcore::HcalSD::~HcalSD</a></div><div class="ttdeci">~HcalSD()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8cxx_source.html#l00026">HcalSD.cxx:26</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1HcalSD_html_a62900c73fd3641da25ba72f128aa2890"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#a62900c73fd3641da25ba72f128aa2890">simcore::HcalSD::COLLECTION_NAME</a></div><div class="ttdeci">static const std::string COLLECTION_NAME</div><div class="ttdoc">name of collection to be added to event bus</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8h_source.html#l00020">HcalSD.h:20</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1HcalSD_html_a9f640fbe3b5979ec27a22c2a010cbeb4"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#a9f640fbe3b5979ec27a22c2a010cbeb4">simcore::HcalSD::HcalSD</a></div><div class="ttdeci">HcalSD(const std::string &amp;name, simcore::ConditionsInterface &amp;ci, const framework::config::Parameters &amp;params)</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8cxx_source.html#l00022">HcalSD.cxx:22</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1HcalSD_html_ac6b6a78c02f7ccb7ada8f6de9ab09b4a"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#ac6b6a78c02f7ccb7ada8f6de9ab09b4a">simcore::HcalSD::saveHits</a></div><div class="ttdeci">virtual void saveHits(framework::Event &amp;event) final override</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8h_source.html#l00062">HcalSD.h:62</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1HcalSD_html_afd643578143657988a27ead69dd6fb37"><div class="ttname"><a href="classsimcore_1_1HcalSD.html#afd643578143657988a27ead69dd6fb37">simcore::HcalSD::EndOfEvent</a></div><div class="ttdeci">virtual void EndOfEvent() final override</div><div class="ttdef"><b>Definition:</b> <a href="HcalSD_8h_source.html#l00066">HcalSD.h:66</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1SensitiveDetector_html"><div class="ttname"><a href="classsimcore_1_1SensitiveDetector.html">simcore::SensitiveDetector</a></div><div class="ttdef"><b>Definition:</b> <a href="SensitiveDetector_8h_source.html#l00023">SensitiveDetector.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

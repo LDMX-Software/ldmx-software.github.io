@@ -244,7 +244,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00213">213</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  213</span>{ <span class="keywordflow">throw</span> AbortEventException(); }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00013">packing::SingleSubsystemPacker::analyze()</a>, <a class="el" href="HcalAlignPolarfires_8cxx_source.html#l00077">hcal::HcalAlignPolarfires::produce()</a>, <a class="el" href="RawIO_8cxx_source.html#l00014">packing::RawIO::produce()</a>, <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00018">packing::SingleSubsystemUnpacker::produce()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00283">simcore::Simulator::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SingleSubsystemPacker_8cxx_source.html#l00013">packing::SingleSubsystemPacker::analyze()</a>, <a class="el" href="HcalAlignPolarfires_8cxx_source.html#l00077">hcal::HcalAlignPolarfires::produce()</a>, <a class="el" href="RawIO_8cxx_source.html#l00014">packing::RawIO::produce()</a>, <a class="el" href="SingleSubsystemUnpacker_8cxx_source.html#l00018">packing::SingleSubsystemUnpacker::produce()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00254">simcore::Simulator::produce()</a>.</p>
 
 </div>
 </div>
@@ -384,10 +384,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   46</span>  <a class="code hl_function" href="classframework_1_1PluginFactory.html#ae5efa7e81a0e70bda658ff13cbb30188">PluginFactory::getInstance</a>().<a class="code hl_function" href="classframework_1_1PluginFactory.html#acdaef748affbec13c0915a90a89d74dd">registerEventProcessor</a>(classname, classtype,</div>
 <div class="line"><span class="lineno">   47</span>                                                      maker);</div>
 <div class="line"><span class="lineno">   48</span>}</div>
-<div class="ttc" id="aclassframework_1_1PluginFactory_html_acdaef748affbec13c0915a90a89d74dd"><div class="ttname"><a href="classframework_1_1PluginFactory.html#acdaef748affbec13c0915a90a89d74dd">framework::PluginFactory::registerEventProcessor</a></div><div class="ttdeci">void registerEventProcessor(const std::string &amp;classname, int classtype, EventProcessorMaker *maker)</div><div class="ttdef"><b>Definition:</b> <a href="Framework_2src_2Framework_2PluginFactory_8cxx_source.html#l00012">PluginFactory.cxx:12</a></div></div>
-<div class="ttc" id="aclassframework_1_1PluginFactory_html_ae5efa7e81a0e70bda658ff13cbb30188"><div class="ttname"><a href="classframework_1_1PluginFactory.html#ae5efa7e81a0e70bda658ff13cbb30188">framework::PluginFactory::getInstance</a></div><div class="ttdeci">static PluginFactory &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Framework_2include_2Framework_2PluginFactory_8h_source.html#l00032">PluginFactory.h:32</a></div></div>
+<div class="ttc" id="aclassframework_1_1PluginFactory_html_acdaef748affbec13c0915a90a89d74dd"><div class="ttname"><a href="classframework_1_1PluginFactory.html#acdaef748affbec13c0915a90a89d74dd">framework::PluginFactory::registerEventProcessor</a></div><div class="ttdeci">void registerEventProcessor(const std::string &amp;classname, int classtype, EventProcessorMaker *maker)</div><div class="ttdef"><b>Definition:</b> <a href="PluginFactory_8cxx_source.html#l00012">PluginFactory.cxx:12</a></div></div>
+<div class="ttc" id="aclassframework_1_1PluginFactory_html_ae5efa7e81a0e70bda658ff13cbb30188"><div class="ttname"><a href="classframework_1_1PluginFactory.html#ae5efa7e81a0e70bda658ff13cbb30188">framework::PluginFactory::getInstance</a></div><div class="ttdeci">static PluginFactory &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="PluginFactory_8h_source.html#l00032">PluginFactory.h:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Framework_2include_2Framework_2PluginFactory_8h_source.html#l00032">framework::PluginFactory::getInstance()</a>, and <a class="el" href="Framework_2src_2Framework_2PluginFactory_8cxx_source.html#l00012">framework::PluginFactory::registerEventProcessor()</a>.</p>
+<p class="reference">References <a class="el" href="PluginFactory_8h_source.html#l00032">framework::PluginFactory::getInstance()</a>, and <a class="el" href="PluginFactory_8cxx_source.html#l00012">framework::PluginFactory::registerEventProcessor()</a>.</p>
 
 </div>
 </div>
@@ -560,8 +560,6 @@ template&lt;class T &gt; </div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Process_8h_source.html#l00083">framework::Process::getLogFrequency()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00236">process_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00283">simcore::Simulator::produce()</a>.</p>
-
 </div>
 </div>
 <a id="a9467d0d35043af7ed66a6b46cbca85ca" name="a9467d0d35043af7ed66a6b46cbca85ca"></a>
@@ -618,8 +616,6 @@ template&lt;class T &gt; </div>
 <div class="ttc" id="aclassframework_1_1Process_html_af1fa138461c9585674d54d453d6449df"><div class="ttname"><a href="classframework_1_1Process.html#af1fa138461c9585674d54d453d6449df">framework::Process::getRunNumber</a></div><div class="ttdeci">int getRunNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="Process_8cxx_source.html#l00345">Process.cxx:345</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Process_8cxx_source.html#l00345">framework::Process::getRunNumber()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00236">process_</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00115">simcore::Simulator::onFileOpen()</a>.</p>
 
 </div>
 </div>
@@ -691,8 +687,6 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This callback is rarely used. </dd></dl>
-
-<p>Reimplemented in <a class="el" href="classsimcore_1_1Simulator.html#a248e041e758dd31f1362eb0022046f2a">simcore::Simulator</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="EventProcessor_8h_source.html#l00113">113</a> of file <a class="el" href="EventProcessor_8h_source.html">EventProcessor.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  113</span>{}</div>

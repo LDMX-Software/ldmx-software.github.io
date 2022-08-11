@@ -56,29 +56,67 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3334b883714140f90a07eb68aa04781d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a3334b883714140f90a07eb68aa04781d">ScoringPlaneSD</a> (G4String name, G4String colName, int subDetID)</td></tr>
-<tr class="separator:a3334b883714140f90a07eb68aa04781d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28174f44ae9ce6fd2a7523082d66c741"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a28174f44ae9ce6fd2a7523082d66c741">ScoringPlaneSD</a> (const std::string &amp;name, <a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;ci, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;params)</td></tr>
+<tr class="separator:a28174f44ae9ce6fd2a7523082d66c741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5ad730da1d7a028da41844adb9d8d9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#af5ad730da1d7a028da41844adb9d8d9e">~ScoringPlaneSD</a> ()</td></tr>
 <tr class="separator:af5ad730da1d7a028da41844adb9d8d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a303bbd89305223349b664f619956a20c"><td class="memItemLeft" align="right" valign="top">G4bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a303bbd89305223349b664f619956a20c">ProcessHits</a> (G4Step *step, G4TouchableHistory *history)</td></tr>
-<tr class="separator:a303bbd89305223349b664f619956a20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88e225c13f672f6b2ea686c55fc56d05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a88e225c13f672f6b2ea686c55fc56d05">Initialize</a> (G4HCofThisEvent *hcEvent)</td></tr>
-<tr class="separator:a88e225c13f672f6b2ea686c55fc56d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b34af82ea3c201c279f5182527bc6bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a6b34af82ea3c201c279f5182527bc6bd">EndOfEvent</a> (G4HCofThisEvent *hcEvent)</td></tr>
-<tr class="separator:a6b34af82ea3c201c279f5182527bc6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76c11406d109038a47687be30f8df2f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a76c11406d109038a47687be30f8df2f0">isSensDet</a> (G4LogicalVolume *volume) const final override</td></tr>
+<tr class="separator:a76c11406d109038a47687be30f8df2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7dbbe5df5e7ecb09913886808048708"><td class="memItemLeft" align="right" valign="top">virtual G4bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#ac7dbbe5df5e7ecb09913886808048708">ProcessHits</a> (G4Step *step, G4TouchableHistory *hist) final override</td></tr>
+<tr class="separator:ac7dbbe5df5e7ecb09913886808048708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcfde63d638175deb41b807a27ba03ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#adcfde63d638175deb41b807a27ba03ed">saveHits</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event) final override</td></tr>
+<tr class="separator:adcfde63d638175deb41b807a27ba03ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae654b9600633c2a2baaf0ae225c19ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#aae654b9600633c2a2baaf0ae225c19ae">EndOfEvent</a> () final override</td></tr>
+<tr class="separator:aae654b9600633c2a2baaf0ae225c19ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classsimcore_1_1SensitiveDetector"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsimcore_1_1SensitiveDetector')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classsimcore_1_1SensitiveDetector.html">simcore::SensitiveDetector</a></td></tr>
+<tr class="memitem:a6fa9bed692725b95f19af2acd8ca6606 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a6fa9bed692725b95f19af2acd8ca6606">SensitiveDetector</a> (const std::string &amp;name, <a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;ci, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;parameters)</td></tr>
+<tr class="separator:a6fa9bed692725b95f19af2acd8ca6606 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16225357a782a8a2ebf91c9b1da50207 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a16225357a782a8a2ebf91c9b1da50207">~SensitiveDetector</a> ()</td></tr>
+<tr class="separator:a16225357a782a8a2ebf91c9b1da50207 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87dcc37929d04f3043b60045173270c2 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a87dcc37929d04f3043b60045173270c2">isSensDet</a> (G4LogicalVolume *lv) const =0</td></tr>
+<tr class="separator:a87dcc37929d04f3043b60045173270c2 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5f4a4f0f522d4260f04cb803ea7848 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual G4bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a8e5f4a4f0f522d4260f04cb803ea7848">ProcessHits</a> (G4Step *step, G4TouchableHistory *hist)=0</td></tr>
+<tr class="separator:a8e5f4a4f0f522d4260f04cb803ea7848 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7301b913f77eea9991f632395fcc2dbc inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a7301b913f77eea9991f632395fcc2dbc">saveHits</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event)=0</td></tr>
+<tr class="separator:a7301b913f77eea9991f632395fcc2dbc inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8034a854e9e8aa68dc3abbe4109bcd inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#ade8034a854e9e8aa68dc3abbe4109bcd">EndOfEvent</a> (G4HCofThisEvent *) final override</td></tr>
+<tr class="separator:ade8034a854e9e8aa68dc3abbe4109bcd inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df81a01b527179654d7ca55e3dbe8bc inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a4df81a01b527179654d7ca55e3dbe8bc">EndOfEvent</a> ()=0</td></tr>
+<tr class="separator:a4df81a01b527179654d7ca55e3dbe8bc inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a66f5419052ea84b9bc428a31fcd3f9d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="G4TrackerHit_8h.html#a83b62e1a97ec1e78efcd0fe59d04be29">G4TrackerHitsCollection</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a66f5419052ea84b9bc428a31fcd3f9d7">hitsCollection_</a> {nullptr}</td></tr>
-<tr class="separator:a66f5419052ea84b9bc428a31fcd3f9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afda8229380ae0ac1b3f46339e8d11dc5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#afda8229380ae0ac1b3f46339e8d11dc5">match_substr_</a></td></tr>
+<tr class="memdesc:afda8229380ae0ac1b3f46339e8d11dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substring to match to logical volumes.  <a href="classsimcore_1_1ScoringPlaneSD.html#afda8229380ae0ac1b3f46339e8d11dc5">More...</a><br /></td></tr>
+<tr class="separator:afda8229380ae0ac1b3f46339e8d11dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a258d6a7e1c58fd9f7e9e5be044c939c8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a258d6a7e1c58fd9f7e9e5be044c939c8">collection_name_</a></td></tr>
+<tr class="memdesc:a258d6a7e1c58fd9f7e9e5be044c939c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of output collection to add.  <a href="classsimcore_1_1ScoringPlaneSD.html#a258d6a7e1c58fd9f7e9e5be044c939c8">More...</a><br /></td></tr>
+<tr class="separator:a258d6a7e1c58fd9f7e9e5be044c939c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a301c9ae22c0db81b34a4c686cc8f657a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a301c9ae22c0db81b34a4c686cc8f657a">hits_</a></td></tr>
+<tr class="memdesc:a301c9ae22c0db81b34a4c686cc8f657a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual output collection.  <a href="classsimcore_1_1ScoringPlaneSD.html#a301c9ae22c0db81b34a4c686cc8f657a">More...</a><br /></td></tr>
+<tr class="separator:a301c9ae22c0db81b34a4c686cc8f657a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classsimcore_1_1SensitiveDetector"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classsimcore_1_1SensitiveDetector')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classsimcore_1_1SensitiveDetector.html">simcore::SensitiveDetector</a></td></tr>
+<tr class="memitem:ad20e1bb4778553f3f07b81815f5dad15 inherit pub_types_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#ad20e1bb4778553f3f07b81815f5dad15">Factory</a> = <a class="el" href="classsimcore_1_1Factory.html">::simcore::Factory</a>&lt; <a class="el" href="classsimcore_1_1SensitiveDetector.html">SensitiveDetector</a>, <a class="el" href="classsimcore_1_1SensitiveDetector.html">SensitiveDetector</a> *, const std::string &amp;, <a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp; &gt;</td></tr>
+<tr class="separator:ad20e1bb4778553f3f07b81815f5dad15 inherit pub_types_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classsimcore_1_1SensitiveDetector"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classsimcore_1_1SensitiveDetector')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classsimcore_1_1SensitiveDetector.html">simcore::SensitiveDetector</a></td></tr>
+<tr class="memitem:a7e96753500e39910e440fa5d49851b52 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7e96753500e39910e440fa5d49851b52 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a7e96753500e39910e440fa5d49851b52">getCondition</a> (const std::string &amp;condition_name)</td></tr>
+<tr class="separator:a7e96753500e39910e440fa5d49851b52 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58f88696dea0475f696c036e3313b1c5 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a58f88696dea0475f696c036e3313b1c5">isGeantino</a> (const G4Step *step) const</td></tr>
+<tr class="separator:a58f88696dea0475f696c036e3313b1c5 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af58c33cc4f6cafba71ac767363b8e6 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classsimcore_1_1TrackMap.html">TrackMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a6af58c33cc4f6cafba71ac767363b8e6">getTrackMap</a> () const</td></tr>
+<tr class="separator:a6af58c33cc4f6cafba71ac767363b8e6 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class defining a basic sensitive detector for scoring planes. </p>
 
-<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8h_source.html#l00027">27</a> of file <a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8h_source.html#l00014">14</a> of file <a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3334b883714140f90a07eb68aa04781d" name="a3334b883714140f90a07eb68aa04781d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3334b883714140f90a07eb68aa04781d">&#9670;&nbsp;</a></span>ScoringPlaneSD()</h2>
+<a id="a28174f44ae9ce6fd2a7523082d66c741" name="a28174f44ae9ce6fd2a7523082d66c741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28174f44ae9ce6fd2a7523082d66c741">&#9670;&nbsp;</a></span>ScoringPlaneSD()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -86,20 +124,20 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">simcore::ScoringPlaneSD::ScoringPlaneSD </td>
           <td>(</td>
-          <td class="paramtype">G4String&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">G4String&#160;</td>
-          <td class="paramname"><em>colName</em>, </td>
+          <td class="paramtype"><a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;&#160;</td>
+          <td class="paramname"><em>ci</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>subDetID</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>params</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -112,23 +150,24 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the sensitive detector. </td></tr>
-    <tr><td class="paramname">collectionID</td><td>The name of the hits collection. </td></tr>
-    <tr><td class="paramname">subDetID</td><td>The subdetector ID. </td></tr>
+    <tr><td class="paramname">ci</td><td>Conditions interface handle </td></tr>
+    <tr><td class="paramname">params</td><td>python configuration parameters </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00021">21</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>    : G4VSensitiveDetector(name) {</div>
-<div class="line"><span class="lineno">   23</span>  <span class="comment">// Add the collection name to vector of names.</span></div>
-<div class="line"><span class="lineno">   24</span>  this-&gt;collectionName.push_back(colName);</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>  <span class="comment">// Register this SD with the manager.</span></div>
-<div class="line"><span class="lineno">   27</span>  G4SDManager::GetSDMpointer()-&gt;AddNewDetector(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>  <span class="comment">// at some point, confirm that the subDetID is as expected...</span></div>
-<div class="line"><span class="lineno">   30</span>}</div>
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00022">22</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>    : <a class="code hl_function" href="classsimcore_1_1SensitiveDetector.html#a6fa9bed692725b95f19af2acd8ca6606">SensitiveDetector</a>(name, ci, params) {</div>
+<div class="line"><span class="lineno">   26</span>  <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a258d6a7e1c58fd9f7e9e5be044c939c8">collection_name_</a> = params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;collection_name&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span>  <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#afda8229380ae0ac1b3f46339e8d11dc5">match_substr_</a>    = params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;match_substr&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>}</div>
+<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1ScoringPlaneSD_html_a258d6a7e1c58fd9f7e9e5be044c939c8"><div class="ttname"><a href="classsimcore_1_1ScoringPlaneSD.html#a258d6a7e1c58fd9f7e9e5be044c939c8">simcore::ScoringPlaneSD::collection_name_</a></div><div class="ttdeci">std::string collection_name_</div><div class="ttdoc">Name of output collection to add.</div><div class="ttdef"><b>Definition:</b> <a href="ScoringPlaneSD_8h_source.html#l00063">ScoringPlaneSD.h:63</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1ScoringPlaneSD_html_afda8229380ae0ac1b3f46339e8d11dc5"><div class="ttname"><a href="classsimcore_1_1ScoringPlaneSD.html#afda8229380ae0ac1b3f46339e8d11dc5">simcore::ScoringPlaneSD::match_substr_</a></div><div class="ttdeci">std::string match_substr_</div><div class="ttdoc">Substring to match to logical volumes.</div><div class="ttdef"><b>Definition:</b> <a href="ScoringPlaneSD_8h_source.html#l00060">ScoringPlaneSD.h:60</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1SensitiveDetector_html_a6fa9bed692725b95f19af2acd8ca6606"><div class="ttname"><a href="classsimcore_1_1SensitiveDetector.html#a6fa9bed692725b95f19af2acd8ca6606">simcore::SensitiveDetector::SensitiveDetector</a></div><div class="ttdeci">SensitiveDetector(const std::string &amp;name, simcore::ConditionsInterface &amp;ci, const framework::config::Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="SensitiveDetector_8cxx_source.html#l00012">SensitiveDetector.cxx:12</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="ScoringPlaneSD_8h_source.html#l00063">collection_name_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, and <a class="el" href="ScoringPlaneSD_8h_source.html#l00060">match_substr_</a>.</p>
+
 </div>
 </div>
 <a id="af5ad730da1d7a028da41844adb9d8d9e" name="af5ad730da1d7a028da41844adb9d8d9e"></a>
@@ -147,98 +186,92 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00032">32</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00030">30</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6b34af82ea3c201c279f5182527bc6bd" name="a6b34af82ea3c201c279f5182527bc6bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b34af82ea3c201c279f5182527bc6bd">&#9670;&nbsp;</a></span>EndOfEvent()</h2>
+<a id="aae654b9600633c2a2baaf0ae225c19ae" name="aae654b9600633c2a2baaf0ae225c19ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae654b9600633c2a2baaf0ae225c19ae">&#9670;&nbsp;</a></span>EndOfEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void simcore::ScoringPlaneSD::EndOfEvent </td>
+          <td class="memname">virtual void simcore::ScoringPlaneSD::EndOfEvent </td>
           <td>(</td>
-          <td class="paramtype">G4HCofThisEvent *&#160;</td>
-          <td class="paramname"><em>hcEvent</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p >End of event hook.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hcEvent</td><td>The hits collections associated with this event. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p >Cleanup SD and prepare a new-event state </p>
 
-<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00104">104</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  104</span>                                                {</div>
-<div class="line"><span class="lineno">  105</span>  <span class="comment">// Print number of hits.</span></div>
-<div class="line"><span class="lineno">  106</span>  <span class="keywordflow">if</span> (this-&gt;verboseLevel &gt; 0) {</div>
-<div class="line"><span class="lineno">  107</span>    std::cout &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot; had &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a66f5419052ea84b9bc428a31fcd3f9d7">hitsCollection_</a>-&gt;entries()</div>
-<div class="line"><span class="lineno">  108</span>              &lt;&lt; <span class="stringliteral">&quot; hits in event&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  109</span>  }</div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>  <span class="comment">// Print each hit in hits collection.</span></div>
-<div class="line"><span class="lineno">  112</span>  <span class="keywordflow">if</span> (this-&gt;verboseLevel &gt; 1) {</div>
-<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> iHit = 0; iHit &lt; <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a66f5419052ea84b9bc428a31fcd3f9d7">hitsCollection_</a>-&gt;GetSize(); iHit++) {</div>
-<div class="line"><span class="lineno">  114</span>      (*hitsCollection_)[iHit]-&gt;Print();</div>
-<div class="line"><span class="lineno">  115</span>    }</div>
-<div class="line"><span class="lineno">  116</span>  }</div>
-<div class="line"><span class="lineno">  117</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1ScoringPlaneSD_html_a66f5419052ea84b9bc428a31fcd3f9d7"><div class="ttname"><a href="classsimcore_1_1ScoringPlaneSD.html#a66f5419052ea84b9bc428a31fcd3f9d7">simcore::ScoringPlaneSD::hitsCollection_</a></div><div class="ttdeci">G4TrackerHitsCollection * hitsCollection_</div><div class="ttdef"><b>Definition:</b> <a href="ScoringPlaneSD_8h_source.html#l00065">ScoringPlaneSD.h:65</a></div></div>
+<p>Implements <a class="el" href="classsimcore_1_1SensitiveDetector.html#a4df81a01b527179654d7ca55e3dbe8bc">simcore::SensitiveDetector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8h_source.html#l00054">54</a> of file <a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                                           {</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a301c9ae22c0db81b34a4c686cc8f657a">hits_</a>.clear();</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+<div class="ttc" id="aclasssimcore_1_1ScoringPlaneSD_html_a301c9ae22c0db81b34a4c686cc8f657a"><div class="ttname"><a href="classsimcore_1_1ScoringPlaneSD.html#a301c9ae22c0db81b34a4c686cc8f657a">simcore::ScoringPlaneSD::hits_</a></div><div class="ttdeci">std::vector&lt; ldmx::SimTrackerHit &gt; hits_</div><div class="ttdoc">The actual output collection.</div><div class="ttdef"><b>Definition:</b> <a href="ScoringPlaneSD_8h_source.html#l00066">ScoringPlaneSD.h:66</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ScoringPlaneSD_8h_source.html#l00065">hitsCollection_</a>.</p>
+<p class="reference">References <a class="el" href="ScoringPlaneSD_8h_source.html#l00066">hits_</a>.</p>
 
 </div>
 </div>
-<a id="a88e225c13f672f6b2ea686c55fc56d05" name="a88e225c13f672f6b2ea686c55fc56d05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88e225c13f672f6b2ea686c55fc56d05">&#9670;&nbsp;</a></span>Initialize()</h2>
+<a id="a76c11406d109038a47687be30f8df2f0" name="a76c11406d109038a47687be30f8df2f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76c11406d109038a47687be30f8df2f0">&#9670;&nbsp;</a></span>isSensDet()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void simcore::ScoringPlaneSD::Initialize </td>
+          <td class="memname">bool simcore::ScoringPlaneSD::isSensDet </td>
           <td>(</td>
-          <td class="paramtype">G4HCofThisEvent *&#160;</td>
-          <td class="paramname"><em>hcEvent</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype">G4LogicalVolume *&#160;</td>
+          <td class="paramname"><em>volume</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p >Initialize the sensitive detector.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hcEvent</td><td>The hits collections associated with this event. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p >Check if the input logical volume is a scoring plane we should include. </p>
 
-<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00096">96</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>                                                    {</div>
-<div class="line"><span class="lineno">   97</span>  <span class="comment">// Setup hits collection and the HC ID.</span></div>
-<div class="line"><span class="lineno">   98</span>  <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a66f5419052ea84b9bc428a31fcd3f9d7">hitsCollection_</a> =</div>
-<div class="line"><span class="lineno">   99</span>      <span class="keyword">new</span> <a class="code hl_typedef" href="G4TrackerHit_8h.html#a83b62e1a97ec1e78efcd0fe59d04be29">G4TrackerHitsCollection</a>(SensitiveDetectorName, collectionName[0]);</div>
-<div class="line"><span class="lineno">  100</span>  <span class="keywordtype">int</span> hcID = G4SDManager::GetSDMpointer()-&gt;GetCollectionID(collectionName[0]);</div>
-<div class="line"><span class="lineno">  101</span>  hce-&gt;AddHitsCollection(hcID, <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a66f5419052ea84b9bc428a31fcd3f9d7">hitsCollection_</a>);</div>
-<div class="line"><span class="lineno">  102</span>}</div>
-<div class="ttc" id="aG4TrackerHit_8h_html_a83b62e1a97ec1e78efcd0fe59d04be29"><div class="ttname"><a href="G4TrackerHit_8h.html#a83b62e1a97ec1e78efcd0fe59d04be29">simcore::G4TrackerHitsCollection</a></div><div class="ttdeci">G4THitsCollection&lt; G4TrackerHit &gt; G4TrackerHitsCollection</div><div class="ttdef"><b>Definition:</b> <a href="G4TrackerHit_8h_source.html#l00280">G4TrackerHit.h:280</a></div></div>
+<p>Implements <a class="el" href="classsimcore_1_1SensitiveDetector.html#a87dcc37929d04f3043b60045173270c2">simcore::SensitiveDetector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8h_source.html#l00033">33</a> of file <a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>                                                               {</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> volume-&gt;GetName().contains(<a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#afda8229380ae0ac1b3f46339e8d11dc5">match_substr_</a>);</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ScoringPlaneSD_8h_source.html#l00065">hitsCollection_</a>.</p>
+<p class="reference">References <a class="el" href="ScoringPlaneSD_8h_source.html#l00060">match_substr_</a>.</p>
 
 </div>
 </div>
-<a id="a303bbd89305223349b664f619956a20c" name="a303bbd89305223349b664f619956a20c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a303bbd89305223349b664f619956a20c">&#9670;&nbsp;</a></span>ProcessHits()</h2>
+<a id="ac7dbbe5df5e7ecb09913886808048708" name="ac7dbbe5df5e7ecb09913886808048708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7dbbe5df5e7ecb09913886808048708">&#9670;&nbsp;</a></span>ProcessHits()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">G4bool simcore::ScoringPlaneSD::ProcessHits </td>
@@ -250,7 +283,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">G4TouchableHistory *&#160;</td>
-          <td class="paramname"><em>history</em>&#160;</td>
+          <td class="paramname"><em>hist</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -258,88 +291,84 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p >Process a step and create a hit out of it.</p>
+<p >This is Geant4's handle to tell us that a particle has stepped through our sensitive detector and we should process its interaction with us.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">step</td><td>The current step. </td></tr>
-    <tr><td class="paramname">history</td><td>The readout history. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>the step that happened within one of our logical volumes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hist</td><td>the touchable history of the step </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00034">34</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                                            {</div>
-<div class="line"><span class="lineno">   35</span>  <span class="comment">// Get the edep from the step.</span></div>
-<div class="line"><span class="lineno">   36</span>  G4double edep = step-&gt;GetTotalEnergyDeposit();</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>  <span class="comment">// Create a new hit object.</span></div>
-<div class="line"><span class="lineno">   39</span>  G4TrackerHit* hit = <span class="keyword">new</span> G4TrackerHit();</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>  <span class="comment">// Assign track ID for finding the SimParticle in post event processing.</span></div>
-<div class="line"><span class="lineno">   42</span>  hit-&gt;setTrackID(step-&gt;GetTrack()-&gt;GetTrackID());</div>
-<div class="line"><span class="lineno">   43</span>  hit-&gt;setPdgID(step-&gt;GetTrack()-&gt;GetDynamicParticle()-&gt;GetPDGcode());</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>  <span class="comment">// Set the edep.</span></div>
-<div class="line"><span class="lineno">   46</span>  hit-&gt;setEdep(edep);</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>  <span class="comment">// Set the start position.</span></div>
-<div class="line"><span class="lineno">   49</span>  G4StepPoint* prePoint = step-&gt;GetPreStepPoint();</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>  <span class="comment">// Set the end position.</span></div>
-<div class="line"><span class="lineno">   52</span>  G4StepPoint* postPoint = step-&gt;GetPostStepPoint();</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>  G4ThreeVector start = prePoint-&gt;GetPosition();</div>
-<div class="line"><span class="lineno">   55</span>  G4ThreeVector end = postPoint-&gt;GetPosition();</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>  <span class="comment">// Set the mid position.</span></div>
-<div class="line"><span class="lineno">   58</span>  G4ThreeVector mid = 0.5 * (start + end);</div>
-<div class="line"><span class="lineno">   59</span>  hit-&gt;setPosition(mid.x(), mid.y(), mid.z());</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>  <span class="comment">// Compute path length.</span></div>
-<div class="line"><span class="lineno">   62</span>  G4double pathLength =</div>
-<div class="line"><span class="lineno">   63</span>      sqrt(pow(start.x() - end.x(), 2) + pow(start.y() - end.y(), 2) +</div>
-<div class="line"><span class="lineno">   64</span>           pow(start.z() - end.z(), 2));</div>
-<div class="line"><span class="lineno">   65</span>  hit-&gt;setPathLength(pathLength);</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>  <span class="comment">// Set the global time.</span></div>
-<div class="line"><span class="lineno">   68</span>  hit-&gt;setTime(step-&gt;GetTrack()-&gt;GetGlobalTime());</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>  <span class="comment">// Set the momentum</span></div>
-<div class="line"><span class="lineno">   71</span>  G4ThreeVector p = postPoint-&gt;GetMomentum();</div>
-<div class="line"><span class="lineno">   72</span>  hit-&gt;setMomentum(p.x(), p.y(), p.z());</div>
-<div class="line"><span class="lineno">   73</span>  hit-&gt;setEnergy(postPoint-&gt;GetTotalEnergy());</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>  <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">   76</span><span class="comment">   * Set the 32-bit ID on the hit.</span></div>
-<div class="line"><span class="lineno">   77</span><span class="comment">   */</span></div>
-<div class="line"><span class="lineno">   78</span>  <span class="keywordtype">int</span> cpNumber = prePoint-&gt;GetTouchableHandle()-&gt;GetCopyNumber();</div>
-<div class="line"><span class="lineno">   79</span>  <a class="code hl_class" href="classldmx_1_1SimSpecialID.html">ldmx::SimSpecialID</a> <span class="keywordtype">id</span> = <a class="code hl_function" href="classldmx_1_1SimSpecialID.html#a53e331115a4f45f53e4f6ad6d104bb99">ldmx::SimSpecialID::ScoringPlaneID</a>(cpNumber);</div>
-<div class="line"><span class="lineno">   80</span>  hit-&gt;setID(<span class="keywordtype">id</span>.raw());</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>  <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">   83</span><span class="comment">   * Debug print.</span></div>
-<div class="line"><span class="lineno">   84</span><span class="comment">   */</span></div>
-<div class="line"><span class="lineno">   85</span>  <span class="keywordflow">if</span> (this-&gt;verboseLevel &gt; 2) {</div>
-<div class="line"><span class="lineno">   86</span>    hit-&gt;Print();</div>
-<div class="line"><span class="lineno">   87</span>    std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   88</span>  }</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>  <span class="comment">// Insert hit into current hits collection.</span></div>
-<div class="line"><span class="lineno">   91</span>  <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a66f5419052ea84b9bc428a31fcd3f9d7">hitsCollection_</a>-&gt;insert(hit);</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   94</span>}</div>
+<p>Implements <a class="el" href="classsimcore_1_1SensitiveDetector.html#a8e5f4a4f0f522d4260f04cb803ea7848">simcore::SensitiveDetector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00032">32</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>                                                                            {</div>
+<div class="line"><span class="lineno">   33</span>  <span class="comment">// Get the edep from the step.</span></div>
+<div class="line"><span class="lineno">   34</span>  G4double edep = step-&gt;GetTotalEnergyDeposit();</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>  <span class="comment">// Create a new hit object.</span></div>
+<div class="line"><span class="lineno">   37</span>  <a class="code hl_class" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a>&amp; hit{<a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a301c9ae22c0db81b34a4c686cc8f657a">hits_</a>.emplace_back()};</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>  <span class="comment">// Assign track ID for finding the SimParticle in post event processing.</span></div>
+<div class="line"><span class="lineno">   40</span>  hit.setTrackID(step-&gt;GetTrack()-&gt;GetTrackID());</div>
+<div class="line"><span class="lineno">   41</span>  hit.setPdgID(step-&gt;GetTrack()-&gt;GetDynamicParticle()-&gt;GetPDGcode());</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>  <span class="comment">// Set the edep.</span></div>
+<div class="line"><span class="lineno">   44</span>  hit.setEdep(edep);</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>  <span class="comment">// Set the start position.</span></div>
+<div class="line"><span class="lineno">   47</span>  G4StepPoint* prePoint = step-&gt;GetPreStepPoint();</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>  <span class="comment">// Set the end position.</span></div>
+<div class="line"><span class="lineno">   50</span>  G4StepPoint* postPoint = step-&gt;GetPostStepPoint();</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>  G4ThreeVector start = prePoint-&gt;GetPosition();</div>
+<div class="line"><span class="lineno">   53</span>  G4ThreeVector end = postPoint-&gt;GetPosition();</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>  <span class="comment">// Set the mid position.</span></div>
+<div class="line"><span class="lineno">   56</span>  G4ThreeVector mid = 0.5 * (start + end);</div>
+<div class="line"><span class="lineno">   57</span>  hit.setPosition(mid.x(), mid.y(), mid.z());</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>  <span class="comment">// Compute path length.</span></div>
+<div class="line"><span class="lineno">   60</span>  G4double pathLength =</div>
+<div class="line"><span class="lineno">   61</span>      sqrt(pow(start.x() - end.x(), 2) + pow(start.y() - end.y(), 2) +</div>
+<div class="line"><span class="lineno">   62</span>           pow(start.z() - end.z(), 2));</div>
+<div class="line"><span class="lineno">   63</span>  hit.setPathLength(pathLength);</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>  <span class="comment">// Set the global time.</span></div>
+<div class="line"><span class="lineno">   66</span>  hit.setTime(step-&gt;GetTrack()-&gt;GetGlobalTime());</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>  <span class="comment">// Set the momentum</span></div>
+<div class="line"><span class="lineno">   69</span>  G4ThreeVector p = postPoint-&gt;GetMomentum();</div>
+<div class="line"><span class="lineno">   70</span>  hit.setMomentum(p.x(), p.y(), p.z());</div>
+<div class="line"><span class="lineno">   71</span>  hit.setEnergy(postPoint-&gt;GetTotalEnergy());</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>  <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">   * Set the 32-bit ID on the hit.</span></div>
+<div class="line"><span class="lineno">   75</span><span class="comment">   */</span></div>
+<div class="line"><span class="lineno">   76</span>  <span class="keywordtype">int</span> cpNumber = prePoint-&gt;GetTouchableHandle()-&gt;GetCopyNumber();</div>
+<div class="line"><span class="lineno">   77</span>  <a class="code hl_class" href="classldmx_1_1SimSpecialID.html">ldmx::SimSpecialID</a> <span class="keywordtype">id</span> = <a class="code hl_function" href="classldmx_1_1SimSpecialID.html#a53e331115a4f45f53e4f6ad6d104bb99">ldmx::SimSpecialID::ScoringPlaneID</a>(cpNumber);</div>
+<div class="line"><span class="lineno">   78</span>  hit.setID(<span class="keywordtype">id</span>.raw());</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   81</span>}</div>
 <div class="ttc" id="aclassldmx_1_1SimSpecialID_html"><div class="ttname"><a href="classldmx_1_1SimSpecialID.html">ldmx::SimSpecialID</a></div><div class="ttdoc">Implements detector ids for special simulation-derived hits like scoring planes.</div><div class="ttdef"><b>Definition:</b> <a href="SimSpecialID_8h_source.html#l00015">SimSpecialID.h:15</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimSpecialID_html_a53e331115a4f45f53e4f6ad6d104bb99"><div class="ttname"><a href="classldmx_1_1SimSpecialID.html#a53e331115a4f45f53e4f6ad6d104bb99">ldmx::SimSpecialID::ScoringPlaneID</a></div><div class="ttdeci">static SimSpecialID ScoringPlaneID(int plane)</div><div class="ttdef"><b>Definition:</b> <a href="SimSpecialID_8h_source.html#l00062">SimSpecialID.h:62</a></div></div>
+<div class="ttc" id="aclassldmx_1_1SimTrackerHit_html"><div class="ttname"><a href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a></div><div class="ttdoc">Represents a simulated tracker hit in the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="SimTrackerHit_8h_source.html#l00024">SimTrackerHit.h:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ScoringPlaneSD_8h_source.html#l00065">hitsCollection_</a>, <a class="el" href="G4TrackerHit_8cxx_source.html#l00029">simcore::G4TrackerHit::Print()</a>, <a class="el" href="SimSpecialID_8h_source.html#l00062">ldmx::SimSpecialID::ScoringPlaneID()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00155">simcore::G4TrackerHit::setEdep()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00209">simcore::G4TrackerHit::setEnergy()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00099">simcore::G4TrackerHit::setID()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00181">simcore::G4TrackerHit::setMomentum()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00221">simcore::G4TrackerHit::setPathLength()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00111">simcore::G4TrackerHit::setPdgID()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00199">simcore::G4TrackerHit::setPosition()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00167">simcore::G4TrackerHit::setTime()</a>, and <a class="el" href="G4TrackerHit_8h_source.html#l00081">simcore::G4TrackerHit::setTrackID()</a>.</p>
+<p class="reference">References <a class="el" href="ScoringPlaneSD_8h_source.html#l00066">hits_</a>, and <a class="el" href="SimSpecialID_8h_source.html#l00062">ldmx::SimSpecialID::ScoringPlaneID()</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a66f5419052ea84b9bc428a31fcd3f9d7" name="a66f5419052ea84b9bc428a31fcd3f9d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66f5419052ea84b9bc428a31fcd3f9d7">&#9670;&nbsp;</a></span>hitsCollection_</h2>
+<a id="adcfde63d638175deb41b807a27ba03ed" name="adcfde63d638175deb41b807a27ba03ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfde63d638175deb41b807a27ba03ed">&#9670;&nbsp;</a></span>saveHits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,7 +377,50 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="G4TrackerHit_8h.html#a83b62e1a97ec1e78efcd0fe59d04be29">G4TrackerHitsCollection</a>* simcore::ScoringPlaneSD::hitsCollection_ {nullptr}</td>
+          <td class="memname">void simcore::ScoringPlaneSD::saveHits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >We are given the event bus here and we must decide now what to persist into the event.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">event</td><td>event bus to add thing(s) to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classsimcore_1_1SensitiveDetector.html#a7301b913f77eea9991f632395fcc2dbc">simcore::SensitiveDetector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00083">83</a> of file <a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>                                                   {</div>
+<div class="line"><span class="lineno">   84</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a258d6a7e1c58fd9f7e9e5be044c939c8">collection_name_</a>, <a class="code hl_variable" href="classsimcore_1_1ScoringPlaneSD.html#a301c9ae22c0db81b34a4c686cc8f657a">hits_</a>);</div>
+<div class="line"><span class="lineno">   85</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ScoringPlaneSD_8h_source.html#l00063">collection_name_</a>, and <a class="el" href="ScoringPlaneSD_8h_source.html#l00066">hits_</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a258d6a7e1c58fd9f7e9e5be044c939c8" name="a258d6a7e1c58fd9f7e9e5be044c939c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a258d6a7e1c58fd9f7e9e5be044c939c8">&#9670;&nbsp;</a></span>collection_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string simcore::ScoringPlaneSD::collection_name_</td>
         </tr>
       </table>
   </td>
@@ -357,17 +429,74 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Output hits collection </p>
 
-<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8h_source.html#l00065">65</a> of file <a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a>.</p>
+<p>Name of output collection to add. </p>
 
-<p class="reference">Referenced by <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00104">EndOfEvent()</a>, <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00096">Initialize()</a>, and <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00034">ProcessHits()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8h_source.html#l00063">63</a> of file <a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00083">saveHits()</a>, and <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00022">ScoringPlaneSD()</a>.</p>
+
+</div>
+</div>
+<a id="a301c9ae22c0db81b34a4c686cc8f657a" name="a301c9ae22c0db81b34a4c686cc8f657a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a301c9ae22c0db81b34a4c686cc8f657a">&#9670;&nbsp;</a></span>hits_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a>&gt; simcore::ScoringPlaneSD::hits_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The actual output collection. </p>
+
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8h_source.html#l00066">66</a> of file <a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ScoringPlaneSD_8h_source.html#l00054">EndOfEvent()</a>, <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00032">ProcessHits()</a>, and <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00083">saveHits()</a>.</p>
+
+</div>
+</div>
+<a id="afda8229380ae0ac1b3f46339e8d11dc5" name="afda8229380ae0ac1b3f46339e8d11dc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afda8229380ae0ac1b3f46339e8d11dc5">&#9670;&nbsp;</a></span>match_substr_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string simcore::ScoringPlaneSD::match_substr_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Substring to match to logical volumes. </p>
+
+<p class="definition">Definition at line <a class="el" href="ScoringPlaneSD_8h_source.html#l00060">60</a> of file <a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ScoringPlaneSD_8h_source.html#l00033">isSensDet()</a>, and <a class="el" href="ScoringPlaneSD_8cxx_source.html#l00022">ScoringPlaneSD()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>SimCore/include/SimCore/<a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a></li>
-<li>SimCore/src/SimCore/<a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a></li>
+<li>SimCore/include/SimCore/SDs/<a class="el" href="ScoringPlaneSD_8h_source.html">ScoringPlaneSD.h</a></li>
+<li>SimCore/src/SimCore/SDs/<a class="el" href="ScoringPlaneSD_8cxx_source.html">ScoringPlaneSD.cxx</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

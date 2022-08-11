@@ -59,35 +59,71 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0f5a73db9851afb2c592fef9d173f61a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a0f5a73db9851afb2c592fef9d173f61a">TrackerSD</a> (G4String name, G4String collectionName, int subDetID)</td></tr>
-<tr class="separator:a0f5a73db9851afb2c592fef9d173f61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec34a9f9bbe0e5b411ce6699368aa35b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#aec34a9f9bbe0e5b411ce6699368aa35b">TrackerSD</a> (const std::string &amp;name, <a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;ci, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;p)</td></tr>
+<tr class="separator:aec34a9f9bbe0e5b411ce6699368aa35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21a26ecfd126aad7f50030064ab8dfb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a21a26ecfd126aad7f50030064ab8dfb1">~TrackerSD</a> ()</td></tr>
 <tr class="memdesc:a21a26ecfd126aad7f50030064ab8dfb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="classsimcore_1_1TrackerSD.html#a21a26ecfd126aad7f50030064ab8dfb1">More...</a><br /></td></tr>
 <tr class="separator:a21a26ecfd126aad7f50030064ab8dfb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48843e1a83160abd3c9fc5ff5ae0e17f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a48843e1a83160abd3c9fc5ff5ae0e17f">isSensDet</a> (G4LogicalVolume *volume) const final override</td></tr>
+<tr class="separator:a48843e1a83160abd3c9fc5ff5ae0e17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a273dfb0e631ca07fffde4ac3d4fbd8a2"><td class="memItemLeft" align="right" valign="top">G4bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a273dfb0e631ca07fffde4ac3d4fbd8a2">ProcessHits</a> (G4Step *step, G4TouchableHistory *history)</td></tr>
 <tr class="separator:a273dfb0e631ca07fffde4ac3d4fbd8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21a4ec9b5fcb0c10bd03a0a3dea3df2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a21a4ec9b5fcb0c10bd03a0a3dea3df2c">Initialize</a> (G4HCofThisEvent *hcEvent)</td></tr>
-<tr class="separator:a21a4ec9b5fcb0c10bd03a0a3dea3df2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351812a2c246eee3b239c1ad6595e5f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a351812a2c246eee3b239c1ad6595e5f4">EndOfEvent</a> (G4HCofThisEvent *hcEvent)</td></tr>
-<tr class="separator:a351812a2c246eee3b239c1ad6595e5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f466fb884db4ab8f69bc13029dcc5a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a6f466fb884db4ab8f69bc13029dcc5a3">saveHits</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event) final override</td></tr>
+<tr class="separator:a6f466fb884db4ab8f69bc13029dcc5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250365d64c3d8a583fed5e2663e6807c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a250365d64c3d8a583fed5e2663e6807c">EndOfEvent</a> () final override</td></tr>
+<tr class="separator:a250365d64c3d8a583fed5e2663e6807c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classsimcore_1_1SensitiveDetector"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsimcore_1_1SensitiveDetector')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classsimcore_1_1SensitiveDetector.html">simcore::SensitiveDetector</a></td></tr>
+<tr class="memitem:a6fa9bed692725b95f19af2acd8ca6606 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a6fa9bed692725b95f19af2acd8ca6606">SensitiveDetector</a> (const std::string &amp;name, <a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;ci, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;parameters)</td></tr>
+<tr class="separator:a6fa9bed692725b95f19af2acd8ca6606 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16225357a782a8a2ebf91c9b1da50207 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a16225357a782a8a2ebf91c9b1da50207">~SensitiveDetector</a> ()</td></tr>
+<tr class="separator:a16225357a782a8a2ebf91c9b1da50207 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87dcc37929d04f3043b60045173270c2 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a87dcc37929d04f3043b60045173270c2">isSensDet</a> (G4LogicalVolume *lv) const =0</td></tr>
+<tr class="separator:a87dcc37929d04f3043b60045173270c2 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5f4a4f0f522d4260f04cb803ea7848 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual G4bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a8e5f4a4f0f522d4260f04cb803ea7848">ProcessHits</a> (G4Step *step, G4TouchableHistory *hist)=0</td></tr>
+<tr class="separator:a8e5f4a4f0f522d4260f04cb803ea7848 inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7301b913f77eea9991f632395fcc2dbc inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a7301b913f77eea9991f632395fcc2dbc">saveHits</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event)=0</td></tr>
+<tr class="separator:a7301b913f77eea9991f632395fcc2dbc inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8034a854e9e8aa68dc3abbe4109bcd inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#ade8034a854e9e8aa68dc3abbe4109bcd">EndOfEvent</a> (G4HCofThisEvent *) final override</td></tr>
+<tr class="separator:ade8034a854e9e8aa68dc3abbe4109bcd inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df81a01b527179654d7ca55e3dbe8bc inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a4df81a01b527179654d7ca55e3dbe8bc">EndOfEvent</a> ()=0</td></tr>
+<tr class="separator:a4df81a01b527179654d7ca55e3dbe8bc inherit pub_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a927888bc9720e1d16b25b6acc72b4927"><td class="memItemLeft" align="right" valign="top"><a class="el" href="G4TrackerHit_8h.html#a83b62e1a97ec1e78efcd0fe59d04be29">G4TrackerHitsCollection</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">hitsCollection_</a></td></tr>
-<tr class="memdesc:a927888bc9720e1d16b25b6acc72b4927"><td class="mdescLeft">&#160;</td><td class="mdescRight">The output hits collection of G4TrackerHits.  <a href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">More...</a><br /></td></tr>
-<tr class="separator:a927888bc9720e1d16b25b6acc72b4927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b1b9f11f10ebe12353e2048982055ed"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a4b1b9f11f10ebe12353e2048982055ed">subsystem_</a></td></tr>
+<tr class="memdesc:a4b1b9f11f10ebe12353e2048982055ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the subsystem we are apart of.  <a href="classsimcore_1_1TrackerSD.html#a4b1b9f11f10ebe12353e2048982055ed">More...</a><br /></td></tr>
+<tr class="separator:a4b1b9f11f10ebe12353e2048982055ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a21f7227af1a2d4a4b8a062c930bae"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#a79a21f7227af1a2d4a4b8a062c930bae">collection_name_</a></td></tr>
+<tr class="memdesc:a79a21f7227af1a2d4a4b8a062c930bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the output collection.  <a href="classsimcore_1_1TrackerSD.html#a79a21f7227af1a2d4a4b8a062c930bae">More...</a><br /></td></tr>
+<tr class="separator:a79a21f7227af1a2d4a4b8a062c930bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeff10c81bdeef72674fda41eb59d6ad3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#aeff10c81bdeef72674fda41eb59d6ad3">hits_</a></td></tr>
+<tr class="memdesc:aeff10c81bdeef72674fda41eb59d6ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The collection of hits.  <a href="classsimcore_1_1TrackerSD.html#aeff10c81bdeef72674fda41eb59d6ad3">More...</a><br /></td></tr>
+<tr class="separator:aeff10c81bdeef72674fda41eb59d6ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae3ce0bf3e209219c54aeca8f9b737f3"><td class="memItemLeft" align="right" valign="top">ldmx::SubdetectorIDType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1TrackerSD.html#aae3ce0bf3e209219c54aeca8f9b737f3">subDetID_</a></td></tr>
 <tr class="memdesc:aae3ce0bf3e209219c54aeca8f9b737f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The detector ID.  <a href="classsimcore_1_1TrackerSD.html#aae3ce0bf3e209219c54aeca8f9b737f3">More...</a><br /></td></tr>
 <tr class="separator:aae3ce0bf3e209219c54aeca8f9b737f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classsimcore_1_1SensitiveDetector"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classsimcore_1_1SensitiveDetector')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classsimcore_1_1SensitiveDetector.html">simcore::SensitiveDetector</a></td></tr>
+<tr class="memitem:ad20e1bb4778553f3f07b81815f5dad15 inherit pub_types_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#ad20e1bb4778553f3f07b81815f5dad15">Factory</a> = <a class="el" href="classsimcore_1_1Factory.html">::simcore::Factory</a>&lt; <a class="el" href="classsimcore_1_1SensitiveDetector.html">SensitiveDetector</a>, <a class="el" href="classsimcore_1_1SensitiveDetector.html">SensitiveDetector</a> *, const std::string &amp;, <a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp; &gt;</td></tr>
+<tr class="separator:ad20e1bb4778553f3f07b81815f5dad15 inherit pub_types_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classsimcore_1_1SensitiveDetector"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classsimcore_1_1SensitiveDetector')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classsimcore_1_1SensitiveDetector.html">simcore::SensitiveDetector</a></td></tr>
+<tr class="memitem:a7e96753500e39910e440fa5d49851b52 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7e96753500e39910e440fa5d49851b52 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a7e96753500e39910e440fa5d49851b52">getCondition</a> (const std::string &amp;condition_name)</td></tr>
+<tr class="separator:a7e96753500e39910e440fa5d49851b52 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58f88696dea0475f696c036e3313b1c5 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a58f88696dea0475f696c036e3313b1c5">isGeantino</a> (const G4Step *step) const</td></tr>
+<tr class="separator:a58f88696dea0475f696c036e3313b1c5 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af58c33cc4f6cafba71ac767363b8e6 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classsimcore_1_1TrackMap.html">TrackMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a6af58c33cc4f6cafba71ac767363b8e6">getTrackMap</a> () const</td></tr>
+<tr class="separator:a6af58c33cc4f6cafba71ac767363b8e6 inherit pro_methods_classsimcore_1_1SensitiveDetector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Basic sensitive detector for trackers. </p>
-<dl class="section note"><dt>Note</dt><dd>This class creates a <a class="el" href="classsimcore_1_1G4TrackerHit.html" title="Track hit which is used to create output SimTrackerHit collection.">G4TrackerHit</a> for each step within the subdetector. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00028">28</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00015">15</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0f5a73db9851afb2c592fef9d173f61a" name="a0f5a73db9851afb2c592fef9d173f61a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f5a73db9851afb2c592fef9d173f61a">&#9670;&nbsp;</a></span>TrackerSD()</h2>
+<a id="aec34a9f9bbe0e5b411ce6699368aa35b" name="aec34a9f9bbe0e5b411ce6699368aa35b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec34a9f9bbe0e5b411ce6699368aa35b">&#9670;&nbsp;</a></span>TrackerSD()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -95,20 +131,20 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">simcore::TrackerSD::TrackerSD </td>
           <td>(</td>
-          <td class="paramtype">G4String&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">G4String&#160;</td>
-          <td class="paramname"><em>collectionName</em>, </td>
+          <td class="paramtype"><a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;&#160;</td>
+          <td class="paramname"><em>ci</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>subDetID</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -120,27 +156,28 @@ Private Attributes</h2></td></tr>
 <p >Class constructor. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the sensitive detector. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">collectionName</td><td>The name of the hits collection. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">subDetID</td><td>The subdetector ID. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ci</td><td>conditions interface handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>parameters to configure sensitive detector </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TrackerSD_8cxx_source.html#l00018">18</a> of file <a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>    : G4VSensitiveDetector(name), <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">hitsCollection_</a>(0) {</div>
-<div class="line"><span class="lineno">   20</span>  <span class="comment">// Add the collection name to vector of names.</span></div>
-<div class="line"><span class="lineno">   21</span>  this-&gt;collectionName.push_back(theCollectionName);</div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>  <span class="comment">// Register this SD with the manager.</span></div>
-<div class="line"><span class="lineno">   24</span>  G4SDManager::GetSDMpointer()-&gt;AddNewDetector(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>  <span class="comment">// Set the subdet ID as it will always be the same for every hit.</span></div>
-<div class="line"><span class="lineno">   27</span>  <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#aae3ce0bf3e209219c54aeca8f9b737f3">subDetID_</a> = ldmx::SubdetectorIDType(subDetID);</div>
-<div class="line"><span class="lineno">   28</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1TrackerSD_html_a927888bc9720e1d16b25b6acc72b4927"><div class="ttname"><a href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">simcore::TrackerSD::hitsCollection_</a></div><div class="ttdeci">G4TrackerHitsCollection * hitsCollection_</div><div class="ttdoc">The output hits collection of G4TrackerHits.</div><div class="ttdef"><b>Definition:</b> <a href="TrackerSD_8h_source.html#l00063">TrackerSD.h:63</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackerSD_html_aae3ce0bf3e209219c54aeca8f9b737f3"><div class="ttname"><a href="classsimcore_1_1TrackerSD.html#aae3ce0bf3e209219c54aeca8f9b737f3">simcore::TrackerSD::subDetID_</a></div><div class="ttdeci">ldmx::SubdetectorIDType subDetID_</div><div class="ttdoc">The detector ID.</div><div class="ttdef"><b>Definition:</b> <a href="TrackerSD_8h_source.html#l00066">TrackerSD.h:66</a></div></div>
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8cxx_source.html#l00012">12</a> of file <a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>    : <a class="code hl_function" href="classsimcore_1_1SensitiveDetector.html#a6fa9bed692725b95f19af2acd8ca6606">SensitiveDetector</a>(name, ci, p) {</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>  <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a4b1b9f11f10ebe12353e2048982055ed">subsystem_</a>       = p.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;subsystem&quot;</span>);</div>
+<div class="line"><span class="lineno">   18</span>  <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a79a21f7227af1a2d4a4b8a062c930bae">collection_name_</a> = p.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;collection_name&quot;</span>);</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>  <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#aae3ce0bf3e209219c54aeca8f9b737f3">subDetID_</a> = ldmx::SubdetectorIDType(p.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;subdet_id&quot;</span>));</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>}</div>
+<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1SensitiveDetector_html_a6fa9bed692725b95f19af2acd8ca6606"><div class="ttname"><a href="classsimcore_1_1SensitiveDetector.html#a6fa9bed692725b95f19af2acd8ca6606">simcore::SensitiveDetector::SensitiveDetector</a></div><div class="ttdeci">SensitiveDetector(const std::string &amp;name, simcore::ConditionsInterface &amp;ci, const framework::config::Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="SensitiveDetector_8cxx_source.html#l00012">SensitiveDetector.cxx:12</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackerSD_html_a4b1b9f11f10ebe12353e2048982055ed"><div class="ttname"><a href="classsimcore_1_1TrackerSD.html#a4b1b9f11f10ebe12353e2048982055ed">simcore::TrackerSD::subsystem_</a></div><div class="ttdeci">std::string subsystem_</div><div class="ttdoc">The name of the subsystem we are apart of.</div><div class="ttdef"><b>Definition:</b> <a href="TrackerSD_8h_source.html#l00061">TrackerSD.h:61</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackerSD_html_a79a21f7227af1a2d4a4b8a062c930bae"><div class="ttname"><a href="classsimcore_1_1TrackerSD.html#a79a21f7227af1a2d4a4b8a062c930bae">simcore::TrackerSD::collection_name_</a></div><div class="ttdeci">std::string collection_name_</div><div class="ttdoc">The name of the output collection.</div><div class="ttdef"><b>Definition:</b> <a href="TrackerSD_8h_source.html#l00064">TrackerSD.h:64</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1TrackerSD_html_aae3ce0bf3e209219c54aeca8f9b737f3"><div class="ttname"><a href="classsimcore_1_1TrackerSD.html#aae3ce0bf3e209219c54aeca8f9b737f3">simcore::TrackerSD::subDetID_</a></div><div class="ttdeci">ldmx::SubdetectorIDType subDetID_</div><div class="ttdoc">The detector ID.</div><div class="ttdef"><b>Definition:</b> <a href="TrackerSD_8h_source.html#l00070">TrackerSD.h:70</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00066">subDetID_</a>.</p>
+<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00064">collection_name_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="TrackerSD_8h_source.html#l00070">subDetID_</a>, and <a class="el" href="TrackerSD_8h_source.html#l00061">subsystem_</a>.</p>
 
 </div>
 </div>
@@ -161,87 +198,82 @@ Private Attributes</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="TrackerSD_8cxx_source.html#l00030">30</a> of file <a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8cxx_source.html#l00024">24</a> of file <a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a351812a2c246eee3b239c1ad6595e5f4" name="a351812a2c246eee3b239c1ad6595e5f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a351812a2c246eee3b239c1ad6595e5f4">&#9670;&nbsp;</a></span>EndOfEvent()</h2>
+<a id="a250365d64c3d8a583fed5e2663e6807c" name="a250365d64c3d8a583fed5e2663e6807c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250365d64c3d8a583fed5e2663e6807c">&#9670;&nbsp;</a></span>EndOfEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void simcore::TrackerSD::EndOfEvent </td>
+          <td class="memname">virtual void simcore::TrackerSD::EndOfEvent </td>
           <td>(</td>
-          <td class="paramtype">G4HCofThisEvent *&#160;</td>
-          <td class="paramname"><em>hcEvent</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p >End of event hook. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hcEvent</td><td>The hits collections of the event. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p >Cleanup SD and prepare a new-event state </p>
 
-<p class="definition">Definition at line <a class="el" href="TrackerSD_8cxx_source.html#l00136">136</a> of file <a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>                                           {</div>
-<div class="line"><span class="lineno">  137</span>  <span class="comment">// Print number of hits.</span></div>
-<div class="line"><span class="lineno">  138</span>  <span class="keywordflow">if</span> (this-&gt;verboseLevel &gt; 0) {</div>
-<div class="line"><span class="lineno">  139</span>    std::cout &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot; had &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">hitsCollection_</a>-&gt;entries()</div>
-<div class="line"><span class="lineno">  140</span>              &lt;&lt; <span class="stringliteral">&quot; hits in event&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  141</span>  }</div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>  <span class="comment">// Print each hit in hits collection.</span></div>
-<div class="line"><span class="lineno">  144</span>  <span class="keywordflow">if</span> (this-&gt;verboseLevel &gt; 1) {</div>
-<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> iHit = 0; iHit &lt; <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">hitsCollection_</a>-&gt;GetSize(); iHit++) {</div>
-<div class="line"><span class="lineno">  146</span>      (*hitsCollection_)[iHit]-&gt;Print();</div>
-<div class="line"><span class="lineno">  147</span>    }</div>
-<div class="line"><span class="lineno">  148</span>  }</div>
-<div class="line"><span class="lineno">  149</span>}</div>
+<p>Implements <a class="el" href="classsimcore_1_1SensitiveDetector.html#a4df81a01b527179654d7ca55e3dbe8bc">simcore::SensitiveDetector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00055">55</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>                                           {</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#aeff10c81bdeef72674fda41eb59d6ad3">hits_</a>.clear();</div>
+<div class="line"><span class="lineno">   57</span>  }</div>
+<div class="ttc" id="aclasssimcore_1_1TrackerSD_html_aeff10c81bdeef72674fda41eb59d6ad3"><div class="ttname"><a href="classsimcore_1_1TrackerSD.html#aeff10c81bdeef72674fda41eb59d6ad3">simcore::TrackerSD::hits_</a></div><div class="ttdeci">std::vector&lt; ldmx::SimTrackerHit &gt; hits_</div><div class="ttdoc">The collection of hits.</div><div class="ttdef"><b>Definition:</b> <a href="TrackerSD_8h_source.html#l00067">TrackerSD.h:67</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00063">hitsCollection_</a>.</p>
+<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00067">hits_</a>.</p>
 
 </div>
 </div>
-<a id="a21a4ec9b5fcb0c10bd03a0a3dea3df2c" name="a21a4ec9b5fcb0c10bd03a0a3dea3df2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21a4ec9b5fcb0c10bd03a0a3dea3df2c">&#9670;&nbsp;</a></span>Initialize()</h2>
+<a id="a48843e1a83160abd3c9fc5ff5ae0e17f" name="a48843e1a83160abd3c9fc5ff5ae0e17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48843e1a83160abd3c9fc5ff5ae0e17f">&#9670;&nbsp;</a></span>isSensDet()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void simcore::TrackerSD::Initialize </td>
+          <td class="memname">virtual bool simcore::TrackerSD::isSensDet </td>
           <td>(</td>
-          <td class="paramtype">G4HCofThisEvent *&#160;</td>
-          <td class="paramname"><em>hcEvent</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype">G4LogicalVolume *&#160;</td>
+          <td class="paramname"><em>volume</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p >Initialize the sensitive detector. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hcEvent</td><td>The hits collections of the event. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p >Should the input logical volume be attached to this sensitive detector?</p>
+<dl class="section note"><dt>Note</dt><dd>This is dependent on the naming convention in the GDML! </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TrackerSD_8cxx_source.html#l00128">128</a> of file <a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>                                               {</div>
-<div class="line"><span class="lineno">  129</span>  <span class="comment">// Setup hits collection and the HC ID.</span></div>
-<div class="line"><span class="lineno">  130</span>  <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">hitsCollection_</a> =</div>
-<div class="line"><span class="lineno">  131</span>      <span class="keyword">new</span> <a class="code hl_typedef" href="G4TrackerHit_8h.html#a83b62e1a97ec1e78efcd0fe59d04be29">G4TrackerHitsCollection</a>(SensitiveDetectorName, collectionName[0]);</div>
-<div class="line"><span class="lineno">  132</span>  <span class="keywordtype">int</span> hcID = G4SDManager::GetSDMpointer()-&gt;GetCollectionID(collectionName[0]);</div>
-<div class="line"><span class="lineno">  133</span>  hce-&gt;AddHitsCollection(hcID, <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">hitsCollection_</a>);</div>
-<div class="line"><span class="lineno">  134</span>}</div>
-<div class="ttc" id="aG4TrackerHit_8h_html_a83b62e1a97ec1e78efcd0fe59d04be29"><div class="ttname"><a href="G4TrackerHit_8h.html#a83b62e1a97ec1e78efcd0fe59d04be29">simcore::G4TrackerHitsCollection</a></div><div class="ttdeci">G4THitsCollection&lt; G4TrackerHit &gt; G4TrackerHitsCollection</div><div class="ttdef"><b>Definition:</b> <a href="G4TrackerHit_8h_source.html#l00280">G4TrackerHit.h:280</a></div></div>
+<p>Implements <a class="el" href="classsimcore_1_1SensitiveDetector.html#a87dcc37929d04f3043b60045173270c2">simcore::SensitiveDetector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00036">36</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>                                                                       {</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> (volume-&gt;GetName().contains(<span class="stringliteral">&quot;Sensor&quot;</span>) and volume-&gt;GetName().contains(<a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a4b1b9f11f10ebe12353e2048982055ed">subsystem_</a>));</div>
+<div class="line"><span class="lineno">   38</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00063">hitsCollection_</a>.</p>
+<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00061">subsystem_</a>.</p>
 
 </div>
 </div>
@@ -250,6 +282,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">G4bool simcore::TrackerSD::ProcessHits </td>
@@ -269,6 +304,11 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p >Process a step by creating a hit.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -279,111 +319,90 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TrackerSD_8cxx_source.html#l00032">32</a> of file <a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>                                                                {</div>
-<div class="line"><span class="lineno">   33</span>  <span class="comment">// Determine if current particle of this step is a Geantino.</span></div>
-<div class="line"><span class="lineno">   34</span>  G4ParticleDefinition* pdef = aStep-&gt;GetTrack()-&gt;GetDefinition();</div>
-<div class="line"><span class="lineno">   35</span>  <span class="keywordtype">bool</span> isGeantino = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   36</span>  <span class="keywordflow">if</span> (pdef == G4Geantino::Definition() ||</div>
-<div class="line"><span class="lineno">   37</span>      pdef == G4ChargedGeantino::Definition()) {</div>
-<div class="line"><span class="lineno">   38</span>    isGeantino = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   39</span>  }</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>  <span class="comment">// Get the edep from the step.</span></div>
-<div class="line"><span class="lineno">   42</span>  G4double edep = aStep-&gt;GetTotalEnergyDeposit();</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>  <span class="comment">// Skip steps with no energy dep which come from non-Geantino particles.</span></div>
-<div class="line"><span class="lineno">   45</span>  <span class="keywordflow">if</span> (edep == 0.0 &amp;&amp; !isGeantino) {</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (verboseLevel &gt; 2) {</div>
-<div class="line"><span class="lineno">   47</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;TrackerSD skipping step with zero edep&quot;</span> &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   48</span>                &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   49</span>    }</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   51</span>  }</div>
+<p>Implements <a class="el" href="classsimcore_1_1SensitiveDetector.html#a8e5f4a4f0f522d4260f04cb803ea7848">simcore::SensitiveDetector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8cxx_source.html#l00026">26</a> of file <a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                                {</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>  <span class="comment">// Get the edep from the step.</span></div>
+<div class="line"><span class="lineno">   29</span>  G4double edep = aStep-&gt;GetTotalEnergyDeposit();</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>  <span class="comment">// Skip steps with no energy dep which come from non-Geantino particles.</span></div>
+<div class="line"><span class="lineno">   32</span>  <span class="keywordflow">if</span> (edep == 0.0 and not <a class="code hl_function" href="classsimcore_1_1SensitiveDetector.html#a58f88696dea0475f696c036e3313b1c5">isGeantino</a>(aStep)) {</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (verboseLevel &gt; 2) {</div>
+<div class="line"><span class="lineno">   34</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;TrackerSD skipping step with zero edep&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   35</span>                &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   38</span>  }</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>  <span class="comment">// Create a new hit object.</span></div>
+<div class="line"><span class="lineno">   41</span>  <a class="code hl_class" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a>&amp; hit{<a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#aeff10c81bdeef72674fda41eb59d6ad3">hits_</a>.emplace_back()};</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>  <span class="comment">// Assign track ID for finding the SimParticle in post event processing.</span></div>
+<div class="line"><span class="lineno">   44</span>  hit.setTrackID(aStep-&gt;GetTrack()-&gt;GetTrackID());</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>  <span class="comment">// Set the edep.</span></div>
+<div class="line"><span class="lineno">   47</span>  hit.setEdep(edep);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>  <span class="comment">// Set the start position.</span></div>
+<div class="line"><span class="lineno">   50</span>  G4StepPoint* prePoint = aStep-&gt;GetPreStepPoint();</div>
+<div class="line"><span class="lineno">   51</span>  <span class="comment">// hit-&gt;setStartPosition(prePoint-&gt;GetPosition());</span></div>
 <div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>  <span class="comment">// Create a new hit object.</span></div>
-<div class="line"><span class="lineno">   54</span>  G4TrackerHit* hit = <span class="keyword">new</span> G4TrackerHit();</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>  <span class="comment">// Assign track ID for finding the SimParticle in post event processing.</span></div>
-<div class="line"><span class="lineno">   57</span>  hit-&gt;setTrackID(aStep-&gt;GetTrack()-&gt;GetTrackID());</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>  <span class="comment">// Set the edep.</span></div>
-<div class="line"><span class="lineno">   60</span>  hit-&gt;setEdep(edep);</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>  <span class="comment">// Set the start position.</span></div>
-<div class="line"><span class="lineno">   63</span>  G4StepPoint* prePoint = aStep-&gt;GetPreStepPoint();</div>
-<div class="line"><span class="lineno">   64</span>  <span class="comment">// hit-&gt;setStartPosition(prePoint-&gt;GetPosition());</span></div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>  <span class="comment">// Set the end position.</span></div>
-<div class="line"><span class="lineno">   67</span>  G4StepPoint* postPoint = aStep-&gt;GetPostStepPoint();</div>
-<div class="line"><span class="lineno">   68</span>  <span class="comment">// hit-&gt;setEndPosition(postPoint-&gt;GetPosition());</span></div>
+<div class="line"><span class="lineno">   53</span>  <span class="comment">// Set the end position.</span></div>
+<div class="line"><span class="lineno">   54</span>  G4StepPoint* postPoint = aStep-&gt;GetPostStepPoint();</div>
+<div class="line"><span class="lineno">   55</span>  <span class="comment">// hit-&gt;setEndPosition(postPoint-&gt;GetPosition());</span></div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>  G4ThreeVector start = prePoint-&gt;GetPosition();</div>
+<div class="line"><span class="lineno">   58</span>  G4ThreeVector end = postPoint-&gt;GetPosition();</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>  <span class="comment">// Set the mid position.</span></div>
+<div class="line"><span class="lineno">   61</span>  G4ThreeVector mid = 0.5 * (start + end);</div>
+<div class="line"><span class="lineno">   62</span>  hit.setPosition(mid.x(), mid.y(), mid.z());</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>  <span class="comment">// Compute path length.</span></div>
+<div class="line"><span class="lineno">   65</span>  G4double pathLength =</div>
+<div class="line"><span class="lineno">   66</span>      sqrt(pow(start.x() - end.x(), 2) + pow(start.y() - end.y(), 2) +</div>
+<div class="line"><span class="lineno">   67</span>           pow(start.z() - end.z(), 2));</div>
+<div class="line"><span class="lineno">   68</span>  hit.setPathLength(pathLength);</div>
 <div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>  G4ThreeVector start = prePoint-&gt;GetPosition();</div>
-<div class="line"><span class="lineno">   71</span>  G4ThreeVector end = postPoint-&gt;GetPosition();</div>
+<div class="line"><span class="lineno">   70</span>  <span class="comment">// Set the global time.</span></div>
+<div class="line"><span class="lineno">   71</span>  hit.setTime(aStep-&gt;GetTrack()-&gt;GetGlobalTime());</div>
 <div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>  <span class="comment">// Set the mid position.</span></div>
-<div class="line"><span class="lineno">   74</span>  G4ThreeVector mid = 0.5 * (start + end);</div>
-<div class="line"><span class="lineno">   75</span>  hit-&gt;setPosition(mid.x(), mid.y(), mid.z());</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>  <span class="comment">// Compute path length.</span></div>
-<div class="line"><span class="lineno">   78</span>  G4double pathLength =</div>
-<div class="line"><span class="lineno">   79</span>      sqrt(pow(start.x() - end.x(), 2) + pow(start.y() - end.y(), 2) +</div>
-<div class="line"><span class="lineno">   80</span>           pow(start.z() - end.z(), 2));</div>
-<div class="line"><span class="lineno">   81</span>  hit-&gt;setPathLength(pathLength);</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>  <span class="comment">// Set the global time.</span></div>
-<div class="line"><span class="lineno">   84</span>  hit-&gt;setTime(aStep-&gt;GetTrack()-&gt;GetGlobalTime());</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>  <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">   87</span><span class="comment">   * Compute and set the momentum.</span></div>
-<div class="line"><span class="lineno">   88</span><span class="comment">   */</span></div>
-<div class="line"><span class="lineno">   89</span>  <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">   90</span><span class="comment">   double mag = (prePoint-&gt;GetMomentum().mag() + postPoint-&gt;GetMomentum().mag())</span></div>
-<div class="line"><span class="lineno">   91</span><span class="comment">   / 2; G4ThreeVector p = (postPoint-&gt;GetPosition() - prePoint-&gt;GetPosition());</span></div>
-<div class="line"><span class="lineno">   92</span><span class="comment">   if (mag &gt; 0) {</span></div>
-<div class="line"><span class="lineno">   93</span><span class="comment">   p.setMag(mag);</span></div>
-<div class="line"><span class="lineno">   94</span><span class="comment">   }</span></div>
-<div class="line"><span class="lineno">   95</span><span class="comment">   */</span></div>
-<div class="line"><span class="lineno">   96</span>  G4ThreeVector p = postPoint-&gt;GetMomentum();</div>
-<div class="line"><span class="lineno">   97</span>  hit-&gt;setMomentum(p.x(), p.y(), p.z());</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>  <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  100</span><span class="comment">   * Set the 32-bit ID on the hit.</span></div>
-<div class="line"><span class="lineno">  101</span><span class="comment">   */</span></div>
-<div class="line"><span class="lineno">  102</span>  <span class="keywordtype">int</span> copyNum =</div>
-<div class="line"><span class="lineno">  103</span>      prePoint-&gt;GetTouchableHandle()-&gt;GetHistory()-&gt;GetVolume(2)-&gt;GetCopyNo();</div>
-<div class="line"><span class="lineno">  104</span>  <span class="keywordtype">int</span> layer = copyNum / 10;</div>
-<div class="line"><span class="lineno">  105</span>  <span class="keywordtype">int</span> module = copyNum % 10;</div>
-<div class="line"><span class="lineno">  106</span>  <a class="code hl_class" href="classldmx_1_1TrackerID.html">ldmx::TrackerID</a> id(<a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#aae3ce0bf3e209219c54aeca8f9b737f3">subDetID_</a>, layer, module);</div>
-<div class="line"><span class="lineno">  107</span>  hit-&gt;setID(<span class="keywordtype">id</span>.raw());</div>
-<div class="line"><span class="lineno">  108</span>  hit-&gt;setLayerID(layer);</div>
-<div class="line"><span class="lineno">  109</span>  hit-&gt;setModuleID(module);</div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>  <span class="comment">// Set energy and pdg code of SimParticle (common things requested)</span></div>
-<div class="line"><span class="lineno">  112</span>  hit-&gt;setEnergy(postPoint-&gt;GetTotalEnergy());</div>
-<div class="line"><span class="lineno">  113</span>  hit-&gt;setPdgID(aStep-&gt;GetTrack()-&gt;GetDynamicParticle()-&gt;GetPDGcode());</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>  <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  116</span><span class="comment">   * Debug print.</span></div>
-<div class="line"><span class="lineno">  117</span><span class="comment">   */</span></div>
-<div class="line"><span class="lineno">  118</span>  <span class="keywordflow">if</span> (this-&gt;verboseLevel &gt; 2) {</div>
-<div class="line"><span class="lineno">  119</span>    hit-&gt;Print();</div>
-<div class="line"><span class="lineno">  120</span>  }</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>  <span class="comment">// Insert hit into current hits collection.</span></div>
-<div class="line"><span class="lineno">  123</span>  <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a927888bc9720e1d16b25b6acc72b4927">hitsCollection_</a>-&gt;insert(hit);</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  126</span>}</div>
+<div class="line"><span class="lineno">   73</span>  <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">   * Compute and set the momentum.</span></div>
+<div class="line"><span class="lineno">   75</span><span class="comment">   */</span></div>
+<div class="line"><span class="lineno">   76</span>  G4ThreeVector p = postPoint-&gt;GetMomentum();</div>
+<div class="line"><span class="lineno">   77</span>  hit.setMomentum(p.x(), p.y(), p.z());</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>  <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   80</span><span class="comment">   * Set the 32-bit ID on the hit.</span></div>
+<div class="line"><span class="lineno">   81</span><span class="comment">   */</span></div>
+<div class="line"><span class="lineno">   82</span>  <span class="keywordtype">int</span> copyNum =</div>
+<div class="line"><span class="lineno">   83</span>      prePoint-&gt;GetTouchableHandle()-&gt;GetHistory()-&gt;GetVolume(2)-&gt;GetCopyNo();</div>
+<div class="line"><span class="lineno">   84</span>  <span class="keywordtype">int</span> layer = copyNum / 10;</div>
+<div class="line"><span class="lineno">   85</span>  <span class="keywordtype">int</span> module = copyNum % 10;</div>
+<div class="line"><span class="lineno">   86</span>  <a class="code hl_class" href="classldmx_1_1TrackerID.html">ldmx::TrackerID</a> id(<a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#aae3ce0bf3e209219c54aeca8f9b737f3">subDetID_</a>, layer, module);</div>
+<div class="line"><span class="lineno">   87</span>  hit.setID(<span class="keywordtype">id</span>.raw());</div>
+<div class="line"><span class="lineno">   88</span>  hit.setLayerID(layer);</div>
+<div class="line"><span class="lineno">   89</span>  hit.setModuleID(module);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>  <span class="comment">// Set energy and pdg code of SimParticle (common things requested)</span></div>
+<div class="line"><span class="lineno">   92</span>  hit.setEnergy(postPoint-&gt;GetTotalEnergy());</div>
+<div class="line"><span class="lineno">   93</span>  hit.setPdgID(aStep-&gt;GetTrack()-&gt;GetDynamicParticle()-&gt;GetPDGcode());</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   96</span>}</div>
+<div class="ttc" id="aclassldmx_1_1SimTrackerHit_html"><div class="ttname"><a href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a></div><div class="ttdoc">Represents a simulated tracker hit in the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="SimTrackerHit_8h_source.html#l00024">SimTrackerHit.h:24</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TrackerID_html"><div class="ttname"><a href="classldmx_1_1TrackerID.html">ldmx::TrackerID</a></div><div class="ttdoc">Extension of DetectorID providing access to layer and module number for tracker IDs.</div><div class="ttdef"><b>Definition:</b> <a href="TrackerID_8h_source.html#l00020">TrackerID.h:20</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1SensitiveDetector_html_a58f88696dea0475f696c036e3313b1c5"><div class="ttname"><a href="classsimcore_1_1SensitiveDetector.html#a58f88696dea0475f696c036e3313b1c5">simcore::SensitiveDetector::isGeantino</a></div><div class="ttdeci">bool isGeantino(const G4Step *step) const</div><div class="ttdef"><b>Definition:</b> <a href="SensitiveDetector_8cxx_source.html#l00022">SensitiveDetector.cxx:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00063">hitsCollection_</a>, <a class="el" href="G4TrackerHit_8cxx_source.html#l00029">simcore::G4TrackerHit::Print()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00155">simcore::G4TrackerHit::setEdep()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00209">simcore::G4TrackerHit::setEnergy()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00099">simcore::G4TrackerHit::setID()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00123">simcore::G4TrackerHit::setLayerID()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00137">simcore::G4TrackerHit::setModuleID()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00181">simcore::G4TrackerHit::setMomentum()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00221">simcore::G4TrackerHit::setPathLength()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00111">simcore::G4TrackerHit::setPdgID()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00199">simcore::G4TrackerHit::setPosition()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00167">simcore::G4TrackerHit::setTime()</a>, <a class="el" href="G4TrackerHit_8h_source.html#l00081">simcore::G4TrackerHit::setTrackID()</a>, and <a class="el" href="TrackerSD_8h_source.html#l00066">subDetID_</a>.</p>
+<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00067">hits_</a>, <a class="el" href="SensitiveDetector_8cxx_source.html#l00022">simcore::SensitiveDetector::isGeantino()</a>, and <a class="el" href="TrackerSD_8h_source.html#l00070">subDetID_</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a927888bc9720e1d16b25b6acc72b4927" name="a927888bc9720e1d16b25b6acc72b4927"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a927888bc9720e1d16b25b6acc72b4927">&#9670;&nbsp;</a></span>hitsCollection_</h2>
+<a id="a6f466fb884db4ab8f69bc13029dcc5a3" name="a6f466fb884db4ab8f69bc13029dcc5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f466fb884db4ab8f69bc13029dcc5a3">&#9670;&nbsp;</a></span>saveHits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -392,7 +411,44 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="G4TrackerHit_8h.html#a83b62e1a97ec1e78efcd0fe59d04be29">G4TrackerHitsCollection</a>* simcore::TrackerSD::hitsCollection_</td>
+          <td class="memname">virtual void simcore::TrackerSD::saveHits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Add the hits to the event and then reset the container </p>
+
+<p>Implements <a class="el" href="classsimcore_1_1SensitiveDetector.html#a7301b913f77eea9991f632395fcc2dbc">simcore::SensitiveDetector</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00051">51</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>                                                              {</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keyword">event</span>.add(<a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#a79a21f7227af1a2d4a4b8a062c930bae">collection_name_</a>, <a class="code hl_variable" href="classsimcore_1_1TrackerSD.html#aeff10c81bdeef72674fda41eb59d6ad3">hits_</a>);</div>
+<div class="line"><span class="lineno">   53</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TrackerSD_8h_source.html#l00064">collection_name_</a>, and <a class="el" href="TrackerSD_8h_source.html#l00067">hits_</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a79a21f7227af1a2d4a4b8a062c930bae" name="a79a21f7227af1a2d4a4b8a062c930bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a21f7227af1a2d4a4b8a062c930bae">&#9670;&nbsp;</a></span>collection_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string simcore::TrackerSD::collection_name_</td>
         </tr>
       </table>
   </td>
@@ -402,11 +458,39 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The output hits collection of G4TrackerHits. </p>
+<p>The name of the output collection. </p>
 
-<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00063">63</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00064">64</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TrackerSD_8cxx_source.html#l00136">EndOfEvent()</a>, <a class="el" href="TrackerSD_8cxx_source.html#l00128">Initialize()</a>, and <a class="el" href="TrackerSD_8cxx_source.html#l00032">ProcessHits()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrackerSD_8h_source.html#l00051">saveHits()</a>, and <a class="el" href="TrackerSD_8cxx_source.html#l00012">TrackerSD()</a>.</p>
+
+</div>
+</div>
+<a id="aeff10c81bdeef72674fda41eb59d6ad3" name="aeff10c81bdeef72674fda41eb59d6ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff10c81bdeef72674fda41eb59d6ad3">&#9670;&nbsp;</a></span>hits_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a>&gt; simcore::TrackerSD::hits_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The collection of hits. </p>
+
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00067">67</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TrackerSD_8h_source.html#l00055">EndOfEvent()</a>, <a class="el" href="TrackerSD_8cxx_source.html#l00026">ProcessHits()</a>, and <a class="el" href="TrackerSD_8h_source.html#l00051">saveHits()</a>.</p>
 
 </div>
 </div>
@@ -432,15 +516,43 @@ Private Attributes</h2></td></tr>
 
 <p>The detector ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00066">66</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00070">70</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TrackerSD_8cxx_source.html#l00032">ProcessHits()</a>, and <a class="el" href="TrackerSD_8cxx_source.html#l00018">TrackerSD()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrackerSD_8cxx_source.html#l00026">ProcessHits()</a>, and <a class="el" href="TrackerSD_8cxx_source.html#l00012">TrackerSD()</a>.</p>
+
+</div>
+</div>
+<a id="a4b1b9f11f10ebe12353e2048982055ed" name="a4b1b9f11f10ebe12353e2048982055ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1b9f11f10ebe12353e2048982055ed">&#9670;&nbsp;</a></span>subsystem_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string simcore::TrackerSD::subsystem_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The name of the subsystem we are apart of. </p>
+
+<p class="definition">Definition at line <a class="el" href="TrackerSD_8h_source.html#l00061">61</a> of file <a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TrackerSD_8h_source.html#l00036">isSensDet()</a>, and <a class="el" href="TrackerSD_8cxx_source.html#l00012">TrackerSD()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>SimCore/include/SimCore/<a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a></li>
-<li>SimCore/src/SimCore/<a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a></li>
+<li>SimCore/include/SimCore/SDs/<a class="el" href="TrackerSD_8h_source.html">TrackerSD.h</a></li>
+<li>SimCore/src/SimCore/SDs/<a class="el" href="TrackerSD_8cxx_source.html">TrackerSD.cxx</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

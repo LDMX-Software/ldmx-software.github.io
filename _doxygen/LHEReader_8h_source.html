@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.9.4"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>LDMX Software: SimCore/include/SimCore/LHEReader.h Source File</title>
+		<title>LDMX Software: SimCore/include/SimCore/LHE/LHEReader.h Source File</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -40,7 +40,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d764adcdf188058460d8947cee0814f0.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_525e6fd522401a8b765cd7a918925d70.html">include</a></li><li class="navelem"><a class="el" href="dir_12633c54d4771685671f9f4e90bad08f.html">SimCore</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d764adcdf188058460d8947cee0814f0.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_525e6fd522401a8b765cd7a918925d70.html">include</a></li><li class="navelem"><a class="el" href="dir_12633c54d4771685671f9f4e90bad08f.html">SimCore</a></li><li class="navelem"><a class="el" href="dir_22de2cadd5f9ae9762fb33bca8a592f7.html">LHE</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -52,35 +52,35 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define SIMCORE_LHEREADER_H_</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// LDMX</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="LHEEvent_8h.html">SimCore/LHEEvent.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="LHEEvent_8h.html">SimCore/LHE/LHEEvent.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// STL</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>simcore {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>simcore::lhe {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classsimcore_1_1LHEReader.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classsimcore_1_1LHEReader.html">LHEReader</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classsimcore_1_1lhe_1_1LHEReader.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classsimcore_1_1lhe_1_1LHEReader.html">LHEReader</a> {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_function" href="classsimcore_1_1LHEReader.html#a382ee0af2e3ab66c23f50898e2e80292">LHEReader</a>(std::string&amp; fileName);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEReader.html#ae9d9cbe832b01cf18843477e77cfe636">LHEReader</a>(std::string&amp; fileName);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classsimcore_1_1LHEReader.html#aaa50950dc6b2cc2dfdd808693f461691">~LHEReader</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEReader.html#aeed99d414a87e3265017b2d964f9a37c">~LHEReader</a>();</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="classsimcore_1_1LHEEvent.html">LHEEvent</a>* <a class="code hl_function" href="classsimcore_1_1LHEReader.html#a5d384507617f0cd49a7d761039d51972">readNextEvent</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="classsimcore_1_1lhe_1_1LHEEvent.html">LHEEvent</a>* <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEReader.html#af204a0dc6769064bc29cc18609c9dfcd">readNextEvent</a>();</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classsimcore_1_1LHEReader.html#a6f2dd7cc8e61924f4952db973b272027">   45</a></span>  std::ifstream <a class="code hl_variable" href="classsimcore_1_1LHEReader.html#a6f2dd7cc8e61924f4952db973b272027">ifs_</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classsimcore_1_1lhe_1_1LHEReader.html#a55799f3f6cd81c1df8148f29f0979a5f">   45</a></span>  std::ifstream <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEReader.html#a55799f3f6cd81c1df8148f29f0979a5f">ifs_</a>;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}  <span class="comment">// namespace simcore</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aLHEEvent_8h_html"><div class="ttname"><a href="LHEEvent_8h.html">LHEEvent.h</a></div><div class="ttdoc">Class defining an LHE event with a list of particles and information from the header block.</div></div>
-<div class="ttc" id="aclasssimcore_1_1LHEEvent_html"><div class="ttname"><a href="classsimcore_1_1LHEEvent.html">simcore::LHEEvent</a></div><div class="ttdoc">LHE event with a list of particles and information from the header block.</div><div class="ttdef"><b>Definition:</b> <a href="LHEEvent_8h_source.html#l00029">LHEEvent.h:29</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1LHEReader_html"><div class="ttname"><a href="classsimcore_1_1LHEReader.html">simcore::LHEReader</a></div><div class="ttdoc">Reads LHE event data into an LHEEvent object.</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8h_source.html#l00022">LHEReader.h:22</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1LHEReader_html_a382ee0af2e3ab66c23f50898e2e80292"><div class="ttname"><a href="classsimcore_1_1LHEReader.html#a382ee0af2e3ab66c23f50898e2e80292">simcore::LHEReader::LHEReader</a></div><div class="ttdeci">LHEReader(std::string &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8cxx_source.html#l00008">LHEReader.cxx:8</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1LHEReader_html_a5d384507617f0cd49a7d761039d51972"><div class="ttname"><a href="classsimcore_1_1LHEReader.html#a5d384507617f0cd49a7d761039d51972">simcore::LHEReader::readNextEvent</a></div><div class="ttdeci">LHEEvent * readNextEvent()</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8cxx_source.html#l00015">LHEReader.cxx:15</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1LHEReader_html_a6f2dd7cc8e61924f4952db973b272027"><div class="ttname"><a href="classsimcore_1_1LHEReader.html#a6f2dd7cc8e61924f4952db973b272027">simcore::LHEReader::ifs_</a></div><div class="ttdeci">std::ifstream ifs_</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8h_source.html#l00045">LHEReader.h:45</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1LHEReader_html_aaa50950dc6b2cc2dfdd808693f461691"><div class="ttname"><a href="classsimcore_1_1LHEReader.html#aaa50950dc6b2cc2dfdd808693f461691">simcore::LHEReader::~LHEReader</a></div><div class="ttdeci">virtual ~LHEReader()</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8cxx_source.html#l00013">LHEReader.cxx:13</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEEvent_html"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEEvent.html">simcore::lhe::LHEEvent</a></div><div class="ttdoc">LHE event with a list of particles and information from the header block.</div><div class="ttdef"><b>Definition:</b> <a href="LHEEvent_8h_source.html#l00029">LHEEvent.h:29</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEReader_html"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEReader.html">simcore::lhe::LHEReader</a></div><div class="ttdoc">Reads LHE event data into an LHEEvent object.</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8h_source.html#l00022">LHEReader.h:22</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEReader_html_a55799f3f6cd81c1df8148f29f0979a5f"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEReader.html#a55799f3f6cd81c1df8148f29f0979a5f">simcore::lhe::LHEReader::ifs_</a></div><div class="ttdeci">std::ifstream ifs_</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8h_source.html#l00045">LHEReader.h:45</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEReader_html_ae9d9cbe832b01cf18843477e77cfe636"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEReader.html#ae9d9cbe832b01cf18843477e77cfe636">simcore::lhe::LHEReader::LHEReader</a></div><div class="ttdeci">LHEReader(std::string &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8cxx_source.html#l00008">LHEReader.cxx:8</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEReader_html_aeed99d414a87e3265017b2d964f9a37c"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEReader.html#aeed99d414a87e3265017b2d964f9a37c">simcore::lhe::LHEReader::~LHEReader</a></div><div class="ttdeci">virtual ~LHEReader()</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8cxx_source.html#l00013">LHEReader.cxx:13</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEReader_html_af204a0dc6769064bc29cc18609c9dfcd"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEReader.html#af204a0dc6769064bc29cc18609c9dfcd">simcore::lhe::LHEReader::readNextEvent</a></div><div class="ttdeci">LHEEvent * readNextEvent()</div><div class="ttdef"><b>Definition:</b> <a href="LHEReader_8cxx_source.html#l00015">LHEReader.cxx:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

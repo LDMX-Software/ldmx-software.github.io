@@ -45,8 +45,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classsimcore_1_1XsecBiasingOperator-members.html">List of all members</a>  </div>
@@ -56,6 +56,11 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a57b451ad854dd02dc83cfc23ba4ebbc0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1XsecBiasingOperator.html#a57b451ad854dd02dc83cfc23ba4ebbc0">Factory</a> = <a class="el" href="classsimcore_1_1Factory.html">::simcore::Factory</a>&lt; <a class="el" href="classsimcore_1_1XsecBiasingOperator.html">XsecBiasingOperator</a>, std::shared_ptr&lt; <a class="el" href="classsimcore_1_1XsecBiasingOperator.html">XsecBiasingOperator</a> &gt;, std::string, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp; &gt;</td></tr>
+<tr class="separator:a57b451ad854dd02dc83cfc23ba4ebbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a65b7e8ec340bc2765d694c606e68732a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1XsecBiasingOperator.html#a65b7e8ec340bc2765d694c606e68732a">XsecBiasingOperator</a> (std::string name, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;parameters)</td></tr>
@@ -74,11 +79,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae5c93d75c80f64db8d6fead4d9639c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a5e71d379b510de26616f0d434ad414"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1XsecBiasingOperator.html#a7a5e71d379b510de26616f0d434ad414">RecordConfig</a> (<a class="el" href="classldmx_1_1RunHeader.html">ldmx::RunHeader</a> &amp;header) const =0</td></tr>
 <tr class="separator:a7a5e71d379b510de26616f0d434ad414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a39c2b009195f830d6795a9fd8d0c3415"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1XsecBiasingOperator.html#a39c2b009195f830d6795a9fd8d0c3415">declare</a> (const std::string &amp;className, XsecBiasingOperatorBuilder *builder)</td></tr>
-<tr class="separator:a39c2b009195f830d6795a9fd8d0c3415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -106,8 +106,26 @@ Protected Attributes</h2></td></tr>
 <li>Pre-defines the necessary biasing operation so the derived class only needs to worry about calculating the biased xsec. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00045">45</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00040">40</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a57b451ad854dd02dc83cfc23ba4ebbc0" name="a57b451ad854dd02dc83cfc23ba4ebbc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57b451ad854dd02dc83cfc23ba4ebbc0">&#9670;&nbsp;</a></span>Factory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classsimcore_1_1XsecBiasingOperator.html#a57b451ad854dd02dc83cfc23ba4ebbc0">simcore::XsecBiasingOperator::Factory</a> =  <a class="el" href="classsimcore_1_1Factory.html">::simcore::Factory</a>&lt;<a class="el" href="classsimcore_1_1XsecBiasingOperator.html">XsecBiasingOperator</a>, std::shared_ptr&lt;<a class="el" href="classsimcore_1_1XsecBiasingOperator.html">XsecBiasingOperator</a>&gt;, std::string, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >The BiasingOperator factory </p>
+
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00058">58</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a65b7e8ec340bc2765d694c606e68732a" name="a65b7e8ec340bc2765d694c606e68732a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65b7e8ec340bc2765d694c606e68732a">&#9670;&nbsp;</a></span>XsecBiasingOperator()</h2>
 
@@ -143,8 +161,8 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00008">8</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   10</span>    : G4VBiasingOperator(name) {}</div>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00007">7</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>    : G4VBiasingOperator(name) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -172,8 +190,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00012">12</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00011">11</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -213,70 +231,17 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the biasing operation with the input biased cross section </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00150">150</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>                                                      {</div>
-<div class="line"><span class="lineno">  151</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">xsecOperation_</a>-&gt;SetBiasedCrossSection(biased_xsec);</div>
-<div class="line"><span class="lineno">  152</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">xsecOperation_</a>-&gt;Sample();</div>
-<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">xsecOperation_</a>;</div>
-<div class="line"><span class="lineno">  154</span>  }</div>
-<div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html_af3151ebe47993400c2a074b93df74280"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">simcore::XsecBiasingOperator::xsecOperation_</a></div><div class="ttdeci">G4BOptnChangeCrossSection * xsecOperation_</div><div class="ttdef"><b>Definition:</b> <a href="XsecBiasingOperator_8h_source.html#l00165">XsecBiasingOperator.h:165</a></div></div>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00144">144</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>                                                      {</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">xsecOperation_</a>-&gt;SetBiasedCrossSection(biased_xsec);</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">xsecOperation_</a>-&gt;Sample();</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">xsecOperation_</a>;</div>
+<div class="line"><span class="lineno">  148</span>  }</div>
+<div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html_af3151ebe47993400c2a074b93df74280"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">simcore::XsecBiasingOperator::xsecOperation_</a></div><div class="ttdeci">G4BOptnChangeCrossSection * xsecOperation_</div><div class="ttdef"><b>Definition:</b> <a href="XsecBiasingOperator_8h_source.html#l00159">XsecBiasingOperator.h:159</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="XsecBiasingOperator_8h_source.html#l00165">xsecOperation_</a>.</p>
+<p class="reference">References <a class="el" href="XsecBiasingOperator_8h_source.html#l00159">xsecOperation_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DarkBrem_8cxx_source.html#l00019">simcore::biasoperators::DarkBrem::ProposeOccurenceBiasingOperation()</a>, <a class="el" href="ElectroNuclear_8cxx_source.html#l00015">simcore::biasoperators::ElectroNuclear::ProposeOccurenceBiasingOperation()</a>, <a class="el" href="GammaToMuPair_8cxx_source.html#l00015">simcore::biasoperators::GammaToMuPair::ProposeOccurenceBiasingOperation()</a>, <a class="el" href="K0LongInelastic_8cxx_source.html#l00014">simcore::biasoperators::K0LongInelastic::ProposeOccurenceBiasingOperation()</a>, <a class="el" href="NeutronInelastic_8cxx_source.html#l00014">simcore::biasoperators::NeutronInelastic::ProposeOccurenceBiasingOperation()</a>, and <a class="el" href="PhotoNuclear_8cxx_source.html#l00030">simcore::biasoperators::PhotoNuclear::ProposeOccurenceBiasingOperation()</a>.</p>
-
-</div>
-</div>
-<a id="a39c2b009195f830d6795a9fd8d0c3415" name="a39c2b009195f830d6795a9fd8d0c3415"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39c2b009195f830d6795a9fd8d0c3415">&#9670;&nbsp;</a></span>declare()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void simcore::XsecBiasingOperator::declare </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>className</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">XsecBiasingOperatorBuilder *&#160;</td>
-          <td class="paramname"><em>builder</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Method used to register an operator with the manager.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">className</td><td>Name of the class instance </td></tr>
-    <tr><td class="paramname">builder</td><td>The builder used to create and instance of this class. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00062">62</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                                                                       {</div>
-<div class="line"><span class="lineno">   64</span>  <a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">PluginFactory::getInstance</a>().<a class="code hl_function" href="classsimcore_1_1PluginFactory.html#ad7ea416e6b3da99646ccf3aee6d8e86c">registerBiasingOperator</a>(className, builder);</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1PluginFactory_html_a6e09cbc955d72f0e0a2d546cc2577b33"><div class="ttname"><a href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">simcore::PluginFactory::getInstance</a></div><div class="ttdeci">static PluginFactory &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00020">PluginFactory.cxx:20</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1PluginFactory_html_ad7ea416e6b3da99646ccf3aee6d8e86c"><div class="ttname"><a href="classsimcore_1_1PluginFactory.html#ad7ea416e6b3da99646ccf3aee6d8e86c">simcore::PluginFactory::registerBiasingOperator</a></div><div class="ttdeci">void registerBiasingOperator(const std::string &amp;className, XsecBiasingOperatorBuilder *builder)</div><div class="ttdef"><b>Definition:</b> <a href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00114">PluginFactory.cxx:114</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00020">simcore::PluginFactory::getInstance()</a>, and <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00114">simcore::PluginFactory::registerBiasingOperator()</a>.</p>
 
 </div>
 </div>
@@ -307,7 +272,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classsimcore_1_1biasoperators_1_1DarkBrem.html#af7e1b344a11f2f53cb15f0efbd43d9dc">simcore::biasoperators::DarkBrem</a>, <a class="el" href="classsimcore_1_1biasoperators_1_1ElectroNuclear.html#ae2fb6bdfcf6b32af660309c111490b81">simcore::biasoperators::ElectroNuclear</a>, <a class="el" href="classsimcore_1_1biasoperators_1_1GammaToMuPair.html#a578d12ef695d6b4d6769254b218bea79">simcore::biasoperators::GammaToMuPair</a>, <a class="el" href="classsimcore_1_1biasoperators_1_1K0LongInelastic.html#aa69912bdb9766847d9a7212203f0c7a8">simcore::biasoperators::K0LongInelastic</a>, <a class="el" href="classsimcore_1_1biasoperators_1_1NeutronInelastic.html#a008889c5a609ada5f085fb093899e24d">simcore::biasoperators::NeutronInelastic</a>, and <a class="el" href="classsimcore_1_1biasoperators_1_1PhotoNuclear.html#ae2b7af89a163f9902eb36d5d6e6dd9f4">simcore::biasoperators::PhotoNuclear</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00014">StartRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00013">StartRun()</a>.</p>
 
 </div>
 </div>
@@ -338,7 +303,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classsimcore_1_1biasoperators_1_1DarkBrem.html#ab39f380dd9e1dbfc970ef526c2459cf4">simcore::biasoperators::DarkBrem</a>, <a class="el" href="classsimcore_1_1biasoperators_1_1ElectroNuclear.html#a9b7b2a2c079463b19c1806ad745831d9">simcore::biasoperators::ElectroNuclear</a>, <a class="el" href="classsimcore_1_1biasoperators_1_1GammaToMuPair.html#a74be1b76c9c96e170aa86895e063e9d1">simcore::biasoperators::GammaToMuPair</a>, <a class="el" href="classsimcore_1_1biasoperators_1_1K0LongInelastic.html#a9a2e69bd644240f19e450f4e7ba54219">simcore::biasoperators::K0LongInelastic</a>, <a class="el" href="classsimcore_1_1biasoperators_1_1NeutronInelastic.html#a9930bd7308f46a5f320df0db9a0deb1e">simcore::biasoperators::NeutronInelastic</a>, and <a class="el" href="classsimcore_1_1biasoperators_1_1PhotoNuclear.html#ad943d1dc9c6fdcaa38328a8eae8594de">simcore::biasoperators::PhotoNuclear</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00014">StartRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00013">StartRun()</a>.</p>
 
 </div>
 </div>
@@ -403,32 +368,32 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the process is being biased, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00041">41</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>                                                           {</div>
-<div class="line"><span class="lineno">   42</span>  <span class="comment">// Loop over all processes and check if the given process is being</span></div>
-<div class="line"><span class="lineno">   43</span>  <span class="comment">// biased.</span></div>
-<div class="line"><span class="lineno">   44</span>  <span class="keyword">const</span> G4BiasingProcessSharedData* sharedData =</div>
-<div class="line"><span class="lineno">   45</span>      G4BiasingProcessInterface::GetSharedData(<a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a>);</div>
-<div class="line"><span class="lineno">   46</span>  <span class="keywordflow">if</span> (sharedData) {</div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> iprocess = 0;</div>
-<div class="line"><span class="lineno">   48</span>         iprocess &lt; (sharedData-&gt;GetPhysicsBiasingProcessInterfaces()).size();</div>
-<div class="line"><span class="lineno">   49</span>         ++iprocess) {</div>
-<div class="line"><span class="lineno">   50</span>      <span class="keyword">const</span> G4BiasingProcessInterface* wrapperProcess =</div>
-<div class="line"><span class="lineno">   51</span>          (sharedData-&gt;GetPhysicsBiasingProcessInterfaces())[iprocess];</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>      <span class="keywordflow">if</span> (wrapperProcess-&gt;GetWrappedProcess()-&gt;GetProcessName().compareTo(</div>
-<div class="line"><span class="lineno">   54</span>              process) == 0) {</div>
-<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   56</span>      }</div>
-<div class="line"><span class="lineno">   57</span>    }</div>
-<div class="line"><span class="lineno">   58</span>  }</div>
-<div class="line"><span class="lineno">   59</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   60</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html_aaa35722e38244565cbf7423ac44b6f4f"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">simcore::XsecBiasingOperator::processManager_</a></div><div class="ttdeci">G4ProcessManager * processManager_</div><div class="ttdef"><b>Definition:</b> <a href="XsecBiasingOperator_8h_source.html#l00168">XsecBiasingOperator.h:168</a></div></div>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00040">40</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                           {</div>
+<div class="line"><span class="lineno">   41</span>  <span class="comment">// Loop over all processes and check if the given process is being</span></div>
+<div class="line"><span class="lineno">   42</span>  <span class="comment">// biased.</span></div>
+<div class="line"><span class="lineno">   43</span>  <span class="keyword">const</span> G4BiasingProcessSharedData* sharedData =</div>
+<div class="line"><span class="lineno">   44</span>      G4BiasingProcessInterface::GetSharedData(<a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a>);</div>
+<div class="line"><span class="lineno">   45</span>  <span class="keywordflow">if</span> (sharedData) {</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> iprocess = 0;</div>
+<div class="line"><span class="lineno">   47</span>         iprocess &lt; (sharedData-&gt;GetPhysicsBiasingProcessInterfaces()).size();</div>
+<div class="line"><span class="lineno">   48</span>         ++iprocess) {</div>
+<div class="line"><span class="lineno">   49</span>      <span class="keyword">const</span> G4BiasingProcessInterface* wrapperProcess =</div>
+<div class="line"><span class="lineno">   50</span>          (sharedData-&gt;GetPhysicsBiasingProcessInterfaces())[iprocess];</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>      <span class="keywordflow">if</span> (wrapperProcess-&gt;GetWrappedProcess()-&gt;GetProcessName().compareTo(</div>
+<div class="line"><span class="lineno">   53</span>              process) == 0) {</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   55</span>      }</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span>  }</div>
+<div class="line"><span class="lineno">   58</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   59</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html_aaa35722e38244565cbf7423ac44b6f4f"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">simcore::XsecBiasingOperator::processManager_</a></div><div class="ttdeci">G4ProcessManager * processManager_</div><div class="ttdef"><b>Definition:</b> <a href="XsecBiasingOperator_8h_source.html#l00162">XsecBiasingOperator.h:162</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="XsecBiasingOperator_8h_source.html#l00168">processManager_</a>.</p>
+<p class="reference">References <a class="el" href="XsecBiasingOperator_8h_source.html#l00162">processManager_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PhotoNuclear_8cxx_source.html#l00018">simcore::biasoperators::PhotoNuclear::StartRun()</a>, and <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00014">StartRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PhotoNuclear_8cxx_source.html#l00018">simcore::biasoperators::PhotoNuclear::StartRun()</a>, and <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00013">StartRun()</a>.</p>
 
 </div>
 </div>
@@ -467,10 +432,10 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Do <em>not</em> propose any biasing on final states. </p>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00173">173</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  174</span>                                                        {</div>
-<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  176</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00167">167</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>                                                        {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  170</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -509,10 +474,10 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Do <em>not</em> propose any non-physics biasing. </p>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00181">181</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  182</span>                                                        {</div>
-<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  184</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00175">175</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>                                                        {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  178</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -618,38 +583,38 @@ Protected Attributes</h2></td></tr>
 <p >This makes sure that the process we want to bias can be biased and constructs a corresponding biasing operation.</p>
 <p >It can be over-written, but then the derived class should call <code><a class="el" href="classsimcore_1_1XsecBiasingOperator.html#a5bd58d75e4d33f4c890e8993f3d831b7">XsecBiasingOperator::StartRun()</a></code> at the beginning of their own StartRun. </p>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00014">14</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>                                   {</div>
-<div class="line"><span class="lineno">   15</span>  <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>().compare(<span class="stringliteral">&quot;gamma&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a> = G4Gamma::GammaDefinition()-&gt;GetProcessManager();</div>
-<div class="line"><span class="lineno">   17</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>().compare(<span class="stringliteral">&quot;e-&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a> = G4Electron::ElectronDefinition()-&gt;GetProcessManager();</div>
-<div class="line"><span class="lineno">   19</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>().compare(<span class="stringliteral">&quot;neutron&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a> = G4Neutron::NeutronDefinition()-&gt;GetProcessManager();</div>
-<div class="line"><span class="lineno">   21</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>().compare(<span class="stringliteral">&quot;kaon0L&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a> = G4KaonZeroLong::KaonZeroLongDefinition()-&gt;GetProcessManager();</div>
-<div class="line"><span class="lineno">   23</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   24</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;BiasSetup&quot;</span>, <span class="stringliteral">&quot;Invalid particle type &#39;&quot;</span> +</div>
-<div class="line"><span class="lineno">   25</span>                                     this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>() + <span class="stringliteral">&quot;&#39;.&quot;</span>);</div>
-<div class="line"><span class="lineno">   26</span>  }</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;[ XsecBiasingOperator ]: Biasing particles of type &quot;</span></div>
-<div class="line"><span class="lineno">   29</span>            &lt;&lt; this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#a8076c3ba0e7e0bc0585fac3545209067">processIsBiased</a>(this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">getProcessToBias</a>())) {</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">xsecOperation_</a> =</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keyword">new</span> G4BOptnChangeCrossSection(<span class="stringliteral">&quot;changeXsec-&quot;</span> + this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">getProcessToBias</a>());</div>
-<div class="line"><span class="lineno">   34</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   35</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;BiasSetup&quot;</span>,</div>
-<div class="line"><span class="lineno">   36</span>                    this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">getProcessToBias</a>() +</div>
-<div class="line"><span class="lineno">   37</span>                        <span class="stringliteral">&quot; is not found in list of biased processes!&quot;</span>);</div>
-<div class="line"><span class="lineno">   38</span>  }</div>
-<div class="line"><span class="lineno">   39</span>}</div>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00013">13</a> of file <a class="el" href="XsecBiasingOperator_8cxx_source.html">XsecBiasingOperator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>                                   {</div>
+<div class="line"><span class="lineno">   14</span>  <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>().compare(<span class="stringliteral">&quot;gamma&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a> = G4Gamma::GammaDefinition()-&gt;GetProcessManager();</div>
+<div class="line"><span class="lineno">   16</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>().compare(<span class="stringliteral">&quot;e-&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a> = G4Electron::ElectronDefinition()-&gt;GetProcessManager();</div>
+<div class="line"><span class="lineno">   18</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>().compare(<span class="stringliteral">&quot;neutron&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a> = G4Neutron::NeutronDefinition()-&gt;GetProcessManager();</div>
+<div class="line"><span class="lineno">   20</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>().compare(<span class="stringliteral">&quot;kaon0L&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#aaa35722e38244565cbf7423ac44b6f4f">processManager_</a> = G4KaonZeroLong::KaonZeroLongDefinition()-&gt;GetProcessManager();</div>
+<div class="line"><span class="lineno">   22</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   23</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;BiasSetup&quot;</span>, <span class="stringliteral">&quot;Invalid particle type &#39;&quot;</span> +</div>
+<div class="line"><span class="lineno">   24</span>                                     this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>() + <span class="stringliteral">&quot;&#39;.&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>  }</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;[ XsecBiasingOperator ]: Biasing particles of type &quot;</span></div>
+<div class="line"><span class="lineno">   28</span>            &lt;&lt; this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#a8076c3ba0e7e0bc0585fac3545209067">processIsBiased</a>(this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">getProcessToBias</a>())) {</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classsimcore_1_1XsecBiasingOperator.html#af3151ebe47993400c2a074b93df74280">xsecOperation_</a> =</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keyword">new</span> G4BOptnChangeCrossSection(<span class="stringliteral">&quot;changeXsec-&quot;</span> + this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">getProcessToBias</a>());</div>
+<div class="line"><span class="lineno">   33</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   34</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;BiasSetup&quot;</span>,</div>
+<div class="line"><span class="lineno">   35</span>                    this-&gt;<a class="code hl_function" href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">getProcessToBias</a>() +</div>
+<div class="line"><span class="lineno">   36</span>                        <span class="stringliteral">&quot; is not found in list of biased processes!&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span>  }</div>
+<div class="line"><span class="lineno">   38</span>}</div>
 <div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html_a2feaaf315d58a094459354aa5138ec7b"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">simcore::XsecBiasingOperator::getProcessToBias</a></div><div class="ttdeci">virtual std::string getProcessToBias() const =0</div></div>
-<div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html_a8076c3ba0e7e0bc0585fac3545209067"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html#a8076c3ba0e7e0bc0585fac3545209067">simcore::XsecBiasingOperator::processIsBiased</a></div><div class="ttdeci">bool processIsBiased(std::string process)</div><div class="ttdef"><b>Definition:</b> <a href="XsecBiasingOperator_8cxx_source.html#l00041">XsecBiasingOperator.cxx:41</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html_a8076c3ba0e7e0bc0585fac3545209067"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html#a8076c3ba0e7e0bc0585fac3545209067">simcore::XsecBiasingOperator::processIsBiased</a></div><div class="ttdeci">bool processIsBiased(std::string process)</div><div class="ttdef"><b>Definition:</b> <a href="XsecBiasingOperator_8cxx_source.html#l00040">XsecBiasingOperator.cxx:40</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html_aa995dd6e2b7ab1268f8ba3c7d51d500d"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">simcore::XsecBiasingOperator::getParticleToBias</a></div><div class="ttdeci">virtual std::string getParticleToBias() const =0</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias()</a>, <a class="el" href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">getProcessToBias()</a>, <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00041">processIsBiased()</a>, <a class="el" href="XsecBiasingOperator_8h_source.html#l00168">processManager_</a>, and <a class="el" href="XsecBiasingOperator_8h_source.html#l00165">xsecOperation_</a>.</p>
+<p class="reference">References <a class="el" href="classsimcore_1_1XsecBiasingOperator.html#aa995dd6e2b7ab1268f8ba3c7d51d500d">getParticleToBias()</a>, <a class="el" href="classsimcore_1_1XsecBiasingOperator.html#a2feaaf315d58a094459354aa5138ec7b">getProcessToBias()</a>, <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00040">processIsBiased()</a>, <a class="el" href="XsecBiasingOperator_8h_source.html#l00162">processManager_</a>, and <a class="el" href="XsecBiasingOperator_8h_source.html#l00159">xsecOperation_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PhotoNuclear_8cxx_source.html#l00018">simcore::biasoperators::PhotoNuclear::StartRun()</a>.</p>
 
@@ -677,9 +642,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Process manager associated with the particle of interest. </p>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00168">168</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00162">162</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00041">processIsBiased()</a>, and <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00014">StartRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00040">processIsBiased()</a>, and <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00013">StartRun()</a>.</p>
 
 </div>
 </div>
@@ -704,9 +669,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Cross-section biasing operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00165">165</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XsecBiasingOperator_8h_source.html#l00159">159</a> of file <a class="el" href="XsecBiasingOperator_8h_source.html">XsecBiasingOperator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XsecBiasingOperator_8h_source.html#l00150">BiasedXsec()</a>, and <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00014">StartRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XsecBiasingOperator_8h_source.html#l00144">BiasedXsec()</a>, and <a class="el" href="XsecBiasingOperator_8cxx_source.html#l00013">StartRun()</a>.</p>
 
 </div>
 </div>

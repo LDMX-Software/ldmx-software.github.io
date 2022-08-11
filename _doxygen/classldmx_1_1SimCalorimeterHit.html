@@ -47,6 +47,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classldmx_1_1SimCalorimeterHit-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ldmx::SimCalorimeterHit Class Reference</div></div>
@@ -102,6 +103,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae34275895ddacf40c6bab12618eeaa06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9fb57c46289c534fc47707462ec2a39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1SimCalorimeterHit.html#ab9fb57c46289c534fc47707462ec2a39">operator&lt;</a> (const <a class="el" href="classldmx_1_1SimCalorimeterHit.html">SimCalorimeterHit</a> &amp;rhs) const</td></tr>
 <tr class="separator:ab9fb57c46289c534fc47707462ec2a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:adcd287c8fa1c353597a1504b29b48f39"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1SimCalorimeterHit.html#adcd287c8fa1c353597a1504b29b48f39">ECAL_COLLECTION</a></td></tr>
+<tr class="memdesc:adcd287c8fa1c353597a1504b29b48f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of the ecal sim collection, should match gdml  <a href="classldmx_1_1SimCalorimeterHit.html#adcd287c8fa1c353597a1504b29b48f39">More...</a><br /></td></tr>
+<tr class="separator:adcd287c8fa1c353597a1504b29b48f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9e4b783729eaa894a7e2652457897f"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1SimCalorimeterHit.html#a7f9e4b783729eaa894a7e2652457897f">HCAL_COLLECTION</a></td></tr>
+<tr class="memdesc:a7f9e4b783729eaa894a7e2652457897f"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of the hcal sim collection, should match gdml  <a href="classldmx_1_1SimCalorimeterHit.html#a7f9e4b783729eaa894a7e2652457897f">More...</a><br /></td></tr>
+<tr class="separator:a7f9e4b783729eaa894a7e2652457897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -235,7 +245,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="RootPersistencyManager_8cxx_source.html#l00204">simcore::persist::RootPersistencyManager::writeCalorimeterHitsCollection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrigScintSD_8cxx_source.html#l00027">simcore::TrigScintSD::ProcessHits()</a>.</p>
 
 </div>
 </div>
@@ -344,11 +354,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the energy deposition of the hit [MeV]. </p><dl class="section return"><dt>Returns</dt><dd>The energy deposition of the hit. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00100">100</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a00623e50fa93ee7fc8a12dfbb7056686">edep_</a>; }</div>
-<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a00623e50fa93ee7fc8a12dfbb7056686"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a00623e50fa93ee7fc8a12dfbb7056686">ldmx::SimCalorimeterHit::edep_</a></div><div class="ttdeci">float edep_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00196">SimCalorimeterHit.h:196</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00106">106</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a00623e50fa93ee7fc8a12dfbb7056686">edep_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a00623e50fa93ee7fc8a12dfbb7056686"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a00623e50fa93ee7fc8a12dfbb7056686">ldmx::SimCalorimeterHit::edep_</a></div><div class="ttdeci">float edep_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00202">SimCalorimeterHit.h:202</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00196">edep_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00202">edep_</a>.</p>
 
 </div>
 </div>
@@ -376,11 +386,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the detector ID. </p><dl class="section return"><dt>Returns</dt><dd>The detector ID. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00088">88</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#aecb2ceba1868079ec33627826464ce65">id_</a>; }</div>
-<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_aecb2ceba1868079ec33627826464ce65"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#aecb2ceba1868079ec33627826464ce65">ldmx::SimCalorimeterHit::id_</a></div><div class="ttdeci">int id_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00191">SimCalorimeterHit.h:191</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00094">94</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#aecb2ceba1868079ec33627826464ce65">id_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_aecb2ceba1868079ec33627826464ce65"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#aecb2ceba1868079ec33627826464ce65">ldmx::SimCalorimeterHit::id_</a></div><div class="ttdeci">int id_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00197">SimCalorimeterHit.h:197</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00191">id_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00197">id_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="EcalDigiProducer_8cxx_source.html#l00064">ecal::EcalDigiProducer::produce()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
 
@@ -410,11 +420,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the number of hit contributions. </p><dl class="section return"><dt>Returns</dt><dd>The number of hit contributions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00142">142</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a6fda01bc354f5101e5c0760bfdbf19fc">nContribs_</a>; }</div>
-<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a6fda01bc354f5101e5c0760bfdbf19fc"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a6fda01bc354f5101e5c0760bfdbf19fc">ldmx::SimCalorimeterHit::nContribs_</a></div><div class="ttdeci">unsigned nContribs_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00246">SimCalorimeterHit.h:246</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00148">148</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a6fda01bc354f5101e5c0760bfdbf19fc">nContribs_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a6fda01bc354f5101e5c0760bfdbf19fc"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a6fda01bc354f5101e5c0760bfdbf19fc">ldmx::SimCalorimeterHit::nContribs_</a></div><div class="ttdeci">unsigned nContribs_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00252">SimCalorimeterHit.h:252</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00246">nContribs_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00252">nContribs_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimObjects_8cxx_source.html#l00080">dqm::SimObjects::analyze()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
 
@@ -444,13 +454,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the XYZ position of the hit [mm]. </p><dl class="section return"><dt>Returns</dt><dd>The XYZ position of the hit. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00112">112</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>{ <span class="keywordflow">return</span> {<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a7fdc57f1bf4ff8dbcdd7ee0b251c9bc9">x_</a>, <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a3ebf0e13127ece0450ad76edc8e01cd4">y_</a>, <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a2598017bd6d66fa8764aacffd78fbff3">z_</a>}; }</div>
-<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a2598017bd6d66fa8764aacffd78fbff3"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a2598017bd6d66fa8764aacffd78fbff3">ldmx::SimCalorimeterHit::z_</a></div><div class="ttdeci">float z_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00211">SimCalorimeterHit.h:211</a></div></div>
-<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a3ebf0e13127ece0450ad76edc8e01cd4"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a3ebf0e13127ece0450ad76edc8e01cd4">ldmx::SimCalorimeterHit::y_</a></div><div class="ttdeci">float y_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00206">SimCalorimeterHit.h:206</a></div></div>
-<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a7fdc57f1bf4ff8dbcdd7ee0b251c9bc9"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a7fdc57f1bf4ff8dbcdd7ee0b251c9bc9">ldmx::SimCalorimeterHit::x_</a></div><div class="ttdeci">float x_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00201">SimCalorimeterHit.h:201</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00118">118</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{ <span class="keywordflow">return</span> {<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a7fdc57f1bf4ff8dbcdd7ee0b251c9bc9">x_</a>, <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a3ebf0e13127ece0450ad76edc8e01cd4">y_</a>, <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a2598017bd6d66fa8764aacffd78fbff3">z_</a>}; }</div>
+<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a2598017bd6d66fa8764aacffd78fbff3"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a2598017bd6d66fa8764aacffd78fbff3">ldmx::SimCalorimeterHit::z_</a></div><div class="ttdeci">float z_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00217">SimCalorimeterHit.h:217</a></div></div>
+<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a3ebf0e13127ece0450ad76edc8e01cd4"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a3ebf0e13127ece0450ad76edc8e01cd4">ldmx::SimCalorimeterHit::y_</a></div><div class="ttdeci">float y_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00212">SimCalorimeterHit.h:212</a></div></div>
+<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a7fdc57f1bf4ff8dbcdd7ee0b251c9bc9"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a7fdc57f1bf4ff8dbcdd7ee0b251c9bc9">ldmx::SimCalorimeterHit::x_</a></div><div class="ttdeci">float x_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00207">SimCalorimeterHit.h:207</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00201">x_</a>, <a class="el" href="SimCalorimeterHit_8h_source.html#l00206">y_</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00211">z_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00207">x_</a>, <a class="el" href="SimCalorimeterHit_8h_source.html#l00212">y_</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00217">z_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">hcal::HcalDigiProducer::produce()</a>.</p>
 
@@ -480,13 +490,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the global time of the hit [ns]. </p><dl class="section return"><dt>Returns</dt><dd>The global time of the hit. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00130">130</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a3852be4b22065ba2fd42ff89689e10b0">time_</a>; }</div>
-<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a3852be4b22065ba2fd42ff89689e10b0"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a3852be4b22065ba2fd42ff89689e10b0">ldmx::SimCalorimeterHit::time_</a></div><div class="ttdeci">float time_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00216">SimCalorimeterHit.h:216</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00136">136</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a3852be4b22065ba2fd42ff89689e10b0">time_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a3852be4b22065ba2fd42ff89689e10b0"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a3852be4b22065ba2fd42ff89689e10b0">ldmx::SimCalorimeterHit::time_</a></div><div class="ttdeci">float time_</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00222">SimCalorimeterHit.h:222</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00216">time_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00222">time_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00183">operator&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00189">operator&lt;()</a>.</p>
 
 </div>
 </div>
@@ -515,13 +525,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Sort by time of hit </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00183">183</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  183</span>                                                     {</div>
-<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a45055c682a9cdb7164d3725e570439c6">getTime</a>() &lt; rhs.getTime();</div>
-<div class="line"><span class="lineno">  185</span>  }</div>
-<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a45055c682a9cdb7164d3725e570439c6"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a45055c682a9cdb7164d3725e570439c6">ldmx::SimCalorimeterHit::getTime</a></div><div class="ttdeci">float getTime() const</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00130">SimCalorimeterHit.h:130</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00189">189</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>                                                     {</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a45055c682a9cdb7164d3725e570439c6">getTime</a>() &lt; rhs.getTime();</div>
+<div class="line"><span class="lineno">  191</span>  }</div>
+<div class="ttc" id="aclassldmx_1_1SimCalorimeterHit_html_a45055c682a9cdb7164d3725e570439c6"><div class="ttname"><a href="classldmx_1_1SimCalorimeterHit.html#a45055c682a9cdb7164d3725e570439c6">ldmx::SimCalorimeterHit::getTime</a></div><div class="ttdeci">float getTime() const</div><div class="ttdef"><b>Definition:</b> <a href="SimCalorimeterHit_8h_source.html#l00136">SimCalorimeterHit.h:136</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00130">getTime()</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00136">getTime()</a>.</p>
 
 </div>
 </div>
@@ -575,10 +585,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00106">106</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>{ this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a00623e50fa93ee7fc8a12dfbb7056686">edep_</a> = edep; }</div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00112">112</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>{ this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a00623e50fa93ee7fc8a12dfbb7056686">edep_</a> = edep; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00196">edep_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00202">edep_</a>.</p>
 
 </div>
 </div>
@@ -607,12 +617,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Set the detector ID. @id The detector ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00094">94</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>{ this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#aecb2ceba1868079ec33627826464ce65">id_</a> = id; }</div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00100">100</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{ this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#aecb2ceba1868079ec33627826464ce65">id_</a> = id; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00191">id_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00197">id_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RootPersistencyManager_8cxx_source.html#l00204">simcore::persist::RootPersistencyManager::writeCalorimeterHitsCollection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrigScintSD_8cxx_source.html#l00027">simcore::TrigScintSD::ProcessHits()</a>.</p>
 
 </div>
 </div>
@@ -664,16 +674,16 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00120">120</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  120</span>                                                                {</div>
-<div class="line"><span class="lineno">  121</span>    this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a7fdc57f1bf4ff8dbcdd7ee0b251c9bc9">x_</a> = x;</div>
-<div class="line"><span class="lineno">  122</span>    this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a3ebf0e13127ece0450ad76edc8e01cd4">y_</a> = y;</div>
-<div class="line"><span class="lineno">  123</span>    this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a2598017bd6d66fa8764aacffd78fbff3">z_</a> = z;</div>
-<div class="line"><span class="lineno">  124</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00126">126</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>                                                                {</div>
+<div class="line"><span class="lineno">  127</span>    this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a7fdc57f1bf4ff8dbcdd7ee0b251c9bc9">x_</a> = x;</div>
+<div class="line"><span class="lineno">  128</span>    this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a3ebf0e13127ece0450ad76edc8e01cd4">y_</a> = y;</div>
+<div class="line"><span class="lineno">  129</span>    this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a2598017bd6d66fa8764aacffd78fbff3">z_</a> = z;</div>
+<div class="line"><span class="lineno">  130</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00201">x_</a>, <a class="el" href="SimCalorimeterHit_8h_source.html#l00206">y_</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00211">z_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00207">x_</a>, <a class="el" href="SimCalorimeterHit_8h_source.html#l00212">y_</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00217">z_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RootPersistencyManager_8cxx_source.html#l00204">simcore::persist::RootPersistencyManager::writeCalorimeterHitsCollection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrigScintSD_8cxx_source.html#l00027">simcore::TrigScintSD::ProcessHits()</a>.</p>
 
 </div>
 </div>
@@ -707,10 +717,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00136">136</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>{ this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a3852be4b22065ba2fd42ff89689e10b0">time_</a> = time; }</div>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00142">142</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>{ this-&gt;<a class="code hl_variable" href="classldmx_1_1SimCalorimeterHit.html#a3852be4b22065ba2fd42ff89689e10b0">time_</a> = time; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00216">time_</a>.</p>
+<p class="reference">References <a class="el" href="SimCalorimeterHit_8h_source.html#l00222">time_</a>.</p>
 
 </div>
 </div>
@@ -757,6 +767,32 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="adcd287c8fa1c353597a1504b29b48f39" name="adcd287c8fa1c353597a1504b29b48f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd287c8fa1c353597a1504b29b48f39">&#9670;&nbsp;</a></span>ECAL_COLLECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ldmx::SimCalorimeterHit::ECAL_COLLECTION</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>name of the ecal sim collection, should match gdml </p>
+
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00034">34</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+
+</div>
+</div>
 <a id="a00623e50fa93ee7fc8a12dfbb7056686" name="a00623e50fa93ee7fc8a12dfbb7056686"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00623e50fa93ee7fc8a12dfbb7056686">&#9670;&nbsp;</a></span>edep_</h2>
 
@@ -778,9 +814,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The energy deposition. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00196">196</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00202">202</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00100">getEdep()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00106">setEdep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00106">getEdep()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00112">setEdep()</a>.</p>
 
 </div>
 </div>
@@ -805,7 +841,33 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The list of energy depositions contributing to the hit. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00236">236</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00242">242</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+
+</div>
+</div>
+<a id="a7f9e4b783729eaa894a7e2652457897f" name="a7f9e4b783729eaa894a7e2652457897f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9e4b783729eaa894a7e2652457897f">&#9670;&nbsp;</a></span>HCAL_COLLECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ldmx::SimCalorimeterHit::HCAL_COLLECTION</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>name of the hcal sim collection, should match gdml </p>
+
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00037">37</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
 </div>
 </div>
@@ -830,9 +892,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The detector ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00191">191</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00197">197</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00088">getID()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00094">setID()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00094">getID()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00100">setID()</a>.</p>
 
 </div>
 </div>
@@ -857,7 +919,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The list of incident IDs contributing to the hit </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00226">226</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00232">232</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
 </div>
 </div>
@@ -882,9 +944,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The number of hit contributions. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00246">246</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00252">252</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00142">getNumberOfContribs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00148">getNumberOfContribs()</a>.</p>
 
 </div>
 </div>
@@ -909,7 +971,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The list of PDG codes contributing to the hit. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00231">231</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00237">237</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
 </div>
 </div>
@@ -934,9 +996,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The global time of the hit. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00216">216</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00222">222</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00130">getTime()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00136">setTime()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00136">getTime()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00142">setTime()</a>.</p>
 
 </div>
 </div>
@@ -961,7 +1023,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The list of times contributing to the hit. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00241">241</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00247">247</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
 </div>
 </div>
@@ -986,7 +1048,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The list of track IDs contributing to the hit. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00221">221</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00227">227</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
 </div>
 </div>
@@ -1011,9 +1073,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The X position. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00201">201</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00207">207</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00112">getPosition()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00120">setPosition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00118">getPosition()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00126">setPosition()</a>.</p>
 
 </div>
 </div>
@@ -1038,9 +1100,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The Y position. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00206">206</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00212">212</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00112">getPosition()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00120">setPosition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00118">getPosition()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00126">setPosition()</a>.</p>
 
 </div>
 </div>
@@ -1065,9 +1127,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The Z position. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00211">211</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimCalorimeterHit_8h_source.html#l00217">217</a> of file <a class="el" href="SimCalorimeterHit_8h_source.html">SimCalorimeterHit.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00112">getPosition()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00120">setPosition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimCalorimeterHit_8h_source.html#l00118">getPosition()</a>, and <a class="el" href="SimCalorimeterHit_8h_source.html#l00126">setPosition()</a>.</p>
 
 </div>
 </div>

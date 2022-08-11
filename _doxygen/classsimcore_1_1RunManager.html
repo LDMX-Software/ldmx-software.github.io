@@ -124,17 +124,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Class constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00037">37</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>    : <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a03f5c71d1db8da54d3f77e19ecdd37fd">conditionsIntf_</a>(ci) {</div>
-<div class="line"><span class="lineno">   40</span>  <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a> = parameters;</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>  <span class="comment">// Set whether the ROOT primary generator should use the persisted seed.</span></div>
-<div class="line"><span class="lineno">   43</span>  <span class="keyword">auto</span> rootPrimaryGenUseSeed{</div>
-<div class="line"><span class="lineno">   44</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;rootPrimaryGenUseSeed&quot;</span>)};</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>  <span class="comment">// Validate the geometry if specified.</span></div>
-<div class="line"><span class="lineno">   47</span>  <a class="code hl_function" href="classsimcore_1_1RunManager.html#abe3304904ee62a97c8e2abd6873d55fe">setUseRootSeed</a>(rootPrimaryGenUseSeed);</div>
-<div class="line"><span class="lineno">   48</span>}</div>
+<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00038">38</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    : <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a03f5c71d1db8da54d3f77e19ecdd37fd">conditionsIntf_</a>(ci) {</div>
+<div class="line"><span class="lineno">   41</span>  <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a> = parameters;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>  <span class="comment">// Set whether the ROOT primary generator should use the persisted seed.</span></div>
+<div class="line"><span class="lineno">   44</span>  <span class="keyword">auto</span> rootPrimaryGenUseSeed{</div>
+<div class="line"><span class="lineno">   45</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;rootPrimaryGenUseSeed&quot;</span>)};</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>  <span class="comment">// Validate the geometry if specified.</span></div>
+<div class="line"><span class="lineno">   48</span>  <a class="code hl_function" href="classsimcore_1_1RunManager.html#abe3304904ee62a97c8e2abd6873d55fe">setUseRootSeed</a>(rootPrimaryGenUseSeed);</div>
+<div class="line"><span class="lineno">   49</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1RunManager_html_a03f5c71d1db8da54d3f77e19ecdd37fd"><div class="ttname"><a href="classsimcore_1_1RunManager.html#a03f5c71d1db8da54d3f77e19ecdd37fd">simcore::RunManager::conditionsIntf_</a></div><div class="ttdeci">ConditionsInterface &amp; conditionsIntf_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00113">RunManager.h:113</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1RunManager_html_a245775a566a01c03eb52907fefd55cdf"><div class="ttname"><a href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">simcore::RunManager::parameters_</a></div><div class="ttdeci">framework::config::Parameters parameters_</div><div class="ttdoc">The set of parameters used to configure the RunManager.</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00090">RunManager.h:90</a></div></div>
@@ -168,8 +168,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Class destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00050">50</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00051">51</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -190,10 +190,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the user detector construction cast to a specific type. </p><dl class="section return"><dt>Returns</dt><dd>The user detector construction. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00181">181</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>                                                          {</div>
-<div class="line"><span class="lineno">  182</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>DetectorConstruction*<span class="keyword">&gt;</span>(this-&gt;userDetector);</div>
-<div class="line"><span class="lineno">  183</span>}</div>
+<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00198">198</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  198</span>                                                          {</div>
+<div class="line"><span class="lineno">  199</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>DetectorConstruction*<span class="keyword">&gt;</span>(this-&gt;userDetector);</div>
+<div class="line"><span class="lineno">  200</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>.</p>
 
@@ -229,7 +229,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  112</span>    G4GDMLParser* pwParser = <span class="keyword">new</span> G4GDMLParser();</div>
 <div class="line"><span class="lineno">  113</span>    pwParser-&gt;Read(<a class="code hl_variable" href="classsimcore_1_1RunManager.html#a2028f44d525e261fcf417c3dc78b055a">parallelWorldPath_</a>, validateGeometry_);</div>
 <div class="line"><span class="lineno">  114</span>    this-&gt;<a class="code hl_function" href="classsimcore_1_1RunManager.html#acd281792c084310fb26509162ab2cc1a">getDetectorConstruction</a>()-&gt;RegisterParallelWorld(</div>
-<div class="line"><span class="lineno">  115</span>        <span class="keyword">new</span> ParallelWorld(pwParser, <span class="stringliteral">&quot;ldmxParallelWorld&quot;</span>, <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a03f5c71d1db8da54d3f77e19ecdd37fd">conditionsIntf_</a>));</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keyword">new</span> ParallelWorld(pwParser, <span class="stringliteral">&quot;ldmxParallelWorld&quot;</span>));</div>
 <div class="line"><span class="lineno">  116</span>  }</div>
 <div class="line"><span class="lineno">  117</span> </div>
 <div class="line"><span class="lineno">  118</span>  <span class="comment">// This is where the physics lists are told to construct their particles and</span></div>
@@ -238,38 +238,54 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  121</span>  <span class="comment">//  physics *after* any other processes that need to be able to be biased</span></div>
 <div class="line"><span class="lineno">  122</span>  G4RunManager::Initialize();</div>
 <div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>  <span class="comment">// Instantiate the primary generator action</span></div>
-<div class="line"><span class="lineno">  125</span>  <span class="keyword">auto</span> primaryGeneratorAction{<span class="keyword">new</span> PrimaryGeneratorAction(<a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>)};</div>
-<div class="line"><span class="lineno">  126</span>  SetUserAction(primaryGeneratorAction);</div>
-<div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>  <span class="comment">// Get instances of all G4 actions</span></div>
-<div class="line"><span class="lineno">  129</span>  <span class="comment">//      also create them in the factory</span></div>
-<div class="line"><span class="lineno">  130</span>  <span class="keyword">auto</span> actions{<a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">PluginFactory::getInstance</a>().<a class="code hl_function" href="classsimcore_1_1PluginFactory.html#aace85522bd037e0b781d96787297831f">getActions</a>()};</div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>  <span class="comment">// Create all user actions</span></div>
-<div class="line"><span class="lineno">  133</span>  <span class="keyword">auto</span> userActions{</div>
-<div class="line"><span class="lineno">  134</span>      <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;framework::config::Parameters&gt;&gt;(</div>
-<div class="line"><span class="lineno">  135</span>          <span class="stringliteral">&quot;actions&quot;</span>, {})};</div>
-<div class="line"><span class="lineno">  136</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; userAction : userActions) {</div>
-<div class="line"><span class="lineno">  137</span>    <a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">PluginFactory::getInstance</a>().<a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a0299cef5fabb41d026e7dc73bc7e6a01">createAction</a>(</div>
-<div class="line"><span class="lineno">  138</span>        userAction.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;class_name&quot;</span>),</div>
-<div class="line"><span class="lineno">  139</span>        userAction.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;instance_name&quot;</span>), userAction);</div>
-<div class="line"><span class="lineno">  140</span>  }</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>  <span class="comment">// Register all actions with the G4 engine</span></div>
-<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, act] : actions) {</div>
-<div class="line"><span class="lineno">  144</span>    std::visit([<span class="keyword">this</span>](<span class="keyword">auto</span>&amp;&amp; arg) { this-&gt;SetUserAction(arg); }, act);</div>
-<div class="line"><span class="lineno">  145</span>  }</div>
-<div class="line"><span class="lineno">  146</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1PluginFactory_html_a0299cef5fabb41d026e7dc73bc7e6a01"><div class="ttname"><a href="classsimcore_1_1PluginFactory.html#a0299cef5fabb41d026e7dc73bc7e6a01">simcore::PluginFactory::createAction</a></div><div class="ttdeci">void createAction(const std::string &amp;className, const std::string &amp;instanceName, framework::config::Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00081">PluginFactory.cxx:81</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1PluginFactory_html_a6e09cbc955d72f0e0a2d546cc2577b33"><div class="ttname"><a href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">simcore::PluginFactory::getInstance</a></div><div class="ttdeci">static PluginFactory &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00020">PluginFactory.cxx:20</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1PluginFactory_html_aace85522bd037e0b781d96787297831f"><div class="ttname"><a href="classsimcore_1_1PluginFactory.html#aace85522bd037e0b781d96787297831f">simcore::PluginFactory::getActions</a></div><div class="ttdeci">actionMap getActions()</div><div class="ttdef"><b>Definition:</b> <a href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00057">PluginFactory.cxx:57</a></div></div>
+<div class="line"><span class="lineno">  124</span>  <span class="comment">// create our G4User actions</span></div>
+<div class="line"><span class="lineno">  125</span>  <span class="keyword">auto</span> primary_action{<span class="keyword">new</span> g4user::PrimaryGeneratorAction(<a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>)};</div>
+<div class="line"><span class="lineno">  126</span>  <span class="keyword">auto</span> run_action{<span class="keyword">new</span> g4user::RunAction};</div>
+<div class="line"><span class="lineno">  127</span>  <span class="keyword">auto</span> event_action{<span class="keyword">new</span> g4user::EventAction};</div>
+<div class="line"><span class="lineno">  128</span>  <span class="keyword">auto</span> tracking_action{<span class="keyword">new</span> g4user::TrackingAction};</div>
+<div class="line"><span class="lineno">  129</span>  <span class="keyword">auto</span> stepping_action{<span class="keyword">new</span> g4user::SteppingAction};</div>
+<div class="line"><span class="lineno">  130</span>  <span class="keyword">auto</span> stacking_action{<span class="keyword">new</span> g4user::StackingAction};</div>
+<div class="line"><span class="lineno">  131</span>  <span class="comment">// ...and register them with G4</span></div>
+<div class="line"><span class="lineno">  132</span>  SetUserAction(primary_action);</div>
+<div class="line"><span class="lineno">  133</span>  SetUserAction(run_action);</div>
+<div class="line"><span class="lineno">  134</span>  SetUserAction(event_action);</div>
+<div class="line"><span class="lineno">  135</span>  SetUserAction(tracking_action);</div>
+<div class="line"><span class="lineno">  136</span>  SetUserAction(stepping_action);</div>
+<div class="line"><span class="lineno">  137</span>  SetUserAction(stacking_action);</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>  <span class="comment">// Create all user actions and attch them to the corresponding G4 actions</span></div>
+<div class="line"><span class="lineno">  140</span>  <span class="keyword">auto</span> user_actions{</div>
+<div class="line"><span class="lineno">  141</span>      <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;framework::config::Parameters&gt;&gt;(</div>
+<div class="line"><span class="lineno">  142</span>          <span class="stringliteral">&quot;actions&quot;</span>, {})};</div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; user_action : user_actions) {</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keyword">auto</span> ua = <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">UserAction::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#ad038eaa2c027b9cbf45b49ec53ff3d80">make</a>(</div>
+<div class="line"><span class="lineno">  145</span>        user_action.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;class_name&quot;</span>),</div>
+<div class="line"><span class="lineno">  146</span>        user_action.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;instance_name&quot;</span>), user_action);</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; type : ua-&gt;getTypes()) {</div>
+<div class="line"><span class="lineno">  148</span>      <span class="keywordflow">if</span> (type == simcore::TYPE::RUN) {</div>
+<div class="line"><span class="lineno">  149</span>        run_action-&gt;registerAction(ua.get());</div>
+<div class="line"><span class="lineno">  150</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == simcore::TYPE::EVENT) {</div>
+<div class="line"><span class="lineno">  151</span>        event_action-&gt;registerAction(ua.get());</div>
+<div class="line"><span class="lineno">  152</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == simcore::TYPE::TRACKING) {</div>
+<div class="line"><span class="lineno">  153</span>        tracking_action-&gt;registerAction(ua.get());</div>
+<div class="line"><span class="lineno">  154</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == simcore::TYPE::STEPPING) {</div>
+<div class="line"><span class="lineno">  155</span>        stepping_action-&gt;registerAction(ua.get());</div>
+<div class="line"><span class="lineno">  156</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == simcore::TYPE::STACKING) {</div>
+<div class="line"><span class="lineno">  157</span>        stacking_action-&gt;registerAction(ua.get());</div>
+<div class="line"><span class="lineno">  158</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  159</span>        EXCEPTION_RAISE(<span class="stringliteral">&quot;ActionType&quot;</span>,<span class="stringliteral">&quot;Action type does not exist.&quot;</span>);</div>
+<div class="line"><span class="lineno">  160</span>      }</div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span>  }</div>
+<div class="line"><span class="lineno">  163</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1Factory_html_abdbb8169a68e3ac620b3b296e0279e91"><div class="ttname"><a href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">simcore::Factory::get</a></div><div class="ttdeci">static Factory &amp; get()</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00217">Factory.h:217</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1Factory_html_ad038eaa2c027b9cbf45b49ec53ff3d80"><div class="ttname"><a href="classsimcore_1_1Factory.html#ad038eaa2c027b9cbf45b49ec53ff3d80">simcore::Factory::make</a></div><div class="ttdeci">PrototypePtr make(const std::string &amp;full_name, PrototypeConstructorArgs... maker_args)</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00264">Factory.h:264</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1RunManager_html_a2028f44d525e261fcf417c3dc78b055a"><div class="ttname"><a href="classsimcore_1_1RunManager.html#a2028f44d525e261fcf417c3dc78b055a">simcore::RunManager::parallelWorldPath_</a></div><div class="ttdeci">std::string parallelWorldPath_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00104">RunManager.h:104</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1RunManager_html_a4fb5928412af942f32de4a965d33c21d"><div class="ttname"><a href="classsimcore_1_1RunManager.html#a4fb5928412af942f32de4a965d33c21d">simcore::RunManager::isPWEnabled_</a></div><div class="ttdeci">bool isPWEnabled_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00101">RunManager.h:101</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1RunManager_html_aa8c19ad139adf7850d77f7a8b4da17c5"><div class="ttname"><a href="classsimcore_1_1RunManager.html#aa8c19ad139adf7850d77f7a8b4da17c5">simcore::RunManager::setupPhysics</a></div><div class="ttdeci">void setupPhysics()</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8cxx_source.html#l00052">RunManager.cxx:52</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1RunManager_html_acd281792c084310fb26509162ab2cc1a"><div class="ttname"><a href="classsimcore_1_1RunManager.html#acd281792c084310fb26509162ab2cc1a">simcore::RunManager::getDetectorConstruction</a></div><div class="ttdeci">DetectorConstruction * getDetectorConstruction()</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8cxx_source.html#l00181">RunManager.cxx:181</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1RunManager_html_aa8c19ad139adf7850d77f7a8b4da17c5"><div class="ttname"><a href="classsimcore_1_1RunManager.html#aa8c19ad139adf7850d77f7a8b4da17c5">simcore::RunManager::setupPhysics</a></div><div class="ttdeci">void setupPhysics()</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8cxx_source.html#l00053">RunManager.cxx:53</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1RunManager_html_acd281792c084310fb26509162ab2cc1a"><div class="ttname"><a href="classsimcore_1_1RunManager.html#acd281792c084310fb26509162ab2cc1a">simcore::RunManager::getDetectorConstruction</a></div><div class="ttdeci">DetectorConstruction * getDetectorConstruction()</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8cxx_source.html#l00198">RunManager.cxx:198</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RunManager_8h_source.html#l00113">conditionsIntf_</a>, <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00081">simcore::PluginFactory::createAction()</a>, <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00057">simcore::PluginFactory::getActions()</a>, <a class="el" href="RunManager_8cxx_source.html#l00181">getDetectorConstruction()</a>, <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00020">simcore::PluginFactory::getInstance()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00101">isPWEnabled_</a>, <a class="el" href="RunManager_8h_source.html#l00104">parallelWorldPath_</a>, <a class="el" href="RunManager_8h_source.html#l00090">parameters_</a>, and <a class="el" href="RunManager_8cxx_source.html#l00052">setupPhysics()</a>.</p>
+<p class="reference">References <a class="el" href="Factory_8h_source.html#l00217">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::get()</a>, <a class="el" href="RunManager_8cxx_source.html#l00198">getDetectorConstruction()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00101">isPWEnabled_</a>, <a class="el" href="Factory_8h_source.html#l00264">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::make()</a>, <a class="el" href="RunManager_8h_source.html#l00104">parallelWorldPath_</a>, <a class="el" href="RunManager_8h_source.html#l00090">parameters_</a>, and <a class="el" href="RunManager_8cxx_source.html#l00053">setupPhysics()</a>.</p>
 
 </div>
 </div>
@@ -289,49 +305,48 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Initialize physics. </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00052">52</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>                              {</div>
-<div class="line"><span class="lineno">   53</span>  <span class="keyword">auto</span> pList{<a class="code hl_variable" href="classsimcore_1_1RunManager.html#ae39766967cfd856dd30d654a42e8c894">physicsListFactory_</a>.GetReferencePhysList(<span class="stringliteral">&quot;FTFP_BERT&quot;</span>)};</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>  <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a2028f44d525e261fcf417c3dc78b055a">parallelWorldPath_</a> = <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;scoringPlanes&quot;</span>);</div>
-<div class="line"><span class="lineno">   56</span>  <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a4fb5928412af942f32de4a965d33c21d">isPWEnabled_</a> = !<a class="code hl_variable" href="classsimcore_1_1RunManager.html#a2028f44d525e261fcf417c3dc78b055a">parallelWorldPath_</a>.empty();</div>
-<div class="line"><span class="lineno">   57</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsimcore_1_1RunManager.html#a4fb5928412af942f32de4a965d33c21d">isPWEnabled_</a>) {</div>
-<div class="line"><span class="lineno">   58</span>    std::cout</div>
-<div class="line"><span class="lineno">   59</span>        &lt;&lt; <span class="stringliteral">&quot;[ RunManager ]: Parallel worlds physics list has been registered.&quot;</span></div>
-<div class="line"><span class="lineno">   60</span>        &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   61</span>    pList-&gt;RegisterPhysics(<span class="keyword">new</span> G4ParallelWorldPhysics(<span class="stringliteral">&quot;ldmxParallelWorld&quot;</span>));</div>
-<div class="line"><span class="lineno">   62</span>  }</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>  pList-&gt;RegisterPhysics(<span class="keyword">new</span> GammaPhysics);</div>
-<div class="line"><span class="lineno">   65</span>  pList-&gt;RegisterPhysics(<span class="keyword">new</span> darkbrem::APrimePhysics(</div>
-<div class="line"><span class="lineno">   66</span>      <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&gt;(<span class="stringliteral">&quot;dark_brem&quot;</span>)));</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>  <span class="keyword">auto</span> biasing_operators{</div>
-<div class="line"><span class="lineno">   69</span>      <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;framework::config::Parameters&gt;&gt;(</div>
-<div class="line"><span class="lineno">   70</span>          <span class="stringliteral">&quot;biasing_operators&quot;</span>, {})};</div>
-<div class="line"><span class="lineno">   71</span>  <span class="keywordflow">if</span> (!biasing_operators.empty()) {</div>
-<div class="line"><span class="lineno">   72</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[ RunManager ]: Biasing enabled with &quot;</span></div>
-<div class="line"><span class="lineno">   73</span>              &lt;&lt; biasing_operators.size() &lt;&lt; <span class="stringliteral">&quot; operator(s).&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>    <span class="comment">// create all the biasing operators that will be used</span></div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp; bop : biasing_operators) {</div>
-<div class="line"><span class="lineno">   77</span>      <a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">simcore::PluginFactory::getInstance</a>().<a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a1687e2de8c1f172595cc7764d63ecaad">createBiasingOperator</a>(</div>
-<div class="line"><span class="lineno">   78</span>          bop.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;class_name&quot;</span>),</div>
-<div class="line"><span class="lineno">   79</span>          bop.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;instance_name&quot;</span>), bop);</div>
-<div class="line"><span class="lineno">   80</span>    }</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>    <span class="comment">// Instantiate the constructor used when biasing</span></div>
-<div class="line"><span class="lineno">   83</span>    G4GenericBiasingPhysics* biasingPhysics = <span class="keyword">new</span> G4GenericBiasingPhysics();</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    <span class="comment">// specify which particles are going to be biased</span></div>
-<div class="line"><span class="lineno">   86</span>    <span class="comment">//  this will put a biasing interface wrapper around *all* processes</span></div>
-<div class="line"><span class="lineno">   87</span>    <span class="comment">//  associated with these particles</span></div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classsimcore_1_1XsecBiasingOperator.html">simcore::XsecBiasingOperator</a>* bop :</div>
-<div class="line"><span class="lineno">   89</span>         <a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">simcore::PluginFactory::getInstance</a>().getBiasingOperators()) {</div>
+<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00053">53</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                              {</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keyword">auto</span> pList{<a class="code hl_variable" href="classsimcore_1_1RunManager.html#ae39766967cfd856dd30d654a42e8c894">physicsListFactory_</a>.GetReferencePhysList(<span class="stringliteral">&quot;FTFP_BERT&quot;</span>)};</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a2028f44d525e261fcf417c3dc78b055a">parallelWorldPath_</a> = <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;scoringPlanes&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>  <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a4fb5928412af942f32de4a965d33c21d">isPWEnabled_</a> = !<a class="code hl_variable" href="classsimcore_1_1RunManager.html#a2028f44d525e261fcf417c3dc78b055a">parallelWorldPath_</a>.empty();</div>
+<div class="line"><span class="lineno">   58</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsimcore_1_1RunManager.html#a4fb5928412af942f32de4a965d33c21d">isPWEnabled_</a>) {</div>
+<div class="line"><span class="lineno">   59</span>    std::cout</div>
+<div class="line"><span class="lineno">   60</span>        &lt;&lt; <span class="stringliteral">&quot;[ RunManager ]: Parallel worlds physics list has been registered.&quot;</span></div>
+<div class="line"><span class="lineno">   61</span>        &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   62</span>    pList-&gt;RegisterPhysics(<span class="keyword">new</span> G4ParallelWorldPhysics(<span class="stringliteral">&quot;ldmxParallelWorld&quot;</span>));</div>
+<div class="line"><span class="lineno">   63</span>  }</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>  pList-&gt;RegisterPhysics(<span class="keyword">new</span> GammaPhysics);</div>
+<div class="line"><span class="lineno">   66</span>  pList-&gt;RegisterPhysics(<span class="keyword">new</span> darkbrem::APrimePhysics(</div>
+<div class="line"><span class="lineno">   67</span>      <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&gt;(<span class="stringliteral">&quot;dark_brem&quot;</span>)));</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>  <span class="keyword">auto</span> biasing_operators{</div>
+<div class="line"><span class="lineno">   70</span>      <a class="code hl_variable" href="classsimcore_1_1RunManager.html#a245775a566a01c03eb52907fefd55cdf">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;framework::config::Parameters&gt;&gt;(</div>
+<div class="line"><span class="lineno">   71</span>          <span class="stringliteral">&quot;biasing_operators&quot;</span>, {})};</div>
+<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span> (!biasing_operators.empty()) {</div>
+<div class="line"><span class="lineno">   73</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[ RunManager ]: Biasing enabled with &quot;</span></div>
+<div class="line"><span class="lineno">   74</span>              &lt;&lt; biasing_operators.size() &lt;&lt; <span class="stringliteral">&quot; operator(s).&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="comment">// create all the biasing operators that will be used</span></div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp; bop : biasing_operators) {</div>
+<div class="line"><span class="lineno">   78</span>      <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">simcore::XsecBiasingOperator::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#ad038eaa2c027b9cbf45b49ec53ff3d80">make</a>(</div>
+<div class="line"><span class="lineno">   79</span>          bop.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;class_name&quot;</span>),</div>
+<div class="line"><span class="lineno">   80</span>          bop.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;instance_name&quot;</span>), bop);</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <span class="comment">// Instantiate the constructor used when biasing</span></div>
+<div class="line"><span class="lineno">   84</span>    G4GenericBiasingPhysics* biasingPhysics = <span class="keyword">new</span> G4GenericBiasingPhysics();</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="comment">// specify which particles are going to be biased</span></div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment">//  this will put a biasing interface wrapper around *all* processes</span></div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">//  associated with these particles</span></div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">simcore::XsecBiasingOperator::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">apply</a>([biasingPhysics](<span class="keyword">auto</span> bop) {</div>
 <div class="line"><span class="lineno">   90</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;[ RunManager ]: Biasing operator &#39;&quot;</span> &lt;&lt; bop-&gt;GetName()</div>
 <div class="line"><span class="lineno">   91</span>                &lt;&lt; <span class="stringliteral">&quot;&#39; set to bias &quot;</span> &lt;&lt; bop-&gt;getParticleToBias() &lt;&lt; std::endl;</div>
 <div class="line"><span class="lineno">   92</span>      biasingPhysics-&gt;Bias(bop-&gt;getParticleToBias());</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
+<div class="line"><span class="lineno">   93</span>    });</div>
 <div class="line"><span class="lineno">   94</span> </div>
 <div class="line"><span class="lineno">   95</span>    <span class="comment">// Register the physics constructor to the physics list:</span></div>
 <div class="line"><span class="lineno">   96</span>    pList-&gt;RegisterPhysics(biasingPhysics);</div>
@@ -340,11 +355,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   99</span>  this-&gt;SetUserInitialization(pList);</div>
 <div class="line"><span class="lineno">  100</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1PluginFactory_html_a1687e2de8c1f172595cc7764d63ecaad"><div class="ttname"><a href="classsimcore_1_1PluginFactory.html#a1687e2de8c1f172595cc7764d63ecaad">simcore::PluginFactory::createBiasingOperator</a></div><div class="ttdeci">void createBiasingOperator(const std::string &amp;className, const std::string &amp;instanceName, framework::config::Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00126">PluginFactory.cxx:126</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1Factory_html_aa0f06c8d4ea2c8d7bba4485a9e5560e7"><div class="ttname"><a href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">simcore::Factory::apply</a></div><div class="ttdeci">void apply(UnaryFunction f) const</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00282">Factory.h:282</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1RunManager_html_ae39766967cfd856dd30d654a42e8c894"><div class="ttname"><a href="classsimcore_1_1RunManager.html#ae39766967cfd856dd30d654a42e8c894">simcore::RunManager::physicsListFactory_</a></div><div class="ttdeci">G4PhysListFactory physicsListFactory_</div><div class="ttdef"><b>Definition:</b> <a href="RunManager_8h_source.html#l00095">RunManager.h:95</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1XsecBiasingOperator_html"><div class="ttname"><a href="classsimcore_1_1XsecBiasingOperator.html">simcore::XsecBiasingOperator</a></div><div class="ttdef"><b>Definition:</b> <a href="XsecBiasingOperator_8h_source.html#l00045">XsecBiasingOperator.h:45</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00126">simcore::PluginFactory::createBiasingOperator()</a>, <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00020">simcore::PluginFactory::getInstance()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00101">isPWEnabled_</a>, <a class="el" href="RunManager_8h_source.html#l00104">parallelWorldPath_</a>, <a class="el" href="RunManager_8h_source.html#l00090">parameters_</a>, and <a class="el" href="RunManager_8h_source.html#l00095">physicsListFactory_</a>.</p>
+<p class="reference">References <a class="el" href="Factory_8h_source.html#l00282">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::apply()</a>, <a class="el" href="Factory_8h_source.html#l00217">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::get()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="RunManager_8h_source.html#l00101">isPWEnabled_</a>, <a class="el" href="Factory_8h_source.html#l00264">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::make()</a>, <a class="el" href="RunManager_8h_source.html#l00104">parallelWorldPath_</a>, <a class="el" href="RunManager_8h_source.html#l00090">parameters_</a>, and <a class="el" href="RunManager_8h_source.html#l00095">physicsListFactory_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>.</p>
 
@@ -381,7 +395,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="RunManager_8h_source.html#l00109">useRootSeed_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00037">RunManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00038">RunManager()</a>.</p>
 
 </div>
 </div>
@@ -402,39 +416,39 @@ Private Attributes</h2></td></tr>
 <p >Called at the end of each event.</p>
 <p >Runs parent process G4RunManager::TerminateOneEvent() and resets the activation for the G4eDarkBremsstrahlung process (if dark brem is possible) </p>
 
-<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00148">148</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>                                   {</div>
-<div class="line"><span class="lineno">  149</span>  <span class="comment">// have geant4 do its own thing</span></div>
-<div class="line"><span class="lineno">  150</span>  G4RunManager::TerminateOneEvent();</div>
-<div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>  <span class="comment">// reset dark brem process (if needed)</span></div>
-<div class="line"><span class="lineno">  153</span>  G4ProcessTable* ptable = G4ProcessTable::GetProcessTable();</div>
-<div class="line"><span class="lineno">  154</span>  G4int verbosity = ptable-&gt;GetVerboseLevel();</div>
-<div class="line"><span class="lineno">  155</span> </div>
-<div class="line"><span class="lineno">  156</span>  <span class="comment">// Only one of these processes should be in the table</span></div>
-<div class="line"><span class="lineno">  157</span>  <span class="comment">//  (i.e. either the Dark Brem is biased or its not)</span></div>
-<div class="line"><span class="lineno">  158</span>  <span class="comment">// BUT we want to be able to cover both options without</span></div>
-<div class="line"><span class="lineno">  159</span>  <span class="comment">// the user having to configure it, so we set both</span></div>
-<div class="line"><span class="lineno">  160</span>  <span class="comment">// of these processes to active (by passing &#39;true&#39;)</span></div>
-<div class="line"><span class="lineno">  161</span>  <span class="comment">// while the table is silenced. If the table isn&#39;t silenced,</span></div>
-<div class="line"><span class="lineno">  162</span>  <span class="comment">// the process that isn&#39;t in the table will cause the table</span></div>
-<div class="line"><span class="lineno">  163</span>  <span class="comment">// to throw a &quot;not found&quot; warning.</span></div>
-<div class="line"><span class="lineno">  164</span>  std::vector&lt;G4String&gt; dark_brem_processes = {</div>
-<div class="line"><span class="lineno">  165</span>      <a class="code hl_variable" href="classsimcore_1_1darkbrem_1_1G4eDarkBremsstrahlung.html#a43b1c1fe62b1efa5b3283a21a5a0bf11">darkbrem::G4eDarkBremsstrahlung::PROCESS_NAME</a>,</div>
-<div class="line"><span class="lineno">  166</span>      <span class="stringliteral">&quot;biasWrapper(&quot;</span> + <a class="code hl_variable" href="classsimcore_1_1darkbrem_1_1G4eDarkBremsstrahlung.html#a43b1c1fe62b1efa5b3283a21a5a0bf11">darkbrem::G4eDarkBremsstrahlung::PROCESS_NAME</a> + <span class="stringliteral">&quot;)&quot;</span>};</div>
-<div class="line"><span class="lineno">  167</span>  ptable-&gt;SetVerboseLevel(</div>
-<div class="line"><span class="lineno">  168</span>      0);  <span class="comment">// silent ptable while searching for process that may/may not exist</span></div>
-<div class="line"><span class="lineno">  169</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; name : dark_brem_processes)</div>
-<div class="line"><span class="lineno">  170</span>    ptable-&gt;SetProcessActivation(name, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  171</span>  ptable-&gt;SetVerboseLevel(verbosity);</div>
+<p class="definition">Definition at line <a class="el" href="RunManager_8cxx_source.html#l00165">165</a> of file <a class="el" href="RunManager_8cxx_source.html">RunManager.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>                                   {</div>
+<div class="line"><span class="lineno">  166</span>  <span class="comment">// have geant4 do its own thing</span></div>
+<div class="line"><span class="lineno">  167</span>  G4RunManager::TerminateOneEvent();</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>  <span class="comment">// reset dark brem process (if needed)</span></div>
+<div class="line"><span class="lineno">  170</span>  G4ProcessTable* ptable = G4ProcessTable::GetProcessTable();</div>
+<div class="line"><span class="lineno">  171</span>  G4int verbosity = ptable-&gt;GetVerboseLevel();</div>
 <div class="line"><span class="lineno">  172</span> </div>
-<div class="line"><span class="lineno">  173</span>  <span class="keywordflow">if</span> (this-&gt;GetVerboseLevel() &gt; 1) {</div>
-<div class="line"><span class="lineno">  174</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[ RunManager ] : &quot;</span></div>
-<div class="line"><span class="lineno">  175</span>              &lt;&lt; <span class="stringliteral">&quot;Reset the dark brem process (if it was activated).&quot;</span></div>
-<div class="line"><span class="lineno">  176</span>              &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  177</span>  }</div>
-<div class="line"><span class="lineno">  178</span>  ptable-&gt;SetVerboseLevel(verbosity);</div>
-<div class="line"><span class="lineno">  179</span>}</div>
+<div class="line"><span class="lineno">  173</span>  <span class="comment">// Only one of these processes should be in the table</span></div>
+<div class="line"><span class="lineno">  174</span>  <span class="comment">//  (i.e. either the Dark Brem is biased or its not)</span></div>
+<div class="line"><span class="lineno">  175</span>  <span class="comment">// BUT we want to be able to cover both options without</span></div>
+<div class="line"><span class="lineno">  176</span>  <span class="comment">// the user having to configure it, so we set both</span></div>
+<div class="line"><span class="lineno">  177</span>  <span class="comment">// of these processes to active (by passing &#39;true&#39;)</span></div>
+<div class="line"><span class="lineno">  178</span>  <span class="comment">// while the table is silenced. If the table isn&#39;t silenced,</span></div>
+<div class="line"><span class="lineno">  179</span>  <span class="comment">// the process that isn&#39;t in the table will cause the table</span></div>
+<div class="line"><span class="lineno">  180</span>  <span class="comment">// to throw a &quot;not found&quot; warning.</span></div>
+<div class="line"><span class="lineno">  181</span>  std::vector&lt;G4String&gt; dark_brem_processes = {</div>
+<div class="line"><span class="lineno">  182</span>      <a class="code hl_variable" href="classsimcore_1_1darkbrem_1_1G4eDarkBremsstrahlung.html#a43b1c1fe62b1efa5b3283a21a5a0bf11">darkbrem::G4eDarkBremsstrahlung::PROCESS_NAME</a>,</div>
+<div class="line"><span class="lineno">  183</span>      <span class="stringliteral">&quot;biasWrapper(&quot;</span> + <a class="code hl_variable" href="classsimcore_1_1darkbrem_1_1G4eDarkBremsstrahlung.html#a43b1c1fe62b1efa5b3283a21a5a0bf11">darkbrem::G4eDarkBremsstrahlung::PROCESS_NAME</a> + <span class="stringliteral">&quot;)&quot;</span>};</div>
+<div class="line"><span class="lineno">  184</span>  ptable-&gt;SetVerboseLevel(</div>
+<div class="line"><span class="lineno">  185</span>      0);  <span class="comment">// silent ptable while searching for process that may/may not exist</span></div>
+<div class="line"><span class="lineno">  186</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; name : dark_brem_processes)</div>
+<div class="line"><span class="lineno">  187</span>    ptable-&gt;SetProcessActivation(name, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  188</span>  ptable-&gt;SetVerboseLevel(verbosity);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>  <span class="keywordflow">if</span> (this-&gt;GetVerboseLevel() &gt; 1) {</div>
+<div class="line"><span class="lineno">  191</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[ RunManager ] : &quot;</span></div>
+<div class="line"><span class="lineno">  192</span>              &lt;&lt; <span class="stringliteral">&quot;Reset the dark brem process (if it was activated).&quot;</span></div>
+<div class="line"><span class="lineno">  193</span>              &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  194</span>  }</div>
+<div class="line"><span class="lineno">  195</span>  ptable-&gt;SetVerboseLevel(verbosity);</div>
+<div class="line"><span class="lineno">  196</span>}</div>
 <div class="ttc" id="aclasssimcore_1_1darkbrem_1_1G4eDarkBremsstrahlung_html_a43b1c1fe62b1efa5b3283a21a5a0bf11"><div class="ttname"><a href="classsimcore_1_1darkbrem_1_1G4eDarkBremsstrahlung.html#a43b1c1fe62b1efa5b3283a21a5a0bf11">simcore::darkbrem::G4eDarkBremsstrahlung::PROCESS_NAME</a></div><div class="ttdeci">static const std::string PROCESS_NAME</div><div class="ttdef"><b>Definition:</b> <a href="G4eDarkBremsstrahlung_8h_source.html#l00213">G4eDarkBremsstrahlung.h:213</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="G4eDarkBremsstrahlung_8h_source.html#l00213">simcore::darkbrem::G4eDarkBremsstrahlung::PROCESS_NAME</a>.</p>
@@ -496,8 +510,6 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00113">113</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>.</p>
-
 </div>
 </div>
 <a id="a4fb5928412af942f32de4a965d33c21d" name="a4fb5928412af942f32de4a965d33c21d"></a>
@@ -523,7 +535,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00101">101</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00052">setupPhysics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00053">setupPhysics()</a>.</p>
 
 </div>
 </div>
@@ -550,7 +562,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00104">104</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00052">setupPhysics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00053">setupPhysics()</a>.</p>
 
 </div>
 </div>
@@ -578,7 +590,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00090">90</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>, <a class="el" href="RunManager_8cxx_source.html#l00037">RunManager()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00052">setupPhysics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00102">Initialize()</a>, <a class="el" href="RunManager_8cxx_source.html#l00038">RunManager()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00053">setupPhysics()</a>.</p>
 
 </div>
 </div>
@@ -601,11 +613,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Factory class for instantiating the physics list. </p>
+<p ><a class="el" href="classsimcore_1_1Factory.html">Factory</a> class for instantiating the physics list. </p>
 
 <p class="definition">Definition at line <a class="el" href="RunManager_8h_source.html#l00095">95</a> of file <a class="el" href="RunManager_8h_source.html">RunManager.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00052">setupPhysics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RunManager_8cxx_source.html#l00053">setupPhysics()</a>.</p>
 
 </div>
 </div>

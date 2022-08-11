@@ -45,9 +45,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classsimcore_1_1UserAction-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">simcore::UserAction Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
@@ -59,6 +59,12 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="UserAction_8h_source.html">UserAction.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a91e39060a5f05027418df84541949d2e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserAction.html#a91e39060a5f05027418df84541949d2e">Factory</a> = <a class="el" href="classsimcore_1_1Factory.html">::simcore::Factory</a>&lt; <a class="el" href="classsimcore_1_1UserAction.html">UserAction</a>, std::shared_ptr&lt; <a class="el" href="classsimcore_1_1UserAction.html">UserAction</a> &gt;, const std::string &amp;, <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp; &gt;</td></tr>
+<tr class="memdesc:a91e39060a5f05027418df84541949d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">factory for user actions  <a href="classsimcore_1_1UserAction.html#a91e39060a5f05027418df84541949d2e">More...</a><br /></td></tr>
+<tr class="separator:a91e39060a5f05027418df84541949d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4bb74e3451fa581346b72dc15ee00eb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserAction.html#a4bb74e3451fa581346b72dc15ee00eb8">UserAction</a> (const std::string &amp;name, <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;parameters)</td></tr>
@@ -89,15 +95,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a88236347eb3d75a26bf1cf33a842800c"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; TYPE &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserAction.html#a88236347eb3d75a26bf1cf33a842800c">getTypes</a> ()=0</td></tr>
 <tr class="separator:a88236347eb3d75a26bf1cf33a842800c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1d20452de6e26f22c322330b2ac106f8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserAction.html#a1d20452de6e26f22c322330b2ac106f8">declare</a> (const std::string &amp;className, UserActionBuilder *builder)</td></tr>
-<tr class="separator:a1d20452de6e26f22c322330b2ac106f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
-Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a90a43ffd1708bbdd25411f9cfe529a41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classsimcore_1_1UserEventInformation.html">UserEventInformation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserAction.html#a90a43ffd1708bbdd25411f9cfe529a41">getEventInfo</a> ()</td></tr>
-<tr class="separator:a90a43ffd1708bbdd25411f9cfe529a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a93d0903ae5c9d48a518611c6a37cdffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsimcore_1_1UserEventInformation.html">UserEventInformation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a> () const</td></tr>
+<tr class="separator:a93d0903ae5c9d48a518611c6a37cdffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be43037a215444585f21bc1e43bf194"><td class="memItemLeft" align="right" valign="top">const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserAction.html#a7be43037a215444585f21bc1e43bf194">getCurrentParticleMap</a> () const</td></tr>
+<tr class="separator:a7be43037a215444585f21bc1e43bf194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -111,8 +114,27 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Interface that defines a user action. </p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00046">46</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00042">42</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a91e39060a5f05027418df84541949d2e" name="a91e39060a5f05027418df84541949d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91e39060a5f05027418df84541949d2e">&#9670;&nbsp;</a></span>Factory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classsimcore_1_1UserAction.html#a91e39060a5f05027418df84541949d2e">simcore::UserAction::Factory</a> =  <a class="el" href="classsimcore_1_1Factory.html">::simcore::Factory</a>&lt;<a class="el" href="classsimcore_1_1UserAction.html">UserAction</a>, std::shared_ptr&lt;<a class="el" href="classsimcore_1_1UserAction.html">UserAction</a>&gt;, const std::string&amp;, <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>factory for user actions </p>
+
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00053">53</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4bb74e3451fa581346b72dc15ee00eb8" name="a4bb74e3451fa581346b72dc15ee00eb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4bb74e3451fa581346b72dc15ee00eb8">&#9670;&nbsp;</a></span>UserAction()</h2>
 
@@ -146,11 +168,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8cxx_source.html#l00019">19</a> of file <a class="el" href="UserAction_8cxx_source.html">UserAction.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>                                                              {</div>
-<div class="line"><span class="lineno">   21</span>  <a class="code hl_variable" href="classsimcore_1_1UserAction.html#aeafb03d8345959dfe2c18bada9d13917">name_</a> = name;</div>
-<div class="line"><span class="lineno">   22</span>  <a class="code hl_variable" href="classsimcore_1_1UserAction.html#af02fcb18b66d1f02514b43d0c5803e6c">parameters_</a> = parameters;</div>
-<div class="line"><span class="lineno">   23</span>}</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8cxx_source.html#l00016">16</a> of file <a class="el" href="UserAction_8cxx_source.html">UserAction.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                                              {</div>
+<div class="line"><span class="lineno">   18</span>  <a class="code hl_variable" href="classsimcore_1_1UserAction.html#aeafb03d8345959dfe2c18bada9d13917">name_</a> = name;</div>
+<div class="line"><span class="lineno">   19</span>  <a class="code hl_variable" href="classsimcore_1_1UserAction.html#af02fcb18b66d1f02514b43d0c5803e6c">parameters_</a> = parameters;</div>
+<div class="line"><span class="lineno">   20</span>}</div>
 <div class="ttc" id="aclasssimcore_1_1UserAction_html_aeafb03d8345959dfe2c18bada9d13917"><div class="ttname"><a href="classsimcore_1_1UserAction.html#aeafb03d8345959dfe2c18bada9d13917">simcore::UserAction::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdoc">Name of the UserAction.</div><div class="ttdef"><b>Definition:</b> <a href="UserAction_8h_source.html#l00182">UserAction.h:182</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1UserAction_html_af02fcb18b66d1f02514b43d0c5803e6c"><div class="ttname"><a href="classsimcore_1_1UserAction.html#af02fcb18b66d1f02514b43d0c5803e6c">simcore::UserAction::parameters_</a></div><div class="ttdeci">framework::config::Parameters parameters_</div><div class="ttdoc">The set of parameters used to configure this class.</div><div class="ttdef"><b>Definition:</b> <a href="UserAction_8h_source.html#l00185">UserAction.h:185</a></div></div>
 </div><!-- fragment -->
@@ -183,8 +205,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8cxx_source.html#l00025">25</a> of file <a class="el" href="UserAction_8cxx_source.html">UserAction.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8cxx_source.html#l00022">22</a> of file <a class="el" href="UserAction_8cxx_source.html">UserAction.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -223,8 +245,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classbiasing_1_1EcalDarkBremFilter.html#a719de0d4f5f1625867b540eb58c44215">biasing::EcalDarkBremFilter</a>, <a class="el" href="classbiasing_1_1MidShowerNuclearBkgdFilter.html#a48569d22c54496187f4b402590020a92">biasing::MidShowerNuclearBkgdFilter</a>, and <a class="el" href="classbiasing_1_1utility_1_1PartialEnergySorter.html#a0240494b0218c5a4e03446df97d77245">biasing::utility::PartialEnergySorter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00074">74</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00068">68</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,8 +282,8 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00092">92</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00086">86</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -310,64 +332,11 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classbiasing_1_1EcalDarkBremFilter.html#a9e25ead0a9bb0ded7639c0bdeb7422ce">biasing::EcalDarkBremFilter</a>, <a class="el" href="classbiasing_1_1EcalProcessFilter.html#ae4760201c6fee9d4c335ed2de728f6bf">biasing::EcalProcessFilter</a>, <a class="el" href="classbiasing_1_1TargetBremFilter.html#a96b8eee33e6a225741a5782963c62213">biasing::TargetBremFilter</a>, <a class="el" href="classbiasing_1_1TargetProcessFilter.html#a6b0270cb76b3ebf6ad9bfa232e932fd4">biasing::TargetProcessFilter</a>, and <a class="el" href="classbiasing_1_1utility_1_1PartialEnergySorter.html#a6af6c1a2a88eb4e480f6b7911a8e12ab">biasing::utility::PartialEnergySorter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00138">138</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>                                                            {</div>
-<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> cl;</div>
-<div class="line"><span class="lineno">  141</span>  };</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00132">132</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>                                                            {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> cl;</div>
+<div class="line"><span class="lineno">  135</span>  };</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a1d20452de6e26f22c322330b2ac106f8" name="a1d20452de6e26f22c322330b2ac106f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d20452de6e26f22c322330b2ac106f8">&#9670;&nbsp;</a></span>declare()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void simcore::UserAction::declare </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>className</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">UserActionBuilder *&#160;</td>
-          <td class="paramname"><em>builder</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Method used to register a user action with the manager.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">className</td><td>Name of the class instance </td></tr>
-    <tr><td class="paramname">builder</td><td>The builder used to create and instance of this class. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="UserAction_8cxx_source.html#l00027">27</a> of file <a class="el" href="UserAction_8cxx_source.html">UserAction.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>                                                     {</div>
-<div class="line"><span class="lineno">   29</span>  <a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">PluginFactory::getInstance</a>().<a class="code hl_function" href="classsimcore_1_1PluginFactory.html#a9f1825415437c4c79b1dae1061116c6b">registerAction</a>(className, builder);</div>
-<div class="line"><span class="lineno">   30</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1PluginFactory_html_a6e09cbc955d72f0e0a2d546cc2577b33"><div class="ttname"><a href="classsimcore_1_1PluginFactory.html#a6e09cbc955d72f0e0a2d546cc2577b33">simcore::PluginFactory::getInstance</a></div><div class="ttdeci">static PluginFactory &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00020">PluginFactory.cxx:20</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1PluginFactory_html_a9f1825415437c4c79b1dae1061116c6b"><div class="ttname"><a href="classsimcore_1_1PluginFactory.html#a9f1825415437c4c79b1dae1061116c6b">simcore::PluginFactory::registerAction</a></div><div class="ttdeci">void registerAction(const std::string &amp;className, UserActionBuilder *builder)</div><div class="ttdef"><b>Definition:</b> <a href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00069">PluginFactory.cxx:69</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00020">simcore::PluginFactory::getInstance()</a>, and <a class="el" href="SimCore_2src_2SimCore_2PluginFactory_8cxx_source.html#l00069">simcore::PluginFactory::registerAction()</a>.</p>
-
 </div>
 </div>
 <a id="a846adbda3c1a0a3625a2e6ac39f16a36" name="a846adbda3c1a0a3625a2e6ac39f16a36"></a>
@@ -404,8 +373,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classbiasing_1_1TargetBremFilter.html#abdabf3bfe36168e88ecefd6fd44c5a35">biasing::TargetBremFilter</a>, <a class="el" href="classbiasing_1_1TargetENProcessFilter.html#ab134ff99de37b1058394dc613b0063ce">biasing::TargetENProcessFilter</a>, and <a class="el" href="classbiasing_1_1TargetProcessFilter.html#a83da7f393d2ae3ba5d1534e7c96c84bf">biasing::TargetProcessFilter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00083">83</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00077">77</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -441,13 +410,13 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00101">101</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00095">95</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a90a43ffd1708bbdd25411f9cfe529a41" name="a90a43ffd1708bbdd25411f9cfe529a41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90a43ffd1708bbdd25411f9cfe529a41">&#9670;&nbsp;</a></span>getEventInfo()</h2>
+<a id="a7be43037a215444585f21bc1e43bf194" name="a7be43037a215444585f21bc1e43bf194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be43037a215444585f21bc1e43bf194">&#9670;&nbsp;</a></span>getCurrentParticleMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -456,15 +425,54 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classsimcore_1_1UserEventInformation.html">UserEventInformation</a> * simcore::UserAction::getEventInfo </td>
+          <td class="memname">const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; &amp; simcore::UserAction::getCurrentParticleMap </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Get the current particle map</p>
+<dl class="section note"><dt>Note</dt><dd>The current particle map will only have the particles already fully processed and chosen to be saved. The ancestry of the particles will not have been traced yet. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="UserAction_8cxx_source.html#l00029">29</a> of file <a class="el" href="UserAction_8cxx_source.html">UserAction.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>                                                                           {</div>
+<div class="line"><span class="lineno">   30</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="classsimcore_1_1g4user_1_1TrackingAction.html#abbab03b25ea59c65a57819968a847892">g4user::TrackingAction::get</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1g4user_1_1TrackingAction.html#a54eda98e1b04872db6c5bf12f5d6ec18">getTrackMap</a>().<a class="code hl_function" href="classsimcore_1_1TrackMap.html#a184eb907555eecae94acccb95d07d730">getParticleMap</a>();</div>
+<div class="line"><span class="lineno">   31</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a184eb907555eecae94acccb95d07d730"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a184eb907555eecae94acccb95d07d730">simcore::TrackMap::getParticleMap</a></div><div class="ttdeci">std::map&lt; int, ldmx::SimParticle &gt; &amp; getParticleMap()</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00095">TrackMap.h:95</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1g4user_1_1TrackingAction_html_a54eda98e1b04872db6c5bf12f5d6ec18"><div class="ttname"><a href="classsimcore_1_1g4user_1_1TrackingAction.html#a54eda98e1b04872db6c5bf12f5d6ec18">simcore::g4user::TrackingAction::getTrackMap</a></div><div class="ttdeci">TrackMap &amp; getTrackMap()</div><div class="ttdef"><b>Definition:</b> <a href="TrackingAction_8h_source.html#l00110">TrackingAction.h:110</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1g4user_1_1TrackingAction_html_abbab03b25ea59c65a57819968a847892"><div class="ttname"><a href="classsimcore_1_1g4user_1_1TrackingAction.html#abbab03b25ea59c65a57819968a847892">simcore::g4user::TrackingAction::get</a></div><div class="ttdeci">static TrackingAction * get()</div><div class="ttdef"><b>Definition:</b> <a href="TrackingAction_8h_source.html#l00116">TrackingAction.h:116</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TrackingAction_8h_source.html#l00116">simcore::g4user::TrackingAction::get()</a>, <a class="el" href="TrackMap_8h_source.html#l00095">simcore::TrackMap::getParticleMap()</a>, and <a class="el" href="TrackingAction_8h_source.html#l00110">simcore::g4user::TrackingAction::getTrackMap()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DecayChildrenKeeper_8cxx_source.html#l00025">biasing::utility::DecayChildrenKeeper::PostUserTrackingAction()</a>.</p>
+
+</div>
+</div>
+<a id="a93d0903ae5c9d48a518611c6a37cdffd" name="a93d0903ae5c9d48a518611c6a37cdffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d0903ae5c9d48a518611c6a37cdffd">&#9670;&nbsp;</a></span>getEventInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsimcore_1_1UserEventInformation.html">UserEventInformation</a> * simcore::UserAction::getEventInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -472,11 +480,11 @@ Protected Attributes</h2></td></tr>
 <p >This is static just to point out that it doesn't depend on any of the member variables of this class. It is just a helper function for shortening any code that interacts with our event information.</p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to the current event information </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00175">175</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  175</span>                                              {</div>
-<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>UserEventInformation*<span class="keyword">&gt;</span>(</div>
-<div class="line"><span class="lineno">  177</span>        G4EventManager::GetEventManager()-&gt;GetUserInformation());</div>
-<div class="line"><span class="lineno">  178</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8cxx_source.html#l00024">24</a> of file <a class="el" href="UserAction_8cxx_source.html">UserAction.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>                                                     {</div>
+<div class="line"><span class="lineno">   25</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>UserEventInformation*<span class="keyword">&gt;</span>(</div>
+<div class="line"><span class="lineno">   26</span>      G4EventManager::GetEventManager()-&gt;GetUserInformation());</div>
+<div class="line"><span class="lineno">   27</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="MidShowerNuclearBkgdFilter_8cxx_source.html#l00029">biasing::MidShowerNuclearBkgdFilter::stepping()</a>, <a class="el" href="TargetBremFilter_8cxx_source.html#l00049">biasing::TargetBremFilter::stepping()</a>, and <a class="el" href="TargetProcessFilter_8cxx_source.html#l00049">biasing::TargetProcessFilter::stepping()</a>.</p>
 
@@ -538,8 +546,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classbiasing_1_1EcalDarkBremFilter.html#ae71143e89467f3e2149eeccedf902aed">biasing::EcalDarkBremFilter</a>, <a class="el" href="classbiasing_1_1MidShowerNuclearBkgdFilter.html#a3c5eac1552663e7eb7245a3aba9ac9e7">biasing::MidShowerNuclearBkgdFilter</a>, and <a class="el" href="classbiasing_1_1utility_1_1PartialEnergySorter.html#a80bc7d8942c2f45535fb03985ae20384">biasing::utility::PartialEnergySorter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00148">148</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00142">142</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -566,7 +574,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Method called after the <a class="el" href="classsimcore_1_1UserTrackingAction.html" title="Implementation of user tracking action.">UserTrackingAction</a>.</p>
+<p >Method called after the UserTrackingAction.</p>
 <p >TYPE::TRACKING</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -577,8 +585,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classbiasing_1_1EcalDarkBremFilter.html#aa27f7e3901bc4b3f04d2584bf94ad67c">biasing::EcalDarkBremFilter</a>, <a class="el" href="classbiasing_1_1utility_1_1DecayChildrenKeeper.html#abdc44c7e143035b97c073bfac6e1f545">biasing::utility::DecayChildrenKeeper</a>, and <a class="el" href="classbiasing_1_1utility_1_1TrackProcessFilter.html#a95c04a7a3ae1ef35075f07e667f61da5">biasing::utility::TrackProcessFilter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00119">119</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00113">113</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -607,8 +615,8 @@ Protected Attributes</h2></td></tr>
 <p >Method called at the beginning of a new event</p>
 <p >TYPE::STACKING </p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00155">155</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  155</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00149">149</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -635,7 +643,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Method called before the <a class="el" href="classsimcore_1_1UserTrackingAction.html" title="Implementation of user tracking action.">UserTrackingAction</a>.</p>
+<p >Method called before the UserTrackingAction.</p>
 <p >TYPE::TRACKING</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -644,8 +652,8 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00110">110</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00104">104</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -683,8 +691,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classbiasing_1_1TargetDarkBremFilter.html#a72909d13c93b4c497918fa63b0625f79">biasing::TargetDarkBremFilter</a>, <a class="el" href="classbiasing_1_1EcalProcessFilter.html#a891afaf2bbe039936e193aefc0635d9c">biasing::EcalProcessFilter</a>, <a class="el" href="classbiasing_1_1MidShowerNuclearBkgdFilter.html#af554119d3062f3ada422cbe87f164fdd">biasing::MidShowerNuclearBkgdFilter</a>, <a class="el" href="classbiasing_1_1PhotoNuclearProductsFilter.html#a046f3ba457c1f700f5aded73847e5a54">biasing::PhotoNuclearProductsFilter</a>, <a class="el" href="classbiasing_1_1PrimaryToEcalFilter.html#a7b0c2e9cfcc7716474eccd29607037db">biasing::PrimaryToEcalFilter</a>, <a class="el" href="classbiasing_1_1TaggerVetoFilter.html#af70e9d6ab73fb107096a9528fc9c2ca5">biasing::TaggerVetoFilter</a>, <a class="el" href="classbiasing_1_1TargetBremFilter.html#a4b34bd7de7ec4afffb43770d576a7ffe">biasing::TargetBremFilter</a>, <a class="el" href="classbiasing_1_1TargetENProcessFilter.html#a2db77c8bad78cf5f0465eb93a1e79019">biasing::TargetENProcessFilter</a>, <a class="el" href="classbiasing_1_1TargetProcessFilter.html#a0efb5c59a2b5764540a787d2304a6cf7">biasing::TargetProcessFilter</a>, <a class="el" href="classbiasing_1_1utility_1_1PartialEnergySorter.html#af2d219835f8161159391805385c2e978">biasing::utility::PartialEnergySorter</a>, and <a class="el" href="classbiasing_1_1utility_1_1StepPrinter.html#a745242e3a6a58f409171e0e6b3b6bdcf">biasing::utility::StepPrinter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00128">128</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00122">122</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -713,7 +721,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00182">182</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserAction_8cxx_source.html#l00019">UserAction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserAction_8cxx_source.html#l00016">UserAction()</a>.</p>
 
 </div>
 </div>
@@ -741,7 +749,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="UserAction_8h_source.html#l00185">185</a> of file <a class="el" href="UserAction_8h_source.html">UserAction.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserAction_8cxx_source.html#l00019">UserAction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserAction_8cxx_source.html#l00016">UserAction()</a>.</p>
 
 </div>
 </div>
