@@ -55,8 +55,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a300f34dd8039111e99c4865c395d4b72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1TemplatedClusterFinder.html#a300f34dd8039111e99c4865c395d4b72">add</a> (const <a class="el" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a> *eh, const <a class="el" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a> &amp;<a class="el" href="structpacking_1_1utility_1_1hex.html">hex</a>)</td></tr>
-<tr class="separator:a300f34dd8039111e99c4865c395d4b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5b71e958e6b9f0a4773e8434a89ee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1TemplatedClusterFinder.html#a2c5b71e958e6b9f0a4773e8434a89ee5">add</a> (const <a class="el" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a> *eh, const <a class="el" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a> &amp;<a class="el" href="structpacking_1_1utility_1_1hex.html">hex</a>)</td></tr>
+<tr class="separator:a2c5b71e958e6b9f0a4773e8434a89ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1dae6797d2704bb42dbc50293677523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1TemplatedClusterFinder.html#ad1dae6797d2704bb42dbc50293677523">cluster</a> (double seed_threshold, double cutoff)</td></tr>
 <tr class="separator:ad1dae6797d2704bb42dbc50293677523"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7382bc01d890ea1d1c3aa24e0ac5b4d1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1TemplatedClusterFinder.html#a7382bc01d890ea1d1c3aa24e0ac5b4d1">getYMax</a> () const</td></tr>
@@ -91,8 +91,8 @@ Private Attributes</h2></td></tr>
 class ecal::TemplatedClusterFinder&lt; WeightClass &gt;</div>
 <p class="definition">Definition at line <a class="el" href="Ecal_2include_2Ecal_2TemplatedClusterFinder_8h_source.html#l00018">18</a> of file <a class="el" href="Ecal_2include_2Ecal_2TemplatedClusterFinder_8h_source.html">TemplatedClusterFinder.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a300f34dd8039111e99c4865c395d4b72" name="a300f34dd8039111e99c4865c395d4b72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a300f34dd8039111e99c4865c395d4b72">&#9670;&#160;</a></span>add()</h2>
+<a id="a2c5b71e958e6b9f0a4773e8434a89ee5" name="a2c5b71e958e6b9f0a4773e8434a89ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c5b71e958e6b9f0a4773e8434a89ee5">&#9670;&#160;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -111,7 +111,7 @@ template&lt;class WeightClass &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a> &amp;&#160;</td>
           <td class="paramname"><em>hex</em>&#160;</td>
         </tr>
         <tr>
@@ -128,7 +128,7 @@ template&lt;class WeightClass &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="Ecal_2include_2Ecal_2TemplatedClusterFinder_8h_source.html#l00020">20</a> of file <a class="el" href="Ecal_2include_2Ecal_2TemplatedClusterFinder_8h_source.html">TemplatedClusterFinder.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>                                                                 {</div>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>                                                               {</div>
 <div class="line"><span class="lineno">   21</span>    clusters_.push_back(WorkingCluster(eh, hex));</div>
 <div class="line"><span class="lineno">   22</span>  }</div>
 </div><!-- fragment -->

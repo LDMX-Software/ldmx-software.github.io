@@ -48,7 +48,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="EcalHexReadout_8h.html">DetDescr/EcalHexReadout.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="EcalGeometry_8h.html">DetDescr/EcalGeometry.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="EcalID_8h.html">DetDescr/EcalID.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="EcalTriggerID_8h.html">DetDescr/EcalTriggerID.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="EcalTriggerGeometry_8h.html">Ecal/EcalTriggerGeometry.h</a>&quot;</span></div>
@@ -74,91 +74,90 @@ $(function() {
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      171.450, 180.550, 196.250, 205.350, 221.050, 230.150, 245.850,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      254.950, 270.650, 279.750, 298.950, 311.550, 330.750, 343.350,</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      362.550, 375.150, 394.350, 406.950, 426.150, 438.750};</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  std::map&lt;std::string, std::any&gt; ps;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  ps[<span class="stringliteral">&quot;layerZPositions&quot;</span>] = ecalSensLayersZ;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  ps[<span class="stringliteral">&quot;ecalFrontZ&quot;</span>] = 220.;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  ps[<span class="stringliteral">&quot;moduleMinR&quot;</span>] = 85.0;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  ps[<span class="stringliteral">&quot;gap&quot;</span>] = 1.0;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  ps[<span class="stringliteral">&quot;nCellRHeight&quot;</span>] = 35.3;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  ps[<span class="stringliteral">&quot;verbose&quot;</span>] = 2;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> params;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(ps);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_class" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a>* phexReadout = ldmx::EcalHexReadout::debugMake(params);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_class" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a>&amp; hexReadout(*phexReadout);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">auto</span> polyMap = hexReadout.getCellPolyMap();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> params;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;layerZPositions&quot;</span>, ecalSensLayersZ);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;ecalFrontZ&quot;</span>, 220.);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;moduleMinR&quot;</span>, 85.0);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;nCellRHeight&quot;</span>, 35.3);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;gap&quot;</span>, 1.5);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;cornersSideUp&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;layer_shift_x&quot;</span>, 0.);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;layer_shift_y&quot;</span>, 0.);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;layer_shift_odd&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;layer_shift_odd_bilayer&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  params.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">addParameter</a>(<span class="stringliteral">&quot;verbose&quot;</span>, 1);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_class" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a>* geometry_ptr = ldmx::EcalGeometry::debugMake(params);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_class" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a>&amp; geometry(*geometry_ptr);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// fill poly map with IDs</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [cellID, cellCenter] : hexReadout.getCellPositionMap()) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    polyMap-&gt;Fill(cellCenter.first, cellCenter.second, cellID);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  TCanvas* c = <span class="keyword">new</span> TCanvas(<span class="stringliteral">&quot;c&quot;</span>, <span class="stringliteral">&quot;c&quot;</span>, 900, 900);  <span class="comment">// make square canvas</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  c-&gt;SetMargin(0.15, 0.05, 0.1, 0.1);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  gStyle-&gt;SetOptStat(0);  <span class="comment">// no stat box</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  polyMap-&gt;SetTitle(</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="stringliteral">&quot;Local Cell ID to Local Cell Position Map;X Position Relative to Module &quot;</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="stringliteral">&quot;[mm];Y Position Relative to Module [mm]&quot;</span>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  polyMap-&gt;GetXaxis()-&gt;SetTickLength(0.);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  polyMap-&gt;GetYaxis()-&gt;SetTickLength(0.);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  polyMap-&gt;Draw(<span class="stringliteral">&quot;TEXT&quot;</span>);  <span class="comment">// print with bin context labeled as text</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">double</span> hexCornerRadius = 85.0 * (2 / sqrt(3));</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  std::vector&lt;std::pair&lt;double, double&gt; &gt; hexCorners = {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      std::make_pair&lt;double, double&gt;(0., +1. * hexCornerRadius),</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      std::make_pair&lt;double, double&gt;(+1. * hexCornerRadius * sin(M_PI / 3),</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                     +1. * hexCornerRadius * cos(M_PI / 3)),</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      std::make_pair&lt;double, double&gt;(+1. * hexCornerRadius * sin(M_PI / 3),</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                     -1. * hexCornerRadius * cos(M_PI / 3)),</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      std::make_pair&lt;double, double&gt;(0., -1. * hexCornerRadius),</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      std::make_pair&lt;double, double&gt;(-1. * hexCornerRadius * sin(M_PI / 3),</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                     -1. * hexCornerRadius * cos(M_PI / 3)),</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      std::make_pair&lt;double, double&gt;(-1. * hexCornerRadius * sin(M_PI / 3),</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                                     +1. * hexCornerRadius * cos(M_PI / 3)),</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      std::make_pair&lt;double, double&gt;(0., +1. * hexCornerRadius)};</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  TLine moduleHexBorder;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  moduleHexBorder.SetLineColorAlpha(kRed, 0.5);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  moduleHexBorder.SetLineWidth(2);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; hexCorners.size(); i++) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    moduleHexBorder.DrawLine(hexCorners.at(i - 1).first,</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                             hexCorners.at(i - 1).second,</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                             hexCorners.at(i).first, hexCorners.at(i).second);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  c-&gt;Update();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  c-&gt;SaveAs(<span class="stringliteral">&quot;Cell_ID_Cell_Position_Map.pdf&quot;</span>);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  polyMap-&gt;SetTitle(</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="stringliteral">&quot;Local Cell U,V to Local Cell Position Map;X Position Relative to Module &quot;</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <span class="stringliteral">&quot;[mm];Y Position Relative to Module [mm]&quot;</span>);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  polyMap-&gt;GetXaxis()-&gt;SetTickLength(0.);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  polyMap-&gt;GetYaxis()-&gt;SetTickLength(0.);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  polyMap-&gt;SetMaximum(1000);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  polyMap-&gt;SetMinimum(500);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  polyMap-&gt;Draw(<span class="stringliteral">&quot;hist&quot;</span>);  <span class="comment">// print with bin context labeled as text</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icell = 0; icell &lt; 432; icell++) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_class" href="classldmx_1_1EcalID.html">ldmx::EcalID</a> id(0, 0, icell);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    std::pair&lt;double, double&gt; pt = hexReadout.getCellCenterRelative(icell);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">char</span> text[100];</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    std::pair&lt;unsigned int, unsigned int&gt; uv = <span class="keywordtype">id</span>.getCellUV();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    sprintf(text, <span class="stringliteral">&quot;(%d,%d)&quot;</span>, uv.first, uv.second);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    TText* tt = <span class="keyword">new</span> TText(pt.first, pt.second, text);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    tt-&gt;SetTextAlign(22);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    tt-&gt;SetTextSize(0.012);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    tt-&gt;Draw(<span class="stringliteral">&quot;SAME&quot;</span>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  c-&gt;Update();</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  c-&gt;SaveAs(<span class="stringliteral">&quot;Cell_UV_Cell_Position_Map.pdf&quot;</span>);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="comment">// and now for triggers</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <a class="code hl_class" href="classecal_1_1EcalTriggerGeometry.html">ecal::EcalTriggerGeometry</a> trigG(0x100, &amp;hexReadout);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  polyMap-&gt;SetTitle(</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="stringliteral">&quot;Trigger Cell Summing Map; X Position Relative to Module [mm];Y Position &quot;</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="stringliteral">&quot;Relative to Module [mm]&quot;</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">auto</span> polyMap = geometry.getCellPolyMap();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  TCanvas* c = <span class="keyword">new</span> TCanvas(<span class="stringliteral">&quot;c&quot;</span>, <span class="stringliteral">&quot;c&quot;</span>, 900, 900);  <span class="comment">// make square canvas</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  c-&gt;SetMargin(0.15, 0.05, 0.1, 0.1);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  gStyle-&gt;SetOptStat(0);  <span class="comment">// no stat box</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  polyMap-&gt;SetTitle(</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      <span class="stringliteral">&quot;Local Cell ID to Local Cell Position Map;&quot;</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <span class="stringliteral">&quot;P Position Relative to Module [mm];&quot;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="stringliteral">&quot;Q Position Relative to Module [mm]&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  polyMap-&gt;GetXaxis()-&gt;SetTickLength(0.);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  polyMap-&gt;GetYaxis()-&gt;SetTickLength(0.);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  polyMap-&gt;Draw(<span class="stringliteral">&quot;TEXT&quot;</span>);  <span class="comment">// print with bin context labeled as text</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">double</span> hexCornerRadius = 85.0 * (2 / sqrt(3));</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  std::vector&lt;std::pair&lt;double, double&gt; &gt; hexCorners = {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      std::make_pair(+1. * hexCornerRadius, 0.),</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      std::make_pair(+1. * hexCornerRadius * cos(M_PI / 3),</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                     +1. * hexCornerRadius * sin(M_PI / 3)),</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      std::make_pair(-1. * hexCornerRadius * cos(M_PI / 3),</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                     +1. * hexCornerRadius * sin(M_PI / 3)),</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      std::make_pair(-1. * hexCornerRadius, 0.),</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      std::make_pair(-1. * hexCornerRadius * cos(M_PI / 3),</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                     -1. * hexCornerRadius * sin(M_PI / 3)),</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      std::make_pair(+1. * hexCornerRadius * cos(M_PI / 3),</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                     -1. * hexCornerRadius * sin(M_PI / 3)),</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      std::make_pair(+1. * hexCornerRadius, 0.)};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  TLine moduleHexBorder;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  moduleHexBorder.SetLineColorAlpha(kRed, 0.5);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  moduleHexBorder.SetLineWidth(2);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; hexCorners.size(); i++) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    moduleHexBorder.DrawLine(hexCorners.at(i - 1).first,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                             hexCorners.at(i - 1).second,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                             hexCorners.at(i).first, hexCorners.at(i).second);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  c-&gt;Update();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  c-&gt;SaveAs(<span class="stringliteral">&quot;Cell_ID_Cell_Position_Map.pdf&quot;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  polyMap-&gt;SetTitle(</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="stringliteral">&quot;Local Cell U,V to Local Cell Position Map;X Position Relative to Module &quot;</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="stringliteral">&quot;[mm];Y Position Relative to Module [mm]&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  polyMap-&gt;GetXaxis()-&gt;SetTickLength(0.);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  polyMap-&gt;GetYaxis()-&gt;SetTickLength(0.);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  polyMap-&gt;SetMaximum(1000);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  polyMap-&gt;SetMinimum(500);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  polyMap-&gt;Draw(<span class="stringliteral">&quot;hist&quot;</span>);  <span class="comment">// print with bin context labeled as text</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icell = 0; icell &lt; 432; icell++) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_class" href="classldmx_1_1EcalID.html">ldmx::EcalID</a> id(0, 0, icell);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    std::pair&lt;double, double&gt; pt = geometry.getPositionInModule(icell);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">char</span> text[100];</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    std::pair&lt;unsigned int, unsigned int&gt; uv = <span class="keywordtype">id</span>.getCellUV();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    sprintf(text, <span class="stringliteral">&quot;(%d,%d)&quot;</span>, uv.first, uv.second);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    TText* tt = <span class="keyword">new</span> TText(pt.first, pt.second, text);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    tt-&gt;SetTextAlign(22);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    tt-&gt;SetTextSize(0.012);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    tt-&gt;Draw(<span class="stringliteral">&quot;SAME&quot;</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  c-&gt;Update();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  c-&gt;SaveAs(<span class="stringliteral">&quot;Cell_UV_Cell_Position_Map.pdf&quot;</span>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="comment">// and now for triggers</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_class" href="classecal_1_1EcalTriggerGeometry.html">ecal::EcalTriggerGeometry</a> trigG(0x100, geometry_ptr);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  polyMap-&gt;SetTitle(</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="stringliteral">&quot;Trigger Cell Summing Map;&quot;</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="stringliteral">&quot;P Position Relative to Module [mm];&quot;</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="stringliteral">&quot;Q Position Relative to Module [mm]&quot;</span>);</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  polyMap-&gt;GetXaxis()-&gt;SetTickLength(0.);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  polyMap-&gt;GetYaxis()-&gt;SetTickLength(0.);</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  polyMap-&gt;SetMaximum(4);</div>
@@ -258,14 +257,14 @@ $(function() {
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>}</div>
-<div class="ttc" id="aEcalHexReadout_8h_html"><div class="ttname"><a href="EcalHexReadout_8h.html">EcalHexReadout.h</a></div><div class="ttdoc">Class that translates raw positions of ECal module hits into cells in a hexagonal readout.</div></div>
+<div class="ttc" id="aEcalGeometry_8h_html"><div class="ttname"><a href="EcalGeometry_8h.html">EcalGeometry.h</a></div><div class="ttdoc">Class that translates raw positions of ECal module hits into cells in a hexagonal readout.</div></div>
 <div class="ttc" id="aEcalID_8h_html"><div class="ttname"><a href="EcalID_8h.html">EcalID.h</a></div><div class="ttdoc">Class that defines an ECal detector ID with a cell number.</div></div>
 <div class="ttc" id="aEcalTriggerGeometry_8h_html"><div class="ttname"><a href="EcalTriggerGeometry_8h.html">EcalTriggerGeometry.h</a></div><div class="ttdoc">Class that defines the relationship between precision cells and trigger cells and provides geometry i...</div></div>
 <div class="ttc" id="aEcalTriggerID_8h_html"><div class="ttname"><a href="EcalTriggerID_8h.html">EcalTriggerID.h</a></div><div class="ttdoc">Class that defines an ECal trigger cell detector ID.</div></div>
 <div class="ttc" id="aclassecal_1_1EcalTriggerGeometry_html"><div class="ttname"><a href="classecal_1_1EcalTriggerGeometry.html">ecal::EcalTriggerGeometry</a></div><div class="ttdoc">defines the relationship between precision cells and trigger cells and provides geometry information ...</div><div class="ttdef"><b>Definition:</b> <a href="EcalTriggerGeometry_8h_source.html#l00031">EcalTriggerGeometry.h:31</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
-<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a861122abc8b0007140c5c5443799f7e0"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">framework::config::Parameters::setParameters</a></div><div class="ttdeci">void setParameters(std::map&lt; std::string, std::any &gt; parameters)</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00041">Parameters.h:41</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a></div><div class="ttdoc">Implementation of ECal hexagonal cell readout.</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00067">EcalHexReadout.h:67</a></div></div>
+<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a57afec30a205cccd2f58ee9cb256790b"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a57afec30a205cccd2f58ee9cb256790b">framework::config::Parameters::addParameter</a></div><div class="ttdeci">void addParameter(const std::string &amp;name, const T &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00055">Parameters.h:55</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalGeometry_html"><div class="ttname"><a href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a></div><div class="ttdef"><b>Definition:</b> <a href="EcalGeometry_8h_source.html#l00099">EcalGeometry.h:99</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalID_html"><div class="ttname"><a href="classldmx_1_1EcalID.html">ldmx::EcalID</a></div><div class="ttdoc">Extension of DetectorID providing access to ECal layers and cell numbers in a hex grid.</div><div class="ttdef"><b>Definition:</b> <a href="EcalID_8h_source.html#l00020">EcalID.h:20</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalTriggerID_html"><div class="ttname"><a href="classldmx_1_1EcalTriggerID.html">ldmx::EcalTriggerID</a></div><div class="ttdoc">Extension of DetectorID providing access to ECal trigger cell information.</div><div class="ttdef"><b>Definition:</b> <a href="EcalTriggerID_8h_source.html#l00020">EcalTriggerID.h:20</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalTriggerID_html_aa02a2816e0e71ba45c6da01047deea8c"><div class="ttname"><a href="classldmx_1_1EcalTriggerID.html#aa02a2816e0e71ba45c6da01047deea8c">ldmx::EcalTriggerID::triggercell</a></div><div class="ttdeci">int triggercell() const</div><div class="ttdef"><b>Definition:</b> <a href="EcalTriggerID_8h_source.html#l00097">EcalTriggerID.h:97</a></div></div>

@@ -57,57 +57,56 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>ecal {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>WorkingCluster::WorkingCluster(<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a>* eh,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                               <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a>&amp; hex) {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  add(eh, hex);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                               <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a>&amp; hex) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <a class="code hl_function" href="classecal_1_1WorkingCluster.html#a3bb869298f33152066b98bfb84acdf74">add</a>(eh, hex);</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> WorkingCluster::add(<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a>* eh,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                         <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a>&amp; hex) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classecal_1_1WorkingCluster.html#a3bb869298f33152066b98bfb84acdf74">   15</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classecal_1_1WorkingCluster.html#a3bb869298f33152066b98bfb84acdf74">WorkingCluster::add</a>(<span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a>* eh,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                         <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a>&amp; <a class="code hl_struct" href="structpacking_1_1utility_1_1hex.html">hex</a>) {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">double</span> hitE = eh-&gt;<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a012c0a9e98e27dcd16135caa7141e9eb">getEnergy</a>();</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">double</span> hitX, hitY, hitZ;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  hex.getCellAbsolutePosition(</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      eh-&gt;<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a7fe084a73f1055d002d0037a938498a3">getID</a>()  <span class="comment">// this ID integer is converted into an EcalID</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      ,</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      hitX, hitY, hitZ);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">double</span> newE = hitE + centroid_.E();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">double</span> newCentroidX = (centroid_.Px() * centroid_.E() + hitE * hitX) / newE;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">double</span> newCentroidY = (centroid_.Py() * centroid_.E() + hitE * hitY) / newE;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">double</span> newCentroidZ = (centroid_.Pz() * centroid_.E() + hitE * hitZ) / newE;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  centroid_.SetPxPyPzE(newCentroidX, newCentroidY, newCentroidZ, newE);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">auto</span> [hitX, hitY, hitZ] = <a class="code hl_struct" href="structpacking_1_1utility_1_1hex.html">hex</a>.getPosition(eh-&gt;<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a7fe084a73f1055d002d0037a938498a3">getID</a>());</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">double</span> newE = hitE + centroid_.E();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">double</span> newCentroidX = (centroid_.Px() * centroid_.E() + hitE * hitX) / newE;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">double</span> newCentroidY = (centroid_.Py() * centroid_.E() + hitE * hitY) / newE;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">double</span> newCentroidZ = (centroid_.Pz() * centroid_.E() + hitE * hitZ) / newE;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  centroid_.SetPxPyPzE(newCentroidX, newCentroidY, newCentroidZ, newE);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  hits_.push_back(eh);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  hits_.push_back(eh);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> WorkingCluster::add(<span class="keyword">const</span> WorkingCluster&amp; wc) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">double</span> clusterE = wc.centroid().E();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">double</span> centroidX = wc.centroid().Px();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">double</span> centroidY = wc.centroid().Py();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">double</span> centroidZ = wc.centroid().Pz();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">double</span> newE = clusterE + centroid_.E();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">double</span> newCentroidX =</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      (centroid_.Px() * centroid_.E() + clusterE * centroidX) / newE;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">double</span> newCentroidY =</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      (centroid_.Py() * centroid_.E() + clusterE * centroidY) / newE;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">double</span> newCentroidZ =</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      (centroid_.Pz() * centroid_.E() + clusterE * centroidZ) / newE;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  centroid_.SetPxPyPzE(newCentroidX, newCentroidY, newCentroidZ, newE);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  std::vector&lt;const ldmx::EcalHit*&gt; clusterHits = wc.getHits();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; clusterHits.size(); i++) {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    hits_.push_back(clusterHits[i]);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}  <span class="comment">// namespace ecal</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="classecal_1_1WorkingCluster.html#a3bb869298f33152066b98bfb84acdf74">WorkingCluster::add</a>(<span class="keyword">const</span> <a class="code hl_class" href="classecal_1_1WorkingCluster.html">WorkingCluster</a>&amp; wc) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordtype">double</span> clusterE = wc.centroid().E();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">double</span> centroidX = wc.centroid().Px();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">double</span> centroidY = wc.centroid().Py();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">double</span> centroidZ = wc.centroid().Pz();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">double</span> newE = clusterE + centroid_.E();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">double</span> newCentroidX =</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      (centroid_.Px() * centroid_.E() + clusterE * centroidX) / newE;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">double</span> newCentroidY =</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      (centroid_.Py() * centroid_.E() + clusterE * centroidY) / newE;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">double</span> newCentroidZ =</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      (centroid_.Pz() * centroid_.E() + clusterE * centroidZ) / newE;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  centroid_.SetPxPyPzE(newCentroidX, newCentroidY, newCentroidZ, newE);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  std::vector&lt;const ldmx::EcalHit*&gt; clusterHits = wc.getHits();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; clusterHits.size(); i++) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    hits_.push_back(clusterHits[i]);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}  <span class="comment">// namespace ecal</span></div>
+<div class="ttc" id="aclassecal_1_1WorkingCluster_html"><div class="ttname"><a href="classecal_1_1WorkingCluster.html">ecal::WorkingCluster</a></div><div class="ttdef"><b>Definition:</b> <a href="Ecal_2include_2Ecal_2WorkingCluster_8h_source.html#l00015">WorkingCluster.h:15</a></div></div>
+<div class="ttc" id="aclassecal_1_1WorkingCluster_html_a3bb869298f33152066b98bfb84acdf74"><div class="ttname"><a href="classecal_1_1WorkingCluster.html#a3bb869298f33152066b98bfb84acdf74">ecal::WorkingCluster::add</a></div><div class="ttdeci">void add(const ldmx::EcalHit *eh, const ldmx::EcalGeometry &amp;geom)</div><div class="ttdef"><b>Definition:</b> <a href="Ecal_2src_2Ecal_2WorkingCluster_8cxx_source.html#l00015">WorkingCluster.cxx:15</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a012c0a9e98e27dcd16135caa7141e9eb"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a012c0a9e98e27dcd16135caa7141e9eb">ldmx::CalorimeterHit::getEnergy</a></div><div class="ttdeci">float getEnergy() const</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00080">CalorimeterHit.h:80</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a7fe084a73f1055d002d0037a938498a3"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a7fe084a73f1055d002d0037a938498a3">ldmx::CalorimeterHit::getID</a></div><div class="ttdeci">int getID() const</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00051">CalorimeterHit.h:51</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a></div><div class="ttdoc">Implementation of ECal hexagonal cell readout.</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00067">EcalHexReadout.h:67</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalGeometry_html"><div class="ttname"><a href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a></div><div class="ttdef"><b>Definition:</b> <a href="EcalGeometry_8h_source.html#l00099">EcalGeometry.h:99</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EcalHit_html"><div class="ttname"><a href="classldmx_1_1EcalHit.html">ldmx::EcalHit</a></div><div class="ttdoc">Stores reconstructed hit information from the ECAL.</div><div class="ttdef"><b>Definition:</b> <a href="EcalHit_8h_source.html#l00019">EcalHit.h:19</a></div></div>
+<div class="ttc" id="astructpacking_1_1utility_1_1hex_html"><div class="ttname"><a href="structpacking_1_1utility_1_1hex.html">packing::utility::hex</a></div><div class="ttdef"><b>Definition:</b> <a href="Hex_8h_source.html#l00018">Hex.h:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

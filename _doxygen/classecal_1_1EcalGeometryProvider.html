@@ -86,12 +86,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:adcec6628e2a7e1cc6def0adbb5311881"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1EcalGeometryProvider.html#adcec6628e2a7e1cc6def0adbb5311881">params_</a></td></tr>
-<tr class="separator:adcec6628e2a7e1cc6def0adbb5311881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad85b3a3081f2190fa9845df69f5af062"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1EcalGeometryProvider.html#ad85b3a3081f2190fa9845df69f5af062">geometries_</a></td></tr>
+<tr class="separator:ad85b3a3081f2190fa9845df69f5af062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aab654629b3eb396e20ba16b4f4f4f7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1EcalGeometryProvider.html#a9aab654629b3eb396e20ba16b4f4f4f7">detectorGeometry_</a></td></tr>
 <tr class="separator:a9aab654629b3eb396e20ba16b4f4f4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b111ad172a8187db5cdbe53516a7191"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1EcalGeometryProvider.html#a4b111ad172a8187db5cdbe53516a7191">ecalGeometry_</a></td></tr>
-<tr class="separator:a4b111ad172a8187db5cdbe53516a7191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb2b1737dbd647cf445dd867c88cdcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecal_1_1EcalGeometryProvider.html#afdb2b1737dbd647cf445dd867c88cdcf">ecalGeometry_</a></td></tr>
+<tr class="separator:afdb2b1737dbd647cf445dd867c88cdcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -154,21 +154,24 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Class constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parameters</td><td>&ndash; uses the "EcalHexReadout" section to configure the EcalHexReadout </td></tr>
+    <tr><td class="paramname">parameters</td><td>&ndash; uses the "EcalGeometry" section to configure the EcalGeometry </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00071">71</a> of file <a class="el" href="EcalGeometryProvider_8cxx_source.html">EcalGeometryProvider.cxx</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   75</span>    : framework::</div>
-<div class="line"><span class="lineno">   76</span>          ConditionsObjectProvider{ldmx::EcalHexReadout::CONDITIONS_OBJECT_NAME,</div>
-<div class="line"><span class="lineno">   77</span>                                   tagname, parameters, <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a69adfb0e9bbc78fa7faef75672ada0a0">process</a>},</div>
-<div class="line"><span class="lineno">   78</span>      <a class="code hl_variable" href="classecal_1_1EcalGeometryProvider.html#adcec6628e2a7e1cc6def0adbb5311881">params_</a>{parameters} {</div>
+<div class="line"><span class="lineno">   76</span>          ConditionsObjectProvider{ldmx::EcalGeometry::CONDITIONS_OBJECT_NAME,</div>
+<div class="line"><span class="lineno">   77</span>                                   tagname, parameters, <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a69adfb0e9bbc78fa7faef75672ada0a0">process</a>} {</div>
+<div class="line"><span class="lineno">   78</span>  <a class="code hl_variable" href="classecal_1_1EcalGeometryProvider.html#ad85b3a3081f2190fa9845df69f5af062">geometries_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;framework::config::Parameters&gt;&gt;(<span class="stringliteral">&quot;geometries&quot;</span>);</div>
 <div class="line"><span class="lineno">   79</span>  ecalGeometry_ = 0;</div>
 <div class="line"><span class="lineno">   80</span>}</div>
-<div class="ttc" id="aclassecal_1_1EcalGeometryProvider_html_adcec6628e2a7e1cc6def0adbb5311881"><div class="ttname"><a href="classecal_1_1EcalGeometryProvider.html#adcec6628e2a7e1cc6def0adbb5311881">ecal::EcalGeometryProvider::params_</a></div><div class="ttdeci">framework::config::Parameters params_</div><div class="ttdef"><b>Definition:</b> <a href="EcalGeometryProvider_8cxx_source.html#l00065">EcalGeometryProvider.cxx:65</a></div></div>
+<div class="ttc" id="aclassecal_1_1EcalGeometryProvider_html_ad85b3a3081f2190fa9845df69f5af062"><div class="ttname"><a href="classecal_1_1EcalGeometryProvider.html#ad85b3a3081f2190fa9845df69f5af062">ecal::EcalGeometryProvider::geometries_</a></div><div class="ttdeci">std::vector&lt; framework::config::Parameters &gt; geometries_</div><div class="ttdef"><b>Definition:</b> <a href="EcalGeometryProvider_8cxx_source.html#l00065">EcalGeometryProvider.cxx:65</a></div></div>
 <div class="ttc" id="aclassframework_1_1ConditionsObjectProvider_html_a69adfb0e9bbc78fa7faef75672ada0a0"><div class="ttname"><a href="classframework_1_1ConditionsObjectProvider.html#a69adfb0e9bbc78fa7faef75672ada0a0">framework::ConditionsObjectProvider::process</a></div><div class="ttdeci">const Process &amp; process() const</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObjectProvider_8h_source.html#l00138">ConditionsObjectProvider.h:138</a></div></div>
+<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00065">geometries_</a>, and <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>.</p>
+
 </div>
 </div>
 <a id="a13125511901de451024722a536444df7" name="a13125511901de451024722a536444df7"></a>
@@ -227,7 +230,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Provides access to the EcalHexReadout or <a class="el" href="classecal_1_1EcalTriggerGeometry.html" title="defines the relationship between precision cells and trigger cells and provides geometry information ...">EcalTriggerGeometry</a> </p><dl class="section note"><dt>Note</dt><dd>Currently, these are assumed to be valid for all time, but this behavior could be changed. Users should not cache the pointer between events </dd></dl>
+<p >Provides access to the EcalGeometry or <a class="el" href="classecal_1_1EcalTriggerGeometry.html" title="defines the relationship between precision cells and trigger cells and provides geometry information ...">EcalTriggerGeometry</a> </p><dl class="section note"><dt>Note</dt><dd>Currently, these are assumed to be valid for all time, but this behavior could be changed. Users should not cache the pointer between events </dd></dl>
 
 <p>Implements <a class="el" href="classframework_1_1ConditionsObjectProvider.html#aaed8ba78375f14ddb835b53bb9a295b9">framework::ConditionsObjectProvider</a>.</p>
 
@@ -236,69 +239,57 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   89</span>  <span class="keyword">static</span> <span class="keyword">const</span> std::string KEYNAME(<span class="stringliteral">&quot;detectors_valid&quot;</span>);</div>
 <div class="line"><span class="lineno">   90</span> </div>
 <div class="line"><span class="lineno">   91</span>  <span class="keywordflow">if</span> (!ecalGeometry_) {</div>
-<div class="line"><span class="lineno">   92</span>    <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> phex =</div>
-<div class="line"><span class="lineno">   93</span>        (<a class="code hl_variable" href="classecal_1_1EcalGeometryProvider.html#adcec6628e2a7e1cc6def0adbb5311881">params_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#ad81bea1ff780f8c2511f3e2eb09838b2">exists</a>(<span class="stringliteral">&quot;EcalHexReadout&quot;</span>))</div>
-<div class="line"><span class="lineno">   94</span>            ? (<a class="code hl_variable" href="classecal_1_1EcalGeometryProvider.html#adcec6628e2a7e1cc6def0adbb5311881">params_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&gt;(</div>
-<div class="line"><span class="lineno">   95</span>                  <span class="stringliteral">&quot;EcalHexReadout&quot;</span>))</div>
-<div class="line"><span class="lineno">   96</span>            : (<a class="code hl_variable" href="classecal_1_1EcalGeometryProvider.html#adcec6628e2a7e1cc6def0adbb5311881">params_</a>);</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    <span class="comment">// search through the subtrees</span></div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> key : phex.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a112211dbb32b66dcd924ff2d8086d7d7">keys</a>()) {</div>
-<div class="line"><span class="lineno">  100</span>      <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> pver =</div>
-<div class="line"><span class="lineno">  101</span>          phex.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&gt;(key);</div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>      <span class="keywordflow">if</span> (!pver.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#ad81bea1ff780f8c2511f3e2eb09838b2">exists</a>(KEYNAME)) {</div>
-<div class="line"><span class="lineno">  104</span>        ldmx_log(warn) &lt;&lt; <span class="stringliteral">&quot;No parameter &quot;</span> &lt;&lt; KEYNAME &lt;&lt; <span class="stringliteral">&quot; found in &quot;</span> &lt;&lt; key;</div>
-<div class="line"><span class="lineno">  105</span>        <span class="comment">// log strange situation and continue</span></div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  107</span>      }</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>      std::vector&lt;std::string&gt; dets_valid =</div>
-<div class="line"><span class="lineno">  110</span>          pver.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::string&gt; &gt;(KEYNAME);</div>
-<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> detregex : dets_valid) {</div>
-<div class="line"><span class="lineno">  112</span>        std::string regex(detregex);</div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">if</span> (regex.empty()) <span class="keywordflow">continue</span>;  <span class="comment">// no empty regex allowed</span></div>
-<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">if</span> (regex[0] != <span class="charliteral">&#39;^&#39;</span>) regex.insert(0, 1, <span class="charliteral">&#39;^&#39;</span>);</div>
-<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span> (regex.back() != <span class="charliteral">&#39;$&#39;</span>) regex += <span class="charliteral">&#39;$&#39;</span>;</div>
-<div class="line"><span class="lineno">  116</span>        regex_t reg;</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>        <span class="keywordtype">int</span> rv =</div>
-<div class="line"><span class="lineno">  119</span>            regcomp(&amp;reg, regex.c_str(), REG_EXTENDED | REG_ICASE | REG_NOSUB);</div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">if</span> (rv) {</div>
-<div class="line"><span class="lineno">  121</span>          <span class="keywordtype">char</span> err[1024];</div>
-<div class="line"><span class="lineno">  122</span>          regerror(rv, &amp;reg, err, 1024);</div>
-<div class="line"><span class="lineno">  123</span>          EXCEPTION_RAISE(</div>
-<div class="line"><span class="lineno">  124</span>              <span class="stringliteral">&quot;GeometryException&quot;</span>,</div>
-<div class="line"><span class="lineno">  125</span>              <span class="stringliteral">&quot;Invalid detector regular expression : &#39;&quot;</span> + regex + <span class="stringliteral">&quot;&#39; &quot;</span> + err);</div>
-<div class="line"><span class="lineno">  126</span>        }</div>
-<div class="line"><span class="lineno">  127</span>        <span class="keywordtype">int</span> nmatch = regexec(&amp;reg, <a class="code hl_variable" href="classecal_1_1EcalGeometryProvider.html#a9aab654629b3eb396e20ba16b4f4f4f7">detectorGeometry_</a>.c_str(), 0, 0, 0);</div>
-<div class="line"><span class="lineno">  128</span>        regfree(&amp;reg);</div>
-<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">if</span> (!nmatch) {</div>
-<div class="line"><span class="lineno">  130</span>          ecalGeometry_ = <span class="keyword">new</span> <a class="code hl_class" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a>(pver);</div>
-<div class="line"><span class="lineno">  131</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  132</span>        }</div>
-<div class="line"><span class="lineno">  133</span>      }</div>
-<div class="line"><span class="lineno">  134</span>      <span class="keywordflow">if</span> (ecalGeometry_) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  135</span>    }</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">if</span> (!ecalGeometry_) {</div>
-<div class="line"><span class="lineno">  137</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;GeometryException&quot;</span>, <span class="stringliteral">&quot;Unable to create EcalHexReadout&quot;</span>);</div>
-<div class="line"><span class="lineno">  138</span>    }</div>
-<div class="line"><span class="lineno">  139</span>  }</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>  <span class="keywordflow">return</span> std::make_pair(</div>
-<div class="line"><span class="lineno">  142</span>      ecalGeometry_,</div>
-<div class="line"><span class="lineno">  143</span>      <a class="code hl_class" href="classframework_1_1ConditionsIOV.html">framework::ConditionsIOV</a>(context.<a class="code hl_function" href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">getRun</a>(), context.<a class="code hl_function" href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">getRun</a>(), <span class="keyword">true</span>, <span class="keyword">true</span>));</div>
-<div class="line"><span class="lineno">  144</span>}</div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment">// search through the subtrees</span></div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> pver : <a class="code hl_variable" href="classecal_1_1EcalGeometryProvider.html#ad85b3a3081f2190fa9845df69f5af062">geometries_</a>) {</div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">if</span> (!pver.exists(KEYNAME)) {</div>
+<div class="line"><span class="lineno">   95</span>        ldmx_log(warn) &lt;&lt; <span class="stringliteral">&quot;No parameter &quot;</span> &lt;&lt; KEYNAME </div>
+<div class="line"><span class="lineno">   96</span>          &lt;&lt; <span class="stringliteral">&quot; found one of the detector vesrsions.&quot;</span>;</div>
+<div class="line"><span class="lineno">   97</span>        <span class="comment">// log strange situation and continue</span></div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   99</span>      }</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>      std::vector&lt;std::string&gt; dets_valid =</div>
+<div class="line"><span class="lineno">  102</span>          pver.getParameter&lt;std::vector&lt;std::string&gt;&gt;(KEYNAME);</div>
+<div class="line"><span class="lineno">  103</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> detregex : dets_valid) {</div>
+<div class="line"><span class="lineno">  104</span>        std::string regex(detregex);</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span> (regex.empty()) <span class="keywordflow">continue</span>;  <span class="comment">// no empty regex allowed</span></div>
+<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">if</span> (regex[0] != <span class="charliteral">&#39;^&#39;</span>) regex.insert(0, 1, <span class="charliteral">&#39;^&#39;</span>);</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span> (regex.back() != <span class="charliteral">&#39;$&#39;</span>) regex += <span class="charliteral">&#39;$&#39;</span>;</div>
+<div class="line"><span class="lineno">  108</span>        regex_t reg;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordtype">int</span> rv =</div>
+<div class="line"><span class="lineno">  111</span>            regcomp(&amp;reg, regex.c_str(), REG_EXTENDED | REG_ICASE | REG_NOSUB);</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> (rv) {</div>
+<div class="line"><span class="lineno">  113</span>          <span class="keywordtype">char</span> err[1024];</div>
+<div class="line"><span class="lineno">  114</span>          regerror(rv, &amp;reg, err, 1024);</div>
+<div class="line"><span class="lineno">  115</span>          EXCEPTION_RAISE(</div>
+<div class="line"><span class="lineno">  116</span>              <span class="stringliteral">&quot;GeometryException&quot;</span>,</div>
+<div class="line"><span class="lineno">  117</span>              <span class="stringliteral">&quot;Invalid detector regular expression : &#39;&quot;</span> + regex + <span class="stringliteral">&quot;&#39; &quot;</span> + err);</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordtype">int</span> nmatch = regexec(&amp;reg, <a class="code hl_variable" href="classecal_1_1EcalGeometryProvider.html#a9aab654629b3eb396e20ba16b4f4f4f7">detectorGeometry_</a>.c_str(), 0, 0, 0);</div>
+<div class="line"><span class="lineno">  120</span>        regfree(&amp;reg);</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (!nmatch) {</div>
+<div class="line"><span class="lineno">  122</span>          ecalGeometry_ = <span class="keyword">new</span> <a class="code hl_class" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a>(pver);</div>
+<div class="line"><span class="lineno">  123</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  124</span>        }</div>
+<div class="line"><span class="lineno">  125</span>      }</div>
+<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">if</span> (ecalGeometry_) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">if</span> (!ecalGeometry_) {</div>
+<div class="line"><span class="lineno">  129</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;GeometryException&quot;</span>, <span class="stringliteral">&quot;Unable to create EcalGeometry&quot;</span>);</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
+<div class="line"><span class="lineno">  131</span>  }</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>  <span class="keywordflow">return</span> std::make_pair(</div>
+<div class="line"><span class="lineno">  134</span>      ecalGeometry_,</div>
+<div class="line"><span class="lineno">  135</span>      <a class="code hl_class" href="classframework_1_1ConditionsIOV.html">framework::ConditionsIOV</a>(context.<a class="code hl_function" href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">getRun</a>(), context.<a class="code hl_function" href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">getRun</a>(), <span class="keyword">true</span>, <span class="keyword">true</span>));</div>
+<div class="line"><span class="lineno">  136</span>}</div>
 <div class="ttc" id="aclassecal_1_1EcalGeometryProvider_html_a9aab654629b3eb396e20ba16b4f4f4f7"><div class="ttname"><a href="classecal_1_1EcalGeometryProvider.html#a9aab654629b3eb396e20ba16b4f4f4f7">ecal::EcalGeometryProvider::detectorGeometry_</a></div><div class="ttdeci">std::string detectorGeometry_</div><div class="ttdef"><b>Definition:</b> <a href="EcalGeometryProvider_8cxx_source.html#l00067">EcalGeometryProvider.cxx:67</a></div></div>
 <div class="ttc" id="aclassframework_1_1ConditionsIOV_html"><div class="ttname"><a href="classframework_1_1ConditionsIOV.html">framework::ConditionsIOV</a></div><div class="ttdoc">Class which defines the run/event/type range for which a given condition is valid,...</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsIOV_8h_source.html#l00033">ConditionsIOV.h:33</a></div></div>
-<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
-<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a112211dbb32b66dcd924ff2d8086d7d7"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a112211dbb32b66dcd924ff2d8086d7d7">framework::config::Parameters::keys</a></div><div class="ttdeci">std::vector&lt; std::string &gt; keys() const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00130">Parameters.h:130</a></div></div>
-<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_ad81bea1ff780f8c2511f3e2eb09838b2"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#ad81bea1ff780f8c2511f3e2eb09838b2">framework::config::Parameters::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00071">Parameters.h:71</a></div></div>
-<div class="ttc" id="aclassldmx_1_1EcalHexReadout_html"><div class="ttname"><a href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a></div><div class="ttdoc">Implementation of ECal hexagonal cell readout.</div><div class="ttdef"><b>Definition:</b> <a href="EcalHexReadout_8h_source.html#l00067">EcalHexReadout.h:67</a></div></div>
+<div class="ttc" id="aclassldmx_1_1EcalGeometry_html"><div class="ttname"><a href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a></div><div class="ttdef"><b>Definition:</b> <a href="EcalGeometry_8h_source.html#l00099">EcalGeometry.h:99</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventHeader_html_a23013e70fa0d1c1255215aed5849ecd4"><div class="ttname"><a href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">ldmx::EventHeader::getRun</a></div><div class="ttdeci">int getRun() const</div><div class="ttdef"><b>Definition:</b> <a href="EventHeader_8h_source.html#l00082">EventHeader.h:82</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00067">detectorGeometry_</a>, <a class="el" href="Parameters_8h_source.html#l00071">framework::config::Parameters::exists()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="EventHeader_8h_source.html#l00082">ldmx::EventHeader::getRun()</a>, <a class="el" href="Parameters_8h_source.html#l00130">framework::config::Parameters::keys()</a>, and <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00065">params_</a>.</p>
+<p class="reference">References <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00067">detectorGeometry_</a>, <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00065">geometries_</a>, and <a class="el" href="EventHeader_8h_source.html#l00082">ldmx::EventHeader::getRun()</a>.</p>
 
 </div>
 </div>
@@ -411,8 +402,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4b111ad172a8187db5cdbe53516a7191" name="a4b111ad172a8187db5cdbe53516a7191"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b111ad172a8187db5cdbe53516a7191">&#9670;&#160;</a></span>ecalGeometry_</h2>
+<a id="afdb2b1737dbd647cf445dd867c88cdcf" name="afdb2b1737dbd647cf445dd867c88cdcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb2b1737dbd647cf445dd867c88cdcf">&#9670;&#160;</a></span>ecalGeometry_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -421,7 +412,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classldmx_1_1EcalHexReadout.html">ldmx::EcalHexReadout</a>* ecal::EcalGeometryProvider::ecalGeometry_</td>
+          <td class="memname"><a class="el" href="classldmx_1_1EcalGeometry.html">ldmx::EcalGeometry</a>* ecal::EcalGeometryProvider::ecalGeometry_</td>
         </tr>
       </table>
   </td>
@@ -435,8 +426,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="adcec6628e2a7e1cc6def0adbb5311881" name="adcec6628e2a7e1cc6def0adbb5311881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcec6628e2a7e1cc6def0adbb5311881">&#9670;&#160;</a></span>params_</h2>
+<a id="ad85b3a3081f2190fa9845df69f5af062" name="ad85b3a3081f2190fa9845df69f5af062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad85b3a3081f2190fa9845df69f5af062">&#9670;&#160;</a></span>geometries_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +436,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> ecal::EcalGeometryProvider::params_</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&gt; ecal::EcalGeometryProvider::geometries_</td>
         </tr>
       </table>
   </td>
@@ -454,11 +445,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Handle to the parameters, needed for future use during get condition </p>
+<p >parameters for the various geometry versions we can support </p>
 
 <p class="definition">Definition at line <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00065">65</a> of file <a class="el" href="EcalGeometryProvider_8cxx_source.html">EcalGeometryProvider.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00088">getCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00071">EcalGeometryProvider()</a>, and <a class="el" href="EcalGeometryProvider_8cxx_source.html#l00088">getCondition()</a>.</p>
 
 </div>
 </div>
