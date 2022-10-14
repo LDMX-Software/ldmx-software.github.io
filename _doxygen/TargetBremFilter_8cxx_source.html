@@ -114,69 +114,68 @@ $(function() {
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      region.compareTo(<span class="stringliteral">&quot;target&quot;</span>) != 0)</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="comment">// Check if the electron will be exiting the target</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordflow">if</span> (<span class="keyword">auto</span> volume{track-&gt;GetNextVolume()-&gt;GetName()};</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      volume.compareTo(<span class="stringliteral">&quot;recoil_PV&quot;</span>) == 0) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// If the recoil electron</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">if</span> (track-&gt;GetMomentum().mag() &gt;= <a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#a779933ba084c80ddd758c76b92ddde4f">recoilMaxPThreshold_</a>) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// Get the electron secondries</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">bool</span> hasBremCandidate = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> secondaries = step-&gt;GetSecondary(); secondaries-&gt;size() == 0) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordflow">if</span> (<span class="keyword">auto</span> volume{track-&gt;GetNextVolume()-&gt;GetName()};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      volume.compareTo(<span class="stringliteral">&quot;recoil_PV&quot;</span>) == 0) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// If the recoil electron</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (track-&gt;GetMomentum().mag() &gt;= <a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#a779933ba084c80ddd758c76b92ddde4f">recoilMaxPThreshold_</a>) {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; secondary_track : *secondaries) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        G4String processName =</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            secondary_track-&gt;GetCreatorProcess()-&gt;GetProcessName();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">if</span> (processName.compareTo(<span class="stringliteral">&quot;eBrem&quot;</span>) == 0 &amp;&amp;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            secondary_track-&gt;GetKineticEnergy() &gt; <a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#af4f67544fdc8560460ab824eca5275d7">bremEnergyThreshold_</a>) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>          <span class="keyword">auto</span> trackInfo{<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a>(secondary_track)};</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>          trackInfo-&gt;<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a212431d170c8bdd5a1dc4777d72db1bb">tagBremCandidate</a>();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a54dc0c3b47f9ee130dfadd1d806ab717">incBremCandidateCount</a>();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          hasBremCandidate = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (!hasBremCandidate) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// Check if the recoil electron should be killed.  If not, postpone</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// its processing until the brem gamma has been processed.</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#a00da0dfb187120c9d8562fb3eed181a4">killRecoil_</a>)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      track-&gt;SetTrackStatus(fStopAndKill);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      track-&gt;SetTrackStatus(fSuspend);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (step-&gt;GetPostStepPoint()-&gt;GetKineticEnergy() == 0) {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classbiasing_1_1TargetBremFilter.html#abdabf3bfe36168e88ecefd6fd44c5a35">  121</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classbiasing_1_1TargetBremFilter.html#abdabf3bfe36168e88ecefd6fd44c5a35">TargetBremFilter::EndOfEventAction</a>(<span class="keyword">const</span> G4Event*) {}</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}  <span class="comment">// namespace biasing</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>DECLARE_ACTION(biasing, TargetBremFilter)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">// Get the electron secondries</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">bool</span> hasBremCandidate = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> secondaries = step-&gt;GetSecondary(); secondaries-&gt;size() == 0) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; secondary_track : *secondaries) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        G4String processName =</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            secondary_track-&gt;GetCreatorProcess()-&gt;GetProcessName();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">if</span> (processName.compareTo(<span class="stringliteral">&quot;eBrem&quot;</span>) == 0 &amp;&amp;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            secondary_track-&gt;GetKineticEnergy() &gt; <a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#af4f67544fdc8560460ab824eca5275d7">bremEnergyThreshold_</a>) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>          <span class="keyword">auto</span> trackInfo{<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a>(secondary_track)};</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>          trackInfo-&gt;<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a212431d170c8bdd5a1dc4777d72db1bb">tagBremCandidate</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>          <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a54dc0c3b47f9ee130dfadd1d806ab717">incBremCandidateCount</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>          hasBremCandidate = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (!hasBremCandidate) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">// Check if the recoil electron should be killed.  If not, postpone</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// its processing until the brem gamma has been processed.</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#a00da0dfb187120c9d8562fb3eed181a4">killRecoil_</a>)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      track-&gt;SetTrackStatus(fStopAndKill);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      track-&gt;SetTrackStatus(fSuspend);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (step-&gt;GetPostStepPoint()-&gt;GetKineticEnergy() == 0) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classbiasing_1_1TargetBremFilter.html#abdabf3bfe36168e88ecefd6fd44c5a35">  129</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classbiasing_1_1TargetBremFilter.html#abdabf3bfe36168e88ecefd6fd44c5a35">TargetBremFilter::EndOfEventAction</a>(<span class="keyword">const</span> G4Event*) {}</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}  <span class="comment">// namespace biasing</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>DECLARE_ACTION(biasing, TargetBremFilter)</div>
 <div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_a00da0dfb187120c9d8562fb3eed181a4"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#a00da0dfb187120c9d8562fb3eed181a4">biasing::TargetBremFilter::killRecoil_</a></div><div class="ttdeci">bool killRecoil_</div><div class="ttdoc">Flag indicating if the recoil electron track should be killed.</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8h_source.html#l00071">TargetBremFilter.h:71</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_a328fe56032d64f3de52f2427d0f6606a"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#a328fe56032d64f3de52f2427d0f6606a">biasing::TargetBremFilter::TargetBremFilter</a></div><div class="ttdeci">TargetBremFilter(const std::string &amp;name, framework::config::Parameters &amp;parameters)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8cxx_source.html#l00018">TargetBremFilter.cxx:18</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_a4b34bd7de7ec4afffb43770d576a7ffe"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#a4b34bd7de7ec4afffb43770d576a7ffe">biasing::TargetBremFilter::stepping</a></div><div class="ttdeci">void stepping(const G4Step *step) final override</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8cxx_source.html#l00049">TargetBremFilter.cxx:49</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_a779933ba084c80ddd758c76b92ddde4f"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#a779933ba084c80ddd758c76b92ddde4f">biasing::TargetBremFilter::recoilMaxPThreshold_</a></div><div class="ttdeci">double recoilMaxPThreshold_</div><div class="ttdoc">Recoil electron threshold.</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8h_source.html#l00065">TargetBremFilter.h:65</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_a96b8eee33e6a225741a5782963c62213"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#a96b8eee33e6a225741a5782963c62213">biasing::TargetBremFilter::ClassifyNewTrack</a></div><div class="ttdeci">G4ClassificationOfNewTrack ClassifyNewTrack(const G4Track *aTrack, const G4ClassificationOfNewTrack &amp;currentTrackClass) final override</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8cxx_source.html#l00030">TargetBremFilter.cxx:30</a></div></div>
-<div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_abdabf3bfe36168e88ecefd6fd44c5a35"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#abdabf3bfe36168e88ecefd6fd44c5a35">biasing::TargetBremFilter::EndOfEventAction</a></div><div class="ttdeci">void EndOfEventAction(const G4Event *) final override</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8cxx_source.html#l00121">TargetBremFilter.cxx:121</a></div></div>
+<div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_abdabf3bfe36168e88ecefd6fd44c5a35"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#abdabf3bfe36168e88ecefd6fd44c5a35">biasing::TargetBremFilter::EndOfEventAction</a></div><div class="ttdeci">void EndOfEventAction(const G4Event *) final override</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8cxx_source.html#l00129">TargetBremFilter.cxx:129</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_ad9872bc5b403dd1dee99ce333fdcf6b9"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#ad9872bc5b403dd1dee99ce333fdcf6b9">biasing::TargetBremFilter::~TargetBremFilter</a></div><div class="ttdeci">~TargetBremFilter()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8cxx_source.html#l00028">TargetBremFilter.cxx:28</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1TargetBremFilter_html_af4f67544fdc8560460ab824eca5275d7"><div class="ttname"><a href="classbiasing_1_1TargetBremFilter.html#af4f67544fdc8560460ab824eca5275d7">biasing::TargetBremFilter::bremEnergyThreshold_</a></div><div class="ttdeci">double bremEnergyThreshold_</div><div class="ttdoc">Brem gamma energy treshold.</div><div class="ttdef"><b>Definition:</b> <a href="TargetBremFilter_8h_source.html#l00068">TargetBremFilter.h:68</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>

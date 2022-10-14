@@ -302,8 +302,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classsimcore_1_1UserAction.html#a846adbda3c1a0a3625a2e6ac39f16a36">simcore::UserAction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TargetBremFilter_8cxx_source.html#l00121">121</a> of file <a class="el" href="TargetBremFilter_8cxx_source.html">TargetBremFilter.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="TargetBremFilter_8cxx_source.html#l00129">129</a> of file <a class="el" href="TargetBremFilter_8cxx_source.html">TargetBremFilter.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -371,6 +371,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p >Check if the electron will be exiting the target</p>
+<p >The 'recoil_PV' volume name is automatically constructed by Geant4's GDML parser and was found by inspecting the geometry using a visualization. This Physical Volume (PV) is associated with the recoil parent volume and so it will break if the recoil parent volume changes its name.</p>
 
 <p>Reimplemented from <a class="el" href="classsimcore_1_1UserAction.html#a066db4c649082f798e29bd8594e95d9e">simcore::UserAction</a>.</p>
 
@@ -394,58 +396,57 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   65</span>      region.compareTo(<span class="stringliteral">&quot;target&quot;</span>) != 0)</div>
 <div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>  <span class="comment">// Check if the electron will be exiting the target</span></div>
-<div class="line"><span class="lineno">   69</span>  <span class="keywordflow">if</span> (<span class="keyword">auto</span> volume{track-&gt;GetNextVolume()-&gt;GetName()};</div>
-<div class="line"><span class="lineno">   70</span>      volume.compareTo(<span class="stringliteral">&quot;recoil_PV&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   71</span>    <span class="comment">// If the recoil electron</span></div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (track-&gt;GetMomentum().mag() &gt;= <a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#a779933ba084c80ddd758c76b92ddde4f">recoilMaxPThreshold_</a>) {</div>
-<div class="line"><span class="lineno">   73</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><span class="lineno">   74</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>    <span class="comment">// Get the electron secondries</span></div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordtype">bool</span> hasBremCandidate = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> secondaries = step-&gt;GetSecondary(); secondaries-&gt;size() == 0) {</div>
+<div class="line"><span class="lineno">   77</span>  <span class="keywordflow">if</span> (<span class="keyword">auto</span> volume{track-&gt;GetNextVolume()-&gt;GetName()};</div>
+<div class="line"><span class="lineno">   78</span>      volume.compareTo(<span class="stringliteral">&quot;recoil_PV&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">   79</span>    <span class="comment">// If the recoil electron</span></div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (track-&gt;GetMomentum().mag() &gt;= <a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#a779933ba084c80ddd758c76b92ddde4f">recoilMaxPThreshold_</a>) {</div>
 <div class="line"><span class="lineno">   81</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
 <div class="line"><span class="lineno">   82</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
 <div class="line"><span class="lineno">   83</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   84</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; secondary_track : *secondaries) {</div>
-<div class="line"><span class="lineno">   86</span>        G4String processName =</div>
-<div class="line"><span class="lineno">   87</span>            secondary_track-&gt;GetCreatorProcess()-&gt;GetProcessName();</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">if</span> (processName.compareTo(<span class="stringliteral">&quot;eBrem&quot;</span>) == 0 &amp;&amp;</div>
-<div class="line"><span class="lineno">   90</span>            secondary_track-&gt;GetKineticEnergy() &gt; <a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#af4f67544fdc8560460ab824eca5275d7">bremEnergyThreshold_</a>) {</div>
-<div class="line"><span class="lineno">   91</span>          <span class="keyword">auto</span> trackInfo{<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a>(secondary_track)};</div>
-<div class="line"><span class="lineno">   92</span>          trackInfo-&gt;<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a212431d170c8bdd5a1dc4777d72db1bb">tagBremCandidate</a>();</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>          <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a54dc0c3b47f9ee130dfadd1d806ab717">incBremCandidateCount</a>();</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>          hasBremCandidate = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   97</span>        }</div>
-<div class="line"><span class="lineno">   98</span>      }</div>
-<div class="line"><span class="lineno">   99</span>    }</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (!hasBremCandidate) {</div>
-<div class="line"><span class="lineno">  102</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><span class="lineno">  103</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  105</span>    }</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>    <span class="comment">// Check if the recoil electron should be killed.  If not, postpone</span></div>
-<div class="line"><span class="lineno">  108</span>    <span class="comment">// its processing until the brem gamma has been processed.</span></div>
-<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#a00da0dfb187120c9d8562fb3eed181a4">killRecoil_</a>)</div>
-<div class="line"><span class="lineno">  110</span>      track-&gt;SetTrackStatus(fStopAndKill);</div>
-<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  112</span>      track-&gt;SetTrackStatus(fSuspend);</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (step-&gt;GetPostStepPoint()-&gt;GetKineticEnergy() == 0) {</div>
-<div class="line"><span class="lineno">  115</span>    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><span class="lineno">  116</span>    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  118</span>  }</div>
-<div class="line"><span class="lineno">  119</span>}</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="comment">// Get the electron secondries</span></div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordtype">bool</span> hasBremCandidate = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> secondaries = step-&gt;GetSecondary(); secondaries-&gt;size() == 0) {</div>
+<div class="line"><span class="lineno">   89</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><span class="lineno">   90</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><span class="lineno">   91</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   92</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; secondary_track : *secondaries) {</div>
+<div class="line"><span class="lineno">   94</span>        G4String processName =</div>
+<div class="line"><span class="lineno">   95</span>            secondary_track-&gt;GetCreatorProcess()-&gt;GetProcessName();</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">if</span> (processName.compareTo(<span class="stringliteral">&quot;eBrem&quot;</span>) == 0 &amp;&amp;</div>
+<div class="line"><span class="lineno">   98</span>            secondary_track-&gt;GetKineticEnergy() &gt; <a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#af4f67544fdc8560460ab824eca5275d7">bremEnergyThreshold_</a>) {</div>
+<div class="line"><span class="lineno">   99</span>          <span class="keyword">auto</span> trackInfo{<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a>(secondary_track)};</div>
+<div class="line"><span class="lineno">  100</span>          trackInfo-&gt;<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a212431d170c8bdd5a1dc4777d72db1bb">tagBremCandidate</a>();</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>          <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a54dc0c3b47f9ee130dfadd1d806ab717">incBremCandidateCount</a>();</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>          hasBremCandidate = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span>      }</div>
+<div class="line"><span class="lineno">  107</span>    }</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (!hasBremCandidate) {</div>
+<div class="line"><span class="lineno">  110</span>      track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><span class="lineno">  111</span>      G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <span class="comment">// Check if the recoil electron should be killed.  If not, postpone</span></div>
+<div class="line"><span class="lineno">  116</span>    <span class="comment">// its processing until the brem gamma has been processed.</span></div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classbiasing_1_1TargetBremFilter.html#a00da0dfb187120c9d8562fb3eed181a4">killRecoil_</a>)</div>
+<div class="line"><span class="lineno">  118</span>      track-&gt;SetTrackStatus(fStopAndKill);</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  120</span>      track-&gt;SetTrackStatus(fSuspend);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (step-&gt;GetPostStepPoint()-&gt;GetKineticEnergy() == 0) {</div>
+<div class="line"><span class="lineno">  123</span>    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><span class="lineno">  124</span>    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  126</span>  }</div>
+<div class="line"><span class="lineno">  127</span>}</div>
 <div class="ttc" id="aclasssimcore_1_1UserAction_html_a93d0903ae5c9d48a518611c6a37cdffd"><div class="ttname"><a href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">simcore::UserAction::getEventInfo</a></div><div class="ttdeci">UserEventInformation * getEventInfo() const</div><div class="ttdef"><b>Definition:</b> <a href="UserAction_8cxx_source.html#l00024">UserAction.cxx:24</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_a54dc0c3b47f9ee130dfadd1d806ab717"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#a54dc0c3b47f9ee130dfadd1d806ab717">simcore::UserEventInformation::incBremCandidateCount</a></div><div class="ttdeci">void incBremCandidateCount()</div><div class="ttdoc">Increment the number of brem candidates in an event.</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00023">UserEventInformation.h:23</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_a05d99ef5ad9cc9e31abcfb5505bc2b9e"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a></div><div class="ttdeci">static UserTrackInformation * get(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8cxx_source.html#l00010">UserTrackInformation.cxx:10</a></div></div>
