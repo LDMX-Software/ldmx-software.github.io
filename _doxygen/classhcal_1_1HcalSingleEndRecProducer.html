@@ -105,8 +105,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a7a6565731208c138cf6f1ee962b605a9"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalSingleEndRecProducer.html#a7a6565731208c138cf6f1ee962b605a9">extract_measurments</a> (const <a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">ldmx::HgcrocDigiCollection::HgcrocDigi</a> &amp;digi, double pedestal)</td></tr>
-<tr class="separator:a7a6565731208c138cf6f1ee962b605a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a008adf050b2c16ba59cf5a28d0f7334f"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalSingleEndRecProducer.html#a008adf050b2c16ba59cf5a28d0f7334f">extract_measurements</a> (const <a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">ldmx::HgcrocDigiCollection::HgcrocDigi</a> &amp;digi, double pedestal)</td></tr>
+<tr class="separator:a008adf050b2c16ba59cf5a28d0f7334f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -261,8 +261,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a7a6565731208c138cf6f1ee962b605a9" name="a7a6565731208c138cf6f1ee962b605a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a6565731208c138cf6f1ee962b605a9">&#9670;&#160;</a></span>extract_measurments()</h2>
+<a id="a008adf050b2c16ba59cf5a28d0f7334f" name="a008adf050b2c16ba59cf5a28d0f7334f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a008adf050b2c16ba59cf5a28d0f7334f">&#9670;&#160;</a></span>extract_measurements()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,7 +271,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; double, double, int &gt; hcal::HcalSingleEndRecProducer::extract_measurments </td>
+          <td class="memname">std::tuple&lt; double, double, int &gt; hcal::HcalSingleEndRecProducer::extract_measurements </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">ldmx::HgcrocDigiCollection::HgcrocDigi</a> &amp;&#160;</td>
           <td class="paramname"><em>digi</em>, </td>
@@ -296,8 +296,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >extract toa, sum adc, and sum tot from the input raw digi</p>
 <p >in the far future, we can make these member functions ofthe HgcrocDigi class; however, right now as we develop our reconstruction method it is helpful to have more flexible control on how we extract these measurements</p>
-<p >with C++17 structured bindings, this tuple return can be bound to separate variables: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> [ toa, sum_adc, sum_tot ] = <a class="code hl_function" href="classhcal_1_1HcalSingleEndRecProducer.html#a7a6565731208c138cf6f1ee962b605a9">extract_measurments</a>(digi,pedestal,isoi);</div>
-<div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_a7a6565731208c138cf6f1ee962b605a9"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#a7a6565731208c138cf6f1ee962b605a9">hcal::HcalSingleEndRecProducer::extract_measurments</a></div><div class="ttdeci">std::tuple&lt; double, double, int &gt; extract_measurments(const ldmx::HgcrocDigiCollection::HgcrocDigi &amp;digi, double pedestal)</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00067">HcalSingleEndRecProducer.cxx:67</a></div></div>
+<p >with C++17 structured bindings, this tuple return can be bound to separate variables: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> [ toa, sum_adc, sum_tot ] = <a class="code hl_function" href="classhcal_1_1HcalSingleEndRecProducer.html#a008adf050b2c16ba59cf5a28d0f7334f">extract_measurements</a>(digi,pedestal,isoi);</div>
+<div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_a008adf050b2c16ba59cf5a28d0f7334f"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#a008adf050b2c16ba59cf5a28d0f7334f">hcal::HcalSingleEndRecProducer::extract_measurements</a></div><div class="ttdeci">std::tuple&lt; double, double, int &gt; extract_measurements(const ldmx::HgcrocDigiCollection::HgcrocDigi &amp;digi, double pedestal)</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00067">HcalSingleEndRecProducer.cxx:67</a></div></div>
 </div><!-- fragment --><p> giving us the dual benefit of separate variable names while only having to loop over the samples within a single digi once</p>
 <p >Uses isoi_ and clock_cycle_ member variables to convert TOA into ns since beginning of Sample Of Interest (SOI)</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -410,7 +410,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">  133</span>    <span class="comment">// amplitude/TOT reconstruction</span></div>
 <div class="line"><span class="lineno">  134</span>    <span class="keywordtype">double</span> num_mips_equivalent{0};</div>
 <div class="line"><span class="lineno">  135</span>    <span class="keyword">auto</span> [toa, sum_adc, sum_tot] =</div>
-<div class="line"><span class="lineno">  136</span>        <a class="code hl_function" href="classhcal_1_1HcalSingleEndRecProducer.html#a7a6565731208c138cf6f1ee962b605a9">extract_measurments</a>(digi, conditions.adcPedestal(digi.id()));</div>
+<div class="line"><span class="lineno">  136</span>        <a class="code hl_function" href="classhcal_1_1HcalSingleEndRecProducer.html#a008adf050b2c16ba59cf5a28d0f7334f">extract_measurements</a>(digi, conditions.adcPedestal(digi.id()));</div>
 <div class="line"><span class="lineno">  137</span>    <span class="keyword">auto</span> is_adc = conditions.is_adc(digi.id(), sum_tot);</div>
 <div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (is_adc) {</div>
 <div class="line"><span class="lineno">  139</span>      <span class="keywordtype">double</span> adc_calib = sum_adc / conditions.adcGain(digi.id(), 0);</div>
@@ -474,7 +474,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassldmx_1_1HcalID_html"><div class="ttname"><a href="classldmx_1_1HcalID.html">ldmx::HcalID</a></div><div class="ttdoc">Implements detector ids for HCal subdetector.</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00019">HcalID.h:19</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a></div><div class="ttdoc">Represents a collection of the digi hits readout by an HGCROC.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00042">HgcrocDigiCollection.h:42</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00017">coll_name_</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00041">hcal::HcalReconConditions::CONDITIONS_NAME</a>, <a class="el" href="HcalGeometry_8h_source.html#l00042">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="HcalDigiID_8h_source.html#l00105">ldmx::HcalDigiID::end()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurments()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00030">isoi_</a>, <a class="el" href="HcalDigiID_8h_source.html#l00081">ldmx::HcalDigiID::layer()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00026">mip_energy_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00015">pass_name_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00024">pe_per_mip_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00021">rec_coll_name_</a>, <a class="el" href="HcalDigiID_8h_source.html#l00075">ldmx::HcalDigiID::section()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00073">ldmx::CalorimeterHit::setAmplitude()</a>, <a class="el" href="HcalHit_8h_source.html#l00126">ldmx::HcalHit::setEnd()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00087">ldmx::CalorimeterHit::setEnergy()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00057">ldmx::CalorimeterHit::setID()</a>, <a class="el" href="HcalHit_8h_source.html#l00132">ldmx::HcalHit::setIsADC()</a>, <a class="el" href="HcalHit_8h_source.html#l00114">ldmx::HcalHit::setLayer()</a>, <a class="el" href="HcalHit_8h_source.html#l00102">ldmx::HcalHit::setMinPE()</a>, <a class="el" href="HcalHit_8h_source.html#l00095">ldmx::HcalHit::setPE()</a>, <a class="el" href="HcalHit_8h_source.html#l00108">ldmx::HcalHit::setSection()</a>, <a class="el" href="HcalHit_8h_source.html#l00120">ldmx::HcalHit::setStrip()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00099">ldmx::CalorimeterHit::setTime()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00111">ldmx::CalorimeterHit::setXPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00123">ldmx::CalorimeterHit::setYPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00135">ldmx::CalorimeterHit::setZPos()</a>, and <a class="el" href="HcalDigiID_8h_source.html#l00099">ldmx::HcalDigiID::strip()</a>.</p>
+<p class="reference">References <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00017">coll_name_</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00041">hcal::HcalReconConditions::CONDITIONS_NAME</a>, <a class="el" href="HcalGeometry_8h_source.html#l00042">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="HcalDigiID_8h_source.html#l00105">ldmx::HcalDigiID::end()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurements()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00030">isoi_</a>, <a class="el" href="HcalDigiID_8h_source.html#l00081">ldmx::HcalDigiID::layer()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00026">mip_energy_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00015">pass_name_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00024">pe_per_mip_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00021">rec_coll_name_</a>, <a class="el" href="HcalDigiID_8h_source.html#l00075">ldmx::HcalDigiID::section()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00073">ldmx::CalorimeterHit::setAmplitude()</a>, <a class="el" href="HcalHit_8h_source.html#l00126">ldmx::HcalHit::setEnd()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00087">ldmx::CalorimeterHit::setEnergy()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00057">ldmx::CalorimeterHit::setID()</a>, <a class="el" href="HcalHit_8h_source.html#l00132">ldmx::HcalHit::setIsADC()</a>, <a class="el" href="HcalHit_8h_source.html#l00114">ldmx::HcalHit::setLayer()</a>, <a class="el" href="HcalHit_8h_source.html#l00102">ldmx::HcalHit::setMinPE()</a>, <a class="el" href="HcalHit_8h_source.html#l00095">ldmx::HcalHit::setPE()</a>, <a class="el" href="HcalHit_8h_source.html#l00108">ldmx::HcalHit::setSection()</a>, <a class="el" href="HcalHit_8h_source.html#l00120">ldmx::HcalHit::setStrip()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00099">ldmx::CalorimeterHit::setTime()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00111">ldmx::CalorimeterHit::setXPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00123">ldmx::CalorimeterHit::setYPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00135">ldmx::CalorimeterHit::setZPos()</a>, and <a class="el" href="HcalDigiID_8h_source.html#l00099">ldmx::HcalDigiID::strip()</a>.</p>
 
 </div>
 </div>
@@ -503,7 +503,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00028">28</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurments()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurements()</a>.</p>
 
 </div>
 </div>
@@ -559,7 +559,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00030">30</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurments()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurements()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
 
 </div>
 </div>
