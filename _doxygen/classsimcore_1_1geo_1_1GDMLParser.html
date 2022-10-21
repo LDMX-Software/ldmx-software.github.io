@@ -89,9 +89,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6526e0721e8141cc09c350e90aee8c9f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsimcore_1_1geo_1_1AuxInfoReader.html">simcore::geo::AuxInfoReader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a></td></tr>
 <tr class="memdesc:a6526e0721e8141cc09c350e90aee8c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The auxiliary info reader.  <a href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">More...</a><br /></td></tr>
 <tr class="separator:a6526e0721e8141cc09c350e90aee8c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb217453e99171ab300358aa54b669ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1geo_1_1GDMLParser.html#aeb217453e99171ab300358aa54b669ad">parameters_</a></td></tr>
-<tr class="memdesc:aeb217453e99171ab300358aa54b669ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameters used to configure this parser.  <a href="classsimcore_1_1geo_1_1GDMLParser.html#aeb217453e99171ab300358aa54b669ad">More...</a><br /></td></tr>
-<tr class="separator:aeb217453e99171ab300358aa54b669ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab228d99c14a03fa046b7d4fd80942cab"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1geo_1_1GDMLParser.html#ab228d99c14a03fa046b7d4fd80942cab">detector_</a></td></tr>
+<tr class="memdesc:ab228d99c14a03fa046b7d4fd80942cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">path to the detector GDML  <a href="classsimcore_1_1geo_1_1GDMLParser.html#ab228d99c14a03fa046b7d4fd80942cab">More...</a><br /></td></tr>
+<tr class="separator:ab228d99c14a03fa046b7d4fd80942cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a045ebb27ef21085ed976a0f8c7b340db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1geo_1_1GDMLParser.html#a045ebb27ef21085ed976a0f8c7b340db">validate_</a></td></tr>
+<tr class="memdesc:a045ebb27ef21085ed976a0f8c7b340db"><td class="mdescLeft">&#160;</td><td class="mdescRight">should we take the time to validate  <a href="classsimcore_1_1geo_1_1GDMLParser.html#a045ebb27ef21085ed976a0f8c7b340db">More...</a><br /></td></tr>
+<tr class="separator:a045ebb27ef21085ed976a0f8c7b340db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f6cdac19534ef6a9be01f35e98e2440"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1geo_1_1GDMLParser.html#a7f6cdac19534ef6a9be01f35e98e2440">detector_name_</a> {&quot;&quot;}</td></tr>
 <tr class="memdesc:a7f6cdac19534ef6a9be01f35e98e2440"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the parsed detector.  <a href="classsimcore_1_1geo_1_1GDMLParser.html#a7f6cdac19534ef6a9be01f35e98e2440">More...</a><br /></td></tr>
 <tr class="separator:a7f6cdac19534ef6a9be01f35e98e2440"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,16 +141,20 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GDMLParser_8cxx_source.html#l00006">6</a> of file <a class="el" href="GDMLParser_8cxx_source.html">GDMLParser.cxx</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    7</span>                                                       {</div>
-<div class="line"><span class="lineno">    8</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a> = std::make_unique&lt;G4GDMLParser&gt;();</div>
-<div class="line"><span class="lineno">    9</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a> =</div>
-<div class="line"><span class="lineno">   10</span>      std::make_unique&lt;simcore::geo::AuxInfoReader&gt;(<a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a>.get(), parameters);</div>
-<div class="line"><span class="lineno">   11</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#aeb217453e99171ab300358aa54b669ad">parameters_</a> = parameters;</div>
-<div class="line"><span class="lineno">   12</span>}</div>
+<div class="line"><span class="lineno">    8</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ab228d99c14a03fa046b7d4fd80942cab">detector_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;detector&quot;</span>);</div>
+<div class="line"><span class="lineno">    9</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a045ebb27ef21085ed976a0f8c7b340db">validate_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;validate_detector&quot;</span>);</div>
+<div class="line"><span class="lineno">   10</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a> = std::make_unique&lt;G4GDMLParser&gt;();</div>
+<div class="line"><span class="lineno">   11</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a>-&gt;SetOverlapCheck(<a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a045ebb27ef21085ed976a0f8c7b340db">validate_</a>);</div>
+<div class="line"><span class="lineno">   12</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a> =</div>
+<div class="line"><span class="lineno">   13</span>      std::make_unique&lt;simcore::geo::AuxInfoReader&gt;(<a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a>.get(), parameters);</div>
+<div class="line"><span class="lineno">   14</span>}</div>
+<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1geo_1_1GDMLParser_html_a045ebb27ef21085ed976a0f8c7b340db"><div class="ttname"><a href="classsimcore_1_1geo_1_1GDMLParser.html#a045ebb27ef21085ed976a0f8c7b340db">simcore::geo::GDMLParser::validate_</a></div><div class="ttdeci">bool validate_</div><div class="ttdoc">should we take the time to validate</div><div class="ttdef"><b>Definition:</b> <a href="GDMLParser_8h_source.html#l00082">GDMLParser.h:82</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1geo_1_1GDMLParser_html_a6526e0721e8141cc09c350e90aee8c9f"><div class="ttname"><a href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">simcore::geo::GDMLParser::info_</a></div><div class="ttdeci">std::unique_ptr&lt; simcore::geo::AuxInfoReader &gt; info_</div><div class="ttdoc">The auxiliary info reader.</div><div class="ttdef"><b>Definition:</b> <a href="GDMLParser_8h_source.html#l00076">GDMLParser.h:76</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1geo_1_1GDMLParser_html_ab228d99c14a03fa046b7d4fd80942cab"><div class="ttname"><a href="classsimcore_1_1geo_1_1GDMLParser.html#ab228d99c14a03fa046b7d4fd80942cab">simcore::geo::GDMLParser::detector_</a></div><div class="ttdeci">std::string detector_</div><div class="ttdoc">path to the detector GDML</div><div class="ttdef"><b>Definition:</b> <a href="GDMLParser_8h_source.html#l00079">GDMLParser.h:79</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1geo_1_1GDMLParser_html_ae2b9401b40e21e9f4980a118718e3455"><div class="ttname"><a href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">simcore::geo::GDMLParser::parser_</a></div><div class="ttdeci">std::unique_ptr&lt; G4GDMLParser &gt; parser_</div><div class="ttdoc">The GDML parser.</div><div class="ttdef"><b>Definition:</b> <a href="GDMLParser_8h_source.html#l00073">GDMLParser.h:73</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1geo_1_1GDMLParser_html_aeb217453e99171ab300358aa54b669ad"><div class="ttname"><a href="classsimcore_1_1geo_1_1GDMLParser.html#aeb217453e99171ab300358aa54b669ad">simcore::geo::GDMLParser::parameters_</a></div><div class="ttdeci">framework::config::Parameters parameters_</div><div class="ttdoc">The parameters used to configure this parser.</div><div class="ttdef"><b>Definition:</b> <a href="GDMLParser_8h_source.html#l00079">GDMLParser.h:79</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GDMLParser_8h_source.html#l00076">info_</a>, <a class="el" href="GDMLParser_8h_source.html#l00079">parameters_</a>, and <a class="el" href="GDMLParser_8h_source.html#l00073">parser_</a>.</p>
+<p class="reference">References <a class="el" href="GDMLParser_8h_source.html#l00079">detector_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="GDMLParser_8h_source.html#l00076">info_</a>, <a class="el" href="GDMLParser_8h_source.html#l00073">parser_</a>, and <a class="el" href="GDMLParser_8h_source.html#l00082">validate_</a>.</p>
 
 </div>
 </div>
@@ -227,9 +234,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GDMLParser_8h_source.html#l00056">56</a> of file <a class="el" href="GDMLParser_8h_source.html">GDMLParser.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   56</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a7f6cdac19534ef6a9be01f35e98e2440">detector_name_</a>; }</div>
-<div class="ttc" id="aclasssimcore_1_1geo_1_1GDMLParser_html_a7f6cdac19534ef6a9be01f35e98e2440"><div class="ttname"><a href="classsimcore_1_1geo_1_1GDMLParser.html#a7f6cdac19534ef6a9be01f35e98e2440">simcore::geo::GDMLParser::detector_name_</a></div><div class="ttdeci">std::string detector_name_</div><div class="ttdoc">The name of the parsed detector.</div><div class="ttdef"><b>Definition:</b> <a href="GDMLParser_8h_source.html#l00082">GDMLParser.h:82</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1geo_1_1GDMLParser_html_a7f6cdac19534ef6a9be01f35e98e2440"><div class="ttname"><a href="classsimcore_1_1geo_1_1GDMLParser.html#a7f6cdac19534ef6a9be01f35e98e2440">simcore::geo::GDMLParser::detector_name_</a></div><div class="ttdeci">std::string detector_name_</div><div class="ttdoc">The name of the parsed detector.</div><div class="ttdef"><b>Definition:</b> <a href="GDMLParser_8h_source.html#l00085">GDMLParser.h:85</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GDMLParser_8h_source.html#l00082">detector_name_</a>.</p>
+<p class="reference">References <a class="el" href="GDMLParser_8h_source.html#l00085">detector_name_</a>.</p>
 
 </div>
 </div>
@@ -260,10 +267,10 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classsimcore_1_1geo_1_1Parser.html#a1d08c84a1137abae416eec25e14a4dac">simcore::geo::Parser</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="GDMLParser_8cxx_source.html#l00014">14</a> of file <a class="el" href="GDMLParser_8cxx_source.html">GDMLParser.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>                                              {</div>
-<div class="line"><span class="lineno">   15</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a>-&gt;GetWorldVolume();</div>
-<div class="line"><span class="lineno">   16</span>}</div>
+<p class="definition">Definition at line <a class="el" href="GDMLParser_8cxx_source.html#l00016">16</a> of file <a class="el" href="GDMLParser_8cxx_source.html">GDMLParser.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>                                              {</div>
+<div class="line"><span class="lineno">   17</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a>-&gt;GetWorldVolume();</div>
+<div class="line"><span class="lineno">   18</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="GDMLParser_8h_source.html#l00073">parser_</a>.</p>
 
@@ -295,21 +302,47 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classsimcore_1_1geo_1_1Parser.html#a44e1cfb54914c0e78f7465020727908e">simcore::geo::Parser</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="GDMLParser_8cxx_source.html#l00018">18</a> of file <a class="el" href="GDMLParser_8cxx_source.html">GDMLParser.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                      {</div>
-<div class="line"><span class="lineno">   19</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a>-&gt;Read(<a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#aeb217453e99171ab300358aa54b669ad">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;detector&quot;</span>),</div>
-<div class="line"><span class="lineno">   20</span>                <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#aeb217453e99171ab300358aa54b669ad">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;validate_detector&quot;</span>));</div>
-<div class="line"><span class="lineno">   21</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a>-&gt;readGlobalAuxInfo();</div>
-<div class="line"><span class="lineno">   22</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a>-&gt;assignAuxInfoToVolumes();</div>
-<div class="line"><span class="lineno">   23</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a7f6cdac19534ef6a9be01f35e98e2440">detector_name_</a> = <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a>-&gt;getDetectorHeader()-&gt;getName();</div>
-<div class="line"><span class="lineno">   24</span>}</div>
-<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
+<p class="definition">Definition at line <a class="el" href="GDMLParser_8cxx_source.html#l00020">20</a> of file <a class="el" href="GDMLParser_8cxx_source.html">GDMLParser.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>                      {</div>
+<div class="line"><span class="lineno">   21</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ae2b9401b40e21e9f4980a118718e3455">parser_</a>-&gt;Read(<a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#ab228d99c14a03fa046b7d4fd80942cab">detector_</a>, <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a045ebb27ef21085ed976a0f8c7b340db">validate_</a>);</div>
+<div class="line"><span class="lineno">   22</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a>-&gt;readGlobalAuxInfo();</div>
+<div class="line"><span class="lineno">   23</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a>-&gt;assignAuxInfoToVolumes();</div>
+<div class="line"><span class="lineno">   24</span>  <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a7f6cdac19534ef6a9be01f35e98e2440">detector_name_</a> = <a class="code hl_variable" href="classsimcore_1_1geo_1_1GDMLParser.html#a6526e0721e8141cc09c350e90aee8c9f">info_</a>-&gt;getDetectorHeader()-&gt;getName();</div>
+<div class="line"><span class="lineno">   25</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GDMLParser_8h_source.html#l00082">detector_name_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="GDMLParser_8h_source.html#l00076">info_</a>, <a class="el" href="GDMLParser_8h_source.html#l00079">parameters_</a>, and <a class="el" href="GDMLParser_8h_source.html#l00073">parser_</a>.</p>
+<p class="reference">References <a class="el" href="GDMLParser_8h_source.html#l00079">detector_</a>, <a class="el" href="GDMLParser_8h_source.html#l00085">detector_name_</a>, <a class="el" href="GDMLParser_8h_source.html#l00076">info_</a>, <a class="el" href="GDMLParser_8h_source.html#l00073">parser_</a>, and <a class="el" href="GDMLParser_8h_source.html#l00082">validate_</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab228d99c14a03fa046b7d4fd80942cab" name="ab228d99c14a03fa046b7d4fd80942cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab228d99c14a03fa046b7d4fd80942cab">&#9670;&#160;</a></span>detector_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string simcore::geo::GDMLParser::detector_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>path to the detector GDML </p>
+
+<p class="definition">Definition at line <a class="el" href="GDMLParser_8h_source.html#l00079">79</a> of file <a class="el" href="GDMLParser_8h_source.html">GDMLParser.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GDMLParser_8cxx_source.html#l00006">GDMLParser()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00020">read()</a>.</p>
+
+</div>
+</div>
 <a id="a7f6cdac19534ef6a9be01f35e98e2440" name="a7f6cdac19534ef6a9be01f35e98e2440"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f6cdac19534ef6a9be01f35e98e2440">&#9670;&#160;</a></span>detector_name_</h2>
 
@@ -332,9 +365,9 @@ Private Attributes</h2></td></tr>
 
 <p>The name of the parsed detector. </p>
 
-<p class="definition">Definition at line <a class="el" href="GDMLParser_8h_source.html#l00082">82</a> of file <a class="el" href="GDMLParser_8h_source.html">GDMLParser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GDMLParser_8h_source.html#l00085">85</a> of file <a class="el" href="GDMLParser_8h_source.html">GDMLParser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GDMLParser_8h_source.html#l00056">getDetectorName()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00018">read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GDMLParser_8h_source.html#l00056">getDetectorName()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00020">read()</a>.</p>
 
 </div>
 </div>
@@ -362,35 +395,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GDMLParser_8h_source.html#l00076">76</a> of file <a class="el" href="GDMLParser_8h_source.html">GDMLParser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GDMLParser_8cxx_source.html#l00006">GDMLParser()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00018">read()</a>.</p>
-
-</div>
-</div>
-<a id="aeb217453e99171ab300358aa54b669ad" name="aeb217453e99171ab300358aa54b669ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb217453e99171ab300358aa54b669ad">&#9670;&#160;</a></span>parameters_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> simcore::geo::GDMLParser::parameters_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The parameters used to configure this parser. </p>
-
-<p class="definition">Definition at line <a class="el" href="GDMLParser_8h_source.html#l00079">79</a> of file <a class="el" href="GDMLParser_8h_source.html">GDMLParser.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GDMLParser_8cxx_source.html#l00006">GDMLParser()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00018">read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GDMLParser_8cxx_source.html#l00006">GDMLParser()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00020">read()</a>.</p>
 
 </div>
 </div>
@@ -418,7 +423,35 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GDMLParser_8h_source.html#l00073">73</a> of file <a class="el" href="GDMLParser_8h_source.html">GDMLParser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GDMLParser_8cxx_source.html#l00006">GDMLParser()</a>, <a class="el" href="GDMLParser_8cxx_source.html#l00014">GetWorldVolume()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00018">read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GDMLParser_8cxx_source.html#l00006">GDMLParser()</a>, <a class="el" href="GDMLParser_8cxx_source.html#l00016">GetWorldVolume()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00020">read()</a>.</p>
+
+</div>
+</div>
+<a id="a045ebb27ef21085ed976a0f8c7b340db" name="a045ebb27ef21085ed976a0f8c7b340db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a045ebb27ef21085ed976a0f8c7b340db">&#9670;&#160;</a></span>validate_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool simcore::geo::GDMLParser::validate_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>should we take the time to validate </p>
+
+<p class="definition">Definition at line <a class="el" href="GDMLParser_8h_source.html#l00082">82</a> of file <a class="el" href="GDMLParser_8h_source.html">GDMLParser.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GDMLParser_8cxx_source.html#l00006">GDMLParser()</a>, and <a class="el" href="GDMLParser_8cxx_source.html#l00020">read()</a>.</p>
 
 </div>
 </div>
