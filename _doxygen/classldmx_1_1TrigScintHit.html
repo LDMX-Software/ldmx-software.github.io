@@ -68,6 +68,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a328476343f90bde3bb16c0ce1c829c09"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintHit.html#a328476343f90bde3bb16c0ce1c829c09">getBarID</a> () const</td></tr>
 <tr class="memdesc:a328476343f90bde3bb16c0ce1c829c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bar ID.  <a href="classldmx_1_1TrigScintHit.html#a328476343f90bde3bb16c0ce1c829c09">More...</a><br /></td></tr>
 <tr class="separator:a328476343f90bde3bb16c0ce1c829c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb7463680611271991d5ebf5c7bd802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintHit.html#a2cb7463680611271991d5ebf5c7bd802">setPE</a> (const float PE)</td></tr>
+<tr class="separator:a2cb7463680611271991d5ebf5c7bd802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf974f3313b81c9b76db658258219214"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintHit.html#acf974f3313b81c9b76db658258219214">getPE</a> () const</td></tr>
+<tr class="memdesc:acf974f3313b81c9b76db658258219214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hit pe.  <a href="classldmx_1_1TrigScintHit.html#acf974f3313b81c9b76db658258219214">More...</a><br /></td></tr>
+<tr class="separator:acf974f3313b81c9b76db658258219214"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb368aa551f239713f3baefa5e386c7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintHit.html#aeb368aa551f239713f3baefa5e386c7f">setModuleID</a> (const int moduleID)</td></tr>
 <tr class="separator:aeb368aa551f239713f3baefa5e386c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a424d0aec24616230bdf8412280f6b51c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintHit.html#a424d0aec24616230bdf8412280f6b51c">getModuleID</a> () const</td></tr>
@@ -174,6 +179,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a2bc3fc3e3204ff28880f49619da09d67"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintHit.html#a2bc3fc3e3204ff28880f49619da09d67">beamEfrac_</a> {0}</td></tr>
 <tr class="memdesc:a2bc3fc3e3204ff28880f49619da09d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fraction of energy associated with beam electrons.  <a href="classldmx_1_1TrigScintHit.html#a2bc3fc3e3204ff28880f49619da09d67">More...</a><br /></td></tr>
 <tr class="separator:a2bc3fc3e3204ff28880f49619da09d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7d87be413a930aaf21bb046f2229a6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintHit.html#a0a7d87be413a930aaf21bb046f2229a6">pe_</a> {0}</td></tr>
+<tr class="separator:a0a7d87be413a930aaf21bb046f2229a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -314,13 +321,13 @@ Private Attributes</h2></td></tr>
 
 <p>Get the beam energy fraction. </p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00074">74</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1TrigScintHit.html#a2bc3fc3e3204ff28880f49619da09d67">beamEfrac_</a>; }</div>
-<div class="ttc" id="aclassldmx_1_1TrigScintHit_html_a2bc3fc3e3204ff28880f49619da09d67"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#a2bc3fc3e3204ff28880f49619da09d67">ldmx::TrigScintHit::beamEfrac_</a></div><div class="ttdeci">float beamEfrac_</div><div class="ttdoc">The fraction of energy associated with beam electrons.</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00083">TrigScintHit.h:83</a></div></div>
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00084">84</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1TrigScintHit.html#a2bc3fc3e3204ff28880f49619da09d67">beamEfrac_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1TrigScintHit_html_a2bc3fc3e3204ff28880f49619da09d67"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#a2bc3fc3e3204ff28880f49619da09d67">ldmx::TrigScintHit::beamEfrac_</a></div><div class="ttdeci">float beamEfrac_</div><div class="ttdoc">The fraction of energy associated with beam electrons.</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00093">TrigScintHit.h:93</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrigScintHit_8h_source.html#l00083">beamEfrac_</a>.</p>
+<p class="reference">References <a class="el" href="TrigScintHit_8h_source.html#l00093">beamEfrac_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00455">trigscint::TrigScintClusterProducer::addHit()</a>, and <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00426">trigscint::TestBeamClusterProducer::addHit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00468">trigscint::TrigScintClusterProducer::addHit()</a>, and <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00434">trigscint::TestBeamClusterProducer::addHit()</a>.</p>
 
 </div>
 </div>
@@ -349,9 +356,41 @@ Private Attributes</h2></td></tr>
 
 <p>Get the module ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00064">64</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>{ <span class="keywordflow">return</span> moduleID_; }</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00074">74</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>{ <span class="keywordflow">return</span> moduleID_; }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="acf974f3313b81c9b76db658258219214" name="acf974f3313b81c9b76db658258219214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf974f3313b81c9b76db658258219214">&#9670;&#160;</a></span>getPE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ldmx::TrigScintHit::getPE </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the hit pe. </p>
+
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00064">64</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{ <span class="keywordflow">return</span> pe_; }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00468">trigscint::TrigScintClusterProducer::addHit()</a>, <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00434">trigscint::TestBeamClusterProducer::addHit()</a>, <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00047">trigscint::TestBeamHitProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+
 </div>
 </div>
 <a id="a702eb76c4027ba895b2780a605436b28" name="a702eb76c4027ba895b2780a605436b28"></a>
@@ -407,7 +446,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00051">51</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   51</span>{ barID_ = barID; };</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00045">trigscint::TestBeamHitProducer::produce()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00047">trigscint::TrigScintDigiProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00047">trigscint::TestBeamHitProducer::produce()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00047">trigscint::TrigScintDigiProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -442,12 +481,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00071">71</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>{ <a class="code hl_variable" href="classldmx_1_1TrigScintHit.html#a2bc3fc3e3204ff28880f49619da09d67">beamEfrac_</a> = beamEfrac; };</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00081">81</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{ <a class="code hl_variable" href="classldmx_1_1TrigScintHit.html#a2bc3fc3e3204ff28880f49619da09d67">beamEfrac_</a> = beamEfrac; };</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrigScintHit_8h_source.html#l00083">beamEfrac_</a>.</p>
+<p class="reference">References <a class="el" href="TrigScintHit_8h_source.html#l00093">beamEfrac_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00045">trigscint::TestBeamHitProducer::produce()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00047">trigscint::TrigScintDigiProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00047">trigscint::TestBeamHitProducer::produce()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00047">trigscint::TrigScintDigiProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -482,10 +521,48 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00061">61</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{ moduleID_ = moduleID; };</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00071">71</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{ moduleID_ = moduleID; };</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00045">trigscint::TestBeamHitProducer::produce()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00047">trigscint::TrigScintDigiProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00047">trigscint::TestBeamHitProducer::produce()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00047">trigscint::TrigScintDigiProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
+
+</div>
+</div>
+<a id="a2cb7463680611271991d5ebf5c7bd802" name="a2cb7463680611271991d5ebf5c7bd802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb7463680611271991d5ebf5c7bd802">&#9670;&#160;</a></span>setPE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ldmx::TrigScintHit::setPE </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>PE</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Set hit pe.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">PE</td><td>The photoelectron count of the hit. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00061">61</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{ pe_ = PE; };</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00047">trigscint::TestBeamHitProducer::produce()</a>, <a class="el" href="TrigScintDigiProducer_8cxx_source.html#l00047">trigscint::TrigScintDigiProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -510,7 +587,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00078">78</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00088">88</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
 
 </div>
 </div>
@@ -536,9 +613,9 @@ Private Attributes</h2></td></tr>
 
 <p>The fraction of energy associated with beam electrons. </p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00083">83</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00093">93</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TrigScintHit_8h_source.html#l00074">getBeamEfrac()</a>, and <a class="el" href="TrigScintHit_8h_source.html#l00071">setBeamEfrac()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrigScintHit_8h_source.html#l00084">getBeamEfrac()</a>, and <a class="el" href="TrigScintHit_8h_source.html#l00081">setBeamEfrac()</a>.</p>
 
 </div>
 </div>
@@ -562,7 +639,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00080">80</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00090">90</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a7d87be413a930aaf21bb046f2229a6" name="a0a7d87be413a930aaf21bb046f2229a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7d87be413a930aaf21bb046f2229a6">&#9670;&#160;</a></span>pe_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ldmx::TrigScintHit::pe_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintHit_8h_source.html#l00095">95</a> of file <a class="el" href="TrigScintHit_8h_source.html">TrigScintHit.h</a>.</p>
 
 </div>
 </div>

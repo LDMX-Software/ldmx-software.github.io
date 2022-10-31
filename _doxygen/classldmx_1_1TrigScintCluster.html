@@ -130,7 +130,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad0e782cd91ea39d679373f89fce38ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3b2d7b3642a7db600c279649df099b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintCluster.html#ac3b2d7b3642a7db600c279649df099b3">seed_</a> {-1}</td></tr>
 <tr class="separator:ac3b2d7b3642a7db600c279649df099b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6749fbad5b3090018b986a21cecb2901"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintCluster.html#a6749fbad5b3090018b986a21cecb2901">centroid_</a> {0}</td></tr>
+<tr class="memitem:a6749fbad5b3090018b986a21cecb2901"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintCluster.html#a6749fbad5b3090018b986a21cecb2901">centroid_</a> {-1}</td></tr>
 <tr class="separator:a6749fbad5b3090018b986a21cecb2901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3f9b02bb8af66cc46ac89cbad869ff6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1TrigScintCluster.html#ab3f9b02bb8af66cc46ac89cbad869ff6">centroidX_</a> {0}</td></tr>
 <tr class="separator:ab3f9b02bb8af66cc46ac89cbad869ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -660,7 +660,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Print a description of this object. </p>
 
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -692,7 +692,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintCluster_8h_source.html#l00105">105</a> of file <a class="el" href="TrigScintCluster_8h_source.html">TrigScintCluster.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  105</span>{ beamEfrac_ = e; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -729,7 +729,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintCluster_8h_source.html#l00096">96</a> of file <a class="el" href="TrigScintCluster_8h_source.html">TrigScintCluster.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   96</span>{ centroid_ = centroid; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -772,11 +772,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >The cluster centroid in x,y,z (not implemented) </p><dl class="params"><dt>Parameters</dt><dd>
+<p >The cluster centroid in x,y,z </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Cluster x coordinate </td></tr>
     <tr><td class="paramname">y</td><td>Cluster y coordinate </td></tr>
-    <tr><td class="paramname">z</td><td>Cluster z coordinate </td></tr>
+    <tr><td class="paramname">z</td><td>Cluster z coordinate (not implemented) </td></tr>
   </table>
   </dd>
 </dl>
@@ -788,6 +788,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   90</span>    centroidZ_ = z;</div>
 <div class="line"><span class="lineno">   91</span>  }</div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+
 </div>
 </div>
 <a id="a4603968aa10a3ad23ca73d608108d90d" name="a4603968aa10a3ad23ca73d608108d90d"></a>
@@ -823,7 +825,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintCluster_8h_source.html#l00061">61</a> of file <a class="el" href="TrigScintCluster_8h_source.html">TrigScintCluster.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   61</span>{ energy_ = energy; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -860,7 +862,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintCluster_8h_source.html#l00079">79</a> of file <a class="el" href="TrigScintCluster_8h_source.html">TrigScintCluster.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   79</span>{ hitIDs_ = hitIDs; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -897,7 +899,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintCluster_8h_source.html#l00073">73</a> of file <a class="el" href="TrigScintCluster_8h_source.html">TrigScintCluster.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   73</span>{ nHits_ = nHits; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -934,7 +936,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintCluster_8h_source.html#l00067">67</a> of file <a class="el" href="TrigScintCluster_8h_source.html">TrigScintCluster.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   67</span>{ PE_ = PE; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -971,7 +973,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintCluster_8h_source.html#l00055">55</a> of file <a class="el" href="TrigScintCluster_8h_source.html">TrigScintCluster.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   55</span>{ seed_ = idx; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -1003,7 +1005,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TrigScintCluster_8h_source.html#l00099">99</a> of file <a class="el" href="TrigScintCluster_8h_source.html">TrigScintCluster.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   99</span>{ time_ = t; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00037">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00036">trigscint::TrigScintClusterProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TestBeamClusterProducer_8cxx_source.html#l00039">trigscint::TestBeamClusterProducer::produce()</a>, and <a class="el" href="TrigScintClusterProducer_8cxx_source.html#l00037">trigscint::TrigScintClusterProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -1042,7 +1044,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double ldmx::TrigScintCluster::centroid_ {0}</td>
+          <td class="memname">double ldmx::TrigScintCluster::centroid_ {-1}</td>
         </tr>
       </table>
   </td>

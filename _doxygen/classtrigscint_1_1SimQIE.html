@@ -85,8 +85,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af6612c7c8e3847e7c28d1f5b4eec24b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba1e02a165949bb54db90b07d795d4ea"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1SimQIE.html#aba1e02a165949bb54db90b07d795d4ea">CapID</a> (<a class="el" href="classtrigscint_1_1QIEInputPulse.html">QIEInputPulse</a> *pp)</td></tr>
 <tr class="separator:aba1e02a165949bb54db90b07d795d4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a475918c210698b6c309426f819e98bfc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1SimQIE.html#a475918c210698b6c309426f819e98bfc">PulseCut</a> (<a class="el" href="classtrigscint_1_1QIEInputPulse.html">QIEInputPulse</a> *pulse)</td></tr>
-<tr class="separator:a475918c210698b6c309426f819e98bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149edd4db87fbf096d9f38ac3e5e8041"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1SimQIE.html#a149edd4db87fbf096d9f38ac3e5e8041">PulseCut</a> (<a class="el" href="classtrigscint_1_1QIEInputPulse.html">QIEInputPulse</a> *pulse, float cut)</td></tr>
+<tr class="separator:a149edd4db87fbf096d9f38ac3e5e8041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -262,7 +262,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="SimQIE_8h_source.html#l00115">edges_</a>, <a class="el" href="SimQIE_8h_source.html#l00123">gain_</a>, <a class="el" href="SimQIE_8h_source.html#l00113">nbins_</a>, and <a class="el" href="SimQIE_8h_source.html#l00119">sense_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EventReadoutProducer_8cxx_source.html#l00026">trigscint::EventReadoutProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EventReadoutProducer_8cxx_source.html#l00037">trigscint::EventReadoutProducer::produce()</a>, and <a class="el" href="TrigScintRecHitProducer_8cxx_source.html#l00029">trigscint::TrigScintRecHitProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -380,8 +380,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a475918c210698b6c309426f819e98bfc" name="a475918c210698b6c309426f819e98bfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a475918c210698b6c309426f819e98bfc">&#9670;&#160;</a></span>PulseCut()</h2>
+<a id="a149edd4db87fbf096d9f38ac3e5e8041" name="a149edd4db87fbf096d9f38ac3e5e8041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a149edd4db87fbf096d9f38ac3e5e8041">&#9670;&#160;</a></span>PulseCut()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -390,8 +390,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">bool trigscint::SimQIE::PulseCut </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtrigscint_1_1QIEInputPulse.html">QIEInputPulse</a> *&#160;</td>
-          <td class="paramname"><em>pulse</em></td><td>)</td>
+          <td class="paramname"><em>pulse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>cut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -404,18 +414,22 @@ Private Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>ideally, checks if the amplitude is above some threshold. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SimQIE_8cxx_source.html#l00132">132</a> of file <a class="el" href="SimQIE_8cxx_source.html">SimQIE.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  132</span>                                          {</div>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>                                                       {</div>
 <div class="line"><span class="lineno">  133</span>  <span class="keywordflow">if</span> (pulse-&gt;GetNPulses() == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span>  <span class="comment">// Only keep the pulse if it produces 1 PE</span></div>
-<div class="line"><span class="lineno">  136</span>  <span class="comment">// in atleast one of the time samples</span></div>
-<div class="line"><span class="lineno">  137</span>  <span class="keywordtype">float</span> thr_in_pes = 1.0;</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classtrigscint_1_1SimQIE.html#ab07c30d87c4ad004f9bf4df9943b254e">maxts_</a>; i++) {</div>
-<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (pulse-&gt;Integrate(i * <a class="code hl_variable" href="classtrigscint_1_1SimQIE.html#a1b678c59a4ff77fe34aaf8fa42a9612f">tau_</a>, i * <a class="code hl_variable" href="classtrigscint_1_1SimQIE.html#a1b678c59a4ff77fe34aaf8fa42a9612f">tau_</a> + <a class="code hl_variable" href="classtrigscint_1_1SimQIE.html#a1b678c59a4ff77fe34aaf8fa42a9612f">tau_</a>) &gt;= thr_in_pes) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  141</span>  }</div>
-<div class="line"><span class="lineno">  142</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  143</span>}</div>
+<div class="line"><span class="lineno">  135</span>  <span class="comment">//  float thr_in_pes = 1.0; instead make configurable </span></div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>  <span class="comment">// Only keep the pulse if it produces 1 PE (or whatever the cutoff is set to)</span></div>
+<div class="line"><span class="lineno">  138</span>  <span class="comment">//integrate over entire pulse so we catch also single-PE pulses </span></div>
+<div class="line"><span class="lineno">  139</span>  <span class="keywordtype">float</span> integral=0;</div>
+<div class="line"><span class="lineno">  140</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classtrigscint_1_1SimQIE.html#ab07c30d87c4ad004f9bf4df9943b254e">maxts_</a>; i++) {</div>
+<div class="line"><span class="lineno">  141</span>    <span class="comment">//    if (pulse-&gt;Integrate(i * tau_, i * tau_ + tau_) &gt;= thr_in_pes) return true;</span></div>
+<div class="line"><span class="lineno">  142</span>    integral+= pulse-&gt;Integrate(i * <a class="code hl_variable" href="classtrigscint_1_1SimQIE.html#a1b678c59a4ff77fe34aaf8fa42a9612f">tau_</a>, i * <a class="code hl_variable" href="classtrigscint_1_1SimQIE.html#a1b678c59a4ff77fe34aaf8fa42a9612f">tau_</a> + <a class="code hl_variable" href="classtrigscint_1_1SimQIE.html#a1b678c59a4ff77fe34aaf8fa42a9612f">tau_</a>);</div>
+<div class="line"><span class="lineno">  143</span>  }</div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordflow">if</span> ( integral &gt;= cut) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  145</span>  </div>
+<div class="line"><span class="lineno">  146</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  147</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="QIEInputPulse_8h_source.html#l00054">trigscint::QIEInputPulse::GetNPulses()</a>, <a class="el" href="classtrigscint_1_1QIEInputPulse.html#a4bf8c0666543fc09c70eab43c9c97cb5">trigscint::QIEInputPulse::Integrate()</a>, <a class="el" href="SimQIE_8h_source.html#l00127">maxts_</a>, and <a class="el" href="SimQIE_8h_source.html#l00125">tau_</a>.</p>
 
@@ -509,7 +523,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="SimQIE_8h_source.html#l00115">edges_</a>, and <a class="el" href="SimQIE_8h_source.html#l00119">sense_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EventReadoutProducer_8cxx_source.html#l00026">trigscint::EventReadoutProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EventReadoutProducer_8cxx_source.html#l00037">trigscint::EventReadoutProducer::produce()</a>.</p>
 
 </div>
 </div>

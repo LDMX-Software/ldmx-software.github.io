@@ -120,6 +120,8 @@ Public Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a1a4c879fac076d18b756721a8e870e58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a1a4c879fac076d18b756721a8e870e58">makeTrack</a> (std::vector&lt; <a class="el" href="classldmx_1_1TrigScintCluster.html">ldmx::TrigScintCluster</a> &gt; clusters)</td></tr>
 <tr class="separator:a1a4c879fac076d18b756721a8e870e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6266baee1d31b1089751ca27b11684"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a7c6266baee1d31b1089751ca27b11684">matchXYTracks</a> (std::vector&lt; <a class="el" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> &gt; &amp;tracks)</td></tr>
+<tr class="separator:a7c6266baee1d31b1089751ca27b11684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -137,10 +139,38 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3fddda4d233cf15d9e077d5f5d94f27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebb706fc4154253b5a6d3a0db44e8f07"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#aebb706fc4154253b5a6d3a0db44e8f07">passName_</a> {&quot;&quot;}</td></tr>
 <tr class="separator:aebb706fc4154253b5a6d3a0db44e8f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a851a429a43ace43226120308448656"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a8a851a429a43ace43226120308448656">skipLast_</a> {false}</td></tr>
+<tr class="separator:a8a851a429a43ace43226120308448656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18fbf4cce3fca36a6c7724dd7680afd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#ab18fbf4cce3fca36a6c7724dd7680afd">vertBarStartIdx_</a> {52}</td></tr>
+<tr class="separator:ab18fbf4cce3fca36a6c7724dd7680afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca91d9131624535e518c9dea69741a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a4ca91d9131624535e518c9dea69741a7">nBarsY_</a> {16}</td></tr>
+<tr class="separator:a4ca91d9131624535e518c9dea69741a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a272538f391570b629f6f6dd0801ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a69a272538f391570b629f6f6dd0801ee">nBarsX_</a> {8}</td></tr>
+<tr class="separator:a69a272538f391570b629f6f6dd0801ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389626b1da83d2b3ac6bf0c4ed37634b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a389626b1da83d2b3ac6bf0c4ed37634b">centroid_</a> {0.}</td></tr>
 <tr class="separator:a389626b1da83d2b3ac6bf0c4ed37634b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cee8720b86aa0655f60b392f7742cb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a94cee8720b86aa0655f60b392f7742cb">centroidX_</a> {-1}</td></tr>
+<tr class="separator:a94cee8720b86aa0655f60b392f7742cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98cc30ffc95e96439d33d63e71a737df"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a98cc30ffc95e96439d33d63e71a737df">centroidY_</a> {-1}</td></tr>
+<tr class="separator:a98cc30ffc95e96439d33d63e71a737df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd82d650ec000ac6b5dcaefde18aea15"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#acd82d650ec000ac6b5dcaefde18aea15">residual_</a> {0.}</td></tr>
 <tr class="separator:acd82d650ec000ac6b5dcaefde18aea15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb367c82c9a8eba8abef3a6bab6aa23"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a6eb367c82c9a8eba8abef3a6bab6aa23">barWidth_y_</a> {3.}</td></tr>
+<tr class="separator:a6eb367c82c9a8eba8abef3a6bab6aa23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05cf5c0eb4fb6f71e77d8a818d0566fc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a05cf5c0eb4fb6f71e77d8a818d0566fc">barGap_y_</a> {2.1}</td></tr>
+<tr class="separator:a05cf5c0eb4fb6f71e77d8a818d0566fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e07314eba827475300555c68d81c954"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a2e07314eba827475300555c68d81c954">barWidth_x_</a> {3.}</td></tr>
+<tr class="separator:a2e07314eba827475300555c68d81c954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61266a25e321cca912a49b1ace443fca"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a61266a25e321cca912a49b1ace443fca">barGap_x_</a> {0.1}</td></tr>
+<tr class="separator:a61266a25e321cca912a49b1ace443fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd0579c130f68b835c8f8404092d2ab"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#adcd0579c130f68b835c8f8404092d2ab">xConvFactor_</a></td></tr>
+<tr class="separator:adcd0579c130f68b835c8f8404092d2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ca9fb905cd9216a874c6d276728c6d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#af7ca9fb905cd9216a874c6d276728c6d">xStart_</a></td></tr>
+<tr class="separator:af7ca9fb905cd9216a874c6d276728c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c2713f2344e4a5ca56c5b2fa97e8ef"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a21c2713f2344e4a5ca56c5b2fa97e8ef">yConvFactor_</a></td></tr>
+<tr class="separator:a21c2713f2344e4a5ca56c5b2fa97e8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d72f5fb1a35c6c56fe29118e85751b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TrigScintTrackProducer.html#a46d72f5fb1a35c6c56fe29118e85751b">yStart_</a></td></tr>
+<tr class="separator:a46d72f5fb1a35c6c56fe29118e85751b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -257,22 +287,45 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   16</span>  output_collection_ = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;output_collection&quot;</span>);</div>
 <div class="line"><span class="lineno">   17</span>  passName_ = ps.getParameter&lt;std::string&gt;(<span class="stringliteral">&quot;input_pass_name&quot;</span>);</div>
 <div class="line"><span class="lineno">   18</span>  verbose_ = ps.getParameter&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;verbosity&quot;</span>);</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>  <span class="comment">// TO DO: allow any number of input collections</span></div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>  <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">   23</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;In TrigScintTrackProducer: configure done!&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   24</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;Got parameters: \nSeeding:   &quot;</span> &lt;&lt; seeding_collection_</div>
-<div class="line"><span class="lineno">   25</span>                   &lt;&lt; <span class="stringliteral">&quot;\nTolerance: &quot;</span> &lt;&lt; maxDelta_</div>
-<div class="line"><span class="lineno">   26</span>                   &lt;&lt; <span class="stringliteral">&quot;\nInput:     &quot;</span> &lt;&lt; input_collections_.at(0) &lt;&lt; <span class="stringliteral">&quot; and &quot;</span></div>
-<div class="line"><span class="lineno">   27</span>                   &lt;&lt; input_collections_.at(1)</div>
-<div class="line"><span class="lineno">   28</span>                   &lt;&lt; <span class="stringliteral">&quot;\nInput pass name:     &quot;</span> &lt;&lt; passName_</div>
-<div class="line"><span class="lineno">   29</span>                   &lt;&lt; <span class="stringliteral">&quot;\nOutput:    &quot;</span> &lt;&lt; output_collection_</div>
-<div class="line"><span class="lineno">   30</span>                   &lt;&lt; <span class="stringliteral">&quot;\nVerbosity: &quot;</span> &lt;&lt; verbose_;</div>
-<div class="line"><span class="lineno">   31</span>  }</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   34</span>}</div>
+<div class="line"><span class="lineno">   19</span>  vertBarStartIdx_ = ps.getParameter&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;vertical_bar_start_index&quot;</span>);</div>
+<div class="line"><span class="lineno">   20</span>  nBarsY_ = ps.getParameter&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;number_horizontal_bars&quot;</span>);</div>
+<div class="line"><span class="lineno">   21</span>  barWidth_y_ = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;horizontal_bar_width&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>  barGap_y_ = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;horizontal_bar_gap&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>  nBarsX_ = ps.getParameter&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;number_vertical_bars&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span>  barWidth_x_ = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;vertical_bar_width&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>  barGap_x_ = ps.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;vertical_bar_gap&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span>  skipLast_ = ps.getParameter&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;allow_skip_last_collection&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>  </div>
+<div class="line"><span class="lineno">   29</span>  <span class="comment">// TO DO: allow any number of input collections</span></div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>  <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">   32</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;In TrigScintTrackProducer: configure done!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   33</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;Got parameters: \nSeeding:   &quot;</span> &lt;&lt; seeding_collection_</div>
+<div class="line"><span class="lineno">   34</span>                   &lt;&lt; <span class="stringliteral">&quot;\nTolerance: &quot;</span> &lt;&lt; maxDelta_</div>
+<div class="line"><span class="lineno">   35</span>                   &lt;&lt; <span class="stringliteral">&quot;\nInput:     &quot;</span> &lt;&lt; input_collections_.at(0) &lt;&lt; <span class="stringliteral">&quot; and &quot;</span></div>
+<div class="line"><span class="lineno">   36</span>                   &lt;&lt; input_collections_.at(1)</div>
+<div class="line"><span class="lineno">   37</span>                   &lt;&lt; <span class="stringliteral">&quot;\nInput pass name:     &quot;</span> &lt;&lt; passName_</div>
+<div class="line"><span class="lineno">   38</span>                   &lt;&lt; <span class="stringliteral">&quot;\nAllow tracks with no hit in last collection:     &quot;</span> &lt;&lt; skipLast_</div>
+<div class="line"><span class="lineno">   39</span>                   &lt;&lt; <span class="stringliteral">&quot;\nVertical bar start index:     &quot;</span> &lt;&lt; vertBarStartIdx_</div>
+<div class="line"><span class="lineno">   40</span>                   &lt;&lt; <span class="stringliteral">&quot;\nNumber of horizontal bars:     &quot;</span> &lt;&lt; nBarsY_</div>
+<div class="line"><span class="lineno">   41</span>                   &lt;&lt; <span class="stringliteral">&quot;\nHorizontal bar width:     &quot;</span> &lt;&lt; barWidth_y_</div>
+<div class="line"><span class="lineno">   42</span>                   &lt;&lt; <span class="stringliteral">&quot;\nHorizontal bar gap:     &quot;</span> &lt;&lt; barGap_y_</div>
+<div class="line"><span class="lineno">   43</span>                   &lt;&lt; <span class="stringliteral">&quot;\nNumber of vertical bars:     &quot;</span> &lt;&lt; nBarsX_</div>
+<div class="line"><span class="lineno">   44</span>                   &lt;&lt; <span class="stringliteral">&quot;\nVertical bar width:     &quot;</span> &lt;&lt; barWidth_x_</div>
+<div class="line"><span class="lineno">   45</span>                   &lt;&lt; <span class="stringliteral">&quot;\nVertical bar gap:     &quot;</span> &lt;&lt; barGap_x_</div>
+<div class="line"><span class="lineno">   46</span>                   &lt;&lt; <span class="stringliteral">&quot;\nOutput:    &quot;</span> &lt;&lt; output_collection_</div>
+<div class="line"><span class="lineno">   47</span>                   &lt;&lt; <span class="stringliteral">&quot;\nVerbosity: &quot;</span> &lt;&lt; verbose_;</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>  yConvFactor_ = (barWidth_y_+barGap_y_)/2.; <span class="comment">//each bar only goes half this distance up (overlap/zig-zag)</span></div>
+<div class="line"><span class="lineno">   52</span>  yStart_ = -(nBarsY_*(barWidth_y_+barGap_y_) - barGap_y_)/2.; <span class="comment">//half height of pad</span></div>
+<div class="line"><span class="lineno">   53</span>  xConvFactor_ = barWidth_x_+barGap_x_; <span class="comment">//each bar goes entire distance sideways (no overlap)</span></div>
+<div class="line"><span class="lineno">   54</span>  xStart_ =-(nBarsX_*(barWidth_x_+barGap_x_) - barGap_x_)/2.; <span class="comment">//half width of pad</span></div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   57</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>.</p>
 
@@ -302,50 +355,365 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00331">331</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  332</span>                                              {</div>
-<div class="line"><span class="lineno">  333</span>  <span class="comment">// for now let&#39;s keep a straight, unweighted centroid</span></div>
-<div class="line"><span class="lineno">  334</span>  <span class="comment">// consider the possibility that at least one cluster has a centroid</span></div>
-<div class="line"><span class="lineno">  335</span>  <span class="comment">// identically == 0. then we need to shift them by 1 if we want to do energy</span></div>
-<div class="line"><span class="lineno">  336</span>  <span class="comment">// weighted track centroid later. but no need now</span></div>
-<div class="line"><span class="lineno">  337</span>  <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> tr;</div>
-<div class="line"><span class="lineno">  338</span>  <span class="keywordtype">float</span> centroid = 0;</div>
-<div class="line"><span class="lineno">  339</span>  <span class="keywordtype">float</span> beamEfrac = 0;</div>
-<div class="line"><span class="lineno">  340</span>  <span class="keywordflow">for</span> (uint i = 0; i &lt; clusters.size(); i++) {</div>
-<div class="line"><span class="lineno">  341</span>    centroid += (clusters.at(i)).getCentroid();</div>
-<div class="line"><span class="lineno">  342</span>    tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a5f6e21fd010d4d210ba01d70ddd6a640">addConstituent</a>(clusters.at(i));</div>
-<div class="line"><span class="lineno">  343</span>    beamEfrac += (clusters.at(i)).getBeamEfrac();</div>
-<div class="line"><span class="lineno">  344</span>  }</div>
-<div class="line"><span class="lineno">  345</span>  centroid /= clusters.size();</div>
-<div class="line"><span class="lineno">  346</span>  beamEfrac /= clusters.size();</div>
-<div class="line"><span class="lineno">  347</span> </div>
-<div class="line"><span class="lineno">  348</span>  <span class="keywordtype">float</span> residual = 0;</div>
-<div class="line"><span class="lineno">  349</span>  <span class="keywordflow">for</span> (uint i = 0; i &lt; clusters.size(); i++)</div>
-<div class="line"><span class="lineno">  350</span>    residual += ((clusters.at(i)).getCentroid() - centroid) *</div>
-<div class="line"><span class="lineno">  351</span>                ((clusters.at(i)).getCentroid() - centroid);</div>
-<div class="line"><span class="lineno">  352</span>  residual = sqrt((<span class="keywordtype">float</span>)(residual / clusters.size()));</div>
-<div class="line"><span class="lineno">  353</span> </div>
-<div class="line"><span class="lineno">  354</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a687f2d1a0bbe454622aacad4c0ad13d8">setCentroid</a>(centroid);</div>
-<div class="line"><span class="lineno">  355</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a1e561e26a10021e1b7b571488f3bcb25">setResidual</a>(residual);</div>
-<div class="line"><span class="lineno">  356</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#ab47229d782668f417a247d633c59fa33">setBeamEfrac</a>(beamEfrac);</div>
-<div class="line"><span class="lineno">  357</span> </div>
-<div class="line"><span class="lineno">  358</span>  <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">  359</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; --  In makeTrack made track with centroid  &quot;</span></div>
-<div class="line"><span class="lineno">  360</span>                    &lt;&lt; centroid &lt;&lt; <span class="stringliteral">&quot; and residual &quot;</span> &lt;&lt; residual</div>
-<div class="line"><span class="lineno">  361</span>                    &lt;&lt; <span class="stringliteral">&quot; from clusters with centroids&quot;</span>;</div>
-<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">for</span> (uint i = 0; i &lt; clusters.size(); i++)</div>
-<div class="line"><span class="lineno">  363</span>      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\tpad &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: centroid &quot;</span></div>
-<div class="line"><span class="lineno">  364</span>                      &lt;&lt; (clusters.at(i)).getCentroid();</div>
-<div class="line"><span class="lineno">  365</span>    ldmx_log(debug);</div>
-<div class="line"><span class="lineno">  366</span>  }</div>
-<div class="line"><span class="lineno">  367</span> </div>
-<div class="line"><span class="lineno">  368</span>  <span class="keywordflow">return</span> tr;</div>
-<div class="line"><span class="lineno">  369</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00467">467</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  468</span>                                              {</div>
+<div class="line"><span class="lineno">  469</span>  <span class="comment">// for now let&#39;s keep a straight, unweighted centroid</span></div>
+<div class="line"><span class="lineno">  470</span>  <span class="comment">// consider the possibility that at least one cluster has a centroid</span></div>
+<div class="line"><span class="lineno">  471</span>  <span class="comment">// identically == 0. then we need to shift them by 1 if we want to do energy</span></div>
+<div class="line"><span class="lineno">  472</span>  <span class="comment">// weighted track centroid later. but no need now</span></div>
+<div class="line"><span class="lineno">  473</span>  <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> tr;</div>
+<div class="line"><span class="lineno">  474</span>  <span class="keywordtype">float</span> centroid = 0;</div>
+<div class="line"><span class="lineno">  475</span>  <span class="keywordtype">float</span> centroidX = 0;</div>
+<div class="line"><span class="lineno">  476</span>  <span class="keywordtype">float</span> centroidY = 0;</div>
+<div class="line"><span class="lineno">  477</span>  <span class="keywordtype">float</span> beamEfrac = 0;</div>
+<div class="line"><span class="lineno">  478</span>  <span class="keywordtype">float</span> pe = 0;</div>
+<div class="line"><span class="lineno">  479</span>  <span class="keywordflow">for</span> (uint i = 0; i &lt; clusters.size(); i++) {</div>
+<div class="line"><span class="lineno">  480</span>    centroid += (clusters.at(i)).getCentroid();</div>
+<div class="line"><span class="lineno">  481</span>    centroidX += (clusters.at(i)).getCentroidX();</div>
+<div class="line"><span class="lineno">  482</span>    centroidY += (clusters.at(i)).getCentroidY();</div>
+<div class="line"><span class="lineno">  483</span>    tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a5f6e21fd010d4d210ba01d70ddd6a640">addConstituent</a>(clusters.at(i));</div>
+<div class="line"><span class="lineno">  484</span>    beamEfrac += (clusters.at(i)).getBeamEfrac();</div>
+<div class="line"><span class="lineno">  485</span>    pe += (clusters.at(i)).getPE();</div>
+<div class="line"><span class="lineno">  486</span>  }</div>
+<div class="line"><span class="lineno">  487</span>  centroid /= clusters.size();</div>
+<div class="line"><span class="lineno">  488</span>  centroidX /= clusters.size();</div>
+<div class="line"><span class="lineno">  489</span>  <span class="keywordflow">if</span> (centroid &gt;= vertBarStartIdx_) {</div>
+<div class="line"><span class="lineno">  490</span>      <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  491</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; --  In makeTrack made vertical bar track with centroid  &quot;</span></div>
+<div class="line"><span class="lineno">  492</span>                        &lt;&lt; centroid &lt;&lt; <span class="stringliteral">&quot; and y flag sum &quot;</span> &lt;&lt; centroidY ;</div>
+<div class="line"><span class="lineno">  493</span>        <span class="comment">//try commenting this to check if that helps with an out-of-bounds problem</span></div>
+<div class="line"><span class="lineno">  494</span>        <span class="comment">//                    &lt;&lt; &quot; from clusters with y centroids&quot;;</span></div>
+<div class="line"><span class="lineno">  495</span>        <span class="comment">//for (uint i = 0; i &lt; clusters.size(); i++)</span></div>
+<div class="line"><span class="lineno">  496</span>        <span class="comment">// ldmx_log(debug) &lt;&lt; &quot;\tpad &quot; &lt;&lt; i &lt;&lt; &quot;: centroidY &quot;</span></div>
+<div class="line"><span class="lineno">  497</span>        <span class="comment">//                &lt;&lt; (clusters.at(i)).getCentroidY();</span></div>
+<div class="line"><span class="lineno">  498</span>      }</div>
+<div class="line"><span class="lineno">  499</span>      <span class="comment">//then the sum of centroid y is 0, 2, 4 or 6</span></div>
+<div class="line"><span class="lineno">  500</span>      <span class="comment">// we have 4 divisions, so, the center of it should be divNb/8</span></div>
+<div class="line"><span class="lineno">  501</span>      <span class="comment">// (or rather, that&#39;s where channel nBars/8 begins)</span></div>
+<div class="line"><span class="lineno">  502</span>      <span class="comment">// and then a factor 2 for the zig-zag pattern</span></div>
+<div class="line"><span class="lineno">  503</span>      centroidY = (centroidY+1)*2*nBarsY_/8.;</div>
+<div class="line"><span class="lineno">  504</span>      <span class="comment">// TODO: here we could instead just use quadrant indices 0-3 by dividing by 2</span></div>
+<div class="line"><span class="lineno">  505</span>      <span class="comment">// but that would mean that in the raw, x and y track centroidY would mean different things</span></div>
+<div class="line"><span class="lineno">  506</span>      <span class="keywordflow">if</span> (verbose_) </div>
+<div class="line"><span class="lineno">  507</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; --  new centroidY = &quot;</span> &lt;&lt; centroidY ;</div>
+<div class="line"><span class="lineno">  508</span>  }</div>
+<div class="line"><span class="lineno">  509</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  510</span>    centroidY /= clusters.size();</div>
+<div class="line"><span class="lineno">  511</span> </div>
+<div class="line"><span class="lineno">  512</span>  beamEfrac /= clusters.size();</div>
+<div class="line"><span class="lineno">  513</span>  pe /= clusters.size();</div>
+<div class="line"><span class="lineno">  514</span> </div>
+<div class="line"><span class="lineno">  515</span>  <span class="keywordtype">float</span> residual = 0;</div>
+<div class="line"><span class="lineno">  516</span>  <span class="keywordflow">for</span> (uint i = 0; i &lt; clusters.size(); i++)</div>
+<div class="line"><span class="lineno">  517</span>    residual += ((clusters.at(i)).getCentroid() - centroid) *</div>
+<div class="line"><span class="lineno">  518</span>                ((clusters.at(i)).getCentroid() - centroid);</div>
+<div class="line"><span class="lineno">  519</span>  residual = sqrt((<span class="keywordtype">float</span>)(residual / clusters.size()));</div>
+<div class="line"><span class="lineno">  520</span> </div>
+<div class="line"><span class="lineno">  521</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a687f2d1a0bbe454622aacad4c0ad13d8">setCentroid</a>(centroid);</div>
+<div class="line"><span class="lineno">  522</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a1bf19357815a9bd6907ef14aa8ce145a">setCentroidX</a>(centroidX);</div>
+<div class="line"><span class="lineno">  523</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a2f1593197aa11d2692ef82b83110d8fa">setCentroidY</a>(centroidY);</div>
+<div class="line"><span class="lineno">  524</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a1e561e26a10021e1b7b571488f3bcb25">setResidual</a>(residual);</div>
+<div class="line"><span class="lineno">  525</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#ab47229d782668f417a247d633c59fa33">setBeamEfrac</a>(beamEfrac);</div>
+<div class="line"><span class="lineno">  526</span>  tr.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a31cdcd58bc068859fd4de26540af03dc">setPE</a>(pe);</div>
+<div class="line"><span class="lineno">  527</span> </div>
+<div class="line"><span class="lineno">  528</span>  <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  529</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; --  In makeTrack made track with centroid  &quot;</span></div>
+<div class="line"><span class="lineno">  530</span>                    &lt;&lt; centroid &lt;&lt; <span class="stringliteral">&quot; and residual &quot;</span> &lt;&lt; residual</div>
+<div class="line"><span class="lineno">  531</span>                    &lt;&lt; <span class="stringliteral">&quot; and pe &quot;</span> &lt;&lt; pe</div>
+<div class="line"><span class="lineno">  532</span>                    &lt;&lt; <span class="stringliteral">&quot; from clusters with centroids&quot;</span>;</div>
+<div class="line"><span class="lineno">  533</span>    <span class="keywordflow">for</span> (uint i = 0; i &lt; clusters.size(); i++)</div>
+<div class="line"><span class="lineno">  534</span>      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\tpad &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: centroid &quot;</span></div>
+<div class="line"><span class="lineno">  535</span>                      &lt;&lt; (clusters.at(i)).getCentroid();</div>
+<div class="line"><span class="lineno">  536</span>  }</div>
+<div class="line"><span class="lineno">  537</span> </div>
+<div class="line"><span class="lineno">  538</span>  <span class="keywordflow">return</span> tr;</div>
+<div class="line"><span class="lineno">  539</span>}</div>
 <div class="ttc" id="aclassldmx_1_1TrigScintTrack_html"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a></div><div class="ttdoc">Represents a track of trigger scintillator clusters.</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00021">TrigScintTrack.h:21</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a1e561e26a10021e1b7b571488f3bcb25"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a1e561e26a10021e1b7b571488f3bcb25">ldmx::TrigScintTrack::setResidual</a></div><div class="ttdeci">void setResidual(float resid)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00144">TrigScintTrack.h:144</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a5f6e21fd010d4d210ba01d70ddd6a640"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a5f6e21fd010d4d210ba01d70ddd6a640">ldmx::TrigScintTrack::addConstituent</a></div><div class="ttdeci">void addConstituent(TrigScintCluster cl)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00169">TrigScintTrack.h:169</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a687f2d1a0bbe454622aacad4c0ad13d8"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a687f2d1a0bbe454622aacad4c0ad13d8">ldmx::TrigScintTrack::setCentroid</a></div><div class="ttdeci">void setCentroid(float centroid)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00124">TrigScintTrack.h:124</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_ab47229d782668f417a247d633c59fa33"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#ab47229d782668f417a247d633c59fa33">ldmx::TrigScintTrack::setBeamEfrac</a></div><div class="ttdeci">void setBeamEfrac(float e)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00119">TrigScintTrack.h:119</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a1bf19357815a9bd6907ef14aa8ce145a"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a1bf19357815a9bd6907ef14aa8ce145a">ldmx::TrigScintTrack::setCentroidX</a></div><div class="ttdeci">void setCentroidX(float centroid)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00159">TrigScintTrack.h:159</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a1e561e26a10021e1b7b571488f3bcb25"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a1e561e26a10021e1b7b571488f3bcb25">ldmx::TrigScintTrack::setResidual</a></div><div class="ttdeci">void setResidual(float resid)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00174">TrigScintTrack.h:174</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a2f1593197aa11d2692ef82b83110d8fa"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a2f1593197aa11d2692ef82b83110d8fa">ldmx::TrigScintTrack::setCentroidY</a></div><div class="ttdeci">void setCentroidY(float centroid)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00164">TrigScintTrack.h:164</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a31cdcd58bc068859fd4de26540af03dc"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a31cdcd58bc068859fd4de26540af03dc">ldmx::TrigScintTrack::setPE</a></div><div class="ttdeci">void setPE(float pe)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00194">TrigScintTrack.h:194</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a5f6e21fd010d4d210ba01d70ddd6a640"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a5f6e21fd010d4d210ba01d70ddd6a640">ldmx::TrigScintTrack::addConstituent</a></div><div class="ttdeci">void addConstituent(TrigScintCluster cl)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00204">TrigScintTrack.h:204</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a687f2d1a0bbe454622aacad4c0ad13d8"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a687f2d1a0bbe454622aacad4c0ad13d8">ldmx::TrigScintTrack::setCentroid</a></div><div class="ttdeci">void setCentroid(float centroid)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00154">TrigScintTrack.h:154</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_ab47229d782668f417a247d633c59fa33"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#ab47229d782668f417a247d633c59fa33">ldmx::TrigScintTrack::setBeamEfrac</a></div><div class="ttdeci">void setBeamEfrac(float e)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00149">TrigScintTrack.h:149</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7c6266baee1d31b1089751ca27b11684" name="a7c6266baee1d31b1089751ca27b11684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6266baee1d31b1089751ca27b11684">&#9670;&#160;</a></span>matchXYTracks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void trigscint::TrigScintTrackProducer::matchXYTracks </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tracks</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00544">544</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  545</span>                                           {</div>
+<div class="line"><span class="lineno">  546</span> </div>
+<div class="line"><span class="lineno">  547</span>  <span class="comment">//map quadrant nb to track (can be multiple per quadrant)</span></div>
+<div class="line"><span class="lineno">  548</span>  std::multimap &lt;int, int &gt; yIdxQuadMap; <span class="comment">//key = quad, val = track index in collection</span></div>
+<div class="line"><span class="lineno">  549</span>    std::multimap &lt;int, int &gt; xIdxQuadMap;</div>
+<div class="line"><span class="lineno">  550</span> </div>
+<div class="line"><span class="lineno">  551</span>  std::multimap &lt;int, ldmx::TrigScintTrack &gt; yQuadMap;</div>
+<div class="line"><span class="lineno">  552</span>  std::multimap &lt;int, ldmx::TrigScintTrack &gt; xQuadMap;</div>
+<div class="line"><span class="lineno">  553</span>  <span class="comment">//map track in quadrant back to index in entire track collection</span></div>
+<div class="line"><span class="lineno">  554</span>  <span class="comment">//used for updating collection track variables </span></div>
+<div class="line"><span class="lineno">  555</span>  std::map &lt;ldmx::TrigScintTrack, int &gt; yTrackMap;</div>
+<div class="line"><span class="lineno">  556</span>  std::map &lt;ldmx::TrigScintTrack, int &gt; xTrackMap;</div>
+<div class="line"><span class="lineno">  557</span>  </div>
+<div class="line"><span class="lineno">  558</span>  uint trkIdx = -1;</div>
+<div class="line"><span class="lineno">  559</span>  <span class="keywordflow">for</span> ( <span class="keyword">auto</span> trk : tracks ) {</div>
+<div class="line"><span class="lineno">  560</span>    trkIdx++;</div>
+<div class="line"><span class="lineno">  561</span>    <span class="comment">//1. get the y bar tracks with centroidX = -1</span></div>
+<div class="line"><span class="lineno">  562</span>    <span class="keywordflow">if</span> ( trk.getCentroidX() == -1) {</div>
+<div class="line"><span class="lineno">  563</span>      <span class="keywordflow">if</span> (verbose_) </div>
+<div class="line"><span class="lineno">  564</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; --  In matchXYTracks found y track at &quot;</span> &lt;&lt; trk.getCentroidY() &lt;&lt; <span class="stringliteral">&quot;; mapping to quad &quot;</span> &lt;&lt; (int)trk.getCentroidY()/8 &lt;&lt; <span class="stringliteral">&quot; with trk index &quot;</span> &lt;&lt; trkIdx ;</div>
+<div class="line"><span class="lineno">  565</span>      <span class="comment">//2. order them... or map them to quadrants. note that there are 2 layers so 2*nBarsY_/4 channels per quadrant  </span></div>
+<div class="line"><span class="lineno">  566</span>      yQuadMap.insert(std::make_pair( (<span class="keywordtype">int</span>)(trk.getCentroidY()/8), trk)); </div>
+<div class="line"><span class="lineno">  567</span>      yTrackMap[ trk ] = trkIdx;</div>
+<div class="line"><span class="lineno">  568</span>      yIdxQuadMap.insert(std::make_pair( (<span class="keywordtype">int</span>)(trk.getCentroidY()/8), trkIdx)); </div>
+<div class="line"><span class="lineno">  569</span>      </div>
+<div class="line"><span class="lineno">  570</span>    }</div>
+<div class="line"><span class="lineno">  571</span>    <span class="keywordflow">else</span> {  <span class="comment">//3. get the remaining tracks (from vertical bars) and map them (back) to (middle of) quadrants </span></div>
+<div class="line"><span class="lineno">  572</span>      xQuadMap.insert(std::make_pair( (<span class="keywordtype">int</span>)(trk.getCentroidY()/8), trk));</div>
+<div class="line"><span class="lineno">  573</span>      xTrackMap[ trk ] = trkIdx;</div>
+<div class="line"><span class="lineno">  574</span>      xIdxQuadMap.insert(std::make_pair( (<span class="keywordtype">int</span>)(trk.getCentroidY()/8), trkIdx)); </div>
+<div class="line"><span class="lineno">  575</span>      <span class="keywordflow">if</span> (verbose_) </div>
+<div class="line"><span class="lineno">  576</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; --  In matchXYTracks found x track at (x,y) = (&quot;</span> &lt;&lt; trk.getCentroidX() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; trk.getCentroidY() &lt;&lt; <span class="stringliteral">&quot;); mapping to quad &quot;</span> &lt;&lt; (int)trk.getCentroidY()/8 &lt;&lt; <span class="stringliteral">&quot; with trk index &quot;</span> &lt;&lt; trkIdx ;</div>
+<div class="line"><span class="lineno">  577</span>    }</div>
+<div class="line"><span class="lineno">  578</span>  }</div>
+<div class="line"><span class="lineno">  579</span>  </div>
+<div class="line"><span class="lineno">  580</span> </div>
+<div class="line"><span class="lineno">  581</span>  <span class="comment">// 4a1) here use the geometry? if we can assume perfect alignment we can take width and nBars and take nBars/2 as origin</span></div>
+<div class="line"><span class="lineno">  582</span>  <span class="comment">// --- now do the matching ---</span></div>
+<div class="line"><span class="lineno">  583</span> </div>
+<div class="line"><span class="lineno">  584</span>  <span class="comment">//if there is no useful matching to be done: these are the pad width wide numbers </span></div>
+<div class="line"><span class="lineno">  585</span>  <span class="keywordtype">float</span> x0 = 0;</div>
+<div class="line"><span class="lineno">  586</span>  <span class="keywordtype">float</span> sx0 = fabs(xStart_); <span class="comment">// this should be half the pad... could also set it to full beam spot width</span></div>
+<div class="line"><span class="lineno">  587</span>  <span class="keywordtype">float</span> sy0 = fabs(yStart_)/4.; <span class="comment">// yStart_ is half the pad, so this should be half a quadrant</span></div>
+<div class="line"><span class="lineno">  588</span>  </div>
+<div class="line"><span class="lineno">  589</span>  <span class="comment">//assume at least one y track. will have to figure out if there is ever a reason to use an isolated x track in its place.</span></div>
+<div class="line"><span class="lineno">  590</span>  <span class="keywordflow">for</span> ( <span class="keyword">auto</span> yitr = yQuadMap.begin(); yitr != yQuadMap.end(); ++yitr) {</div>
+<div class="line"><span class="lineno">  591</span>    <span class="keywordtype">int</span> nYinQuad =  yQuadMap.count( (*yitr).first );</div>
+<div class="line"><span class="lineno">  592</span>    <span class="keywordtype">int</span> nXinQuad =  xQuadMap.count( (*yitr).first );</div>
+<div class="line"><span class="lineno">  593</span>    <span class="keywordtype">float</span> y, sy, x, x1, x2, sx1, sx2, y1, y2, sy1, sy2;</div>
+<div class="line"><span class="lineno">  594</span>    <span class="comment">//quad midpoint: </span></div>
+<div class="line"><span class="lineno">  595</span>    <span class="keywordtype">float</span> y0 = (*yitr).first*8 + sy0;</div>
+<div class="line"><span class="lineno">  596</span>    <span class="keywordtype">float</span> sx  = 1./2*xConvFactor_; <span class="comment">//rely on x precision being one single bar width; always used unless x is undeterminable </span></div>
+<div class="line"><span class="lineno">  597</span> </div>
+<div class="line"><span class="lineno">  598</span>    <span class="comment">//check all x first</span></div>
+<div class="line"><span class="lineno">  599</span>    <span class="comment">//do the easiest first:</span></div>
+<div class="line"><span class="lineno">  600</span>    <span class="keywordflow">if</span> (nXinQuad == 0 ) { <span class="comment">// then there&#39;s no hope of setting a better x here</span></div>
+<div class="line"><span class="lineno">  601</span>      <span class="comment">// just use the beam spot width... and center of pad </span></div>
+<div class="line"><span class="lineno">  602</span>      x = x0;</div>
+<div class="line"><span class="lineno">  603</span>      sx = sx0;</div>
+<div class="line"><span class="lineno">  604</span>      <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  605</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t\t no x info in quad &quot;</span> &lt;&lt; (*yitr).first &lt;&lt; <span class="stringliteral">&quot;; will set x to middle of pad, pad half-width as precision: set (x, sx)=(&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; sx &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">  606</span>    } <span class="comment">//0 x tracks in quadrant</span></div>
+<div class="line"><span class="lineno">  607</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nXinQuad == 1 ) {  <span class="comment">//slightly harder: 1 x track -- might be easy if it&#39;s just one y track; if several, need to think about overlaps. but in overlap case, just revert to setting x0 and sx0, when we know  </span></div>
+<div class="line"><span class="lineno">  608</span>      <span class="keyword">auto</span> xitr = xQuadMap.find( (*yitr).first );</div>
+<div class="line"><span class="lineno">  609</span>      x = ((*xitr).second).getCentroidX() * xConvFactor_ + xStart_;</div>
+<div class="line"><span class="lineno">  610</span> </div>
+<div class="line"><span class="lineno">  611</span>      <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  612</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t\t 1 x in quad &quot;</span> &lt;&lt; (*yitr).first &lt;&lt; <span class="stringliteral">&quot;, getting (x, sx)=(&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; sx &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">  613</span>      }<span class="comment">// 1 x track in quadrant </span></div>
+<div class="line"><span class="lineno">  614</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nXinQuad == 2) {   <span class="comment">// finally if we have two tracks, get x1 and x2 and decide later how to use them</span></div>
+<div class="line"><span class="lineno">  615</span>      <span class="comment">// don&#39;t think we want to experiment with discerning three overlapping tracks, so not &gt;= 2</span></div>
+<div class="line"><span class="lineno">  616</span>      <span class="comment">//          continue; //debugging: skip for now -- didn&#39;t help</span></div>
+<div class="line"><span class="lineno">  617</span>      <span class="keyword">auto</span> xitr1 = xQuadMap.lower_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  618</span>      <span class="keyword">auto</span> xitr2 = xQuadMap.upper_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  619</span>      xitr2--; <span class="comment">//upper_bound points to next element</span></div>
+<div class="line"><span class="lineno">  620</span> </div>
+<div class="line"><span class="lineno">  621</span>      <span class="keywordflow">if</span> (xitr1 != xitr2) {<span class="comment">// should be true already but...   </span></div>
+<div class="line"><span class="lineno">  622</span>        x1  = ((*xitr1).second).getCentroidX() * xConvFactor_ + xStart_;</div>
+<div class="line"><span class="lineno">  623</span>        x2  = ((*xitr2).second).getCentroidX() * xConvFactor_ + xStart_;</div>
+<div class="line"><span class="lineno">  624</span>        sx1 = xConvFactor_/2.;  <span class="comment">//1 bar width </span></div>
+<div class="line"><span class="lineno">  625</span>        sx2 = sx1; </div>
+<div class="line"><span class="lineno">  626</span>        x = (x1+x2)/2.;</div>
+<div class="line"><span class="lineno">  627</span>        sx = fabs(x1-x2)/2*xConvFactor_; <span class="comment">//rely on x precision being one single pad width</span></div>
+<div class="line"><span class="lineno">  628</span>        <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  629</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t -- 2 x in quad: setting y track x coordinate to midpoint&quot;</span>;</div>
+<div class="line"><span class="lineno">  630</span>      }</div>
+<div class="line"><span class="lineno">  631</span>    }<span class="comment">// if 2 x tracks in quad </span></div>
+<div class="line"><span class="lineno">  632</span> </div>
+<div class="line"><span class="lineno">  633</span>    </div>
+<div class="line"><span class="lineno">  634</span>    <span class="comment">//ok! over y:</span></div>
+<div class="line"><span class="lineno">  635</span>    <span class="comment">// can skip 0 y case by construction </span></div>
+<div class="line"><span class="lineno">  636</span>    <span class="keywordflow">if</span> (nYinQuad == 1 ){  <span class="comment">// we can already now tell what the y coordinate and its precision is   </span></div>
+<div class="line"><span class="lineno">  637</span>      y = ((*yitr).second).getCentroidY() * yConvFactor_ + yStart_;</div>
+<div class="line"><span class="lineno">  638</span>      sy = ((*yitr).second).getResidual() * yConvFactor_;</div>
+<div class="line"><span class="lineno">  639</span>      <span class="keywordflow">if</span> (sy == 0 )</div>
+<div class="line"><span class="lineno">  640</span>        sy = 1./2*yConvFactor_; <span class="comment">//if all clusters lined up, assign precision of 1 bar width                                                                                       </span></div>
+<div class="line"><span class="lineno">  641</span> </div>
+<div class="line"><span class="lineno">  642</span>      <span class="keywordflow">if</span> (nXinQuad &lt;= 1 ) {</div>
+<div class="line"><span class="lineno">  643</span>        <span class="comment">//4. every quadrant which just has one of each --&gt; done ;      </span></div>
+<div class="line"><span class="lineno">  644</span>        <span class="comment">// b) set the sx, sy of the x track now, using the residuals from the other</span></div>
+<div class="line"><span class="lineno">  645</span>        <span class="comment">// b1) special case: no x tracks; then x, sx have been set above </span></div>
+<div class="line"><span class="lineno">  646</span>        <span class="keyword">auto</span> xidx = xIdxQuadMap.find( (*yitr).first );</div>
+<div class="line"><span class="lineno">  647</span>        <span class="keyword">auto</span> yidx = yIdxQuadMap.find( (*yitr).first );</div>
+<div class="line"><span class="lineno">  648</span>        tracks.at( (*xidx).second).setPosition(x,y);</div>
+<div class="line"><span class="lineno">  649</span>        tracks.at( (*xidx).second).setSigmaXY(sx, sy);</div>
+<div class="line"><span class="lineno">  650</span>        tracks.at( (*yidx).second).setPosition(x,y);</div>
+<div class="line"><span class="lineno">  651</span>        tracks.at( (*yidx).second).setSigmaXY(sx, sy);</div>
+<div class="line"><span class="lineno">  652</span>        <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  653</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t\t in quad &quot;</span> &lt;&lt; (*yitr).first &lt;&lt; <span class="stringliteral">&quot;, set (x, y) = (&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot;) and (sx, sy) = &quot;</span>&lt;&lt; sx &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; sy &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">  654</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  655</span>      }</div>
+<div class="line"><span class="lineno">  656</span>    }<span class="comment">// 1 y, 0 or 1 x track in quadrant </span></div>
+<div class="line"><span class="lineno">  657</span>    </div>
+<div class="line"><span class="lineno">  658</span>    <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  659</span>      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t in quad &quot;</span> &lt;&lt; (*yitr).first &lt;&lt; <span class="stringliteral">&quot;, not single x,y tracks: &quot;</span> &lt;&lt; nXinQuad &lt;&lt; <span class="stringliteral">&quot; of x and &quot;</span>&lt;&lt; nYinQuad &lt;&lt; <span class="stringliteral">&quot; of y&quot;</span>;</div>
+<div class="line"><span class="lineno">  660</span> </div>
+<div class="line"><span class="lineno">  661</span>    <span class="keywordflow">if</span> (nYinQuad == 2) {<span class="comment">// let&#39;s start here and see if we can do &gt;= 2 later</span></div>
+<div class="line"><span class="lineno">  662</span>      <span class="comment">//here one could do sth to avoid checking the other y track again in the outermost loop over y </span></div>
+<div class="line"><span class="lineno">  663</span>      <span class="keyword">auto</span> yitr1 = yQuadMap.lower_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  664</span>      <span class="keyword">auto</span> yitr2 = yQuadMap.upper_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  665</span>      yitr2--; <span class="comment">//back up once </span></div>
+<div class="line"><span class="lineno">  666</span>      y1  = ((*yitr1).second).getCentroidY() * yConvFactor_ + yStart_;</div>
+<div class="line"><span class="lineno">  667</span>      y2  = ((*yitr2).second).getCentroidY() * yConvFactor_ + yStart_;</div>
+<div class="line"><span class="lineno">  668</span>      sy1 = ((*yitr1).second).getResidual()*yConvFactor_;</div>
+<div class="line"><span class="lineno">  669</span>      sy2 = ((*yitr2).second).getResidual()*yConvFactor_;</div>
+<div class="line"><span class="lineno">  670</span>      y = (y1+y2)/2.;</div>
+<div class="line"><span class="lineno">  671</span>      sy = fabs(y1-y2)/2*yConvFactor_;</div>
+<div class="line"><span class="lineno">  672</span>      <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  673</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t -- 2 y in quad: setting x track y coordinate to midpoint&quot;</span>;</div>
+<div class="line"><span class="lineno">  674</span>    } <span class="comment">//2y in quad </span></div>
+<div class="line"><span class="lineno">  675</span> </div>
+<div class="line"><span class="lineno">  676</span>    <span class="keywordflow">if</span> (nYinQuad == 1 &amp;&amp; nXinQuad == 2) {<span class="comment">// don&#39;t think we want to experiment with discerning three overlapping tracks, so not &gt;= 2</span></div>
+<div class="line"><span class="lineno">  677</span> </div>
+<div class="line"><span class="lineno">  678</span>      <span class="comment">//first: set the y track coordinates to x  = the mid of x tracks, y = y of y track </span></div>
+<div class="line"><span class="lineno">  679</span>      <span class="keyword">auto</span> yidx = yIdxQuadMap.find( (*yitr).first );</div>
+<div class="line"><span class="lineno">  680</span>      tracks.at( (*yidx).second).setPosition(x,y);</div>
+<div class="line"><span class="lineno">  681</span>      tracks.at( (*yidx).second).setSigmaXY(sx, sy);              </div>
+<div class="line"><span class="lineno">  682</span> </div>
+<div class="line"><span class="lineno">  683</span>      <span class="keywordtype">int</span> minOverlapPE_ = 250;</div>
+<div class="line"><span class="lineno">  684</span>      <span class="keywordflow">if</span> (((*yitr).second).getPE() &lt; minOverlapPE_ ) {</div>
+<div class="line"><span class="lineno">  685</span>        <span class="comment">// can&#39;t tell, really, that either of these belong to the y track. so.</span></div>
+<div class="line"><span class="lineno">  686</span>        <span class="comment">// let them keep their own x coordinate but set y to quadrant midpoint, with uncertainty +/- half quadrant width (1/8 of pad height)</span></div>
+<div class="line"><span class="lineno">  687</span>        y = y0;</div>
+<div class="line"><span class="lineno">  688</span>        sy = sy0;</div>
+<div class="line"><span class="lineno">  689</span>        <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  690</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t -- Can&#39;t tell which x track should be matched to single y track. Setting both x track coordinates to y quadrant value:&quot;</span> ;</div>
+<div class="line"><span class="lineno">  691</span>      }<span class="comment">// if can&#39;t assume overlap </span></div>
+<div class="line"><span class="lineno">  692</span>      <span class="keywordflow">else</span> </div>
+<div class="line"><span class="lineno">  693</span>        <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  694</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t -- Found large PE count (&quot;</span> &lt;&lt; ((*yitr).second).getPE() &lt;&lt; <span class="stringliteral">&quot; &gt; &quot;</span> &lt;&lt; minOverlapPE_</div>
+<div class="line"><span class="lineno">  695</span>                          &lt;&lt; <span class="stringliteral">&quot;), suggesting overlap! Setting both x track coordinates to y track value:&quot;</span> ;</div>
+<div class="line"><span class="lineno">  696</span>        </div>
+<div class="line"><span class="lineno">  697</span>      <span class="comment">// consider making two x tracks out if this one, and, anyway have to set their average as the y track x cocordinate</span></div>
+<div class="line"><span class="lineno">  698</span>      <span class="comment">//EXPERIMENTAL : apply only to x tracks, which can be disregarded for electron counting</span></div>
+<div class="line"><span class="lineno">  699</span>      <span class="keywordflow">if</span> (verbose_) ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t --  (x1, x2, y) = (&quot;</span></div>
+<div class="line"><span class="lineno">  700</span>                                    &lt;&lt; x1 &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; x2 &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot;) and (sx1, sx2, sy) = &quot;</span></div>
+<div class="line"><span class="lineno">  701</span>                                    &lt;&lt; sx1 &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; sx2 &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>&lt;&lt; sy &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">  702</span>        </div>
+<div class="line"><span class="lineno">  703</span>      <span class="comment">//now set x track coordinates according to overlap check result </span></div>
+<div class="line"><span class="lineno">  704</span>      <span class="keyword">auto</span> xidx1 = xIdxQuadMap.lower_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  705</span>      <span class="keyword">auto</span> xidx2 = xIdxQuadMap.upper_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  706</span>      xidx2--; <span class="comment">//upper_bound points to (last+1) element</span></div>
+<div class="line"><span class="lineno">  707</span>      tracks.at( (*xidx1).second).setPosition(x1,y);</div>
+<div class="line"><span class="lineno">  708</span>      tracks.at( (*xidx1).second).setSigmaXY(sx1, sy);            </div>
+<div class="line"><span class="lineno">  709</span>      tracks.at( (*xidx2).second).setPosition(x2,y);</div>
+<div class="line"><span class="lineno">  710</span>      tracks.at( (*xidx2).second).setSigmaXY(sx2, sy);</div>
+<div class="line"><span class="lineno">  711</span>        </div>
+<div class="line"><span class="lineno">  712</span>    }<span class="comment">// 1 y, 2 x tracks in the quadrant </span></div>
+<div class="line"><span class="lineno">  713</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nYinQuad == 2 &amp;&amp; nXinQuad == 1) {</div>
+<div class="line"><span class="lineno">  714</span>      <span class="comment">// 5b) if there are more y than x: could be an overlap</span></div>
+<div class="line"><span class="lineno">  715</span>                                                                                                    </div>
+<div class="line"><span class="lineno">  716</span>      <span class="comment">//first: set the x track coordinates to x = x of x track, y = the mid of y tracks</span></div>
+<div class="line"><span class="lineno">  717</span>      <span class="keyword">auto</span> xidx  = xIdxQuadMap.find( (*yitr).first );</div>
+<div class="line"><span class="lineno">  718</span>      tracks.at( (*xidx).second).setPosition(x,y);</div>
+<div class="line"><span class="lineno">  719</span>      tracks.at( (*xidx).second).setSigmaXY(sx, sy);</div>
+<div class="line"><span class="lineno">  720</span>        </div>
+<div class="line"><span class="lineno">  721</span>      <span class="keyword">auto</span> xitr  = xQuadMap.lower_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  722</span>      <span class="keywordtype">int</span> minOverlapPE_ = 300;</div>
+<div class="line"><span class="lineno">  723</span>      <span class="keywordflow">if</span> (((*xitr).second).getPE() &lt; minOverlapPE_ ) {</div>
+<div class="line"><span class="lineno">  724</span>        <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  725</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t just 1 x track with not-unusual PE in the quad -- can&#39;t match; setting mid-point values for x &quot;</span>;</div>
+<div class="line"><span class="lineno">  726</span>        x = x0;</div>
+<div class="line"><span class="lineno">  727</span>        sx = sx0 ;</div>
+<div class="line"><span class="lineno">  728</span>      }<span class="comment">//if can&#39;t assume overlap</span></div>
+<div class="line"><span class="lineno">  729</span>      <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  730</span>        <span class="comment">// consider making two x tracks out if this one, and, anyway have to set their average as the y track x cocordinate      </span></div>
+<div class="line"><span class="lineno">  731</span>        <span class="comment">//EXPERIMENTAL : apply only to x tracks, which can be disregarded for electron counting                                                                                </span></div>
+<div class="line"><span class="lineno">  732</span>        <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  733</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t -- Found large PE count (&quot;</span> &lt;&lt; ((*xitr).second).getPE() &lt;&lt; <span class="stringliteral">&quot; &gt; &quot;</span> &lt;&lt; minOverlapPE_</div>
+<div class="line"><span class="lineno">  734</span>                          &lt;&lt; <span class="stringliteral">&quot;) in x track, suggesting overlap! Setting both y track coordinates to x track value:&quot;</span> ;</div>
+<div class="line"><span class="lineno">  735</span>      }<span class="comment">// if can assume overlap</span></div>
+<div class="line"><span class="lineno">  736</span>      <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  737</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t --  (x, y1, y2) = (&quot;</span></div>
+<div class="line"><span class="lineno">  738</span>                        &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; y1 &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; y2 &lt;&lt; <span class="stringliteral">&quot;) and (sx, sy1, sy2) = &quot;</span></div>
+<div class="line"><span class="lineno">  739</span>                        &lt;&lt; sx &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; sy1 &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>&lt;&lt; sy2 &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">  740</span>        </div>
+<div class="line"><span class="lineno">  741</span>      <span class="keyword">auto</span> yidx1 = yIdxQuadMap.lower_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  742</span>      <span class="keyword">auto</span> yidx2 = yIdxQuadMap.upper_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  743</span>      yidx2--; <span class="comment">//upper_bound points to next element</span></div>
+<div class="line"><span class="lineno">  744</span>      tracks.at( (*yidx1).second).setPosition(x,y1);</div>
+<div class="line"><span class="lineno">  745</span>      tracks.at( (*yidx1).second).setSigmaXY(sx, sy1);</div>
+<div class="line"><span class="lineno">  746</span>      tracks.at( (*yidx2).second).setPosition(x,y2);</div>
+<div class="line"><span class="lineno">  747</span>      tracks.at( (*yidx2).second).setSigmaXY(sx, sy2);</div>
+<div class="line"><span class="lineno">  748</span> </div>
+<div class="line"><span class="lineno">  749</span>    }<span class="comment">// 2 y and 1 x track in quad </span></div>
+<div class="line"><span class="lineno">  750</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( nYinQuad == 2 &amp;&amp; nXinQuad == 2 ) {</div>
+<div class="line"><span class="lineno">  751</span>      <span class="comment">//MIDPONTS ALL OVER!</span></div>
+<div class="line"><span class="lineno">  752</span>      <span class="keyword">auto</span> xidx1 = xIdxQuadMap.lower_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  753</span>      <span class="keyword">auto</span> xidx2 = xIdxQuadMap.upper_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  754</span>      xidx2--;</div>
+<div class="line"><span class="lineno">  755</span>      <span class="keyword">auto</span> yidx1 = yIdxQuadMap.lower_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  756</span>      <span class="keyword">auto</span> yidx2 = yIdxQuadMap.upper_bound( (*yitr).first );</div>
+<div class="line"><span class="lineno">  757</span>      yidx2--;</div>
+<div class="line"><span class="lineno">  758</span> </div>
+<div class="line"><span class="lineno">  759</span>      <span class="keywordflow">if</span> ( yIdxQuadMap.find( (*yitr).first )== yIdxQuadMap.end() )</div>
+<div class="line"><span class="lineno">  760</span>        ldmx_log(error) &lt;&lt; <span class="stringliteral">&quot;The two y tracks in the same quadrant at &quot;</span> &lt;&lt; (*yitr).first &lt;&lt; <span class="stringliteral">&quot; appear to not be found in the y track map! investigate. Note that yidx1.first = &quot;</span> &lt;&lt; (*yidx1).first &lt;&lt; <span class="stringliteral">&quot; and  yidx2.first = &quot;</span> &lt;&lt; (*yidx2).first ;</div>
+<div class="line"><span class="lineno">  761</span>      <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  762</span>        tracks.at( (*xidx1).second).setPosition(x1,y);</div>
+<div class="line"><span class="lineno">  763</span>        tracks.at( (*xidx1).second).setSigmaXY(sx1, sy);</div>
+<div class="line"><span class="lineno">  764</span>        tracks.at( (*xidx2).second).setPosition(x2,y);</div>
+<div class="line"><span class="lineno">  765</span>        tracks.at( (*xidx2).second).setSigmaXY(sx2, sy);</div>
+<div class="line"><span class="lineno">  766</span>          </div>
+<div class="line"><span class="lineno">  767</span>        tracks.at( (*yidx1).second).setPosition(x,y1);</div>
+<div class="line"><span class="lineno">  768</span>        tracks.at( (*yidx1).second).setSigmaXY(sx, sy1);</div>
+<div class="line"><span class="lineno">  769</span>        tracks.at( (*yidx2).second).setPosition(x,y2);</div>
+<div class="line"><span class="lineno">  770</span>        tracks.at( (*yidx2).second).setSigmaXY(sx, sy2);</div>
+<div class="line"><span class="lineno">  771</span> </div>
+<div class="line"><span class="lineno">  772</span>        <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  773</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t -- in a 2 x 2 situaiton; midpoint y: &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot; for both x tracks, midpoint x: &quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; for both y tracks&quot;</span>;</div>
+<div class="line"><span class="lineno">  774</span>      }</div>
+<div class="line"><span class="lineno">  775</span>    } <span class="comment">// if 2 y, 2 x tracks </span></div>
+<div class="line"><span class="lineno">  776</span>    </div>
+<div class="line"><span class="lineno">  777</span>    <span class="keywordflow">if</span> ( nXinQuad &gt; 2) {</div>
+<div class="line"><span class="lineno">  778</span>      <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  779</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t -*-*-*- more than 2 x tracks in the same quad -- nothing done about the x,y coordinates in this situation -- implement if needed!!&quot;</span> ;</div>
+<div class="line"><span class="lineno">  780</span>    }</div>
+<div class="line"><span class="lineno">  781</span>    <span class="keywordflow">if</span> ( nYinQuad &gt; 2) {</div>
+<div class="line"><span class="lineno">  782</span>      <span class="keywordflow">if</span> (verbose_)</div>
+<div class="line"><span class="lineno">  783</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\t -*-*-*- more than 2 y tracks in the same quad -- nothing done about the x,y coordinates in this situation -- implement if needed!!&quot;</span> ;</div>
+<div class="line"><span class="lineno">  784</span>    }</div>
+<div class="line"><span class="lineno">  785</span>    </div>
+<div class="line"><span class="lineno">  786</span>  }<span class="comment">// over y tracks </span></div>
+<div class="line"><span class="lineno">  787</span>  </div>
+<div class="line"><span class="lineno">  788</span>  yQuadMap.clear();</div>
+<div class="line"><span class="lineno">  789</span>  xQuadMap.clear();</div>
+<div class="line"><span class="lineno">  790</span> </div>
+<div class="line"><span class="lineno">  791</span> </div>
+<div class="line"><span class="lineno">  792</span>  <span class="comment">//  return tracks;</span></div>
+<div class="line"><span class="lineno">  793</span>  </div>
+<div class="line"><span class="lineno">  794</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -372,12 +740,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00377">377</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  377</span>                                         {</div>
-<div class="line"><span class="lineno">  378</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Closing file!&quot;</span>;</div>
-<div class="line"><span class="lineno">  379</span> </div>
-<div class="line"><span class="lineno">  380</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  381</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00802">802</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  802</span>                                         {</div>
+<div class="line"><span class="lineno">  803</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Closing file!&quot;</span>;</div>
+<div class="line"><span class="lineno">  804</span> </div>
+<div class="line"><span class="lineno">  805</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  806</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -404,12 +772,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00371">371</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  371</span>                                        {</div>
-<div class="line"><span class="lineno">  372</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Opening file!&quot;</span>;</div>
-<div class="line"><span class="lineno">  373</span> </div>
-<div class="line"><span class="lineno">  374</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  375</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00796">796</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  796</span>                                        {</div>
+<div class="line"><span class="lineno">  797</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Opening file!&quot;</span>;</div>
+<div class="line"><span class="lineno">  798</span> </div>
+<div class="line"><span class="lineno">  799</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  800</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -439,12 +807,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a527ebdf1fe665011964d9ce42a5521ad">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00389">389</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  389</span>                                          {</div>
-<div class="line"><span class="lineno">  390</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Process ends!&quot;</span>;</div>
-<div class="line"><span class="lineno">  391</span> </div>
-<div class="line"><span class="lineno">  392</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  393</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00814">814</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  814</span>                                          {</div>
+<div class="line"><span class="lineno">  815</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Process ends!&quot;</span>;</div>
+<div class="line"><span class="lineno">  816</span> </div>
+<div class="line"><span class="lineno">  817</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  818</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -474,12 +842,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#ab54bb3abaafcb4f4b4b42d0a2ff616a9">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00383">383</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  383</span>                                            {</div>
-<div class="line"><span class="lineno">  384</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Process starts!&quot;</span>;</div>
-<div class="line"><span class="lineno">  385</span> </div>
-<div class="line"><span class="lineno">  386</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  387</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00808">808</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  808</span>                                            {</div>
+<div class="line"><span class="lineno">  809</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Process starts!&quot;</span>;</div>
+<div class="line"><span class="lineno">  810</span> </div>
+<div class="line"><span class="lineno">  811</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  812</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -515,311 +883,520 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00036">36</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>                                                          {</div>
-<div class="line"><span class="lineno">   37</span>  <span class="comment">// parameters.</span></div>
-<div class="line"><span class="lineno">   38</span>  <span class="comment">// one pad cluster collection to use as seed</span></div>
-<div class="line"><span class="lineno">   39</span>  <span class="comment">// a vector with the other two</span></div>
-<div class="line"><span class="lineno">   40</span>  <span class="comment">// a maximum distance between seed centroid and other pad clusters</span></div>
-<div class="line"><span class="lineno">   41</span>  <span class="comment">//   allowed to belong to the same track</span></div>
-<div class="line"><span class="lineno">   42</span>  <span class="comment">// an output collection name a verbosity controller</span></div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>  <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">   45</span>    ldmx_log(debug)</div>
-<div class="line"><span class="lineno">   46</span>        &lt;&lt; <span class="stringliteral">&quot;TrigScintTrackProducer: produce() starts! Event number: &quot;</span></div>
-<div class="line"><span class="lineno">   47</span>        &lt;&lt; <span class="keyword">event</span>.getEventHeader().getEventNumber();</div>
-<div class="line"><span class="lineno">   48</span>  }</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>  <span class="keywordflow">if</span> (!event.<a class="code hl_function" href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">exists</a>(seeding_collection_, passName_)) {</div>
-<div class="line"><span class="lineno">   51</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; seeding_collection_</div>
-<div class="line"><span class="lineno">   52</span>                   &lt;&lt; <span class="stringliteral">&quot;; skipping event&quot;</span>;</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   54</span>  }</div>
-<div class="line"><span class="lineno">   55</span>  <span class="keyword">const</span> <span class="keyword">auto</span> seeds{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1TrigScintCluster.html">ldmx::TrigScintCluster</a>&gt;(</div>
-<div class="line"><span class="lineno">   56</span>      seeding_collection_, passName_)};</div>
-<div class="line"><span class="lineno">   57</span>  uint numSeeds = seeds.size();</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>  <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">   60</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got track seeding cluster collection &quot;</span></div>
-<div class="line"><span class="lineno">   61</span>                    &lt;&lt; seeding_collection_ &lt;&lt; <span class="stringliteral">&quot; with &quot;</span> &lt;&lt; numSeeds</div>
-<div class="line"><span class="lineno">   62</span>                    &lt;&lt; <span class="stringliteral">&quot; entries &quot;</span>;</div>
-<div class="line"><span class="lineno">   63</span>  }</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>  <span class="keywordflow">if</span> (!event.<a class="code hl_function" href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">exists</a>(input_collections_.at(0), passName_)) {</div>
-<div class="line"><span class="lineno">   66</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; input_collections_.at(0)</div>
-<div class="line"><span class="lineno">   67</span>      <span class="comment">//                   &lt;&lt; &quot;; still, not skipping event&quot;;</span></div>
-<div class="line"><span class="lineno">   68</span>                   &lt;&lt; <span class="stringliteral">&quot;; skipping event&quot;</span>;</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   70</span>  }</div>
-<div class="line"><span class="lineno">   71</span>  <span class="keyword">const</span> <span class="keyword">auto</span> clusters_pad1{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1TrigScintCluster.html">ldmx::TrigScintCluster</a>&gt;(</div>
-<div class="line"><span class="lineno">   72</span>      input_collections_.at(0), passName_)};</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">if</span> (!event.<a class="code hl_function" href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">exists</a>(input_collections_.at(1), passName_)) {</div>
-<div class="line"><span class="lineno">   75</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; input_collections_.at(1)</div>
-<div class="line"><span class="lineno">   76</span>      <span class="comment">//                   &lt;&lt; &quot;; still, not skipping event&quot;;</span></div>
-<div class="line"><span class="lineno">   77</span>                   &lt;&lt; <span class="stringliteral">&quot;; skipping event&quot;</span>;</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   79</span>  }</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>  <span class="keyword">const</span> <span class="keyword">auto</span> clusters_pad2{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1TrigScintCluster.html">ldmx::TrigScintCluster</a>&gt;(</div>
-<div class="line"><span class="lineno">   82</span>      input_collections_.at(1), passName_)};</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>  <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">   85</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got the other two pad collections:&quot;</span></div>
-<div class="line"><span class="lineno">   86</span>                    &lt;&lt; input_collections_.at(0) &lt;&lt; <span class="stringliteral">&quot; with &quot;</span></div>
-<div class="line"><span class="lineno">   87</span>                    &lt;&lt; clusters_pad1.size() &lt;&lt; <span class="stringliteral">&quot; entries, and &quot;</span></div>
-<div class="line"><span class="lineno">   88</span>                    &lt;&lt; input_collections_.at(1) &lt;&lt; <span class="stringliteral">&quot; with &quot;</span></div>
-<div class="line"><span class="lineno">   89</span>                    &lt;&lt; clusters_pad2.size() &lt;&lt; <span class="stringliteral">&quot; entries.&quot;</span>;</div>
-<div class="line"><span class="lineno">   90</span>  }</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>  std::vector&lt;ldmx::TrigScintTrack&gt; cleanedTracks;</div>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8cxx_source.html#l00059">59</a> of file <a class="el" href="TrigScintTrackProducer_8cxx_source.html">TrigScintTrackProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>                                                          {</div>
+<div class="line"><span class="lineno">   60</span>  <span class="comment">// parameters.</span></div>
+<div class="line"><span class="lineno">   61</span>  <span class="comment">// one pad cluster collection to use as seed</span></div>
+<div class="line"><span class="lineno">   62</span>  <span class="comment">// a vector with the other two</span></div>
+<div class="line"><span class="lineno">   63</span>  <span class="comment">// a maximum distance between seed centroid and other pad clusters</span></div>
+<div class="line"><span class="lineno">   64</span>  <span class="comment">//   allowed to belong to the same track</span></div>
+<div class="line"><span class="lineno">   65</span>  <span class="comment">// an output collection name a verbosity controller</span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">   68</span>    ldmx_log(debug)</div>
+<div class="line"><span class="lineno">   69</span>        &lt;&lt; <span class="stringliteral">&quot;TrigScintTrackProducer: produce() starts! Event number: &quot;</span></div>
+<div class="line"><span class="lineno">   70</span>        &lt;&lt; <span class="keyword">event</span>.getEventHeader().getEventNumber();</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span> (!event.<a class="code hl_function" href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">exists</a>(seeding_collection_, passName_)) {</div>
+<div class="line"><span class="lineno">   73</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; seeding_collection_</div>
+<div class="line"><span class="lineno">   74</span>                   &lt;&lt; <span class="stringliteral">&quot;; skipping event&quot;</span>;</div>
+<div class="line"><span class="lineno">   75</span>    <span class="comment">//                   &lt;&lt; &quot;; still, not skipping event&quot;;                                                                                                                       </span></div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>  <span class="keywordflow">if</span> (!event.<a class="code hl_function" href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">exists</a>(seeding_collection_, passName_)) {</div>
+<div class="line"><span class="lineno">   80</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; seeding_collection_</div>
+<div class="line"><span class="lineno">   81</span>                   &lt;&lt; <span class="stringliteral">&quot;; skipping event&quot;</span>;</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   83</span>  }</div>
+<div class="line"><span class="lineno">   84</span>  <span class="keyword">const</span> <span class="keyword">auto</span> seeds{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1TrigScintCluster.html">ldmx::TrigScintCluster</a>&gt;(</div>
+<div class="line"><span class="lineno">   85</span>      seeding_collection_, passName_)};</div>
+<div class="line"><span class="lineno">   86</span>  uint numSeeds = seeds.size();</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>  <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">   89</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got track seeding cluster collection &quot;</span></div>
+<div class="line"><span class="lineno">   90</span>                    &lt;&lt; seeding_collection_ &lt;&lt; <span class="stringliteral">&quot; with &quot;</span> &lt;&lt; numSeeds</div>
+<div class="line"><span class="lineno">   91</span>                    &lt;&lt; <span class="stringliteral">&quot; entries &quot;</span>;</div>
+<div class="line"><span class="lineno">   92</span>  }</div>
 <div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>  <span class="comment">// loop over the clusters in the seeding pad collection, if there are clusters</span></div>
-<div class="line"><span class="lineno">   95</span>  <span class="comment">// in all pads</span></div>
-<div class="line"><span class="lineno">   96</span>  <span class="keywordflow">if</span> (numSeeds &amp;&amp; clusters_pad1.size() &amp;&amp; clusters_pad2.size()) {</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;seed : seeds) {</div>
-<div class="line"><span class="lineno">   98</span>      <span class="comment">// for each seed, search through the other two pads to match all clusters</span></div>
-<div class="line"><span class="lineno">   99</span>      <span class="comment">// with centroids within tolerance to tracks</span></div>
-<div class="line"><span class="lineno">  100</span>      <span class="keywordtype">float</span> centroid = seed.getCentroid();</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>      std::vector&lt;ldmx::TrigScintTrack&gt; trackCandidates;</div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">if</span> (!event.<a class="code hl_function" href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">exists</a>(input_collections_.at(0), passName_)) {</div>
+<div class="line"><span class="lineno">   95</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; input_collections_.at(0)</div>
+<div class="line"><span class="lineno">   96</span>                   &lt;&lt; <span class="stringliteral">&quot;; skipping event&quot;</span>;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="comment">//                   &lt;&lt; &quot;; still, not skipping event&quot;;</span></div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="line"><span class="lineno">  101</span>  <span class="keyword">const</span> <span class="keyword">auto</span> clusters_pad1{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1TrigScintCluster.html">ldmx::TrigScintCluster</a>&gt;(</div>
+<div class="line"><span class="lineno">  102</span>      input_collections_.at(0), passName_)};</div>
 <div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
-<div class="line"><span class="lineno">  105</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got seed with centroid &quot;</span> &lt;&lt; centroid;</div>
-<div class="line"><span class="lineno">  106</span>      }</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>      <span class="comment">// reset for each seed</span></div>
-<div class="line"><span class="lineno">  109</span>      <span class="keywordtype">bool</span> madeTrack = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;cluster1 : clusters_pad1) {</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
-<div class="line"><span class="lineno">  113</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\tGot pad1 cluster with centroid &quot;</span></div>
-<div class="line"><span class="lineno">  114</span>                          &lt;&lt; cluster1.getCentroid();</div>
-<div class="line"><span class="lineno">  115</span>        }</div>
-<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">if</span> (fabs(cluster1.getCentroid() - centroid) &lt;</div>
-<div class="line"><span class="lineno">  117</span>            maxDelta_) {  <span class="comment">// first match! loop through next pad too</span></div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>          <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
-<div class="line"><span class="lineno">  120</span>            ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\tIt is close enough!. Check pad2&quot;</span>;</div>
-<div class="line"><span class="lineno">  121</span>          }</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;cluster2 : clusters_pad2) {</div>
-<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
-<div class="line"><span class="lineno">  125</span>              ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\tGot pad2 cluster with centroid &quot;</span></div>
-<div class="line"><span class="lineno">  126</span>                              &lt;&lt; cluster2.getCentroid();</div>
-<div class="line"><span class="lineno">  127</span>            }</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">if</span> (fabs(cluster2.getCentroid() - centroid) &lt;</div>
-<div class="line"><span class="lineno">  130</span>                maxDelta_) {  <span class="comment">// first match! loop through next pad too</span></div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>              <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
-<div class="line"><span class="lineno">  133</span>                ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\tIt is close enough!. Make a track&quot;</span>;</div>
-<div class="line"><span class="lineno">  134</span>              }</div>
-<div class="line"><span class="lineno">  135</span> </div>
-<div class="line"><span class="lineno">  136</span>              <span class="comment">// only make this vector now! this ensures against hanging</span></div>
-<div class="line"><span class="lineno">  137</span>              <span class="comment">// clusters with indices from earlier in the loop</span></div>
-<div class="line"><span class="lineno">  138</span>              std::vector&lt;ldmx::TrigScintCluster&gt; clusterVec = {seed, cluster1,</div>
-<div class="line"><span class="lineno">  139</span>                                                                cluster2};</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>              <span class="comment">// make a track</span></div>
-<div class="line"><span class="lineno">  142</span>              <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> track = makeTrack(clusterVec);</div>
-<div class="line"><span class="lineno">  143</span>              trackCandidates.push_back(track);</div>
-<div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>              <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  146</span><span class="comment">              // here we could break if we didn&#39;t want to allow all possible</span></div>
-<div class="line"><span class="lineno">  147</span><span class="comment">              combinations madeTrack=true; break; //we&#39;re done with this</span></div>
-<div class="line"><span class="lineno">  148</span><span class="comment">              iteration once there&#39;s a track made</span></div>
-<div class="line"><span class="lineno">  149</span><span class="comment">              */</span></div>
-<div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>            }  <span class="comment">// if match in pad2</span></div>
-<div class="line"><span class="lineno">  152</span>          }    <span class="comment">// over clusters in pad2</span></div>
-<div class="line"><span class="lineno">  153</span>        }      <span class="comment">// if match in pad1</span></div>
-<div class="line"><span class="lineno">  154</span>        <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  155</span><span class="comment">        //same here</span></div>
-<div class="line"><span class="lineno">  156</span><span class="comment">        if (madeTrack)</span></div>
-<div class="line"><span class="lineno">  157</span><span class="comment">        break;</span></div>
-<div class="line"><span class="lineno">  158</span><span class="comment">        */</span></div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>      }  <span class="comment">// over clusters in pad1</span></div>
-<div class="line"><span class="lineno">  161</span> </div>
-<div class="line"><span class="lineno">  162</span>      <span class="comment">// continue to next seed if 0 track candidates</span></div>
-<div class="line"><span class="lineno">  163</span>      <span class="keywordflow">if</span> (trackCandidates.size() == 0) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>      <span class="keywordtype">int</span> keepIdx = 0;</div>
-<div class="line"><span class="lineno">  166</span>      <span class="keywordtype">float</span> minResidual = 1000;  <span class="comment">// some large number</span></div>
-<div class="line"><span class="lineno">  167</span> </div>
-<div class="line"><span class="lineno">  168</span>      <span class="comment">// no need to choose between only one candidate track</span></div>
-<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">if</span> (trackCandidates.size() &gt; 1) {</div>
-<div class="line"><span class="lineno">  170</span>        <span class="comment">// now for each seed, pick only the track with the smallest residual.</span></div>
-<div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">  173</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got &quot;</span> &lt;&lt; trackCandidates.size()</div>
-<div class="line"><span class="lineno">  174</span>                          &lt;&lt; <span class="stringliteral">&quot; tracks to check.&quot;</span>;</div>
-<div class="line"><span class="lineno">  175</span>        }</div>
-<div class="line"><span class="lineno">  176</span> </div>
-<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">for</span> (uint idx = 0; idx &lt; trackCandidates.size(); idx++) {</div>
-<div class="line"><span class="lineno">  178</span>          <span class="keywordflow">if</span> ((trackCandidates.at(idx)).getResidual() &lt; minResidual) {</div>
-<div class="line"><span class="lineno">  179</span>            keepIdx = (int)idx;</div>
-<div class="line"><span class="lineno">  180</span>            minResidual =</div>
-<div class="line"><span class="lineno">  181</span>                (trackCandidates.at(idx)).getResidual();  <span class="comment">// update minimum</span></div>
+<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">if</span> (!event.<a class="code hl_function" href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">exists</a>(input_collections_.at(1), passName_)) {</div>
+<div class="line"><span class="lineno">  105</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;No collection called &quot;</span> &lt;&lt; input_collections_.at(1)</div>
+<div class="line"><span class="lineno">  106</span>      <span class="comment">//                   &lt;&lt; &quot;; still, not skipping event&quot;;</span></div>
+<div class="line"><span class="lineno">  107</span>                   &lt;&lt; <span class="stringliteral">&quot;; skipping event&quot;</span>;</div>
+<div class="line"><span class="lineno">  108</span>    std::vector&lt;ldmx::TrigScintTrack&gt; empty{};</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keyword">event</span>.add(output_collection_, empty);</div>
+<div class="line"><span class="lineno">  110</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  111</span>  }</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>  <span class="keyword">const</span> <span class="keyword">auto</span> clusters_pad2{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1TrigScintCluster.html">ldmx::TrigScintCluster</a>&gt;(</div>
+<div class="line"><span class="lineno">  114</span>      input_collections_.at(1), passName_)};</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>  <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  117</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got the other two pad collections:&quot;</span></div>
+<div class="line"><span class="lineno">  118</span>                    &lt;&lt; input_collections_.at(0) &lt;&lt; <span class="stringliteral">&quot; with &quot;</span></div>
+<div class="line"><span class="lineno">  119</span>                    &lt;&lt; clusters_pad1.size() &lt;&lt; <span class="stringliteral">&quot; entries, and &quot;</span></div>
+<div class="line"><span class="lineno">  120</span>                    &lt;&lt; input_collections_.at(1) &lt;&lt; <span class="stringliteral">&quot; with &quot;</span></div>
+<div class="line"><span class="lineno">  121</span>                    &lt;&lt; clusters_pad2.size() &lt;&lt; <span class="stringliteral">&quot; entries.&quot;</span>;</div>
+<div class="line"><span class="lineno">  122</span>  }</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>  std::vector&lt;ldmx::TrigScintTrack&gt; cleanedTracks;</div>
+<div class="line"><span class="lineno">  125</span>  std::vector&lt;ldmx::TrigScintTrack&gt; cleanedTracksY;</div>
+<div class="line"><span class="lineno">  126</span>  std::vector&lt;ldmx::TrigScintTrack&gt; cleanedTracksX;</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>  <span class="comment">// loop over the clusters in the seeding pad collection, if there are clusters</span></div>
+<div class="line"><span class="lineno">  129</span>  <span class="comment">// in all pads</span></div>
+<div class="line"><span class="lineno">  130</span>  <span class="keywordtype">bool</span> skipDn = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  131</span>  <span class="keywordflow">if</span> (numSeeds &amp;&amp; clusters_pad1.size() ) {</div>
+<div class="line"><span class="lineno">  132</span>    <span class="comment">// could check this explicitly here: and then just get out of all checks on the dn pad immediately </span></div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">//  if (! clusters_pad2.size())</span></div>
+<div class="line"><span class="lineno">  134</span>    <span class="comment">//skipDn = true ;</span></div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;seed : seeds) {</div>
+<div class="line"><span class="lineno">  136</span>      <span class="comment">// for each seed, search through the other two pads to match all clusters</span></div>
+<div class="line"><span class="lineno">  137</span>      <span class="comment">// with centroids within tolerance to tracks</span></div>
+<div class="line"><span class="lineno">  138</span>      <span class="keywordtype">float</span> centroid = seed.getCentroid();</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>      std::vector&lt;ldmx::TrigScintTrack&gt; trackCandidates;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>      <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  143</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got seed with centroid &quot;</span> &lt;&lt; centroid;</div>
+<div class="line"><span class="lineno">  144</span>      }</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>      <span class="comment">// reset for each seed</span></div>
+<div class="line"><span class="lineno">  147</span>      <span class="keywordtype">bool</span> madeTrack = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;cluster1 : clusters_pad1) {</div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  151</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\tGot pad1 cluster with centroid &quot;</span></div>
+<div class="line"><span class="lineno">  152</span>                          &lt;&lt; cluster1.getCentroid();</div>
+<div class="line"><span class="lineno">  153</span>        }</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">if</span> (fabs(cluster1.getCentroid() - centroid) &lt;</div>
+<div class="line"><span class="lineno">  155</span>            maxDelta_ ||</div>
+<div class="line"><span class="lineno">  156</span>            ( centroid &gt;= vertBarStartIdx_    <span class="comment">//then in vertical bars</span></div>
+<div class="line"><span class="lineno">  157</span>              &amp;&amp; seed.getCentroidX() == cluster1.getCentroidX() )   ) {</div>
+<div class="line"><span class="lineno">  158</span>            <span class="comment">//use geometry y overlap scheme to see if this is really a match in x</span></div>
+<div class="line"><span class="lineno">  159</span>          <span class="comment">// should be done in a map</span></div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>          <span class="keywordflow">if</span> ( centroid &gt;= vertBarStartIdx_  &amp;&amp;</div>
+<div class="line"><span class="lineno">  162</span>               seed.getCentroidY() &lt; cluster1.getCentroidY() ) {</div>
+<div class="line"><span class="lineno">  163</span>            <span class="comment">//impossible combination</span></div>
+<div class="line"><span class="lineno">  164</span>            <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  165</span>                  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\tSkipping impossible x cluster combination with y flags (tag up) (&quot;</span></div>
+<div class="line"><span class="lineno">  166</span>                                  &lt;&lt; seed.getCentroidY() &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><span class="lineno">  167</span>                                  &lt;&lt; cluster1.getCentroidY()  &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">  168</span>            }</div>
+<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  170</span>          }</div>
+<div class="line"><span class="lineno">  171</span>          </div>
+<div class="line"><span class="lineno">  172</span>          <span class="comment">// else: first (possible) match! loop through next pad too</span></div>
+<div class="line"><span class="lineno">  173</span>          </div>
+<div class="line"><span class="lineno">  174</span>          <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  175</span>            ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\tIt is close enough!. Check pad2&quot;</span>;</div>
+<div class="line"><span class="lineno">  176</span>          }</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>          </div>
+<div class="line"><span class="lineno">  179</span>          <span class="comment">//try making third pad clusters an optional part of track</span></div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>          std::vector&lt;ldmx::TrigScintCluster&gt; clusterVec = {seed, cluster1};</div>
 <div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
-<div class="line"><span class="lineno">  184</span>              ldmx_log(debug)</div>
-<div class="line"><span class="lineno">  185</span>                  &lt;&lt; <span class="stringliteral">&quot;Track at index &quot;</span> &lt;&lt; idx</div>
-<div class="line"><span class="lineno">  186</span>                  &lt;&lt; <span class="stringliteral">&quot; has smallest residual so far: &quot;</span> &lt;&lt; minResidual;</div>
-<div class="line"><span class="lineno">  187</span>            }</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>          }  <span class="comment">// finding min residual</span></div>
-<div class="line"><span class="lineno">  190</span>        }    <span class="comment">// over track candidates</span></div>
-<div class="line"><span class="lineno">  191</span>      }      <span class="comment">// if more than 1 to choose from</span></div>
-<div class="line"><span class="lineno">  192</span> </div>
-<div class="line"><span class="lineno">  193</span>      <span class="comment">// store the track at keepIdx, if there was one we made it this far and</span></div>
-<div class="line"><span class="lineno">  194</span>      <span class="comment">// keepIdx is 0 or has been updated to the smallest residual track idx</span></div>
-<div class="line"><span class="lineno">  195</span>      <span class="comment">//    if (keepIdx &gt;= 0) {</span></div>
-<div class="line"><span class="lineno">  196</span>      tracks_.push_back(trackCandidates.at(keepIdx));</div>
-<div class="line"><span class="lineno">  197</span>      <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">  198</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Kept track at index &quot;</span> &lt;&lt; keepIdx;</div>
-<div class="line"><span class="lineno">  199</span>        (trackCandidates.at(keepIdx)).Print();</div>
-<div class="line"><span class="lineno">  200</span>      }</div>
-<div class="line"><span class="lineno">  201</span>      <span class="comment">//}</span></div>
-<div class="line"><span class="lineno">  202</span>    }  <span class="comment">// over seeds</span></div>
-<div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  204</span>    <span class="comment">// done here if there were no tracks found</span></div>
-<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">if</span> (tracks_.size() == 0) {</div>
-<div class="line"><span class="lineno">  206</span>      <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">  207</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;No tracks found!&quot;</span>;</div>
-<div class="line"><span class="lineno">  208</span>      }</div>
-<div class="line"><span class="lineno">  209</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  210</span>    }</div>
-<div class="line"><span class="lineno">  211</span>    <span class="comment">// now, if there are multiple seeds sharing the same downstream hits, this</span></div>
-<div class="line"><span class="lineno">  212</span>    <span class="comment">// should also be remedied with a selection on min residual.</span></div>
-<div class="line"><span class="lineno">  213</span> </div>
-<div class="line"><span class="lineno">  214</span>    <span class="comment">// The logic of this loop kind of assumes I can remove tracks immediately --</span></div>
-<div class="line"><span class="lineno">  215</span>    <span class="comment">// that way I can do pairwise checks between more tracks within a single</span></div>
-<div class="line"><span class="lineno">  216</span>    <span class="comment">// loop. But for now I haven&#39;t figured out how to erase elements in a fool</span></div>
-<div class="line"><span class="lineno">  217</span>    <span class="comment">// proof way. So I iterate over a vector...</span></div>
-<div class="line"><span class="lineno">  218</span> </div>
-<div class="line"><span class="lineno">  219</span>    std::vector keepIndices(tracks_.size(), 1);</div>
-<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">if</span> (verbose_ &gt; 1)</div>
-<div class="line"><span class="lineno">  221</span>      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;vector of indices to keep has size &quot;</span></div>
-<div class="line"><span class="lineno">  222</span>                      &lt;&lt; keepIndices.size();</div>
-<div class="line"><span class="lineno">  223</span> </div>
-<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">for</span> (uint idx = tracks_.size() - 1; idx &gt; 0; idx--) {</div>
-<div class="line"><span class="lineno">  225</span>      <span class="comment">// since we start in one end, we only have to check matches in one</span></div>
-<div class="line"><span class="lineno">  226</span>      <span class="comment">// direction</span></div>
-<div class="line"><span class="lineno">  227</span>      <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> track = tracks_.at(idx);</div>
-<div class="line"><span class="lineno">  228</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idxComp = idx - 1; idxComp &gt;= 0; idxComp--) {</div>
-<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">if</span> (verbose_ &gt; 1)</div>
-<div class="line"><span class="lineno">  230</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;In track disambiguation loop, idx points at &quot;</span></div>
-<div class="line"><span class="lineno">  231</span>                          &lt;&lt; idx &lt;&lt; <span class="stringliteral">&quot; and prev idx points at &quot;</span> &lt;&lt; idxComp;</div>
-<div class="line"><span class="lineno">  232</span> </div>
-<div class="line"><span class="lineno">  233</span>        <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> nextTrack = tracks_.at(idxComp);</div>
-<div class="line"><span class="lineno">  234</span> </div>
-<div class="line"><span class="lineno">  235</span>        <span class="comment">// no need to start pulling constituents from tracks that are</span></div>
-<div class="line"><span class="lineno">  236</span>        <span class="comment">// ridiculously far apart</span></div>
-<div class="line"><span class="lineno">  237</span>        <span class="keywordflow">if</span> (fabs(track.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a5323dae480a58aba66c7f79ad1f6688e">getCentroid</a>() - nextTrack.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a5323dae480a58aba66c7f79ad1f6688e">getCentroid</a>() &lt;</div>
-<div class="line"><span class="lineno">  238</span>                 3 * maxDelta_)) {</div>
-<div class="line"><span class="lineno">  239</span>          std::vector&lt;ldmx::TrigScintCluster&gt; consts_1 =</div>
-<div class="line"><span class="lineno">  240</span>              track.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#ab860945391bc68348f32aa0c7067716d">getConstituents</a>();</div>
-<div class="line"><span class="lineno">  241</span>          std::vector&lt;ldmx::TrigScintCluster&gt; consts_2 =</div>
-<div class="line"><span class="lineno">  242</span>              nextTrack.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#ab860945391bc68348f32aa0c7067716d">getConstituents</a>();</div>
-<div class="line"><span class="lineno">  243</span>          <span class="keywordflow">if</span> (verbose_ &gt; 1)</div>
-<div class="line"><span class="lineno">  244</span>            ldmx_log(debug)</div>
-<div class="line"><span class="lineno">  245</span>                &lt;&lt; <span class="stringliteral">&quot;In track disambiguation loop, got the two tracks, &quot;</span></div>
-<div class="line"><span class="lineno">  246</span>                   <span class="stringliteral">&quot;with nConstituents &quot;</span></div>
-<div class="line"><span class="lineno">  247</span>                &lt;&lt; consts_1.size() &lt;&lt; <span class="stringliteral">&quot; and &quot;</span> &lt;&lt; consts_2.size()</div>
-<div class="line"><span class="lineno">  248</span>                &lt;&lt; <span class="stringliteral">&quot;, respectively. &quot;</span>;</div>
-<div class="line"><span class="lineno">  249</span>          <span class="comment">// let&#39;s do &quot;if either cluster is shared&quot; right now... but could also</span></div>
-<div class="line"><span class="lineno">  250</span>          <span class="comment">// have it settable to use a stricter cut: an AND</span></div>
-<div class="line"><span class="lineno">  251</span>          <span class="keywordflow">if</span> (consts_1[1].getCentroid() == consts_2[1].getCentroid() ||</div>
-<div class="line"><span class="lineno">  252</span>              consts_1[2].getCentroid() ==</div>
-<div class="line"><span class="lineno">  253</span>                  consts_2[2]</div>
-<div class="line"><span class="lineno">  254</span>                      .getCentroid()) {  <span class="comment">// we have overlap downstream of the</span></div>
-<div class="line"><span class="lineno">  255</span>            <span class="comment">// seeding pad. probably, one cluster</span></div>
-<div class="line"><span class="lineno">  256</span>            <span class="comment">// in seeding pad is noise</span></div>
-<div class="line"><span class="lineno">  257</span> </div>
-<div class="line"><span class="lineno">  258</span>            <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
-<div class="line"><span class="lineno">  259</span>              ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Found overlap! Tracks at index &quot;</span> &lt;&lt; idx</div>
-<div class="line"><span class="lineno">  260</span>                              &lt;&lt; <span class="stringliteral">&quot; and &quot;</span> &lt;&lt; idxComp;</div>
-<div class="line"><span class="lineno">  261</span>              (tracks_.at(idx)).Print();</div>
-<div class="line"><span class="lineno">  262</span>              (tracks_.at(idxComp)).Print();</div>
-<div class="line"><span class="lineno">  263</span>            }</div>
-<div class="line"><span class="lineno">  264</span> </div>
-<div class="line"><span class="lineno">  265</span>            <span class="keywordflow">if</span> ((tracks_.at(idx)).getResidual() &lt;</div>
-<div class="line"><span class="lineno">  266</span>                (tracks_.at(idxComp)).getResidual()) {</div>
-<div class="line"><span class="lineno">  267</span>              <span class="comment">// next track (lower index) is a worse choice, remove its flag for</span></div>
-<div class="line"><span class="lineno">  268</span>              <span class="comment">// keeping</span></div>
-<div class="line"><span class="lineno">  269</span>              keepIndices.at(idxComp) = 0;</div>
-<div class="line"><span class="lineno">  270</span>            } <span class="keywordflow">else</span>  <span class="comment">// prefer next track over current. remove current track&#39;s</span></div>
-<div class="line"><span class="lineno">  271</span>                    <span class="comment">// keep</span></div>
-<div class="line"><span class="lineno">  272</span>              <span class="comment">// flag</span></div>
-<div class="line"><span class="lineno">  273</span>              keepIndices.at(idx) = 0;</div>
-<div class="line"><span class="lineno">  274</span>            <span class="comment">/*}</span></div>
-<div class="line"><span class="lineno">  275</span><span class="comment">                  else {</span></div>
-<div class="line"><span class="lineno">  276</span><span class="comment">                  tracks_.erase(itNext);</span></div>
-<div class="line"><span class="lineno">  277</span><span class="comment">                  //        removeIdx.push_back(idx+1);</span></div>
-<div class="line"><span class="lineno">  278</span><span class="comment">                  // we might see the same index two times in the loop in this</span></div>
-<div class="line"><span class="lineno">  279</span><span class="comment">               case, if there are three seeds sharing the same clusters</span></div>
-<div class="line"><span class="lineno">  280</span><span class="comment">               downstream.</span></div>
-<div class="line"><span class="lineno">  281</span><span class="comment">                  // then the third only gets removed if it&#39;s even worse than</span></div>
-<div class="line"><span class="lineno">  282</span><span class="comment">               the second.</span></div>
-<div class="line"><span class="lineno">  283</span><span class="comment">                  // one could deal with this with an extra overlap check. not</span></div>
-<div class="line"><span class="lineno">  284</span><span class="comment">               sure we will be in this situation any time soon though.</span></div>
-<div class="line"><span class="lineno">  285</span><span class="comment">                  }*/</span></div>
-<div class="line"><span class="lineno">  286</span>          }  <span class="comment">// over matching/overlapping tracks</span></div>
-<div class="line"><span class="lineno">  287</span>        }    <span class="comment">// over tracks close enough to share constituents</span></div>
-<div class="line"><span class="lineno">  288</span>      }      <span class="comment">// over constructed tracks at other indices, to match</span></div>
-<div class="line"><span class="lineno">  289</span>    }        <span class="comment">// over constructed tracks</span></div>
-<div class="line"><span class="lineno">  290</span> </div>
-<div class="line"><span class="lineno">  291</span>    <span class="keywordflow">for</span> (uint idx = 0; idx &lt; tracks_.size(); idx++) {</div>
-<div class="line"><span class="lineno">  292</span>      <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
-<div class="line"><span class="lineno">  293</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;keep flag for idx &quot;</span> &lt;&lt; idx &lt;&lt; <span class="stringliteral">&quot; is &quot;</span></div>
-<div class="line"><span class="lineno">  294</span>                        &lt;&lt; keepIndices.at(idx);</div>
-<div class="line"><span class="lineno">  295</span>      }</div>
-<div class="line"><span class="lineno">  296</span>      <span class="keywordflow">if</span> (keepIndices.at(idx)) {  <span class="comment">// this hasn&#39;t been flagged for removal</span></div>
-<div class="line"><span class="lineno">  297</span> </div>
-<div class="line"><span class="lineno">  298</span>        cleanedTracks.push_back(tracks_.at(idx));</div>
-<div class="line"><span class="lineno">  299</span> </div>
-<div class="line"><span class="lineno">  300</span>        <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">  301</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;After cleaning, keeping track at index &quot;</span> &lt;&lt; idx</div>
-<div class="line"><span class="lineno">  302</span>                          &lt;&lt; <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><span class="lineno">  303</span>          (tracks_.at(idx)).Print();</div>
-<div class="line"><span class="lineno">  304</span>        }</div>
-<div class="line"><span class="lineno">  305</span>      }  <span class="comment">// if index flagged for keeping</span></div>
-<div class="line"><span class="lineno">  306</span>    }    <span class="comment">// over all (uniquely seeded) tracks in the event</span></div>
-<div class="line"><span class="lineno">  307</span>    <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  308</span><span class="comment">      if (verbose_ ) {</span></div>
-<div class="line"><span class="lineno">  309</span><span class="comment">      for (uint idx=0; idx &lt; tracks_.size(); idx++){</span></div>
-<div class="line"><span class="lineno">  310</span><span class="comment">      ldmx_log(debug)&lt;&lt; &quot;Keeping track at index &quot; &lt;&lt; idx &lt;&lt; &quot;:&quot;;</span></div>
-<div class="line"><span class="lineno">  311</span><span class="comment">      (tracks_.at(idx)).Print();</span></div>
-<div class="line"><span class="lineno">  312</span><span class="comment">      }</span></div>
-<div class="line"><span class="lineno">  313</span><span class="comment">      }</span></div>
-<div class="line"><span class="lineno">  314</span><span class="comment">    */</span></div>
-<div class="line"><span class="lineno">  315</span> </div>
-<div class="line"><span class="lineno">  316</span>  }  <span class="comment">// if there are clusters in all pads</span></div>
-<div class="line"><span class="lineno">  317</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">  318</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;Not all pads had clusters; skipping tracking attempt&quot;</span>;</div>
-<div class="line"><span class="lineno">  319</span>  }</div>
-<div class="line"><span class="lineno">  320</span> </div>
-<div class="line"><span class="lineno">  321</span>  <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">  322</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Done with tracking step. &quot;</span>;</div>
-<div class="line"><span class="lineno">  323</span>  }</div>
-<div class="line"><span class="lineno">  324</span> </div>
-<div class="line"><span class="lineno">  325</span>  <span class="keyword">event</span>.add(output_collection_, cleanedTracks);</div>
-<div class="line"><span class="lineno">  326</span>  tracks_.resize(0);</div>
-<div class="line"><span class="lineno">  327</span> </div>
-<div class="line"><span class="lineno">  328</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  329</span>}</div>
+<div class="line"><span class="lineno">  183</span>          <span class="keywordtype">bool</span> hasMatchDn = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  184</span>          </div>
+<div class="line"><span class="lineno">  185</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;cluster2 : clusters_pad2) {</div>
+<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  187</span>              ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\tGot pad2 cluster with centroid &quot;</span></div>
+<div class="line"><span class="lineno">  188</span>                              &lt;&lt; cluster2.getCentroid();</div>
+<div class="line"><span class="lineno">  189</span>            }</div>
+<div class="line"><span class="lineno">  190</span>            </div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">if</span> (fabs(cluster2.getCentroid() - centroid) &lt;</div>
+<div class="line"><span class="lineno">  192</span>                maxDelta_ ||</div>
+<div class="line"><span class="lineno">  193</span>                ( centroid &gt;= vertBarStartIdx_    <span class="comment">//then in vertical bars</span></div>
+<div class="line"><span class="lineno">  194</span>                  &amp;&amp; seed.getCentroidX() == cluster2.getCentroidX() )  ) {</div>
+<div class="line"><span class="lineno">  195</span>              <span class="comment">//use geometry y overlap scheme to see if this is really a match in x</span></div>
+<div class="line"><span class="lineno">  196</span>              </div>
+<div class="line"><span class="lineno">  197</span>              <span class="keywordflow">if</span> (centroid &gt;= vertBarStartIdx_ &amp;&amp;</div>
+<div class="line"><span class="lineno">  198</span>                  (seed.getCentroidY() &lt; cluster2.getCentroidY() ||</div>
+<div class="line"><span class="lineno">  199</span>                   cluster1.getCentroidY() &gt; cluster2.getCentroidY()) )</div>
+<div class="line"><span class="lineno">  200</span>                {<span class="comment">// impossible</span></div>
+<div class="line"><span class="lineno">  201</span>                  <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  202</span>                    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\tSkipping impossible x cluster combination with y flags (tag up dn) (&quot;</span></div>
+<div class="line"><span class="lineno">  203</span>                                    &lt;&lt; seed.getCentroidY() &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><span class="lineno">  204</span>                                    &lt;&lt; cluster1.getCentroidY()  &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><span class="lineno">  205</span>                                    &lt;&lt; cluster2.getCentroidY()  &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">  206</span>                  }</div>
+<div class="line"><span class="lineno">  207</span>                  <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  208</span>                }</div>
+<div class="line"><span class="lineno">  209</span>              </div>
+<div class="line"><span class="lineno">  210</span>              <span class="comment">// first match! loop through next pad too</span></div>
+<div class="line"><span class="lineno">  211</span>              </div>
+<div class="line"><span class="lineno">  212</span>              <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  213</span>                ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\t\tIt is close enough!. Make a track&quot;</span>;</div>
+<div class="line"><span class="lineno">  214</span>              }</div>
+<div class="line"><span class="lineno">  215</span>              </div>
+<div class="line"><span class="lineno">  216</span>              <span class="comment">// only make this vector now! this ensures against hanging</span></div>
+<div class="line"><span class="lineno">  217</span>              <span class="comment">// clusters with indices from earlier in the loop</span></div>
+<div class="line"><span class="lineno">  218</span>              std::vector&lt;ldmx::TrigScintCluster&gt; threeClusterVec = {seed, cluster1,</div>
+<div class="line"><span class="lineno">  219</span>                                                                     cluster2};</div>
+<div class="line"><span class="lineno">  220</span>              </div>
+<div class="line"><span class="lineno">  221</span>              <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  222</span><span class="comment">              // here we could break if we didn&#39;t want to allow all possible</span></div>
+<div class="line"><span class="lineno">  223</span><span class="comment">              combinations madeTrack=true; break; //we&#39;re done with this</span></div>
+<div class="line"><span class="lineno">  224</span><span class="comment">              iteration once there&#39;s a track made</span></div>
+<div class="line"><span class="lineno">  225</span><span class="comment">              */</span></div>
+<div class="line"><span class="lineno">  226</span>              <span class="comment">// make a track</span></div>
+<div class="line"><span class="lineno">  227</span>              <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> track = makeTrack(threeClusterVec);</div>
+<div class="line"><span class="lineno">  228</span>              trackCandidates.push_back(track);</div>
+<div class="line"><span class="lineno">  229</span>              hasMatchDn=<span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  230</span>            }  <span class="comment">// if match in pad2</span></div>
+<div class="line"><span class="lineno">  231</span>          }    <span class="comment">// over clusters in pad2</span></div>
+<div class="line"><span class="lineno">  232</span>          <span class="comment">// if there was no match to this in pad 2, make a track with just these two clusters</span></div>
+<div class="line"><span class="lineno">  233</span>          <span class="keywordflow">if</span> ( ! hasMatchDn &amp;&amp;  skipLast_ ) { <span class="comment">//we allow skipping last pad if needed</span></div>
+<div class="line"><span class="lineno">  234</span>            <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> track = makeTrack(clusterVec);</div>
+<div class="line"><span class="lineno">  235</span>            trackCandidates.push_back(track);</div>
+<div class="line"><span class="lineno">  236</span>          }</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>      } <span class="comment">// if possible (x,)y match in pad1</span></div>
+<div class="line"><span class="lineno">  239</span>        <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  240</span><span class="comment">        //same here</span></div>
+<div class="line"><span class="lineno">  241</span><span class="comment">        if (madeTrack)</span></div>
+<div class="line"><span class="lineno">  242</span><span class="comment">        break;</span></div>
+<div class="line"><span class="lineno">  243</span><span class="comment">        */</span></div>
+<div class="line"><span class="lineno">  244</span>      </div>
+<div class="line"><span class="lineno">  245</span>    }  <span class="comment">// over clusters in pad1</span></div>
+<div class="line"><span class="lineno">  246</span> </div>
+<div class="line"><span class="lineno">  247</span>      <span class="comment">// continue to next seed if 0 track candidates</span></div>
+<div class="line"><span class="lineno">  248</span>      <span class="keywordflow">if</span> (trackCandidates.size() == 0) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>      <span class="keywordtype">int</span> keepIdx = 0;</div>
+<div class="line"><span class="lineno">  251</span>      <span class="keywordtype">float</span> minResidual = 1000;  <span class="comment">// some large number</span></div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>      <span class="comment">// no need to choose between only one candidate track</span></div>
+<div class="line"><span class="lineno">  254</span>      <span class="keywordflow">if</span> (trackCandidates.size() &gt; 1) {</div>
+<div class="line"><span class="lineno">  255</span>        <span class="comment">// now for each seed, pick only the track with the smallest residual.</span></div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>        <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  258</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got &quot;</span> &lt;&lt; trackCandidates.size()</div>
+<div class="line"><span class="lineno">  259</span>                          &lt;&lt; <span class="stringliteral">&quot; tracks to check.&quot;</span>;</div>
+<div class="line"><span class="lineno">  260</span>        }</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">for</span> (uint idx = 0; idx &lt; trackCandidates.size(); idx++) {</div>
+<div class="line"><span class="lineno">  263</span>          <span class="keywordflow">if</span> ((trackCandidates.at(idx)).getResidual() &lt; minResidual) {</div>
+<div class="line"><span class="lineno">  264</span>            keepIdx = (int)idx;</div>
+<div class="line"><span class="lineno">  265</span>            minResidual =</div>
+<div class="line"><span class="lineno">  266</span>                (trackCandidates.at(idx)).getResidual();  <span class="comment">// update minimum</span></div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>            <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  269</span>              ldmx_log(debug)</div>
+<div class="line"><span class="lineno">  270</span>                  &lt;&lt; <span class="stringliteral">&quot;Track at index &quot;</span> &lt;&lt; idx</div>
+<div class="line"><span class="lineno">  271</span>                  &lt;&lt; <span class="stringliteral">&quot; has smallest residual so far: &quot;</span> &lt;&lt; minResidual;</div>
+<div class="line"><span class="lineno">  272</span>            }</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>          }  <span class="comment">// finding min residual</span></div>
+<div class="line"><span class="lineno">  275</span>        }    <span class="comment">// over track candidates</span></div>
+<div class="line"><span class="lineno">  276</span>      }      <span class="comment">// if more than 1 to choose from</span></div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>      <span class="comment">// store the track at keepIdx, if there was one we made it this far and</span></div>
+<div class="line"><span class="lineno">  279</span>      <span class="comment">// keepIdx is 0 or has been updated to the smallest residual track idx</span></div>
+<div class="line"><span class="lineno">  280</span>      <span class="comment">//    if (keepIdx &gt;= 0) {</span></div>
+<div class="line"><span class="lineno">  281</span>      tracks_.push_back(trackCandidates.at(keepIdx));</div>
+<div class="line"><span class="lineno">  282</span>      <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  283</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Kept track at index &quot;</span> &lt;&lt; keepIdx;</div>
+<div class="line"><span class="lineno">  284</span>        (trackCandidates.at(keepIdx)).Print();</div>
+<div class="line"><span class="lineno">  285</span>      }</div>
+<div class="line"><span class="lineno">  286</span>      <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">  287</span>    }  <span class="comment">// over seeds</span></div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>    <span class="comment">// done here if there were no tracks found</span></div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordflow">if</span> (tracks_.size() == 0) {</div>
+<div class="line"><span class="lineno">  291</span>      <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  292</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;No tracks found!&quot;</span>;</div>
+<div class="line"><span class="lineno">  293</span>      }</div>
+<div class="line"><span class="lineno">  294</span>      std::vector&lt;ldmx::TrigScintTrack&gt; empty{};</div>
+<div class="line"><span class="lineno">  295</span>      <span class="keyword">event</span>.add(output_collection_, empty);</div>
+<div class="line"><span class="lineno">  296</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  297</span>    }</div>
+<div class="line"><span class="lineno">  298</span>    <span class="comment">// now, if there are multiple seeds sharing the same downstream hits, this</span></div>
+<div class="line"><span class="lineno">  299</span>    <span class="comment">// should also be remedied with a selection on min residual.</span></div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>    <span class="comment">// The logic of this loop kind of assumes I can remove tracks immediately --</span></div>
+<div class="line"><span class="lineno">  302</span>    <span class="comment">// that way I can do pairwise checks between more tracks within a single</span></div>
+<div class="line"><span class="lineno">  303</span>    <span class="comment">// loop. But for now I haven&#39;t figured out how to erase elements in a fool</span></div>
+<div class="line"><span class="lineno">  304</span>    <span class="comment">// proof way. So I iterate over a vector...</span></div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>    std::vector keepIndices(tracks_.size(), 1);</div>
+<div class="line"><span class="lineno">  307</span>    <span class="keywordflow">if</span> (verbose_ &gt; 1)</div>
+<div class="line"><span class="lineno">  308</span>      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;vector of indices to keep has size &quot;</span></div>
+<div class="line"><span class="lineno">  309</span>                      &lt;&lt; keepIndices.size();</div>
+<div class="line"><span class="lineno">  310</span>    </div>
+<div class="line"><span class="lineno">  311</span>    <span class="keywordflow">for</span> (uint idx = tracks_.size() - 1; idx &gt; 0; idx--) {</div>
+<div class="line"><span class="lineno">  312</span>      <span class="comment">// since we start in one end, we only have to check matches in one</span></div>
+<div class="line"><span class="lineno">  313</span>      <span class="comment">// direction</span></div>
+<div class="line"><span class="lineno">  314</span>      <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> track = tracks_.at(idx);</div>
+<div class="line"><span class="lineno">  315</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idxComp = idx - 1; idxComp &gt;= 0; idxComp--) {</div>
+<div class="line"><span class="lineno">  316</span>        <span class="keywordflow">if</span> (verbose_ &gt; 1)</div>
+<div class="line"><span class="lineno">  317</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;In track disambiguation loop, idx points at &quot;</span></div>
+<div class="line"><span class="lineno">  318</span>                          &lt;&lt; idx &lt;&lt; <span class="stringliteral">&quot; and prev idx points at &quot;</span> &lt;&lt; idxComp;</div>
+<div class="line"><span class="lineno">  319</span> </div>
+<div class="line"><span class="lineno">  320</span>        <a class="code hl_class" href="classldmx_1_1TrigScintTrack.html">ldmx::TrigScintTrack</a> nextTrack = tracks_.at(idxComp);</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>        <span class="comment">// no need to start pulling constituents from tracks that are</span></div>
+<div class="line"><span class="lineno">  323</span>        <span class="comment">// ridiculously far apart</span></div>
+<div class="line"><span class="lineno">  324</span>        <span class="keywordflow">if</span> (fabs(track.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a5323dae480a58aba66c7f79ad1f6688e">getCentroid</a>() - nextTrack.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#a5323dae480a58aba66c7f79ad1f6688e">getCentroid</a>() &lt;</div>
+<div class="line"><span class="lineno">  325</span>                 3 * maxDelta_)) {</div>
+<div class="line"><span class="lineno">  326</span>          std::vector&lt;ldmx::TrigScintCluster&gt; consts_1 =</div>
+<div class="line"><span class="lineno">  327</span>              track.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#ab860945391bc68348f32aa0c7067716d">getConstituents</a>();</div>
+<div class="line"><span class="lineno">  328</span>          std::vector&lt;ldmx::TrigScintCluster&gt; consts_2 =</div>
+<div class="line"><span class="lineno">  329</span>              nextTrack.<a class="code hl_function" href="classldmx_1_1TrigScintTrack.html#ab860945391bc68348f32aa0c7067716d">getConstituents</a>();</div>
+<div class="line"><span class="lineno">  330</span>          <span class="keywordflow">if</span> (verbose_ &gt; 1)</div>
+<div class="line"><span class="lineno">  331</span>            ldmx_log(debug)</div>
+<div class="line"><span class="lineno">  332</span>                &lt;&lt; <span class="stringliteral">&quot;In track disambiguation loop, got the two tracks, &quot;</span></div>
+<div class="line"><span class="lineno">  333</span>                   <span class="stringliteral">&quot;with nConstituents &quot;</span></div>
+<div class="line"><span class="lineno">  334</span>                &lt;&lt; consts_1.size() &lt;&lt; <span class="stringliteral">&quot; and &quot;</span> &lt;&lt; consts_2.size()</div>
+<div class="line"><span class="lineno">  335</span>                &lt;&lt; <span class="stringliteral">&quot;, respectively. &quot;</span>;</div>
+<div class="line"><span class="lineno">  336</span>          <span class="comment">// let&#39;s do &quot;if either cluster is shared&quot; right now... but could also</span></div>
+<div class="line"><span class="lineno">  337</span>          <span class="comment">// have it settable to use a stricter cut: an AND</span></div>
+<div class="line"><span class="lineno">  338</span>          <span class="keywordflow">if</span> (consts_1[1].getCentroid() == consts_2[1].getCentroid() ||</div>
+<div class="line"><span class="lineno">  339</span>              (consts_1.size() &gt; 2 &amp;&amp; consts_2.size() &gt; 2 &amp;&amp;</div>
+<div class="line"><span class="lineno">  340</span>               consts_1[2].getCentroid() ==</div>
+<div class="line"><span class="lineno">  341</span>               consts_2[2].getCentroid())) {  <span class="comment">// we have overlap downstream of the</span></div>
+<div class="line"><span class="lineno">  342</span>            <span class="comment">// seeding pad. probably, one cluster</span></div>
+<div class="line"><span class="lineno">  343</span>            <span class="comment">// in seeding pad is noise</span></div>
+<div class="line"><span class="lineno">  344</span> </div>
+<div class="line"><span class="lineno">  345</span>            <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  346</span>              ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Found overlap! Tracks at index &quot;</span> &lt;&lt; idx</div>
+<div class="line"><span class="lineno">  347</span>                              &lt;&lt; <span class="stringliteral">&quot; and &quot;</span> &lt;&lt; idxComp;</div>
+<div class="line"><span class="lineno">  348</span>              (tracks_.at(idx)).Print();</div>
+<div class="line"><span class="lineno">  349</span>              (tracks_.at(idxComp)).Print();</div>
+<div class="line"><span class="lineno">  350</span>            }</div>
+<div class="line"><span class="lineno">  351</span> </div>
+<div class="line"><span class="lineno">  352</span>            <span class="keywordflow">if</span> ((tracks_.at(idx)).getResidual() &lt;</div>
+<div class="line"><span class="lineno">  353</span>                (tracks_.at(idxComp)).getResidual()) {</div>
+<div class="line"><span class="lineno">  354</span>              <span class="comment">// next track (lower index) is a worse choice, remove its flag for</span></div>
+<div class="line"><span class="lineno">  355</span>              <span class="comment">// keeping</span></div>
+<div class="line"><span class="lineno">  356</span>              keepIndices.at(idxComp) = 0;</div>
+<div class="line"><span class="lineno">  357</span>            } <span class="keywordflow">else</span>  <span class="comment">// prefer next track over current. remove current track&#39;s</span></div>
+<div class="line"><span class="lineno">  358</span>                    <span class="comment">// keep</span></div>
+<div class="line"><span class="lineno">  359</span>              <span class="comment">// flag</span></div>
+<div class="line"><span class="lineno">  360</span>              keepIndices.at(idx) = 0;</div>
+<div class="line"><span class="lineno">  361</span>            <span class="comment">/*}</span></div>
+<div class="line"><span class="lineno">  362</span><span class="comment">                  else {</span></div>
+<div class="line"><span class="lineno">  363</span><span class="comment">                  tracks_.erase(itNext);</span></div>
+<div class="line"><span class="lineno">  364</span><span class="comment">                  //        removeIdx.push_back(idx+1);</span></div>
+<div class="line"><span class="lineno">  365</span><span class="comment">                  // we might see the same index two times in the loop in this</span></div>
+<div class="line"><span class="lineno">  366</span><span class="comment">               case, if there are three seeds sharing the same clusters</span></div>
+<div class="line"><span class="lineno">  367</span><span class="comment">               downstream.</span></div>
+<div class="line"><span class="lineno">  368</span><span class="comment">                  // then the third only gets removed if it&#39;s even worse than</span></div>
+<div class="line"><span class="lineno">  369</span><span class="comment">               the second.</span></div>
+<div class="line"><span class="lineno">  370</span><span class="comment">                  // one could deal with this with an extra overlap check. not</span></div>
+<div class="line"><span class="lineno">  371</span><span class="comment">               sure we will be in this situation any time soon though.</span></div>
+<div class="line"><span class="lineno">  372</span><span class="comment">                  }*/</span></div>
+<div class="line"><span class="lineno">  373</span>          }  <span class="comment">// over matching/overlapping tracks</span></div>
+<div class="line"><span class="lineno">  374</span>        }    <span class="comment">// over tracks close enough to share constituents</span></div>
+<div class="line"><span class="lineno">  375</span>      }      <span class="comment">// over constructed tracks at other indices, to match</span></div>
+<div class="line"><span class="lineno">  376</span>    }        <span class="comment">// over constructed tracks</span></div>
+<div class="line"><span class="lineno">  377</span>    </div>
+<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">for</span> (uint idx = 0; idx &lt; tracks_.size(); idx++) {</div>
+<div class="line"><span class="lineno">  379</span>      <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  380</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;keep flag for idx &quot;</span> &lt;&lt; idx &lt;&lt; <span class="stringliteral">&quot; is &quot;</span></div>
+<div class="line"><span class="lineno">  381</span>                        &lt;&lt; keepIndices.at(idx);</div>
+<div class="line"><span class="lineno">  382</span>      }</div>
+<div class="line"><span class="lineno">  383</span>      <span class="keywordflow">if</span> (keepIndices.at(idx)) {  <span class="comment">// this hasn&#39;t been flagged for removal</span></div>
+<div class="line"><span class="lineno">  384</span>        </div>
+<div class="line"><span class="lineno">  385</span>        cleanedTracks.push_back(tracks_.at(idx));</div>
+<div class="line"><span class="lineno">  386</span>        </div>
+<div class="line"><span class="lineno">  387</span>        <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  388</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;After cleaning, keeping track at index &quot;</span> &lt;&lt; idx</div>
+<div class="line"><span class="lineno">  389</span>                          &lt;&lt; <span class="stringliteral">&quot;: Centroid = &quot;</span> &lt;&lt; (tracks_.at(idx)).getCentroid()</div>
+<div class="line"><span class="lineno">  390</span>                          &lt;&lt; <span class="stringliteral">&quot;; CentroidX = &quot;</span> &lt;&lt; (tracks_.at(idx)).getCentroidX()</div>
+<div class="line"><span class="lineno">  391</span>                          &lt;&lt; <span class="stringliteral">&quot;; CentroidY = &quot;</span> &lt;&lt; (tracks_.at(idx)).getCentroidY()</div>
+<div class="line"><span class="lineno">  392</span>                          &lt;&lt; <span class="stringliteral">&quot;; track PE = &quot;</span> &lt;&lt; (tracks_.at(idx)).getPE();</div>
+<div class="line"><span class="lineno">  393</span>          <span class="comment">//          (tracks_.at(idx)).Print();</span></div>
+<div class="line"><span class="lineno">  394</span>        }</div>
+<div class="line"><span class="lineno">  395</span>      }  <span class="comment">// if index flagged for keeping</span></div>
+<div class="line"><span class="lineno">  396</span>    }    <span class="comment">// over all (uniquely seeded) tracks in the event</span></div>
+<div class="line"><span class="lineno">  397</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  398</span><span class="comment">      if (verbose_ ) {</span></div>
+<div class="line"><span class="lineno">  399</span><span class="comment">      for (uint idx=0; idx &lt; tracks_.size(); idx++){</span></div>
+<div class="line"><span class="lineno">  400</span><span class="comment">      ldmx_log(debug)&lt;&lt; &quot;Keeping track at index &quot; &lt;&lt; idx &lt;&lt; &quot;:&quot;;</span></div>
+<div class="line"><span class="lineno">  401</span><span class="comment">      (tracks_.at(idx)).Print();</span></div>
+<div class="line"><span class="lineno">  402</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">  403</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">  404</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">  405</span>    </div>
+<div class="line"><span class="lineno">  406</span>    </div>
+<div class="line"><span class="lineno">  407</span>    </div>
+<div class="line"><span class="lineno">  408</span>    <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  409</span>      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Running track x,y matching &quot;</span>;</div>
+<div class="line"><span class="lineno">  410</span>    }</div>
+<div class="line"><span class="lineno">  411</span>    </div>
+<div class="line"><span class="lineno">  412</span>    <span class="keywordflow">if</span> (cleanedTracks.size() &gt; 0 )</div>
+<div class="line"><span class="lineno">  413</span>      {</div>
+<div class="line"><span class="lineno">  414</span>        matchXYTracks( cleanedTracks );</div>
+<div class="line"><span class="lineno">  415</span>        std::vector&lt;ldmx::TrigScintTrack&gt; matchedTracks = cleanedTracks; <span class="comment">//don&#39;t know why this copying needs to happen but it does</span></div>
+<div class="line"><span class="lineno">  416</span>        <span class="comment">//  std::vector&lt;ldmx::TrigScintTrack&gt;  matchXYTracks( cleanedTracks );</span></div>
+<div class="line"><span class="lineno">  417</span>        <span class="comment">//      std::vector&lt;ldmx::TrigScintTrack&gt; matchedTracks = matchXYTracks( cleanedTracks );</span></div>
+<div class="line"><span class="lineno">  418</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> trk : matchedTracks ) {</div>
+<div class="line"><span class="lineno">  419</span>          <span class="comment">/*    for (uint idx = 0; idx &lt; tracks_.size(); idx++) {</span></div>
+<div class="line"><span class="lineno">  420</span><span class="comment">                if (verbose_ &gt; 1) {</span></div>
+<div class="line"><span class="lineno">  421</span><span class="comment">                ldmx_log(debug) &lt;&lt; &quot;keep flag for idx &quot; &lt;&lt; idx &lt;&lt; &quot; is &quot;</span></div>
+<div class="line"><span class="lineno">  422</span><span class="comment">                        &lt;&lt; keepIndices.at(idx);</span></div>
+<div class="line"><span class="lineno">  423</span><span class="comment">                        }</span></div>
+<div class="line"><span class="lineno">  424</span><span class="comment">                        if (keepIndices.at(idx)) {  // this hasn&#39;t been flagged for removal   </span></div>
+<div class="line"><span class="lineno">  425</span><span class="comment">        //check if channel nb is above that of horizontal bars</span></div>
+<div class="line"><span class="lineno">  426</span><span class="comment">        if (tracks_.at(idx).getCentroid() &gt;= vertBarStartIdx_) </span></div>
+<div class="line"><span class="lineno">  427</span><span class="comment">          */</span></div>
+<div class="line"><span class="lineno">  428</span>          <span class="keywordflow">if</span> (trk.getCentroid() &gt;= vertBarStartIdx_) </div>
+<div class="line"><span class="lineno">  429</span>        cleanedTracksX.push_back(trk); <span class="comment">//acks_.at(idx));</span></div>
+<div class="line"><span class="lineno">  430</span>          <span class="keywordflow">else</span> </div>
+<div class="line"><span class="lineno">  431</span>            cleanedTracksY.push_back(trk);<span class="comment">//acks_.at(idx));</span></div>
+<div class="line"><span class="lineno">  432</span>          <span class="comment">//        cleanedTracksY.push_back(trk);</span></div>
+<div class="line"><span class="lineno">  433</span>          <span class="keywordflow">if</span> (verbose_ &gt; 1) {</div>
+<div class="line"><span class="lineno">  434</span>        <span class="keywordtype">float</span> centr = trk.getCentroid(); <span class="comment">//tracks_.at(idx).getCentroid(); //</span></div>
+<div class="line"><span class="lineno">  435</span>        std::string collStr = centr &gt;= vertBarStartIdx_ ? <span class="stringliteral">&quot;X&quot;</span> : <span class="stringliteral">&quot;Y&quot;</span> ;</div>
+<div class="line"><span class="lineno">  436</span>        collStr=output_collection_+collStr;</div>
+<div class="line"><span class="lineno">  437</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;saving track with centroid &quot;</span> &lt;&lt; centr &lt;&lt; <span class="stringliteral">&quot; to output track collection &quot;</span> &lt;&lt; collStr ;</div>
+<div class="line"><span class="lineno">  438</span>          }</div>
+<div class="line"><span class="lineno">  439</span>          <span class="comment">// }</span></div>
+<div class="line"><span class="lineno">  440</span>        }</div>
+<div class="line"><span class="lineno">  441</span>      }</div>
+<div class="line"><span class="lineno">  442</span>    </div>
+<div class="line"><span class="lineno">  443</span>    </div>
+<div class="line"><span class="lineno">  444</span>  }  <span class="comment">// if there are clusters in all pads</span></div>
+<div class="line"><span class="lineno">  445</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  446</span>    ldmx_log(info) &lt;&lt; <span class="stringliteral">&quot;Not all pads had clusters; (maybe) skipping tracking attempt&quot;</span>;</div>
+<div class="line"><span class="lineno">  447</span>  }</div>
+<div class="line"><span class="lineno">  448</span> </div>
+<div class="line"><span class="lineno">  449</span>  </div>
+<div class="line"><span class="lineno">  450</span>  <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  451</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Done with tracking step. &quot;</span>;</div>
+<div class="line"><span class="lineno">  452</span>  }</div>
+<div class="line"><span class="lineno">  453</span> </div>
+<div class="line"><span class="lineno">  454</span>  </div>
+<div class="line"><span class="lineno">  455</span>  <span class="keyword">event</span>.add(output_collection_, cleanedTracks);</div>
+<div class="line"><span class="lineno">  456</span>  <span class="comment">//  event.add(output_collection_, matchedTracks);</span></div>
+<div class="line"><span class="lineno">  457</span> </div>
+<div class="line"><span class="lineno">  458</span>  <span class="keyword">event</span>.add(output_collection_+<span class="stringliteral">&quot;Y&quot;</span>, cleanedTracksY);</div>
+<div class="line"><span class="lineno">  459</span>  <span class="keyword">event</span>.add(output_collection_+<span class="stringliteral">&quot;X&quot;</span>, cleanedTracksX);</div>
+<div class="line"><span class="lineno">  460</span> </div>
+<div class="line"><span class="lineno">  461</span>  </div>
+<div class="line"><span class="lineno">  462</span>  tracks_.resize(0);</div>
+<div class="line"><span class="lineno">  463</span> </div>
+<div class="line"><span class="lineno">  464</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  465</span>}</div>
 <div class="ttc" id="aclassframework_1_1Event_html_a7e65967eea5ac3172852838f1c8f266a"><div class="ttname"><a href="classframework_1_1Event.html#a7e65967eea5ac3172852838f1c8f266a">framework::Event::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name, const std::string &amp;passName=&quot;&quot;) const</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00105">Event.h:105</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TrigScintCluster_html"><div class="ttname"><a href="classldmx_1_1TrigScintCluster.html">ldmx::TrigScintCluster</a></div><div class="ttdoc">Stores cluster information from the trigger scintillator pads. Adds on the ECal cluster functionality...</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintCluster_8h_source.html#l00021">TrigScintCluster.h:21</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_a5323dae480a58aba66c7f79ad1f6688e"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#a5323dae480a58aba66c7f79ad1f6688e">ldmx::TrigScintTrack::getCentroid</a></div><div class="ttdeci">float getCentroid() const</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00047">TrigScintTrack.h:47</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_ab860945391bc68348f32aa0c7067716d"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#ab860945391bc68348f32aa0c7067716d">ldmx::TrigScintTrack::getConstituents</a></div><div class="ttdeci">std::vector&lt; ldmx::TrigScintCluster &gt; getConstituents() const</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00102">TrigScintTrack.h:102</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintTrack_html_ab860945391bc68348f32aa0c7067716d"><div class="ttname"><a href="classldmx_1_1TrigScintTrack.html#ab860945391bc68348f32aa0c7067716d">ldmx::TrigScintTrack::getConstituents</a></div><div class="ttdeci">std::vector&lt; ldmx::TrigScintCluster &gt; getConstituents() const</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintTrack_8h_source.html#l00132">TrigScintTrack.h:132</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Event_8h_source.html#l00105">framework::Event::exists()</a>, <a class="el" href="TrigScintTrack_8h_source.html#l00047">ldmx::TrigScintTrack::getCentroid()</a>, and <a class="el" href="TrigScintTrack_8h_source.html#l00102">ldmx::TrigScintTrack::getConstituents()</a>.</p>
+<p class="reference">References <a class="el" href="Event_8h_source.html#l00105">framework::Event::exists()</a>, <a class="el" href="TrigScintTrack_8h_source.html#l00047">ldmx::TrigScintTrack::getCentroid()</a>, and <a class="el" href="TrigScintTrack_8h_source.html#l00132">ldmx::TrigScintTrack::getConstituents()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a61266a25e321cca912a49b1ace443fca" name="a61266a25e321cca912a49b1ace443fca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61266a25e321cca912a49b1ace443fca">&#9670;&#160;</a></span>barGap_x_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::barGap_x_ {0.1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00095">95</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a05cf5c0eb4fb6f71e77d8a818d0566fc" name="a05cf5c0eb4fb6f71e77d8a818d0566fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05cf5c0eb4fb6f71e77d8a818d0566fc">&#9670;&#160;</a></span>barGap_y_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::barGap_y_ {2.1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00093">93</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a2e07314eba827475300555c68d81c954" name="a2e07314eba827475300555c68d81c954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e07314eba827475300555c68d81c954">&#9670;&#160;</a></span>barWidth_x_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::barWidth_x_ {3.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00094">94</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a6eb367c82c9a8eba8abef3a6bab6aa23" name="a6eb367c82c9a8eba8abef3a6bab6aa23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb367c82c9a8eba8abef3a6bab6aa23">&#9670;&#160;</a></span>barWidth_y_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::barWidth_y_ {3.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00092">92</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
 <a id="a389626b1da83d2b3ac6bf0c4ed37634b" name="a389626b1da83d2b3ac6bf0c4ed37634b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a389626b1da83d2b3ac6bf0c4ed37634b">&#9670;&#160;</a></span>centroid_</h2>
 
@@ -840,7 +1417,55 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00063">63</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00080">80</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a94cee8720b86aa0655f60b392f7742cb" name="a94cee8720b86aa0655f60b392f7742cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cee8720b86aa0655f60b392f7742cb">&#9670;&#160;</a></span>centroidX_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::centroidX_ {-1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00083">83</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a98cc30ffc95e96439d33d63e71a737df" name="a98cc30ffc95e96439d33d63e71a737df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98cc30ffc95e96439d33d63e71a737df">&#9670;&#160;</a></span>centroidY_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::centroidY_ {-1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00086">86</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
 
 </div>
 </div>
@@ -864,7 +1489,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00054">54</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00058">58</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
 
 </div>
 </div>
@@ -888,7 +1513,55 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00045">45</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00049">49</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a69a272538f391570b629f6f6dd0801ee" name="a69a272538f391570b629f6f6dd0801ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a272538f391570b629f6f6dd0801ee">&#9670;&#160;</a></span>nBarsX_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trigscint::TrigScintTrackProducer::nBarsX_ {8}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00077">77</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ca91d9131624535e518c9dea69741a7" name="a4ca91d9131624535e518c9dea69741a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca91d9131624535e518c9dea69741a7">&#9670;&#160;</a></span>nBarsY_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trigscint::TrigScintTrackProducer::nBarsY_ {16}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00074">74</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
 
 </div>
 </div>
@@ -912,7 +1585,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00057">57</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00061">61</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
 
 </div>
 </div>
@@ -936,7 +1609,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00060">60</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00064">64</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
 
 </div>
 </div>
@@ -960,7 +1633,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00066">66</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00089">89</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
 
 </div>
 </div>
@@ -984,7 +1657,31 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00051">51</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00055">55</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a851a429a43ace43226120308448656" name="a8a851a429a43ace43226120308448656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a851a429a43ace43226120308448656">&#9670;&#160;</a></span>skipLast_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool trigscint::TrigScintTrackProducer::skipLast_ {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00068">68</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
 
 </div>
 </div>
@@ -1032,7 +1729,127 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00048">48</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00052">52</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="ab18fbf4cce3fca36a6c7724dd7680afd" name="ab18fbf4cce3fca36a6c7724dd7680afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab18fbf4cce3fca36a6c7724dd7680afd">&#9670;&#160;</a></span>vertBarStartIdx_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trigscint::TrigScintTrackProducer::vertBarStartIdx_ {52}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00071">71</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="adcd0579c130f68b835c8f8404092d2ab" name="adcd0579c130f68b835c8f8404092d2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd0579c130f68b835c8f8404092d2ab">&#9670;&#160;</a></span>xConvFactor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::xConvFactor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00097">97</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="af7ca9fb905cd9216a874c6d276728c6d" name="af7ca9fb905cd9216a874c6d276728c6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ca9fb905cd9216a874c6d276728c6d">&#9670;&#160;</a></span>xStart_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::xStart_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00098">98</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a21c2713f2344e4a5ca56c5b2fa97e8ef" name="a21c2713f2344e4a5ca56c5b2fa97e8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c2713f2344e4a5ca56c5b2fa97e8ef">&#9670;&#160;</a></span>yConvFactor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::yConvFactor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00099">99</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
+
+</div>
+</div>
+<a id="a46d72f5fb1a35c6c56fe29118e85751b" name="a46d72f5fb1a35c6c56fe29118e85751b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d72f5fb1a35c6c56fe29118e85751b">&#9670;&#160;</a></span>yStart_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float trigscint::TrigScintTrackProducer::yStart_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TrigScintTrackProducer_8h_source.html#l00100">100</a> of file <a class="el" href="TrigScintTrackProducer_8h_source.html">TrigScintTrackProducer.h</a>.</p>
 
 </div>
 </div>

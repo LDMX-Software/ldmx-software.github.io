@@ -125,6 +125,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af3abbeafaffaebb663c382ae27befc2d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">peds_</a></td></tr>
 <tr class="memdesc:af3abbeafaffaebb663c382ae27befc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel pedestals [fC]  <a href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">More...</a><br /></td></tr>
 <tr class="separator:af3abbeafaffaebb663c382ae27befc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b1eac158855e625bf0834cc3291dcf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TestBeamHitProducer.html#a00b1eac158855e625bf0834cc3291dcf">MIPresponse_</a></td></tr>
+<tr class="memdesc:a00b1eac158855e625bf0834cc3291dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel MIP response for intercalibration  <a href="classtrigscint_1_1TestBeamHitProducer.html#a00b1eac158855e625bf0834cc3291dcf">More...</a><br /></td></tr>
+<tr class="separator:a00b1eac158855e625bf0834cc3291dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b71d093602c8df72ca17bd01ad4b3ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a> {10}</td></tr>
 <tr class="memdesc:a1b71d093602c8df72ca17bd01ad4b3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">start sample for pulse integration (not including any fiber offsets)  <a href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">More...</a><br /></td></tr>
 <tr class="separator:a1b71d093602c8df72ca17bd01ad4b3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,9 +140,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a2a09b22e65683f2b290328ce868d4010"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">nInstrumentedChannels_</a> {12}</td></tr>
 <tr class="memdesc:a2a09b22e65683f2b290328ce868d4010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of instrumented channels in module.  <a href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">More...</a><br /></td></tr>
 <tr class="separator:a2a09b22e65683f2b290328ce868d4010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7328c5eb63d82389e8c6c16b07fe8eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TestBeamHitProducer.html#ab7328c5eb63d82389e8c6c16b07fe8eb">doCleanHits_</a> {false}</td></tr>
-<tr class="memdesc:ab7328c5eb63d82389e8c6c16b07fe8eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">boolean indicating whether we want to apply quality criteria in hit reconstruction  <a href="classtrigscint_1_1TestBeamHitProducer.html#ab7328c5eb63d82389e8c6c16b07fe8eb">More...</a><br /></td></tr>
-<tr class="separator:ab7328c5eb63d82389e8c6c16b07fe8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac312873d54fb269a095d8f4b5242094b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtrigscint_1_1TestBeamHitProducer.html#ac312873d54fb269a095d8f4b5242094b">doCleanHits_</a> {false}</td></tr>
+<tr class="memdesc:ac312873d54fb269a095d8f4b5242094b"><td class="mdescLeft">&#160;</td><td class="mdescRight">boolean indicating whether we want to apply quality criteria in hit reconstruction  <a href="classtrigscint_1_1TestBeamHitProducer.html#ac312873d54fb269a095d8f4b5242094b">More...</a><br /></td></tr>
+<tr class="separator:ac312873d54fb269a095d8f4b5242094b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -260,37 +263,40 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac477d1b1792c67992053fb5ac25401be">inputCol_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;inputCollection&quot;</span>);</div>
 <div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1504febc37b481f4a05ab19baf8a763f">outputCollection_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;outputCollection&quot;</span>);</div>
 <div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ad096ecfd4f7355f1ff49d7e97dfead5c">inputPassName_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; std::string &gt;(<span class="stringliteral">&quot;inputPassName&quot;</span>);</div>
-<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">peds_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; std::vector&lt;double&gt; &gt;(<span class="stringliteral">&quot;pedestals&quot;</span>);</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#aa288bdef0e2d3da34ff5379e639fcd1d">gain_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; std::vector&lt;double&gt; &gt;(<span class="stringliteral">&quot;gain&quot;</span>);  <span class="comment">//to do: vector</span></div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;startSample&quot;</span>);</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a33e8981fa55c49cc1c79e5afbf0a9086">pulseWidth_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;pulseWidth&quot;</span>);</div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a82d4e9c7f4945e7daf7460bb91003f40">pulseWidthLYSO_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;pulseWidthLYSO&quot;</span>);</div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">nInstrumentedChannels_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;nInstrumentedChannels&quot;</span>);</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ab7328c5eb63d82389e8c6c16b07fe8eb">doCleanHits_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">bool</span> &gt;(<span class="stringliteral">&quot;doCleanHits&quot;</span>);</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    std::cout &lt;&lt; <span class="stringliteral">&quot; [ TestBeamHitProducer ] In configure(), got parameters &quot;</span> </div>
-<div class="line"><span class="lineno">   30</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t inputCollection = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac477d1b1792c67992053fb5ac25401be">inputCol_</a></div>
-<div class="line"><span class="lineno">   31</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t inputPassName = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ad096ecfd4f7355f1ff49d7e97dfead5c">inputPassName_</a></div>
-<div class="line"><span class="lineno">   32</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t outputCollection = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1504febc37b481f4a05ab19baf8a763f">outputCollection_</a></div>
-<div class="line"><span class="lineno">   33</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t startSample = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a></div>
-<div class="line"><span class="lineno">   34</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t pulseWidth = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a33e8981fa55c49cc1c79e5afbf0a9086">pulseWidth_</a></div>
-<div class="line"><span class="lineno">   35</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t pulseWidthLYSO = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a82d4e9c7f4945e7daf7460bb91003f40">pulseWidthLYSO_</a></div>
-<div class="line"><span class="lineno">   36</span>              &lt;&lt; <span class="stringliteral">&quot;\n\t gain[0] = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#aa288bdef0e2d3da34ff5379e639fcd1d">gain_</a>[0] <span class="comment">// TODO: vector </span></div>
-<div class="line"><span class="lineno">   37</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t nInstrumentedChannels = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">nInstrumentedChannels_</a></div>
-<div class="line"><span class="lineno">   38</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t doCleanHits = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ab7328c5eb63d82389e8c6c16b07fe8eb">doCleanHits_</a></div>
-<div class="line"><span class="lineno">   39</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t pedestals[0] = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">peds_</a>[0]</div>
-<div class="line"><span class="lineno">   40</span>          &lt;&lt; <span class="stringliteral">&quot;\t.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   43</span>  }</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a00b1eac158855e625bf0834cc3291dcf">MIPresponse_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; std::vector&lt;double&gt; &gt;(<span class="stringliteral">&quot;MIPresponse&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">peds_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; std::vector&lt;double&gt; &gt;(<span class="stringliteral">&quot;pedestals&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#aa288bdef0e2d3da34ff5379e639fcd1d">gain_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; std::vector&lt;double&gt; &gt;(<span class="stringliteral">&quot;gain&quot;</span>);  <span class="comment">//to do: vector</span></div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;startSample&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a33e8981fa55c49cc1c79e5afbf0a9086">pulseWidth_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;pulseWidth&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a82d4e9c7f4945e7daf7460bb91003f40">pulseWidthLYSO_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;pulseWidthLYSO&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">nInstrumentedChannels_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">int</span> &gt;(<span class="stringliteral">&quot;nInstrumentedChannels&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac312873d54fb269a095d8f4b5242094b">doCleanHits_</a>  = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt; <span class="keywordtype">bool</span> &gt;(<span class="stringliteral">&quot;doCleanHits&quot;</span>);</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    std::cout &lt;&lt; <span class="stringliteral">&quot; [ TestBeamHitProducer ] In configure(), got parameters &quot;</span> </div>
+<div class="line"><span class="lineno">   31</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t inputCollection = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac477d1b1792c67992053fb5ac25401be">inputCol_</a></div>
+<div class="line"><span class="lineno">   32</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t inputPassName = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ad096ecfd4f7355f1ff49d7e97dfead5c">inputPassName_</a></div>
+<div class="line"><span class="lineno">   33</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t outputCollection = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1504febc37b481f4a05ab19baf8a763f">outputCollection_</a></div>
+<div class="line"><span class="lineno">   34</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t startSample = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a></div>
+<div class="line"><span class="lineno">   35</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t pulseWidth = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a33e8981fa55c49cc1c79e5afbf0a9086">pulseWidth_</a></div>
+<div class="line"><span class="lineno">   36</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t pulseWidthLYSO = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a82d4e9c7f4945e7daf7460bb91003f40">pulseWidthLYSO_</a></div>
+<div class="line"><span class="lineno">   37</span>              &lt;&lt; <span class="stringliteral">&quot;\n\t gain[0] = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#aa288bdef0e2d3da34ff5379e639fcd1d">gain_</a>[0] </div>
+<div class="line"><span class="lineno">   38</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t nInstrumentedChannels = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">nInstrumentedChannels_</a></div>
+<div class="line"><span class="lineno">   39</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t doCleanHits = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac312873d54fb269a095d8f4b5242094b">doCleanHits_</a></div>
+<div class="line"><span class="lineno">   40</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t pedestals[0] = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">peds_</a>[0]</div>
+<div class="line"><span class="lineno">   41</span>          &lt;&lt; <span class="stringliteral">&quot;\n\t MIPresponse[0] = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a00b1eac158855e625bf0834cc3291dcf">MIPresponse_</a>[0]</div>
+<div class="line"><span class="lineno">   42</span>          &lt;&lt; <span class="stringliteral">&quot;\t.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   45</span>  }</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a00b1eac158855e625bf0834cc3291dcf"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a00b1eac158855e625bf0834cc3291dcf">trigscint::TestBeamHitProducer::MIPresponse_</a></div><div class="ttdeci">std::vector&lt; double &gt; MIPresponse_</div><div class="ttdoc">channel MIP response for intercalibration</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00071">TestBeamHitProducer.h:71</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a1504febc37b481f4a05ab19baf8a763f"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a1504febc37b481f4a05ab19baf8a763f">trigscint::TestBeamHitProducer::outputCollection_</a></div><div class="ttdeci">std::string outputCollection_</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00062">TestBeamHitProducer.h:62</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a1b71d093602c8df72ca17bd01ad4b3ca"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">trigscint::TestBeamHitProducer::startSample_</a></div><div class="ttdeci">int startSample_</div><div class="ttdoc">start sample for pulse integration (not including any fiber offsets)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00071">TestBeamHitProducer.h:71</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a2a09b22e65683f2b290328ce868d4010"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">trigscint::TestBeamHitProducer::nInstrumentedChannels_</a></div><div class="ttdeci">int nInstrumentedChannels_</div><div class="ttdoc">Number of instrumented channels in module.</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00080">TestBeamHitProducer.h:80</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a33e8981fa55c49cc1c79e5afbf0a9086"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a33e8981fa55c49cc1c79e5afbf0a9086">trigscint::TestBeamHitProducer::pulseWidth_</a></div><div class="ttdeci">int pulseWidth_</div><div class="ttdoc">Total number of samples used in pulse integration.</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00074">TestBeamHitProducer.h:74</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a82d4e9c7f4945e7daf7460bb91003f40"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a82d4e9c7f4945e7daf7460bb91003f40">trigscint::TestBeamHitProducer::pulseWidthLYSO_</a></div><div class="ttdeci">int pulseWidthLYSO_</div><div class="ttdoc">Total number of samples used in pulse integration for LYSO (long decay, might need wider window)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00077">TestBeamHitProducer.h:77</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a1b71d093602c8df72ca17bd01ad4b3ca"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">trigscint::TestBeamHitProducer::startSample_</a></div><div class="ttdeci">int startSample_</div><div class="ttdoc">start sample for pulse integration (not including any fiber offsets)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00074">TestBeamHitProducer.h:74</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a2a09b22e65683f2b290328ce868d4010"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">trigscint::TestBeamHitProducer::nInstrumentedChannels_</a></div><div class="ttdeci">int nInstrumentedChannels_</div><div class="ttdoc">Number of instrumented channels in module.</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00083">TestBeamHitProducer.h:83</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a33e8981fa55c49cc1c79e5afbf0a9086"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a33e8981fa55c49cc1c79e5afbf0a9086">trigscint::TestBeamHitProducer::pulseWidth_</a></div><div class="ttdeci">int pulseWidth_</div><div class="ttdoc">Total number of samples used in pulse integration.</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00077">TestBeamHitProducer.h:77</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_a82d4e9c7f4945e7daf7460bb91003f40"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#a82d4e9c7f4945e7daf7460bb91003f40">trigscint::TestBeamHitProducer::pulseWidthLYSO_</a></div><div class="ttdeci">int pulseWidthLYSO_</div><div class="ttdoc">Total number of samples used in pulse integration for LYSO (long decay, might need wider window)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00080">TestBeamHitProducer.h:80</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_aa288bdef0e2d3da34ff5379e639fcd1d"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#aa288bdef0e2d3da34ff5379e639fcd1d">trigscint::TestBeamHitProducer::gain_</a></div><div class="ttdeci">std::vector&lt; double &gt; gain_</div><div class="ttdoc">SiPM gain, per channel (all initialized to 2e6 in default config)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00065">TestBeamHitProducer.h:65</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_ab7328c5eb63d82389e8c6c16b07fe8eb"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#ab7328c5eb63d82389e8c6c16b07fe8eb">trigscint::TestBeamHitProducer::doCleanHits_</a></div><div class="ttdeci">int doCleanHits_</div><div class="ttdoc">boolean indicating whether we want to apply quality criteria in hit reconstruction</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00083">TestBeamHitProducer.h:83</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_ac312873d54fb269a095d8f4b5242094b"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#ac312873d54fb269a095d8f4b5242094b">trigscint::TestBeamHitProducer::doCleanHits_</a></div><div class="ttdeci">bool doCleanHits_</div><div class="ttdoc">boolean indicating whether we want to apply quality criteria in hit reconstruction</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00086">TestBeamHitProducer.h:86</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_ac477d1b1792c67992053fb5ac25401be"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#ac477d1b1792c67992053fb5ac25401be">trigscint::TestBeamHitProducer::inputCol_</a></div><div class="ttdeci">std::string inputCol_</div><div class="ttdoc">Name of the input collection containing the event readout samples.</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00054">TestBeamHitProducer.h:54</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_ad096ecfd4f7355f1ff49d7e97dfead5c"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#ad096ecfd4f7355f1ff49d7e97dfead5c">trigscint::TestBeamHitProducer::inputPassName_</a></div><div class="ttdeci">std::string inputPassName_</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00058">TestBeamHitProducer.h:58</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHitProducer_html_af3abbeafaffaebb663c382ae27befc2d"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">trigscint::TestBeamHitProducer::peds_</a></div><div class="ttdeci">std::vector&lt; double &gt; peds_</div><div class="ttdoc">channel pedestals [fC]</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitProducer_8h_source.html#l00068">TestBeamHitProducer.h:68</a></div></div>
@@ -331,144 +337,146 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00045">45</a> of file <a class="el" href="TestBeamHitProducer_8cxx_source.html">TestBeamHitProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                          {</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">   49</span><span class="comment">      hit producer. </span></div>
-<div class="line"><span class="lineno">   50</span><span class="comment">      sum up all charge within a certain time window. could work two ways: </span></div>
-<div class="line"><span class="lineno">   51</span><span class="comment">          - find a time sample above a threshold or where TDC is 0-50 (0-2)</span></div>
-<div class="line"><span class="lineno">   52</span><span class="comment">               * this could allow for finding several pulses per event, just keep sliding along in time</span></div>
-<div class="line"><span class="lineno">   53</span><span class="comment">               -- in that case, record nPulses, startsample, pulsewidth for each hit </span></div>
-<div class="line"><span class="lineno">   54</span><span class="comment">          - use a fixed start sample, and keep summing from there until nSamples is reached or all time samples used </span></div>
-<div class="line"><span class="lineno">   55</span><span class="comment"></span> </div>
-<div class="line"><span class="lineno">   56</span><span class="comment">      specifics:</span></div>
-<div class="line"><span class="lineno">   57</span><span class="comment">          - each channel has its own pedestal to subtract. also try using the first 5 samples to establish a threshold in the event. store both </span></div>
-<div class="line"><span class="lineno">   58</span><span class="comment">          - store hit Q and hit PE conversion </span></div>
-<div class="line"><span class="lineno">   59</span><span class="comment">          - for now use the same reconstruction paradigm for LYSO and plastic. two notes though</span></div>
-<div class="line"><span class="lineno">   60</span><span class="comment">            1. LYSO pulse looks wider, and might need wider window. plastic is fine with 5. start by 8 for LYSO (even if for large pulses, sometimes 10 seem to be needed). could probe this by correlating plastic and LYSO, and checking if at some amplitude (in plastic), we start cutting off charge in LYSO </span></div>
-<div class="line"><span class="lineno">   61</span><span class="comment">            2. there is a time offset between fibers. need to have a parameter fiber2offset to use for elecID &gt;= 8 </span></div>
-<div class="line"><span class="lineno">   62</span><span class="comment">            -- added this as a variable in EventReadout, along with fiber number. so this class doesn&#39;t need any detailed knowledge </span></div>
-<div class="line"><span class="lineno">   63</span><span class="comment"></span> </div>
-<div class="line"><span class="lineno">   64</span><span class="comment">      variables to write out:</span></div>
-<div class="line"><span class="lineno">   65</span><span class="comment">          - start sample</span></div>
-<div class="line"><span class="lineno">   66</span><span class="comment">          - pulse width</span></div>
-<div class="line"><span class="lineno">   67</span><span class="comment">          - n samples above threshold</span></div>
-<div class="line"><span class="lineno">   68</span><span class="comment">          - nPulses</span></div>
-<div class="line"><span class="lineno">   69</span><span class="comment">          - early pedestal (from first 5)</span></div>
-<div class="line"><span class="lineno">   70</span><span class="comment">          - assumed/average channel pedestal</span></div>
-<div class="line"><span class="lineno">   71</span><span class="comment">          - total Q </span></div>
-<div class="line"><span class="lineno">   72</span><span class="comment">          - ped subtracted total Q </span></div>
-<div class="line"><span class="lineno">   73</span><span class="comment">          - PE value </span></div>
-<div class="line"><span class="lineno">   74</span><span class="comment">          - max amplitude in pulse</span></div>
-<div class="line"><span class="lineno">   75</span><span class="comment">          - store material assumption? isLYSO? </span></div>
-<div class="line"><span class="lineno">   76</span><span class="comment">     */</span></div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordtype">float</span> mevPerMip = 0.3;</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordtype">float</span> pePerMip = 100;</div>
-<div class="line"><span class="lineno">   81</span>      </div>
-<div class="line"><span class="lineno">   82</span>    <span class="keyword">const</span> <span class="keyword">auto</span> channels{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classtrigscint_1_1EventReadout.html">trigscint::EventReadout</a> &gt;(<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac477d1b1792c67992053fb5ac25401be">inputCol_</a>, <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ad096ecfd4f7355f1ff49d7e97dfead5c">inputPassName_</a>)};</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordtype">int</span> evNb = <span class="keyword">event</span>.getEventNumber();</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordtype">int</span> nChan = channels.size();</div>
-<div class="line"><span class="lineno">   86</span>    std::vector&lt;trigscint::TestBeamHit&gt; hits;</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> chan : channels) {</div>
-<div class="line"><span class="lineno">   88</span>      <a class="code hl_class" href="classtrigscint_1_1TestBeamHit.html">trigscint::TestBeamHit</a> hit;</div>
-<div class="line"><span class="lineno">   89</span>      <span class="keywordtype">int</span> bar = chan.getChanID();</div>
-<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">if</span> (bar &gt;= <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">nInstrumentedChannels_</a>) <span class="comment">//don&#39;t run hit reconstruction on junk signal</span></div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   92</span>      <span class="keywordtype">int</span> width=<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a33e8981fa55c49cc1c79e5afbf0a9086">pulseWidth_</a>;</div>
-<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">if</span> (bar %2 == 0) { <span class="comment">//LYSO channel: allow for wider pulses</span></div>
-<div class="line"><span class="lineno">   94</span>        width=<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a82d4e9c7f4945e7daf7460bb91003f40">pulseWidthLYSO_</a>; <span class="comment">// avoid hardwiring</span></div>
-<div class="line"><span class="lineno">   95</span>      }</div>
-<div class="line"><span class="lineno">   96</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a7eb17852506b17764e7825bae0c2e74a">setPulseWidth</a>(width);</div>
-<div class="line"><span class="lineno">   97</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#ab3962815ad44a3e4fddd675f7ef127ae">setStartSample</a>(<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a>);</div>
-<div class="line"><span class="lineno">   98</span>      <span class="keywordtype">float</span> ped = <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">peds_</a>.at(bar); <span class="comment">//chan.getPedestal() ;</span></div>
-<div class="line"><span class="lineno">   99</span>      <span class="keywordtype">float</span> earlyPed = chan.getEarlyPedestal();</div>
-<div class="line"><span class="lineno">  100</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a8beddfb477da2e6b1b98f2391b8d6278">setPedestal</a>(ped);</div>
-<div class="line"><span class="lineno">  101</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a900039f25627bbd4317bcbe583c4c30d">setEarlyPedestal</a>(earlyPed);</div>
-<div class="line"><span class="lineno">  102</span>      <span class="keywordtype">int</span> isClean=0; <span class="comment">//false;</span></div>
-<div class="line"><span class="lineno">  103</span>      <span class="keywordtype">float</span> threshold =fabs(ped); <span class="comment">// 2*fabs(peds_[ bar ]); // or sth</span></div>
-<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ab7328c5eb63d82389e8c6c16b07fe8eb">doCleanHits_</a>)</div>
-<div class="line"><span class="lineno">  105</span>        threshold = 10*fabs(ped); <span class="comment">// stricter cut</span></div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>      <span class="keywordtype">int</span> startT = <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a> + chan.getTimeOffset();</div>
-<div class="line"><span class="lineno">  108</span>      <span class="keywordtype">float</span> maxQ = -999.;</div>
-<div class="line"><span class="lineno">  109</span>      <span class="keywordtype">int</span> nSampAbovePed = 0;</div>
-<div class="line"><span class="lineno">  110</span>      <span class="keywordtype">int</span> nSampAboveThr = 0;</div>
-<div class="line"><span class="lineno">  111</span>      <span class="keywordtype">float</span> totSubtrQ = 0;</div>
-<div class="line"><span class="lineno">  112</span>      std::vector&lt;float&gt; q = chan.getQ();</div>
-<div class="line"><span class="lineno">  113</span>      <span class="comment">// go to the start sample defined for this channel.</span></div>
-<div class="line"><span class="lineno">  114</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iT = startT; iT &lt; q.size() ; iT++) {</div>
-<div class="line"><span class="lineno">  115</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in event &quot;</span> &lt;&lt; evNb &lt;&lt; <span class="stringliteral">&quot;; channel &quot;</span> &lt;&lt; bar &lt;&lt; <span class="stringliteral">&quot;, got charge[&quot;</span> &lt;&lt; iT &lt;&lt; <span class="stringliteral">&quot;] = &quot;</span> &lt;&lt; q.at(iT);</div>
-<div class="line"><span class="lineno">  116</span>        <span class="comment">// for the defined number of samples, subtract pedestal. if &gt; 0, increment sample counter.</span></div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordtype">float</span> subQ=q.at(iT)-ped; <span class="comment">//this might be addition, if ped is negative. should see this as channel dependence in nSampAbove </span></div>
-<div class="line"><span class="lineno">  118</span>        <span class="comment">// once beyond nSamples, want to see how long positive threshold subtracted tail is --&gt; increment sample counter in any case.</span></div>
-<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">if</span> (subQ &gt; 0)</div>
-<div class="line"><span class="lineno">  120</span>          nSampAbovePed++;</div>
-<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (subQ &gt; threshold)</div>
-<div class="line"><span class="lineno">  122</span>          nSampAboveThr++;</div>
-<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">if</span> (iT - startT &lt; width ) { <span class="comment">//we&#39;re in the pulse integration window</span></div>
-<div class="line"><span class="lineno">  124</span>          <span class="keywordflow">if</span> ( subQ &gt; maxQ )  <span class="comment">// keep track of max Q. this is the pulse amplitude</span></div>
-<div class="line"><span class="lineno">  125</span>            maxQ = subQ; <span class="comment">//q.at(iT);</span></div>
-<div class="line"><span class="lineno">  126</span>          <span class="keywordflow">if</span> (subQ &gt; 0)</div>
-<div class="line"><span class="lineno">  127</span>            totSubtrQ+=subQ;        <span class="comment">// add positive subtracted Q to total pulse charge.</span></div>
-<div class="line"><span class="lineno">  128</span>        }</div>
-<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (subQ &lt; 0 || q.at(iT) &lt; 0 )   <span class="comment">// if after the full pulse width, subQ &lt; pedestal, break. special case to break at q=0 for cases where ped &lt; 0</span></div>
-<div class="line"><span class="lineno">  130</span>          <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  131</span>        <span class="comment">//done</span></div>
-<div class="line"><span class="lineno">  132</span>      }<span class="comment">// over time samples </span></div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>      <span class="comment">// first check that hit passes any quality cuts</span></div>
-<div class="line"><span class="lineno">  135</span>      uint flag = chan.getQualityFlag();</div>
-<div class="line"><span class="lineno">  136</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ab7328c5eb63d82389e8c6c16b07fe8eb">doCleanHits_</a>) {</div>
-<div class="line"><span class="lineno">  137</span>        <span class="keywordtype">int</span> isLongPulse=(nSampAboveThr &lt; 2 || nSampAboveThr &gt; width + 2);</div>
-<div class="line"><span class="lineno">  138</span>          flag += 4*isLongPulse;</div>
-<div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">if</span> (<span class="comment">//chan.getQualityFlag() == 0 &amp;&amp; //maxQ/totSubtrQ &lt; 2./3.) // skip &quot;unnaturally&quot; narrow hits </span></div>
-<div class="line"><span class="lineno">  141</span>            <span class="comment">//if ( fabs(chan.getPedestal()) &lt; 15 //threshold //   //skip events that have strange plateaus</span></div>
-<div class="line"><span class="lineno">  142</span>               <span class="comment">//              &amp;&amp; (chan.getAvgQ()/chan.getPedestal()&lt;0.8)  //skip events that have strange oscillations</span></div>
-<div class="line"><span class="lineno">  143</span>            <span class="comment">// 1 &lt; nSampAboveThr &amp;&amp; nSampAboveThr &lt; 10 ) // skip one-time sample flips and long weird pulses</span></div>
-<div class="line"><span class="lineno">  144</span>            flag == 0 )</div>
+<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8cxx_source.html#l00047">47</a> of file <a class="el" href="TestBeamHitProducer_8cxx_source.html">TestBeamHitProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>                                                          {</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   51</span><span class="comment">      hit producer. </span></div>
+<div class="line"><span class="lineno">   52</span><span class="comment">      sum up all charge within a certain time window. could work two ways: </span></div>
+<div class="line"><span class="lineno">   53</span><span class="comment">          - find a time sample above a threshold or where TDC is 0-50 (0-2)</span></div>
+<div class="line"><span class="lineno">   54</span><span class="comment">               * this could allow for finding several pulses per event, just keep sliding along in time</span></div>
+<div class="line"><span class="lineno">   55</span><span class="comment">               -- in that case, record nPulses, startsample, pulsewidth for each hit </span></div>
+<div class="line"><span class="lineno">   56</span><span class="comment">          - use a fixed start sample, and keep summing from there until nSamples is reached or all time samples used </span></div>
+<div class="line"><span class="lineno">   57</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   58</span><span class="comment">      specifics:</span></div>
+<div class="line"><span class="lineno">   59</span><span class="comment">          - each channel has its own pedestal to subtract. also try using the first 5 samples to establish a threshold in the event. store both </span></div>
+<div class="line"><span class="lineno">   60</span><span class="comment">          - store hit Q and hit PE conversion </span></div>
+<div class="line"><span class="lineno">   61</span><span class="comment">          - for now use the same reconstruction paradigm for LYSO and plastic. two notes though</span></div>
+<div class="line"><span class="lineno">   62</span><span class="comment">            1. LYSO pulse looks wider, and might need wider window. plastic is fine with 5. start by 8 for LYSO (even if for large pulses, sometimes 10 seem to be needed). could probe this by correlating plastic and LYSO, and checking if at some amplitude (in plastic), we start cutting off charge in LYSO </span></div>
+<div class="line"><span class="lineno">   63</span><span class="comment">            2. there is a time offset between fibers. need to have a parameter fiber2offset to use for elecID &gt;= 8 </span></div>
+<div class="line"><span class="lineno">   64</span><span class="comment">            -- added this as a variable in EventReadout, along with fiber number. so this class doesn&#39;t need any detailed knowledge </span></div>
+<div class="line"><span class="lineno">   65</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   66</span><span class="comment">      variables to write out:</span></div>
+<div class="line"><span class="lineno">   67</span><span class="comment">          - start sample</span></div>
+<div class="line"><span class="lineno">   68</span><span class="comment">          - pulse width</span></div>
+<div class="line"><span class="lineno">   69</span><span class="comment">          - n samples above threshold</span></div>
+<div class="line"><span class="lineno">   70</span><span class="comment">          - nPulses</span></div>
+<div class="line"><span class="lineno">   71</span><span class="comment">          - early pedestal (from first 5)</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">          - assumed/average channel pedestal</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">          - total Q </span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">          - ped subtracted total Q </span></div>
+<div class="line"><span class="lineno">   75</span><span class="comment">          - PE value </span></div>
+<div class="line"><span class="lineno">   76</span><span class="comment">          - max amplitude in pulse</span></div>
+<div class="line"><span class="lineno">   77</span><span class="comment">          - store material assumption? isLYSO? </span></div>
+<div class="line"><span class="lineno">   78</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordtype">float</span> mevPerMip = 0.3;</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordtype">float</span> pePerMip = 100;</div>
+<div class="line"><span class="lineno">   83</span>      </div>
+<div class="line"><span class="lineno">   84</span>    <span class="keyword">const</span> <span class="keyword">auto</span> channels{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classtrigscint_1_1EventReadout.html">trigscint::EventReadout</a> &gt;(<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac477d1b1792c67992053fb5ac25401be">inputCol_</a>, <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ad096ecfd4f7355f1ff49d7e97dfead5c">inputPassName_</a>)};</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordtype">int</span> evNb = <span class="keyword">event</span>.getEventNumber();</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordtype">int</span> nChan = channels.size();</div>
+<div class="line"><span class="lineno">   88</span>    std::vector&lt;trigscint::TestBeamHit&gt; hits;</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> chan : channels) {</div>
+<div class="line"><span class="lineno">   90</span>      <a class="code hl_class" href="classtrigscint_1_1TestBeamHit.html">trigscint::TestBeamHit</a> hit;</div>
+<div class="line"><span class="lineno">   91</span>      <span class="keywordtype">int</span> bar = chan.getChanID();</div>
+<div class="line"><span class="lineno">   92</span>      <span class="keywordflow">if</span> (bar &gt;= <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a2a09b22e65683f2b290328ce868d4010">nInstrumentedChannels_</a>) <span class="comment">//don&#39;t run hit reconstruction on junk signal</span></div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordtype">int</span> width=<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a33e8981fa55c49cc1c79e5afbf0a9086">pulseWidth_</a>;</div>
+<div class="line"><span class="lineno">   95</span>      <span class="keywordflow">if</span> (bar %2 == 0) { <span class="comment">//LYSO channel: allow for wider pulses</span></div>
+<div class="line"><span class="lineno">   96</span>        width=<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a82d4e9c7f4945e7daf7460bb91003f40">pulseWidthLYSO_</a>; <span class="comment">// avoid hardwiring</span></div>
+<div class="line"><span class="lineno">   97</span>      }</div>
+<div class="line"><span class="lineno">   98</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a7eb17852506b17764e7825bae0c2e74a">setPulseWidth</a>(width);</div>
+<div class="line"><span class="lineno">   99</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#ab3962815ad44a3e4fddd675f7ef127ae">setStartSample</a>(<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a>);</div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordtype">float</span> ped = <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#af3abbeafaffaebb663c382ae27befc2d">peds_</a>.at(bar); <span class="comment">//chan.getPedestal() ;</span></div>
+<div class="line"><span class="lineno">  101</span>      <span class="keywordtype">float</span> earlyPed = chan.getEarlyPedestal();</div>
+<div class="line"><span class="lineno">  102</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a8beddfb477da2e6b1b98f2391b8d6278">setPedestal</a>(ped);</div>
+<div class="line"><span class="lineno">  103</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a900039f25627bbd4317bcbe583c4c30d">setEarlyPedestal</a>(earlyPed);</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keywordtype">int</span> isClean=0; <span class="comment">//false;</span></div>
+<div class="line"><span class="lineno">  105</span>      <span class="keywordtype">float</span> threshold =fabs(ped); <span class="comment">// 2*fabs(peds_[ bar ]); // or sth</span></div>
+<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac312873d54fb269a095d8f4b5242094b">doCleanHits_</a>)</div>
+<div class="line"><span class="lineno">  107</span>        threshold = 7*fabs(ped); <span class="comment">// stricter cut</span></div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>      <span class="keywordtype">int</span> startT = <a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1b71d093602c8df72ca17bd01ad4b3ca">startSample_</a> + chan.getTimeOffset();</div>
+<div class="line"><span class="lineno">  110</span>      <span class="keywordtype">float</span> maxQ = -999.;</div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordtype">int</span> nSampAbovePed = 0;</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordtype">int</span> nSampAboveThr = 0;</div>
+<div class="line"><span class="lineno">  113</span>      <span class="keywordtype">float</span> totSubtrQ = 0;</div>
+<div class="line"><span class="lineno">  114</span>      std::vector&lt;float&gt; q = chan.getQ();</div>
+<div class="line"><span class="lineno">  115</span>      <span class="comment">// go to the start sample defined for this channel.</span></div>
+<div class="line"><span class="lineno">  116</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iT = startT; iT &lt; q.size() ; iT++) {</div>
+<div class="line"><span class="lineno">  117</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;in event &quot;</span> &lt;&lt; evNb &lt;&lt; <span class="stringliteral">&quot;; channel &quot;</span> &lt;&lt; bar &lt;&lt; <span class="stringliteral">&quot;, got charge[&quot;</span> &lt;&lt; iT &lt;&lt; <span class="stringliteral">&quot;] = &quot;</span> &lt;&lt; q.at(iT);</div>
+<div class="line"><span class="lineno">  118</span>        <span class="comment">// for the defined number of samples, subtract pedestal. if &gt; 0, increment sample counter.</span></div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordtype">float</span> subQ=q.at(iT)-ped; <span class="comment">//this might be addition, if ped is negative. should see this as channel dependence in nSampAbove </span></div>
+<div class="line"><span class="lineno">  120</span>        <span class="comment">// once beyond nSamples, want to see how long positive threshold subtracted tail is --&gt; increment sample counter in any case.</span></div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (subQ &gt; 0)</div>
+<div class="line"><span class="lineno">  122</span>          nSampAbovePed++;</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">if</span> (subQ &gt; threshold)</div>
+<div class="line"><span class="lineno">  124</span>          nSampAboveThr++;</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span> (iT - startT &lt; width ) { <span class="comment">//we&#39;re in the pulse integration window</span></div>
+<div class="line"><span class="lineno">  126</span>          <span class="keywordflow">if</span> ( subQ &gt; maxQ )  <span class="comment">// keep track of max Q. this is the pulse amplitude</span></div>
+<div class="line"><span class="lineno">  127</span>            maxQ = subQ; <span class="comment">//q.at(iT);</span></div>
+<div class="line"><span class="lineno">  128</span>          <span class="keywordflow">if</span> (subQ &gt; 0)</div>
+<div class="line"><span class="lineno">  129</span>            totSubtrQ+=subQ;        <span class="comment">// add positive subtracted Q to total pulse charge.</span></div>
+<div class="line"><span class="lineno">  130</span>        }</div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (subQ &lt; 0 || q.at(iT) &lt; 0 )   <span class="comment">// if after the full pulse width, subQ &lt; pedestal, break. special case to break at q=0 for cases where ped &lt; 0</span></div>
+<div class="line"><span class="lineno">  132</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  133</span>        <span class="comment">//done</span></div>
+<div class="line"><span class="lineno">  134</span>      }<span class="comment">// over time samples </span></div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>      <span class="comment">// first check that hit passes any quality cuts</span></div>
+<div class="line"><span class="lineno">  137</span>      uint flag = chan.getQualityFlag();</div>
+<div class="line"><span class="lineno">  138</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#ac312873d54fb269a095d8f4b5242094b">doCleanHits_</a>) {</div>
+<div class="line"><span class="lineno">  139</span>        <span class="comment">//      int isLongPulse=(nSampAboveThr &lt; 2 || nSampAboveThr &gt; width + 2);</span></div>
+<div class="line"><span class="lineno">  140</span>        <span class="keywordtype">int</span> isLongPulse=( nSampAboveThr &gt; width );  <span class="comment">//the short ones we&#39;ll have to single out otherwise (like spike flag or low Q) or live with</span></div>
+<div class="line"><span class="lineno">  141</span>        flag += 4*isLongPulse;</div>
+<div class="line"><span class="lineno">  142</span>          <span class="keywordflow">if</span> ( maxQ &gt; 2e3 &amp;&amp; nSampAboveThr &lt; 3 &amp;&amp; flag%2==0 ) <span class="comment">//this was not flagged as a spike but is eerily narrow and with highQ; flag it as a spike. </span></div>
+<div class="line"><span class="lineno">  143</span>            flag +=1;</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">if</span> ( flag == 0 )</div>
 <div class="line"><span class="lineno">  145</span>            isClean=1;</div>
 <div class="line"><span class="lineno">  146</span>      }</div>
 <div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>      <span class="comment">// set pulse properties like PE and amplitude</span></div>
-<div class="line"><span class="lineno">  149</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a5995083a955705e295c90f64c638debc">setSampAbovePed</a>(nSampAbovePed);</div>
-<div class="line"><span class="lineno">  150</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a67da619502b5c4276b61ca3f120e819e">setSampAboveThr</a>(nSampAboveThr);</div>
-<div class="line"><span class="lineno">  151</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a5d6771cd761d0fc90d91d42906839071">setQ</a>(totSubtrQ);</div>
-<div class="line"><span class="lineno">  152</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a5cd5e530e62a0629b6f3209f77974fd9">setAmplitude</a>(maxQ);</div>
-<div class="line"><span class="lineno">  153</span>      hit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#afb0fb16907e79bc046832be2384e75a6">setPE</a>( totSubtrQ*6250./<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#aa288bdef0e2d3da34ff5379e639fcd1d">gain_</a>[bar] );</div>
-<div class="line"><span class="lineno">  154</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a2f4ee813995c71a4756a75135cffaf5e">setHitQuality</a>( isClean );   </div>
-<div class="line"><span class="lineno">  155</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a1ae16e360f110fd833bae3a3619eb603">setQualityFlag</a>( flag );     </div>
-<div class="line"><span class="lineno">  156</span>      <span class="comment">// set bar id. set moduleNB = 0</span></div>
-<div class="line"><span class="lineno">  157</span>      hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a3e1b6459b41657964016fce562e89354">setBarID</a>( bar );    </div>
-<div class="line"><span class="lineno">  158</span>      hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#aeb368aa551f239713f3baefa5e386c7f">setModuleID</a>( 0 );  <span class="comment">// test beam </span></div>
-<div class="line"><span class="lineno">  159</span>      <span class="comment">//the rest are a little ill-defined for now (PE-energy conversion not known/different between LYSO and plastic)</span></div>
-<div class="line"><span class="lineno">  160</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">setTime</a>(-999);<span class="comment">//maybe?</span></div>
-<div class="line"><span class="lineno">  161</span>      hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a77e6ba1a96895f94c519207ff52f3781">setBeamEfrac</a>(-1.);</div>
-<div class="line"><span class="lineno">  162</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a63067db3972e32ed26f2b3a5ea8e46f8">setEnergy</a>( hit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#adcaaa51f7523883ce888dd2adbf11fb1">getPE</a>()*mevPerMip/pePerMip );</div>
-<div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>      <span class="comment">//add hit</span></div>
-<div class="line"><span class="lineno">  165</span>      hits.push_back(hit);</div>
-<div class="line"><span class="lineno">  166</span>    }<span class="comment">// over channels</span></div>
-<div class="line"><span class="lineno">  167</span>    </div>
-<div class="line"><span class="lineno">  168</span>    <span class="comment">// at end of event, write the collection of trigger scintillator hits.</span></div>
-<div class="line"><span class="lineno">  169</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1504febc37b481f4a05ab19baf8a763f">outputCollection_</a>, hits);</div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>        </div>
-<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="line"><span class="lineno">  148</span>      <span class="keywordtype">float</span> PE=totSubtrQ*6250./<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#aa288bdef0e2d3da34ff5379e639fcd1d">gain_</a>[bar];</div>
+<div class="line"><span class="lineno">  149</span>      <span class="keywordflow">if</span> (PE &gt; 20 ) <span class="comment">// dont&#39;t want to intercalibrate the shot noise</span></div>
+<div class="line"><span class="lineno">  150</span>        PE*=<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a00b1eac158855e625bf0834cc3291dcf">MIPresponse_</a>[bar];</div>
+<div class="line"><span class="lineno">  151</span>      </div>
+<div class="line"><span class="lineno">  152</span>      <span class="comment">// set pulse properties like PE and amplitude</span></div>
+<div class="line"><span class="lineno">  153</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a5995083a955705e295c90f64c638debc">setSampAbovePed</a>(nSampAbovePed);</div>
+<div class="line"><span class="lineno">  154</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a67da619502b5c4276b61ca3f120e819e">setSampAboveThr</a>(nSampAboveThr);</div>
+<div class="line"><span class="lineno">  155</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a5d6771cd761d0fc90d91d42906839071">setQ</a>(totSubtrQ);</div>
+<div class="line"><span class="lineno">  156</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a5cd5e530e62a0629b6f3209f77974fd9">setAmplitude</a>(maxQ);</div>
+<div class="line"><span class="lineno">  157</span>      hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a2cb7463680611271991d5ebf5c7bd802">setPE</a>( PE );</div>
+<div class="line"><span class="lineno">  158</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a2f4ee813995c71a4756a75135cffaf5e">setHitQuality</a>( isClean );   </div>
+<div class="line"><span class="lineno">  159</span>      hit.<a class="code hl_function" href="classtrigscint_1_1TestBeamHit.html#a1ae16e360f110fd833bae3a3619eb603">setQualityFlag</a>( flag );     </div>
+<div class="line"><span class="lineno">  160</span>      <span class="comment">// set bar id. set moduleNB = 0</span></div>
+<div class="line"><span class="lineno">  161</span>      hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a3e1b6459b41657964016fce562e89354">setBarID</a>( bar );    </div>
+<div class="line"><span class="lineno">  162</span>      hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#aeb368aa551f239713f3baefa5e386c7f">setModuleID</a>( 0 );  <span class="comment">// test beam </span></div>
+<div class="line"><span class="lineno">  163</span>      <span class="comment">//the rest are a little ill-defined for now (PE-energy conversion not known/different between LYSO and plastic)</span></div>
+<div class="line"><span class="lineno">  164</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">setTime</a>(-999);<span class="comment">//maybe?</span></div>
+<div class="line"><span class="lineno">  165</span>      hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#a77e6ba1a96895f94c519207ff52f3781">setBeamEfrac</a>(-1.);</div>
+<div class="line"><span class="lineno">  166</span>      hit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a63067db3972e32ed26f2b3a5ea8e46f8">setEnergy</a>( hit.<a class="code hl_function" href="classldmx_1_1TrigScintHit.html#acf974f3313b81c9b76db658258219214">getPE</a>()*mevPerMip/pePerMip );</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>      <span class="comment">//add hit</span></div>
+<div class="line"><span class="lineno">  169</span>      hits.push_back(hit);</div>
+<div class="line"><span class="lineno">  170</span>    }<span class="comment">// over channels</span></div>
+<div class="line"><span class="lineno">  171</span>    </div>
+<div class="line"><span class="lineno">  172</span>    <span class="comment">// at end of event, write the collection of trigger scintillator hits.</span></div>
+<div class="line"><span class="lineno">  173</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classtrigscint_1_1TestBeamHitProducer.html#a1504febc37b481f4a05ab19baf8a763f">outputCollection_</a>, hits);</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>        </div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  177</span>  }</div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a590256945dbfaa97d2528b9f260b6760"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">ldmx::CalorimeterHit::setTime</a></div><div class="ttdeci">void setTime(float time)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00099">CalorimeterHit.h:99</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a5cd5e530e62a0629b6f3209f77974fd9"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a5cd5e530e62a0629b6f3209f77974fd9">ldmx::CalorimeterHit::setAmplitude</a></div><div class="ttdeci">void setAmplitude(float amplitude)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00073">CalorimeterHit.h:73</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a63067db3972e32ed26f2b3a5ea8e46f8"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a63067db3972e32ed26f2b3a5ea8e46f8">ldmx::CalorimeterHit::setEnergy</a></div><div class="ttdeci">void setEnergy(float energy)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00087">CalorimeterHit.h:87</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_adcaaa51f7523883ce888dd2adbf11fb1"><div class="ttname"><a href="classldmx_1_1HcalHit.html#adcaaa51f7523883ce888dd2adbf11fb1">ldmx::HcalHit::getPE</a></div><div class="ttdeci">float getPE() const</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00050">HcalHit.h:50</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_afb0fb16907e79bc046832be2384e75a6"><div class="ttname"><a href="classldmx_1_1HcalHit.html#afb0fb16907e79bc046832be2384e75a6">ldmx::HcalHit::setPE</a></div><div class="ttdeci">void setPE(float pe)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00095">HcalHit.h:95</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintHit_html_a2cb7463680611271991d5ebf5c7bd802"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#a2cb7463680611271991d5ebf5c7bd802">ldmx::TrigScintHit::setPE</a></div><div class="ttdeci">void setPE(const float PE)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00061">TrigScintHit.h:61</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TrigScintHit_html_a3e1b6459b41657964016fce562e89354"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#a3e1b6459b41657964016fce562e89354">ldmx::TrigScintHit::setBarID</a></div><div class="ttdeci">void setBarID(const int barID)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00051">TrigScintHit.h:51</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintHit_html_a77e6ba1a96895f94c519207ff52f3781"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#a77e6ba1a96895f94c519207ff52f3781">ldmx::TrigScintHit::setBeamEfrac</a></div><div class="ttdeci">void setBeamEfrac(const float beamEfrac)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00071">TrigScintHit.h:71</a></div></div>
-<div class="ttc" id="aclassldmx_1_1TrigScintHit_html_aeb368aa551f239713f3baefa5e386c7f"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#aeb368aa551f239713f3baefa5e386c7f">ldmx::TrigScintHit::setModuleID</a></div><div class="ttdeci">void setModuleID(const int moduleID)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00061">TrigScintHit.h:61</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintHit_html_a77e6ba1a96895f94c519207ff52f3781"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#a77e6ba1a96895f94c519207ff52f3781">ldmx::TrigScintHit::setBeamEfrac</a></div><div class="ttdeci">void setBeamEfrac(const float beamEfrac)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00081">TrigScintHit.h:81</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintHit_html_acf974f3313b81c9b76db658258219214"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#acf974f3313b81c9b76db658258219214">ldmx::TrigScintHit::getPE</a></div><div class="ttdeci">float getPE() const</div><div class="ttdoc">Get the hit pe.</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00064">TrigScintHit.h:64</a></div></div>
+<div class="ttc" id="aclassldmx_1_1TrigScintHit_html_aeb368aa551f239713f3baefa5e386c7f"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html#aeb368aa551f239713f3baefa5e386c7f">ldmx::TrigScintHit::setModuleID</a></div><div class="ttdeci">void setModuleID(const int moduleID)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00071">TrigScintHit.h:71</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1EventReadout_html"><div class="ttname"><a href="classtrigscint_1_1EventReadout.html">trigscint::EventReadout</a></div><div class="ttdoc">This class represents the linearised QIE output from the trigger scintillator, in charge (fC).</div><div class="ttdef"><b>Definition:</b> <a href="EventReadout_8h_source.html#l00023">EventReadout.h:23</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHit_html"><div class="ttname"><a href="classtrigscint_1_1TestBeamHit.html">trigscint::TestBeamHit</a></div><div class="ttdoc">This class represents the linearised QIE output from the trigger scintillator, in charge (fC).</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHit_8h_source.html#l00023">TestBeamHit.h:23</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHit_html_a1ae16e360f110fd833bae3a3619eb603"><div class="ttname"><a href="classtrigscint_1_1TestBeamHit.html#a1ae16e360f110fd833bae3a3619eb603">trigscint::TestBeamHit::setQualityFlag</a></div><div class="ttdeci">void setQualityFlag(const uint flag)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHit_8h_source.html#l00141">TestBeamHit.h:141</a></div></div>
@@ -481,13 +489,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHit_html_a900039f25627bbd4317bcbe583c4c30d"><div class="ttname"><a href="classtrigscint_1_1TestBeamHit.html#a900039f25627bbd4317bcbe583c4c30d">trigscint::TestBeamHit::setEarlyPedestal</a></div><div class="ttdeci">void setEarlyPedestal(const float earlyPed)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHit_8h_source.html#l00061">TestBeamHit.h:61</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHit_html_ab3962815ad44a3e4fddd675f7ef127ae"><div class="ttname"><a href="classtrigscint_1_1TestBeamHit.html#ab3962815ad44a3e4fddd675f7ef127ae">trigscint::TestBeamHit::setStartSample</a></div><div class="ttdeci">void setStartSample(const int startSample)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHit_8h_source.html#l00094">TestBeamHit.h:94</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalHit_8h_source.html#l00050">ldmx::HcalHit::getPE()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00073">ldmx::CalorimeterHit::setAmplitude()</a>, <a class="el" href="TrigScintHit_8h_source.html#l00051">ldmx::TrigScintHit::setBarID()</a>, <a class="el" href="TrigScintHit_8h_source.html#l00071">ldmx::TrigScintHit::setBeamEfrac()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00061">trigscint::TestBeamHit::setEarlyPedestal()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00087">ldmx::CalorimeterHit::setEnergy()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00127">trigscint::TestBeamHit::setHitQuality()</a>, <a class="el" href="TrigScintHit_8h_source.html#l00061">ldmx::TrigScintHit::setModuleID()</a>, <a class="el" href="HcalHit_8h_source.html#l00095">ldmx::HcalHit::setPE()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00050">trigscint::TestBeamHit::setPedestal()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00152">trigscint::TestBeamHit::setPulseWidth()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00071">trigscint::TestBeamHit::setQ()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00141">trigscint::TestBeamHit::setQualityFlag()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00106">trigscint::TestBeamHit::setSampAbovePed()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00117">trigscint::TestBeamHit::setSampAboveThr()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00094">trigscint::TestBeamHit::setStartSample()</a>, and <a class="el" href="CalorimeterHit_8h_source.html#l00099">ldmx::CalorimeterHit::setTime()</a>.</p>
+<p class="reference">References <a class="el" href="TrigScintHit_8h_source.html#l00064">ldmx::TrigScintHit::getPE()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00073">ldmx::CalorimeterHit::setAmplitude()</a>, <a class="el" href="TrigScintHit_8h_source.html#l00051">ldmx::TrigScintHit::setBarID()</a>, <a class="el" href="TrigScintHit_8h_source.html#l00081">ldmx::TrigScintHit::setBeamEfrac()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00061">trigscint::TestBeamHit::setEarlyPedestal()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00087">ldmx::CalorimeterHit::setEnergy()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00127">trigscint::TestBeamHit::setHitQuality()</a>, <a class="el" href="TrigScintHit_8h_source.html#l00071">ldmx::TrigScintHit::setModuleID()</a>, <a class="el" href="TrigScintHit_8h_source.html#l00061">ldmx::TrigScintHit::setPE()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00050">trigscint::TestBeamHit::setPedestal()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00152">trigscint::TestBeamHit::setPulseWidth()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00071">trigscint::TestBeamHit::setQ()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00141">trigscint::TestBeamHit::setQualityFlag()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00106">trigscint::TestBeamHit::setSampAbovePed()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00117">trigscint::TestBeamHit::setSampAboveThr()</a>, <a class="el" href="TestBeamHit_8h_source.html#l00094">trigscint::TestBeamHit::setStartSample()</a>, and <a class="el" href="CalorimeterHit_8h_source.html#l00099">ldmx::CalorimeterHit::setTime()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab7328c5eb63d82389e8c6c16b07fe8eb" name="ab7328c5eb63d82389e8c6c16b07fe8eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7328c5eb63d82389e8c6c16b07fe8eb">&#9670;&#160;</a></span>doCleanHits_</h2>
+<a id="ac312873d54fb269a095d8f4b5242094b" name="ac312873d54fb269a095d8f4b5242094b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac312873d54fb269a095d8f4b5242094b">&#9670;&#160;</a></span>doCleanHits_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -496,7 +504,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int trigscint::TestBeamHitProducer::doCleanHits_ {false}</td>
+          <td class="memname">bool trigscint::TestBeamHitProducer::doCleanHits_ {false}</td>
         </tr>
       </table>
   </td>
@@ -508,7 +516,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>boolean indicating whether we want to apply quality criteria in hit reconstruction </p>
 
-<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00083">83</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00086">86</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
 
 </div>
 </div>
@@ -589,6 +597,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a00b1eac158855e625bf0834cc3291dcf" name="a00b1eac158855e625bf0834cc3291dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b1eac158855e625bf0834cc3291dcf">&#9670;&#160;</a></span>MIPresponse_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; trigscint::TestBeamHitProducer::MIPresponse_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>channel MIP response for intercalibration </p>
+
+<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00071">71</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
+
+</div>
+</div>
 <a id="a2a09b22e65683f2b290328ce868d4010" name="a2a09b22e65683f2b290328ce868d4010"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a09b22e65683f2b290328ce868d4010">&#9670;&#160;</a></span>nInstrumentedChannels_</h2>
 
@@ -611,7 +645,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Number of instrumented channels in module. </p>
 
-<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00080">80</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00083">83</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
 
 </div>
 </div>
@@ -688,7 +722,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Total number of samples used in pulse integration. </p>
 
-<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00074">74</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00077">77</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
 
 </div>
 </div>
@@ -714,7 +748,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Total number of samples used in pulse integration for LYSO (long decay, might need wider window) </p>
 
-<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00077">77</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00080">80</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
 
 </div>
 </div>
@@ -740,7 +774,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>start sample for pulse integration (not including any fiber offsets) </p>
 
-<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00071">71</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestBeamHitProducer_8h_source.html#l00074">74</a> of file <a class="el" href="TestBeamHitProducer_8h_source.html">TestBeamHitProducer.h</a>.</p>
 
 </div>
 </div>

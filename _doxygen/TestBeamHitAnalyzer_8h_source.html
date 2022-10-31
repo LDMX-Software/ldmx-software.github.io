@@ -97,19 +97,23 @@ $(function() {
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">int</span> nChannels{16};</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">int</span> nTrkMax{100};</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    TH2F* hEvDisp;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">//match nev, nchan above</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    TH1F* hOut[200][16];;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    TH1F* hPE[16];</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    TH2F* hPEVsDelta[16];</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    TH2F* hDeltaPEVsDelta[16];</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    TH2F* hPEmaxVsDelta;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  };</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">/* TRIGSCINT_TESTBEAMHITANALYZER_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    TH2F* hEvDispPE;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">int</span> fillNb{0};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">//match nev, nchan above</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    TH1F* hOut[200][16];;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    TH1F* hPE[16];</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    TH1F* hPEinClusters[16];</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    TH2F* hPEVsDelta[16];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    TH2F* hDeltaPEVsDelta[16];</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    TH2F* hPEmaxVsDelta;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  };</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif </span><span class="comment">/* TRIGSCINT_TESTBEAMHITANALYZER_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aEventProcessor_8h_html"><div class="ttname"><a href="EventProcessor_8h.html">EventProcessor.h</a></div><div class="ttdoc">Base classes for all user event processing components to extend.</div></div>
 <div class="ttc" id="aTestBeamHit_8h_html"><div class="ttname"><a href="TestBeamHit_8h.html">TestBeamHit.h</a></div><div class="ttdoc">Class that stores full reconstructed (linearized) readout QIE sample from the TS.</div></div>
 <div class="ttc" id="aclassframework_1_1Analyzer_html"><div class="ttname"><a href="classframework_1_1Analyzer.html">framework::Analyzer</a></div><div class="ttdoc">Base class for a module which does not produce a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00293">EventProcessor.h:293</a></div></div>
@@ -118,8 +122,8 @@ $(function() {
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHitAnalyzer_html"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitAnalyzer.html">trigscint::TestBeamHitAnalyzer</a></div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitAnalyzer_8h_source.html#l00023">TestBeamHitAnalyzer.h:23</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHitAnalyzer_html_a0c7c4641d7d76c02146f50d83cc47d9a"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitAnalyzer.html#a0c7c4641d7d76c02146f50d83cc47d9a">trigscint::TestBeamHitAnalyzer::configure</a></div><div class="ttdeci">virtual void configure(framework::config::Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitAnalyzer_8cxx_source.html#l00016">TestBeamHitAnalyzer.cxx:16</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TestBeamHitAnalyzer_html_a4087a167bec45ff18fc0c5a217727d3a"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitAnalyzer.html#a4087a167bec45ff18fc0c5a217727d3a">trigscint::TestBeamHitAnalyzer::onProcessEnd</a></div><div class="ttdeci">virtual void onProcessEnd() final override</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitAnalyzer_8cxx_source.html#l00119">TestBeamHitAnalyzer.cxx:119</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TestBeamHitAnalyzer_html_ac8781004a95ef8cd1255f677d6a6d453"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitAnalyzer.html#ac8781004a95ef8cd1255f677d6a6d453">trigscint::TestBeamHitAnalyzer::onProcessStart</a></div><div class="ttdeci">virtual void onProcessStart() final override</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitAnalyzer_8cxx_source.html#l00089">TestBeamHitAnalyzer.cxx:89</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TestBeamHitAnalyzer_html_a4087a167bec45ff18fc0c5a217727d3a"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitAnalyzer.html#a4087a167bec45ff18fc0c5a217727d3a">trigscint::TestBeamHitAnalyzer::onProcessEnd</a></div><div class="ttdeci">virtual void onProcessEnd() final override</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitAnalyzer_8cxx_source.html#l00142">TestBeamHitAnalyzer.cxx:142</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TestBeamHitAnalyzer_html_ac8781004a95ef8cd1255f677d6a6d453"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitAnalyzer.html#ac8781004a95ef8cd1255f677d6a6d453">trigscint::TestBeamHitAnalyzer::onProcessStart</a></div><div class="ttdeci">virtual void onProcessStart() final override</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitAnalyzer_8cxx_source.html#l00103">TestBeamHitAnalyzer.cxx:103</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TestBeamHitAnalyzer_html_ad56deb86a0b2c311347526616541266f"><div class="ttname"><a href="classtrigscint_1_1TestBeamHitAnalyzer.html#ad56deb86a0b2c311347526616541266f">trigscint::TestBeamHitAnalyzer::analyze</a></div><div class="ttdeci">virtual void analyze(const framework::Event &amp;event) final override</div><div class="ttdef"><b>Definition:</b> <a href="TestBeamHitAnalyzer_8cxx_source.html#l00033">TestBeamHitAnalyzer.cxx:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

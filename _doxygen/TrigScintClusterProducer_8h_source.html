@@ -111,35 +111,44 @@ $(function() {
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// specific pass name to use for track making</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  std::string passName_{<span class="stringliteral">&quot;&quot;</span>};</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">// cluster channel nb centroid (will be content weighted)</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">float</span> centroid_{0.};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">// vertical bar start index </span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">int</span> vertBarStartIdx_{52};</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="comment">// energy (edep), PE, or sth</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">float</span> val_{0.};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="comment">// cluster channel nb centroid (will be content weighted)</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">float</span> centroid_{0.};</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="comment">// edep content, only; leave val_ for PE</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">float</span> valE_{0.};</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="comment">// cluster channel nb horizontal centroid (will be content weighted)</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">float</span> centroidX_{-1};</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="comment">// book keep which channels have already been added to the cluster at hand</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  std::vector&lt;unsigned int&gt; v_addedIndices_;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="comment">// cluster channel nb vertical centroid (will be content weighted)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">float</span> centroidY_{-1};</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="comment">// book keep which channels have already been added to any cluster</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  std::vector&lt;unsigned int&gt; v_usedIndices_;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="comment">// energy (edep), PE, or sth</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">float</span> val_{0.};</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="comment">// fraction of cluster energy deposition associated with beam electron sim</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="comment">// hits</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">float</span> beamE_{0.};</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="comment">// cluster time (energy weighted based on hit time)</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">float</span> time_{0.};</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="comment">// empty map container</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  std::map&lt;int, int&gt; hitChannelMap_;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}  <span class="comment">// namespace trigscint</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="comment">// edep content, only; leave val_ for PE</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">float</span> valE_{0.};</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="comment">// book keep which channels have already been added to the cluster at hand</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  std::vector&lt;unsigned int&gt; v_addedIndices_;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="comment">// book keep which channels have already been added to any cluster</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  std::vector&lt;unsigned int&gt; v_usedIndices_;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="comment">// fraction of cluster energy deposition associated with beam electron sim</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="comment">// hits</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">float</span> beamE_{0.};</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif </span><span class="comment">/* TRIGSCINT_TRIGSCINTCLUSTERPRODUCER_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="comment">// cluster time (energy weighted based on hit time)</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">float</span> time_{0.};</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="comment">// empty map container</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  std::map&lt;int, int&gt; hitChannelMap_;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>};</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}  <span class="comment">// namespace trigscint</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif </span><span class="comment">/* TRIGSCINT_TRIGSCINTCLUSTERPRODUCER_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aEventConstants_8h_html"><div class="ttname"><a href="EventConstants_8h.html">EventConstants.h</a></div><div class="ttdoc">Class providing string constants for the event model.</div></div>
 <div class="ttc" id="aEventProcessor_8h_html"><div class="ttname"><a href="EventProcessor_8h.html">EventProcessor.h</a></div><div class="ttdoc">Base classes for all user event processing components to extend.</div></div>
 <div class="ttc" id="aEvent_8h_html"><div class="ttname"><a href="Event_8h.html">Event.h</a></div><div class="ttdoc">Class implementing an event buffer system for storing event data.</div></div>
@@ -150,11 +159,11 @@ $(function() {
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
 <div class="ttc" id="aclassldmx_1_1TrigScintHit_html"><div class="ttname"><a href="classldmx_1_1TrigScintHit.html">ldmx::TrigScintHit</a></div><div class="ttdef"><b>Definition:</b> <a href="TrigScintHit_8h_source.html#l00024">TrigScintHit.h:24</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html">trigscint::TrigScintClusterProducer</a></div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8h_source.html#l00024">TrigScintClusterProducer.h:24</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_a4ca9e856b007255cdf82d7b89414027e"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#a4ca9e856b007255cdf82d7b89414027e">trigscint::TrigScintClusterProducer::produce</a></div><div class="ttdeci">virtual void produce(framework::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00036">TrigScintClusterProducer.cxx:36</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_a4ca9e856b007255cdf82d7b89414027e"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#a4ca9e856b007255cdf82d7b89414027e">trigscint::TrigScintClusterProducer::produce</a></div><div class="ttdeci">virtual void produce(framework::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00037">TrigScintClusterProducer.cxx:37</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_aa3b54faa4dc0c7ca61663a69a549a22b"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#aa3b54faa4dc0c7ca61663a69a549a22b">trigscint::TrigScintClusterProducer::configure</a></div><div class="ttdeci">virtual void configure(framework::config::Parameters &amp;ps)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00009">TrigScintClusterProducer.cxx:9</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_ac686c03aaa139757c14cd6a4da33c966"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#ac686c03aaa139757c14cd6a4da33c966">trigscint::TrigScintClusterProducer::onProcessStart</a></div><div class="ttdeci">virtual void onProcessStart()</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00504">TrigScintClusterProducer.cxx:504</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_ad89acebcc2ae085a876c89a8a3640c71"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#ad89acebcc2ae085a876c89a8a3640c71">trigscint::TrigScintClusterProducer::addHit</a></div><div class="ttdeci">virtual void addHit(uint idx, ldmx::TrigScintHit hit)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00455">TrigScintClusterProducer.cxx:455</a></div></div>
-<div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_af4ccab0098cdf1d952afab5b24047b68"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#af4ccab0098cdf1d952afab5b24047b68">trigscint::TrigScintClusterProducer::onProcessEnd</a></div><div class="ttdeci">virtual void onProcessEnd()</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00510">TrigScintClusterProducer.cxx:510</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_ac686c03aaa139757c14cd6a4da33c966"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#ac686c03aaa139757c14cd6a4da33c966">trigscint::TrigScintClusterProducer::onProcessStart</a></div><div class="ttdeci">virtual void onProcessStart()</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00517">TrigScintClusterProducer.cxx:517</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_ad89acebcc2ae085a876c89a8a3640c71"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#ad89acebcc2ae085a876c89a8a3640c71">trigscint::TrigScintClusterProducer::addHit</a></div><div class="ttdeci">virtual void addHit(uint idx, ldmx::TrigScintHit hit)</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00468">TrigScintClusterProducer.cxx:468</a></div></div>
+<div class="ttc" id="aclasstrigscint_1_1TrigScintClusterProducer_html_af4ccab0098cdf1d952afab5b24047b68"><div class="ttname"><a href="classtrigscint_1_1TrigScintClusterProducer.html#af4ccab0098cdf1d952afab5b24047b68">trigscint::TrigScintClusterProducer::onProcessEnd</a></div><div class="ttdeci">virtual void onProcessEnd()</div><div class="ttdef"><b>Definition:</b> <a href="TrigScintClusterProducer_8cxx_source.html#l00523">TrigScintClusterProducer.cxx:523</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

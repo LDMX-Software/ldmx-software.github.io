@@ -252,7 +252,18 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   21</span>  <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#aa287e6df4aacc304850f655637a22163">timeShift_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;time_shift&quot;</span>);</div>
 <div class="line"><span class="lineno">   22</span>  <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a28ad8a718a65005687f3e9f59da4ced9">fiberToShift_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;fiber_to_shift&quot;</span>);</div>
 <div class="line"><span class="lineno">   23</span>  <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;verbose&quot;</span>);</div>
-<div class="line"><span class="lineno">   24</span>}</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;In configure, got parameters:&quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno">   27</span>    <span class="stringliteral">&quot;\noutput_collection = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a48ad49388047ffc0fc018f34e12acf14">outputCollection_</a> &lt;&lt;</div>
+<div class="line"><span class="lineno">   28</span>    <span class="stringliteral">&quot;\ninput_collection = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a9f51e5cd87d4d644c1739720a33d2dde">inputCollection_</a> &lt;&lt;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="stringliteral">&quot;\ninput_pass_name  = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#abac7f380452fc505f850aca049ceea70">inputPassName_</a> &lt;&lt;</div>
+<div class="line"><span class="lineno">   30</span>    <span class="stringliteral">&quot;\nnumber_pedestal_samples  = &quot;</span> &lt;&lt;  <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a690f78f9f0285be4b2d97c918759a5ad">nPedSamples_</a> &lt;&lt;</div>
+<div class="line"><span class="lineno">   31</span>    <span class="stringliteral">&quot;\ntime_shift = &quot;</span> &lt;&lt;  <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#aa287e6df4aacc304850f655637a22163">timeShift_</a> &lt;&lt;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="stringliteral">&quot;\nfiber_to_shift  = &quot;</span> &lt;&lt;  <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a28ad8a718a65005687f3e9f59da4ced9">fiberToShift_</a> &lt;&lt;</div>
+<div class="line"><span class="lineno">   33</span>    <span class="stringliteral">&quot;\nverbose          = &quot;</span> &lt;&lt; <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a> ;</div>
+<div class="line"><span class="lineno">   34</span>  </div>
+<div class="line"><span class="lineno">   35</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1EventReadoutProducer_html_a28ad8a718a65005687f3e9f59da4ced9"><div class="ttname"><a href="classtrigscint_1_1EventReadoutProducer.html#a28ad8a718a65005687f3e9f59da4ced9">trigscint::EventReadoutProducer::fiberToShift_</a></div><div class="ttdeci">int fiberToShift_</div><div class="ttdoc">Which of the fibers to set the time shift for (0 or 1)</div><div class="ttdef"><b>Definition:</b> <a href="EventReadoutProducer_8h_source.html#l00073">EventReadoutProducer.h:73</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1EventReadoutProducer_html_a38551d97f48668f6cb4799e18f336b96"><div class="ttname"><a href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">trigscint::EventReadoutProducer::verbose_</a></div><div class="ttdeci">bool verbose_</div><div class="ttdoc">Class to set the verbosity level.</div><div class="ttdef"><b>Definition:</b> <a href="EventReadoutProducer_8h_source.html#l00053">EventReadoutProducer.h:53</a></div></div>
@@ -298,121 +309,210 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="EventReadoutProducer_8cxx_source.html#l00026">26</a> of file <a class="el" href="EventReadoutProducer_8cxx_source.html">EventReadoutProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                        {</div>
-<div class="line"><span class="lineno">   27</span>  <span class="comment">// initialize QIE object for linearizing ADCs</span></div>
-<div class="line"><span class="lineno">   28</span>  SimQIE qie;</div>
-<div class="line"><span class="lineno">   29</span>  </div>
-<div class="line"><span class="lineno">   30</span>  <span class="keyword">const</span> <span class="keyword">auto</span> digis{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classtrigscint_1_1TrigScintQIEDigis.html">trigscint::TrigScintQIEDigis</a>&gt;(</div>
-<div class="line"><span class="lineno">   31</span>      <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a9f51e5cd87d4d644c1739720a33d2dde">inputCollection_</a>, <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#abac7f380452fc505f850aca049ceea70">inputPassName_</a>)};</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>  std::vector&lt;trigscint::EventReadout&gt; channelReadoutEvents;</div>
-<div class="line"><span class="lineno">   34</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;digi : digis) {</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_class" href="classtrigscint_1_1EventReadout.html">trigscint::EventReadout</a> outEvent;</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keyword">auto</span> adc{digi.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a0cea079d31dd4a6700e16aed0da8e504">getADC</a>()};</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keyword">auto</span> tdc{digi.getTDC()};</div>
-<div class="line"><span class="lineno">   38</span>    </div>
-<div class="line"><span class="lineno">   39</span>    <span class="comment">//copy over from qie digi for convenience</span></div>
-<div class="line"><span class="lineno">   40</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a61759b98bc7bfb082a0a8ad13e023211">setChanID</a>(digi.getChanID());</div>
-<div class="line"><span class="lineno">   41</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#ae278b625ff58c605b49174a8dcd9d968">setElecID</a>(digi.getElecID());</div>
-<div class="line"><span class="lineno">   42</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a7e39c308f44f3f58109c2a28ac36b75b">setTimeSinceSpill</a>(digi.getTimeSinceSpill());</div>
-<div class="line"><span class="lineno">   43</span>    <span class="comment">// elecID increases monotonically with 8 channels per fiber</span></div>
-<div class="line"><span class="lineno">   44</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a0c6a3c7fd8536fe8c1638be62b272d2a">setFiberNb</a>( (<span class="keywordtype">int</span>)(digi.getElecID()/8) );  </div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> ( outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#ab60f121258572663a563076a890cff0b">getFiberNb</a>() == <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a28ad8a718a65005687f3e9f59da4ced9">fiberToShift_</a> )</div>
-<div class="line"><span class="lineno">   46</span>      outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a179c777431628eccd06bf88062a8da3b">setTimeOffset</a>( <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#aa287e6df4aacc304850f655637a22163">timeShift_</a>);</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#affb0f4779e5ff8271aa4e1bd2c21b179">setADC</a>(adc);</div>
-<div class="line"><span class="lineno">   49</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a45766b067d9cdf7875c73bea06e8aefb">setTDC</a>(tdc);</div>
-<div class="line"><span class="lineno">   50</span>    std::vector &lt;float&gt; charge;</div>
-<div class="line"><span class="lineno">   51</span>    std::vector &lt;float&gt; chargeErr;</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordtype">float</span> avgQ = 0;</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">float</span> totPosQ = 0;</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">int</span> iS=0;</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">int</span> nPos=0;</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">float</span> earlyPed=0;</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; val: adc) {</div>
-<div class="line"><span class="lineno">   59</span>      <span class="keywordtype">float</span> Q=qie.ADC2Q(val);</div>
-<div class="line"><span class="lineno">   60</span>      charge.push_back( Q );</div>
-<div class="line"><span class="lineno">   61</span>      chargeErr.push_back( qie.QErr(Q) );</div>
-<div class="line"><span class="lineno">   62</span>      avgQ+=Q; <span class="comment">//charge.back();</span></div>
-<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">if</span> ( Q &gt; 0 ) {</div>
-<div class="line"><span class="lineno">   64</span>        totPosQ+=Q;</div>
-<div class="line"><span class="lineno">   65</span>        nPos++;</div>
-<div class="line"><span class="lineno">   66</span>      }</div>
-<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a>)</div>
-<div class="line"><span class="lineno">   68</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;got adc value &quot;</span> &lt;&lt; val &lt;&lt; <span class="stringliteral">&quot; and charge &quot;</span> &lt;&lt; Q; <span class="comment">//qie.ADC2Q(val);</span></div>
-<div class="line"><span class="lineno">   69</span>      <span class="keywordflow">if</span> (iS &lt; <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a690f78f9f0285be4b2d97c918759a5ad">nPedSamples_</a>)</div>
-<div class="line"><span class="lineno">   70</span>        earlyPed+=Q;</div>
-<div class="line"><span class="lineno">   71</span>      iS++;</div>
-<div class="line"><span class="lineno">   72</span>    }</div>
-<div class="line"><span class="lineno">   73</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#abf8f9c21c12f8f7dedac2846ddcb00be">setQ</a>(charge); <span class="comment">//set in proper order before sorting </span></div>
-<div class="line"><span class="lineno">   74</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a27bf4356a3f7280bf535148559a017c4">setQError</a>(chargeErr); <span class="comment">//set in proper order before sorting </span></div>
-<div class="line"><span class="lineno">   75</span>    earlyPed/=<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a690f78f9f0285be4b2d97c918759a5ad">nPedSamples_</a>;</div>
-<div class="line"><span class="lineno">   76</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#aed4608047cf7cdea0997b60f9784dd0b">setEarlyPedestal</a>(earlyPed);</div>
-<div class="line"><span class="lineno">   77</span>    <span class="comment">//now calculate the pedestal as the average of the middle half of the sorted vector </span></div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordtype">float</span> ped = 0;</div>
-<div class="line"><span class="lineno">   79</span>    std::sort(charge.begin(), charge.end());</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordtype">int</span> quartLength=(int)charge.size()/4;</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = quartLength; i &lt; 3*quartLength ; i++) {</div>
-<div class="line"><span class="lineno">   82</span>      ped+=charge[i];</div>
+<p class="definition">Definition at line <a class="el" href="EventReadoutProducer_8cxx_source.html#l00037">37</a> of file <a class="el" href="EventReadoutProducer_8cxx_source.html">EventReadoutProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                        {</div>
+<div class="line"><span class="lineno">   38</span>  <span class="comment">// initialize QIE object for linearizing ADCs</span></div>
+<div class="line"><span class="lineno">   39</span>  SimQIE qie;</div>
+<div class="line"><span class="lineno">   40</span>                                                                                               </div>
+<div class="line"><span class="lineno">   41</span>  <span class="keyword">const</span> <span class="keyword">auto</span> digis{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classtrigscint_1_1TrigScintQIEDigis.html">trigscint::TrigScintQIEDigis</a>&gt;(</div>
+<div class="line"><span class="lineno">   42</span>      <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a9f51e5cd87d4d644c1739720a33d2dde">inputCollection_</a>, <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#abac7f380452fc505f850aca049ceea70">inputPassName_</a>)};</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>  std::vector&lt;trigscint::EventReadout&gt; channelReadoutEvents;</div>
+<div class="line"><span class="lineno">   45</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;digi : digis) {</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_class" href="classtrigscint_1_1EventReadout.html">trigscint::EventReadout</a> outEvent;</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keyword">auto</span> adc{digi.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a0cea079d31dd4a6700e16aed0da8e504">getADC</a>()};</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keyword">auto</span> tdc{digi.getTDC()};</div>
+<div class="line"><span class="lineno">   49</span>    </div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">//copy over from qie digi for convenience</span></div>
+<div class="line"><span class="lineno">   51</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a61759b98bc7bfb082a0a8ad13e023211">setChanID</a>(digi.getChanID());</div>
+<div class="line"><span class="lineno">   52</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#ae278b625ff58c605b49174a8dcd9d968">setElecID</a>(digi.getElecID());</div>
+<div class="line"><span class="lineno">   53</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a7e39c308f44f3f58109c2a28ac36b75b">setTimeSinceSpill</a>(digi.getTimeSinceSpill());</div>
+<div class="line"><span class="lineno">   54</span>    <span class="comment">// elecID increases monotonically with 8 channels per fiber</span></div>
+<div class="line"><span class="lineno">   55</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a0c6a3c7fd8536fe8c1638be62b272d2a">setFiberNb</a>( (<span class="keywordtype">int</span>)(digi.getElecID()/8) );  </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> ( outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#ab60f121258572663a563076a890cff0b">getFiberNb</a>() == <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a28ad8a718a65005687f3e9f59da4ced9">fiberToShift_</a> )</div>
+<div class="line"><span class="lineno">   57</span>      outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a179c777431628eccd06bf88062a8da3b">setTimeOffset</a>( <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#aa287e6df4aacc304850f655637a22163">timeShift_</a>);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#affb0f4779e5ff8271aa4e1bd2c21b179">setADC</a>(adc);</div>
+<div class="line"><span class="lineno">   60</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a45766b067d9cdf7875c73bea06e8aefb">setTDC</a>(tdc);</div>
+<div class="line"><span class="lineno">   61</span>    std::vector &lt;float&gt; charge;</div>
+<div class="line"><span class="lineno">   62</span>    std::vector &lt;float&gt; chargeErr;</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordtype">float</span> avgQ = 0;</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">float</span> totPosQ = 0;</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordtype">int</span> iS=0;</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">int</span> nPos=0;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordtype">float</span> earlyPed=0;</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; val: adc) {</div>
+<div class="line"><span class="lineno">   70</span>      <span class="keywordtype">float</span> Q=qie.ADC2Q(val);</div>
+<div class="line"><span class="lineno">   71</span>      charge.push_back( Q );</div>
+<div class="line"><span class="lineno">   72</span>      chargeErr.push_back( qie.QErr(Q) );</div>
+<div class="line"><span class="lineno">   73</span>      avgQ+=Q; <span class="comment">//charge.back();</span></div>
+<div class="line"><span class="lineno">   74</span>      <span class="keywordflow">if</span> ( Q &gt; 0 ) {</div>
+<div class="line"><span class="lineno">   75</span>        totPosQ+=Q;</div>
+<div class="line"><span class="lineno">   76</span>        nPos++;</div>
+<div class="line"><span class="lineno">   77</span>      }</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a>)</div>
+<div class="line"><span class="lineno">   79</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;got adc value &quot;</span> &lt;&lt; val &lt;&lt; <span class="stringliteral">&quot; and charge &quot;</span> &lt;&lt; Q; <span class="comment">//qie.ADC2Q(val);</span></div>
+<div class="line"><span class="lineno">   80</span>      <span class="keywordflow">if</span> (iS &lt; <a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a690f78f9f0285be4b2d97c918759a5ad">nPedSamples_</a>)</div>
+<div class="line"><span class="lineno">   81</span>        earlyPed+=Q;</div>
+<div class="line"><span class="lineno">   82</span>      iS++;</div>
 <div class="line"><span class="lineno">   83</span>    }</div>
-<div class="line"><span class="lineno">   84</span>    ped/=2*quartLength;</div>
-<div class="line"><span class="lineno">   85</span>    <span class="comment">//median: technically only true for odd number of elements but good enough </span></div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordtype">float</span> medQ=charge[ (int)charge.size()/2 ];</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordtype">float</span> minQ=charge[0];</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordtype">float</span> maxQ=charge[charge.size() -1];</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a583b3874f1976898cab8a3a24a7aff14">setTotQ</a>(totPosQ-nPos*ped); <span class="comment">//store (event) ped subtracted total charge, before dividing by N </span></div>
-<div class="line"><span class="lineno">   91</span>    <span class="comment">//  outEvent.setTotQ(totPosQ-adc.size()*ped); //store (event) ped subtracted total charge, before dividing by N </span></div>
-<div class="line"><span class="lineno">   92</span>    <span class="comment">//  outEvent.setTotQ(avgQ-adc.size()*ped); //store (event) ped subtracted total charge, before dividing by N </span></div>
-<div class="line"><span class="lineno">   93</span>    avgQ/=adc.size();</div>
-<div class="line"><span class="lineno">   94</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a93612e6b79d9864afab87296d0458207">setPedestal</a>(ped);</div>
-<div class="line"><span class="lineno">   95</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a99aacc3fb3fcd57b41121f527d3ce4e8">setAvgQ</a>(avgQ);</div>
-<div class="line"><span class="lineno">   96</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a0ae3170282d235d05819268e0a1903ad">setMedQ</a>(medQ);</div>
-<div class="line"><span class="lineno">   97</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a2077a2f4c534c16cb82a0ac2f956a98a">setMinQ</a>(minQ);</div>
-<div class="line"><span class="lineno">   98</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#ab3bd9ec56669a90f4882508855f397fb">setMaxQ</a>(maxQ);</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    <span class="comment">//and the noise as the RMSE of that </span></div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordtype">float</span> diffSq = 0;</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = quartLength; i &lt; 3*quartLength ; i++) {</div>
-<div class="line"><span class="lineno">  104</span>      <span class="comment">//    for (auto&amp; val: charge) {</span></div>
-<div class="line"><span class="lineno">  105</span>      diffSq+=(charge[i]-ped)*(charge[i]-ped);</div>
-<div class="line"><span class="lineno">  106</span>    }</div>
-<div class="line"><span class="lineno">  107</span>    diffSq/=2*quartLength; <span class="comment">//adc.size(); </span></div>
-<div class="line"><span class="lineno">  108</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a48d419537713e0344e725a000b7e0bf2">setNoise</a>( sqrt(diffSq) );</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>    uint flagSpike = (maxQ/outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a661249996f39e1a997422bbc6d5398b8">getTotQ</a>() &gt; 0.8 ); <span class="comment">// skip &quot;unnaturally&quot; narrow hits</span></div>
-<div class="line"><span class="lineno">  112</span>    uint flagPlateau = ( fabs(ped) &gt; 15 ); <span class="comment">//threshold //   //skip events that have strange plateaus   </span></div>
-<div class="line"><span class="lineno">  113</span>    uint flagLongPulse = 0; <span class="comment">//might be easier to deal with in hit reconstruction directly. could copy channel flags to hit flags and add this one there</span></div>
-<div class="line"><span class="lineno">  114</span>    uint flagOscillation = ( fabs(avgQ/ped) &gt; 3./4 );</div>
-<div class="line"><span class="lineno">  115</span>    <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  116</span><span class="comment">if ( fabs(chan.getPedestal()) &lt; 15 //threshold //   //skip events that have strange plateaus                                                    </span></div>
-<div class="line"><span class="lineno">  117</span><span class="comment">               //              &amp;&amp; (chan.getAvgQ()/chan.getPedestal()&lt;0.8)  //skip events that have strange oscillations                                   </span></div>
-<div class="line"><span class="lineno">  118</span><span class="comment">               &amp;&amp; 1 &lt; nSampAboveThr &amp;&amp; nSampAboveThr &lt; 10 ) // skip one-time sample flips and long weird pulses                                           </span></div>
-<div class="line"><span class="lineno">  119</span><span class="comment">    */</span></div>
-<div class="line"><span class="lineno">  120</span>  uint flag=flagSpike+2*flagPlateau+4*flagLongPulse+8*flagOscillation;</div>
-<div class="line"><span class="lineno">  121</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got quality flag &quot;</span>  &lt;&lt; flag &lt;&lt; <span class="stringliteral">&quot; made up of (spike/plateau/long pulse/oscillation) &quot;</span> &lt;&lt; flagSpike &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; flagPlateau &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; flagLongPulse &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; flagOscillation ;</div>
-<div class="line"><span class="lineno">  122</span>  outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a8dd40b2e42b932f3a4ba8bc21b5c336c">setQualityFlag</a>( flag );</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>    </div>
-<div class="line"><span class="lineno">  125</span>    <span class="comment">//  if (ped &gt; 15 )</span></div>
-<div class="line"><span class="lineno">  126</span>    <span class="comment">//  continue;</span></div>
-<div class="line"><span class="lineno">  127</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;In event &quot;</span>  &lt;&lt; <span class="keyword">event</span>.getEventHeader().getEventNumber() &lt;&lt;</div>
-<div class="line"><span class="lineno">  128</span>      <span class="stringliteral">&quot;, set pedestal = &quot;</span> &lt;&lt; outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a1aa87dc4a9795f3e60f818a53e857601">getPedestal</a>() &lt;&lt; <span class="comment">//ped &lt;&lt;</span></div>
-<div class="line"><span class="lineno">  129</span>      <span class="stringliteral">&quot; fC, noise = &quot;</span> &lt;&lt; outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a4c50362eaff9651fa412ae950aa46e60">getNoise</a>() &lt;&lt; <span class="stringliteral">&quot; fC for channel &quot;</span>&lt;&lt; </div>
-<div class="line"><span class="lineno">  130</span>      outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a9b2c04470b3620febec8387e8c556450">getChanID</a>();</div>
-<div class="line"><span class="lineno">  131</span>    </div>
-<div class="line"><span class="lineno">  132</span>    channelReadoutEvents.push_back( outEvent );</div>
-<div class="line"><span class="lineno">  133</span>  }</div>
-<div class="line"><span class="lineno">  134</span>  <span class="comment">// Create the container to hold the</span></div>
-<div class="line"><span class="lineno">  135</span>  <span class="comment">// digitized trigger scintillator hits.</span></div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a48ad49388047ffc0fc018f34e12acf14">outputCollection_</a>, channelReadoutEvents);</div>
-<div class="line"><span class="lineno">  138</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  139</span>}</div>
+<div class="line"><span class="lineno">   84</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#abf8f9c21c12f8f7dedac2846ddcb00be">setQ</a>(charge); <span class="comment">//set in proper order before sorting </span></div>
+<div class="line"><span class="lineno">   85</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a27bf4356a3f7280bf535148559a017c4">setQError</a>(chargeErr); <span class="comment">//set in proper order before sorting</span></div>
+<div class="line"><span class="lineno">   86</span>    earlyPed/=<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a690f78f9f0285be4b2d97c918759a5ad">nPedSamples_</a>;</div>
+<div class="line"><span class="lineno">   87</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#aed4608047cf7cdea0997b60f9784dd0b">setEarlyPedestal</a>(earlyPed);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="comment">// oscillation check. for this the pulse charge needs to be in order, so set this up now</span></div>
+<div class="line"><span class="lineno">   90</span>    <span class="comment">// the period is 4.</span></div>
+<div class="line"><span class="lineno">   91</span>    <span class="comment">// ansatz: an oscillation is a repeated shape. normalize to maxq=1, in every interval of 4 samples</span></div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment">// if after normalization the same numbers are repeated, it&#39;s an oscillation</span></div>
+<div class="line"><span class="lineno">   93</span>    <span class="comment">// edge case: multiple single PE peaks with that repetition. we probably don&#39;t need to keep those anyway </span></div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a>)</div>
+<div class="line"><span class="lineno">   95</span>      ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;going into oscillations check &quot;</span>;</div>
+<div class="line"><span class="lineno">   96</span>    std::vector &lt;float&gt; chargeCheck = {NULL};</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">float</span> minCharge=10;  <span class="comment">//no point in looking at oscillations just around the pedestal. nearest edge is 10.35 fC  //ADC=0 corresponds to -16 fC. </span></div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=3; i&lt;charge.size()-4; i++) {</div>
+<div class="line"><span class="lineno">   99</span>      <span class="keywordtype">float</span> maxSamp=minCharge; </div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iQ=0; iQ&lt;4; iQ++) { <span class="comment">//find the local max in the 4 samples</span></div>
+<div class="line"><span class="lineno">  101</span>        <span class="comment">//      ldmx_log(debug) &lt;&lt; &quot;got charge &quot; &lt;&lt; charge[i+iQ];   </span></div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">if</span> (charge[i+iQ] &gt; maxSamp)</div>
+<div class="line"><span class="lineno">  103</span>          maxSamp=charge[i+iQ];</div>
+<div class="line"><span class="lineno">  104</span>      }</div>
+<div class="line"><span class="lineno">  105</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a>)</div>
+<div class="line"><span class="lineno">  106</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;got max charge &quot;</span> &lt;&lt; maxSamp;</div>
+<div class="line"><span class="lineno">  107</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iQ=0; iQ&lt;4; iQ++) <span class="comment">//store the locally normalized numbers. even if the period is 5 this should work for a while</span></div>
+<div class="line"><span class="lineno">  108</span>        chargeCheck.push_back(charge[i+iQ]/maxSamp);</div>
+<div class="line"><span class="lineno">  109</span>      i+=3; <span class="comment">//to increment by 4, do 3 here and 1 in the loop </span></div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+<div class="line"><span class="lineno">  111</span>    </div>
+<div class="line"><span class="lineno">  112</span>    </div>
+<div class="line"><span class="lineno">  113</span>    <span class="comment">//now calculate the pedestal as the average of the middle half of the sorted vector </span></div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordtype">float</span> ped = 0;</div>
+<div class="line"><span class="lineno">  115</span>    std::sort(charge.begin(), charge.end());</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordtype">int</span> pedLength=(int)charge.size()/5; <span class="comment">//actually pulse can be up to 12 samples = 2/5*30</span></div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordtype">int</span> pedOffset=2; <span class="comment">//but still skip the lowest (and highest) few </span></div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">//  for (int i = pedLength; i &lt; 3*pedLength ; i++) { //use 2nd and third 5th </span></div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = pedOffset; i &lt; 2*pedLength+pedOffset ; i++) { <span class="comment">//use 1st and 2nd 5th </span></div>
+<div class="line"><span class="lineno">  120</span>      ped+=charge[i];</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  122</span>    ped/=2*pedLength;</div>
+<div class="line"><span class="lineno">  123</span>    <span class="comment">//median: technically only true for odd number of elements but good enough </span></div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordtype">float</span> medQ=charge[ (int)charge.size()/2 ];</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordtype">float</span> minQ=charge[0];</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordtype">float</span> maxQ=charge[charge.size() -1];</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a583b3874f1976898cab8a3a24a7aff14">setTotQ</a>(totPosQ);<span class="comment">//-nPos*ped); //store (event) ped subtracted total charge, before dividing by N  --&gt; actually, ped subtraction makes it confusing </span></div>
+<div class="line"><span class="lineno">  129</span>    <span class="comment">//  outEvent.setTotQ(totPosQ-adc.size()*ped); //store (event) ped subtracted total charge, before dividing by N </span></div>
+<div class="line"><span class="lineno">  130</span>    <span class="comment">//  outEvent.setTotQ(avgQ-adc.size()*ped); //store (event) ped subtracted total charge, before dividing by N </span></div>
+<div class="line"><span class="lineno">  131</span>    avgQ/=adc.size();</div>
+<div class="line"><span class="lineno">  132</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a93612e6b79d9864afab87296d0458207">setPedestal</a>(ped);</div>
+<div class="line"><span class="lineno">  133</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a99aacc3fb3fcd57b41121f527d3ce4e8">setAvgQ</a>(avgQ);</div>
+<div class="line"><span class="lineno">  134</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a0ae3170282d235d05819268e0a1903ad">setMedQ</a>(medQ);</div>
+<div class="line"><span class="lineno">  135</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a2077a2f4c534c16cb82a0ac2f956a98a">setMinQ</a>(minQ);</div>
+<div class="line"><span class="lineno">  136</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#ab3bd9ec56669a90f4882508855f397fb">setMaxQ</a>(maxQ);</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="comment">//and the noise as the RMSE of that, same interval as pedestal </span></div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordtype">float</span> diffSq = 0;</div>
+<div class="line"><span class="lineno">  140</span>    <span class="comment">//    for (int i = pedLength; i &lt; 3*pedLength ; i++) {</span></div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = pedOffset; i &lt; 2*pedLength+pedOffset ; i++) {</div>
+<div class="line"><span class="lineno">  142</span>      diffSq+=(charge[i]-ped)*(charge[i]-ped);</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="line"><span class="lineno">  144</span>    diffSq/=2*pedLength; <span class="comment">//adc.size(); </span></div>
+<div class="line"><span class="lineno">  145</span>    outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a48d419537713e0344e725a000b7e0bf2">setNoise</a>( sqrt(diffSq) );</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    <span class="comment">//oscillation check </span></div>
+<div class="line"><span class="lineno">  148</span>    uint flagOscillation = 0;</div>
+<div class="line"><span class="lineno">  149</span>    <span class="comment">//no need to run tedious oscillation check for all-neg channels </span></div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (maxQ &gt; minCharge) {</div>
+<div class="line"><span class="lineno">  151</span>      <span class="keywordtype">int</span> maxID=0; </div>
+<div class="line"><span class="lineno">  152</span>      <span class="comment">//find the first occurence of a local max</span></div>
+<div class="line"><span class="lineno">  153</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;chargeCheck.size()-4; i++) {</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">if</span> (chargeCheck[i]==1) {  <span class="comment">//an actual local max has been normalised by its own value</span></div>
+<div class="line"><span class="lineno">  155</span>          maxID=i;</div>
+<div class="line"><span class="lineno">  156</span>          <span class="comment">//          ldmx_log(debug) &lt;&lt; &quot;storing max index &quot; &lt;&lt;maxID &lt;&lt;&quot; and size of vector is &quot; &lt;&lt; chargeCheck.size()-4;</span></div>
+<div class="line"><span class="lineno">  157</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  158</span>        }</div>
+<div class="line"><span class="lineno">  159</span>      }</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordtype">int</span> lastMatchSample=0;</div>
+<div class="line"><span class="lineno">  161</span>      <span class="comment">//start from local max</span></div>
+<div class="line"><span class="lineno">  162</span>      <span class="keywordtype">bool</span> doBreak=<span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  163</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=maxID; i&lt;chargeCheck.size()-4; i++) {</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a>)</div>
+<div class="line"><span class="lineno">  165</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Checking how many matching groups of four we can find, starting at index &quot;</span> &lt;&lt; i;</div>
+<div class="line"><span class="lineno">  166</span>        </div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iQ=0; iQ&lt;4; iQ++) { <span class="comment">//check if they are consistently close</span></div>
+<div class="line"><span class="lineno">  168</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a>)</div>
+<div class="line"><span class="lineno">  169</span>            ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Comparing &quot;</span> &lt;&lt; chargeCheck[i+iQ] &lt;&lt; <span class="stringliteral">&quot; (sample &quot;</span>&lt;&lt; i+iQ &lt;&lt; <span class="stringliteral">&quot;) to &quot;</span> &lt;&lt; chargeCheck[i+4+iQ] &lt;&lt; <span class="stringliteral">&quot; (sample &quot;</span>&lt;&lt; i+4+iQ &lt;&lt; <span class="stringliteral">&quot;), ratio is &quot;</span> &lt;&lt; chargeCheck[i+iQ]/chargeCheck[i+4+iQ];</div>
+<div class="line"><span class="lineno">  170</span>          <span class="comment">//we can be generous in these crietira since we will require an unbroken suite of 8 matches to call it oscillation </span></div>
+<div class="line"><span class="lineno">  171</span>          <span class="keywordflow">if</span> ( fabs(chargeCheck[i+iQ]/chargeCheck[i+4+iQ]-1) &lt;0.5 || <span class="comment">//need this tolerance to be kind of large, most actual peaks won&#39;t pass it by far anyway.</span></div>
+<div class="line"><span class="lineno">  172</span>               (chargeCheck[i+4+iQ]&lt;0.01 &amp;&amp; fabs(chargeCheck[i+iQ]/chargeCheck[i+4+iQ]) &lt;5 ) ) <span class="comment">// for very small numbers, one ADC difference can be a factor 3 so add some margin </span></div>
+<div class="line"><span class="lineno">  173</span>            lastMatchSample=i+iQ;</div>
+<div class="line"><span class="lineno">  174</span>          <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a>)</div>
+<div class="line"><span class="lineno">  176</span>              ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Oscillation check for channel &quot;</span> &lt;&lt; digi.getChanID() &lt;&lt; <span class="stringliteral">&quot; breaking at time sample &quot;</span> &lt;&lt; i+iQ;</div>
+<div class="line"><span class="lineno">  177</span>            doBreak=<span class="keyword">true</span>; <span class="comment">//break outer loop </span></div>
+<div class="line"><span class="lineno">  178</span>            <span class="keywordflow">break</span>; <span class="comment">//break this loop</span></div>
+<div class="line"><span class="lineno">  179</span>        }</div>
+<div class="line"><span class="lineno">  180</span>        }</div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">if</span> (doBreak) {</div>
+<div class="line"><span class="lineno">  182</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  183</span>        }</div>
+<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a38551d97f48668f6cb4799e18f336b96">verbose_</a>)</div>
+<div class="line"><span class="lineno">  185</span>          ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Current lastMatchSample &quot;</span> &lt;&lt; lastMatchSample;</div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">if</span> (lastMatchSample-maxID&gt;=2*4 ) { <span class="comment">//we had at least a couple of oscillations (2nd period was fully matched by third)</span></div>
+<div class="line"><span class="lineno">  187</span>          flagOscillation = 1;  <span class="comment">//there is another check possible later too, commented for now</span></div>
+<div class="line"><span class="lineno">  188</span>          <span class="keywordflow">break</span>; <span class="comment">//we&#39;ve seen what we need to see</span></div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+<div class="line"><span class="lineno">  190</span>        i+=3;</div>
+<div class="line"><span class="lineno">  191</span>      }</div>
+<div class="line"><span class="lineno">  192</span>    } <span class="comment">//if positive maxQ </span></div>
+<div class="line"><span class="lineno">  193</span>  </div>
+<div class="line"><span class="lineno">  194</span>    </div>
+<div class="line"><span class="lineno">  195</span>    <span class="comment">// //use the top and bottom ends of the sorted q as another oscillation catcher: we don&#39;t expect that the top values will be high and basically identical unless they are from an oscillation</span></div>
+<div class="line"><span class="lineno">  196</span>    <span class="keywordtype">int</span> nHigh=0;</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordtype">int</span> quartLength=(int)charge.size()/4;</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 4*quartLength-2; i &gt;= 3*quartLength ; i--) { <span class="comment">//maxQ is already at last index</span></div>
+<div class="line"><span class="lineno">  199</span>       <span class="keywordflow">if</span> (charge[i]/maxQ &gt; 0.66)</div>
+<div class="line"><span class="lineno">  200</span>         nHigh++;</div>
+<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="line"><span class="lineno">  202</span>      </div>
+<div class="line"><span class="lineno">  203</span>    </div>
+<div class="line"><span class="lineno">  204</span>    uint flagSpike = (maxQ/outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a661249996f39e1a997422bbc6d5398b8">getTotQ</a>() &gt; 0.9 ) || (charge[charge.size()-2]/maxQ &lt; 0.25) ; <span class="comment">// skip &quot;unnaturally&quot; narrow hits (all charge in one sample or huge drop to second highest)</span></div>
+<div class="line"><span class="lineno">  205</span>    uint flagPlateau = ( ped&gt;15 || nHigh &gt;= 5); <span class="comment">//( fabs(ped) &gt; 15 ); //threshold //   //skip events that have strange plateaus   </span></div>
+<div class="line"><span class="lineno">  206</span>    uint flagLongPulse = 0; <span class="comment">//easier to deal with in hit reconstruction directly. copy channel flags to hit flags and add this one there</span></div>
+<div class="line"><span class="lineno">  207</span>    uint flagNoise= (outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a4c50362eaff9651fa412ae950aa46e60">getNoise</a>() &gt; 3.5 || outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a4c50362eaff9651fa412ae950aa46e60">getNoise</a>()==0);  <span class="comment">// =0 is typically from funky events but could be too harsh maybe </span></div>
+<div class="line"><span class="lineno">  208</span>    <span class="comment">/* //let this wait for now </span></div>
+<div class="line"><span class="lineno">  209</span><span class="comment">    //if we have many high counts, a small event pedestal (where they weren&#39;t included), and an avgQ ~ maxQ/nHigh, then this is an oscillation</span></div>
+<div class="line"><span class="lineno">  210</span><span class="comment">    if ( (quartLength-nHigh&lt;2 &amp;&amp; ped&lt;10) || fabs( maxQ/(avgQ*nHigh)-1 ) &lt;0.1 )</span></div>
+<div class="line"><span class="lineno">  211</span><span class="comment">      flagOscillation=1;</span></div>
+<div class="line"><span class="lineno">  212</span><span class="comment">*/</span></div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>    </div>
+<div class="line"><span class="lineno">  215</span>    <span class="comment">/* //this seems to not catch what we want it to</span></div>
+<div class="line"><span class="lineno">  216</span><span class="comment">if ( fabs(chan.getPedestal()) &lt; 15 //threshold //   //skip events that have strange plateaus                                                    </span></div>
+<div class="line"><span class="lineno">  217</span><span class="comment">               //              &amp;&amp; (chan.getAvgQ()/chan.getPedestal()&lt;0.8)  //skip events that have strange oscillations                                   </span></div>
+<div class="line"><span class="lineno">  218</span><span class="comment">               &amp;&amp; 1 &lt; nSampAboveThr &amp;&amp; nSampAboveThr &lt; 10 ) // skip one-time sample flips and long weird pulses                                           </span></div>
+<div class="line"><span class="lineno">  219</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">  220</span>  uint flag=flagSpike+2*flagPlateau+4*flagLongPulse+8*flagOscillation+16*flagNoise;</div>
+<div class="line"><span class="lineno">  221</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Got quality flag &quot;</span>  &lt;&lt; flag &lt;&lt; <span class="stringliteral">&quot; made up of (spike/plateau/long pulse/oscillation/noise) &quot;</span> &lt;&lt; flagSpike &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; flagPlateau &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; flagLongPulse &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; flagOscillation  &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; flagNoise ;</div>
+<div class="line"><span class="lineno">  222</span>  outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a8dd40b2e42b932f3a4ba8bc21b5c336c">setQualityFlag</a>( flag );</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>    </div>
+<div class="line"><span class="lineno">  225</span>    <span class="comment">//  if (ped &gt; 15 )</span></div>
+<div class="line"><span class="lineno">  226</span>    <span class="comment">//  continue;</span></div>
+<div class="line"><span class="lineno">  227</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;In event &quot;</span>  &lt;&lt; <span class="keyword">event</span>.getEventHeader().getEventNumber() &lt;&lt;</div>
+<div class="line"><span class="lineno">  228</span>      <span class="stringliteral">&quot;, set pedestal = &quot;</span> &lt;&lt; outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a1aa87dc4a9795f3e60f818a53e857601">getPedestal</a>() &lt;&lt; <span class="comment">//ped &lt;&lt;</span></div>
+<div class="line"><span class="lineno">  229</span>      <span class="stringliteral">&quot; fC, noise = &quot;</span> &lt;&lt; outEvent.<a class="code hl_function" href="classtrigscint_1_1EventReadout.html#a4c50362eaff9651fa412ae950aa46e60">getNoise</a>() &lt;&lt; <span class="stringliteral">&quot; fC for channel &quot;</span>&lt;&lt; </div>
+<div class="line"><span class="lineno">  230</span>      outEvent.<a class="code hl_function" href="classtrigscint_1_1TrigScintQIEDigis.html#a9b2c04470b3620febec8387e8c556450">getChanID</a>();</div>
+<div class="line"><span class="lineno">  231</span>    </div>
+<div class="line"><span class="lineno">  232</span>    channelReadoutEvents.push_back( outEvent );</div>
+<div class="line"><span class="lineno">  233</span>  }</div>
+<div class="line"><span class="lineno">  234</span>  <span class="comment">// Create the container to hold the</span></div>
+<div class="line"><span class="lineno">  235</span>  <span class="comment">// digitized trigger scintillator hits.</span></div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classtrigscint_1_1EventReadoutProducer.html#a48ad49388047ffc0fc018f34e12acf14">outputCollection_</a>, channelReadoutEvents);</div>
+<div class="line"><span class="lineno">  238</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  239</span>}</div>
 <div class="ttc" id="aclasstrigscint_1_1EventReadout_html"><div class="ttname"><a href="classtrigscint_1_1EventReadout.html">trigscint::EventReadout</a></div><div class="ttdoc">This class represents the linearised QIE output from the trigger scintillator, in charge (fC).</div><div class="ttdef"><b>Definition:</b> <a href="EventReadout_8h_source.html#l00023">EventReadout.h:23</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1EventReadout_html_a0ae3170282d235d05819268e0a1903ad"><div class="ttname"><a href="classtrigscint_1_1EventReadout.html#a0ae3170282d235d05819268e0a1903ad">trigscint::EventReadout::setMedQ</a></div><div class="ttdeci">void setMedQ(const float medQ)</div><div class="ttdef"><b>Definition:</b> <a href="EventReadout_8h_source.html#l00163">EventReadout.h:163</a></div></div>
 <div class="ttc" id="aclasstrigscint_1_1EventReadout_html_a0c6a3c7fd8536fe8c1638be62b272d2a"><div class="ttname"><a href="classtrigscint_1_1EventReadout.html#a0c6a3c7fd8536fe8c1638be62b272d2a">trigscint::EventReadout::setFiberNb</a></div><div class="ttdeci">void setFiberNb(const int fiberNb)</div><div class="ttdef"><b>Definition:</b> <a href="EventReadout_8h_source.html#l00186">EventReadout.h:186</a></div></div>
