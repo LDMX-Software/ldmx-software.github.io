@@ -282,13 +282,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   54</span>  <span class="keywordtype">double</span> gain = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;avgGain&quot;</span>);</div>
 <div class="line"><span class="lineno">   55</span>  <span class="keywordtype">double</span> pedestal = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;avgPedestal&quot;</span>);</div>
 <div class="line"><span class="lineno">   56</span>  <span class="comment">// rms noise in mV</span></div>
-<div class="line"><span class="lineno">   57</span>  <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;setNoise(</div>
-<div class="line"><span class="lineno">   58</span>      hgcrocParams.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;noiseRMS&quot;</span>));  <span class="comment">// rms noise in mV</span></div>
-<div class="line"><span class="lineno">   59</span>  <span class="comment">// mean noise amplitude (if using Gaussian Model for the noise) in mV</span></div>
-<div class="line"><span class="lineno">   60</span>  <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;setPedestal(gain * pedestal);</div>
-<div class="line"><span class="lineno">   61</span>  <span class="comment">// threshold for readout in mV</span></div>
-<div class="line"><span class="lineno">   62</span>  <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;setNoiseThreshold(gain * readoutThreshold);</div>
-<div class="line"><span class="lineno">   63</span>}</div>
+<div class="line"><span class="lineno">   57</span>  <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;setNoise(gain*ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;avgNoiseRMS&quot;</span>));</div>
+<div class="line"><span class="lineno">   58</span>  <span class="comment">// mean noise amplitude (if using Gaussian Model for the noise) in mV</span></div>
+<div class="line"><span class="lineno">   59</span>  <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;setPedestal(gain * pedestal);</div>
+<div class="line"><span class="lineno">   60</span>  <span class="comment">// threshold for readout in mV</span></div>
+<div class="line"><span class="lineno">   61</span>  <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;setNoiseThreshold(gain * readoutThreshold);</div>
+<div class="line"><span class="lineno">   62</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalDigiProducer_html_a01f82c5ba266c333c19196e5819b03e1"><div class="ttname"><a href="classhcal_1_1HcalDigiProducer.html#a01f82c5ba266c333c19196e5819b03e1">hcal::HcalDigiProducer::noise_</a></div><div class="ttdeci">bool noise_</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiProducer_8h_source.html#l00085">HcalDigiProducer.h:85</a></div></div>
@@ -346,260 +345,260 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">65</a> of file <a class="el" href="HcalDigiProducer_8cxx_source.html">HcalDigiProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>                                                    {</div>
-<div class="line"><span class="lineno">   66</span>  <span class="comment">// Handle seeding on the first event</span></div>
-<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;hasSeed()) {</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rseed = getCondition&lt;framework::RandomNumberSeedService&gt;(</div>
-<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>);</div>
-<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;seedGenerator(</div>
-<div class="line"><span class="lineno">   71</span>        rseed.getSeed(<span class="stringliteral">&quot;HcalDigiProducer::NoiseGenerator&quot;</span>));</div>
-<div class="line"><span class="lineno">   72</span>  }</div>
-<div class="line"><span class="lineno">   73</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>.get() == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><span class="lineno">   74</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rseed = getCondition&lt;framework::RandomNumberSeedService&gt;(</div>
-<div class="line"><span class="lineno">   75</span>        <a class="code hl_variable" href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>);</div>
-<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a> = std::make_unique&lt;TRandom3&gt;(</div>
-<div class="line"><span class="lineno">   77</span>        rseed.getSeed(<span class="stringliteral">&quot;HcalDigiProducer::NoiseInjector&quot;</span>));</div>
-<div class="line"><span class="lineno">   78</span>  }</div>
-<div class="line"><span class="lineno">   79</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;hasSeed()) {</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rseed = getCondition&lt;framework::RandomNumberSeedService&gt;(</div>
-<div class="line"><span class="lineno">   81</span>        <a class="code hl_variable" href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>);</div>
-<div class="line"><span class="lineno">   82</span>    <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;seedGenerator(rseed.getSeed(<span class="stringliteral">&quot;HcalDigiProducer::HgcrocEmulator&quot;</span>));</div>
-<div class="line"><span class="lineno">   83</span>  }</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>  <span class="comment">// Get the Hgcroc Conditions</span></div>
-<div class="line"><span class="lineno">   86</span>  <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;condition(</div>
-<div class="line"><span class="lineno">   87</span>      getCondition&lt;conditions::DoubleTableCondition&gt;(<span class="stringliteral">&quot;HcalHgcrocConditions&quot;</span>));</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>  <span class="comment">// Get the Hcal Geometry</span></div>
-<div class="line"><span class="lineno">   90</span>  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hcalGeometry = getCondition&lt;ldmx::HcalGeometry&gt;(</div>
-<div class="line"><span class="lineno">   91</span>      <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>);</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>  <span class="comment">// Empty collection to be filled</span></div>
-<div class="line"><span class="lineno">   94</span>  <a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a> hcalDigis;</div>
-<div class="line"><span class="lineno">   95</span>  hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">setNumSamplesPerDigi</a>(<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a609560c3306d8250cfe930ce9ead3677">nADCs_</a>);</div>
-<div class="line"><span class="lineno">   96</span>  hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">setSampleOfInterestIndex</a>(<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adbbcd1ed932d4bd6d2b413389c3f361e">iSOI_</a>);</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>  std::map&lt;unsigned int, std::vector&lt;const ldmx::SimCalorimeterHit*&gt;&gt; hitsByID;</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>  <span class="comment">// get simulated hcal hits from Geant4 and group them by id</span></div>
-<div class="line"><span class="lineno">  101</span>  <span class="keyword">auto</span> hcalSimHits{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&gt;(</div>
-<div class="line"><span class="lineno">  102</span>      <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a7d6e9bf49db864b6fb99b1841b5878c6">inputCollName_</a>, <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#ad2806b040b218ebc864abbe3a63db63c">inputPassName_</a>)};</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; simHit : hcalSimHits) {</div>
-<div class="line"><span class="lineno">  105</span>    <span class="comment">// get ID</span></div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hitID = simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#aa253dffd148f4f5dc07288cfd7a0fa85">getID</a>();</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    <span class="keyword">auto</span> idh = hitsByID.find(hitID);</div>
-<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (idh == hitsByID.end()) {</div>
-<div class="line"><span class="lineno">  110</span>      hitsByID[hitID] = std::vector&lt;const ldmx::SimCalorimeterHit*&gt;(1, &amp;simHit);</div>
-<div class="line"><span class="lineno">  111</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  112</span>      idh-&gt;second.push_back(&amp;simHit);</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
-<div class="line"><span class="lineno">  114</span>  }</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span><span class="comment">  /******************************************************************************************</span></div>
-<div class="line"><span class="lineno">  117</span><span class="comment">   * HGCROC Emulation on Simulated Hits (grouped by HcalID)</span></div>
-<div class="line"><span class="lineno">  118</span><span class="comment">   ******************************************************************************************/</span></div>
-<div class="line"><span class="lineno">  119</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; simBar : hitsByID) {</div>
-<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> detID(simBar.first);</div>
-<div class="line"><span class="lineno">  121</span>    <span class="keywordtype">int</span> section = detID.section();</div>
-<div class="line"><span class="lineno">  122</span>    <span class="keywordtype">int</span> layer = detID.layer();</div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordtype">int</span> strip = detID.strip();</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>    <span class="comment">// get position</span></div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordtype">double</span> half_total_width = hcalGeometry.getHalfTotalWidth(section, layer);</div>
-<div class="line"><span class="lineno">  127</span>    <span class="keywordtype">double</span> ecal_dx = hcalGeometry.getEcalDx();</div>
-<div class="line"><span class="lineno">  128</span>    <span class="keywordtype">double</span> ecal_dy = hcalGeometry.getEcalDy();</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>    <span class="comment">// contributions</span></div>
-<div class="line"><span class="lineno">  131</span>    std::vector&lt;std::pair&lt;double, double&gt;&gt; pulses_posend;</div>
-<div class="line"><span class="lineno">  132</span>    std::vector&lt;std::pair&lt;double, double&gt;&gt; pulses_negend;</div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> psimHit : simBar.second) {</div>
-<div class="line"><span class="lineno">  135</span>      <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&amp; simHit = *psimHit;</div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>      std::vector&lt;float&gt; position = simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a99978ab2d24e419ede5582ba546681fd">getPosition</a>();</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  167</span>      <span class="keywordtype">float</span> distance_along_bar, distance_ecal;</div>
-<div class="line"><span class="lineno">  168</span>      <span class="keywordtype">float</span> distance_close, distance_far;</div>
-<div class="line"><span class="lineno">  169</span>      <span class="keywordtype">int</span> end_close;</div>
-<div class="line"><span class="lineno">  170</span>      <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
-<div class="line"><span class="lineno">  171</span>        distance_along_bar =</div>
-<div class="line"><span class="lineno">  172</span>            hcalGeometry.layerIsHorizontal(layer) ? position[0] : position[1];</div>
-<div class="line"><span class="lineno">  173</span>        end_close = (distance_along_bar &gt; 0) ? 0 : 1;</div>
-<div class="line"><span class="lineno">  174</span>        distance_close = half_total_width;</div>
-<div class="line"><span class="lineno">  175</span>        distance_far = half_total_width;</div>
-<div class="line"><span class="lineno">  176</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::TOP) ||</div>
-<div class="line"><span class="lineno">  178</span>            ((section == ldmx::HcalID::HcalSection::BOTTOM))) {</div>
-<div class="line"><span class="lineno">  179</span>          distance_along_bar = position[0];</div>
-<div class="line"><span class="lineno">  180</span>          distance_ecal = ecal_dx;</div>
-<div class="line"><span class="lineno">  181</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::LEFT) ||</div>
-<div class="line"><span class="lineno">  182</span>                   (section == ldmx::HcalID::HcalSection::RIGHT)) {</div>
-<div class="line"><span class="lineno">  183</span>          distance_along_bar = position[1];</div>
-<div class="line"><span class="lineno">  184</span>          distance_ecal = ecal_dy;</div>
-<div class="line"><span class="lineno">  185</span>        }</div>
-<div class="line"><span class="lineno">  186</span>        end_close = (distance_along_bar &gt; half_total_width) ? 0 : 1;</div>
-<div class="line"><span class="lineno">  187</span>        distance_close = (end_close == 0)</div>
-<div class="line"><span class="lineno">  188</span>                             ? 2 * half_total_width - distance_ecal / 2</div>
-<div class="line"><span class="lineno">  189</span>                             : distance_ecal / 2;</div>
-<div class="line"><span class="lineno">  190</span>        distance_far = (end_close == 0)</div>
-<div class="line"><span class="lineno">  191</span>                           ? distance_ecal / 2</div>
-<div class="line"><span class="lineno">  192</span>                           : 2 * half_total_width - distance_ecal / 2;</div>
-<div class="line"><span class="lineno">  193</span>      }</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>      <span class="comment">// Calculate voltage attenuation and time shift for the close and far</span></div>
-<div class="line"><span class="lineno">  196</span>      <span class="comment">// pulse.</span></div>
-<div class="line"><span class="lineno">  197</span>      <span class="keywordtype">float</span> v = 299.792 /</div>
-<div class="line"><span class="lineno">  198</span>                1.6;  <span class="comment">// velocity of light in Polystyrene, n = 1.6 = c/v mm/ns</span></div>
-<div class="line"><span class="lineno">  199</span>      <span class="keywordtype">double</span> att_close =</div>
-<div class="line"><span class="lineno">  200</span>          exp(-1. * ((distance_close - fabs(distance_along_bar)) / 1000.) /</div>
-<div class="line"><span class="lineno">  201</span>              <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a25dcab4605628b669e1f74ff4f586552">attlength_</a>);</div>
-<div class="line"><span class="lineno">  202</span>      <span class="keywordtype">double</span> att_far =</div>
-<div class="line"><span class="lineno">  203</span>          exp(-1. * ((distance_far + fabs(distance_along_bar)) / 1000.) /</div>
-<div class="line"><span class="lineno">  204</span>              <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a25dcab4605628b669e1f74ff4f586552">attlength_</a>);</div>
-<div class="line"><span class="lineno">  205</span>      <span class="keywordtype">double</span> shift_close =</div>
-<div class="line"><span class="lineno">  206</span>          fabs((distance_close - fabs(distance_along_bar)) / v);</div>
-<div class="line"><span class="lineno">  207</span>      <span class="keywordtype">double</span> shift_far = fabs((distance_far + fabs(distance_along_bar)) / v);</div>
-<div class="line"><span class="lineno">  208</span> </div>
-<div class="line"><span class="lineno">  209</span>      <span class="comment">// Get voltages and times.</span></div>
-<div class="line"><span class="lineno">  210</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iContrib = 0; iContrib &lt; simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a3696b8480b0bf0455fd22b2097a258e7">getNumberOfContribs</a>();</div>
-<div class="line"><span class="lineno">  211</span>           iContrib++) {</div>
-<div class="line"><span class="lineno">  212</span>        <span class="keywordtype">double</span> voltage = simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a6f5cc61053300b17a4a5a4b52b33f3d5">getContrib</a>(iContrib).<a class="code hl_variable" href="structldmx_1_1SimCalorimeterHit_1_1Contrib.html#adcfa3f67936c8b0ca74192cf7a029fd9">edep</a> * <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a650bae00fb1a9a41789d7e63607958e4">MeV_</a>;</div>
-<div class="line"><span class="lineno">  213</span>        <span class="keywordtype">double</span> time =</div>
-<div class="line"><span class="lineno">  214</span>            simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a6f5cc61053300b17a4a5a4b52b33f3d5">getContrib</a>(iContrib).<a class="code hl_variable" href="structldmx_1_1SimCalorimeterHit_1_1Contrib.html#a6a59b1b0f67e9208f46e6a8f478943fe">time</a>;  <span class="comment">// global time (t=0ns at target)</span></div>
-<div class="line"><span class="lineno">  215</span>        time -= position.at(2) /</div>
-<div class="line"><span class="lineno">  216</span>                299.702547;  <span class="comment">// shift light-speed particle traveling along z</span></div>
-<div class="line"><span class="lineno">  217</span> </div>
-<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">if</span> (end_close == 0) {</div>
-<div class="line"><span class="lineno">  219</span>          pulses_posend.emplace_back(voltage * att_close, time + shift_close);</div>
-<div class="line"><span class="lineno">  220</span>          pulses_negend.emplace_back(voltage * att_far, time + shift_far);</div>
-<div class="line"><span class="lineno">  221</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  222</span>          pulses_posend.emplace_back(voltage * att_far, time + shift_far);</div>
-<div class="line"><span class="lineno">  223</span>          pulses_negend.emplace_back(voltage * att_close, time + shift_close);</div>
-<div class="line"><span class="lineno">  224</span>        }</div>
-<div class="line"><span class="lineno">  225</span>      }</div>
-<div class="line"><span class="lineno">  226</span>    }</div>
-<div class="line"><span class="lineno">  227</span> </div>
-<div class="line"><span class="lineno">  237</span>    <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
-<div class="line"><span class="lineno">  238</span>      std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; digiToAddPosend,</div>
-<div class="line"><span class="lineno">  239</span>          digiToAddNegend;</div>
-<div class="line"><span class="lineno">  240</span>      <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> posendID(section, layer, strip, 0);</div>
-<div class="line"><span class="lineno">  241</span>      <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> negendID(section, layer, strip, 1);</div>
-<div class="line"><span class="lineno">  242</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(posendID.raw(), pulses_posend, digiToAddPosend) &amp;&amp;</div>
-<div class="line"><span class="lineno">  243</span>          <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(negendID.raw(), pulses_negend, digiToAddNegend)) {</div>
-<div class="line"><span class="lineno">  244</span>        hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(posendID.raw(), digiToAddPosend);</div>
-<div class="line"><span class="lineno">  245</span>        hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(negendID.raw(), digiToAddNegend);</div>
-<div class="line"><span class="lineno">  246</span>      }  <span class="comment">// Back Hcal needs to digitize both pulses or none</span></div>
-<div class="line"><span class="lineno">  247</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  248</span>      <span class="keywordtype">bool</span> is_posend = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  249</span>      std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; digiToAdd;</div>
-<div class="line"><span class="lineno">  250</span>      <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::TOP) ||</div>
-<div class="line"><span class="lineno">  251</span>          (section == ldmx::HcalID::HcalSection::LEFT)) {</div>
-<div class="line"><span class="lineno">  252</span>        is_posend = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  253</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::BOTTOM) ||</div>
-<div class="line"><span class="lineno">  254</span>                 (section == ldmx::HcalID::HcalSection::RIGHT)) {</div>
-<div class="line"><span class="lineno">  255</span>        is_posend = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  256</span>      }</div>
-<div class="line"><span class="lineno">  257</span>      <span class="keywordflow">if</span> (is_posend) {</div>
-<div class="line"><span class="lineno">  258</span>        <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> digiID(section, layer, strip, 0);</div>
-<div class="line"><span class="lineno">  259</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(digiID.raw(), pulses_posend, digiToAdd)) {</div>
-<div class="line"><span class="lineno">  260</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(digiID.raw(), digiToAdd);</div>
-<div class="line"><span class="lineno">  261</span>        }</div>
-<div class="line"><span class="lineno">  262</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  263</span>        <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> digiID(section, layer, strip, 1);</div>
-<div class="line"><span class="lineno">  264</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(digiID.raw(), pulses_negend, digiToAdd)) {</div>
-<div class="line"><span class="lineno">  265</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(digiID.raw(), digiToAdd);</div>
-<div class="line"><span class="lineno">  266</span>        }</div>
-<div class="line"><span class="lineno">  267</span>      }</div>
-<div class="line"><span class="lineno">  268</span>    }</div>
-<div class="line"><span class="lineno">  269</span>  }</div>
-<div class="line"><span class="lineno">  270</span> </div>
-<div class="line"><span class="lineno">  271</span><span class="comment">  /******************************************************************************************</span></div>
-<div class="line"><span class="lineno">  272</span><span class="comment">   * Noise Simulation on Empty Channels</span></div>
-<div class="line"><span class="lineno">  273</span><span class="comment">   *****************************************************************************************/</span></div>
-<div class="line"><span class="lineno">  274</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a01f82c5ba266c333c19196e5819b03e1">noise_</a>) {</div>
-<div class="line"><span class="lineno">  275</span>    <span class="keywordtype">int</span> numChannels = 0;</div>
-<div class="line"><span class="lineno">  276</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> section = 0; section &lt; hcalGeometry.getNumSections(); section++) {</div>
-<div class="line"><span class="lineno">  277</span>      <span class="keywordtype">int</span> numChannelsInSection = 0;</div>
-<div class="line"><span class="lineno">  278</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> layer = 1; layer &lt;= hcalGeometry.getNumLayers(section);</div>
-<div class="line"><span class="lineno">  279</span>           layer++) {</div>
-<div class="line"><span class="lineno">  280</span>        numChannelsInSection += hcalGeometry.getNumStrips(section, layer);</div>
-<div class="line"><span class="lineno">  281</span>      }</div>
-<div class="line"><span class="lineno">  282</span>      <span class="comment">// for back Hcal we have double readout, therefore we multiply the number</span></div>
-<div class="line"><span class="lineno">  283</span>      <span class="comment">// of channels by 2.</span></div>
-<div class="line"><span class="lineno">  284</span>      <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
-<div class="line"><span class="lineno">  285</span>        numChannelsInSection *= 2;</div>
-<div class="line"><span class="lineno">  286</span>      }</div>
-<div class="line"><span class="lineno">  287</span>      numChannels += numChannelsInSection;</div>
-<div class="line"><span class="lineno">  288</span>    }</div>
-<div class="line"><span class="lineno">  289</span>    <span class="keywordtype">int</span> numEmptyChannels = numChannels - hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">getNumDigis</a>();</div>
-<div class="line"><span class="lineno">  290</span>    <span class="comment">// noise generator gives us a list of noise amplitudes [mV] that randomly</span></div>
-<div class="line"><span class="lineno">  291</span>    <span class="comment">// populate the empty channels and are above the readout threshold</span></div>
-<div class="line"><span class="lineno">  292</span>    <span class="keyword">auto</span> noiseHitAmplitudes{</div>
-<div class="line"><span class="lineno">  293</span>        <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;generateNoiseHits(numEmptyChannels)};</div>
-<div class="line"><span class="lineno">  294</span>    std::vector&lt;std::pair&lt;double, double&gt;&gt; fake_pulse(1, {0., 0.});</div>
-<div class="line"><span class="lineno">  295</span>    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> noiseHit : noiseHitAmplitudes) {</div>
-<div class="line"><span class="lineno">  296</span>      <span class="comment">// generate detector ID for noise hit</span></div>
-<div class="line"><span class="lineno">  297</span>      <span class="comment">// making sure that it is in an empty channel</span></div>
-<div class="line"><span class="lineno">  298</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> noiseID;</div>
-<div class="line"><span class="lineno">  299</span>      <span class="keywordtype">int</span> sectionID, layerID, stripID, endID;</div>
-<div class="line"><span class="lineno">  300</span>      <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">  301</span>        sectionID = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Integer(hcalGeometry.getNumSections());</div>
-<div class="line"><span class="lineno">  302</span>        layerID = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Integer(hcalGeometry.getNumLayers(sectionID));</div>
-<div class="line"><span class="lineno">  303</span>        <span class="comment">// set layer to 1 if the generator says it is 0 (geometry map starts</span></div>
-<div class="line"><span class="lineno">  304</span>        <span class="comment">// from 1)</span></div>
-<div class="line"><span class="lineno">  305</span>        <span class="keywordflow">if</span> (layerID == 0) layerID = 1;</div>
-<div class="line"><span class="lineno">  306</span>        stripID = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Integer(</div>
-<div class="line"><span class="lineno">  307</span>            hcalGeometry.getNumStrips(sectionID, layerID));</div>
-<div class="line"><span class="lineno">  308</span>        endID = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Integer(2);</div>
-<div class="line"><span class="lineno">  309</span>        <span class="keywordflow">if</span> ((sectionID == ldmx::HcalID::HcalSection::TOP) ||</div>
-<div class="line"><span class="lineno">  310</span>            (sectionID == ldmx::HcalID::HcalSection::LEFT)) {</div>
-<div class="line"><span class="lineno">  311</span>          endID = 0;</div>
-<div class="line"><span class="lineno">  312</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((sectionID == ldmx::HcalID::HcalSection::BOTTOM) ||</div>
-<div class="line"><span class="lineno">  313</span>                   (sectionID == ldmx::HcalID::HcalSection::RIGHT)) {</div>
-<div class="line"><span class="lineno">  314</span>          endID = 1;</div>
-<div class="line"><span class="lineno">  315</span>        }</div>
-<div class="line"><span class="lineno">  316</span>        <span class="keyword">auto</span> detID = <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a>(sectionID, layerID, stripID, endID);</div>
-<div class="line"><span class="lineno">  317</span>        noiseID = detID.raw();</div>
-<div class="line"><span class="lineno">  318</span>      } <span class="keywordflow">while</span> (hitsByID.find(noiseID) != hitsByID.end());</div>
-<div class="line"><span class="lineno">  319</span>      hitsByID[noiseID] =</div>
-<div class="line"><span class="lineno">  320</span>          std::vector&lt;const ldmx::SimCalorimeterHit*&gt;();  <span class="comment">// mark this as used</span></div>
-<div class="line"><span class="lineno">  321</span> </div>
-<div class="line"><span class="lineno">  322</span>      <span class="comment">// get a time for this noise hit</span></div>
-<div class="line"><span class="lineno">  323</span>      fake_pulse[0].second = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Uniform(<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#aa36ad55847617ebd9238c903d7f93fb3">clockCycle_</a>);</div>
-<div class="line"><span class="lineno">  324</span> </div>
-<div class="line"><span class="lineno">  325</span>      <span class="comment">// noise generator gives the amplitude above the readout threshold</span></div>
-<div class="line"><span class="lineno">  326</span>      <span class="comment">// we need to convert it to the amplitude above the pedestal</span></div>
-<div class="line"><span class="lineno">  327</span>      <span class="keywordtype">double</span> gain = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;gain(noiseID);</div>
-<div class="line"><span class="lineno">  328</span>      fake_pulse[0].first = noiseHit +</div>
-<div class="line"><span class="lineno">  329</span>                            gain * <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;readoutThreshold(noiseID) -</div>
-<div class="line"><span class="lineno">  330</span>                            gain * <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;pedestal(noiseID);</div>
-<div class="line"><span class="lineno">  331</span> </div>
-<div class="line"><span class="lineno">  332</span>      <span class="keywordflow">if</span> (sectionID == ldmx::HcalID::HcalSection::BACK) {</div>
-<div class="line"><span class="lineno">  333</span>        std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; digiToAddPosend,</div>
-<div class="line"><span class="lineno">  334</span>            digiToAddNegend;</div>
-<div class="line"><span class="lineno">  335</span>        <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> posendID(sectionID, layerID, stripID, 0);</div>
-<div class="line"><span class="lineno">  336</span>        <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> negendID(sectionID, layerID, stripID, 1);</div>
-<div class="line"><span class="lineno">  337</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(posendID.raw(), fake_pulse, digiToAddPosend) &amp;&amp;</div>
-<div class="line"><span class="lineno">  338</span>            <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(negendID.raw(), fake_pulse, digiToAddNegend)) {</div>
-<div class="line"><span class="lineno">  339</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(posendID.raw(), digiToAddPosend);</div>
-<div class="line"><span class="lineno">  340</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(negendID.raw(), digiToAddNegend);</div>
-<div class="line"><span class="lineno">  341</span>        }</div>
-<div class="line"><span class="lineno">  342</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  343</span>        std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; digiToAdd;</div>
-<div class="line"><span class="lineno">  344</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(noiseID, fake_pulse, digiToAdd)) {</div>
-<div class="line"><span class="lineno">  345</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(noiseID, digiToAdd);</div>
-<div class="line"><span class="lineno">  346</span>        }</div>
-<div class="line"><span class="lineno">  347</span>      }</div>
-<div class="line"><span class="lineno">  348</span>    }  <span class="comment">// loop over noise amplitudes</span></div>
-<div class="line"><span class="lineno">  349</span>  }    <span class="comment">// if we should add noise</span></div>
-<div class="line"><span class="lineno">  350</span> </div>
-<div class="line"><span class="lineno">  351</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a326eb0f0fa3ec2013d9bb9ba5cdb37cd">digiCollName_</a>, hcalDigis);</div>
-<div class="line"><span class="lineno">  352</span> </div>
-<div class="line"><span class="lineno">  353</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  354</span>}  <span class="comment">// produce</span></div>
+<p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">64</a> of file <a class="el" href="HcalDigiProducer_8cxx_source.html">HcalDigiProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                    {</div>
+<div class="line"><span class="lineno">   65</span>  <span class="comment">// Handle seeding on the first event</span></div>
+<div class="line"><span class="lineno">   66</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;hasSeed()) {</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rseed = getCondition&lt;framework::RandomNumberSeedService&gt;(</div>
+<div class="line"><span class="lineno">   68</span>        <a class="code hl_variable" href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>);</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;seedGenerator(</div>
+<div class="line"><span class="lineno">   70</span>        rseed.getSeed(<span class="stringliteral">&quot;HcalDigiProducer::NoiseGenerator&quot;</span>));</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>.get() == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rseed = getCondition&lt;framework::RandomNumberSeedService&gt;(</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_variable" href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>);</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a> = std::make_unique&lt;TRandom3&gt;(</div>
+<div class="line"><span class="lineno">   76</span>        rseed.getSeed(<span class="stringliteral">&quot;HcalDigiProducer::NoiseInjector&quot;</span>));</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+<div class="line"><span class="lineno">   78</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;hasSeed()) {</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rseed = getCondition&lt;framework::RandomNumberSeedService&gt;(</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_variable" href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>);</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;seedGenerator(rseed.getSeed(<span class="stringliteral">&quot;HcalDigiProducer::HgcrocEmulator&quot;</span>));</div>
+<div class="line"><span class="lineno">   82</span>  }</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>  <span class="comment">// Get the Hgcroc Conditions</span></div>
+<div class="line"><span class="lineno">   85</span>  <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;condition(</div>
+<div class="line"><span class="lineno">   86</span>      getCondition&lt;conditions::DoubleTableCondition&gt;(<span class="stringliteral">&quot;HcalHgcrocConditions&quot;</span>));</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>  <span class="comment">// Get the Hcal Geometry</span></div>
+<div class="line"><span class="lineno">   89</span>  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hcalGeometry = getCondition&lt;ldmx::HcalGeometry&gt;(</div>
+<div class="line"><span class="lineno">   90</span>      <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>);</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>  <span class="comment">// Empty collection to be filled</span></div>
+<div class="line"><span class="lineno">   93</span>  <a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a> hcalDigis;</div>
+<div class="line"><span class="lineno">   94</span>  hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#a710b705f129831a7029b9b42c3dcdf23">setNumSamplesPerDigi</a>(<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a609560c3306d8250cfe930ce9ead3677">nADCs_</a>);</div>
+<div class="line"><span class="lineno">   95</span>  hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#aa7400fd63b92e03d22f94898630f1f77">setSampleOfInterestIndex</a>(<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adbbcd1ed932d4bd6d2b413389c3f361e">iSOI_</a>);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>  std::map&lt;unsigned int, std::vector&lt;const ldmx::SimCalorimeterHit*&gt;&gt; hitsByID;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>  <span class="comment">// get simulated hcal hits from Geant4 and group them by id</span></div>
+<div class="line"><span class="lineno">  100</span>  <span class="keyword">auto</span> hcalSimHits{<span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&gt;(</div>
+<div class="line"><span class="lineno">  101</span>      <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a7d6e9bf49db864b6fb99b1841b5878c6">inputCollName_</a>, <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#ad2806b040b218ebc864abbe3a63db63c">inputPassName_</a>)};</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; simHit : hcalSimHits) {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="comment">// get ID</span></div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hitID = simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#aa253dffd148f4f5dc07288cfd7a0fa85">getID</a>();</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keyword">auto</span> idh = hitsByID.find(hitID);</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> (idh == hitsByID.end()) {</div>
+<div class="line"><span class="lineno">  109</span>      hitsByID[hitID] = std::vector&lt;const ldmx::SimCalorimeterHit*&gt;(1, &amp;simHit);</div>
+<div class="line"><span class="lineno">  110</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  111</span>      idh-&gt;second.push_back(&amp;simHit);</div>
+<div class="line"><span class="lineno">  112</span>    }</div>
+<div class="line"><span class="lineno">  113</span>  }</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span><span class="comment">  /******************************************************************************************</span></div>
+<div class="line"><span class="lineno">  116</span><span class="comment">   * HGCROC Emulation on Simulated Hits (grouped by HcalID)</span></div>
+<div class="line"><span class="lineno">  117</span><span class="comment">   ******************************************************************************************/</span></div>
+<div class="line"><span class="lineno">  118</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; simBar : hitsByID) {</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_class" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> detID(simBar.first);</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordtype">int</span> section = detID.section();</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordtype">int</span> layer = detID.layer();</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordtype">int</span> strip = detID.strip();</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="comment">// get position</span></div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordtype">double</span> half_total_width = hcalGeometry.getHalfTotalWidth(section, layer);</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordtype">double</span> ecal_dx = hcalGeometry.getEcalDx();</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordtype">double</span> ecal_dy = hcalGeometry.getEcalDy();</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <span class="comment">// contributions</span></div>
+<div class="line"><span class="lineno">  130</span>    std::vector&lt;std::pair&lt;double, double&gt;&gt; pulses_posend;</div>
+<div class="line"><span class="lineno">  131</span>    std::vector&lt;std::pair&lt;double, double&gt;&gt; pulses_negend;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> psimHit : simBar.second) {</div>
+<div class="line"><span class="lineno">  134</span>      <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1SimCalorimeterHit.html">ldmx::SimCalorimeterHit</a>&amp; simHit = *psimHit;</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>      std::vector&lt;float&gt; position = simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a99978ab2d24e419ede5582ba546681fd">getPosition</a>();</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  166</span>      <span class="keywordtype">float</span> distance_along_bar, distance_ecal;</div>
+<div class="line"><span class="lineno">  167</span>      <span class="keywordtype">float</span> distance_close, distance_far;</div>
+<div class="line"><span class="lineno">  168</span>      <span class="keywordtype">int</span> end_close;</div>
+<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
+<div class="line"><span class="lineno">  170</span>        distance_along_bar =</div>
+<div class="line"><span class="lineno">  171</span>            hcalGeometry.layerIsHorizontal(layer) ? position[0] : position[1];</div>
+<div class="line"><span class="lineno">  172</span>        end_close = (distance_along_bar &gt; 0) ? 0 : 1;</div>
+<div class="line"><span class="lineno">  173</span>        distance_close = half_total_width;</div>
+<div class="line"><span class="lineno">  174</span>        distance_far = half_total_width;</div>
+<div class="line"><span class="lineno">  175</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::TOP) ||</div>
+<div class="line"><span class="lineno">  177</span>            ((section == ldmx::HcalID::HcalSection::BOTTOM))) {</div>
+<div class="line"><span class="lineno">  178</span>          distance_along_bar = position[0];</div>
+<div class="line"><span class="lineno">  179</span>          distance_ecal = ecal_dx;</div>
+<div class="line"><span class="lineno">  180</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::LEFT) ||</div>
+<div class="line"><span class="lineno">  181</span>                   (section == ldmx::HcalID::HcalSection::RIGHT)) {</div>
+<div class="line"><span class="lineno">  182</span>          distance_along_bar = position[1];</div>
+<div class="line"><span class="lineno">  183</span>          distance_ecal = ecal_dy;</div>
+<div class="line"><span class="lineno">  184</span>        }</div>
+<div class="line"><span class="lineno">  185</span>        end_close = (distance_along_bar &gt; half_total_width) ? 0 : 1;</div>
+<div class="line"><span class="lineno">  186</span>        distance_close = (end_close == 0)</div>
+<div class="line"><span class="lineno">  187</span>                             ? 2 * half_total_width - distance_ecal / 2</div>
+<div class="line"><span class="lineno">  188</span>                             : distance_ecal / 2;</div>
+<div class="line"><span class="lineno">  189</span>        distance_far = (end_close == 0)</div>
+<div class="line"><span class="lineno">  190</span>                           ? distance_ecal / 2</div>
+<div class="line"><span class="lineno">  191</span>                           : 2 * half_total_width - distance_ecal / 2;</div>
+<div class="line"><span class="lineno">  192</span>      }</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>      <span class="comment">// Calculate voltage attenuation and time shift for the close and far</span></div>
+<div class="line"><span class="lineno">  195</span>      <span class="comment">// pulse.</span></div>
+<div class="line"><span class="lineno">  196</span>      <span class="keywordtype">float</span> v = 299.792 /</div>
+<div class="line"><span class="lineno">  197</span>                1.6;  <span class="comment">// velocity of light in Polystyrene, n = 1.6 = c/v mm/ns</span></div>
+<div class="line"><span class="lineno">  198</span>      <span class="keywordtype">double</span> att_close =</div>
+<div class="line"><span class="lineno">  199</span>          exp(-1. * ((distance_close - fabs(distance_along_bar)) / 1000.) /</div>
+<div class="line"><span class="lineno">  200</span>              <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a25dcab4605628b669e1f74ff4f586552">attlength_</a>);</div>
+<div class="line"><span class="lineno">  201</span>      <span class="keywordtype">double</span> att_far =</div>
+<div class="line"><span class="lineno">  202</span>          exp(-1. * ((distance_far + fabs(distance_along_bar)) / 1000.) /</div>
+<div class="line"><span class="lineno">  203</span>              <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a25dcab4605628b669e1f74ff4f586552">attlength_</a>);</div>
+<div class="line"><span class="lineno">  204</span>      <span class="keywordtype">double</span> shift_close =</div>
+<div class="line"><span class="lineno">  205</span>          fabs((distance_close - fabs(distance_along_bar)) / v);</div>
+<div class="line"><span class="lineno">  206</span>      <span class="keywordtype">double</span> shift_far = fabs((distance_far + fabs(distance_along_bar)) / v);</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>      <span class="comment">// Get voltages and times.</span></div>
+<div class="line"><span class="lineno">  209</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iContrib = 0; iContrib &lt; simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a3696b8480b0bf0455fd22b2097a258e7">getNumberOfContribs</a>();</div>
+<div class="line"><span class="lineno">  210</span>           iContrib++) {</div>
+<div class="line"><span class="lineno">  211</span>        <span class="keywordtype">double</span> voltage = simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a6f5cc61053300b17a4a5a4b52b33f3d5">getContrib</a>(iContrib).<a class="code hl_variable" href="structldmx_1_1SimCalorimeterHit_1_1Contrib.html#adcfa3f67936c8b0ca74192cf7a029fd9">edep</a> * <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a650bae00fb1a9a41789d7e63607958e4">MeV_</a>;</div>
+<div class="line"><span class="lineno">  212</span>        <span class="keywordtype">double</span> time =</div>
+<div class="line"><span class="lineno">  213</span>            simHit.<a class="code hl_function" href="classldmx_1_1SimCalorimeterHit.html#a6f5cc61053300b17a4a5a4b52b33f3d5">getContrib</a>(iContrib).<a class="code hl_variable" href="structldmx_1_1SimCalorimeterHit_1_1Contrib.html#a6a59b1b0f67e9208f46e6a8f478943fe">time</a>;  <span class="comment">// global time (t=0ns at target)</span></div>
+<div class="line"><span class="lineno">  214</span>        time -= position.at(2) /</div>
+<div class="line"><span class="lineno">  215</span>                299.702547;  <span class="comment">// shift light-speed particle traveling along z</span></div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>        <span class="keywordflow">if</span> (end_close == 0) {</div>
+<div class="line"><span class="lineno">  218</span>          pulses_posend.emplace_back(voltage * att_close, time + shift_close);</div>
+<div class="line"><span class="lineno">  219</span>          pulses_negend.emplace_back(voltage * att_far, time + shift_far);</div>
+<div class="line"><span class="lineno">  220</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  221</span>          pulses_posend.emplace_back(voltage * att_far, time + shift_far);</div>
+<div class="line"><span class="lineno">  222</span>          pulses_negend.emplace_back(voltage * att_close, time + shift_close);</div>
+<div class="line"><span class="lineno">  223</span>        }</div>
+<div class="line"><span class="lineno">  224</span>      }</div>
+<div class="line"><span class="lineno">  225</span>    }</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
+<div class="line"><span class="lineno">  237</span>      std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; digiToAddPosend,</div>
+<div class="line"><span class="lineno">  238</span>          digiToAddNegend;</div>
+<div class="line"><span class="lineno">  239</span>      <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> posendID(section, layer, strip, 0);</div>
+<div class="line"><span class="lineno">  240</span>      <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> negendID(section, layer, strip, 1);</div>
+<div class="line"><span class="lineno">  241</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(posendID.raw(), pulses_posend, digiToAddPosend) &amp;&amp;</div>
+<div class="line"><span class="lineno">  242</span>          <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(negendID.raw(), pulses_negend, digiToAddNegend)) {</div>
+<div class="line"><span class="lineno">  243</span>        hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(posendID.raw(), digiToAddPosend);</div>
+<div class="line"><span class="lineno">  244</span>        hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(negendID.raw(), digiToAddNegend);</div>
+<div class="line"><span class="lineno">  245</span>      }  <span class="comment">// Back Hcal needs to digitize both pulses or none</span></div>
+<div class="line"><span class="lineno">  246</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  247</span>      <span class="keywordtype">bool</span> is_posend = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  248</span>      std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; digiToAdd;</div>
+<div class="line"><span class="lineno">  249</span>      <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::TOP) ||</div>
+<div class="line"><span class="lineno">  250</span>          (section == ldmx::HcalID::HcalSection::LEFT)) {</div>
+<div class="line"><span class="lineno">  251</span>        is_posend = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  252</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((section == ldmx::HcalID::HcalSection::BOTTOM) ||</div>
+<div class="line"><span class="lineno">  253</span>                 (section == ldmx::HcalID::HcalSection::RIGHT)) {</div>
+<div class="line"><span class="lineno">  254</span>        is_posend = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  255</span>      }</div>
+<div class="line"><span class="lineno">  256</span>      <span class="keywordflow">if</span> (is_posend) {</div>
+<div class="line"><span class="lineno">  257</span>        <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> digiID(section, layer, strip, 0);</div>
+<div class="line"><span class="lineno">  258</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(digiID.raw(), pulses_posend, digiToAdd)) {</div>
+<div class="line"><span class="lineno">  259</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(digiID.raw(), digiToAdd);</div>
+<div class="line"><span class="lineno">  260</span>        }</div>
+<div class="line"><span class="lineno">  261</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  262</span>        <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> digiID(section, layer, strip, 1);</div>
+<div class="line"><span class="lineno">  263</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(digiID.raw(), pulses_negend, digiToAdd)) {</div>
+<div class="line"><span class="lineno">  264</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(digiID.raw(), digiToAdd);</div>
+<div class="line"><span class="lineno">  265</span>        }</div>
+<div class="line"><span class="lineno">  266</span>      }</div>
+<div class="line"><span class="lineno">  267</span>    }</div>
+<div class="line"><span class="lineno">  268</span>  }</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span><span class="comment">  /******************************************************************************************</span></div>
+<div class="line"><span class="lineno">  271</span><span class="comment">   * Noise Simulation on Empty Channels</span></div>
+<div class="line"><span class="lineno">  272</span><span class="comment">   *****************************************************************************************/</span></div>
+<div class="line"><span class="lineno">  273</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a01f82c5ba266c333c19196e5819b03e1">noise_</a>) {</div>
+<div class="line"><span class="lineno">  274</span>    <span class="keywordtype">int</span> numChannels = 0;</div>
+<div class="line"><span class="lineno">  275</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> section = 0; section &lt; hcalGeometry.getNumSections(); section++) {</div>
+<div class="line"><span class="lineno">  276</span>      <span class="keywordtype">int</span> numChannelsInSection = 0;</div>
+<div class="line"><span class="lineno">  277</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> layer = 1; layer &lt;= hcalGeometry.getNumLayers(section);</div>
+<div class="line"><span class="lineno">  278</span>           layer++) {</div>
+<div class="line"><span class="lineno">  279</span>        numChannelsInSection += hcalGeometry.getNumStrips(section, layer);</div>
+<div class="line"><span class="lineno">  280</span>      }</div>
+<div class="line"><span class="lineno">  281</span>      <span class="comment">// for back Hcal we have double readout, therefore we multiply the number</span></div>
+<div class="line"><span class="lineno">  282</span>      <span class="comment">// of channels by 2.</span></div>
+<div class="line"><span class="lineno">  283</span>      <span class="keywordflow">if</span> (section == ldmx::HcalID::HcalSection::BACK) {</div>
+<div class="line"><span class="lineno">  284</span>        numChannelsInSection *= 2;</div>
+<div class="line"><span class="lineno">  285</span>      }</div>
+<div class="line"><span class="lineno">  286</span>      numChannels += numChannelsInSection;</div>
+<div class="line"><span class="lineno">  287</span>    }</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordtype">int</span> numEmptyChannels = numChannels - hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ae3580a8a632b91b0ff4265346cc74715">getNumDigis</a>();</div>
+<div class="line"><span class="lineno">  289</span>    <span class="comment">// noise generator gives us a list of noise amplitudes [mV] that randomly</span></div>
+<div class="line"><span class="lineno">  290</span>    <span class="comment">// populate the empty channels and are above the readout threshold</span></div>
+<div class="line"><span class="lineno">  291</span>    <span class="keyword">auto</span> noiseHitAmplitudes{</div>
+<div class="line"><span class="lineno">  292</span>        <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a29ac2f405f25d3afbd96fb6c4a2bec80">noiseGenerator_</a>-&gt;generateNoiseHits(numEmptyChannels)};</div>
+<div class="line"><span class="lineno">  293</span>    std::vector&lt;std::pair&lt;double, double&gt;&gt; fake_pulse(1, {0., 0.});</div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> noiseHit : noiseHitAmplitudes) {</div>
+<div class="line"><span class="lineno">  295</span>      <span class="comment">// generate detector ID for noise hit</span></div>
+<div class="line"><span class="lineno">  296</span>      <span class="comment">// making sure that it is in an empty channel</span></div>
+<div class="line"><span class="lineno">  297</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> noiseID;</div>
+<div class="line"><span class="lineno">  298</span>      <span class="keywordtype">int</span> sectionID, layerID, stripID, endID;</div>
+<div class="line"><span class="lineno">  299</span>      <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  300</span>        sectionID = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Integer(hcalGeometry.getNumSections());</div>
+<div class="line"><span class="lineno">  301</span>        layerID = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Integer(hcalGeometry.getNumLayers(sectionID));</div>
+<div class="line"><span class="lineno">  302</span>        <span class="comment">// set layer to 1 if the generator says it is 0 (geometry map starts</span></div>
+<div class="line"><span class="lineno">  303</span>        <span class="comment">// from 1)</span></div>
+<div class="line"><span class="lineno">  304</span>        <span class="keywordflow">if</span> (layerID == 0) layerID = 1;</div>
+<div class="line"><span class="lineno">  305</span>        stripID = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Integer(</div>
+<div class="line"><span class="lineno">  306</span>            hcalGeometry.getNumStrips(sectionID, layerID));</div>
+<div class="line"><span class="lineno">  307</span>        endID = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Integer(2);</div>
+<div class="line"><span class="lineno">  308</span>        <span class="keywordflow">if</span> ((sectionID == ldmx::HcalID::HcalSection::TOP) ||</div>
+<div class="line"><span class="lineno">  309</span>            (sectionID == ldmx::HcalID::HcalSection::LEFT)) {</div>
+<div class="line"><span class="lineno">  310</span>          endID = 0;</div>
+<div class="line"><span class="lineno">  311</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((sectionID == ldmx::HcalID::HcalSection::BOTTOM) ||</div>
+<div class="line"><span class="lineno">  312</span>                   (sectionID == ldmx::HcalID::HcalSection::RIGHT)) {</div>
+<div class="line"><span class="lineno">  313</span>          endID = 1;</div>
+<div class="line"><span class="lineno">  314</span>        }</div>
+<div class="line"><span class="lineno">  315</span>        <span class="keyword">auto</span> detID = <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a>(sectionID, layerID, stripID, endID);</div>
+<div class="line"><span class="lineno">  316</span>        noiseID = detID.raw();</div>
+<div class="line"><span class="lineno">  317</span>      } <span class="keywordflow">while</span> (hitsByID.find(noiseID) != hitsByID.end());</div>
+<div class="line"><span class="lineno">  318</span>      hitsByID[noiseID] =</div>
+<div class="line"><span class="lineno">  319</span>          std::vector&lt;const ldmx::SimCalorimeterHit*&gt;();  <span class="comment">// mark this as used</span></div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>      <span class="comment">// get a time for this noise hit</span></div>
+<div class="line"><span class="lineno">  322</span>      fake_pulse[0].second = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">noiseInjector_</a>-&gt;Uniform(<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#aa36ad55847617ebd9238c903d7f93fb3">clockCycle_</a>);</div>
+<div class="line"><span class="lineno">  323</span> </div>
+<div class="line"><span class="lineno">  324</span>      <span class="comment">// noise generator gives the amplitude above the readout threshold</span></div>
+<div class="line"><span class="lineno">  325</span>      <span class="comment">// we need to convert it to the amplitude above the pedestal</span></div>
+<div class="line"><span class="lineno">  326</span>      <span class="keywordtype">double</span> gain = <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;gain(noiseID);</div>
+<div class="line"><span class="lineno">  327</span>      fake_pulse[0].first = noiseHit +</div>
+<div class="line"><span class="lineno">  328</span>                            gain * <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;readoutThreshold(noiseID) -</div>
+<div class="line"><span class="lineno">  329</span>                            gain * <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;pedestal(noiseID);</div>
+<div class="line"><span class="lineno">  330</span> </div>
+<div class="line"><span class="lineno">  331</span>      <span class="keywordflow">if</span> (sectionID == ldmx::HcalID::HcalSection::BACK) {</div>
+<div class="line"><span class="lineno">  332</span>        std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; digiToAddPosend,</div>
+<div class="line"><span class="lineno">  333</span>            digiToAddNegend;</div>
+<div class="line"><span class="lineno">  334</span>        <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> posendID(sectionID, layerID, stripID, 0);</div>
+<div class="line"><span class="lineno">  335</span>        <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> negendID(sectionID, layerID, stripID, 1);</div>
+<div class="line"><span class="lineno">  336</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(posendID.raw(), fake_pulse, digiToAddPosend) &amp;&amp;</div>
+<div class="line"><span class="lineno">  337</span>            <a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(negendID.raw(), fake_pulse, digiToAddNegend)) {</div>
+<div class="line"><span class="lineno">  338</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(posendID.raw(), digiToAddPosend);</div>
+<div class="line"><span class="lineno">  339</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(negendID.raw(), digiToAddNegend);</div>
+<div class="line"><span class="lineno">  340</span>        }</div>
+<div class="line"><span class="lineno">  341</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  342</span>        std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; digiToAdd;</div>
+<div class="line"><span class="lineno">  343</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a791c6c1074e62a4cecae1233149ff8dd">hgcroc_</a>-&gt;digitize(noiseID, fake_pulse, digiToAdd)) {</div>
+<div class="line"><span class="lineno">  344</span>          hcalDigis.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection.html#ad6607762651c38c82453a787dd2da582">addDigi</a>(noiseID, digiToAdd);</div>
+<div class="line"><span class="lineno">  345</span>        }</div>
+<div class="line"><span class="lineno">  346</span>      }</div>
+<div class="line"><span class="lineno">  347</span>    }  <span class="comment">// loop over noise amplitudes</span></div>
+<div class="line"><span class="lineno">  348</span>  }    <span class="comment">// if we should add noise</span></div>
+<div class="line"><span class="lineno">  349</span> </div>
+<div class="line"><span class="lineno">  350</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalDigiProducer.html#a326eb0f0fa3ec2013d9bb9ba5cdb37cd">digiCollName_</a>, hcalDigis);</div>
+<div class="line"><span class="lineno">  351</span> </div>
+<div class="line"><span class="lineno">  352</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  353</span>}  <span class="comment">// produce</span></div>
 <div class="ttc" id="aclassframework_1_1RandomNumberSeedService_html_a48e87463ea63d1862064cad26d5b9bb4"><div class="ttname"><a href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static const std::string CONDITIONS_OBJECT_NAME</div><div class="ttdoc">Conditions object name.</div><div class="ttdef"><b>Definition:</b> <a href="RandomNumberSeedService_8h_source.html#l00037">RandomNumberSeedService.h:37</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalDigiProducer_html_adae695077b45d750aa098820bf56d598"><div class="ttname"><a href="classhcal_1_1HcalDigiProducer.html#adae695077b45d750aa098820bf56d598">hcal::HcalDigiProducer::noiseInjector_</a></div><div class="ttdeci">std::unique_ptr&lt; TRandom3 &gt; noiseInjector_</div><div class="ttdoc">Generates Gaussian noise on top of real hits.</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiProducer_8h_source.html#l00097">HcalDigiProducer.h:97</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalDigiID_html"><div class="ttname"><a href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a></div><div class="ttdoc">Extension of HcalAbstractID providing access to HCal digi information.</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiID_8h_source.html#l00013">HcalDigiID.h:13</a></div></div>
@@ -647,7 +646,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00078">78</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -675,7 +674,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00066">66</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -703,7 +702,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00063">63</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -731,7 +730,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00088">88</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -759,7 +758,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00057">57</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -787,7 +786,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00060">60</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -815,7 +814,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00072">72</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -843,7 +842,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00075">75</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -871,7 +870,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00069">69</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -898,7 +897,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00085">85</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -926,7 +925,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00094">94</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, <a class="el" href="HcalDigiProducer_8cxx_source.html#l00015">HcalDigiProducer()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00028">configure()</a>, <a class="el" href="HcalDigiProducer_8cxx_source.html#l00015">HcalDigiProducer()</a>, and <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>
@@ -954,7 +953,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalDigiProducer_8h_source.html#l00097">97</a> of file <a class="el" href="HcalDigiProducer_8h_source.html">HcalDigiProducer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00065">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalDigiProducer_8cxx_source.html#l00064">produce()</a>.</p>
 
 </div>
 </div>

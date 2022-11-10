@@ -108,9 +108,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9b2fa114003168cfc71fba8fb695ccc4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a></td></tr>
 <tr class="memdesc:a9b2fa114003168cfc71fba8fb695ccc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index for the Sample Of Interest in the list of digi samples.  <a href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">More...</a><br /></td></tr>
 <tr class="separator:a9b2fa114003168cfc71fba8fb695ccc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6be20e18e89384d1bc0110807975205"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocEmulator.html#aa6be20e18e89384d1bc0110807975205">noiseRMS_</a></td></tr>
-<tr class="memdesc:aa6be20e18e89384d1bc0110807975205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise RMS [mV].  <a href="classldmx_1_1HgcrocEmulator.html#aa6be20e18e89384d1bc0110807975205">More...</a><br /></td></tr>
-<tr class="separator:aa6be20e18e89384d1bc0110807975205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae588fd493644aa95be980753610facf4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a></td></tr>
 <tr class="memdesc:ae588fd493644aa95be980753610facf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time interval for chip clock [ns].  <a href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">More...</a><br /></td></tr>
 <tr class="separator:ae588fd493644aa95be980753610facf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,54 +177,52 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">    7</span>  <span class="comment">// settings of readout chip that are the same for all chips</span></div>
 <div class="line"><span class="lineno">    8</span>  <span class="comment">//  used  in actual digitization</span></div>
 <div class="line"><span class="lineno">    9</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#acadab969f072fdd35ad96cf5421c591d">noise_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;noise&quot;</span>);</div>
-<div class="line"><span class="lineno">   10</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa6be20e18e89384d1bc0110807975205">noiseRMS_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;noiseRMS&quot;</span>);</div>
-<div class="line"><span class="lineno">   11</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac55c62728dab7aac526340223bfd7a3e">timingJitter_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;timingJitter&quot;</span>);</div>
-<div class="line"><span class="lineno">   12</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a184616af7067a167909b22ee9a5bf7ba">rateUpSlope_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rateUpSlope&quot;</span>);</div>
-<div class="line"><span class="lineno">   13</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a8fce07d5a18d743cc5c476c2bba34ad9">timeUpSlope_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;timeUpSlope&quot;</span>);</div>
-<div class="line"><span class="lineno">   14</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af7ac6666b0489259155ea7c7c9f7a3bc">rateDnSlope_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rateDnSlope&quot;</span>);</div>
-<div class="line"><span class="lineno">   15</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad108f3b2bc8205c622f26ece8c4bc322">timeDnSlope_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;timeDnSlope&quot;</span>);</div>
-<div class="line"><span class="lineno">   16</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a95ebcef891d31134b17fb4ee8df81569">timePeak_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;timePeak&quot;</span>);</div>
-<div class="line"><span class="lineno">   17</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;clockCycle&quot;</span>);</div>
-<div class="line"><span class="lineno">   18</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;nADCs&quot;</span>);</div>
-<div class="line"><span class="lineno">   19</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;iSOI&quot;</span>);</div>
-<div class="line"><span class="lineno">   20</span> </div>
-<div class="line"><span class="lineno">   21</span>  <span class="comment">// Time -&gt; clock counts conversion</span></div>
-<div class="line"><span class="lineno">   22</span>  <span class="comment">//  time [ns] * ( 2^10 / max time in ns ) = clock counts</span></div>
-<div class="line"><span class="lineno">   23</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af9f13b9b026fcb5f62223bbfede6e963">ns_</a> = 1024. / <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>;</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a71424170e176c107011c31d6c1b1f30d">hit_merge_ns_</a> = 0.05;  <span class="comment">// combine at 50 ps level</span></div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>  <span class="comment">// Configure the pulse shape function</span></div>
-<div class="line"><span class="lineno">   28</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a> =</div>
-<div class="line"><span class="lineno">   29</span>      TF1(<span class="stringliteral">&quot;pulseFunc&quot;</span>,</div>
-<div class="line"><span class="lineno">   30</span>          <span class="stringliteral">&quot;[0]*((1.0+exp([1]*(-[2]+[3])))*(1.0+exp([5]*(-[6]+[3]))))/&quot;</span></div>
-<div class="line"><span class="lineno">   31</span>          <span class="stringliteral">&quot;((1.0+exp([1]*(x-[2]+[3]-[4])))*(1.0+exp([5]*(x-[6]+[3]-[4]))))&quot;</span>,</div>
-<div class="line"><span class="lineno">   32</span>          0.0, (<span class="keywordtype">double</span>)<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a> * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>);</div>
-<div class="line"><span class="lineno">   33</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(0, 1.0);  <span class="comment">// amplitude is set externally</span></div>
-<div class="line"><span class="lineno">   34</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(1, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a184616af7067a167909b22ee9a5bf7ba">rateUpSlope_</a>);</div>
-<div class="line"><span class="lineno">   35</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(2, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a8fce07d5a18d743cc5c476c2bba34ad9">timeUpSlope_</a>);</div>
-<div class="line"><span class="lineno">   36</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(3, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a95ebcef891d31134b17fb4ee8df81569">timePeak_</a>);</div>
-<div class="line"><span class="lineno">   37</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(4, 0);  <span class="comment">// not using time offset in this way</span></div>
-<div class="line"><span class="lineno">   38</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(5, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af7ac6666b0489259155ea7c7c9f7a3bc">rateDnSlope_</a>);</div>
-<div class="line"><span class="lineno">   39</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(6, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad108f3b2bc8205c622f26ece8c4bc322">timeDnSlope_</a>);</div>
-<div class="line"><span class="lineno">   40</span>}</div>
+<div class="line"><span class="lineno">   10</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac55c62728dab7aac526340223bfd7a3e">timingJitter_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;timingJitter&quot;</span>);</div>
+<div class="line"><span class="lineno">   11</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a184616af7067a167909b22ee9a5bf7ba">rateUpSlope_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rateUpSlope&quot;</span>);</div>
+<div class="line"><span class="lineno">   12</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a8fce07d5a18d743cc5c476c2bba34ad9">timeUpSlope_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;timeUpSlope&quot;</span>);</div>
+<div class="line"><span class="lineno">   13</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af7ac6666b0489259155ea7c7c9f7a3bc">rateDnSlope_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rateDnSlope&quot;</span>);</div>
+<div class="line"><span class="lineno">   14</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad108f3b2bc8205c622f26ece8c4bc322">timeDnSlope_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;timeDnSlope&quot;</span>);</div>
+<div class="line"><span class="lineno">   15</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a95ebcef891d31134b17fb4ee8df81569">timePeak_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;timePeak&quot;</span>);</div>
+<div class="line"><span class="lineno">   16</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;clockCycle&quot;</span>);</div>
+<div class="line"><span class="lineno">   17</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;nADCs&quot;</span>);</div>
+<div class="line"><span class="lineno">   18</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;iSOI&quot;</span>);</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>  <span class="comment">// Time -&gt; clock counts conversion</span></div>
+<div class="line"><span class="lineno">   21</span>  <span class="comment">//  time [ns] * ( 2^10 / max time in ns ) = clock counts</span></div>
+<div class="line"><span class="lineno">   22</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af9f13b9b026fcb5f62223bbfede6e963">ns_</a> = 1024. / <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>;</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a71424170e176c107011c31d6c1b1f30d">hit_merge_ns_</a> = 0.05;  <span class="comment">// combine at 50 ps level</span></div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>  <span class="comment">// Configure the pulse shape function</span></div>
+<div class="line"><span class="lineno">   27</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a> =</div>
+<div class="line"><span class="lineno">   28</span>      TF1(<span class="stringliteral">&quot;pulseFunc&quot;</span>,</div>
+<div class="line"><span class="lineno">   29</span>          <span class="stringliteral">&quot;[0]*((1.0+exp([1]*(-[2]+[3])))*(1.0+exp([5]*(-[6]+[3]))))/&quot;</span></div>
+<div class="line"><span class="lineno">   30</span>          <span class="stringliteral">&quot;((1.0+exp([1]*(x-[2]+[3]-[4])))*(1.0+exp([5]*(x-[6]+[3]-[4]))))&quot;</span>,</div>
+<div class="line"><span class="lineno">   31</span>          0.0, (<span class="keywordtype">double</span>)<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a> * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>);</div>
+<div class="line"><span class="lineno">   32</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(0, 1.0);  <span class="comment">// amplitude is set externally</span></div>
+<div class="line"><span class="lineno">   33</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(1, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a184616af7067a167909b22ee9a5bf7ba">rateUpSlope_</a>);</div>
+<div class="line"><span class="lineno">   34</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(2, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a8fce07d5a18d743cc5c476c2bba34ad9">timeUpSlope_</a>);</div>
+<div class="line"><span class="lineno">   35</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(3, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a95ebcef891d31134b17fb4ee8df81569">timePeak_</a>);</div>
+<div class="line"><span class="lineno">   36</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(4, 0);  <span class="comment">// not using time offset in this way</span></div>
+<div class="line"><span class="lineno">   37</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(5, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af7ac6666b0489259155ea7c7c9f7a3bc">rateDnSlope_</a>);</div>
+<div class="line"><span class="lineno">   38</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>.FixParameter(6, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad108f3b2bc8205c622f26ece8c4bc322">timeDnSlope_</a>);</div>
+<div class="line"><span class="lineno">   39</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a184616af7067a167909b22ee9a5bf7ba"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a184616af7067a167909b22ee9a5bf7ba">ldmx::HgcrocEmulator::rateUpSlope_</a></div><div class="ttdeci">double rateUpSlope_</div><div class="ttdoc">Rate of Up Slope in Pulse Shape [1/ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00385">HgcrocEmulator.h:385</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a71424170e176c107011c31d6c1b1f30d"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a71424170e176c107011c31d6c1b1f30d">ldmx::HgcrocEmulator::hit_merge_ns_</a></div><div class="ttdeci">double hit_merge_ns_</div><div class="ttdoc">Hit merging time [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00400">HgcrocEmulator.h:400</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a8fce07d5a18d743cc5c476c2bba34ad9"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a8fce07d5a18d743cc5c476c2bba34ad9">ldmx::HgcrocEmulator::timeUpSlope_</a></div><div class="ttdeci">double timeUpSlope_</div><div class="ttdoc">Time of Up Slope relative to Pulse Shape Fit [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00388">HgcrocEmulator.h:388</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a95ebcef891d31134b17fb4ee8df81569"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a95ebcef891d31134b17fb4ee8df81569">ldmx::HgcrocEmulator::timePeak_</a></div><div class="ttdeci">double timePeak_</div><div class="ttdoc">Time of Peak relative to pulse shape fit [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00397">HgcrocEmulator.h:397</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a9b2fa114003168cfc71fba8fb695ccc4"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">ldmx::HgcrocEmulator::iSOI_</a></div><div class="ttdeci">int iSOI_</div><div class="ttdoc">Index for the Sample Of Interest in the list of digi samples.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00370">HgcrocEmulator.h:370</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_aa6be20e18e89384d1bc0110807975205"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#aa6be20e18e89384d1bc0110807975205">ldmx::HgcrocEmulator::noiseRMS_</a></div><div class="ttdeci">double noiseRMS_</div><div class="ttdoc">Noise RMS [mV].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00373">HgcrocEmulator.h:373</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ac55c62728dab7aac526340223bfd7a3e"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ac55c62728dab7aac526340223bfd7a3e">ldmx::HgcrocEmulator::timingJitter_</a></div><div class="ttdeci">double timingJitter_</div><div class="ttdoc">Jitter of timing mechanism in the chip [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00379">HgcrocEmulator.h:379</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ac9f8424af71f659c063042c9f8ed92c9"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">ldmx::HgcrocEmulator::nADCs_</a></div><div class="ttdeci">int nADCs_</div><div class="ttdoc">Depth of ADC buffer.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00367">HgcrocEmulator.h:367</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_acadab969f072fdd35ad96cf5421c591d"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#acadab969f072fdd35ad96cf5421c591d">ldmx::HgcrocEmulator::noise_</a></div><div class="ttdeci">bool noise_</div><div class="ttdoc">Put noise in channels, only configure to false if testing.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00364">HgcrocEmulator.h:364</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ad108f3b2bc8205c622f26ece8c4bc322"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ad108f3b2bc8205c622f26ece8c4bc322">ldmx::HgcrocEmulator::timeDnSlope_</a></div><div class="ttdeci">double timeDnSlope_</div><div class="ttdoc">Time of Down Slope relative to Pulse Shape Fit [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00394">HgcrocEmulator.h:394</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ad263134be06668bb251c29643ff3749e"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">ldmx::HgcrocEmulator::pulseFunc_</a></div><div class="ttdeci">TF1 pulseFunc_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00449">HgcrocEmulator.h:449</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ae588fd493644aa95be980753610facf4"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">ldmx::HgcrocEmulator::clockCycle_</a></div><div class="ttdeci">double clockCycle_</div><div class="ttdoc">Time interval for chip clock [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00376">HgcrocEmulator.h:376</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_af7ac6666b0489259155ea7c7c9f7a3bc"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#af7ac6666b0489259155ea7c7c9f7a3bc">ldmx::HgcrocEmulator::rateDnSlope_</a></div><div class="ttdeci">double rateDnSlope_</div><div class="ttdoc">Rate of Down Slope in Pulse Shape [1/ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00391">HgcrocEmulator.h:391</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_af9f13b9b026fcb5f62223bbfede6e963"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#af9f13b9b026fcb5f62223bbfede6e963">ldmx::HgcrocEmulator::ns_</a></div><div class="ttdeci">double ns_</div><div class="ttdoc">Conversion from time [ns] to counts.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00382">HgcrocEmulator.h:382</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a184616af7067a167909b22ee9a5bf7ba"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a184616af7067a167909b22ee9a5bf7ba">ldmx::HgcrocEmulator::rateUpSlope_</a></div><div class="ttdeci">double rateUpSlope_</div><div class="ttdoc">Rate of Up Slope in Pulse Shape [1/ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00378">HgcrocEmulator.h:378</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a71424170e176c107011c31d6c1b1f30d"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a71424170e176c107011c31d6c1b1f30d">ldmx::HgcrocEmulator::hit_merge_ns_</a></div><div class="ttdeci">double hit_merge_ns_</div><div class="ttdoc">Hit merging time [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00393">HgcrocEmulator.h:393</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a8fce07d5a18d743cc5c476c2bba34ad9"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a8fce07d5a18d743cc5c476c2bba34ad9">ldmx::HgcrocEmulator::timeUpSlope_</a></div><div class="ttdeci">double timeUpSlope_</div><div class="ttdoc">Time of Up Slope relative to Pulse Shape Fit [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00381">HgcrocEmulator.h:381</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a95ebcef891d31134b17fb4ee8df81569"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a95ebcef891d31134b17fb4ee8df81569">ldmx::HgcrocEmulator::timePeak_</a></div><div class="ttdeci">double timePeak_</div><div class="ttdoc">Time of Peak relative to pulse shape fit [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00390">HgcrocEmulator.h:390</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a9b2fa114003168cfc71fba8fb695ccc4"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">ldmx::HgcrocEmulator::iSOI_</a></div><div class="ttdeci">int iSOI_</div><div class="ttdoc">Index for the Sample Of Interest in the list of digi samples.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00366">HgcrocEmulator.h:366</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ac55c62728dab7aac526340223bfd7a3e"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ac55c62728dab7aac526340223bfd7a3e">ldmx::HgcrocEmulator::timingJitter_</a></div><div class="ttdeci">double timingJitter_</div><div class="ttdoc">Jitter of timing mechanism in the chip [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00372">HgcrocEmulator.h:372</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ac9f8424af71f659c063042c9f8ed92c9"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">ldmx::HgcrocEmulator::nADCs_</a></div><div class="ttdeci">int nADCs_</div><div class="ttdoc">Depth of ADC buffer.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00363">HgcrocEmulator.h:363</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_acadab969f072fdd35ad96cf5421c591d"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#acadab969f072fdd35ad96cf5421c591d">ldmx::HgcrocEmulator::noise_</a></div><div class="ttdeci">bool noise_</div><div class="ttdoc">Put noise in channels, only configure to false if testing.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00360">HgcrocEmulator.h:360</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ad108f3b2bc8205c622f26ece8c4bc322"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ad108f3b2bc8205c622f26ece8c4bc322">ldmx::HgcrocEmulator::timeDnSlope_</a></div><div class="ttdeci">double timeDnSlope_</div><div class="ttdoc">Time of Down Slope relative to Pulse Shape Fit [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00387">HgcrocEmulator.h:387</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ad263134be06668bb251c29643ff3749e"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">ldmx::HgcrocEmulator::pulseFunc_</a></div><div class="ttdeci">TF1 pulseFunc_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00442">HgcrocEmulator.h:442</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_ae588fd493644aa95be980753610facf4"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">ldmx::HgcrocEmulator::clockCycle_</a></div><div class="ttdeci">double clockCycle_</div><div class="ttdoc">Time interval for chip clock [ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00369">HgcrocEmulator.h:369</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_af7ac6666b0489259155ea7c7c9f7a3bc"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#af7ac6666b0489259155ea7c7c9f7a3bc">ldmx::HgcrocEmulator::rateDnSlope_</a></div><div class="ttdeci">double rateDnSlope_</div><div class="ttdoc">Rate of Down Slope in Pulse Shape [1/ns].</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00384">HgcrocEmulator.h:384</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_af9f13b9b026fcb5f62223bbfede6e963"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#af9f13b9b026fcb5f62223bbfede6e963">ldmx::HgcrocEmulator::ns_</a></div><div class="ttdeci">double ns_</div><div class="ttdoc">Conversion from time [ns] to counts.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00375">HgcrocEmulator.h:375</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00376">clockCycle_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00400">hit_merge_ns_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00370">iSOI_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00367">nADCs_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00364">noise_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00373">noiseRMS_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00382">ns_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00449">pulseFunc_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00391">rateDnSlope_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00385">rateUpSlope_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00394">timeDnSlope_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00397">timePeak_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00388">timeUpSlope_</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00379">timingJitter_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00369">clockCycle_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00393">hit_merge_ns_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00366">iSOI_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00363">nADCs_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00360">noise_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00375">ns_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00442">pulseFunc_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00384">rateDnSlope_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00378">rateUpSlope_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00387">timeDnSlope_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00390">timePeak_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00381">timeUpSlope_</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00372">timingJitter_</a>.</p>
 
 </div>
 </div>
@@ -299,10 +294,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (&amp;table != <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">chipConditions_</a>) <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">conditionNamesToIndex_</a>.clear();</div>
 <div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">chipConditions_</a> = &amp;table;</div>
 <div class="line"><span class="lineno">   76</span>  }</div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a4ec09162817da87f206c25a4bb0376c7"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">ldmx::HgcrocEmulator::chipConditions_</a></div><div class="ttdeci">const conditions::DoubleTableCondition * chipConditions_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00412">HgcrocEmulator.h:412</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_aa1a403cc2554201c7098ce6d9674987d"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">ldmx::HgcrocEmulator::conditionNamesToIndex_</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; conditionNamesToIndex_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00420">HgcrocEmulator.h:420</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a4ec09162817da87f206c25a4bb0376c7"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">ldmx::HgcrocEmulator::chipConditions_</a></div><div class="ttdeci">const conditions::DoubleTableCondition * chipConditions_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00405">HgcrocEmulator.h:405</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_aa1a403cc2554201c7098ce6d9674987d"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">ldmx::HgcrocEmulator::conditionNamesToIndex_</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; conditionNamesToIndex_</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00413">HgcrocEmulator.h:413</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00412">chipConditions_</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00420">conditionNamesToIndex_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00405">chipConditions_</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00413">conditionNamesToIndex_</a>.</p>
 
 </div>
 </div>
@@ -380,189 +375,189 @@ Pulse Measurement</h4>
 <dl class="section return"><dt>Returns</dt><dd>true if digis were constructed (false if hit was below readout) </dd></dl>
 <p >the time here is nominal (zero gives peak if hit.second is zero)</p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">46</a> of file <a class="el" href="HgcrocEmulator_8cxx_source.html">HgcrocEmulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                                {</div>
-<div class="line"><span class="lineno">   50</span>  <span class="comment">// step 0: prepare ourselves for emulation</span></div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>  digiToAdd.clear();  <span class="comment">// make sure it is clean</span></div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>  <span class="comment">// Configure chip settings based off of table (that may have been passed)</span></div>
-<div class="line"><span class="lineno">   55</span>  <span class="keywordtype">double</span> totMax = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;TOT_MAX&quot;</span>);</div>
-<div class="line"><span class="lineno">   56</span>  <span class="keywordtype">double</span> padCapacitance = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;PAD_CAPACITANCE&quot;</span>);</div>
-<div class="line"><span class="lineno">   57</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a> = this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>(channelID);</div>
-<div class="line"><span class="lineno">   58</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a> = this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>(channelID);</div>
-<div class="line"><span class="lineno">   59</span>  <span class="keywordtype">double</span> toaThreshold = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;TOA_THRESHOLD&quot;</span>);</div>
-<div class="line"><span class="lineno">   60</span>  <span class="keywordtype">double</span> totThreshold = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;TOT_THRESHOLD&quot;</span>);</div>
-<div class="line"><span class="lineno">   61</span>  <span class="comment">// measTime defines the point in the BX where an in-time</span></div>
-<div class="line"><span class="lineno">   62</span>  <span class="comment">//  (time=0 in times vector) hit would arrive.</span></div>
-<div class="line"><span class="lineno">   63</span>  <span class="comment">// Used to determine BX boundaries and TOA behavior.</span></div>
-<div class="line"><span class="lineno">   64</span>  <span class="keywordtype">double</span> measTime = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;MEAS_TIME&quot;</span>);</div>
-<div class="line"><span class="lineno">   65</span>  <span class="keywordtype">double</span> drainRate = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;DRAIN_RATE&quot;</span>);</div>
-<div class="line"><span class="lineno">   66</span>  <span class="keywordtype">double</span> readoutThresholdFloat = this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a134959bfddf791ef386543df167768cf">readoutThreshold</a>(channelID);</div>
-<div class="line"><span class="lineno">   67</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a134959bfddf791ef386543df167768cf">readoutThreshold</a> = int(readoutThresholdFloat);</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>  <span class="comment">// sort by amplitude</span></div>
-<div class="line"><span class="lineno">   70</span>  <span class="comment">//  ==&gt; makes sure that puleses are merged towards higher ones</span></div>
-<div class="line"><span class="lineno">   71</span>  std::sort(</div>
-<div class="line"><span class="lineno">   72</span>      arriving_pulses.begin(), arriving_pulses.end(),</div>
-<div class="line"><span class="lineno">   73</span>      [](<span class="keyword">const</span> std::pair&lt;double, double&gt; &amp;a,</div>
-<div class="line"><span class="lineno">   74</span>         <span class="keyword">const</span> std::pair&lt;double, double&gt; &amp;b) { return a.first &gt; b.first; });</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>  <span class="comment">// step 1: gather voltages into groups separated by (programmable) ns, single</span></div>
-<div class="line"><span class="lineno">   77</span>  <span class="comment">// pass</span></div>
-<div class="line"><span class="lineno">   78</span>  CompositePulse pulse(<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>, <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>, <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>);</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> hit : arriving_pulses) pulse.addOrMerge(hit, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a71424170e176c107011c31d6c1b1f30d">hit_merge_ns_</a>);</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>  <span class="comment">// TODO step 2: add timing jitter</span></div>
-<div class="line"><span class="lineno">   83</span>  <span class="comment">// if (noise_) pulse.jitter();</span></div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>  <span class="comment">// step 3: go through each BX sample one by one</span></div>
-<div class="line"><span class="lineno">   88</span>  <span class="keywordtype">bool</span> doReadout = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   89</span>  <span class="keywordtype">bool</span> wasTOA = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   90</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iADC = 0; iADC &lt; <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a>; iADC++) {</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordtype">double</span> startBX = (iADC - <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>) * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a> - measTime;</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    <span class="comment">// step 3b: check each merged hit to see if it peaks in this BX.  If so,</span></div>
-<div class="line"><span class="lineno">   94</span>    <span class="comment">// check its peak time to see if it&#39;s over TOT or TOA.</span></div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordtype">bool</span> startTOT = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">bool</span> overTOA = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">double</span> toverTOA = -1;</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordtype">double</span> toverTOT = -1;</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> hit : pulse.hits()) {</div>
-<div class="line"><span class="lineno">  100</span>      <span class="keywordtype">int</span> hitBX = int((hit.second + measTime) / <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a> + <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>);</div>
-<div class="line"><span class="lineno">  101</span>      <span class="keywordflow">if</span> (hitBX != iADC)</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">continue</span>;  <span class="comment">// if this hit wasn&#39;t in the current BX, continue...</span></div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>      <span class="keywordtype">double</span> vpeak = pulse(hit.second);</div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">if</span> (vpeak &gt; totThreshold) {</div>
-<div class="line"><span class="lineno">  107</span>        startTOT = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">if</span> (toverTOT &lt; hit.second)</div>
-<div class="line"><span class="lineno">  109</span>          toverTOT = hit.second;  <span class="comment">// use the latest time in the window</span></div>
-<div class="line"><span class="lineno">  110</span>      }</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">if</span> (vpeak &gt; toaThreshold) {</div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">if</span> (!overTOA || hit.second &lt; toverTOA) toverTOA = hit.second;</div>
-<div class="line"><span class="lineno">  114</span>        overTOA = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  115</span>      }</div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>    }  <span class="comment">// loop over sim hits</span></div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>    <span class="comment">// check for the case of a TOA even though the peak is in the next BX</span></div>
-<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> (!overTOA &amp;&amp; pulse(startBX + <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>) &gt; toaThreshold) {</div>
-<div class="line"><span class="lineno">  121</span>      <span class="keywordflow">if</span> (pulse(startBX) &lt; toaThreshold) {</div>
-<div class="line"><span class="lineno">  122</span>        <span class="comment">// pulse crossed TOA threshold somewhere between the start of this</span></div>
-<div class="line"><span class="lineno">  123</span>        <span class="comment">// basket and the end</span></div>
-<div class="line"><span class="lineno">  124</span>        overTOA = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  125</span>        toverTOA = startBX + <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>;</div>
-<div class="line"><span class="lineno">  126</span>      }</div>
-<div class="line"><span class="lineno">  127</span>    }</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (startTOT) {</div>
-<div class="line"><span class="lineno">  130</span>      <span class="comment">// above TOT threshold -&gt; do TOT readout mode</span></div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>      <span class="comment">// @TODO NO NOISE</span></div>
-<div class="line"><span class="lineno">  133</span>      <span class="comment">//  CompositePulse includes pedestal, we need to remove it</span></div>
-<div class="line"><span class="lineno">  134</span>      <span class="comment">//  when calculating the charge deposited.</span></div>
-<div class="line"><span class="lineno">  135</span>      <span class="keywordtype">double</span> charge_deposited =</div>
-<div class="line"><span class="lineno">  136</span>          (pulse(toverTOT) - <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a> * <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>) * padCapacitance;</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>      <span class="comment">// Measure Time Over Threshold (TOT) by using the drain rate.</span></div>
-<div class="line"><span class="lineno">  139</span>      <span class="comment">//  1. Use drain rate to see how long it takes for the charge to drain off</span></div>
-<div class="line"><span class="lineno">  140</span>      <span class="comment">//  2. Translate this into DIGI samples</span></div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>      <span class="comment">// Assume linear drain with slope drain rate:</span></div>
-<div class="line"><span class="lineno">  143</span>      <span class="comment">//      y-intercept = pulse amplitude</span></div>
-<div class="line"><span class="lineno">  144</span>      <span class="comment">//      slope       = drain rate</span></div>
-<div class="line"><span class="lineno">  145</span>      <span class="comment">//  ==&gt; x-intercept = amplitude / rate</span></div>
-<div class="line"><span class="lineno">  146</span>      <span class="comment">// actual time over threshold using the real signal voltage amplitude</span></div>
-<div class="line"><span class="lineno">  147</span>      <span class="keywordtype">double</span> tot = charge_deposited / drainRate;</div>
-<div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span>      <span class="comment">// calculate the index that tot will complete on</span></div>
-<div class="line"><span class="lineno">  150</span>      <span class="keywordtype">int</span> num_whole_clocks = int(tot / <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>);</div>
-<div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>      <span class="comment">// calculate the TDC counts for this tot measurement</span></div>
-<div class="line"><span class="lineno">  153</span>      <span class="comment">//  internally, the chip uses 12 bits (2^12 = 4096)</span></div>
-<div class="line"><span class="lineno">  154</span>      <span class="comment">//  to measure a maximum of tot Max [ns]</span></div>
-<div class="line"><span class="lineno">  155</span>      <span class="keywordtype">int</span> tdc_counts = int(tot * 4096 / totMax) + <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>;</div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>      <span class="comment">// were we already over TOA?  TOT is reported in BX where TOA went over</span></div>
-<div class="line"><span class="lineno">  158</span>      <span class="comment">// threshold...</span></div>
-<div class="line"><span class="lineno">  159</span>      <span class="keywordtype">int</span> toa{0};</div>
-<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">if</span> (wasTOA) {</div>
-<div class="line"><span class="lineno">  161</span>        <span class="comment">// TOA was in the past</span></div>
-<div class="line"><span class="lineno">  162</span>        toa = digiToAdd.back().toa();</div>
-<div class="line"><span class="lineno">  163</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  164</span>        <span class="comment">// TOA is here and we need to find it</span></div>
-<div class="line"><span class="lineno">  165</span>        <span class="keywordtype">double</span> timecross = pulse.findCrossing(startBX, toverTOT, toaThreshold);</div>
-<div class="line"><span class="lineno">  166</span>        toa = int((timecross - startBX) * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af9f13b9b026fcb5f62223bbfede6e963">ns_</a>);</div>
-<div class="line"><span class="lineno">  167</span>        <span class="comment">// keep inside valid limits</span></div>
-<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">if</span> (toa == 0) toa = 1;</div>
-<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">if</span> (toa &gt; 1023) toa = 1023;</div>
-<div class="line"><span class="lineno">  170</span>      }</div>
-<div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>      digiToAdd.emplace_back(</div>
-<div class="line"><span class="lineno">  173</span>          <span class="keyword">false</span>, <span class="keyword">true</span>,  <span class="comment">// mark as a TOT measurement</span></div>
-<div class="line"><span class="lineno">  174</span>          (iADC &gt; 0) ? digiToAdd.at(iADC - 1).adc_t()</div>
-<div class="line"><span class="lineno">  175</span>                     : <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>,  <span class="comment">// ADC t-1 is first measurement</span></div>
-<div class="line"><span class="lineno">  176</span>          tdc_counts,             <span class="comment">// TOT</span></div>
-<div class="line"><span class="lineno">  177</span>          toa                     <span class="comment">// TOA is third measurement</span></div>
-<div class="line"><span class="lineno">  178</span>      );</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>      <span class="comment">// TODO: properly handle saturation and recovery, eventually.  </span></div>
-<div class="line"><span class="lineno">  181</span>      <span class="comment">// Now just kill everything...</span></div>
-<div class="line"><span class="lineno">  182</span>      <span class="keywordflow">while</span> (digiToAdd.size() &lt; <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a>) {</div>
-<div class="line"><span class="lineno">  183</span>        digiToAdd.emplace_back(<span class="keyword">true</span>, <span class="keyword">false</span>,  <span class="comment">// flags to mark type of sample</span></div>
-<div class="line"><span class="lineno">  184</span>                               0x3FF, 0x3FF, 0);</div>
-<div class="line"><span class="lineno">  185</span>      }</div>
-<div class="line"><span class="lineno">  186</span> </div>
-<div class="line"><span class="lineno">  187</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// always readout</span></div>
-<div class="line"><span class="lineno">  188</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  189</span>      <span class="comment">// determine the voltage at the sampling time</span></div>
-<div class="line"><span class="lineno">  190</span>      <span class="keywordtype">double</span> bxvolts = pulse((iADC - <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>) * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>);</div>
-<div class="line"><span class="lineno">  191</span>      <span class="comment">// add noise if requested</span></div>
-<div class="line"><span class="lineno">  192</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#acadab969f072fdd35ad96cf5421c591d">noise_</a>) bxvolts += <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a33d11ff8ed630b8e0aac065a4ecf624e">noise</a>(channelID);</div>
-<div class="line"><span class="lineno">  193</span>      <span class="comment">// convert to integer and keep in range (handle low and high saturation)</span></div>
-<div class="line"><span class="lineno">  194</span>      <span class="keywordtype">int</span> adc = bxvolts / <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>;</div>
-<div class="line"><span class="lineno">  195</span>      <span class="keywordflow">if</span> (adc &lt; 0) adc = 0;</div>
-<div class="line"><span class="lineno">  196</span>      <span class="keywordflow">if</span> (adc &gt; 1023) adc = 1023;</div>
-<div class="line"><span class="lineno">  197</span> </div>
-<div class="line"><span class="lineno">  198</span>      <span class="comment">// check for TOA</span></div>
-<div class="line"><span class="lineno">  199</span>      <span class="keywordtype">int</span> toa(0);</div>
-<div class="line"><span class="lineno">  200</span>      <span class="keywordflow">if</span> (pulse(startBX) &lt; toaThreshold &amp;&amp; overTOA) {</div>
-<div class="line"><span class="lineno">  201</span>        <span class="keywordtype">double</span> timecross = pulse.findCrossing(startBX, toverTOA, toaThreshold);</div>
-<div class="line"><span class="lineno">  202</span>        toa = int((timecross - startBX) * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af9f13b9b026fcb5f62223bbfede6e963">ns_</a>);</div>
-<div class="line"><span class="lineno">  203</span>        <span class="comment">// keep inside valid limits</span></div>
-<div class="line"><span class="lineno">  204</span>        <span class="keywordflow">if</span> (toa == 0) toa = 1;</div>
-<div class="line"><span class="lineno">  205</span>        <span class="keywordflow">if</span> (toa &gt; 1023) toa = 1023;</div>
-<div class="line"><span class="lineno">  206</span>        wasTOA = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  207</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  208</span>        wasTOA = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  209</span>      }</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>      digiToAdd.emplace_back(</div>
-<div class="line"><span class="lineno">  212</span>          <span class="keyword">false</span>, <span class="keyword">false</span>,  <span class="comment">// use flags to mark this sample as an ADC measurement</span></div>
-<div class="line"><span class="lineno">  213</span>          (iADC &gt; 0) ? digiToAdd.at(iADC - 1).adc_t()</div>
-<div class="line"><span class="lineno">  214</span>                     : <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>,  <span class="comment">// ADC t-1 is first measurement</span></div>
-<div class="line"><span class="lineno">  215</span>          adc,                    <span class="comment">// ADC[t] is the second field</span></div>
-<div class="line"><span class="lineno">  216</span>          toa                     <span class="comment">// TOA is third measurement</span></div>
-<div class="line"><span class="lineno">  217</span>      );</div>
-<div class="line"><span class="lineno">  218</span>    }  <span class="comment">// TOT or ADC Mode</span></div>
-<div class="line"><span class="lineno">  219</span>  }    <span class="comment">// sampling baskets</span></div>
-<div class="line"><span class="lineno">  220</span> </div>
-<div class="line"><span class="lineno">  221</span>  <span class="comment">// we only get here if we never went into TOT mode</span></div>
-<div class="line"><span class="lineno">  222</span>  <span class="comment">// check the SOI to see if we should read out</span></div>
-<div class="line"><span class="lineno">  223</span>  <span class="keywordflow">return</span> digiToAdd.at(<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>).adc_t() &gt;= <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a134959bfddf791ef386543df167768cf">readoutThreshold</a>;</div>
-<div class="line"><span class="lineno">  224</span>}  <span class="comment">// HgcrocEmulator::digitize</span></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a134959bfddf791ef386543df167768cf"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a134959bfddf791ef386543df167768cf">ldmx::HgcrocEmulator::readoutThreshold</a></div><div class="ttdeci">double readoutThreshold(const int &amp;id) const</div><div class="ttdoc">Readout Threshold (ADC Counts)</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00203">HgcrocEmulator.h:203</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a33d11ff8ed630b8e0aac065a4ecf624e"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a33d11ff8ed630b8e0aac065a4ecf624e">ldmx::HgcrocEmulator::noise</a></div><div class="ttdeci">double noise(const int &amp;channelID) const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00188">HgcrocEmulator.h:188</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a445cb84888558b67adbbe9a0e1c8d58a"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">ldmx::HgcrocEmulator::pedestal</a></div><div class="ttdeci">double pedestal(const int &amp;id) const</div><div class="ttdoc">Pedestal [ADC Counts] for input channel.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00198">HgcrocEmulator.h:198</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a5d65be55ae8c085d964ac546f240452e"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">ldmx::HgcrocEmulator::getCondition</a></div><div class="ttdeci">double getCondition(int id, const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00217">HgcrocEmulator.h:217</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_aa6897487befcdc0c93e93e7e2fdef1e7"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">ldmx::HgcrocEmulator::gain</a></div><div class="ttdeci">double gain(const int &amp;channelID) const</div><div class="ttdoc">Gain for input channel.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00193">HgcrocEmulator.h:193</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">45</a> of file <a class="el" href="HgcrocEmulator_8cxx_source.html">HgcrocEmulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                                {</div>
+<div class="line"><span class="lineno">   49</span>  <span class="comment">// step 0: prepare ourselves for emulation</span></div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>  digiToAdd.clear();  <span class="comment">// make sure it is clean</span></div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>  <span class="comment">// Configure chip settings based off of table (that may have been passed)</span></div>
+<div class="line"><span class="lineno">   54</span>  <span class="keywordtype">double</span> totMax = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;TOT_MAX&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>  <span class="keywordtype">double</span> padCapacitance = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;PAD_CAPACITANCE&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a> = this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>(channelID);</div>
+<div class="line"><span class="lineno">   57</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a> = this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>(channelID);</div>
+<div class="line"><span class="lineno">   58</span>  <span class="keywordtype">double</span> toaThreshold = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;TOA_THRESHOLD&quot;</span>);</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keywordtype">double</span> totThreshold = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;TOT_THRESHOLD&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span>  <span class="comment">// measTime defines the point in the BX where an in-time</span></div>
+<div class="line"><span class="lineno">   61</span>  <span class="comment">//  (time=0 in times vector) hit would arrive.</span></div>
+<div class="line"><span class="lineno">   62</span>  <span class="comment">// Used to determine BX boundaries and TOA behavior.</span></div>
+<div class="line"><span class="lineno">   63</span>  <span class="keywordtype">double</span> measTime = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;MEAS_TIME&quot;</span>);</div>
+<div class="line"><span class="lineno">   64</span>  <span class="keywordtype">double</span> drainRate = <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;DRAIN_RATE&quot;</span>);</div>
+<div class="line"><span class="lineno">   65</span>  <span class="keywordtype">double</span> readoutThresholdFloat = this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a134959bfddf791ef386543df167768cf">readoutThreshold</a>(channelID);</div>
+<div class="line"><span class="lineno">   66</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a134959bfddf791ef386543df167768cf">readoutThreshold</a> = int(readoutThresholdFloat);</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>  <span class="comment">// sort by amplitude</span></div>
+<div class="line"><span class="lineno">   69</span>  <span class="comment">//  ==&gt; makes sure that puleses are merged towards higher ones</span></div>
+<div class="line"><span class="lineno">   70</span>  std::sort(</div>
+<div class="line"><span class="lineno">   71</span>      arriving_pulses.begin(), arriving_pulses.end(),</div>
+<div class="line"><span class="lineno">   72</span>      [](<span class="keyword">const</span> std::pair&lt;double, double&gt; &amp;a,</div>
+<div class="line"><span class="lineno">   73</span>         <span class="keyword">const</span> std::pair&lt;double, double&gt; &amp;b) { return a.first &gt; b.first; });</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>  <span class="comment">// step 1: gather voltages into groups separated by (programmable) ns, single</span></div>
+<div class="line"><span class="lineno">   76</span>  <span class="comment">// pass</span></div>
+<div class="line"><span class="lineno">   77</span>  CompositePulse pulse(<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ad263134be06668bb251c29643ff3749e">pulseFunc_</a>, <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>, <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>);</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> hit : arriving_pulses) pulse.addOrMerge(hit, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a71424170e176c107011c31d6c1b1f30d">hit_merge_ns_</a>);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>  <span class="comment">// TODO step 2: add timing jitter</span></div>
+<div class="line"><span class="lineno">   82</span>  <span class="comment">// if (noise_) pulse.jitter();</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>  <span class="comment">// step 3: go through each BX sample one by one</span></div>
+<div class="line"><span class="lineno">   87</span>  <span class="keywordtype">bool</span> doReadout = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   88</span>  <span class="keywordtype">bool</span> wasTOA = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   89</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iADC = 0; iADC &lt; <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a>; iADC++) {</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordtype">double</span> startBX = (iADC - <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>) * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a> - measTime;</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment">// step 3b: check each merged hit to see if it peaks in this BX.  If so,</span></div>
+<div class="line"><span class="lineno">   93</span>    <span class="comment">// check its peak time to see if it&#39;s over TOT or TOA.</span></div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordtype">bool</span> startTOT = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordtype">bool</span> overTOA = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">double</span> toverTOA = -1;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">double</span> toverTOT = -1;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> hit : pulse.hits()) {</div>
+<div class="line"><span class="lineno">   99</span>      <span class="keywordtype">int</span> hitBX = int((hit.second + measTime) / <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a> + <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>);</div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">if</span> (hitBX != iADC)</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">continue</span>;  <span class="comment">// if this hit wasn&#39;t in the current BX, continue...</span></div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>      <span class="keywordtype">double</span> vpeak = pulse(hit.second);</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>      <span class="keywordflow">if</span> (vpeak &gt; totThreshold) {</div>
+<div class="line"><span class="lineno">  106</span>        startTOT = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span> (toverTOT &lt; hit.second)</div>
+<div class="line"><span class="lineno">  108</span>          toverTOT = hit.second;  <span class="comment">// use the latest time in the window</span></div>
+<div class="line"><span class="lineno">  109</span>      }</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">if</span> (vpeak &gt; toaThreshold) {</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> (!overTOA || hit.second &lt; toverTOA) toverTOA = hit.second;</div>
+<div class="line"><span class="lineno">  113</span>        overTOA = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  114</span>      }</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    }  <span class="comment">// loop over sim hits</span></div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">// check for the case of a TOA even though the peak is in the next BX</span></div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (!overTOA &amp;&amp; pulse(startBX + <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>) &gt; toaThreshold) {</div>
+<div class="line"><span class="lineno">  120</span>      <span class="keywordflow">if</span> (pulse(startBX) &lt; toaThreshold) {</div>
+<div class="line"><span class="lineno">  121</span>        <span class="comment">// pulse crossed TOA threshold somewhere between the start of this</span></div>
+<div class="line"><span class="lineno">  122</span>        <span class="comment">// basket and the end</span></div>
+<div class="line"><span class="lineno">  123</span>        overTOA = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  124</span>        toverTOA = startBX + <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>;</div>
+<div class="line"><span class="lineno">  125</span>      }</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">if</span> (startTOT) {</div>
+<div class="line"><span class="lineno">  129</span>      <span class="comment">// above TOT threshold -&gt; do TOT readout mode</span></div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>      <span class="comment">// @TODO NO NOISE</span></div>
+<div class="line"><span class="lineno">  132</span>      <span class="comment">//  CompositePulse includes pedestal, we need to remove it</span></div>
+<div class="line"><span class="lineno">  133</span>      <span class="comment">//  when calculating the charge deposited.</span></div>
+<div class="line"><span class="lineno">  134</span>      <span class="keywordtype">double</span> charge_deposited =</div>
+<div class="line"><span class="lineno">  135</span>          (pulse(toverTOT) - <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a> * <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>) * padCapacitance;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>      <span class="comment">// Measure Time Over Threshold (TOT) by using the drain rate.</span></div>
+<div class="line"><span class="lineno">  138</span>      <span class="comment">//  1. Use drain rate to see how long it takes for the charge to drain off</span></div>
+<div class="line"><span class="lineno">  139</span>      <span class="comment">//  2. Translate this into DIGI samples</span></div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>      <span class="comment">// Assume linear drain with slope drain rate:</span></div>
+<div class="line"><span class="lineno">  142</span>      <span class="comment">//      y-intercept = pulse amplitude</span></div>
+<div class="line"><span class="lineno">  143</span>      <span class="comment">//      slope       = drain rate</span></div>
+<div class="line"><span class="lineno">  144</span>      <span class="comment">//  ==&gt; x-intercept = amplitude / rate</span></div>
+<div class="line"><span class="lineno">  145</span>      <span class="comment">// actual time over threshold using the real signal voltage amplitude</span></div>
+<div class="line"><span class="lineno">  146</span>      <span class="keywordtype">double</span> tot = charge_deposited / drainRate;</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>      <span class="comment">// calculate the index that tot will complete on</span></div>
+<div class="line"><span class="lineno">  149</span>      <span class="keywordtype">int</span> num_whole_clocks = int(tot / <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>      <span class="comment">// calculate the TDC counts for this tot measurement</span></div>
+<div class="line"><span class="lineno">  152</span>      <span class="comment">//  internally, the chip uses 12 bits (2^12 = 4096)</span></div>
+<div class="line"><span class="lineno">  153</span>      <span class="comment">//  to measure a maximum of tot Max [ns]</span></div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordtype">int</span> tdc_counts = int(tot * 4096 / totMax) + <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>      <span class="comment">// were we already over TOA?  TOT is reported in BX where TOA went over</span></div>
+<div class="line"><span class="lineno">  157</span>      <span class="comment">// threshold...</span></div>
+<div class="line"><span class="lineno">  158</span>      <span class="keywordtype">int</span> toa{0};</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">if</span> (wasTOA) {</div>
+<div class="line"><span class="lineno">  160</span>        <span class="comment">// TOA was in the past</span></div>
+<div class="line"><span class="lineno">  161</span>        toa = digiToAdd.back().toa();</div>
+<div class="line"><span class="lineno">  162</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  163</span>        <span class="comment">// TOA is here and we need to find it</span></div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordtype">double</span> timecross = pulse.findCrossing(startBX, toverTOT, toaThreshold);</div>
+<div class="line"><span class="lineno">  165</span>        toa = int((timecross - startBX) * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af9f13b9b026fcb5f62223bbfede6e963">ns_</a>);</div>
+<div class="line"><span class="lineno">  166</span>        <span class="comment">// keep inside valid limits</span></div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span> (toa == 0) toa = 1;</div>
+<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">if</span> (toa &gt; 1023) toa = 1023;</div>
+<div class="line"><span class="lineno">  169</span>      }</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>      digiToAdd.emplace_back(</div>
+<div class="line"><span class="lineno">  172</span>          <span class="keyword">false</span>, <span class="keyword">true</span>,  <span class="comment">// mark as a TOT measurement</span></div>
+<div class="line"><span class="lineno">  173</span>          (iADC &gt; 0) ? digiToAdd.at(iADC - 1).adc_t()</div>
+<div class="line"><span class="lineno">  174</span>                     : <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>,  <span class="comment">// ADC t-1 is first measurement</span></div>
+<div class="line"><span class="lineno">  175</span>          tdc_counts,             <span class="comment">// TOT</span></div>
+<div class="line"><span class="lineno">  176</span>          toa                     <span class="comment">// TOA is third measurement</span></div>
+<div class="line"><span class="lineno">  177</span>      );</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>      <span class="comment">// TODO: properly handle saturation and recovery, eventually.  </span></div>
+<div class="line"><span class="lineno">  180</span>      <span class="comment">// Now just kill everything...</span></div>
+<div class="line"><span class="lineno">  181</span>      <span class="keywordflow">while</span> (digiToAdd.size() &lt; <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a>) {</div>
+<div class="line"><span class="lineno">  182</span>        digiToAdd.emplace_back(<span class="keyword">true</span>, <span class="keyword">false</span>,  <span class="comment">// flags to mark type of sample</span></div>
+<div class="line"><span class="lineno">  183</span>                               0x3FF, 0x3FF, 0);</div>
+<div class="line"><span class="lineno">  184</span>      }</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// always readout</span></div>
+<div class="line"><span class="lineno">  187</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  188</span>      <span class="comment">// determine the voltage at the sampling time</span></div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordtype">double</span> bxvolts = pulse((iADC - <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>) * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ae588fd493644aa95be980753610facf4">clockCycle_</a>);</div>
+<div class="line"><span class="lineno">  190</span>      <span class="comment">// add noise if requested</span></div>
+<div class="line"><span class="lineno">  191</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#acadab969f072fdd35ad96cf5421c591d">noise_</a>) bxvolts += <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a33d11ff8ed630b8e0aac065a4ecf624e">noise</a>(channelID);</div>
+<div class="line"><span class="lineno">  192</span>      <span class="comment">// convert to integer and keep in range (handle low and high saturation)</span></div>
+<div class="line"><span class="lineno">  193</span>      <span class="keywordtype">int</span> adc = bxvolts / <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>;</div>
+<div class="line"><span class="lineno">  194</span>      <span class="keywordflow">if</span> (adc &lt; 0) adc = 0;</div>
+<div class="line"><span class="lineno">  195</span>      <span class="keywordflow">if</span> (adc &gt; 1023) adc = 1023;</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>      <span class="comment">// check for TOA</span></div>
+<div class="line"><span class="lineno">  198</span>      <span class="keywordtype">int</span> toa(0);</div>
+<div class="line"><span class="lineno">  199</span>      <span class="keywordflow">if</span> (pulse(startBX) &lt; toaThreshold &amp;&amp; overTOA) {</div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordtype">double</span> timecross = pulse.findCrossing(startBX, toverTOA, toaThreshold);</div>
+<div class="line"><span class="lineno">  201</span>        toa = int((timecross - startBX) * <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#af9f13b9b026fcb5f62223bbfede6e963">ns_</a>);</div>
+<div class="line"><span class="lineno">  202</span>        <span class="comment">// keep inside valid limits</span></div>
+<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">if</span> (toa == 0) toa = 1;</div>
+<div class="line"><span class="lineno">  204</span>        <span class="keywordflow">if</span> (toa &gt; 1023) toa = 1023;</div>
+<div class="line"><span class="lineno">  205</span>        wasTOA = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  206</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  207</span>        wasTOA = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  208</span>      }</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>      digiToAdd.emplace_back(</div>
+<div class="line"><span class="lineno">  211</span>          <span class="keyword">false</span>, <span class="keyword">false</span>,  <span class="comment">// use flags to mark this sample as an ADC measurement</span></div>
+<div class="line"><span class="lineno">  212</span>          (iADC &gt; 0) ? digiToAdd.at(iADC - 1).adc_t()</div>
+<div class="line"><span class="lineno">  213</span>                     : <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>,  <span class="comment">// ADC t-1 is first measurement</span></div>
+<div class="line"><span class="lineno">  214</span>          adc,                    <span class="comment">// ADC[t] is the second field</span></div>
+<div class="line"><span class="lineno">  215</span>          toa                     <span class="comment">// TOA is third measurement</span></div>
+<div class="line"><span class="lineno">  216</span>      );</div>
+<div class="line"><span class="lineno">  217</span>    }  <span class="comment">// TOT or ADC Mode</span></div>
+<div class="line"><span class="lineno">  218</span>  }    <span class="comment">// sampling baskets</span></div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>  <span class="comment">// we only get here if we never went into TOT mode</span></div>
+<div class="line"><span class="lineno">  221</span>  <span class="comment">// check the SOI to see if we should read out</span></div>
+<div class="line"><span class="lineno">  222</span>  <span class="keywordflow">return</span> digiToAdd.at(<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>).adc_t() &gt;= <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a134959bfddf791ef386543df167768cf">readoutThreshold</a>;</div>
+<div class="line"><span class="lineno">  223</span>}  <span class="comment">// HgcrocEmulator::digitize</span></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a134959bfddf791ef386543df167768cf"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a134959bfddf791ef386543df167768cf">ldmx::HgcrocEmulator::readoutThreshold</a></div><div class="ttdeci">double readoutThreshold(const int &amp;id) const</div><div class="ttdoc">Readout Threshold (ADC Counts)</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00199">HgcrocEmulator.h:199</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a33d11ff8ed630b8e0aac065a4ecf624e"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a33d11ff8ed630b8e0aac065a4ecf624e">ldmx::HgcrocEmulator::noise</a></div><div class="ttdeci">double noise(const int &amp;channelID) const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00184">HgcrocEmulator.h:184</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a445cb84888558b67adbbe9a0e1c8d58a"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">ldmx::HgcrocEmulator::pedestal</a></div><div class="ttdeci">double pedestal(const int &amp;id) const</div><div class="ttdoc">Pedestal [ADC Counts] for input channel.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00194">HgcrocEmulator.h:194</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a5d65be55ae8c085d964ac546f240452e"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">ldmx::HgcrocEmulator::getCondition</a></div><div class="ttdeci">double getCondition(int id, const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00213">HgcrocEmulator.h:213</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_aa6897487befcdc0c93e93e7e2fdef1e7"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">ldmx::HgcrocEmulator::gain</a></div><div class="ttdeci">double gain(const int &amp;channelID) const</div><div class="ttdoc">Gain for input channel.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00189">HgcrocEmulator.h:189</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00262">ldmx::HgcrocEmulator::CompositePulse::addOrMerge()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00376">clockCycle_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00287">ldmx::HgcrocEmulator::CompositePulse::findCrossing()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00193">gain()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00217">getCondition()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00400">hit_merge_ns_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00337">ldmx::HgcrocEmulator::CompositePulse::hits()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00370">iSOI_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00367">nADCs_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00188">noise()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00364">noise_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00382">ns_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00198">pedestal()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00449">pulseFunc_</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00203">readoutThreshold()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00258">ldmx::HgcrocEmulator::CompositePulse::addOrMerge()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00369">clockCycle_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00283">ldmx::HgcrocEmulator::CompositePulse::findCrossing()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00189">gain()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00213">getCondition()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00393">hit_merge_ns_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00333">ldmx::HgcrocEmulator::CompositePulse::hits()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00366">iSOI_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00363">nADCs_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00184">noise()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00360">noise_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00375">ns_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00194">pedestal()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00442">pulseFunc_</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00199">readoutThreshold()</a>.</p>
 
 </div>
 </div>
@@ -592,14 +587,14 @@ Pulse Measurement</h4>
 
 <p>Gain for input channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00193">193</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  193</span>                                          {</div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;GAIN&quot;</span>);</div>
-<div class="line"><span class="lineno">  195</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00189">189</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>                                          {</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;GAIN&quot;</span>);</div>
+<div class="line"><span class="lineno">  191</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00217">getCondition()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00213">getCondition()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, <a class="el" href="HgcrocEmulator_8cxx_source.html#l00227">noiseDigi()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00305">ldmx::HgcrocEmulator::CompositePulse::setGainPedestal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00184">noise()</a>, <a class="el" href="HgcrocEmulator_8cxx_source.html#l00226">noiseDigi()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00301">ldmx::HgcrocEmulator::CompositePulse::setGainPedestal()</a>.</p>
 
 </div>
 </div>
@@ -647,27 +642,27 @@ Pulse Measurement</h4>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value of chip parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00217">217</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  217</span>                                                           {</div>
-<div class="line"><span class="lineno">  218</span>    <span class="comment">// check if emulator has been passed a table of conditions</span></div>
-<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">chipConditions_</a>) {</div>
-<div class="line"><span class="lineno">  220</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;HgcrocCond&quot;</span>,</div>
-<div class="line"><span class="lineno">  221</span>          <span class="stringliteral">&quot;HGC ROC Emulator was not given a conditions table.&quot;</span>);</div>
-<div class="line"><span class="lineno">  222</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00213">213</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>                                                           {</div>
+<div class="line"><span class="lineno">  214</span>    <span class="comment">// check if emulator has been passed a table of conditions</span></div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">chipConditions_</a>) {</div>
+<div class="line"><span class="lineno">  216</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;HgcrocCond&quot;</span>,</div>
+<div class="line"><span class="lineno">  217</span>          <span class="stringliteral">&quot;HGC ROC Emulator was not given a conditions table.&quot;</span>);</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <span class="comment">// cache column index for the input name</span></div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">conditionNamesToIndex_</a>.count(name) == 0)</div>
+<div class="line"><span class="lineno">  222</span>      <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">conditionNamesToIndex_</a>[name] = <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">chipConditions_</a>-&gt;<a class="code hl_function" href="classconditions_1_1BaseTableCondition.html#a4ea72a29ab6cf3bf81a7459ed39d4cd9">getColumnNumber</a>(name);</div>
 <div class="line"><span class="lineno">  223</span> </div>
-<div class="line"><span class="lineno">  224</span>    <span class="comment">// cache column index for the input name</span></div>
-<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">conditionNamesToIndex_</a>.count(name) == 0)</div>
-<div class="line"><span class="lineno">  226</span>      <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">conditionNamesToIndex_</a>[name] = <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">chipConditions_</a>-&gt;<a class="code hl_function" href="classconditions_1_1BaseTableCondition.html#a4ea72a29ab6cf3bf81a7459ed39d4cd9">getColumnNumber</a>(name);</div>
-<div class="line"><span class="lineno">  227</span> </div>
-<div class="line"><span class="lineno">  228</span>    <span class="comment">// get condition</span></div>
-<div class="line"><span class="lineno">  229</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">chipConditions_</a>-&gt;<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">conditionNamesToIndex_</a>.at(name));</div>
-<div class="line"><span class="lineno">  230</span>  }</div>
+<div class="line"><span class="lineno">  224</span>    <span class="comment">// get condition</span></div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a4ec09162817da87f206c25a4bb0376c7">chipConditions_</a>-&gt;<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa1a403cc2554201c7098ce6d9674987d">conditionNamesToIndex_</a>.at(name));</div>
+<div class="line"><span class="lineno">  226</span>  }</div>
 <div class="ttc" id="aclassconditions_1_1BaseTableCondition_html_a4ea72a29ab6cf3bf81a7459ed39d4cd9"><div class="ttname"><a href="classconditions_1_1BaseTableCondition.html#a4ea72a29ab6cf3bf81a7459ed39d4cd9">conditions::BaseTableCondition::getColumnNumber</a></div><div class="ttdeci">unsigned int getColumnNumber(const std::string &amp;colname) const</div><div class="ttdef"><b>Definition:</b> <a href="SimpleTableCondition_8h_source.html#l00034">SimpleTableCondition.h:34</a></div></div>
 <div class="ttc" id="aclassconditions_1_1HomogenousTableCondition_html_a025ceb80d04d648b8ffc14888fd09e96"><div class="ttname"><a href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">conditions::HomogenousTableCondition::get</a></div><div class="ttdeci">T get(unsigned int id, unsigned int col) const</div><div class="ttdef"><b>Definition:</b> <a href="SimpleTableCondition_8h_source.html#l00145">SimpleTableCondition.h:145</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00412">chipConditions_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00420">conditionNamesToIndex_</a>, <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>, and <a class="el" href="SimpleTableCondition_8h_source.html#l00034">conditions::BaseTableCondition::getColumnNumber()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00405">chipConditions_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00413">conditionNamesToIndex_</a>, <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>, and <a class="el" href="SimpleTableCondition_8h_source.html#l00034">conditions::BaseTableCondition::getColumnNumber()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00193">gain()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00198">pedestal()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00203">readoutThreshold()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00189">gain()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00184">noise()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00194">pedestal()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00199">readoutThreshold()</a>.</p>
 
 </div>
 </div>
@@ -697,9 +692,9 @@ Pulse Measurement</h4>
 
 <p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00055">55</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   55</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9e01884b555cf0134cb467dce52ddaa5">noiseInjector_</a>.get() != <span class="keyword">nullptr</span>; }</div>
-<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a9e01884b555cf0134cb467dce52ddaa5"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a9e01884b555cf0134cb467dce52ddaa5">ldmx::HgcrocEmulator::noiseInjector_</a></div><div class="ttdeci">std::unique_ptr&lt; TRandom3 &gt; noiseInjector_</div><div class="ttdoc">Generates Gaussian noise on top of real hits.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00427">HgcrocEmulator.h:427</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HgcrocEmulator_html_a9e01884b555cf0134cb467dce52ddaa5"><div class="ttname"><a href="classldmx_1_1HgcrocEmulator.html#a9e01884b555cf0134cb467dce52ddaa5">ldmx::HgcrocEmulator::noiseInjector_</a></div><div class="ttdeci">std::unique_ptr&lt; TRandom3 &gt; noiseInjector_</div><div class="ttdoc">Generates Gaussian noise on top of real hits.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocEmulator_8h_source.html#l00420">HgcrocEmulator.h:420</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00427">noiseInjector_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00420">noiseInjector_</a>.</p>
 
 </div>
 </div>
@@ -727,23 +722,22 @@ Pulse Measurement</h4>
 </table>
 </div><div class="memdoc">
 <p >Get random noise amplitdue for input channel [mV]</p>
-<p >Currently, we don't have the noise separated by channel, but since this is a possibility in the future, I've put in the (required but unused) parameter.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">channelID</td><td>- UNUSED </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">channelID</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>electronic noise amplitude [mV] above pedestal </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00188">188</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  188</span>                                           {</div>
-<div class="line"><span class="lineno">  189</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9e01884b555cf0134cb467dce52ddaa5">noiseInjector_</a>-&gt;Gaus(0,<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#aa6be20e18e89384d1bc0110807975205">noiseRMS_</a>); </div>
-<div class="line"><span class="lineno">  190</span>  }; </div>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00184">184</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>                                           {</div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9e01884b555cf0134cb467dce52ddaa5">noiseInjector_</a>-&gt;Gaus(0,<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(channelID, <span class="stringliteral">&quot;NOISE&quot;</span>)*<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>(channelID)); </div>
+<div class="line"><span class="lineno">  186</span>  }; </div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00427">noiseInjector_</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00373">noiseRMS_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00189">gain()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00213">getCondition()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00420">noiseInjector_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00227">noiseDigi()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00226">noiseDigi()</a>.</p>
 
 </div>
 </div>
@@ -785,33 +779,33 @@ Pulse Measurement</h4>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>DIGI of pure noise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8cxx_source.html#l00227">227</a> of file <a class="el" href="HgcrocEmulator_8cxx_source.html">HgcrocEmulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  228</span>                                                             {</div>
-<div class="line"><span class="lineno">  229</span>  <span class="comment">// get chip conditions from emulator</span></div>
-<div class="line"><span class="lineno">  230</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>{this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>(channel)};</div>
-<div class="line"><span class="lineno">  231</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>{this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>(channel)};</div>
-<div class="line"><span class="lineno">  232</span>  <span class="comment">// fill a digi with noise samples</span></div>
-<div class="line"><span class="lineno">  233</span>  std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; noise_digi;</div>
-<div class="line"><span class="lineno">  234</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iADC{0}; iADC&lt;<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a>; iADC++) {</div>
-<div class="line"><span class="lineno">  235</span>    <span class="comment">// gen noise for ADC samples</span></div>
-<div class="line"><span class="lineno">  236</span>    <span class="keywordtype">int</span> adc_tm1{<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>};</div>
-<div class="line"><span class="lineno">  237</span>    <span class="keywordflow">if</span> (iADC &gt; 0)</div>
-<div class="line"><span class="lineno">  238</span>      adc_tm1 = noise_digi.at(iADC-1).adc_t();</div>
-<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  240</span>      adc_tm1 += <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a33d11ff8ed630b8e0aac065a4ecf624e">noise</a>(channel)/<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>;</div>
-<div class="line"><span class="lineno">  241</span>    <span class="keywordtype">int</span> adc_t{<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a> + <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a33d11ff8ed630b8e0aac065a4ecf624e">noise</a>(channel)/<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>};</div>
-<div class="line"><span class="lineno">  242</span> </div>
-<div class="line"><span class="lineno">  243</span>    <span class="keywordflow">if</span> (iADC == <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>)</div>
-<div class="line"><span class="lineno">  244</span>      adc_t += soi_amplitude/<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>;</div>
-<div class="line"><span class="lineno">  245</span> </div>
-<div class="line"><span class="lineno">  246</span>    <span class="comment">// set toa to 0 (not determined)</span></div>
-<div class="line"><span class="lineno">  247</span>    <span class="comment">// put new sample into noise digi</span></div>
-<div class="line"><span class="lineno">  248</span>    noise_digi.emplace_back(<span class="keyword">false</span>,<span class="keyword">false</span>,adc_tm1,adc_t,0);</div>
-<div class="line"><span class="lineno">  249</span>  }  <span class="comment">// samples in noise digi</span></div>
-<div class="line"><span class="lineno">  250</span>  <span class="keywordflow">return</span> noise_digi;</div>
-<div class="line"><span class="lineno">  251</span>}</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8cxx_source.html#l00226">226</a> of file <a class="el" href="HgcrocEmulator_8cxx_source.html">HgcrocEmulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>                                                             {</div>
+<div class="line"><span class="lineno">  228</span>  <span class="comment">// get chip conditions from emulator</span></div>
+<div class="line"><span class="lineno">  229</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>{this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>(channel)};</div>
+<div class="line"><span class="lineno">  230</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>{this-&gt;<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>(channel)};</div>
+<div class="line"><span class="lineno">  231</span>  <span class="comment">// fill a digi with noise samples</span></div>
+<div class="line"><span class="lineno">  232</span>  std::vector&lt;ldmx::HgcrocDigiCollection::Sample&gt; noise_digi;</div>
+<div class="line"><span class="lineno">  233</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iADC{0}; iADC&lt;<a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#ac9f8424af71f659c063042c9f8ed92c9">nADCs_</a>; iADC++) {</div>
+<div class="line"><span class="lineno">  234</span>    <span class="comment">// gen noise for ADC samples</span></div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordtype">int</span> adc_tm1{<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a>};</div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">if</span> (iADC &gt; 0)</div>
+<div class="line"><span class="lineno">  237</span>      adc_tm1 = noise_digi.at(iADC-1).adc_t();</div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  239</span>      adc_tm1 += <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a33d11ff8ed630b8e0aac065a4ecf624e">noise</a>(channel)/<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>;</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordtype">int</span> adc_t{<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a445cb84888558b67adbbe9a0e1c8d58a">pedestal</a> + <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a33d11ff8ed630b8e0aac065a4ecf624e">noise</a>(channel)/<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>};</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">if</span> (iADC == <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9b2fa114003168cfc71fba8fb695ccc4">iSOI_</a>)</div>
+<div class="line"><span class="lineno">  243</span>      adc_t += soi_amplitude/<a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#aa6897487befcdc0c93e93e7e2fdef1e7">gain</a>;</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <span class="comment">// set toa to 0 (not determined)</span></div>
+<div class="line"><span class="lineno">  246</span>    <span class="comment">// put new sample into noise digi</span></div>
+<div class="line"><span class="lineno">  247</span>    noise_digi.emplace_back(<span class="keyword">false</span>,<span class="keyword">false</span>,adc_tm1,adc_t,0);</div>
+<div class="line"><span class="lineno">  248</span>  }  <span class="comment">// samples in noise digi</span></div>
+<div class="line"><span class="lineno">  249</span>  <span class="keywordflow">return</span> noise_digi;</div>
+<div class="line"><span class="lineno">  250</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00193">gain()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00370">iSOI_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00367">nADCs_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00188">noise()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00198">pedestal()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00189">gain()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00366">iSOI_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00363">nADCs_</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00184">noise()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00194">pedestal()</a>.</p>
 
 </div>
 </div>
@@ -841,14 +835,14 @@ Pulse Measurement</h4>
 
 <p>Pedestal [ADC Counts] for input channel. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00198">198</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>                                       {</div>
-<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;PEDESTAL&quot;</span>);</div>
-<div class="line"><span class="lineno">  200</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00194">194</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  194</span>                                       {</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;PEDESTAL&quot;</span>);</div>
+<div class="line"><span class="lineno">  196</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00217">getCondition()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00213">getCondition()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, <a class="el" href="HgcrocEmulator_8cxx_source.html#l00227">noiseDigi()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00305">ldmx::HgcrocEmulator::CompositePulse::setGainPedestal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, <a class="el" href="HgcrocEmulator_8cxx_source.html#l00226">noiseDigi()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00301">ldmx::HgcrocEmulator::CompositePulse::setGainPedestal()</a>.</p>
 
 </div>
 </div>
@@ -878,14 +872,14 @@ Pulse Measurement</h4>
 
 <p>Readout Threshold (ADC Counts) </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00203">203</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  203</span>                                               {</div>
-<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;READOUT_THRESHOLD&quot;</span>);</div>
-<div class="line"><span class="lineno">  205</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00199">199</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>                                               {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classldmx_1_1HgcrocEmulator.html#a5d65be55ae8c085d964ac546f240452e">getCondition</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;READOUT_THRESHOLD&quot;</span>);</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00217">getCondition()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00213">getCondition()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>.</p>
 
 </div>
 </div>
@@ -911,12 +905,12 @@ Pulse Measurement</h4>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8cxx_source.html#l00042">42</a> of file <a class="el" href="HgcrocEmulator_8cxx_source.html">HgcrocEmulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                {</div>
-<div class="line"><span class="lineno">   43</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9e01884b555cf0134cb467dce52ddaa5">noiseInjector_</a> = std::make_unique&lt;TRandom3&gt;(seed);</div>
-<div class="line"><span class="lineno">   44</span>}</div>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8cxx_source.html#l00041">41</a> of file <a class="el" href="HgcrocEmulator_8cxx_source.html">HgcrocEmulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                                                {</div>
+<div class="line"><span class="lineno">   42</span>  <a class="code hl_variable" href="classldmx_1_1HgcrocEmulator.html#a9e01884b555cf0134cb467dce52ddaa5">noiseInjector_</a> = std::make_unique&lt;TRandom3&gt;(seed);</div>
+<div class="line"><span class="lineno">   43</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00427">noiseInjector_</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocEmulator_8h_source.html#l00420">noiseInjector_</a>.</p>
 
 </div>
 </div>
@@ -943,9 +937,9 @@ Pulse Measurement</h4>
 <p >Handle to table of chip-dependent conditions</p>
 <p >The defaults are listed below and are separate parameters passed through the python configuration. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00412">412</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00405">405</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8h_source.html#l00072">condition()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00217">getCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8h_source.html#l00072">condition()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00213">getCondition()</a>.</p>
 
 </div>
 </div>
@@ -971,9 +965,9 @@ Pulse Measurement</h4>
 
 <p>Time interval for chip clock [ns]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00376">376</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00369">369</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
 </div>
 </div>
@@ -999,9 +993,9 @@ Pulse Measurement</h4>
 <p >Map of condition names to column numbers</p>
 <p >mutable so that we can update the cached column values in getCondition during processing. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00420">420</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00413">413</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8h_source.html#l00072">condition()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00217">getCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8h_source.html#l00072">condition()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00213">getCondition()</a>.</p>
 
 </div>
 </div>
@@ -1027,9 +1021,9 @@ Pulse Measurement</h4>
 
 <p>Hit merging time [ns]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00400">400</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00393">393</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
 </div>
 </div>
@@ -1055,9 +1049,9 @@ Pulse Measurement</h4>
 
 <p>Index for the Sample Of Interest in the list of digi samples. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00370">370</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00366">366</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00227">noiseDigi()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00226">noiseDigi()</a>.</p>
 
 </div>
 </div>
@@ -1083,9 +1077,9 @@ Pulse Measurement</h4>
 
 <p>Depth of ADC buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00367">367</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00363">363</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00227">noiseDigi()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00226">noiseDigi()</a>.</p>
 
 </div>
 </div>
@@ -1111,9 +1105,9 @@ Pulse Measurement</h4>
 
 <p>Put noise in channels, only configure to false if testing. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00364">364</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00360">360</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
 </div>
 </div>
@@ -1139,37 +1133,9 @@ Pulse Measurement</h4>
 
 <p>Generates Gaussian noise on top of real hits. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00427">427</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00420">420</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8h_source.html#l00055">hasSeed()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00188">noise()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00042">seedGenerator()</a>.</p>
-
-</div>
-</div>
-<a id="aa6be20e18e89384d1bc0110807975205" name="aa6be20e18e89384d1bc0110807975205"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6be20e18e89384d1bc0110807975205">&#9670;&#160;</a></span>noiseRMS_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double ldmx::HgcrocEmulator::noiseRMS_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Noise RMS [mV]. </p>
-
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00373">373</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>, and <a class="el" href="HgcrocEmulator_8h_source.html#l00188">noise()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8h_source.html#l00055">hasSeed()</a>, <a class="el" href="HgcrocEmulator_8h_source.html#l00184">noise()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00041">seedGenerator()</a>.</p>
 
 </div>
 </div>
@@ -1195,9 +1161,9 @@ Pulse Measurement</h4>
 
 <p>Conversion from time [ns] to counts. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00382">382</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00375">375</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
 </div>
 </div>
@@ -1230,9 +1196,9 @@ Pulse Measurement</h4>
 \]" src="form_16.png"/></picture>
 </p>
  
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00449">449</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00442">442</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00046">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00045">digitize()</a>, and <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
 </div>
 </div>
@@ -1258,7 +1224,7 @@ Pulse Measurement</h4>
 
 <p>Rate of Down Slope in Pulse Shape [1/ns]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00391">391</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00384">384</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
@@ -1286,7 +1252,7 @@ Pulse Measurement</h4>
 
 <p>Rate of Up Slope in Pulse Shape [1/ns]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00385">385</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00378">378</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
@@ -1314,7 +1280,7 @@ Pulse Measurement</h4>
 
 <p>Time of Down Slope relative to Pulse Shape Fit [ns]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00394">394</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00387">387</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
@@ -1342,7 +1308,7 @@ Pulse Measurement</h4>
 
 <p>Time of Peak relative to pulse shape fit [ns]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00397">397</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00390">390</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
@@ -1370,7 +1336,7 @@ Pulse Measurement</h4>
 
 <p>Time of Up Slope relative to Pulse Shape Fit [ns]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00388">388</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00381">381</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
@@ -1398,7 +1364,7 @@ Pulse Measurement</h4>
 
 <p>Jitter of timing mechanism in the chip [ns]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00379">379</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HgcrocEmulator_8h_source.html#l00372">372</a> of file <a class="el" href="HgcrocEmulator_8h_source.html">HgcrocEmulator.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HgcrocEmulator_8cxx_source.html#l00006">HgcrocEmulator()</a>.</p>
 
