@@ -289,8 +289,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classsimcore_1_1UserAction.html#a846adbda3c1a0a3625a2e6ac39f16a36">simcore::UserAction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TargetProcessFilter_8cxx_source.html#l00123">123</a> of file <a class="el" href="TargetProcessFilter_8cxx_source.html">TargetProcessFilter.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="TargetProcessFilter_8cxx_source.html#l00127">127</a> of file <a class="el" href="TargetProcessFilter_8cxx_source.html">TargetProcessFilter.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,6 +360,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <p >Check if the electron will be exiting the target</p>
 <p >The 'recoil_PV' volume name is automatically constructed by Geant4's GDML parser and was found by inspecting the geometry using a visualization. This Physical Volume (PV) is associated with the recoil parent volume and so it will break if the recoil parent volume changes its name.</p>
+<p >We also check for 'World_PV' because in later geometries, there is an air gap between the target region and the recoil tracker.</p>
 
 <p>Reimplemented from <a class="el" href="classsimcore_1_1UserAction.html#a066db4c649082f798e29bd8594e95d9e">simcore::UserAction</a>.</p>
 
@@ -386,48 +387,49 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   68</span>  <span class="comment">// processing the rest of the event if the particle is exiting the</span></div>
 <div class="line"><span class="lineno">   69</span>  <span class="comment">// target region.</span></div>
 <div class="line"><span class="lineno">   70</span>  <span class="keywordflow">if</span> (secondaries-&gt;size() == 0) {</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> volume{track-&gt;GetNextVolume()-&gt;GetName()};</div>
-<div class="line"><span class="lineno">   81</span>        volume.compareTo(<span class="stringliteral">&quot;recoil_PV&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">if</span> (secondaries-&gt;size() != 0) {</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;bremCandidateCount() == 1) {</div>
-<div class="line"><span class="lineno">   84</span>          track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><span class="lineno">   85</span>          G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><span class="lineno">   86</span>          <a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a35b36ed187b88e0e553a1c7ae75664e2">currentTrack_</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   87</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   88</span>          <a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a35b36ed187b88e0e553a1c7ae75664e2">currentTrack_</a> = track;</div>
-<div class="line"><span class="lineno">   89</span>          track-&gt;SetTrackStatus(fSuspend);</div>
-<div class="line"><span class="lineno">   90</span>          <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">decBremCandidateCount</a>();</div>
-<div class="line"><span class="lineno">   91</span>          trackInfo-&gt;tagBremCandidate(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   92</span>        }</div>
-<div class="line"><span class="lineno">   93</span>      }</div>
-<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   95</span>    }</div>
-<div class="line"><span class="lineno">   96</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   97</span>    G4String processName =</div>
-<div class="line"><span class="lineno">   98</span>        secondaries-&gt;at(0)-&gt;GetCreatorProcess()-&gt;GetProcessName();</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    <span class="comment">// Only record the process that is being biased</span></div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (!processName.contains(<a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a5039c72dcc02ff968e74a046089dbc81">process_</a>)) {</div>
-<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;bremCandidateCount() == 1) {</div>
-<div class="line"><span class="lineno">  103</span>        track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
-<div class="line"><span class="lineno">  104</span>        G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><span class="lineno">  105</span>        <a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a35b36ed187b88e0e553a1c7ae75664e2">currentTrack_</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  106</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  107</span>        <a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a35b36ed187b88e0e553a1c7ae75664e2">currentTrack_</a> = track;</div>
-<div class="line"><span class="lineno">  108</span>        track-&gt;SetTrackStatus(fSuspend);</div>
-<div class="line"><span class="lineno">  109</span>        <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">decBremCandidateCount</a>();</div>
-<div class="line"><span class="lineno">  110</span>        trackInfo-&gt;tagBremCandidate(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  111</span>      }</div>
-<div class="line"><span class="lineno">  112</span>    }</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[ TargetProcessFilter ]: &quot;</span></div>
-<div class="line"><span class="lineno">  115</span>              &lt;&lt; <span class="stringliteral">&quot;Brem photon produced &quot;</span> &lt;&lt; secondaries-&gt;size()</div>
-<div class="line"><span class="lineno">  116</span>              &lt;&lt; <span class="stringliteral">&quot; particle via &quot;</span> &lt;&lt; processName &lt;&lt; <span class="stringliteral">&quot; process.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  117</span>    trackInfo-&gt;tagBremCandidate(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  118</span>    trackInfo-&gt;tagPNGamma();</div>
-<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">decBremCandidateCount</a>();</div>
-<div class="line"><span class="lineno">  120</span>  }</div>
-<div class="line"><span class="lineno">  121</span>}</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> volume{track-&gt;GetNextVolume()-&gt;GetName()};</div>
+<div class="line"><span class="lineno">   84</span>        volume.compareTo(<span class="stringliteral">&quot;recoil_PV&quot;</span>) == 0 or </div>
+<div class="line"><span class="lineno">   85</span>        volume.compareTo(<span class="stringliteral">&quot;World_PV&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">if</span> (secondaries-&gt;size() != 0) {</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;bremCandidateCount() == 1) {</div>
+<div class="line"><span class="lineno">   88</span>          track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><span class="lineno">   89</span>          G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><span class="lineno">   90</span>          <a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a35b36ed187b88e0e553a1c7ae75664e2">currentTrack_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   91</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   92</span>          <a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a35b36ed187b88e0e553a1c7ae75664e2">currentTrack_</a> = track;</div>
+<div class="line"><span class="lineno">   93</span>          track-&gt;SetTrackStatus(fSuspend);</div>
+<div class="line"><span class="lineno">   94</span>          <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">decBremCandidateCount</a>();</div>
+<div class="line"><span class="lineno">   95</span>          trackInfo-&gt;tagBremCandidate(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   96</span>        }</div>
+<div class="line"><span class="lineno">   97</span>      }</div>
+<div class="line"><span class="lineno">   98</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  101</span>    G4String processName =</div>
+<div class="line"><span class="lineno">  102</span>        secondaries-&gt;at(0)-&gt;GetCreatorProcess()-&gt;GetProcessName();</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <span class="comment">// Only record the process that is being biased</span></div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> (!processName.contains(<a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a5039c72dcc02ff968e74a046089dbc81">process_</a>)) {</div>
+<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;bremCandidateCount() == 1) {</div>
+<div class="line"><span class="lineno">  107</span>        track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
+<div class="line"><span class="lineno">  108</span>        G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
+<div class="line"><span class="lineno">  109</span>        <a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a35b36ed187b88e0e553a1c7ae75664e2">currentTrack_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  110</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="classbiasing_1_1TargetProcessFilter.html#a35b36ed187b88e0e553a1c7ae75664e2">currentTrack_</a> = track;</div>
+<div class="line"><span class="lineno">  112</span>        track-&gt;SetTrackStatus(fSuspend);</div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">decBremCandidateCount</a>();</div>
+<div class="line"><span class="lineno">  114</span>        trackInfo-&gt;tagBremCandidate(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  115</span>      }</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[ TargetProcessFilter ]: &quot;</span></div>
+<div class="line"><span class="lineno">  119</span>              &lt;&lt; <span class="stringliteral">&quot;Brem photon produced &quot;</span> &lt;&lt; secondaries-&gt;size()</div>
+<div class="line"><span class="lineno">  120</span>              &lt;&lt; <span class="stringliteral">&quot; particle via &quot;</span> &lt;&lt; processName &lt;&lt; <span class="stringliteral">&quot; process.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  121</span>    trackInfo-&gt;tagBremCandidate(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  122</span>    trackInfo-&gt;tagPNGamma();</div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_function" href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">getEventInfo</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">decBremCandidateCount</a>();</div>
+<div class="line"><span class="lineno">  124</span>  }</div>
+<div class="line"><span class="lineno">  125</span>}</div>
 <div class="ttc" id="aclasssimcore_1_1UserAction_html_a93d0903ae5c9d48a518611c6a37cdffd"><div class="ttname"><a href="classsimcore_1_1UserAction.html#a93d0903ae5c9d48a518611c6a37cdffd">simcore::UserAction::getEventInfo</a></div><div class="ttdeci">UserEventInformation * getEventInfo() const</div><div class="ttdef"><b>Definition:</b> <a href="UserAction_8cxx_source.html#l00024">UserAction.cxx:24</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_a96189d3785f82af9a4e227f86d1b6e50"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">simcore::UserEventInformation::decBremCandidateCount</a></div><div class="ttdeci">void decBremCandidateCount()</div><div class="ttdoc">Decrease the number of brem candidates in an event.</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00026">UserEventInformation.h:26</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_a05d99ef5ad9cc9e31abcfb5505bc2b9e"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a></div><div class="ttdeci">static UserTrackInformation * get(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8cxx_source.html#l00010">UserTrackInformation.cxx:10</a></div></div>
