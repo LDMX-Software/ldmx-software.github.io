@@ -60,16 +60,16 @@ $(function() {
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">static</span> <span class="keywordtype">bool</span> isInEcal(G4LogicalVolume* vol, <span class="keyword">const</span> std::string&amp; vol_to_bias) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  G4String volumeName = vol-&gt;GetName();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">return</span> ((volumeName.contains(<span class="stringliteral">&quot;Si&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;W&quot;</span>) ||</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>           volumeName.contains(<span class="stringliteral">&quot;PCB&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;CFMix&quot;</span>) ||</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>           volumeName.contains(<span class="stringliteral">&quot;Al&quot;</span>)) &amp;&amp;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>          volumeName.contains(<span class="stringliteral">&quot;volume&quot;</span>));</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">static</span> <span class="keywordtype">bool</span> isInHcal(G4LogicalVolume* vol, <span class="keyword">const</span> std::string&amp; vol_to_bias) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  G4String volumeName = vol-&gt;GetName();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">return</span> ((volumeName.contains(<span class="stringliteral">&quot;abso2&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;abso3&quot;</span>) ||</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>           volumeName.contains(<span class="stringliteral">&quot;ScintBox&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;absoBox&quot;</span>)) &amp;&amp;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>          volumeName.contains(<span class="stringliteral">&quot;volume&quot;</span>));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>           volumeName.contains(<span class="stringliteral">&quot;PCB&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;strongback&quot;</span>) ||</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>           volumeName.contains(<span class="stringliteral">&quot;Glue&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;CFMix&quot;</span>) ||</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>           volumeName.contains(<span class="stringliteral">&quot;Al&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;C&quot;</span>)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>          ) &amp;&amp; volumeName.contains(<span class="stringliteral">&quot;volume&quot;</span>));</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">static</span> <span class="keywordtype">bool</span> isInHcal(G4LogicalVolume* vol, <span class="keyword">const</span> std::string&amp; vol_to_bias) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  G4String volumeName = vol-&gt;GetName();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">return</span> ((volumeName.contains(<span class="stringliteral">&quot;abso&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;ScintBox&quot;</span>) || volumeName.contains(<span class="stringliteral">&quot;scint&quot;</span>)) </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>          &amp;&amp; volumeName.contains(<span class="stringliteral">&quot;hcal&quot;</span>) &amp;&amp; volumeName.contains(<span class="stringliteral">&quot;olume&quot;</span>));</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">static</span> <span class="keywordtype">bool</span> isInEcalOld(G4LogicalVolume* vol, <span class="keyword">const</span> std::string&amp; vol_to_bias) {</div>
