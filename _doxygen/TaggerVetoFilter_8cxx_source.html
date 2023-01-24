@@ -91,13 +91,20 @@ $(function() {
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      energy &lt; <a class="code hl_variable" href="classbiasing_1_1TaggerVetoFilter.html#a076a450d0bd90cc375d8e4587cbba4e3">threshold_</a>) {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}  <span class="comment">// namespace biasing</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>DECLARE_ACTION(biasing, TaggerVetoFilter)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">/* debug printout</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">    std::cout &lt;&lt; &quot;[ TaggerVetoFilter ]: (&quot;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">      &lt;&lt; G4EventManager::GetEventManager()</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">           -&gt;GetConstCurrentEvent()-&gt;GetEventID()</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">      &lt;&lt; &quot;) Primary lost too much energy before the target. Aborting event.&quot;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">      &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}  <span class="comment">// namespace biasing</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>DECLARE_ACTION(biasing, TaggerVetoFilter)</div>
 <div class="ttc" id="aclassbiasing_1_1TaggerVetoFilter_html_a076a450d0bd90cc375d8e4587cbba4e3"><div class="ttname"><a href="classbiasing_1_1TaggerVetoFilter.html#a076a450d0bd90cc375d8e4587cbba4e3">biasing::TaggerVetoFilter::threshold_</a></div><div class="ttdeci">double threshold_</div><div class="ttdoc">Energy below which an incident electron should be vetoed.</div><div class="ttdef"><b>Definition:</b> <a href="TaggerVetoFilter_8h_source.html#l00058">TaggerVetoFilter.h:58</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1TaggerVetoFilter_html_a421da4097addd8a508cd0a06e0e44e90"><div class="ttname"><a href="classbiasing_1_1TaggerVetoFilter.html#a421da4097addd8a508cd0a06e0e44e90">biasing::TaggerVetoFilter::TaggerVetoFilter</a></div><div class="ttdeci">TaggerVetoFilter(const std::string &amp;name, framework::config::Parameters &amp;parameters)</div><div class="ttdef"><b>Definition:</b> <a href="TaggerVetoFilter_8cxx_source.html#l00012">TaggerVetoFilter.cxx:12</a></div></div>
 <div class="ttc" id="aclassbiasing_1_1TaggerVetoFilter_html_af70e9d6ab73fb107096a9528fc9c2ca5"><div class="ttname"><a href="classbiasing_1_1TaggerVetoFilter.html#af70e9d6ab73fb107096a9528fc9c2ca5">biasing::TaggerVetoFilter::stepping</a></div><div class="ttdeci">void stepping(const G4Step *step) final override</div><div class="ttdef"><b>Definition:</b> <a href="TaggerVetoFilter_8cxx_source.html#l00020">TaggerVetoFilter.cxx:20</a></div></div>

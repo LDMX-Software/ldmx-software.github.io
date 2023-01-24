@@ -287,9 +287,16 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   42</span>      energy &lt; <a class="code hl_variable" href="classbiasing_1_1TaggerVetoFilter.html#a076a450d0bd90cc375d8e4587cbba4e3">threshold_</a>) {</div>
 <div class="line"><span class="lineno">   43</span>    track-&gt;SetTrackStatus(fKillTrackAndSecondaries);</div>
 <div class="line"><span class="lineno">   44</span>    G4RunManager::GetRunManager()-&gt;AbortEvent();</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   46</span>  }</div>
-<div class="line"><span class="lineno">   47</span>}</div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">/* debug printout</span></div>
+<div class="line"><span class="lineno">   46</span><span class="comment">    std::cout &lt;&lt; &quot;[ TaggerVetoFilter ]: (&quot;</span></div>
+<div class="line"><span class="lineno">   47</span><span class="comment">      &lt;&lt; G4EventManager::GetEventManager()</span></div>
+<div class="line"><span class="lineno">   48</span><span class="comment">           -&gt;GetConstCurrentEvent()-&gt;GetEventID()</span></div>
+<div class="line"><span class="lineno">   49</span><span class="comment">      &lt;&lt; &quot;) Primary lost too much energy before the target. Aborting event.&quot;</span></div>
+<div class="line"><span class="lineno">   50</span><span class="comment">      &lt;&lt; std::endl;</span></div>
+<div class="line"><span class="lineno">   51</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   53</span>  }</div>
+<div class="line"><span class="lineno">   54</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="TaggerVetoFilter_8h_source.html#l00058">threshold_</a>.</p>
 

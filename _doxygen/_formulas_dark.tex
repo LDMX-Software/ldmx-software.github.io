@@ -12,56 +12,140 @@
 
 \pagestyle{empty}
 \begin{document}
-$m_A^4/(4E_0^2)$
+$\chi(x,\theta)$
 \pagebreak
 
-$m_A^2$
+\begin{equation}
+\tilde{u} = -xE_0^2\theta^2 - m_A^2\frac{1-x}{x} - m_\ell^2x
+\end{equation}
 \pagebreak
 
-$min(1-m_e/E_0,1-m_A/E_0)$
+$x_{max} = 1 - \max(m_A,m_\ell)/E_0$
 \pagebreak
 
-\[ \sigma = 4 \frac{pb}{GeV} \epsilon^2 \alpha_{EW}^3 \int \chi(t)dt \int
-\frac{d\sigma}{dx}(x)dx \]
+$E_0$
 \pagebreak
 
-\[ \chi(t) = \left(
-\frac{Z^2a^4t^2}{(1+a^2t)^2(1+t/d)^2}+\frac{Za_p^4t^2}{(1+a_p^2t)^2(1+t/0.71)^8}\left(\frac{1+t(m_{up}^2-1)}{4m_p^2}\right)^2\right)\frac{t-m_A^4/(4E_0^2)}{t^2}
-\]
+$m_\ell$
 \pagebreak
 
 $m_A$
 \pagebreak
 
+$\alpha_{EW} = 1/137$
+\pagebreak
+
+$\epsilon$
+\pagebreak
+
+$pb/GeV = 3.894\times10^8$
+\pagebreak
+
+$\chi$
+\pagebreak
+
+\begin{equation}
+t_{min} = \left(\frac{\tilde{u}}{2E_0(1-x)}\right)^2 \qquad t_{max} = E_0^2
+\end{equation}
+\pagebreak
+
+$p_T$
+\pagebreak
+
+$2\pi$
+\pagebreak
+
+$p_T^2+m_l^2 < E_{acc}^2$
+\pagebreak
+
+$p_z$
+\pagebreak
+
+\begin{equation}
+\sigma = \frac{pb}{GeV} \int_0^{x_{max}} \int_0^{0.3} \frac{d\sigma}{dx d\theta} d\theta~dx
+\end{equation}
+\pagebreak
+
+\begin{equation}
+\frac{d\sigma}{dx~d\cos\theta} = 2 \alpha_{EW}^3\epsilon^2 \sqrt{x^2E_0^2 - m_A^2}E_0(1-x) 
+    \frac{\chi(x,\theta)}{\tilde{u}^2} \mathcal{A}^2
+\end{equation}
+\pagebreak
+
+\begin{equation}
+\mathcal{A}^2 = 2\frac{2-2x+x^2}{1-x}+\frac{4(m_A^2+2m_\ell^2)}{\tilde{u}^2}(\tilde{u}x + m_A^2(1-x) + m_\ell^2x^2)
+\end{equation}
+\pagebreak
+
+$\theta=0$
+\pagebreak
+
+\begin{equation}
+\sigma = \frac{pb}{GeV} \int_0^{x_{max}} \chi(x,\theta=0) \frac{d\sigma}{dx} dx
+\end{equation}
+\pagebreak
+
+\begin{equation}
+\frac{d\sigma}{dx}(x) = 4 \alpha_{EW}^3\epsilon^2 \sqrt{1-\frac{m_A^2}{E_0^2}}\frac{1-x+x^2/3}{m_A^2(1-x)/x+m_\ell^2x}
+\end{equation}
+\pagebreak
+
+$(x=1, \theta=0)$
+\pagebreak
+
+\begin{equation}
+\sigma = \frac{pb}{GeV} \chi(x=1,\theta=0) \int_0^{x_{max}} \frac{d\sigma}{dx} dx
+\end{equation}
+\pagebreak
+
+$d\sigma/dx$
+\pagebreak
+
+$t_{max}=E_0^2$
+\pagebreak
+
+$t_{max}=m_A^2+m_\ell^2$
+\pagebreak
+
+$R = m_A/m_\ell$
+\pagebreak
+
+$R < R_{max}$
+\pagebreak
+
+$R_{max}$
+\pagebreak
+
+\begin{equation}
+\chi(x,\theta) = \int^{t_{max}}_{t_{min}} dt \left( \frac{Z^2a^4t^2}{(1+a^2t)^2(1+t/d)^2}+\frac{Za_p^4t^2}{(1+a_p^2t)^2(1+t/0.71)^8}\left(1+\frac{t(\mu_p^2-1)}{4m_p^2}\right)^2\right)\frac{t-t_{min}}{t^2}
+\end{equation}
+\pagebreak
+
+\begin{equation}
+a = \frac{111.0}{m_e Z^{1/3}}
+\quad
+a_p = \frac{773.0}{m_e Z^{2/3}}
+\quad
+d = \frac{0.164}{A^{2/3}}
+\end{equation}
+\pagebreak
+
 $m_e$
 \pagebreak
 
-$E_0$
+$m_p = 0.938$
+\pagebreak
+
+$\mu_p = 2.79$
+\pagebreak
+
+$\mu$
 \pagebreak
 
 $A$
 \pagebreak
 
 $Z$
-\pagebreak
-
-\[a = \frac{111.0}{m_e Z^{1/3}}\]
-\pagebreak
-
-\[a_p = \frac{773.0}{m_e Z^{2/3}}\]
-\pagebreak
-
-\[d = \frac{0.164}{A^{2/3}}\]
-\pagebreak
-
-$m_{up}$
-\pagebreak
-
-$m_{p}$
-\pagebreak
-
-\[ \frac{d\sigma}{dx}(x) =
-\sqrt{1-\frac{m_A^2}{E_0^2}}\frac{1-x+x^2/3}{m_A^2(1-x)/x+m_e^2x} \]
 \pagebreak
 
 \[

@@ -152,11 +152,11 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">   50</span>      <a class="code hl_class" href="classldmx_1_1ElectronicsMap.html">ldmx::ElectronicsMap&lt;ldmx::HcalElectronicsID, ldmx::HcalDigiID&gt;</a>(</div>
 <div class="line"><span class="lineno">   51</span>          want_d2e) {</div>
 <div class="line"><span class="lineno">   52</span>  this-&gt;<a class="code hl_function" href="classldmx_1_1ElectronicsMap.html#a738c0630c3611575587856dc1a09da50">clear</a>();</div>
-<div class="line"><span class="lineno">   53</span>  <a class="code hl_class" href="classconditions_1_1StreamCSVLoader.html">conditions::StreamCSVLoader</a> csv(connections_table);</div>
-<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">while</span> (csv.nextRow()) {</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">int</span> polarfire = csv.getInteger(<span class="stringliteral">&quot;Polarfire&quot;</span>);</div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordtype">int</span> hgcroc = csv.getInteger(<span class="stringliteral">&quot;HGCROC&quot;</span>);</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">int</span> chan = csv.getInteger(<span class="stringliteral">&quot;Channel&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>  <a class="code hl_class" href="classconditions_1_1StreamCSVLoader.html">conditions::StreamCSVLoader</a> <a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>(connections_table);</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">while</span> (<a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.nextRow()) {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">int</span> polarfire = <a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.getInteger(<span class="stringliteral">&quot;Polarfire&quot;</span>);</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordtype">int</span> hgcroc = <a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.getInteger(<span class="stringliteral">&quot;HGCROC&quot;</span>);</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">int</span> chan = <a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.getInteger(<span class="stringliteral">&quot;Channel&quot;</span>);</div>
 <div class="line"><span class="lineno">   68</span> </div>
 <div class="line"><span class="lineno">   89</span>    <span class="keywordtype">int</span> link = 2 * hgcroc;  <span class="comment">// link count starts from 0</span></div>
 <div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (chan &gt;= 36) {</div>
@@ -166,7 +166,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">   94</span> </div>
 <div class="line"><span class="lineno">   95</span>    <span class="comment">// one quadbar groups 4 strips and each quadbar is connected to 2 CMBs - one</span></div>
 <div class="line"><span class="lineno">   96</span>    <span class="comment">// in each end</span></div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">int</span> end = csv.getInteger(<span class="stringliteral">&quot;CMB&quot;</span>) % 2;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">int</span> end = <a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.getInteger(<span class="stringliteral">&quot;CMB&quot;</span>) % 2;</div>
 <div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (end == 0)</div>
 <div class="line"><span class="lineno">   99</span>      end = 1;  <span class="comment">// negative end (?)</span></div>
 <div class="line"><span class="lineno">  100</span>    <span class="keywordflow">else</span></div>
@@ -178,18 +178,18 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  106</span>    <span class="comment">// This gives correct range for the strip numbers [0,7] and [0,11] but the</span></div>
 <div class="line"><span class="lineno">  107</span>    <span class="comment">// actual order of the quadbars has to be checked</span></div>
 <div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>    <span class="keyword">auto</span> QuadBar{csv.getInteger(<span class="stringliteral">&quot;QuadBar&quot;</span>)};</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keyword">auto</span> BarNumber{csv.getInteger(<span class="stringliteral">&quot;Bar&quot;</span>)};</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keyword">auto</span> QuadBar{<a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.getInteger(<span class="stringliteral">&quot;QuadBar&quot;</span>)};</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keyword">auto</span> BarNumber{<a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.getInteger(<span class="stringliteral">&quot;Bar&quot;</span>)};</div>
 <div class="line"><span class="lineno">  111</span>    <span class="comment">// Strip = (4 - Bar) + 4 * (QuadBar - 1)</span></div>
 <div class="line"><span class="lineno">  112</span>    <span class="comment">// QuadBar starts at 1 so we need to subtract to get first value</span></div>
 <div class="line"><span class="lineno">  113</span>    <span class="comment">// to be zero</span></div>
 <div class="line"><span class="lineno">  114</span>    <span class="keyword">auto</span> strip{(BarNumber - 1) +</div>
 <div class="line"><span class="lineno">  115</span>               4 * (QuadBar - 1)};  <span class="comment">// This is flipped from the original</span></div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (csv.getInteger(<span class="stringliteral">&quot;Plane&quot;</span>) % 2 == 1)</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.getInteger(<span class="stringliteral">&quot;Plane&quot;</span>) % 2 == 1)</div>
 <div class="line"><span class="lineno">  117</span>      strip = (4 - BarNumber) +</div>
 <div class="line"><span class="lineno">  118</span>              4 * (QuadBar - 1);  <span class="comment">// Plane 2 is backward by mistake</span></div>
 <div class="line"><span class="lineno">  119</span>    <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> detid(0 <span class="comment">/*section - only one section during test beam*/</span>,</div>
-<div class="line"><span class="lineno">  120</span>                           csv.getInteger(<span class="stringliteral">&quot;Plane&quot;</span>) <span class="comment">/*layer*/</span>, strip <span class="comment">/*strip*/</span>,</div>
+<div class="line"><span class="lineno">  120</span>                           <a class="code hl_function" href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">csv</a>.getInteger(<span class="stringliteral">&quot;Plane&quot;</span>) <span class="comment">/*layer*/</span>, strip <span class="comment">/*strip*/</span>,</div>
 <div class="line"><span class="lineno">  121</span>                           end <span class="comment">/*end*/</span>);</div>
 <div class="line"><span class="lineno">  122</span>    <a class="code hl_class" href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a> eleid(polarfire <span class="comment">/*polarfire fpga*/</span>, link <span class="comment">/*elink*/</span>,</div>
 <div class="line"><span class="lineno">  123</span>                                  chan <span class="comment">/*channel*/</span>);</div>
@@ -211,8 +211,9 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassldmx_1_1ElectronicsMap_html_ad9dafa53443d9e9cb6b1c0519c9fda5d"><div class="ttname"><a href="classldmx_1_1ElectronicsMap.html#ad9dafa53443d9e9cb6b1c0519c9fda5d">ldmx::ElectronicsMap&lt; ldmx::HcalElectronicsID, ldmx::HcalDigiID &gt;::exists</a></div><div class="ttdeci">bool exists(ldmx::HcalElectronicsID eid) const</div><div class="ttdef"><b>Definition:</b> <a href="ElectronicsMap_8h_source.html#l00056">ElectronicsMap.h:56</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalDigiID_html"><div class="ttname"><a href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a></div><div class="ttdoc">Extension of HcalAbstractID providing access to HCal digi information.</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiID_8h_source.html#l00013">HcalDigiID.h:13</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalElectronicsID_html"><div class="ttname"><a href="classldmx_1_1HcalElectronicsID.html">ldmx::HcalElectronicsID</a></div><div class="ttdoc">Identifies a location in the Hcal readout chain.</div><div class="ttdef"><b>Definition:</b> <a href="HcalElectronicsID_8h_source.html#l00026">HcalElectronicsID.h:26</a></div></div>
+<div class="ttc" id="anamespaceg4db_1_1parse_html_a044e78ea2cc93f1f9fd1f7a38291ebb9"><div class="ttname"><a href="namespaceg4db_1_1parse.html#a044e78ea2cc93f1f9fd1f7a38291ebb9">g4db::parse::csv</a></div><div class="ttdeci">void csv(boost::iostreams::filtering_istream &amp;reader, std::map&lt; double, std::vector&lt; OutgoingKinematics &gt; &gt; &amp;lib)</div><div class="ttdef"><b>Definition:</b> <a href="ParseLibrary_8cxx_source.html#l00136">ParseLibrary.cxx:136</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ElectronicsMap_8h_source.html#l00043">ldmx::ElectronicsMap&lt; ldmx::HcalElectronicsID, ldmx::HcalDigiID &gt;::addEntry()</a>, <a class="el" href="ElectronicsMap_8h_source.html#l00035">ldmx::ElectronicsMap&lt; ldmx::HcalElectronicsID, ldmx::HcalDigiID &gt;::clear()</a>, <a class="el" href="ElectronicsMap_8h_source.html#l00056">ldmx::ElectronicsMap&lt; ldmx::HcalElectronicsID, ldmx::HcalDigiID &gt;::exists()</a>, <a class="el" href="GeneralCSVLoader_8cxx_source.html#l00023">conditions::GeneralCSVLoader::getInteger()</a>, and <a class="el" href="GeneralCSVLoader_8cxx_source.html#l00027">conditions::GeneralCSVLoader::nextRow()</a>.</p>
+<p class="reference">References <a class="el" href="ElectronicsMap_8h_source.html#l00043">ldmx::ElectronicsMap&lt; ldmx::HcalElectronicsID, ldmx::HcalDigiID &gt;::addEntry()</a>, <a class="el" href="ElectronicsMap_8h_source.html#l00035">ldmx::ElectronicsMap&lt; ldmx::HcalElectronicsID, ldmx::HcalDigiID &gt;::clear()</a>, and <a class="el" href="ElectronicsMap_8h_source.html#l00056">ldmx::ElectronicsMap&lt; ldmx::HcalElectronicsID, ldmx::HcalDigiID &gt;::exists()</a>.</p>
 
 </div>
 </div>
