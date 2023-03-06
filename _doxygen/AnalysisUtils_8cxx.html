@@ -129,25 +129,22 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   45</span>        auto daughter{particleMap.at(id)};</div>
 <div class="line"><span class="lineno">   46</span> </div>
 <div class="line"><span class="lineno">   47</span>        <span class="comment">// If the particle doesn&#39;t have any daughters, return false</span></div>
-<div class="line"><span class="lineno">   48</span>        if (daughter.getDaughters().size() == 0</div>
-<div class="line"><span class="lineno">   49</span>            or </div>
-<div class="line"><span class="lineno">   50</span>            particleMap.find(daughter.getDaughters().front()) != particleMap.end()</div>
-<div class="line"><span class="lineno">   51</span>           ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>        <span class="comment">// If the particle has daughters that were a result of a</span></div>
-<div class="line"><span class="lineno">   54</span>        <span class="comment">// photo-nuclear reaction, and its energy is above threshold,</span></div>
-<div class="line"><span class="lineno">   55</span>        <span class="comment">// then tag it as the PN gamma.</span></div>
-<div class="line"><span class="lineno">   56</span>        return (</div>
-<div class="line"><span class="lineno">   57</span>            (particleMap.at(daughter.getDaughters().front()).getProcessType() ==</div>
-<div class="line"><span class="lineno">   58</span>             ldmx::SimParticle::ProcessType::photonNuclear) &amp;&amp;</div>
-<div class="line"><span class="lineno">   59</span>            (daughter.getEnergy() &gt;= energyThreshold));</div>
-<div class="line"><span class="lineno">   60</span>      });</div>
+<div class="line"><span class="lineno">   48</span>        if (daughter.getDaughters().size() == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>        <span class="comment">// If the particle has daughters that were a result of a</span></div>
+<div class="line"><span class="lineno">   51</span>        <span class="comment">// photo-nuclear reaction, and its energy is above threshold,</span></div>
+<div class="line"><span class="lineno">   52</span>        <span class="comment">// then tag it as the PN gamma.</span></div>
+<div class="line"><span class="lineno">   53</span>        return (</div>
+<div class="line"><span class="lineno">   54</span>            (particleMap.at(daughter.getDaughters().front()).getProcessType() ==</div>
+<div class="line"><span class="lineno">   55</span>             ldmx::SimParticle::ProcessType::photonNuclear) &amp;&amp;</div>
+<div class="line"><span class="lineno">   56</span>            (daughter.getEnergy() &gt;= energyThreshold));</div>
+<div class="line"><span class="lineno">   57</span>      });</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>  <span class="comment">// If a PN daughter was found, return it.</span></div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordflow">if</span> (pit != daughterTrackIDs.end()) <span class="keywordflow">return</span> &amp;particleMap.at(*pit);</div>
 <div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>  <span class="comment">// If a PN daughter was found, return it.</span></div>
-<div class="line"><span class="lineno">   63</span>  <span class="keywordflow">if</span> (pit != daughterTrackIDs.end()) <span class="keywordflow">return</span> &amp;particleMap.at(*pit);</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   66</span>}</div>
+<div class="line"><span class="lineno">   62</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   63</span>}</div>
 <div class="ttc" id="aclassldmx_1_1SimParticle_html_a7783d529d15db32efdd35b2cf858786e"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">ldmx::SimParticle::getDaughters</a></div><div class="ttdeci">std::vector&lt; int &gt; getDaughters() const</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00147">SimParticle.h:147</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="SimParticle_8h_source.html#l00147">ldmx::SimParticle::getDaughters()</a>, and <a class="el" href="AnalysisUtils_8cxx_source.html#l00035">Analysis::getPNGamma()</a>.</p>
