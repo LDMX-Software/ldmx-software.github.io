@@ -63,6 +63,8 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a96b0996f8c4e70467ec7002379546321"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; int, const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AnalysisUtils_8h.html#a96b0996f8c4e70467ec7002379546321">Analysis::getRecoil</a> (const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; &amp;particleMap)</td></tr>
 <tr class="separator:a96b0996f8c4e70467ec7002379546321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86190a89a78b9c68896fd612cdaee645"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AnalysisUtils_8h.html#a86190a89a78b9c68896fd612cdaee645">Analysis::doesParticleHavePNDaughters</a> (const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &amp;gamma, const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; &amp;particleMap)</td></tr>
+<tr class="separator:a86190a89a78b9c68896fd612cdaee645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22d44d60e0c64a3fb4c24c09789b1a20"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AnalysisUtils_8h.html#a22d44d60e0c64a3fb4c24c09789b1a20">Analysis::getPNGamma</a> (const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; &amp;particleMap, const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *recoil, const float &amp;energyThreshold)</td></tr>
 <tr class="separator:a22d44d60e0c64a3fb4c24c09789b1a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -72,6 +74,55 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="AnalysisUtils_8h_source.html">AnalysisUtils.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a86190a89a78b9c68896fd612cdaee645" name="a86190a89a78b9c68896fd612cdaee645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86190a89a78b9c68896fd612cdaee645">&#9670;&#160;</a></span>doesParticleHavePNDaughters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Analysis::doesParticleHavePNDaughters </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &amp;&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>particleMap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Helper function to getPNGamma. Checks if a particle has daughter particles produced by the photonNuclear process type that are present in the particle map. </p>
+
+<p class="definition">Definition at line <a class="el" href="AnalysisUtils_8cxx_source.html#l00048">48</a> of file <a class="el" href="AnalysisUtils_8cxx_source.html">AnalysisUtils.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                                                     {</div>
+<div class="line"><span class="lineno">   51</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> daughterID : gamma.<a class="code hl_function" href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">getDaughters</a>()) {</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (particleMap.find(daughterID) != std::end(particleMap)) {</div>
+<div class="line"><span class="lineno">   53</span>      <span class="keyword">const</span> <span class="keyword">auto</span> daughter{particleMap.at(daughterID)};</div>
+<div class="line"><span class="lineno">   54</span>      <span class="keyword">const</span> <span class="keyword">auto</span> processType{daughter.getProcessType()};</div>
+<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">if</span> (processType == ldmx::SimParticle::ProcessType::photonNuclear) {</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   57</span>      } <span class="comment">// Was it PN?</span></div>
+<div class="line"><span class="lineno">   58</span>    }   <span class="comment">// Was it in the map?</span></div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   62</span>}</div>
+<div class="ttc" id="aclassldmx_1_1SimParticle_html_a7783d529d15db32efdd35b2cf858786e"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">ldmx::SimParticle::getDaughters</a></div><div class="ttdeci">std::vector&lt; int &gt; getDaughters() const</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00147">SimParticle.h:147</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="AnalysisUtils_8cxx_source.html#l00048">Analysis::doesParticleHavePNDaughters()</a>, and <a class="el" href="SimParticle_8h_source.html#l00147">ldmx::SimParticle::getDaughters()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="AnalysisUtils_8cxx_source.html#l00048">Analysis::doesParticleHavePNDaughters()</a>, and <a class="el" href="AnalysisUtils_8cxx_source.html#l00065">Analysis::getPNGamma()</a>.</p>
+
+</div>
+</div>
 <a id="a22d44d60e0c64a3fb4c24c09789b1a20" name="a22d44d60e0c64a3fb4c24c09789b1a20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22d44d60e0c64a3fb4c24c09789b1a20">&#9670;&#160;</a></span>getPNGamma()</h2>
 
@@ -115,42 +166,32 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[out] Pointer to sim particle labeled as PN Gamma photon (nullptr if not found) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="AnalysisUtils_8cxx_source.html#l00044">44</a> of file <a class="el" href="AnalysisUtils_8cxx_source.html">AnalysisUtils.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                                 {</div>
-<div class="line"><span class="lineno">   47</span>  <span class="comment">// Get all of the daughter track IDs</span></div>
-<div class="line"><span class="lineno">   48</span>  <span class="keyword">auto</span> daughterTrackIDs{recoil-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">getDaughters</a>()};</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>  <span class="keyword">auto</span> pit = std::find_if(</div>
-<div class="line"><span class="lineno">   51</span>      daughterTrackIDs.begin(), daughterTrackIDs.end(),</div>
-<div class="line"><span class="lineno">   52</span>      [energyThreshold, particleMap](<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <span class="keywordtype">id</span>) {</div>
-<div class="line"><span class="lineno">   53</span>        <span class="comment">// Get the SimParticle from the map</span></div>
-<div class="line"><span class="lineno">   54</span>        auto daughter{particleMap.at(id)};</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>        <span class="comment">// If the particle doesn&#39;t have any daughters, return false</span></div>
-<div class="line"><span class="lineno">   57</span>        if (daughter.getDaughters().size() == 0</div>
-<div class="line"><span class="lineno">   58</span>            or </div>
-<div class="line"><span class="lineno">   59</span>            particleMap.find(daughter.getDaughters().front()) != particleMap.end()</div>
-<div class="line"><span class="lineno">   60</span>           ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>        <span class="comment">// If the particle has daughters that were a result of a</span></div>
-<div class="line"><span class="lineno">   63</span>        <span class="comment">// photo-nuclear reaction, and its energy is above threshold,</span></div>
-<div class="line"><span class="lineno">   64</span>        <span class="comment">// then tag it as the PN gamma.</span></div>
-<div class="line"><span class="lineno">   65</span>        return (</div>
-<div class="line"><span class="lineno">   66</span>            (particleMap.at(daughter.getDaughters().front()).getProcessType() ==</div>
-<div class="line"><span class="lineno">   67</span>             ldmx::SimParticle::ProcessType::photonNuclear) &amp;&amp;</div>
-<div class="line"><span class="lineno">   68</span>            (daughter.getEnergy() &gt;= energyThreshold));</div>
-<div class="line"><span class="lineno">   69</span>      });</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>  <span class="comment">// If a PN daughter was found, return it.</span></div>
-<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span> (pit != daughterTrackIDs.end()) <span class="keywordflow">return</span> &amp;particleMap.at(*pit);</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   75</span>}</div>
-<div class="ttc" id="aclassldmx_1_1SimParticle_html_a7783d529d15db32efdd35b2cf858786e"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">ldmx::SimParticle::getDaughters</a></div><div class="ttdeci">std::vector&lt; int &gt; getDaughters() const</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00147">SimParticle.h:147</a></div></div>
+<p class="definition">Definition at line <a class="el" href="AnalysisUtils_8cxx_source.html#l00065">65</a> of file <a class="el" href="AnalysisUtils_8cxx_source.html">AnalysisUtils.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                                        {</div>
+<div class="line"><span class="lineno">   67</span>  <span class="keyword">auto</span> recoilDaughters{recoil-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">getDaughters</a>()};</div>
+<div class="line"><span class="lineno">   68</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> recoilDaughterID : recoilDaughters) {</div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">// Have we stored the recoil daughter?</span></div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> (particleMap.find(recoilDaughterID) != std::end(particleMap)) {</div>
+<div class="line"><span class="lineno">   71</span>      <span class="keyword">auto</span> recoilDaughter{particleMap.at(recoilDaughterID)};</div>
+<div class="line"><span class="lineno">   72</span>      <span class="comment">// Is it a gamma?</span></div>
+<div class="line"><span class="lineno">   73</span>      <span class="keywordflow">if</span> (recoilDaughter.getPdgID() == 22) {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="comment">// Does it have enough energy?</span></div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span> (recoilDaughter.getEnergy() &gt;= energyThreshold) {</div>
+<div class="line"><span class="lineno">   76</span>          <span class="comment">// Are its daughters PN products?</span></div>
+<div class="line"><span class="lineno">   77</span>          <span class="keywordflow">if</span> (<a class="code hl_function" href="AnalysisUtils_8h.html#a86190a89a78b9c68896fd612cdaee645">doesParticleHavePNDaughters</a>(recoilDaughter, particleMap)) {</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">return</span> &amp;particleMap.at(recoilDaughterID);</div>
+<div class="line"><span class="lineno">   79</span>          }</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+<div class="line"><span class="lineno">   81</span>      }</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span>  }</div>
+<div class="line"><span class="lineno">   84</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   85</span>}</div>
+<div class="ttc" id="aAnalysisUtils_8h_html_a86190a89a78b9c68896fd612cdaee645"><div class="ttname"><a href="AnalysisUtils_8h.html#a86190a89a78b9c68896fd612cdaee645">Analysis::doesParticleHavePNDaughters</a></div><div class="ttdeci">bool doesParticleHavePNDaughters(const ldmx::SimParticle &amp;gamma, const std::map&lt; int, ldmx::SimParticle &gt; &amp;particleMap)</div><div class="ttdef"><b>Definition:</b> <a href="AnalysisUtils_8cxx_source.html#l00048">AnalysisUtils.cxx:48</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimParticle_8h_source.html#l00147">ldmx::SimParticle::getDaughters()</a>, and <a class="el" href="AnalysisUtils_8cxx_source.html#l00044">Analysis::getPNGamma()</a>.</p>
+<p class="reference">References <a class="el" href="AnalysisUtils_8cxx_source.html#l00048">Analysis::doesParticleHavePNDaughters()</a>, <a class="el" href="SimParticle_8h_source.html#l00147">ldmx::SimParticle::getDaughters()</a>, and <a class="el" href="AnalysisUtils_8cxx_source.html#l00065">Analysis::getPNGamma()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="AnalysisUtils_8cxx_source.html#l00044">Analysis::getPNGamma()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AnalysisUtils_8cxx_source.html#l00065">Analysis::getPNGamma()</a>.</p>
 
 </div>
 </div>
@@ -179,17 +220,18 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>[out] Pointer to sim particle labeled as recoil electron (nullptr if not found) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="AnalysisUtils_8cxx_source.html#l00029">29</a> of file <a class="el" href="AnalysisUtils_8cxx_source.html">AnalysisUtils.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                     {</div>
-<div class="line"><span class="lineno">   31</span>  <span class="comment">// The recoil electron is &quot;produced&quot; in the dark brem geneartion </span></div>
-<div class="line"><span class="lineno">   32</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [trackID, particle] : particleMap) {</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (particle.getPdgID() == 11 and </div>
-<div class="line"><span class="lineno">   34</span>        particle.getProcessType() == </div>
-<div class="line"><span class="lineno">   35</span>        ldmx::SimParticle::ProcessType::eDarkBrem) {</div>
-<div class="line"><span class="lineno">   36</span>      <span class="keywordflow">return</span> {trackID, &amp;particle};</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
-<div class="line"><span class="lineno">   38</span>  }</div>
-<div class="line"><span class="lineno">   39</span>  <span class="comment">// only get here if recoil electron was not &quot;produced&quot; by dark brem</span></div>
-<div class="line"><span class="lineno">   40</span>  <span class="comment">//   in this case (bkgd), we interpret the primary electron as also the recoil electron</span></div>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>                                                           {</div>
+<div class="line"><span class="lineno">   30</span>  <span class="comment">// The recoil electron is &quot;produced&quot; in the dark brem geneartion</span></div>
+<div class="line"><span class="lineno">   31</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[trackID, particle] : particleMap) {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (particle.getPdgID() == 11 and</div>
+<div class="line"><span class="lineno">   33</span>        particle.getProcessType() ==</div>
+<div class="line"><span class="lineno">   34</span>            ldmx::SimParticle::ProcessType::eDarkBrem) {</div>
+<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">return</span> {trackID, &amp;particle};</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="line"><span class="lineno">   37</span>  }</div>
+<div class="line"><span class="lineno">   38</span>  <span class="comment">// only get here if recoil electron was not &quot;produced&quot; by dark brem</span></div>
+<div class="line"><span class="lineno">   39</span>  <span class="comment">//   in this case (bkgd), we interpret the primary electron as also the recoil</span></div>
+<div class="line"><span class="lineno">   40</span>  <span class="comment">//   electron</span></div>
 <div class="line"><span class="lineno">   41</span>  <span class="keywordflow">return</span> {1, &amp;(particleMap.at(1))};</div>
 <div class="line"><span class="lineno">   42</span>}</div>
 </div><!-- fragment -->
