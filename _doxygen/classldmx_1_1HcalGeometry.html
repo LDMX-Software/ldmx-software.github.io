@@ -45,6 +45,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -60,18 +61,30 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ad5f8443b75b77425ef323331f02a941e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#ad5f8443b75b77425ef323331f02a941e">ScintillatorOrientation</a> { <b>horizontal</b> = 0
+, <b>vertical</b> = 1
+, <b>depth</b> = 2
+ }</td></tr>
+<tr class="separator:ad5f8443b75b77425ef323331f02a941e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abddad23e850fd18b4c06d074e64d636c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#abddad23e850fd18b4c06d074e64d636c">~HcalGeometry</a> ()=default</td></tr>
 <tr class="separator:abddad23e850fd18b4c06d074e64d636c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb59a5720f81d7cbf5c073de70cd1a1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldmx_1_1HcalGeometry.html#ad5f8443b75b77425ef323331f02a941e">ScintillatorOrientation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#aeb59a5720f81d7cbf5c073de70cd1a1b">getScintillatorOrientation</a> (const <a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> id) const</td></tr>
+<tr class="separator:aeb59a5720f81d7cbf5c073de70cd1a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11cb28d0d0d3d2a109126c7ecde880df"><td class="memItemLeft" align="right" valign="top">TVector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a11cb28d0d0d3d2a109126c7ecde880df">getStripCenterPosition</a> (<a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> id) const</td></tr>
 <tr class="separator:a11cb28d0d0d3d2a109126c7ecde880df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0b92b878a9c4cdb16c5a3ca645d1833"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a>, TVector3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#af0b92b878a9c4cdb16c5a3ca645d1833">getStripPositionMap</a> () const</td></tr>
 <tr class="separator:af0b92b878a9c4cdb16c5a3ca645d1833"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdc2b638a8771d1e81e70637f8e3f162"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#abdc2b638a8771d1e81e70637f8e3f162">layerIsHorizontal</a> (const int layer) const</td></tr>
-<tr class="separator:abdc2b638a8771d1e81e70637f8e3f162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab037da5fb78d1dea7c4ffae9dbf5c9dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#ab037da5fb78d1dea7c4ffae9dbf5c9dc">backLayerIsHorizontal</a> (const int layer) const</td></tr>
+<tr class="separator:ab037da5fb78d1dea7c4ffae9dbf5c9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af73349f39d306c94576a5f7c486325c7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">getHalfTotalWidth</a> (int isection, int layer=1) const</td></tr>
 <tr class="separator:af73349f39d306c94576a5f7c486325c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c011dee07f0668f0c491b7e31021a5a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a6c011dee07f0668f0c491b7e31021a5a">getScintillatorLength</a> (<a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> id) const</td></tr>
+<tr class="separator:a6c011dee07f0668f0c491b7e31021a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9234f529bb41080ae63df04bd52eacb4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a9234f529bb41080ae63df04bd52eacb4">getScintillatorWidth</a> () const</td></tr>
 <tr class="separator:a9234f529bb41080ae63df04bd52eacb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4766ed4a1ff422397dc73b5b9b80e7a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a4766ed4a1ff422397dc73b5b9b80e7a2">getNumSections</a> () const</td></tr>
@@ -86,6 +99,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a175c04310c13610215202787d616a538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b16f70b8b015d0fcd4442a9db77c711"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a8b16f70b8b015d0fcd4442a9db77c711">getEcalDy</a> () const</td></tr>
 <tr class="separator:a8b16f70b8b015d0fcd4442a9db77c711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0473a9b3b37de113a8cdaa7853edbb81"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a0473a9b3b37de113a8cdaa7853edbb81">hasSide3DReadout</a> () const</td></tr>
+<tr class="separator:a0473a9b3b37de113a8cdaa7853edbb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba00c02098f5836c3fc53105504598d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#acba00c02098f5836c3fc53105504598d">isPrototype</a> () const</td></tr>
+<tr class="separator:acba00c02098f5836c3fc53105504598d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901d40ccbc498ee04672103a137cbf6c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a901d40ccbc498ee04672103a137cbf6c">rotateGlobalToLocalBarPosition</a> (const std::vector&lt; double &gt; &amp;globalPosition, const <a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> &amp;id) const</td></tr>
+<tr class="separator:a901d40ccbc498ee04672103a137cbf6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classframework_1_1ConditionsObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classframework_1_1ConditionsObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classframework_1_1ConditionsObject.html">framework::ConditionsObject</a></td></tr>
 <tr class="memitem:a47cde9473f38ece4308bc86449b7f7cd inherit pub_methods_classframework_1_1ConditionsObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1ConditionsObject.html#a47cde9473f38ece4308bc86449b7f7cd">ConditionsObject</a> (const std::string &amp;name)</td></tr>
 <tr class="separator:a47cde9473f38ece4308bc86449b7f7cd inherit pub_methods_classframework_1_1ConditionsObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,9 +128,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:acedf13fbd34aef1f0486b8d6d27bf37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c7d0a025977305c3aa5aa224c205608"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a6c7d0a025977305c3aa5aa224c205608">printPositionMap</a> () const</td></tr>
 <tr class="separator:a6c7d0a025977305c3aa5aa224c205608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4939b3025d6500fc34af8f9673c5e57a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4939b3025d6500fc34af8f9673c5e57a"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a4939b3025d6500fc34af8f9673c5e57a">makeCanonicalLayeredParameter</a> (const std::vector&lt; T &gt; &amp;parameter)</td></tr>
-<tr class="separator:a4939b3025d6500fc34af8f9673c5e57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -140,8 +156,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a210abedb92ed0b5da9df1d0b058a08a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d4023ce517c153924c5532a3ce8f6eb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a4d4023ce517c153924c5532a3ce8f6eb">ecal_dy_</a></td></tr>
 <tr class="separator:a4d4023ce517c153924c5532a3ce8f6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed2dba6f053ba808ebf891f6a345a7aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#aed2dba6f053ba808ebf891f6a345a7aa">horizontal_parity_</a> {}</td></tr>
-<tr class="separator:aed2dba6f053ba808ebf891f6a345a7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8758d43009e11dfce3e7c12b6f7072ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a8758d43009e11dfce3e7c12b6f7072ab">back_horizontal_parity_</a> {}</td></tr>
+<tr class="separator:a8758d43009e11dfce3e7c12b6f7072ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4407c1a30b5b222af0d4b39c0088ebde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a4407c1a30b5b222af0d4b39c0088ebde">side_3d_readout_</a> {}</td></tr>
 <tr class="separator:a4407c1a30b5b222af0d4b39c0088ebde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af29b213826d8759c0abce4156a7f358a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">num_strips_</a></td></tr>
@@ -153,6 +169,11 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7dec957f06b9356bf4ca0d7178f47837"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">half_total_width_</a></td></tr>
 <tr class="memdesc:a7dec957f06b9356bf4ca0d7178f47837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Half Total Width of Strips [mm].  <a href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">More...</a><br /></td></tr>
 <tr class="separator:a7dec957f06b9356bf4ca0d7178f47837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6db0953231b1cff8b5afcf7596fcfcbf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#a6db0953231b1cff8b5afcf7596fcfcbf">scint_length_</a></td></tr>
+<tr class="memdesc:a6db0953231b1cff8b5afcf7596fcfcbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of strips [mm].  <a href="classldmx_1_1HcalGeometry.html#a6db0953231b1cff8b5afcf7596fcfcbf">More...</a><br /></td></tr>
+<tr class="separator:a6db0953231b1cff8b5afcf7596fcfcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa761b0115f768a9e37913b49d77a2eaf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#aa761b0115f768a9e37913b49d77a2eaf">is_prototype_</a> {}</td></tr>
+<tr class="separator:aa761b0115f768a9e37913b49d77a2eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeae8f72212b4add374ecaaf95c5e9d2"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a>, TVector3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">strip_position_map_</a></td></tr>
 <tr class="separator:adeae8f72212b4add374ecaaf95c5e9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -165,7 +186,38 @@ Friends</h2></td></tr>
 <div class="textblock"><p >Implementation of HCal strip readout. </p>
 
 <p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00034">34</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ad5f8443b75b77425ef323331f02a941e" name="ad5f8443b75b77425ef323331f02a941e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f8443b75b77425ef323331f02a941e">&#9670;&#160;</a></span>ScintillatorOrientation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classldmx_1_1HcalGeometry.html#ad5f8443b75b77425ef323331f02a941e">ldmx::HcalGeometry::ScintillatorOrientation</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Encodes the orientation of a bar. horizontal : The length of the bar is along the x-axis vertical : The length of the bar is along the y-axis depth : The length of the bar is along the z-axis </p>
+
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00050">50</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                                     {</div>
+<div class="line"><span class="lineno">   51</span>    horizontal = 0,</div>
+<div class="line"><span class="lineno">   52</span>    vertical = 1,</div>
+<div class="line"><span class="lineno">   53</span>    depth = 2</div>
+<div class="line"><span class="lineno">   54</span>  };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abddad23e850fd18b4c06d074e64d636c" name="abddad23e850fd18b4c06d074e64d636c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abddad23e850fd18b4c06d074e64d636c">&#9670;&#160;</a></span>~HcalGeometry()</h2>
 
@@ -235,71 +287,86 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">   19</span>  <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a210abedb92ed0b5da9df1d0b058a08a3">ecal_dx_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;ecal_dx&quot;</span>);</div>
 <div class="line"><span class="lineno">   20</span>  ecal_dy_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;ecal_dy&quot;</span>);</div>
 <div class="line"><span class="lineno">   21</span>  <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a78ccfda932c6d2a441313191edc4f188">verbose_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;verbose&quot;</span>);</div>
-<div class="line"><span class="lineno">   22</span>  horizontal_parity_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;horizontal_parity&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>  back_horizontal_parity_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;back_horizontal_parity&quot;</span>);</div>
 <div class="line"><span class="lineno">   23</span>  side_3d_readout_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;side_3d_readout&quot;</span>);</div>
-<div class="line"><span class="lineno">   24</span>  </div>
+<div class="line"><span class="lineno">   24</span> </div>
 <div class="line"><span class="lineno">   25</span>  <span class="keyword">auto</span> detectors_valid =</div>
 <div class="line"><span class="lineno">   26</span>      ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::string&gt;&gt;(<span class="stringliteral">&quot;detectors_valid&quot;</span>);</div>
 <div class="line"><span class="lineno">   27</span>  <span class="comment">// If one of the strings in detectors_valid is &quot;ldmx-hcal-prototype&quot;, we will</span></div>
 <div class="line"><span class="lineno">   28</span>  <span class="comment">// use prototype geometry initialization</span></div>
-<div class="line"><span class="lineno">   29</span>  <span class="keyword">auto</span> is_prototype =</div>
-<div class="line"><span class="lineno">   30</span>      std::find_if(detectors_valid.cbegin(), detectors_valid.cend(),</div>
-<div class="line"><span class="lineno">   31</span>                   [](<span class="keyword">const</span> <span class="keyword">auto</span> detector) {</div>
-<div class="line"><span class="lineno">   32</span>                     return detector.find(<span class="stringliteral">&quot;ldmx-hcal-prototype&quot;</span>) !=</div>
-<div class="line"><span class="lineno">   33</span>                            std::string::npos;</div>
-<div class="line"><span class="lineno">   34</span>                   }) != detectors_valid.cend();</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>  <span class="keywordflow">if</span> (is_prototype) {</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keyword">auto</span> zero_strip_prototype_ =</div>
-<div class="line"><span class="lineno">   38</span>        ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;zero_strip&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   39</span>    <span class="keyword">auto</span> num_strips_prototype_ =</div>
-<div class="line"><span class="lineno">   40</span>        ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;int&gt;&gt;(<span class="stringliteral">&quot;num_strips&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keyword">auto</span> half_total_width_prototype_ =</div>
-<div class="line"><span class="lineno">   42</span>        ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;half_total_width&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   43</span>    <span class="comment">// The prototype only has one section, so we only have one entry into these</span></div>
-<div class="line"><span class="lineno">   44</span>    <span class="comment">// vectors</span></div>
-<div class="line"><span class="lineno">   45</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2da7c85244dbbfafd674241676456f09">zero_strip_</a> = {zero_strip_prototype_};</div>
-<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">num_strips_</a> = {num_strips_prototype_};</div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">half_total_width_</a> = {half_total_width_prototype_};</div>
-<div class="line"><span class="lineno">   48</span>  }</div>
-<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (side_3d_readout_==1) {</div>
-<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">num_strips_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::vector&lt;int&gt;&gt;&gt;(<span class="stringliteral">&quot;num_strips&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">half_total_width_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt;(<span class="stringliteral">&quot;half_total_width&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2da7c85244dbbfafd674241676456f09">zero_strip_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt;(<span class="stringliteral">&quot;zero_strip&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   53</span>  }</div>
-<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keyword">auto</span> zero_strip_v12_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;zero_strip&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keyword">auto</span> num_strips_v12_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;int&gt;&gt;(<span class="stringliteral">&quot;num_strips&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keyword">auto</span> half_total_width_v12_ = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;half_total_width&quot;</span>, {});</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2da7c85244dbbfafd674241676456f09">zero_strip_</a> = makeCanonicalLayeredParameter(zero_strip_v12_);</div>
-<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">num_strips_</a> = makeCanonicalLayeredParameter(num_strips_v12_);</div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">half_total_width_</a> = makeCanonicalLayeredParameter(half_total_width_v12_);</div>
-<div class="line"><span class="lineno">   62</span>  }</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>  <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a251e7d4fcfab5784e5d7a442ea6678e3">buildStripPositionMap</a>();</div>
-<div class="line"><span class="lineno">   65</span>}</div>
+<div class="line"><span class="lineno">   29</span>  is_prototype_ = std::find_if(detectors_valid.cbegin(), detectors_valid.cend(),</div>
+<div class="line"><span class="lineno">   30</span>                               [](<span class="keyword">const</span> <span class="keyword">auto</span> detector) {</div>
+<div class="line"><span class="lineno">   31</span>                                 return detector.find(<span class="stringliteral">&quot;ldmx-hcal-prototype&quot;</span>) !=</div>
+<div class="line"><span class="lineno">   32</span>                                        std::string::npos;</div>
+<div class="line"><span class="lineno">   33</span>                               }) != detectors_valid.cend();</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>  <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">num_strips_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::vector&lt;int&gt;&gt;&gt;(<span class="stringliteral">&quot;num_strips&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>  <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">half_total_width_</a> =</div>
+<div class="line"><span class="lineno">   37</span>      ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt;(<span class="stringliteral">&quot;half_total_width&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>  <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2da7c85244dbbfafd674241676456f09">zero_strip_</a> = ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt;(<span class="stringliteral">&quot;zero_strip&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>  <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a6db0953231b1cff8b5afcf7596fcfcbf">scint_length_</a> =</div>
+<div class="line"><span class="lineno">   40</span>      ps.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt;(<span class="stringliteral">&quot;scint_length&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>  <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a251e7d4fcfab5784e5d7a442ea6678e3">buildStripPositionMap</a>();</div>
+<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a78ccfda932c6d2a441313191edc4f188">verbose_</a> &gt; 0) {</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a6c7d0a025977305c3aa5aa224c205608">printPositionMap</a>();</div>
+<div class="line"><span class="lineno">   45</span>  }</div>
+<div class="line"><span class="lineno">   46</span>}</div>
 <div class="ttc" id="aclassframework_1_1ConditionsObject_html"><div class="ttname"><a href="classframework_1_1ConditionsObject.html">framework::ConditionsObject</a></div><div class="ttdoc">Base class for all conditions objects, very simple.</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObject_8h_source.html#l00018">ConditionsObject.h:18</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a020f131060e9832fe2483b02c1a7fa3b"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a020f131060e9832fe2483b02c1a7fa3b">ldmx::HcalGeometry::layer_thickness_</a></div><div class="ttdeci">std::vector&lt; double &gt; layer_thickness_</div><div class="ttdoc">Thickness of the layers in each section [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00199">HcalGeometry.h:199</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a2056559dd3770954278ba10568af362b"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a2056559dd3770954278ba10568af362b">ldmx::HcalGeometry::zero_layer_</a></div><div class="ttdeci">std::vector&lt; double &gt; zero_layer_</div><div class="ttdoc">Front of HCal relative to world geometry for each section [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00196">HcalGeometry.h:196</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a210abedb92ed0b5da9df1d0b058a08a3"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a210abedb92ed0b5da9df1d0b058a08a3">ldmx::HcalGeometry::ecal_dx_</a></div><div class="ttdeci">double ecal_dx_</div><div class="ttdoc">Lenght of the Ecal (in x and y)</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00208">HcalGeometry.h:208</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a251e7d4fcfab5784e5d7a442ea6678e3"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a251e7d4fcfab5784e5d7a442ea6678e3">ldmx::HcalGeometry::buildStripPositionMap</a></div><div class="ttdeci">void buildStripPositionMap()</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8cxx_source.html#l00080">HcalGeometry.cxx:80</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a2da7c85244dbbfafd674241676456f09"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a2da7c85244dbbfafd674241676456f09">ldmx::HcalGeometry::zero_strip_</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; zero_strip_</div><div class="ttdoc">The plane of the zero'th strip of each section [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00225">HcalGeometry.h:225</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a020f131060e9832fe2483b02c1a7fa3b"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a020f131060e9832fe2483b02c1a7fa3b">ldmx::HcalGeometry::layer_thickness_</a></div><div class="ttdeci">std::vector&lt; double &gt; layer_thickness_</div><div class="ttdoc">Thickness of the layers in each section [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00248">HcalGeometry.h:248</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a2056559dd3770954278ba10568af362b"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a2056559dd3770954278ba10568af362b">ldmx::HcalGeometry::zero_layer_</a></div><div class="ttdeci">std::vector&lt; double &gt; zero_layer_</div><div class="ttdoc">Front of HCal relative to world geometry for each section [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00245">HcalGeometry.h:245</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a210abedb92ed0b5da9df1d0b058a08a3"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a210abedb92ed0b5da9df1d0b058a08a3">ldmx::HcalGeometry::ecal_dx_</a></div><div class="ttdeci">double ecal_dx_</div><div class="ttdoc">Lenght of the Ecal (in x and y)</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00257">HcalGeometry.h:257</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a251e7d4fcfab5784e5d7a442ea6678e3"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a251e7d4fcfab5784e5d7a442ea6678e3">ldmx::HcalGeometry::buildStripPositionMap</a></div><div class="ttdeci">void buildStripPositionMap()</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8cxx_source.html#l00130">HcalGeometry.cxx:130</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a2da7c85244dbbfafd674241676456f09"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a2da7c85244dbbfafd674241676456f09">ldmx::HcalGeometry::zero_strip_</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; zero_strip_</div><div class="ttdoc">The plane of the zero'th strip of each section [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00271">HcalGeometry.h:271</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a509523c5f18a53d16be9d6a79e6e590a"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static constexpr const char * CONDITIONS_OBJECT_NAME</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00042">HcalGeometry.h:42</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a78ccfda932c6d2a441313191edc4f188"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a78ccfda932c6d2a441313191edc4f188">ldmx::HcalGeometry::verbose_</a></div><div class="ttdeci">int verbose_</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00187">HcalGeometry.h:187</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a7dec957f06b9356bf4ca0d7178f47837"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">ldmx::HcalGeometry::half_total_width_</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; half_total_width_</div><div class="ttdoc">Half Total Width of Strips [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00227">HcalGeometry.h:227</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a7f78b0e7074d28dbef820c2694dfdf27"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a7f78b0e7074d28dbef820c2694dfdf27">ldmx::HcalGeometry::scint_width_</a></div><div class="ttdeci">double scint_width_</div><div class="ttdoc">Width of Scintillator Strip [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00193">HcalGeometry.h:193</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a97caeb4038383e7ff60324ea1fa6770d"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a97caeb4038383e7ff60324ea1fa6770d">ldmx::HcalGeometry::scint_thickness_</a></div><div class="ttdeci">double scint_thickness_</div><div class="ttdoc">Thickness of scintillator.</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00190">HcalGeometry.h:190</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_abe5e336beafb19d5aa20f3995de28661"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">ldmx::HcalGeometry::num_layers_</a></div><div class="ttdeci">std::vector&lt; int &gt; num_layers_</div><div class="ttdoc">Number of layers in each section.</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00202">HcalGeometry.h:202</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_af29b213826d8759c0abce4156a7f358a"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">ldmx::HcalGeometry::num_strips_</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; num_strips_</div><div class="ttdoc">Number of strips per layer in each section and each layer.</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00223">HcalGeometry.h:223</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_afd858e1df4fa199bd8796f402fa88fe9"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#afd858e1df4fa199bd8796f402fa88fe9">ldmx::HcalGeometry::num_sections_</a></div><div class="ttdeci">int num_sections_</div><div class="ttdoc">Number of sections.</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00205">HcalGeometry.h:205</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a6c7d0a025977305c3aa5aa224c205608"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a6c7d0a025977305c3aa5aa224c205608">ldmx::HcalGeometry::printPositionMap</a></div><div class="ttdeci">void printPositionMap() const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00227">HcalGeometry.h:227</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a6db0953231b1cff8b5afcf7596fcfcbf"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a6db0953231b1cff8b5afcf7596fcfcbf">ldmx::HcalGeometry::scint_length_</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; scint_length_</div><div class="ttdoc">Length of strips [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00275">HcalGeometry.h:275</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a78ccfda932c6d2a441313191edc4f188"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a78ccfda932c6d2a441313191edc4f188">ldmx::HcalGeometry::verbose_</a></div><div class="ttdeci">int verbose_</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00236">HcalGeometry.h:236</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a7dec957f06b9356bf4ca0d7178f47837"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">ldmx::HcalGeometry::half_total_width_</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; half_total_width_</div><div class="ttdoc">Half Total Width of Strips [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00273">HcalGeometry.h:273</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a7f78b0e7074d28dbef820c2694dfdf27"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a7f78b0e7074d28dbef820c2694dfdf27">ldmx::HcalGeometry::scint_width_</a></div><div class="ttdeci">double scint_width_</div><div class="ttdoc">Width of Scintillator Strip [mm].</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00242">HcalGeometry.h:242</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a97caeb4038383e7ff60324ea1fa6770d"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a97caeb4038383e7ff60324ea1fa6770d">ldmx::HcalGeometry::scint_thickness_</a></div><div class="ttdeci">double scint_thickness_</div><div class="ttdoc">Thickness of scintillator.</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00239">HcalGeometry.h:239</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_abe5e336beafb19d5aa20f3995de28661"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">ldmx::HcalGeometry::num_layers_</a></div><div class="ttdeci">std::vector&lt; int &gt; num_layers_</div><div class="ttdoc">Number of layers in each section.</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00251">HcalGeometry.h:251</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_af29b213826d8759c0abce4156a7f358a"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">ldmx::HcalGeometry::num_strips_</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; num_strips_</div><div class="ttdoc">Number of strips per layer in each section and each layer.</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00269">HcalGeometry.h:269</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_afd858e1df4fa199bd8796f402fa88fe9"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#afd858e1df4fa199bd8796f402fa88fe9">ldmx::HcalGeometry::num_sections_</a></div><div class="ttdeci">int num_sections_</div><div class="ttdoc">Number of sections.</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00254">HcalGeometry.h:254</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00208">ecal_dx_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00227">half_total_width_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00199">layer_thickness_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00202">num_layers_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00205">num_sections_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00223">num_strips_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00190">scint_thickness_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00193">scint_width_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00187">verbose_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00196">zero_layer_</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00225">zero_strip_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00257">ecal_dx_</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00273">half_total_width_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00248">layer_thickness_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00251">num_layers_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00254">num_sections_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00269">num_strips_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00227">printPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00275">scint_length_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00239">scint_thickness_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00242">scint_width_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00236">verbose_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00245">zero_layer_</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00271">zero_strip_</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab037da5fb78d1dea7c4ffae9dbf5c9dc" name="ab037da5fb78d1dea7c4ffae9dbf5c9dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab037da5fb78d1dea7c4ffae9dbf5c9dc">&#9670;&#160;</a></span>backLayerIsHorizontal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ldmx::HcalGeometry::backLayerIsHorizontal </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>layer</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Check whether a given layer corresponds to a horizontal (scintillator length along the x-axis) or vertical layer in the back HCal. See the back_horizontal_parity_ member for details. </p>
+
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00089">89</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>                                                    {</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> layer % 2 == back_horizontal_parity_;</div>
+<div class="line"><span class="lineno">   91</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a251e7d4fcfab5784e5d7a442ea6678e3" name="a251e7d4fcfab5784e5d7a442ea6678e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a251e7d4fcfab5784e5d7a442ea6678e3">&#9670;&#160;</a></span>buildStripPositionMap()</h2>
 
@@ -327,15 +394,10 @@ Friends</h2></td></tr>
 <p >For back Hcal:</p><ul>
 <li>layers in z</li>
 <li>strips occupy thickness of scintillator in z (e.g. 20mm)</li>
-<li>strips orientation is in x(y) depending on horizontal parity</li>
+<li>strips orientation is in x(y) depending on back_horizontal parity</li>
 </ul>
-<pre class="fragment">Now compute, y(x) position for horizontal(vertical) layers, relative
-to the center of detector. Strips enumeration starts from -y(-x)
-stripcenter will be large for +y(+x) and the half width of the strip
-needs to be subtracted The halfwidth of the scintillator is given by
-half_total_width_.
-</pre><p> The x(y) position is set to the center of the strip (0).</p>
-<p >For side Hcal</p><ul>
+<p >Now compute, y(x) position for horizontal(vertical) layers, relative to the center of detector. Strips enumeration starts from -y(-x) stripcenter will be large for +y(+x) and the half width of the strip needs to be subtracted The halfwidth of the scintillator is given by half_total_width_. The x(y) position is set to the center of the strip (0).</p>
+<p >For side Hcal before 3D readout</p><ul>
 <li>layers in y(x)</li>
 <li>all layers have strips in x(y) for top-bottom (left-right) sections</li>
 <li>all layers have strips occupying width of scintillator in z (e.g. 50mm) For 3D readout:</li>
@@ -345,89 +407,91 @@ half_total_width_.
 <li>even layers have strips occupying width of scintillator in z</li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8cxx_source.html#l00080">80</a> of file <a class="el" href="HcalGeometry_8cxx_source.html">HcalGeometry.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>                                         {</div>
-<div class="line"><span class="lineno">   81</span>  <span class="comment">// We hard-code the number of sections as seen in HcalID</span></div>
-<div class="line"><span class="lineno">   82</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> section = 0; section &lt; <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#afd858e1df4fa199bd8796f402fa88fe9">num_sections_</a>; section++) {</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> layer = 1; layer &lt;= <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">num_layers_</a>[section]; layer++) {</div>
-<div class="line"><span class="lineno">   84</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> strip = 0; strip &lt; <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#ad82569c330153a866ac05848a9ccf237">getNumStrips</a>(section, layer); strip++) {</div>
-<div class="line"><span class="lineno">   85</span>        <span class="comment">// initialize values</span></div>
-<div class="line"><span class="lineno">   86</span>        <span class="keywordtype">double</span> x{-99999}, y{-99999}, z{-99999};</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>        <span class="comment">// get hcal section</span></div>
-<div class="line"><span class="lineno">   89</span>        <a class="code hl_enumeration" href="classldmx_1_1HcalID.html#ab6f209e08e1ef415446377d2da6748fa">ldmx::HcalID::HcalSection</a> hcalsection =</div>
-<div class="line"><span class="lineno">   90</span>            (<a class="code hl_enumeration" href="classldmx_1_1HcalID.html#ab6f209e08e1ef415446377d2da6748fa">ldmx::HcalID::HcalSection</a>)section;</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>        <span class="comment">// the center of a layer: (layer-1) * (layer_thickness) + scint_thickness/2</span></div>
-<div class="line"><span class="lineno">   93</span>        <span class="keywordtype">double</span> layercenter =</div>
-<div class="line"><span class="lineno">   94</span>            (layer - 1) * <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a020f131060e9832fe2483b02c1a7fa3b">layer_thickness_</a>.at(section) + 0.5 * <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a97caeb4038383e7ff60324ea1fa6770d">scint_thickness_</a>;</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>        <span class="comment">// the center of a strip: (strip + 0.5) * (strip_dx)</span></div>
-<div class="line"><span class="lineno">   97</span>        <span class="keywordtype">double</span> stripcenter = (strip + 0.5) * <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7f78b0e7074d28dbef820c2694dfdf27">scint_width_</a>;</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">if</span> (hcalsection == ldmx::HcalID::HcalSection::BACK) {</div>
-<div class="line"><span class="lineno">  106</span>          <span class="comment">// z position: zero-layer(z) + layer_z + scint_thickness</span></div>
-<div class="line"><span class="lineno">  107</span>          z = <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2056559dd3770954278ba10568af362b">zero_layer_</a>.at(section) + layercenter;</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  117</span>          <span class="keywordflow">if</span> (<a class="code hl_function" href="classldmx_1_1HcalGeometry.html#abdc2b638a8771d1e81e70637f8e3f162">layerIsHorizontal</a>(layer)) {</div>
-<div class="line"><span class="lineno">  118</span>            y = stripcenter - <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer);</div>
-<div class="line"><span class="lineno">  119</span>            x = 0;</div>
-<div class="line"><span class="lineno">  120</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  121</span>            x = stripcenter - <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer);</div>
-<div class="line"><span class="lineno">  122</span>            y = 0;</div>
-<div class="line"><span class="lineno">  123</span>          }</div>
-<div class="line"><span class="lineno">  124</span>      <span class="comment">// std::cout &lt;&lt; &quot;back (section,layer,strip)&quot; &lt;&lt; section &lt;&lt; &quot; &quot; &lt;&lt; layer &lt;&lt; &quot; &quot; &lt;&lt; strip;</span></div>
-<div class="line"><span class="lineno">  125</span>      <span class="comment">// std::cout &lt;&lt; &quot; (x,y,z) &quot; &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; &quot; &quot; &lt;&lt; z &lt;&lt; std::endl;</span></div>
-<div class="line"><span class="lineno">  126</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  138</span>      <span class="keywordflow">if</span>(side_3d_readout_ &amp;&amp; (layer%2==1)){</div>
-<div class="line"><span class="lineno">  139</span>        <span class="comment">// z position: zero-strip + half-width (center_strip) of strip</span></div>
-<div class="line"><span class="lineno">  140</span>        z = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer) + <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">getHalfTotalWidth</a>(section, layer);</div>
-<div class="line"><span class="lineno">  141</span>      }</div>
-<div class="line"><span class="lineno">  142</span>      <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  143</span>        <span class="comment">// z position: zero-strip(z) + strip_center(z)</span></div>
-<div class="line"><span class="lineno">  144</span>        z = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer) + stripcenter;</div>
-<div class="line"><span class="lineno">  145</span>      }</div>
-<div class="line"><span class="lineno">  146</span>      </div>
-<div class="line"><span class="lineno">  147</span>          <span class="keywordflow">if</span> (hcalsection == ldmx::HcalID::HcalSection::TOP or</div>
-<div class="line"><span class="lineno">  148</span>              hcalsection == ldmx::HcalID::HcalSection::BOTTOM) {</div>
-<div class="line"><span class="lineno">  149</span>        y = <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2056559dd3770954278ba10568af362b">zero_layer_</a>.at(section) + layercenter;</div>
-<div class="line"><span class="lineno">  150</span>        x = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">getHalfTotalWidth</a>(section, layer);</div>
-<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">if</span>(side_3d_readout_ &amp;&amp; layer%2==1)</div>
-<div class="line"><span class="lineno">  152</span>          x = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer) + stripcenter;</div>
-<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">if</span> (hcalsection == ldmx::HcalID::HcalSection::BOTTOM) {</div>
-<div class="line"><span class="lineno">  154</span>          y *= -1;</div>
-<div class="line"><span class="lineno">  155</span>          x *= -1;</div>
-<div class="line"><span class="lineno">  156</span>        }</div>
-<div class="line"><span class="lineno">  157</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  158</span>            x = <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2056559dd3770954278ba10568af362b">zero_layer_</a>.at(section) + layercenter;</div>
-<div class="line"><span class="lineno">  159</span>            y = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">getHalfTotalWidth</a>(section, layer);</div>
-<div class="line"><span class="lineno">  160</span>        <span class="keywordflow">if</span>(side_3d_readout_ &amp;&amp; layer%2==1)</div>
-<div class="line"><span class="lineno">  161</span>          y = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer) + stripcenter;</div>
-<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">if</span> (hcalsection == ldmx::HcalID::HcalSection::RIGHT) {</div>
-<div class="line"><span class="lineno">  163</span>              x *= -1;</div>
-<div class="line"><span class="lineno">  164</span>              y *= -1;</div>
-<div class="line"><span class="lineno">  165</span>            }</div>
-<div class="line"><span class="lineno">  166</span>          }</div>
-<div class="line"><span class="lineno">  167</span> </div>
-<div class="line"><span class="lineno">  168</span>      <span class="comment">// std::cout &lt;&lt; &quot;side (section,layer,strip)&quot; &lt;&lt; section &lt;&lt; &quot; &quot; &lt;&lt; layer &lt;&lt; &quot; &quot; &lt;&lt; strip;</span></div>
-<div class="line"><span class="lineno">  169</span>          <span class="comment">// std::cout &lt;&lt; &quot; (x,y,z) &quot; &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; &quot; &quot; &lt;&lt; z &lt;&lt; std::endl; </span></div>
-<div class="line"><span class="lineno">  170</span>        }</div>
-<div class="line"><span class="lineno">  171</span>        TVector3 pos;</div>
-<div class="line"><span class="lineno">  172</span>        pos.SetXYZ(x, y, z);</div>
-<div class="line"><span class="lineno">  173</span>        <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">strip_position_map_</a>[<a class="code hl_class" href="classldmx_1_1HcalID.html">ldmx::HcalID</a>(section, layer, strip)] = pos;</div>
-<div class="line"><span class="lineno">  174</span>      }  <span class="comment">// loop over strips</span></div>
-<div class="line"><span class="lineno">  175</span>    }    <span class="comment">// loop over layers</span></div>
-<div class="line"><span class="lineno">  176</span>  }      <span class="comment">// loop over sections</span></div>
-<div class="line"><span class="lineno">  177</span>}  <span class="comment">// strip position map</span></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a4585a2e4c1c583c85e7eab55433926a3"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">ldmx::HcalGeometry::getZeroStrip</a></div><div class="ttdeci">int getZeroStrip(int isection, int layer=1) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00114">HcalGeometry.h:114</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_abdc2b638a8771d1e81e70637f8e3f162"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#abdc2b638a8771d1e81e70637f8e3f162">ldmx::HcalGeometry::layerIsHorizontal</a></div><div class="ttdeci">bool layerIsHorizontal(const int layer) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00074">HcalGeometry.h:74</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_ad82569c330153a866ac05848a9ccf237"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#ad82569c330153a866ac05848a9ccf237">ldmx::HcalGeometry::getNumStrips</a></div><div class="ttdeci">int getNumStrips(int isection, int layer=1) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00106">HcalGeometry.h:106</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_adeae8f72212b4add374ecaaf95c5e9d2"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">ldmx::HcalGeometry::strip_position_map_</a></div><div class="ttdeci">std::map&lt; ldmx::HcalID, TVector3 &gt; strip_position_map_</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00233">HcalGeometry.h:233</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_af73349f39d306c94576a5f7c486325c7"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">ldmx::HcalGeometry::getHalfTotalWidth</a></div><div class="ttdeci">double getHalfTotalWidth(int isection, int layer=1) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00083">HcalGeometry.h:83</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8cxx_source.html#l00130">130</a> of file <a class="el" href="HcalGeometry_8cxx_source.html">HcalGeometry.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>                                         {</div>
+<div class="line"><span class="lineno">  131</span>  <span class="comment">// We hard-code the number of sections as seen in HcalID</span></div>
+<div class="line"><span class="lineno">  132</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> section = 0; section &lt; <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#afd858e1df4fa199bd8796f402fa88fe9">num_sections_</a>; section++) {</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> layer = 1; layer &lt;= <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">num_layers_</a>[section]; layer++) {</div>
+<div class="line"><span class="lineno">  134</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> strip = 0; strip &lt; <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#ad82569c330153a866ac05848a9ccf237">getNumStrips</a>(section, layer); strip++) {</div>
+<div class="line"><span class="lineno">  135</span>        <span class="comment">// initialize values</span></div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordtype">double</span> x{-99999}, y{-99999}, z{-99999};</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>        <span class="comment">// get hcal section</span></div>
+<div class="line"><span class="lineno">  139</span>        <a class="code hl_enumeration" href="classldmx_1_1HcalID.html#ab6f209e08e1ef415446377d2da6748fa">ldmx::HcalID::HcalSection</a> hcalsection =</div>
+<div class="line"><span class="lineno">  140</span>            (<a class="code hl_enumeration" href="classldmx_1_1HcalID.html#ab6f209e08e1ef415446377d2da6748fa">ldmx::HcalID::HcalSection</a>)section;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>        <span class="keyword">const</span> <a class="code hl_class" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> <span class="keywordtype">id</span>{section, layer, strip};</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keyword">const</span> <span class="keyword">auto</span> orientation{getScintillatorOrientation(<span class="keywordtype">id</span>)};</div>
+<div class="line"><span class="lineno">  144</span>        <span class="comment">// the center of a layer: (layer-1) * (layer_thickness) +</span></div>
+<div class="line"><span class="lineno">  145</span>        <span class="comment">// scint_thickness/2</span></div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordtype">double</span> layercenter =</div>
+<div class="line"><span class="lineno">  147</span>            (layer - 1) * <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a020f131060e9832fe2483b02c1a7fa3b">layer_thickness_</a>.at(section) + 0.5 * <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a97caeb4038383e7ff60324ea1fa6770d">scint_thickness_</a>;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>        <span class="comment">// the center of a strip: (strip + 0.5) * (strip_dx)</span></div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordtype">double</span> stripcenter = (strip + 0.5) * <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7f78b0e7074d28dbef820c2694dfdf27">scint_width_</a>;</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">if</span> (hcalsection == ldmx::HcalID::HcalSection::BACK) {</div>
+<div class="line"><span class="lineno">  159</span>          <span class="comment">// z position: zero-layer(z) + layer_z + scint_thickness / 2</span></div>
+<div class="line"><span class="lineno">  160</span>          z = <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2056559dd3770954278ba10568af362b">zero_layer_</a>.at(section) + layercenter;</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  170</span>          <span class="keywordflow">if</span> (orientation == ScintillatorOrientation::horizontal) {</div>
+<div class="line"><span class="lineno">  171</span>            y = stripcenter - <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer);</div>
+<div class="line"><span class="lineno">  172</span>            x = 0;</div>
+<div class="line"><span class="lineno">  173</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  174</span>            x = stripcenter - <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer);</div>
+<div class="line"><span class="lineno">  175</span>            y = 0;</div>
+<div class="line"><span class="lineno">  176</span>          }</div>
+<div class="line"><span class="lineno">  177</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  190</span>          <span class="keywordflow">if</span> (side_3d_readout_ &amp;&amp;</div>
+<div class="line"><span class="lineno">  191</span>              orientation == ScintillatorOrientation::depth) {</div>
+<div class="line"><span class="lineno">  192</span>            <span class="comment">// z position: zero-strip + half-width (center_strip) of strip</span></div>
+<div class="line"><span class="lineno">  193</span>            z = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer) +</div>
+<div class="line"><span class="lineno">  194</span>                <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">getHalfTotalWidth</a>(section, layer);</div>
+<div class="line"><span class="lineno">  195</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  196</span>            <span class="comment">// z position: zero-strip(z) + strip_center(z)</span></div>
+<div class="line"><span class="lineno">  197</span>            z = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer) + stripcenter;</div>
+<div class="line"><span class="lineno">  198</span>          }</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>          <span class="keywordflow">if</span> (hcalsection == ldmx::HcalID::HcalSection::TOP or</div>
+<div class="line"><span class="lineno">  201</span>              hcalsection == ldmx::HcalID::HcalSection::BOTTOM) {</div>
+<div class="line"><span class="lineno">  202</span>            y = <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2056559dd3770954278ba10568af362b">zero_layer_</a>.at(section) + layercenter;</div>
+<div class="line"><span class="lineno">  203</span>            x = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">getHalfTotalWidth</a>(section, layer);</div>
+<div class="line"><span class="lineno">  204</span>            <span class="keywordflow">if</span> (side_3d_readout_ &amp;&amp;</div>
+<div class="line"><span class="lineno">  205</span>                orientation == ScintillatorOrientation::horizontal) {</div>
+<div class="line"><span class="lineno">  206</span>              x = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer) + stripcenter;</div>
+<div class="line"><span class="lineno">  207</span>            }</div>
+<div class="line"><span class="lineno">  208</span>            <span class="keywordflow">if</span> (hcalsection == ldmx::HcalID::HcalSection::BOTTOM) {</div>
+<div class="line"><span class="lineno">  209</span>              y *= -1;</div>
+<div class="line"><span class="lineno">  210</span>              x *= -1;</div>
+<div class="line"><span class="lineno">  211</span>            }</div>
+<div class="line"><span class="lineno">  212</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  213</span>            x = <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2056559dd3770954278ba10568af362b">zero_layer_</a>.at(section) + layercenter;</div>
+<div class="line"><span class="lineno">  214</span>            y = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">getHalfTotalWidth</a>(section, layer);</div>
+<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">if</span> (side_3d_readout_ &amp;&amp;</div>
+<div class="line"><span class="lineno">  216</span>                orientation == ScintillatorOrientation::vertical) {</div>
+<div class="line"><span class="lineno">  217</span>              y = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">getZeroStrip</a>(section, layer) + stripcenter;</div>
+<div class="line"><span class="lineno">  218</span>            }</div>
+<div class="line"><span class="lineno">  219</span>            <span class="keywordflow">if</span> (hcalsection == ldmx::HcalID::HcalSection::RIGHT) {</div>
+<div class="line"><span class="lineno">  220</span>              x *= -1;</div>
+<div class="line"><span class="lineno">  221</span>              y *= -1;</div>
+<div class="line"><span class="lineno">  222</span>            }</div>
+<div class="line"><span class="lineno">  223</span>          }</div>
+<div class="line"><span class="lineno">  224</span>        }</div>
+<div class="line"><span class="lineno">  225</span>        TVector3 pos;</div>
+<div class="line"><span class="lineno">  226</span>        pos.SetXYZ(x, y, z);</div>
+<div class="line"><span class="lineno">  227</span>        <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">strip_position_map_</a>[<a class="code hl_class" href="classldmx_1_1HcalID.html">ldmx::HcalID</a>(section, layer, strip)] = pos;</div>
+<div class="line"><span class="lineno">  228</span>      } <span class="comment">// loop over strips</span></div>
+<div class="line"><span class="lineno">  229</span>    }   <span class="comment">// loop over layers</span></div>
+<div class="line"><span class="lineno">  230</span>  }     <span class="comment">// loop over sections</span></div>
+<div class="line"><span class="lineno">  231</span>} <span class="comment">// strip position map</span></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a4585a2e4c1c583c85e7eab55433926a3"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a4585a2e4c1c583c85e7eab55433926a3">ldmx::HcalGeometry::getZeroStrip</a></div><div class="ttdeci">int getZeroStrip(int isection, int layer=1) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00139">HcalGeometry.h:139</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_ad82569c330153a866ac05848a9ccf237"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#ad82569c330153a866ac05848a9ccf237">ldmx::HcalGeometry::getNumStrips</a></div><div class="ttdeci">int getNumStrips(int isection, int layer=1) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00131">HcalGeometry.h:131</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_adeae8f72212b4add374ecaaf95c5e9d2"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">ldmx::HcalGeometry::strip_position_map_</a></div><div class="ttdeci">std::map&lt; ldmx::HcalID, TVector3 &gt; strip_position_map_</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00283">HcalGeometry.h:283</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_af73349f39d306c94576a5f7c486325c7"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#af73349f39d306c94576a5f7c486325c7">ldmx::HcalGeometry::getHalfTotalWidth</a></div><div class="ttdeci">double getHalfTotalWidth(int isection, int layer=1) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00099">HcalGeometry.h:99</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalID_html"><div class="ttname"><a href="classldmx_1_1HcalID.html">ldmx::HcalID</a></div><div class="ttdoc">Implements detector ids for HCal subdetector.</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00019">HcalID.h:19</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalID_html_ab6f209e08e1ef415446377d2da6748fa"><div class="ttname"><a href="classldmx_1_1HcalID.html#ab6f209e08e1ef415446377d2da6748fa">ldmx::HcalID::HcalSection</a></div><div class="ttdeci">HcalSection</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00024">HcalID.h:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00083">getHalfTotalWidth()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00106">getNumStrips()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00114">getZeroStrip()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00199">layer_thickness_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00074">layerIsHorizontal()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00202">num_layers_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00205">num_sections_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00190">scint_thickness_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00193">scint_width_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00233">strip_position_map_</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00196">zero_layer_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00099">getHalfTotalWidth()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00131">getNumStrips()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00139">getZeroStrip()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00248">layer_thickness_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00251">num_layers_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00254">num_sections_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00239">scint_thickness_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00242">scint_width_</a>, <a class="el" href="HcalGeometry_8h_source.html#l00283">strip_position_map_</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00245">zero_layer_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
@@ -457,10 +521,10 @@ half_total_width_.
 </div><div class="memdoc">
 <p >Get the length of the Ecal in (x) for the side Hcal. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00123">123</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a210abedb92ed0b5da9df1d0b058a08a3">ecal_dx_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00147">147</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a210abedb92ed0b5da9df1d0b058a08a3">ecal_dx_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00208">ecal_dx_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00257">ecal_dx_</a>.</p>
 
 </div>
 </div>
@@ -488,8 +552,8 @@ half_total_width_.
 </div><div class="memdoc">
 <p >Get the length of the Ecal in (y) for the side Hcal </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00128">128</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>{ <span class="keywordflow">return</span> ecal_dy_; }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00152">152</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>{ <span class="keywordflow">return</span> ecal_dy_; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -535,15 +599,16 @@ half_total_width_.
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>half total width [mm] </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00083">83</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>                                                              {</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keyword">auto</span> layer_index = layer - 1;</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">half_total_width_</a>.at(isection).at(layer_index);</div>
-<div class="line"><span class="lineno">   86</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00099">99</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>                                                              {</div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">// Layer numbering starts at 1, but a vector is zero-indexed</span></div>
+<div class="line"><span class="lineno">  101</span>    <span class="keyword">auto</span> layer_index = layer - 1;</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7dec957f06b9356bf4ca0d7178f47837">half_total_width_</a>.at(isection).at(layer_index);</div>
+<div class="line"><span class="lineno">  103</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00227">half_total_width_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00273">half_total_width_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>.</p>
 
 </div>
 </div>
@@ -572,10 +637,10 @@ half_total_width_.
 </div><div class="memdoc">
 <p >Get the number of layers for that section. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00101">101</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">num_layers_</a>.at(isection); }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00126">126</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">num_layers_</a>.at(isection); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00202">num_layers_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00251">num_layers_</a>.</p>
 
 </div>
 </div>
@@ -603,10 +668,10 @@ half_total_width_.
 </div><div class="memdoc">
 <p >Get the number of sections. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00096">96</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#afd858e1df4fa199bd8796f402fa88fe9">num_sections_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00121">121</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#afd858e1df4fa199bd8796f402fa88fe9">num_sections_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00205">num_sections_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00254">num_sections_</a>.</p>
 
 </div>
 </div>
@@ -645,16 +710,114 @@ half_total_width_.
 </div><div class="memdoc">
 <p >Get the number of strips per layer for that section and layer. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00106">106</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>                                                      {</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keyword">auto</span> layer_index = layer - 1;</div>
-<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">num_strips_</a>.at(isection).at(layer_index);</div>
-<div class="line"><span class="lineno">  109</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00131">131</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>                                                      {</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keyword">auto</span> layer_index = layer - 1;</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#af29b213826d8759c0abce4156a7f358a">num_strips_</a>.at(isection).at(layer_index);</div>
+<div class="line"><span class="lineno">  134</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00223">num_strips_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00269">num_strips_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00066">printPositionMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00116">printPositionMap()</a>.</p>
 
+</div>
+</div>
+<a id="a6c011dee07f0668f0c491b7e31021a5a" name="a6c011dee07f0668f0c491b7e31021a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c011dee07f0668f0c491b7e31021a5a">&#9670;&#160;</a></span>getScintillatorLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ldmx::HcalGeometry::getScintillatorLength </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Get the length of a scintillator bar </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The <a class="el" href="classldmx_1_1HcalID.html" title="Implements detector ids for HCal subdetector.">HcalID</a> of the bar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The length of the bar with ID <code>id</code> [mm] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00110">110</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                                    {</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a6db0953231b1cff8b5afcf7596fcfcbf">scint_length_</a>.at(<span class="keywordtype">id</span>.section()).at(<span class="keywordtype">id</span>.layer() - 1);</div>
+<div class="line"><span class="lineno">  112</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00275">scint_length_</a>.</p>
+
+</div>
+</div>
+<a id="aeb59a5720f81d7cbf5c073de70cd1a1b" name="aeb59a5720f81d7cbf5c073de70cd1a1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb59a5720f81d7cbf5c073de70cd1a1b">&#9670;&#160;</a></span>getScintillatorOrientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classldmx_1_1HcalGeometry.html#ad5f8443b75b77425ef323331f02a941e">HcalGeometry::ScintillatorOrientation</a> ldmx::HcalGeometry::getScintillatorOrientation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8cxx_source.html#l00079">79</a> of file <a class="el" href="HcalGeometry_8cxx_source.html">HcalGeometry.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>                                                                  {</div>
+<div class="line"><span class="lineno">   80</span>  <span class="keywordflow">if</span> (<span class="keywordtype">id</span>.section() == ldmx::HcalID::HcalSection::BACK) {</div>
+<div class="line"><span class="lineno">   81</span>    <span class="comment">// Configurable, same for all geometries</span></div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> <span class="keywordtype">id</span>.layer() % 2 == back_horizontal_parity_</div>
+<div class="line"><span class="lineno">   83</span>               ? ScintillatorOrientation::horizontal</div>
+<div class="line"><span class="lineno">   84</span>               : ScintillatorOrientation::vertical;</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+<div class="line"><span class="lineno">   86</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a0473a9b3b37de113a8cdaa7853edbb81">hasSide3DReadout</a>()) {</div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment">// v14 or later detector</span></div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">switch</span> (<span class="keywordtype">id</span>.section()) {</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::TOP:</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::BOTTOM:</div>
+<div class="line"><span class="lineno">   91</span>      <span class="comment">// Odd layers are in z/depth direction, even are in the x/horizontal</span></div>
+<div class="line"><span class="lineno">   92</span>      <span class="comment">// direction</span></div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">return</span> <span class="keywordtype">id</span>.layer() % 2 == 0 ? ScintillatorOrientation::horizontal</div>
+<div class="line"><span class="lineno">   94</span>                                 : ScintillatorOrientation::depth;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::LEFT:</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::RIGHT:</div>
+<div class="line"><span class="lineno">   98</span>      <span class="comment">// Odd layers are in the z/depth direction, even are in the y/vertical</span></div>
+<div class="line"><span class="lineno">   99</span>      <span class="comment">// direction</span></div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">return</span> <span class="keywordtype">id</span>.layer() % 2 == 0 ? ScintillatorOrientation::vertical</div>
+<div class="line"><span class="lineno">  101</span>                                 : ScintillatorOrientation::depth;</div>
+<div class="line"><span class="lineno">  102</span>    } <span class="comment">// V14 or later detector</span></div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+<div class="line"><span class="lineno">  104</span>  <span class="comment">// v13/v12</span></div>
+<div class="line"><span class="lineno">  105</span>  <span class="keywordflow">switch</span> (<span class="keywordtype">id</span>.section()) {</div>
+<div class="line"><span class="lineno">  106</span>  <span class="comment">// For the v13 side hcal, the bars in each section have the same</span></div>
+<div class="line"><span class="lineno">  107</span>  <span class="comment">// orientation</span></div>
+<div class="line"><span class="lineno">  108</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::TOP:</div>
+<div class="line"><span class="lineno">  109</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::BOTTOM:</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> ScintillatorOrientation::horizontal;</div>
+<div class="line"><span class="lineno">  111</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::LEFT:</div>
+<div class="line"><span class="lineno">  112</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::RIGHT:</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> ScintillatorOrientation::vertical;</div>
+<div class="line"><span class="lineno">  114</span>  } <span class="comment">// v13/v12 detector</span></div>
+<div class="line"><span class="lineno">  115</span>}</div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a0473a9b3b37de113a8cdaa7853edbb81"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a0473a9b3b37de113a8cdaa7853edbb81">ldmx::HcalGeometry::hasSide3DReadout</a></div><div class="ttdeci">bool hasSide3DReadout() const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00160">HcalGeometry.h:160</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9234f529bb41080ae63df04bd52eacb4" name="a9234f529bb41080ae63df04bd52eacb4"></a>
@@ -681,10 +844,10 @@ half_total_width_.
 </div><div class="memdoc">
 <p >Get the scitillator width </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00091">91</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7f78b0e7074d28dbef820c2694dfdf27">scint_width_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00116">116</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a7f78b0e7074d28dbef820c2694dfdf27">scint_width_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00193">scint_width_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00242">scint_width_</a>.</p>
 
 </div>
 </div>
@@ -726,14 +889,14 @@ half_total_width_.
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A TVector3 with the X, Y and Z position of the center of the bar. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00059">59</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>                                                       {</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">strip_position_map_</a>.at(<span class="keywordtype">id</span>);</div>
-<div class="line"><span class="lineno">   61</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00074">74</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                       {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">strip_position_map_</a>.at(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   76</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00233">strip_position_map_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00283">strip_position_map_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00066">printPositionMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00116">printPositionMap()</a>.</p>
 
 </div>
 </div>
@@ -761,12 +924,12 @@ half_total_width_.
 </div><div class="memdoc">
 <p >Get the strip position map </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00066">66</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                           {</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">strip_position_map_</a>;</div>
-<div class="line"><span class="lineno">   68</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00081">81</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                                           {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#adeae8f72212b4add374ecaaf95c5e9d2">strip_position_map_</a>;</div>
+<div class="line"><span class="lineno">   83</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00233">strip_position_map_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00283">strip_position_map_</a>.</p>
 
 </div>
 </div>
@@ -805,20 +968,20 @@ half_total_width_.
 </div><div class="memdoc">
 <p >Get the location of the zeroStrip in a given section and layer </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00114">114</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>                                                      {</div>
-<div class="line"><span class="lineno">  115</span>    <span class="keyword">auto</span> layer_index = layer - 1;</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2da7c85244dbbfafd674241676456f09">zero_strip_</a>.at(isection).at(layer_index);</div>
-<div class="line"><span class="lineno">  117</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00139">139</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                                                      {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keyword">auto</span> layer_index = layer - 1;</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a2da7c85244dbbfafd674241676456f09">zero_strip_</a>.at(isection).at(layer_index);</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00225">zero_strip_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00271">zero_strip_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>.</p>
 
 </div>
 </div>
-<a id="abdc2b638a8771d1e81e70637f8e3f162" name="abdc2b638a8771d1e81e70637f8e3f162"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdc2b638a8771d1e81e70637f8e3f162">&#9670;&#160;</a></span>layerIsHorizontal()</h2>
+<a id="a0473a9b3b37de113a8cdaa7853edbb81" name="a0473a9b3b37de113a8cdaa7853edbb81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0473a9b3b37de113a8cdaa7853edbb81">&#9670;&#160;</a></span>hasSide3DReadout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -827,10 +990,9 @@ half_total_width_.
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ldmx::HcalGeometry::layerIsHorizontal </td>
+          <td class="memname">bool ldmx::HcalGeometry::hasSide3DReadout </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>layer</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -840,51 +1002,39 @@ half_total_width_.
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Check whether a given layer corresponds to a horizontal (scintillator length along the x-axis) or vertical layer. See the horizontal_parity_ member for details. </p>
+<p >Does the Side Hcal have 3D readout?</p>
+<p >In other words, does the side hcal layers alter in scintillator direction (z vs x/y). </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00074">74</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                {</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> layer % 2 == horizontal_parity_;</div>
-<div class="line"><span class="lineno">   76</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00160">160</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>{ <span class="keywordflow">return</span> side_3d_readout_; }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>.</p>
-
 </div>
 </div>
-<a id="a4939b3025d6500fc34af8f9673c5e57a" name="a4939b3025d6500fc34af8f9673c5e57a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4939b3025d6500fc34af8f9673c5e57a">&#9670;&#160;</a></span>makeCanonicalLayeredParameter()</h2>
+<a id="acba00c02098f5836c3fc53105504598d" name="acba00c02098f5836c3fc53105504598d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba00c02098f5836c3fc53105504598d">&#9670;&#160;</a></span>isPrototype()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::vector&lt; T &gt; &gt; ldmx::HcalGeometry::makeCanonicalLayeredParameter </td>
+          <td class="memname">bool ldmx::HcalGeometry::isPrototype </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>parameter</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00175">175</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  175</span>                                                                                        {</div>
-<div class="line"><span class="lineno">  176</span>     std::vector&lt;std::vector&lt;T&gt;&gt; result;</div>
-<div class="line"><span class="lineno">  177</span>     <span class="keywordflow">for</span>(<span class="keyword">auto</span> section = 0; section &lt; parameter.size(); ++section) {</div>
-<div class="line"><span class="lineno">  178</span>       result.push_back(std::vector&lt;T&gt;(<a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">num_layers_</a>[section], parameter[section]));</div>
-<div class="line"><span class="lineno">  179</span>     }</div>
-<div class="line"><span class="lineno">  180</span>     <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  181</span>   }</div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00166">166</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>{ <span class="keywordflow">return</span> is_prototype_; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -912,17 +1062,16 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Debugging utility, prints out the <a class="el" href="classldmx_1_1HcalID.html" title="Implements detector ids for HCal subdetector.">HcalID</a> and corresponding value of all entries in the strip_position_map_. For printing only one of the sections, see the overloaded version of this function taking a section parameter. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00163">163</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  163</span>                                  {</div>
-<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> section = 0; section &lt; <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#afd858e1df4fa199bd8796f402fa88fe9">num_sections_</a> ; ++section) {</div>
-<div class="line"><span class="lineno">  165</span>        <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a6c7d0a025977305c3aa5aa224c205608">printPositionMap</a>(section);</div>
-<div class="line"><span class="lineno">  166</span>      }</div>
-<div class="line"><span class="lineno">  167</span>    }</div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a6c7d0a025977305c3aa5aa224c205608"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a6c7d0a025977305c3aa5aa224c205608">ldmx::HcalGeometry::printPositionMap</a></div><div class="ttdeci">void printPositionMap() const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00163">HcalGeometry.h:163</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00227">227</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>                                {</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> section = 0; section &lt; <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#afd858e1df4fa199bd8796f402fa88fe9">num_sections_</a>; ++section) {</div>
+<div class="line"><span class="lineno">  229</span>      <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a6c7d0a025977305c3aa5aa224c205608">printPositionMap</a>(section);</div>
+<div class="line"><span class="lineno">  230</span>    }</div>
+<div class="line"><span class="lineno">  231</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00205">num_sections_</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00163">printPositionMap()</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00254">num_sections_</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00227">printPositionMap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00163">printPositionMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00227">printPositionMap()</a>.</p>
 
 </div>
 </div>
@@ -957,25 +1106,88 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8cxx_source.html#l00066">66</a> of file <a class="el" href="HcalGeometry_8cxx_source.html">HcalGeometry.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                     {</div>
-<div class="line"><span class="lineno">   67</span>  <span class="comment">// Note that layer numbering starts at 1 rather than 0</span></div>
-<div class="line"><span class="lineno">   68</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> layer = 1; layer &lt;= <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">num_layers_</a>[section]; ++layer) {</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> strip = 0; strip &lt; <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#ad82569c330153a866ac05848a9ccf237">getNumStrips</a>(section, layer); ++strip) {</div>
-<div class="line"><span class="lineno">   70</span>      HcalID id(section, layer, strip);</div>
-<div class="line"><span class="lineno">   71</span>      <span class="keyword">auto</span> centerPosition = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a11cb28d0d0d3d2a109126c7ecde880df">getStripCenterPosition</a>(<span class="keywordtype">id</span>);</div>
-<div class="line"><span class="lineno">   72</span>      <span class="keyword">auto</span> x = centerPosition[0];</div>
-<div class="line"><span class="lineno">   73</span>      <span class="keyword">auto</span> y = centerPosition[1];</div>
-<div class="line"><span class="lineno">   74</span>      <span class="keyword">auto</span> z = centerPosition[2];</div>
-<div class="line"><span class="lineno">   75</span>      std::cout &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;: Center position: (&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; z</div>
-<div class="line"><span class="lineno">   76</span>                &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   77</span>    }</div>
-<div class="line"><span class="lineno">   78</span>  }</div>
-<div class="line"><span class="lineno">   79</span>}</div>
-<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a11cb28d0d0d3d2a109126c7ecde880df"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a11cb28d0d0d3d2a109126c7ecde880df">ldmx::HcalGeometry::getStripCenterPosition</a></div><div class="ttdeci">TVector3 getStripCenterPosition(ldmx::HcalID id) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00059">HcalGeometry.h:59</a></div></div>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8cxx_source.html#l00116">116</a> of file <a class="el" href="HcalGeometry_8cxx_source.html">HcalGeometry.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>                                                     {</div>
+<div class="line"><span class="lineno">  117</span>  <span class="comment">// Note that layer numbering starts at 1 rather than 0</span></div>
+<div class="line"><span class="lineno">  118</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> layer = 1; layer &lt;= <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#abe5e336beafb19d5aa20f3995de28661">num_layers_</a>[section]; ++layer) {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> strip = 0; strip &lt; <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#ad82569c330153a866ac05848a9ccf237">getNumStrips</a>(section, layer); ++strip) {</div>
+<div class="line"><span class="lineno">  120</span>      HcalID id(section, layer, strip);</div>
+<div class="line"><span class="lineno">  121</span>      <span class="keyword">auto</span> centerPosition = <a class="code hl_function" href="classldmx_1_1HcalGeometry.html#a11cb28d0d0d3d2a109126c7ecde880df">getStripCenterPosition</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  122</span>      <span class="keyword">auto</span> x = centerPosition[0];</div>
+<div class="line"><span class="lineno">  123</span>      <span class="keyword">auto</span> y = centerPosition[1];</div>
+<div class="line"><span class="lineno">  124</span>      <span class="keyword">auto</span> z = centerPosition[2];</div>
+<div class="line"><span class="lineno">  125</span>      std::cout &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;: Center position: (&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; z</div>
+<div class="line"><span class="lineno">  126</span>                &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+<div class="line"><span class="lineno">  129</span>}</div>
+<div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a11cb28d0d0d3d2a109126c7ecde880df"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a11cb28d0d0d3d2a109126c7ecde880df">ldmx::HcalGeometry::getStripCenterPosition</a></div><div class="ttdeci">TVector3 getStripCenterPosition(ldmx::HcalID id) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00074">HcalGeometry.h:74</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00106">getNumStrips()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00059">getStripCenterPosition()</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00202">num_layers_</a>.</p>
+<p class="reference">References <a class="el" href="HcalGeometry_8h_source.html#l00131">getNumStrips()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00074">getStripCenterPosition()</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00251">num_layers_</a>.</p>
 
+</div>
+</div>
+<a id="a901d40ccbc498ee04672103a137cbf6c" name="a901d40ccbc498ee04672103a137cbf6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a901d40ccbc498ee04672103a137cbf6c">&#9670;&#160;</a></span>rotateGlobalToLocalBarPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; ldmx::HcalGeometry::rotateGlobalToLocalBarPosition </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>globalPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Coordinates that are given by Geant4 are typically global. These can be transformed into corresponding local coordinates of a volume with a TopTransform. However, a TopTransform translates to the local bar but does not do the rotation (this is because we don't do a rotation when placing the bars in the GDML). This is used primarily for recording pre and post step positions in local coordinates of the volume in HcalSD.</p>
+<p >the logic below does the rotation to the local coordiates where x : short transverse side of bar y : long transverse side of bar z : along length of bar</p>
+<dl class="section note"><dt>Note</dt><dd>This logic only applies to the v14 and prototype detector; however, support for v12 is not broken because no studies using these pre/post step positions have been (or should be) done with the v12 detector. / </dd>
+<dd>
+: The native position type in Geant4 is typically a G4ThreeVector, which is a typedef for a CLHEP::Hep3Vector. However, DetDescr currently does not have a dependency on Geant4/CLHEP so we are taking the position as a vector of floats (which is what is used by <a class="el" href="classldmx_1_1SimCalorimeterHit.html" title="Stores simulated calorimeter hit information.">SimCalorimeterHit</a>) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8cxx_source.html#l00048">48</a> of file <a class="el" href="HcalGeometry_8cxx_source.html">HcalGeometry.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                                         {</div>
+<div class="line"><span class="lineno">   50</span>  <span class="keyword">const</span> <span class="keyword">auto</span> orientation{getScintillatorOrientation(<span class="keywordtype">id</span>)};</div>
+<div class="line"><span class="lineno">   51</span>  <span class="keywordflow">switch</span> (<span class="keywordtype">id</span>.section()) {</div>
+<div class="line"><span class="lineno">   52</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::BACK:</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">switch</span> (orientation) {</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">case</span> ScintillatorOrientation::horizontal:</div>
+<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">return</span> {globalPosition[2], globalPosition[1], globalPosition[0]};</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">case</span> ScintillatorOrientation::vertical:</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keywordflow">return</span> {globalPosition[2], globalPosition[0], globalPosition[1]};</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::TOP:</div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::BOTTOM:</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">switch</span> (orientation) {</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">case</span> ScintillatorOrientation::horizontal:</div>
+<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">return</span> {globalPosition[1], globalPosition[2], globalPosition[0]};</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">case</span> ScintillatorOrientation::depth:</div>
+<div class="line"><span class="lineno">   65</span>      <span class="keywordflow">return</span> {globalPosition[1], globalPosition[0], globalPosition[2]};</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::LEFT:</div>
+<div class="line"><span class="lineno">   68</span>  <span class="keywordflow">case</span> ldmx::HcalID::HcalSection::RIGHT:</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">switch</span> (orientation) {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">case</span> ScintillatorOrientation::vertical:</div>
+<div class="line"><span class="lineno">   71</span>      <span class="keywordflow">return</span> {globalPosition[0], globalPosition[2], globalPosition[1]};</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">case</span> ScintillatorOrientation::depth:</div>
+<div class="line"><span class="lineno">   73</span>      <span class="keywordflow">return</span> globalPosition;</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span>  }</div>
+<div class="line"><span class="lineno">   76</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
@@ -999,11 +1211,35 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00137">137</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00201">201</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8758d43009e11dfce3e7c12b6f7072ab" name="a8758d43009e11dfce3e7c12b6f7072ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8758d43009e11dfce3e7c12b6f7072ab">&#9670;&#160;</a></span>back_horizontal_parity_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ldmx::HcalGeometry::back_horizontal_parity_ {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00263">263</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+
+</div>
+</div>
 <a id="a509523c5f18a53d16be9d6a79e6e590a" name="a509523c5f18a53d16be9d6a79e6e590a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a509523c5f18a53d16be9d6a79e6e590a">&#9670;&#160;</a></span>CONDITIONS_OBJECT_NAME</h2>
 
@@ -1053,9 +1289,9 @@ template&lt;typename T &gt; </div>
 
 <p>Lenght of the Ecal (in x and y) </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00208">208</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00257">257</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00123">getEcalDx()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00147">getEcalDx()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
 </div>
 </div>
@@ -1079,7 +1315,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00209">209</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00258">258</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
 </div>
 </div>
@@ -1105,14 +1341,14 @@ template&lt;typename T &gt; </div>
 
 <p>Half Total Width of Strips [mm]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00227">227</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00273">273</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00083">getHalfTotalWidth()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00099">getHalfTotalWidth()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
 </div>
 </div>
-<a id="aed2dba6f053ba808ebf891f6a345a7aa" name="aed2dba6f053ba808ebf891f6a345a7aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed2dba6f053ba808ebf891f6a345a7aa">&#9670;&#160;</a></span>horizontal_parity_</h2>
+<a id="aa761b0115f768a9e37913b49d77a2eaf" name="aa761b0115f768a9e37913b49d77a2eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa761b0115f768a9e37913b49d77a2eaf">&#9670;&#160;</a></span>is_prototype_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1121,7 +1357,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ldmx::HcalGeometry::horizontal_parity_ {}</td>
+          <td class="memname">bool ldmx::HcalGeometry::is_prototype_ {}</td>
         </tr>
       </table>
   </td>
@@ -1131,7 +1367,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00214">214</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00277">277</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
 </div>
 </div>
@@ -1157,9 +1393,9 @@ template&lt;typename T &gt; </div>
 
 <p>Thickness of the layers in each section [mm]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00199">199</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00248">248</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
 </div>
 </div>
@@ -1185,9 +1421,9 @@ template&lt;typename T &gt; </div>
 
 <p>Number of layers in each section. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00202">202</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00251">251</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00101">getNumLayers()</a>, <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00066">printPositionMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00126">getNumLayers()</a>, <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00116">printPositionMap()</a>.</p>
 
 </div>
 </div>
@@ -1213,9 +1449,9 @@ template&lt;typename T &gt; </div>
 
 <p>Number of sections. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00205">205</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00254">254</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00096">getNumSections()</a>, <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00163">printPositionMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00121">getNumSections()</a>, <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00227">printPositionMap()</a>.</p>
 
 </div>
 </div>
@@ -1240,11 +1476,38 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Number of strips per layer in each section and each layer. </p>
-<p >Canonical layered version of parameters that differ between geometry versions. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00223">223</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00269">269</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00106">getNumStrips()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00131">getNumStrips()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+
+</div>
+</div>
+<a id="a6db0953231b1cff8b5afcf7596fcfcbf" name="a6db0953231b1cff8b5afcf7596fcfcbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6db0953231b1cff8b5afcf7596fcfcbf">&#9670;&#160;</a></span>scint_length_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; ldmx::HcalGeometry::scint_length_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Length of strips [mm]. </p>
+
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00275">275</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00110">getScintillatorLength()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
 </div>
 </div>
@@ -1270,9 +1533,9 @@ template&lt;typename T &gt; </div>
 
 <p>Thickness of scintillator. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00190">190</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00239">239</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
 </div>
 </div>
@@ -1298,9 +1561,9 @@ template&lt;typename T &gt; </div>
 
 <p>Width of Scintillator Strip [mm]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00193">193</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00242">242</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00091">getScintillatorWidth()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00116">getScintillatorWidth()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
 </div>
 </div>
@@ -1324,7 +1587,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00217">217</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00266">266</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
 </div>
 </div>
@@ -1349,9 +1612,9 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Map of the <a class="el" href="classldmx_1_1HcalID.html" title="Implements detector ids for HCal subdetector.">HcalID</a> position of strip centers relative to world geometry. The map is not configurable and is calculated by <a class="el" href="classldmx_1_1HcalGeometry.html#a251e7d4fcfab5784e5d7a442ea6678e3">buildStripPositionMap()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00233">233</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00283">283</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00059">getStripCenterPosition()</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00066">getStripPositionMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, <a class="el" href="HcalGeometry_8h_source.html#l00074">getStripCenterPosition()</a>, and <a class="el" href="HcalGeometry_8h_source.html#l00081">getStripPositionMap()</a>.</p>
 
 </div>
 </div>
@@ -1376,7 +1639,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Parameters that apply to all types of geometries Verbosity, not configurable but helpful if developing </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00187">187</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00236">236</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
@@ -1404,9 +1667,9 @@ template&lt;typename T &gt; </div>
 
 <p>Front of HCal relative to world geometry for each section [mm]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00196">196</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00245">245</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00080">buildStripPositionMap()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8cxx_source.html#l00130">buildStripPositionMap()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
 </div>
 </div>
@@ -1432,9 +1695,9 @@ template&lt;typename T &gt; </div>
 
 <p>The plane of the zero'th strip of each section [mm]. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00225">225</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalGeometry_8h_source.html#l00271">271</a> of file <a class="el" href="HcalGeometry_8h_source.html">HcalGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00114">getZeroStrip()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalGeometry_8h_source.html#l00139">getZeroStrip()</a>, and <a class="el" href="HcalGeometry_8cxx_source.html#l00011">HcalGeometry()</a>.</p>
 
 </div>
 </div>
