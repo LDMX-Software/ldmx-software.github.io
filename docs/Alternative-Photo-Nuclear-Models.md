@@ -2,49 +2,24 @@
 layout: default
 ---
 
-This page details the options in LDMX-sw that allow you to change the default model used in Geant4 for modelling photo nuclear interactions. This can either be to change to a completely different model than Bertini, or to use an instrumented version either for debugging purposes or to solve some task like generating particular final states.
+This page details the options in LDMX-sw that allow you to change the default model used in Geant4 for modelling photo nuclear interactions. 
+
+Examples:
+
+    Replacing PN products with known complicated PN topologies for comparing different detector geometries
+    Replacing Bertini with other hadronic models 
+    Instrumenting a model to extend it in some way, e.g. to run the event generator until you produce an event topology that you are interested in, but could in principle be used to do anything you need (e.g. debugging)
+
+
+To load a different model than the default, you change the `photonuclear_model` parameter of your simulation processor. A couple such models are bundled with ldmx-sw and adding new ones either within or from outside ldmx-sw is a relatively straigh-forward task and are listed in [Configuring the Simulation]({% link
+docs/Configuring-the-Simulation.md %}) together with some corresponding filters. 
+
+A photonuclear model in ldmx-sw is a class that provides Geant4 with an appropriate hadronic interaction to use for $\gamma A$ interactions. With the standard LDMX version of Geant4, the hadronic model is a modified version of [The Bertini Cascade](https://doi.org/10.1016/j.nima.2015.09.058) (for details, see sec D and appendix A of [arxiv:1808.04219v1](https://arxiv.org/abs/1808.05219v1)). 
+
+
     
-General
+Details
 ---
-
-
-
-## Models forcing particular final states 
-
-One use case for customizing the process used for photonuclear reaction is to study particular rare final states like single hard neutron events without having to generate a complete simulation set or as an alternative to biasing schemes like the kaon enhancement setup. There is a abstract base class, `BertiniEventTopologyProcess`, available that makes implementing such models relatively straight-forward with the Bertini cascade. It handles all of the things underneath the hood like cleaning up the memory from unused secondaries automatically. 
-
-The process will run the Bertini cascade over and over until some condition is met for the final state. Once an attempt has been succesful, the event weight is incremented based on the number of attempts made. In the example with `MyModel` above, you would have a `G4HadronicInteraction` that is derived from `BertiniEventTopologyProcess` as `myInteraction`. Typically you want to combine this kind of process with a corresponding filter.
-
-### Included models in LDMX-sw 
-
-LDMX-sw comes with a couple of these models included that both cover important final states and illustrate how to extend it with new ones. 
-- `BertiniNothingHardModel` 
-  - Runs the event generator until we find an event where no individual particle has more than some threshold energy. 
-  - By default only applied for nuclei with `Z >= 74` since these events are much less likely to occur for lighter nuclei. 
-  - By default, light ions with kinetic energy above the threshold are counted so that e.g. an event with a 1 GeV deutron isn't considered "Nothing hard". 
-  - Should be paired with a product filter from `LDMX.Biasing`. 
-```python 
-from LDMX.SimCore import photonuclear_models as pn
-model = pn.BertiniNothingHardModel()
-model.hard_particle_threshold = 500. # MeV, Default is 200. 
-model.zmin = 29 # Include Copper, Default is 74 (W)
-model.count_light_ions = False # Default is to include 
-from LDMX.Biasing import particle_filter 
-mySim.actions.extend([
-    particle_filter.Photo
-])
-mySim.photonuclear_model = model
-```
-
-- `BertiniSingleNeutronModel` 
-  - Similar to the nothing hard model but requires exactly one particle with kinetic energy above the threshold and that the particle in question is a neutron. 
-  - Default applied for any nucleus
-  - Has a similar corresponding filter in `LDMX.Biasing.PhotoNuclearTopologyFilter`
-- `BertiniAtLeastNProductsModel` 
-  - Takes a list of PDG particle-ids, an energy threshold, and a particle count and requires that at there are at least N particles with ids matching that in the list with kinetic energy above the threshold 
-  - A version suitable for producing events with at least one kaon in the final state can be obtained from `BertiniAtLeastNProductsModel.kaon()`
-  - Should be used together with a corresponding filter such as `LDMX.Biasing.PhotoNuclearProductsFilter`
-  
 
 ## Adding a new model 
 
@@ -111,6 +86,48 @@ You can see how the model is used in `GammaPhysics.cxx` in `SimCore` but in shor
 - Set the `photonNuclear` process to be first in the list of processes for
   photons. Necessary for the bias operator to work. 
 - Add the $ \gamma \rightarrow \mu\mu $ process
+
+## Instrumenting the photonuclear 
+
+
+## Models forcing particular final states 
+
+One use case for customizing the process used for photonuclear reaction is to study particular rare final states like single hard neutron events without having to generate a complete simulation set or as an alternative to biasing schemes like the kaon enhancement setup. There is a abstract base class, `BertiniEventTopologyProcess`, available that makes implementing such models relatively straight-forward with the Bertini cascade. It handles all of the things underneath the hood like cleaning up the memory from unused secondaries automatically. 
+
+The process will run the Bertini cascade over and over until some condition is met for the final state. Once an attempt has been succesful, the event weight is incremented based on the number of attempts made. In the example with `MyModel` above, you would have a `G4HadronicInteraction` that is derived from `BertiniEventTopologyProcess` as `myInteraction`. Typically you want to combine this kind of process with a corresponding filter.
+
+## Included models in LDMX-sw 
+
+LDMX-sw comes with a couple of these models included that both cover important final states and illustrate how to extend it with new ones. 
+- `BertiniNothingHardModel` 
+  - Runs the event generator until we find an event where no individual particle has more than some threshold energy. 
+  - By default only applied for nuclei with `Z >= 74` since these events are much less likely to occur for lighter nuclei. 
+  - By default, light ions with kinetic energy above the threshold are counted so that e.g. an event with a 1 GeV deutron isn't considered "Nothing hard". 
+  - Should be paired with a product filter from `LDMX.Biasing`. 
+```python 
+from LDMX.SimCore import photonuclear_models as pn
+model = pn.BertiniNothingHardModel()
+model.hard_particle_threshold = 500. # MeV, Default is 200. 
+model.zmin = 29 # Include Copper, Default is 74 (W)
+model.count_light_ions = False # Default is to include 
+from LDMX.Biasing import particle_filter 
+mySim.actions.extend([
+    particle_filter.PhotoNuclearTopologyFilter().NothingHard()
+])
+mySim.photonuclear_model = model
+```
+
+- `BertiniSingleNeutronModel` 
+  - Similar to the nothing hard model but requires exactly one particle with kinetic energy above the threshold and that the particle in question is a neutron. 
+  - Default applied for any nucleus
+  - Has a similar corresponding filter in `LDMX.Biasing.PhotoNuclearTopologyFilter`
+- `BertiniAtLeastNProductsModel` 
+  - Takes a list of PDG particle-ids, an energy threshold, and a particle count and requires that at there are at least N particles with ids matching that in the list with kinetic energy above the threshold 
+  - A version suitable for producing events with at least one kaon in the final state can be obtained from `BertiniAtLeastNProductsModel.kaon()`
+  - Should be used together with a corresponding filter such as `LDMX.Biasing.PhotoNuclearProductsFilter`
+  
+
+
 
 ### Adding your own model for other final states than those that are included with LDMX-sw
 
