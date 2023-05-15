@@ -26,6 +26,7 @@ Parameter | Type | Accessed By | Description
 `enableHitContribs` | bool | RootPersistencyManager | Should the simulation allow for the different contributors to an ECal hit be stored?
 `compressHitContribs` | bool | RootPersistencyManager | Should the simulation compress the contributors by combining any contributors with the same PDG ID?
 
+
 Note: In earlier versions of LDMX-sw, you would set the `runNumber` parameter in
 the simulator. The `runNumber` is a unique number (int) that identifies this
 run. In current versions of LDMX-sw, the `runNumber` is called `run` and is set as a parameter to
@@ -141,9 +142,9 @@ Parameter | Type | Accessed By | Description
 `beamSpotSmear` | vector of doubles | PrimaryGeneratorAction | Define how much to smear the primary vertex in each of the Cartesian directions (x,y,z)
 `generators` | vector of PrimaryGenerators | PrimaryGeneratorManager | List the primary generators to use in this simulation run
 
-Like UserActions, PrimaryGenerator is a python class that you can create using the `LDMX.SimApplication.simcfg` python module. And actually, there are several helpful functions defined in the `LDMX.SimApplication.generators` python module. These helpful functions return the correct python class and set some helpful defaults. Look at that file for more details. The most widely used primary generator is a simple one: a single 4GeV electron fired from upstream of the tagger. You could use that generator in your simulation with the following lines:
+Like UserActions, PrimaryGenerator is a python class that you can create using the `LDMX.SimCore.simcfg` python module. And actually, there are several helpful functions defined in the `LDMX.SimCore.generators` python module. These helpful functions return the correct python class and set some helpful defaults. Look at that file for more details. The most widely used primary generator is a simple one: a single 4GeV electron fired from upstream of the tagger. You could use that generator in your simulation with the following lines:
 ```python
-from LDMX.SimApplication import generators
+from LDMX.SimCore import generators
 simulation.generators = [ generators.single_4gev_e_upstream_tagger() ]
 ```
 You can send generators parameters in the same way as EventProcessors and UserActions:
@@ -153,9 +154,9 @@ myGenerator.parameterKey = parameterValue
 
 Several of these generators can be used at once, although not all combinations have been tested.
 
-A more detailed description of the parameters you can pass the various generators are listed below. All of the python code below requires the `LDMX.SimApplication.generators` module to be imported:
+A more detailed description of the parameters you can pass the various generators are listed below. All of the python code below requires the `LDMX.SimCore.generators` module to be imported:
 ```python
-from LDMX.SimApplication import generators
+from LDMX.SimCore import generators
 ```
 
 #### Simple Particle Gun
