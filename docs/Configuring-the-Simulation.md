@@ -244,3 +244,36 @@ Parameter | Type | AccessedBy | Description
 `vertex` | vector of doubles | MultiParticleGunPrimaryGenerator | location of primary vertex to shoot the particle(s) from (mm)
 `momentum` | vector of doubles | MultiParticleGunPrimaryGenerator | 3-momentum of primary particle(s) (MeV)
 
+
+Photonuclear model
+---
+
+The hadronic interaction used by Geant4 in ldmx-sw to perform photonuclear
+interactions can be configured to load an arbitrary other model from a dynamic
+library. There are a couple available within ldmx-sw that are listed here but
+you can add new ones from any library and load them the same way. For details
+about this, see [Alternative Photo Nuclear Models]({% link
+docs/Alternative-Photo-Nuclear-Models.md %}).
+
+By default, the simulation will be configured to use the default version of the
+Bertini model that comes with LDMX's version of Geant4. If you want to change to
+a different model, you can do so through
+
+```python
+from LDMX.SimCore import photonuclear_models as pns
+simulation.photonuclear_model = pns.SomeModel()
+```
+
+Note that some of these models should probably be used together with a
+corresponding filter from `Biasing.particle_filter`.
+
+| Model | Corresponding filter | Description |
+--- | --- | --- 
+| `BertiniModel`                 | None                                               | Default                                                                                                                                          |
+| `BertiniNothingHardModel`      | `PhotoNuclearTopologyFilter.NothingHardFilter()`   | A model that forces high energy PN interactions with heavy nuclei to produce events where no product has more than some threshold kinetic energy |
+| `BertiniSingleNeutronModel`    | `PhotoNuclearTopologyFilter.SingleNeutronFilter()` | Similar, but requires exactly one neutron with kinetic energy above the threshold. By default, is applied to interactions with any nucleus.      |
+| `BertiniAtLeastNProductsModel` | A matching version of`PhotoNuclearProductsFilter`  | Similar, but requires at least N particles of a list of particle IDs (e.g. kaons) in the final state.                                            |
+
+
+
+
