@@ -11,11 +11,46 @@ Example use cases:
 - Instrumenting a model to extend it in some way, e.g. to run the event generator until you produce an event topology that you are interested in, but could in principle be used to do anything you need (e.g. debugging)
 
 
-To load a different model than the default, you change the `photonuclear_model` parameter of your simulation processor. A couple such models are bundled with ldmx-sw and adding new ones either within or from outside ldmx-sw is a relatively straigh-forward task and are listed in [Configuring the Simulation]({% link
-docs/Configuring-the-Simulation.md %}) together with some corresponding filters. 
-
 A photonuclear model in ldmx-sw is a class that provides Geant4 with an appropriate hadronic interaction to use for $\gamma A$ interactions. With the standard LDMX version of Geant4, the hadronic model is a modified version of [The Bertini Cascade](https://doi.org/10.1016/j.nima.2015.09.058) (for details, see sec D and appendix A of [arxiv:1808.04219v1](https://arxiv.org/abs/1808.05219v1)). 
 
+
+To load a different model than the default, you change the `photonuclear_model` parameter of your simulation processor. A couple such models are bundled with ldmx-sw and adding new ones either within or from outside ldmx-sw is a relatively straigh-forward task. 
+
+### Models generating rare but challenging final states
+
+
+With all of these models, when a photonuclear interaction occurs the model will rerun the interaction until a particular condition is met for the final state particles. If it took $N$ attempts to produce that final state, the weight of the event will be multiplied with $\frac{1}{N}$. You can access the event weight with the event header. 
+
+
+- Events with one hard neutron 
+
+  This model will rerun the event generator until we get an event where one neutron is the only particle with kinetic energy above some threshold. By default, this model is applied for interactions with any nucleus and for photons with at least 2.5 GeV of energy. 
+    
+```python
+# Assuming your simulator is called mySim 
+from LDMX.Simcore import photonuclear_models as pn 
+from LDMX.Biasing import particle_filter 
+
+
+myModel = pn.BertiniSingleNeutronModel()
+# These are the default values of the parameters
+myModel.hard_particle_threshold=200. # Count particles with >= 200 MeV as "hard"
+myModel.zmin = 0 # Apply the model for any nucleus
+myModel.emin = 2500. # Apply the model for photonuclear reactions with > 2500 MeV photons
+myModel.count_light_ions=True # Don't disregard deutrons, tritons, 3He, or 4He ions when counting hard particles 
+
+# Change the default model to the single neutron model
+mySim.photonuclear_model = myModel
+
+
+myFilter = particle_filter.PhotoNuclearTopologyFilter().SingleNeutron()
+# Default values 
+myFilter.hard_particle_threshold = 200. # MeV, use the same as for the model 
+myFilter.count_light_ions = True # As above
+
+# Add the filter at the end of the current list of user actions. 
+mySim.actions.extend([myFilter])
+```
 
     
 Details
