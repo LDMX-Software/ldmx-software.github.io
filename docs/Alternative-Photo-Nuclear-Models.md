@@ -53,7 +53,7 @@ mySim.actions.extend([myFilter])
 ```
 ### Events with no particles with high kinetic energy 
 
-  This model is very similar to the previous one with one big exception, it is only applied for interactions with tungsten (the `zmin` parameter is set to 74). Since the ECal consists of more material than just tungsten, this means that some ECal PN-events will not produce the desired final state. If you don't combine the model with a particle filter, you will have $\approx 50\%$ of your events being regular photonuclear reactions. The reason for this cut on the proton number of the target nucleus is that nothing hard events, which generally include very high product multiplicity, are extremely rare for nuclei with few nucleons. These interactions would therefore receive an extremely small event weight or even get stuck repeating the event generation infinitely for e.g. hydrogen. 
+  This model is very similar to the previous one with one big exception, it is only applied for interactions with tungsten (the `zmin` parameter is set to 74). Since the ECal consists of more material than just tungsten, this means that some ECal PN-events will not produce the desired final state. If you don't combine the model with a particle filter, you will have ~50% of your events being regular photonuclear reactions. The reason for this cut on the proton number of the target nucleus is that nothing hard events, which generally include very high product multiplicity, are extremely rare for nuclei with few nucleons. These interactions would therefore receive an extremely small event weight or even get stuck repeating the event generation infinitely for e.g. hydrogen. 
   
  ```python
 from LDMX.Simcore import photonuclear_models as pn 
@@ -67,7 +67,7 @@ myModel.zmin = 74 # Apply the model tungsten only
 myModel.emin = 2500. # Apply the model for photonuclear reactions with > 2500 MeV photons
 myModel.count_light_ions=True # Don't disregard deutrons, tritons, 3He, or 4He ions when counting hard particles 
 
-# Change the default model to the single neutron model
+# Change the default model to the nothing hard model
 mySim.photonuclear_model = myModel
 
 myFilter = particle_filter.PhotoNuclearTopologyFilter().NothingHard()
@@ -101,7 +101,7 @@ myModel.pdg_ids = [130, 310, 311, 321, -321] # PDG ids for K^0_L, K^0_S, K^0, K^
 myModel.min_products = 1 # Require at least 1 hard particle from the list above
 
 
-# Change the default model to the single neutron model
+# Change the default model to the kaon producing model
 mySim.photonuclear_model = myModel
 
 myFilter = particle_filter.PhotoNuclearProductsFilter().kaon()
