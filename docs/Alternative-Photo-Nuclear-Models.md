@@ -16,13 +16,13 @@ A photonuclear model in ldmx-sw is a class that provides Geant4 with an appropri
 
 To load a different model than the default, you change the `photonuclear_model` parameter of your simulation processor. A couple such models are bundled with ldmx-sw and adding new ones either within or from outside ldmx-sw is a relatively straigh-forward task. 
 
-### Models generating rare but challenging final states
+## Models generating rare but challenging final states
 
 
 With all of these models, when a photonuclear interaction occurs the model will rerun the interaction until a particular condition is met for the final state particles. If it took $N$ attempts to produce that final state, the weight of the event will be multiplied with $\frac{1}{N}$. You can access the event weight with the event header. This can produce much faster simulations (>10x faster) than a full simulation + skim would do. However, you may need to be careful so that you don't introduce any significant bias to your results. Consider producing a smaller sample first with a regular simulation and comparing it to a sample of the same size made with one of these models. See the Validation module for a good starting point for such comparisons. 
 
 
-- Events with one hard neutron 
+### Events with one hard neutron 
 
   This model will rerun the event generator until we get an event where one neutron is the only particle with kinetic energy above some threshold. By default, this model is applied for interactions with any nucleus and for photons with at least 2.5 GeV of energy. With these settings and a configuration like the standard ECal PN simulation, you could in principle skip the filter but unless you have e.g. a performance reason to do so consider keeping it.
     
@@ -51,7 +51,7 @@ myFilter.count_light_ions = True # As above
 # Add the filter at the end of the current list of user actions. 
 mySim.actions.extend([myFilter])
 ```
-- Events with no particles with high kinetic energy 
+### Events with no particles with high kinetic energy 
 
   This model is very similar to the previous one with one big exception, it is only applied for interactions with tungsten (the `zmin` parameter is set to 74). Since the ECal consists of more material than just tungsten, this means that some ECal PN-events will not produce the desired final state. If you don't combine the model with a particle filter, you will have $\approx 50\%$ of your events being regular photonuclear reactions. The reason for this cut on the proton number of the target nucleus is that nothing hard events, which generally include very high product multiplicity, are extremely rare for nuclei with few nucleons. These interactions would therefore receive an extremely small event weight or even get stuck repeating the event generation infinitely for e.g. hydrogen. 
   
@@ -79,7 +79,37 @@ myFilter.count_light_ions = True # As above
 mySim.actions.extend([myFilter])
  ``` 
 
-    
+### Events with hard kaons (or similar particle selections)
+
+The last of the default models in ldmx-sw works similar to the other two but
+rather than requiring an exact number of hard particles, it requires at least N
+hard particles of any of a set of particles that you are interested in. The
+setup comes with a preconfigured version that requries at least one hard kaon in
+the final state. 
+
+```python
+from LDMX.Simcore import photonuclear_models as pn 
+from LDMX.Biasing import particle_filter 
+
+
+myModel = pn.BertiniAtLeastNProductsModel().kaon() 
+# These are the default values of the parameters
+myModel.hard_particle_threshold=200. # Count particles with >= 200 MeV as "hard"
+myModel.zmin = 0 # Apply the model to any nucleus
+myModel.emin = 2500. # Apply the model for photonuclear reactions with > 2500 MeV photons
+myModel.pdg_ids = [130, 310, 311, 321, -321] # PDG ids for K^0_L, K^0_S, K^0, K^+, and K^- respectively
+myModel.min_products = 1 # Require at least 1 hard particle from the list above
+
+
+# Change the default model to the single neutron model
+mySim.photonuclear_model = myModel
+
+myFilter = particle_filter.PhotoNuclearProductsFilter().kaon()
+
+# Add the filter at the end of the current list of user actions. 
+mySim.actions.extend([myFilter])
+```
+   
 Details
 ---
 
