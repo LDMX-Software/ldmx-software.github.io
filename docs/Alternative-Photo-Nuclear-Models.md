@@ -4,11 +4,11 @@ layout: default
 
 This page details the options in LDMX-sw that allow you to change the default model used in Geant4 for modelling photo nuclear interactions. 
 
-Examples:
+Example use cases:
 
-    Replacing PN products with known complicated PN topologies for comparing different detector geometries
-    Replacing Bertini with other hadronic models 
-    Instrumenting a model to extend it in some way, e.g. to run the event generator until you produce an event topology that you are interested in, but could in principle be used to do anything you need (e.g. debugging)
+- Replacing PN products with known complicated PN topologies for comparing different detector geometries
+- Replacing the Bertini with other hadronic models 
+- Instrumenting a model to extend it in some way, e.g. to run the event generator until you produce an event topology that you are interested in, but could in principle be used to do anything you need (e.g. debugging)
 
 
 To load a different model than the default, you change the `photonuclear_model` parameter of your simulation processor. A couple such models are bundled with ldmx-sw and adding new ones either within or from outside ldmx-sw is a relatively straigh-forward task and are listed in [Configuring the Simulation]({% link
@@ -85,7 +85,7 @@ You can see how the model is used in `GammaPhysics.cxx` in `SimCore` but in shor
 - Call `ConstructGammaProcess` to build the `photonNuclear` process
 - Set the `photonNuclear` process to be first in the list of processes for
   photons. Necessary for the bias operator to work. 
-- Add the $ \gamma \rightarrow \mu\mu $ process
+- Add the $\gamma \rightarrow \mu\mu$ process
 
 ## Instrumenting the photonuclear 
 
