@@ -34,3 +34,4 @@ layout: default
 - [C++ API Reference]({% link _doxygen/index.html %})
 - [Python API Reference]({% link _sphinx/index.html %})
 - [Merging PRs in ldmx-sw]({% link docs/merging-prs.md %})
+- [Alternative photo-nuclear models]({% link docs/Alternative-Photo-Nuclear-Models.md %})

@@ -253,7 +253,7 @@ The hadronic interaction used by Geant4 in ldmx-sw to perform photonuclear
 interactions can be configured to load an arbitrary other model from a dynamic
 library. There are a couple available within ldmx-sw that are listed here but
 you can add new ones from any library and load them the same way. For details
-about this, see [Alternative Photo Nuclear Models]({% link
+about this, see [Alternative photo-nuclear models]({% link
 docs/Alternative-Photo-Nuclear-Models.md %}).
 
 By default, the simulation will be configured to use the default version of the
