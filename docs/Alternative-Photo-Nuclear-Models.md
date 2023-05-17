@@ -284,7 +284,7 @@ One use case for customizing the process used for photonuclear reaction is to st
 
 The process will run the Bertini cascade over and over until some condition is met for the final state. Once an attempt has been succesful, the event weight is incremented based on the number of attempts made. In the example with `MyModel` above, you would have a `G4HadronicInteraction` that is derived from `BertiniEventTopologyProcess` as `myInteraction`. Typically you want to combine this kind of process with a corresponding filter.
 
-## Included models in LDMX-sw 
+### Included models in LDMX-sw 
 
 LDMX-sw comes with a couple of these models included that both cover important final states and illustrate how to extend it with new ones. 
 - `BertiniNothingHardModel` 
