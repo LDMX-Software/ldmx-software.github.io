@@ -139,7 +139,7 @@ Details
 
 ## Adding a new model 
 
-To add a new model within a library, you need to add a class that inherits from `SimCore/PhotoNuclearModel` and registering it with the `DECLARE_PHOTONUCLEAR_MODEL` macro at the end of your source file. This base class has one pure virtual function that you have to implement called `ConstructGammaProcess(G4ProcessManager*)` with some other virtual functions you can override if you need some other behaviour than the defaults. If you are adding a photonuclear model from outside of SimCore, you need to register `SimCore::PhotoNuclearModels` as a dependency when setting up your library. 
+To add a new model within a library, you need to add a class that inherits from `SimCore/PhotoNuclearModel` and registering it with the `DECLARE_PHOTONUCLEAR_MODEL` macro at the end of your source file. This base class has one pure virtual function that you have to implement called `ConstructGammaProcess(G4ProcessManager*)` with some other virtual functions you can override if you need some behaviour other than the defaults. If you are adding a photonuclear model from outside of SimCore, you need to register `SimCore::PhotoNuclearModels` as a dependency when setting up your library. 
 
 
 ```CMake
@@ -152,7 +152,7 @@ setup_library(module ModuleName
 )
 ```
 
-Finally, you'll need to add a new mocel to your python configuration and register it as the as the photonuclear model of your simulation processor. 
+Finally, you'll need to add a new model to your python configuration and register it as the as the photonuclear model of your simulation processor. 
 
 ```python
 from LDMX.SimCore import simcfg 
@@ -169,12 +169,12 @@ class MyModel(simcfg.PhotoNuclearModel):
 mySim.photonuclear_model = MyModel()
 ```
 
-Where `'ClassName'` matches the namespace and type name that you registered with `DECLARE_PHOTONUCLEAR_MODEL` and `'ModuleName'` is the name of your module (same as you used in the CMake configuration).
+where `'ClassName'` matches the namespace and type name that you registered with `DECLARE_PHOTONUCLEAR_MODEL` and `'ModuleName'` is the name of your module (same as you used in the CMake configuration). 
 
 ### ConstructGammaProcess 
 
 This is the only member function of `simcore::PhotoNuclearModel` you have to implement yourself. 
-It takes a `G4ProcessManager`. This function is responsible for creating a `G4HadronInelasticProcess` with the name `"photonNuclear"` (the name matters since other parts of ldmx-sw relies on this being the name of the PN process). The process needs to have one `G4HadronicInteraction` registered with valid energy range and a cross section dataset. For the latter, there is a default implementation you can use in the `PhotoNuclearModel` class called `addPNCrossSectionData(G4HadronInelasticProcess*) const`;
+It takes a `G4ProcessManager` that you use to register new processes with Geant4. This function is responsible for creating a `G4HadronInelasticProcess` with the name `"photonNuclear"` (the name matters since other parts of ldmx-sw relies on this being the name of the PN process). The process needs to have one `G4HadronicInteraction` registered with valid energy range and a cross section dataset. For the latter, there is a default implementation you can use in the `PhotoNuclearModel` class called `addPNCrossSectionData(G4HadronInelasticProcess*) const`;
 
 A typical implementation would look like the following 
 
@@ -196,15 +196,87 @@ DECLARE_PHOTONUCLEAR_MODEL(mynamespace::MyModel);
 
 You can see how the model is used in `GammaPhysics.cxx` in `SimCore` but in short the order of operations is the following
 
-- Create a `PhotoNuclearModel` depending on the configuration 
-- Call `removeExistingModel` to remove the default model
+- Create an object derived from `PhotoNuclearModel` dynamically depending on the python configuration 
+- Call `removeExistingModel` to remove the default hadronic process
 - Call `ConstructGammaProcess` to build the `photonNuclear` process
 - Set the `photonNuclear` process to be first in the list of processes for
   photons. Necessary for the bias operator to work. 
 - Add the $\gamma \rightarrow \mu\mu$ process
 
-## Instrumenting the photonuclear 
+## Instrumenting the photonuclear model
 
+Being able to access and query the internals of the photonuclear process can be a powerful tool for understanding what is going on in your simulation. One way to do this is to derive from the hadronic interaction you are intersted in, most likely the bertini cascade (which you find as `G4CascadeInterface` in Geant4) and override the `G4HadFinalState* ApplyYourself(const G4HadProjectile&, G4Nucleus&)` function. You can access the event generator version by invoking `G4CascadeInterface::ApplyYourself` explicitly. This will populate the `theParticleChange` member variable which is of type `G4HadFinalState`, and return a pointer to it so the return value from this function can either be the address of `theParticleChange` or just the pointer directly. 
+
+
+Say you want to know the rate that photonuclear interactions occur with different nuclei, a quick and dirty tool to get an estimate would be to produce a model that tallies the proton number of the target nucleus before running the event generator. The C++ pseudo-code could look like the following
+
+```C++
+#include <iostream>
+#include <vector>
+
+#include "G4CascadeInterface.hh"
+#include "G4HadFinalState.hh"
+#include "G4HadProjectile.hh"
+#include "G4HadronInelasticProcess.hh"
+#include "G4HadronicInteraction.hh"
+#include "G4Nucleus.hh"
+#include "G4ProcessManager.hh"
+#include "SimCore/PhotoNuclearModel.h"
+namespace simcore {
+// Note: G4CascadeInterface is the name of the bertini cascade hadronic interaction in Geant4
+class NuclearTally : public G4CascadeInterface {
+ public:
+  G4HadFinalState* ApplyYourself(const G4HadProjectile& projectile,
+                                 G4Nucleus& target) override {
+    const int Z{target.GetZ_asInt()};
+    nuclear_tally[Z - 1]++;
+    return G4CascadeInterface::ApplyYourself(projectile, target);
+  }
+
+  NuclearTally() : nuclear_tally(100, 0) {}
+  virtual ~NuclearTally() {
+    std::cout << "Final tally results" << std::endl;
+    int total{0};
+    for (int i{0}; i < nuclear_tally.size(); ++i) {
+      const auto value{nuclear_tally[i]};
+      total += value;
+      if (value != 0) {
+        std::cout << "Z: " << i + 1 << " -> " << value << std::endl;
+      }
+    }
+    std::cout << "Total: " << total << std::endl;
+  }
+
+  std::vector<int> nuclear_tally{};
+};
+
+class NuclearTallyModel : public PhotoNuclearModel {
+ public:
+  NuclearTallyModel(const std::string& name,
+                    const framework::config::Parameters& parameters)
+      : PhotoNuclearModel{name, parameters} {}
+  void ConstructGammaProcess(G4ProcessManager* processManager) override {
+    auto photoNuclearProcess{
+        new G4HadronInelasticProcess("photonNuclear", G4Gamma::Definition())};
+    auto model{new NuclearTally()};
+    model->SetMaxEnergy(15 * CLHEP::GeV);
+    addPNCrossSectionData(photoNuclearProcess);
+    photoNuclearProcess->RegisterMe(model);
+    processManager->AddDiscreteProcess(photoNuclearProcess);
+  }
+};
+}  // namespace simcore
+DECLARE_PHOTONUCLEAR_MODEL(simcore::NuclearTallyModel);
+```
+With a corresponding python object 
+
+```python
+class NuclearTally(simcfg.PhotoNuclearModel):
+    def __init__(self):
+        super().__init__("NuclearTallyModel",
+                         "simcore::NuclearTallyModel",
+                         "SimCore_PhotoNuclearModels")
+```
 
 ## Models forcing particular final states 
 
