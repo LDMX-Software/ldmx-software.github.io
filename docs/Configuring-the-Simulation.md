@@ -26,6 +26,7 @@ Parameter | Type | Accessed By | Description
 `enableHitContribs` | bool | RootPersistencyManager | Should the simulation allow for the different contributors to an ECal hit be stored?
 `compressHitContribs` | bool | RootPersistencyManager | Should the simulation compress the contributors by combining any contributors with the same PDG ID?
 
+
 Note: In earlier versions of LDMX-sw, you would set the `runNumber` parameter in
 the simulator. The `runNumber` is a unique number (int) that identifies this
 run. In current versions of LDMX-sw, the `runNumber` is called `run` and is set as a parameter to
@@ -141,9 +142,9 @@ Parameter | Type | Accessed By | Description
 `beamSpotSmear` | vector of doubles | PrimaryGeneratorAction | Define how much to smear the primary vertex in each of the Cartesian directions (x,y,z)
 `generators` | vector of PrimaryGenerators | PrimaryGeneratorManager | List the primary generators to use in this simulation run
 
-Like UserActions, PrimaryGenerator is a python class that you can create using the `LDMX.SimApplication.simcfg` python module. And actually, there are several helpful functions defined in the `LDMX.SimApplication.generators` python module. These helpful functions return the correct python class and set some helpful defaults. Look at that file for more details. The most widely used primary generator is a simple one: a single 4GeV electron fired from upstream of the tagger. You could use that generator in your simulation with the following lines:
+Like UserActions, PrimaryGenerator is a python class that you can create using the `LDMX.SimCore.simcfg` python module. And actually, there are several helpful functions defined in the `LDMX.SimCore.generators` python module. These helpful functions return the correct python class and set some helpful defaults. Look at that file for more details. The most widely used primary generator is a simple one: a single 4GeV electron fired from upstream of the tagger. You could use that generator in your simulation with the following lines:
 ```python
-from LDMX.SimApplication import generators
+from LDMX.SimCore import generators
 simulation.generators = [ generators.single_4gev_e_upstream_tagger() ]
 ```
 You can send generators parameters in the same way as EventProcessors and UserActions:
@@ -153,9 +154,9 @@ myGenerator.parameterKey = parameterValue
 
 Several of these generators can be used at once, although not all combinations have been tested.
 
-A more detailed description of the parameters you can pass the various generators are listed below. All of the python code below requires the `LDMX.SimApplication.generators` module to be imported:
+A more detailed description of the parameters you can pass the various generators are listed below. All of the python code below requires the `LDMX.SimCore.generators` module to be imported:
 ```python
-from LDMX.SimApplication import generators
+from LDMX.SimCore import generators
 ```
 
 #### Simple Particle Gun
@@ -243,4 +244,38 @@ Parameter | Type | AccessedBy | Description
 `pdgID` | int | MultiParticleGunPrimaryGenerator | PDG ID of the particle(s) to be the primary
 `vertex` | vector of doubles | MultiParticleGunPrimaryGenerator | location of primary vertex to shoot the particle(s) from (mm)
 `momentum` | vector of doubles | MultiParticleGunPrimaryGenerator | 3-momentum of primary particle(s) (MeV)
+
+
+Photonuclear model
+---
+
+The hadronic interaction used by Geant4 in ldmx-sw to perform photonuclear
+interactions can be configured to load an arbitrary other model from a dynamic
+library. There are a couple available within ldmx-sw that are listed here but
+you can add new ones from any library and load them the same way. For details
+about this, see [Alternative Photo Nuclear Models]({% link
+docs/Alternative-Photo-Nuclear-Models.md %}).
+
+By default, the simulation will be configured to use the default version of the
+Bertini model that comes with LDMX's version of Geant4. If you want to change to
+a different model, you can do so through
+
+```python
+from LDMX.SimCore import photonuclear_models as pns
+simulation.photonuclear_model = pns.SomeModel()
+```
+
+Note that some of these models should probably be used together with a
+corresponding filter from `Biasing.particle_filter`.
+
+| Model | Corresponding filter | Description |
+--- | --- | --- 
+| `BertiniModel`                 | None                                               | Default                                                                                                                                          |
+| `BertiniNothingHardModel`      | `PhotoNuclearTopologyFilter.NothingHardFilter()`   | A model that forces high energy PN interactions with heavy nuclei to produce events where no product has more than some threshold kinetic energy |
+| `BertiniSingleNeutronModel`    | `PhotoNuclearTopologyFilter.SingleNeutronFilter()` | Similar, but requires exactly one neutron with kinetic energy above the threshold. By default, is applied to interactions with any nucleus.      |
+| `BertiniAtLeastNProductsModel` | A matching version of`PhotoNuclearProductsFilter`  | Similar, but requires at least N particles of a list of particle IDs (e.g. kaons) in the final state.                                            |
+| `NoPhotoNuclearModel`          |                                                    | Removes photonuclear interactions entirely from the simulation                                                                                   |
+
+
+
 
