@@ -46,8 +46,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classdqm_1_1PhotoNuclearDQM-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">dqm::PhotoNuclearDQM Class Reference</div></div>
 </div><!--header-->
@@ -68,6 +69,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf17d18efc83dd26133753870a68951c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#aaf17d18efc83dd26133753870a68951c">onProcessStart</a> ()</td></tr>
 <tr class="memdesc:aaf17d18efc83dd26133753870a68951c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method executed before processing of events begins.  <a href="classdqm_1_1PhotoNuclearDQM.html#aaf17d18efc83dd26133753870a68951c">More...</a><br /></td></tr>
 <tr class="separator:aaf17d18efc83dd26133753870a68951c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ddf5b48550c120185506981a0c575da"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#a1ddf5b48550c120185506981a0c575da">isLightIon</a> (const int pdgCode) const</td></tr>
+<tr class="separator:a1ddf5b48550c120185506981a0c575da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classframework_1_1Analyzer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classframework_1_1Analyzer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classframework_1_1Analyzer.html">framework::Analyzer</a></td></tr>
 <tr class="memitem:acb983308e071599d86e63ef2cdf5d36c inherit pub_methods_classframework_1_1Analyzer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1Analyzer.html#acb983308e071599d86e63ef2cdf5d36c">Analyzer</a> (const std::string &amp;name, <a class="el" href="classframework_1_1Process.html">Process</a> &amp;process)</td></tr>
 <tr class="separator:acb983308e071599d86e63ef2cdf5d36c inherit pub_methods_classframework_1_1Analyzer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,21 +111,71 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ed5966370da67ee0c89f7d6f9c8436d inherit pub_methods_classframework_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1EventProcessor.html#a5ed5966370da67ee0c89f7d6f9c8436d">createHistograms</a> (const std::vector&lt; <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &gt; &amp;histos)</td></tr>
 <tr class="separator:a5ed5966370da67ee0c89f7d6f9c8436d inherit pub_methods_classframework_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a151f5e4724076455a7821bb0224497af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#a151f5e4724076455a7821bb0224497af">printParticleTree</a> (std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; particleMap)</td></tr>
-<tr class="separator:a151f5e4724076455a7821bb0224497af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf74d4c9b24ea3d16d3cf43fd5b14103"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#adf74d4c9b24ea3d16d3cf43fd5b14103">printDaughters</a> (std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; particleMap, const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> particle, int depth)</td></tr>
-<tr class="separator:adf74d4c9b24ea3d16d3cf43fd5b14103"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b2f328a7af51819c50b6ff06913a452"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#a8b2f328a7af51819c50b6ff06913a452">classifyEvent</a> (const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; daughters, double threshold)</td></tr>
-<tr class="separator:a8b2f328a7af51819c50b6ff06913a452"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03479c3556d1ad2d90aeff858e04c45e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#a03479c3556d1ad2d90aeff858e04c45e">classifyCompactEvent</a> (const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *pnGamma, const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; daughters, double threshold)</td></tr>
-<tr class="separator:a03479c3556d1ad2d90aeff858e04c45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
 <tr class="memitem:ac85f0cc361328fd7fc1526025475f33d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#ac85f0cc361328fd7fc1526025475f33d">verbose_</a></td></tr>
 <tr class="separator:ac85f0cc361328fd7fc1526025475f33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ecc21c597236345b42bbf341200cf2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#a6ecc21c597236345b42bbf341200cf2f">count_light_ions_</a></td></tr>
+<tr class="separator:a6ecc21c597236345b42bbf341200cf2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a78e1a3296f89acd39902f7189aab0f66"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><b>CompactEventType</b> { <br />
+&#160;&#160;<b>single_neutron</b> = 0
+, <b>single_charged_kaon</b> = 1
+, <b>single_neutral_kaon</b> = 2
+, <b>two_neutrons</b> = 3
+, <br />
+&#160;&#160;<b>soft</b> = 4
+, <b>other</b> = 5
+<br />
+ }</td></tr>
+<tr class="separator:a78e1a3296f89acd39902f7189aab0f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f76d5f034394e26e716323b14b6e33"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><b>EventType</b> { <br />
+&#160;&#160;<b>nothing_hard</b> = 0
+, <b>single_neutron</b> = 1
+, <b>two_neutrons</b> = 2
+, <b>three_or_more_neutrons</b> = 3
+, <br />
+&#160;&#160;<b>single_charged_pion</b> = 4
+, <b>two_charged_pions</b> = 5
+, <b>single_neutral_pion</b> = 6
+, <b>single_charged_pion_and_nucleon</b> = 7
+, <br />
+&#160;&#160;<b>single_charged_pion_and_two_nucleons</b> = 8
+, <b>two_charged_pions_and_nucleon</b> = 9
+, <b>single_neutral_pion_and_nucleon</b> = 10
+, <b>single_neutral_pion_and_two_nucleons</b> = 11
+, <br />
+&#160;&#160;<b>single_neutral_pion_charged_pion_and_nucleon</b> = 12
+, <b>single_proton</b> = 13
+, <b>two_protons</b> = 14
+, <b>proton_neutron</b> = 15
+, <br />
+&#160;&#160;<b>klong</b> = 16
+, <b>charged_kaon</b> = 17
+, <b>kshort</b> = 18
+, <b>exotics</b> = 19
+, <br />
+&#160;&#160;<b>multibody</b> = 20
+<br />
+ }</td></tr>
+<tr class="separator:ab4f76d5f034394e26e716323b14b6e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a4f4268a5461413fb5d0035baa2690ba5"><td class="memItemLeft" align="right" valign="top">EventType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#a4f4268a5461413fb5d0035baa2690ba5">classifyEvent</a> (const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; daughters, double threshold)</td></tr>
+<tr class="separator:a4f4268a5461413fb5d0035baa2690ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae250c61dc709524522b38b4d7d8dcb5"><td class="memItemLeft" align="right" valign="top">CompactEventType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#aae250c61dc709524522b38b4d7d8dcb5">classifyCompactEvent</a> (const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *pnGamma, const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; daughters, double threshold)</td></tr>
+<tr class="separator:aae250c61dc709524522b38b4d7d8dcb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb2f95a64aa62de5f637706cd6dc243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#abfb2f95a64aa62de5f637706cd6dc243">findRecoilProperties</a> (const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *recoil)</td></tr>
+<tr class="separator:abfb2f95a64aa62de5f637706cd6dc243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa33d6b1ea02de7a9c631ad1c6cc7b45"><td class="memItemLeft" align="right" valign="top">std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#afa33d6b1ea02de7a9c631ad1c6cc7b45">findDaughters</a> (const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt; particleMap, const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *parent) const</td></tr>
+<tr class="separator:afa33d6b1ea02de7a9c631ad1c6cc7b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47e248285a94ae6bd77aa18d7d9f7ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#ac47e248285a94ae6bd77aa18d7d9f7ea">findParticleKinematics</a> (const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; &amp;pnDaughters)</td></tr>
+<tr class="separator:ac47e248285a94ae6bd77aa18d7d9f7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1588dc3ac9bf588800bc58cfbbe93f88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdqm_1_1PhotoNuclearDQM.html#a1588dc3ac9bf588800bc58cfbbe93f88">findSubleadingKinematics</a> (const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *pnGamma, const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; &amp;pnDaughters, const EventType eventType)</td></tr>
+<tr class="separator:a1588dc3ac9bf588800bc58cfbbe93f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -149,7 +202,87 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8h_source.html#l00018">18</a> of file <a class="el" href="PhotoNuclearDQM_8h_source.html">PhotoNuclearDQM.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a78e1a3296f89acd39902f7189aab0f66" name="a78e1a3296f89acd39902f7189aab0f66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e1a3296f89acd39902f7189aab0f66">&#9670;&#160;</a></span>CompactEventType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class dqm::PhotoNuclearDQM::CompactEventType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8h_source.html#l00021">21</a> of file <a class="el" href="PhotoNuclearDQM_8h_source.html">PhotoNuclearDQM.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                              {</div>
+<div class="line"><span class="lineno">   22</span>    single_neutron = 0,</div>
+<div class="line"><span class="lineno">   23</span>    single_charged_kaon = 1,</div>
+<div class="line"><span class="lineno">   24</span>    single_neutral_kaon = 2,</div>
+<div class="line"><span class="lineno">   25</span>    two_neutrons = 3,</div>
+<div class="line"><span class="lineno">   26</span>    soft = 4,</div>
+<div class="line"><span class="lineno">   27</span>    other = 5,</div>
+<div class="line"><span class="lineno">   28</span>  };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab4f76d5f034394e26e716323b14b6e33" name="ab4f76d5f034394e26e716323b14b6e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f76d5f034394e26e716323b14b6e33">&#9670;&#160;</a></span>EventType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class dqm::PhotoNuclearDQM::EventType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8h_source.html#l00029">29</a> of file <a class="el" href="PhotoNuclearDQM_8h_source.html">PhotoNuclearDQM.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>                       {</div>
+<div class="line"><span class="lineno">   30</span>    nothing_hard = 0,</div>
+<div class="line"><span class="lineno">   31</span>    single_neutron = 1,</div>
+<div class="line"><span class="lineno">   32</span>    two_neutrons = 2,</div>
+<div class="line"><span class="lineno">   33</span>    three_or_more_neutrons = 3,</div>
+<div class="line"><span class="lineno">   34</span>    single_charged_pion = 4,</div>
+<div class="line"><span class="lineno">   35</span>    two_charged_pions = 5,</div>
+<div class="line"><span class="lineno">   36</span>    single_neutral_pion = 6,</div>
+<div class="line"><span class="lineno">   37</span>    single_charged_pion_and_nucleon = 7,</div>
+<div class="line"><span class="lineno">   38</span>    single_charged_pion_and_two_nucleons = 8,</div>
+<div class="line"><span class="lineno">   39</span>    two_charged_pions_and_nucleon = 9,</div>
+<div class="line"><span class="lineno">   40</span>    single_neutral_pion_and_nucleon = 10,</div>
+<div class="line"><span class="lineno">   41</span>    single_neutral_pion_and_two_nucleons = 11,</div>
+<div class="line"><span class="lineno">   42</span>    single_neutral_pion_charged_pion_and_nucleon = 12,</div>
+<div class="line"><span class="lineno">   43</span>    single_proton = 13,</div>
+<div class="line"><span class="lineno">   44</span>    two_protons = 14,</div>
+<div class="line"><span class="lineno">   45</span>    proton_neutron = 15,</div>
+<div class="line"><span class="lineno">   46</span>    klong = 16,</div>
+<div class="line"><span class="lineno">   47</span>    charged_kaon = 17,</div>
+<div class="line"><span class="lineno">   48</span>    kshort = 18,</div>
+<div class="line"><span class="lineno">   49</span>    exotics = 19,</div>
+<div class="line"><span class="lineno">   50</span>    multibody = 20,</div>
+<div class="line"><span class="lineno">   51</span>  };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0180427db9bd9bbc997f8d50ae50465f" name="a0180427db9bd9bbc997f8d50ae50465f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0180427db9bd9bbc997f8d50ae50465f">&#9670;&#160;</a></span>PhotoNuclearDQM()</h2>
 
@@ -178,8 +311,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00024">24</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>    : <a class="code hl_class" href="classframework_1_1Analyzer.html">framework::Analyzer</a>(name, process) {}</div>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00025">25</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>    : <a class="code hl_class" href="classframework_1_1Analyzer.html">framework::Analyzer</a>(name, process) {}</div>
 <div class="ttc" id="aclassframework_1_1Analyzer_html"><div class="ttname"><a href="classframework_1_1Analyzer.html">framework::Analyzer</a></div><div class="ttdoc">Base class for a module which does not produce a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00293">EventProcessor.h:293</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -201,8 +334,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00028">28</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00029">29</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -240,190 +373,105 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Analyzer.html#ac923a649608165fd21183ede074695ab">framework::Analyzer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00106">106</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>                                                         {</div>
-<div class="line"><span class="lineno">  107</span>  <span class="comment">// Get the particle map from the event.  If the particle map is empty,</span></div>
-<div class="line"><span class="lineno">  108</span>  <span class="comment">// don&#39;t process the event.</span></div>
-<div class="line"><span class="lineno">  109</span>  <span class="keyword">auto</span> particleMap{<span class="keyword">event</span>.getMap&lt;int, <a class="code hl_class" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a>&gt;(<span class="stringliteral">&quot;SimParticles&quot;</span>)};</div>
-<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">if</span> (particleMap.size() == 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>  <span class="comment">// Get the recoil electron</span></div>
-<div class="line"><span class="lineno">  113</span>  <span class="keyword">auto</span> [trackID, recoil] = <a class="code hl_function" href="AnalysisUtils_8h.html#a96b0996f8c4e70467ec7002379546321">Analysis::getRecoil</a>(particleMap);</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;recoil_vertex_x&quot;</span>, recoil-&gt;getVertex()[0]);</div>
-<div class="line"><span class="lineno">  116</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;recoil_vertex_y&quot;</span>, recoil-&gt;getVertex()[1]);</div>
-<div class="line"><span class="lineno">  117</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;recoil_vertex_z&quot;</span>, recoil-&gt;getVertex()[2]);</div>
-<div class="line"><span class="lineno">  118</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;recoil_vertex_x:recoil_vertex_y&quot;</span>, recoil-&gt;getVertex()[0],</div>
-<div class="line"><span class="lineno">  119</span>                   recoil-&gt;getVertex()[1]);</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>  <span class="comment">// Use the recoil electron to retrieve the gamma that underwent a</span></div>
-<div class="line"><span class="lineno">  122</span>  <span class="comment">// photo-nuclear reaction.</span></div>
-<div class="line"><span class="lineno">  123</span>  <span class="keyword">auto</span> pnGamma{<a class="code hl_function" href="AnalysisUtils_8h.html#a22d44d60e0c64a3fb4c24c09789b1a20">Analysis::getPNGamma</a>(particleMap, recoil, 2500.)};</div>
-<div class="line"><span class="lineno">  124</span>  <span class="keywordflow">if</span> (pnGamma == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span> (verbose_) {</div>
-<div class="line"><span class="lineno">  126</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;[ PhotoNuclearDQM ]: PN Daughter is lost, skipping.&quot;</span></div>
-<div class="line"><span class="lineno">  127</span>                &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  128</span>    }</div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  130</span>  }</div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_particle_mult&quot;</span>, pnGamma-&gt;getDaughters().size());</div>
-<div class="line"><span class="lineno">  133</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_energy&quot;</span>, pnGamma-&gt;getEnergy());</div>
-<div class="line"><span class="lineno">  134</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_int_z&quot;</span>, pnGamma-&gt;getEndPoint()[2]);</div>
-<div class="line"><span class="lineno">  135</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_vertex_x&quot;</span>, pnGamma-&gt;getVertex()[0]);</div>
-<div class="line"><span class="lineno">  136</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_vertex_y&quot;</span>, pnGamma-&gt;getVertex()[1]);</div>
-<div class="line"><span class="lineno">  137</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_vertex_z&quot;</span>, pnGamma-&gt;getVertex()[2]);</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>  <span class="keywordtype">double</span> lke{-1}, lt{-1};</div>
-<div class="line"><span class="lineno">  140</span>  <span class="keywordtype">double</span> lpke{-1}, lpt{-1};</div>
-<div class="line"><span class="lineno">  141</span>  <span class="keywordtype">double</span> lnke{-1}, lnt{-1};</div>
-<div class="line"><span class="lineno">  142</span>  <span class="keywordtype">double</span> lpike{-1}, lpit{-1};</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>  std::vector&lt;const ldmx::SimParticle*&gt; pnDaughters;</div>
-<div class="line"><span class="lineno">  145</span> </div>
-<div class="line"><span class="lineno">  146</span>  <span class="comment">// Loop through all of the PN daughters and extract kinematic</span></div>
-<div class="line"><span class="lineno">  147</span>  <span class="comment">// information.</span></div>
-<div class="line"><span class="lineno">  148</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; daughterTrackID : pnGamma-&gt;getDaughters()) {</div>
-<div class="line"><span class="lineno">  149</span>    <span class="comment">// skip daughters that weren&#39;t saved</span></div>
-<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (particleMap.count(daughterTrackID) == 0) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>    <span class="keyword">auto</span> daughter{&amp;(particleMap.at(daughterTrackID))};</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>    <span class="comment">// Get the PDG ID</span></div>
-<div class="line"><span class="lineno">  155</span>    <span class="keyword">auto</span> pdgID{daughter-&gt;getPdgID()};</div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>    <span class="comment">// Ignore photons and nuclei</span></div>
-<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (pdgID == 22 || pdgID &gt; 10000) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>    <span class="comment">// Calculate the kinetic energy</span></div>
-<div class="line"><span class="lineno">  161</span>    <span class="keywordtype">double</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>    std::vector&lt;double&gt; vec{daughter-&gt;getMomentum()};</div>
-<div class="line"><span class="lineno">  164</span>    TVector3 pvec(vec[0], vec[1], vec[2]);</div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>    <span class="comment">//  Calculate the polar angle</span></div>
-<div class="line"><span class="lineno">  167</span>    <span class="keyword">auto</span> theta{pvec.Theta() * (180 / 3.14159)};</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">if</span> (lke &lt; ke) {</div>
-<div class="line"><span class="lineno">  170</span>      lke = ke;</div>
-<div class="line"><span class="lineno">  171</span>      lt = theta;</div>
-<div class="line"><span class="lineno">  172</span>    }</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">if</span> ((pdgID == 2112) &amp;&amp; (lnke &lt; ke)) {</div>
-<div class="line"><span class="lineno">  175</span>      lnke = ke;</div>
-<div class="line"><span class="lineno">  176</span>      lnt = theta;</div>
-<div class="line"><span class="lineno">  177</span>    }</div>
-<div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">if</span> ((pdgID == 2212) &amp;&amp; (lpke &lt; ke)) {</div>
-<div class="line"><span class="lineno">  180</span>      lpke = ke;</div>
-<div class="line"><span class="lineno">  181</span>      lpt = theta;</div>
-<div class="line"><span class="lineno">  182</span>    }</div>
-<div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span> (((abs(pdgID) == 211) || (pdgID == 111)) &amp;&amp; (lpike &lt; ke)) {</div>
-<div class="line"><span class="lineno">  185</span>      lpike = ke;</div>
-<div class="line"><span class="lineno">  186</span>      lpit = theta;</div>
-<div class="line"><span class="lineno">  187</span>    }</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>    pnDaughters.push_back(daughter);</div>
-<div class="line"><span class="lineno">  190</span>  }</div>
-<div class="line"><span class="lineno">  191</span> </div>
-<div class="line"><span class="lineno">  192</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_ke&quot;</span>, lke);</div>
-<div class="line"><span class="lineno">  193</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_theta&quot;</span>, lt);</div>
-<div class="line"><span class="lineno">  194</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;h_ke_h_theta&quot;</span>, lke, lt);</div>
-<div class="line"><span class="lineno">  195</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_p_ke&quot;</span>, lpke);</div>
-<div class="line"><span class="lineno">  196</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_p_theta&quot;</span>, lpt);</div>
-<div class="line"><span class="lineno">  197</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_n_ke&quot;</span>, lnke);</div>
-<div class="line"><span class="lineno">  198</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_n_theta&quot;</span>, lnt);</div>
-<div class="line"><span class="lineno">  199</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_pi_ke&quot;</span>, lpike);</div>
-<div class="line"><span class="lineno">  200</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_pi_theta&quot;</span>, lpit);</div>
-<div class="line"><span class="lineno">  201</span> </div>
-<div class="line"><span class="lineno">  202</span>  <span class="comment">// Classify the event</span></div>
-<div class="line"><span class="lineno">  203</span>  <span class="keyword">auto</span> eventType{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a8b2f328a7af51819c50b6ff06913a452">classifyEvent</a>(pnDaughters, 200)};</div>
-<div class="line"><span class="lineno">  204</span>  <span class="keyword">auto</span> eventType500MeV{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a8b2f328a7af51819c50b6ff06913a452">classifyEvent</a>(pnDaughters, 500)};</div>
-<div class="line"><span class="lineno">  205</span>  <span class="keyword">auto</span> eventType2000MeV{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a8b2f328a7af51819c50b6ff06913a452">classifyEvent</a>(pnDaughters, 2000)};</div>
-<div class="line"><span class="lineno">  206</span> </div>
-<div class="line"><span class="lineno">  207</span>  <span class="keyword">auto</span> eventTypeComp{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a03479c3556d1ad2d90aeff858e04c45e">classifyCompactEvent</a>(pnGamma, pnDaughters, 200)};</div>
-<div class="line"><span class="lineno">  208</span>  <span class="keyword">auto</span> eventTypeComp500MeV{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a03479c3556d1ad2d90aeff858e04c45e">classifyCompactEvent</a>(pnGamma, pnDaughters, 200)};</div>
-<div class="line"><span class="lineno">  209</span>  <span class="keyword">auto</span> eventTypeComp2000MeV{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a03479c3556d1ad2d90aeff858e04c45e">classifyCompactEvent</a>(pnGamma, pnDaughters, 200)};</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type&quot;</span>, eventType);</div>
-<div class="line"><span class="lineno">  212</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_500mev&quot;</span>, eventType500MeV);</div>
-<div class="line"><span class="lineno">  213</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_2000mev&quot;</span>, eventType2000MeV);</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_compact&quot;</span>, eventTypeComp);</div>
-<div class="line"><span class="lineno">  216</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_compact_500mev&quot;</span>, eventTypeComp500MeV);</div>
-<div class="line"><span class="lineno">  217</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_compact_2000mev&quot;</span>, eventTypeComp2000MeV);</div>
-<div class="line"><span class="lineno">  218</span> </div>
-<div class="line"><span class="lineno">  219</span>  <span class="keywordtype">double</span> slke{-9999};</div>
-<div class="line"><span class="lineno">  220</span>  <span class="keywordtype">double</span> nEnergy{-9999}, energyDiff{-9999}, energyFrac{-9999};</div>
-<div class="line"><span class="lineno">  221</span> </div>
-<div class="line"><span class="lineno">  222</span>  <span class="keywordflow">if</span> (eventType == 1 || eventType == 17 || eventType == 16 || eventType == 18 ||</div>
-<div class="line"><span class="lineno">  223</span>      eventType == 2) {</div>
-<div class="line"><span class="lineno">  224</span>    std::sort(pnDaughters.begin(), pnDaughters.end(),</div>
-<div class="line"><span class="lineno">  225</span>              [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; lhs, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rhs) {</div>
-<div class="line"><span class="lineno">  226</span>                double lhs_ke = lhs-&gt;getEnergy() - lhs-&gt;getMass();</div>
-<div class="line"><span class="lineno">  227</span>                double rhs_ke = rhs-&gt;getEnergy() - rhs-&gt;getMass();</div>
-<div class="line"><span class="lineno">  228</span>                return lhs_ke &gt; rhs_ke;</div>
-<div class="line"><span class="lineno">  229</span>              });</div>
-<div class="line"><span class="lineno">  230</span> </div>
-<div class="line"><span class="lineno">  231</span>    nEnergy = pnDaughters[0]-&gt;getEnergy() - pnDaughters[0]-&gt;getMass();</div>
-<div class="line"><span class="lineno">  232</span>    slke = -9999;</div>
-<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">if</span> (pnDaughters.size() &gt; 1)</div>
-<div class="line"><span class="lineno">  234</span>      slke = pnDaughters[1]-&gt;getEnergy() - pnDaughters[1]-&gt;getMass();</div>
-<div class="line"><span class="lineno">  235</span>    energyDiff = pnGamma-&gt;getEnergy() - nEnergy;</div>
-<div class="line"><span class="lineno">  236</span>    energyFrac = nEnergy / pnGamma-&gt;getEnergy();</div>
-<div class="line"><span class="lineno">  237</span> </div>
-<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">if</span> (eventType == 1) {</div>
-<div class="line"><span class="lineno">  239</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_ke:2nd_h_ke&quot;</span>, nEnergy, slke);</div>
-<div class="line"><span class="lineno">  240</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_neutron_energy&quot;</span>, nEnergy);</div>
-<div class="line"><span class="lineno">  241</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_energy_diff&quot;</span>, energyDiff);</div>
-<div class="line"><span class="lineno">  242</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_energy_frac&quot;</span>, energyFrac);</div>
-<div class="line"><span class="lineno">  243</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eventType == 2) {</div>
-<div class="line"><span class="lineno">  244</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;2n_n2_energy&quot;</span>, slke);</div>
-<div class="line"><span class="lineno">  245</span>      <span class="keyword">auto</span> energyFrac2n = (nEnergy + slke) / pnGamma-&gt;getEnergy();</div>
-<div class="line"><span class="lineno">  246</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;2n_energy_frac&quot;</span>, energyFrac2n);</div>
-<div class="line"><span class="lineno">  247</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;2n_energy_other&quot;</span>, pnGamma-&gt;getEnergy() - energyFrac2n);</div>
-<div class="line"><span class="lineno">  248</span> </div>
-<div class="line"><span class="lineno">  249</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eventType == 17) {</div>
-<div class="line"><span class="lineno">  250</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1kp_ke:2nd_h_ke&quot;</span>, nEnergy, slke);</div>
-<div class="line"><span class="lineno">  251</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1kp_energy&quot;</span>, nEnergy);</div>
-<div class="line"><span class="lineno">  252</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1kp_energy_diff&quot;</span>, energyDiff);</div>
-<div class="line"><span class="lineno">  253</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1kp_energy_frac&quot;</span>, energyFrac);</div>
-<div class="line"><span class="lineno">  254</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eventType == 16 || eventType == 18) {</div>
-<div class="line"><span class="lineno">  255</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1k0_ke:2nd_h_ke&quot;</span>, nEnergy, slke);</div>
-<div class="line"><span class="lineno">  256</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1k0_energy&quot;</span>, nEnergy);</div>
-<div class="line"><span class="lineno">  257</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1k0_energy_diff&quot;</span>, energyDiff);</div>
-<div class="line"><span class="lineno">  258</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1k0_energy_frac&quot;</span>, energyFrac);</div>
-<div class="line"><span class="lineno">  259</span>    }</div>
-<div class="line"><span class="lineno">  260</span> </div>
-<div class="line"><span class="lineno">  261</span>    <span class="keyword">auto</span> nPdgID{abs(pnDaughters[0]-&gt;getPdgID())};</div>
-<div class="line"><span class="lineno">  262</span>    <span class="keyword">auto</span> nEventType{-10};</div>
-<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">if</span> (nPdgID == 2112)</div>
-<div class="line"><span class="lineno">  264</span>      nEventType = 1;</div>
-<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nPdgID == 2212)</div>
-<div class="line"><span class="lineno">  266</span>      nEventType = 2;</div>
-<div class="line"><span class="lineno">  267</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nPdgID == 211)</div>
-<div class="line"><span class="lineno">  268</span>      nEventType = 3;</div>
-<div class="line"><span class="lineno">  269</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nPdgID == 111)</div>
-<div class="line"><span class="lineno">  270</span>      nEventType = 4;</div>
-<div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_event_type&quot;</span>, nEventType);</div>
-<div class="line"><span class="lineno">  273</span>  }</div>
-<div class="line"><span class="lineno">  274</span>}</div>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00256">256</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  256</span>                                                         {</div>
+<div class="line"><span class="lineno">  257</span>  <span class="comment">// Get the particle map from the event.  If the particle map is empty,</span></div>
+<div class="line"><span class="lineno">  258</span>  <span class="comment">// don&#39;t process the event.</span></div>
+<div class="line"><span class="lineno">  259</span>  <span class="keyword">auto</span> particleMap{<span class="keyword">event</span>.getMap&lt;int, <a class="code hl_class" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a>&gt;(<span class="stringliteral">&quot;SimParticles&quot;</span>)};</div>
+<div class="line"><span class="lineno">  260</span>  <span class="keywordflow">if</span> (particleMap.size() == 0) {</div>
+<div class="line"><span class="lineno">  261</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  262</span>  }</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>  <span class="comment">// Get the recoil electron</span></div>
+<div class="line"><span class="lineno">  265</span>  <span class="keyword">auto</span> [trackID, recoil] = <a class="code hl_function" href="AnalysisUtils_8h.html#a96b0996f8c4e70467ec7002379546321">Analysis::getRecoil</a>(particleMap);</div>
+<div class="line"><span class="lineno">  266</span>  <a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#abfb2f95a64aa62de5f637706cd6dc243">findRecoilProperties</a>(recoil);</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>  <span class="comment">// Use the recoil electron to retrieve the gamma that underwent a</span></div>
+<div class="line"><span class="lineno">  269</span>  <span class="comment">// photo-nuclear reaction.</span></div>
+<div class="line"><span class="lineno">  270</span>  <span class="keyword">auto</span> pnGamma{<a class="code hl_function" href="AnalysisUtils_8h.html#a22d44d60e0c64a3fb4c24c09789b1a20">Analysis::getPNGamma</a>(particleMap, recoil, 2500.)};</div>
+<div class="line"><span class="lineno">  271</span>  <span class="keywordflow">if</span> (pnGamma == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  272</span>    <span class="keywordflow">if</span> (verbose_) {</div>
+<div class="line"><span class="lineno">  273</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;[ PhotoNuclearDQM ]: PN Daughter is lost, skipping.&quot;</span></div>
+<div class="line"><span class="lineno">  274</span>                &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  275</span>    }</div>
+<div class="line"><span class="lineno">  276</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  277</span>  }</div>
+<div class="line"><span class="lineno">  278</span>  <span class="keyword">const</span> <span class="keyword">auto</span> pnDaughters{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#afa33d6b1ea02de7a9c631ad1c6cc7b45">findDaughters</a>(particleMap, pnGamma)};</div>
+<div class="line"><span class="lineno">  279</span>  <a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#ac47e248285a94ae6bd77aa18d7d9f7ea">findParticleKinematics</a>(pnDaughters);</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_particle_mult&quot;</span>, pnGamma-&gt;getDaughters().size());</div>
+<div class="line"><span class="lineno">  282</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_energy&quot;</span>, pnGamma-&gt;getEnergy());</div>
+<div class="line"><span class="lineno">  283</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_int_z&quot;</span>, pnGamma-&gt;getEndPoint()[2]);</div>
+<div class="line"><span class="lineno">  284</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_vertex_x&quot;</span>, pnGamma-&gt;getVertex()[0]);</div>
+<div class="line"><span class="lineno">  285</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_vertex_y&quot;</span>, pnGamma-&gt;getVertex()[1]);</div>
+<div class="line"><span class="lineno">  286</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_gamma_vertex_z&quot;</span>, pnGamma-&gt;getVertex()[2]);</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>  <span class="comment">// Classify the event</span></div>
+<div class="line"><span class="lineno">  289</span>  <span class="keyword">auto</span> eventType{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a4f4268a5461413fb5d0035baa2690ba5">classifyEvent</a>(pnDaughters, 200)};</div>
+<div class="line"><span class="lineno">  290</span>  <span class="keyword">auto</span> eventType500MeV{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a4f4268a5461413fb5d0035baa2690ba5">classifyEvent</a>(pnDaughters, 500)};</div>
+<div class="line"><span class="lineno">  291</span>  <span class="keyword">auto</span> eventType2000MeV{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a4f4268a5461413fb5d0035baa2690ba5">classifyEvent</a>(pnDaughters, 2000)};</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>  <span class="keyword">auto</span> eventTypeComp{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#aae250c61dc709524522b38b4d7d8dcb5">classifyCompactEvent</a>(pnGamma, pnDaughters, 200)};</div>
+<div class="line"><span class="lineno">  294</span>  <span class="keyword">auto</span> eventTypeComp500MeV{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#aae250c61dc709524522b38b4d7d8dcb5">classifyCompactEvent</a>(pnGamma, pnDaughters, 500)};</div>
+<div class="line"><span class="lineno">  295</span>  <span class="keyword">auto</span> eventTypeComp2000MeV{<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#aae250c61dc709524522b38b4d7d8dcb5">classifyCompactEvent</a>(pnGamma, pnDaughters, 2000)};</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eventType));</div>
+<div class="line"><span class="lineno">  298</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_500mev&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eventType500MeV));</div>
+<div class="line"><span class="lineno">  299</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_2000mev&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eventType2000MeV));</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_compact&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eventTypeComp));</div>
+<div class="line"><span class="lineno">  302</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_compact_500mev&quot;</span>,</div>
+<div class="line"><span class="lineno">  303</span>                   <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eventTypeComp500MeV));</div>
+<div class="line"><span class="lineno">  304</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;event_type_compact_2000mev&quot;</span>,</div>
+<div class="line"><span class="lineno">  305</span>                   <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eventTypeComp2000MeV));</div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>  <span class="keywordflow">switch</span> (eventType) {</div>
+<div class="line"><span class="lineno">  308</span>  <span class="keywordflow">case</span> EventType::single_neutron:</div>
+<div class="line"><span class="lineno">  309</span>    <span class="keywordflow">if</span> (eventType == EventType::single_neutron) {</div>
+<div class="line"><span class="lineno">  310</span>      <span class="keywordflow">if</span> (pnDaughters.size() &gt; 1) {</div>
+<div class="line"><span class="lineno">  311</span>        <span class="keyword">auto</span> secondHardestPdgID{abs(pnDaughters[1]-&gt;getPdgID())};</div>
+<div class="line"><span class="lineno">  312</span>        <span class="keyword">auto</span> nEventType{-10};</div>
+<div class="line"><span class="lineno">  313</span>        <span class="keywordflow">if</span> (secondHardestPdgID == 2112) {</div>
+<div class="line"><span class="lineno">  314</span>          nEventType = 0; <span class="comment">// n + n</span></div>
+<div class="line"><span class="lineno">  315</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (secondHardestPdgID == 2212) {</div>
+<div class="line"><span class="lineno">  316</span>          nEventType = 1; <span class="comment">// p + n</span></div>
+<div class="line"><span class="lineno">  317</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (secondHardestPdgID == 211) {</div>
+<div class="line"><span class="lineno">  318</span>          nEventType = 2; <span class="comment">// Pi+/- + n</span></div>
+<div class="line"><span class="lineno">  319</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (secondHardestPdgID == 111) {</div>
+<div class="line"><span class="lineno">  320</span>          nEventType = 3; <span class="comment">// Pi0 + n</span></div>
+<div class="line"><span class="lineno">  321</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  322</span>          nEventType = 4; <span class="comment">// other</span></div>
+<div class="line"><span class="lineno">  323</span>        }</div>
+<div class="line"><span class="lineno">  324</span>        <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_event_type&quot;</span>, nEventType);</div>
+<div class="line"><span class="lineno">  325</span>      }</div>
+<div class="line"><span class="lineno">  326</span>    }</div>
+<div class="line"><span class="lineno">  327</span>    [[fallthrough]]; <span class="comment">// Remaining code is important for 1n as well</span></div>
+<div class="line"><span class="lineno">  328</span>  <span class="keywordflow">case</span> EventType::two_neutrons:</div>
+<div class="line"><span class="lineno">  329</span>  <span class="keywordflow">case</span> EventType::charged_kaon:</div>
+<div class="line"><span class="lineno">  330</span>  <span class="keywordflow">case</span> EventType::klong:</div>
+<div class="line"><span class="lineno">  331</span>  <span class="keywordflow">case</span> EventType::kshort:</div>
+<div class="line"><span class="lineno">  332</span>    <a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a1588dc3ac9bf588800bc58cfbbe93f88">findSubleadingKinematics</a>(pnGamma, pnDaughters, eventType);</div>
+<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  334</span>  }</div>
+<div class="line"><span class="lineno">  335</span>}</div>
 <div class="ttc" id="aAnalysisUtils_8h_html_a22d44d60e0c64a3fb4c24c09789b1a20"><div class="ttname"><a href="AnalysisUtils_8h.html#a22d44d60e0c64a3fb4c24c09789b1a20">Analysis::getPNGamma</a></div><div class="ttdeci">const ldmx::SimParticle * getPNGamma(const std::map&lt; int, ldmx::SimParticle &gt; &amp;particleMap, const ldmx::SimParticle *recoil, const float &amp;energyThreshold)</div><div class="ttdef"><b>Definition:</b> <a href="AnalysisUtils_8cxx_source.html#l00065">AnalysisUtils.cxx:65</a></div></div>
 <div class="ttc" id="aAnalysisUtils_8h_html_a96b0996f8c4e70467ec7002379546321"><div class="ttname"><a href="AnalysisUtils_8h.html#a96b0996f8c4e70467ec7002379546321">Analysis::getRecoil</a></div><div class="ttdeci">std::tuple&lt; int, const ldmx::SimParticle * &gt; getRecoil(const std::map&lt; int, ldmx::SimParticle &gt; &amp;particleMap)</div><div class="ttdef"><b>Definition:</b> <a href="AnalysisUtils_8cxx_source.html#l00029">AnalysisUtils.cxx:29</a></div></div>
-<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_a03479c3556d1ad2d90aeff858e04c45e"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#a03479c3556d1ad2d90aeff858e04c45e">dqm::PhotoNuclearDQM::classifyCompactEvent</a></div><div class="ttdeci">int classifyCompactEvent(const ldmx::SimParticle *pnGamma, const std::vector&lt; const ldmx::SimParticle * &gt; daughters, double threshold)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00397">PhotoNuclearDQM.cxx:397</a></div></div>
-<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_a8b2f328a7af51819c50b6ff06913a452"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#a8b2f328a7af51819c50b6ff06913a452">dqm::PhotoNuclearDQM::classifyEvent</a></div><div class="ttdeci">int classifyEvent(const std::vector&lt; const ldmx::SimParticle * &gt; daughters, double threshold)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00276">PhotoNuclearDQM.cxx:276</a></div></div>
+<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_a1588dc3ac9bf588800bc58cfbbe93f88"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#a1588dc3ac9bf588800bc58cfbbe93f88">dqm::PhotoNuclearDQM::findSubleadingKinematics</a></div><div class="ttdeci">void findSubleadingKinematics(const ldmx::SimParticle *pnGamma, const std::vector&lt; const ldmx::SimParticle * &gt; &amp;pnDaughters, const EventType eventType)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00137">PhotoNuclearDQM.cxx:137</a></div></div>
+<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_a4f4268a5461413fb5d0035baa2690ba5"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#a4f4268a5461413fb5d0035baa2690ba5">dqm::PhotoNuclearDQM::classifyEvent</a></div><div class="ttdeci">EventType classifyEvent(const std::vector&lt; const ldmx::SimParticle * &gt; daughters, double threshold)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00337">PhotoNuclearDQM.cxx:337</a></div></div>
+<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_aae250c61dc709524522b38b4d7d8dcb5"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#aae250c61dc709524522b38b4d7d8dcb5">dqm::PhotoNuclearDQM::classifyCompactEvent</a></div><div class="ttdeci">CompactEventType classifyCompactEvent(const ldmx::SimParticle *pnGamma, const std::vector&lt; const ldmx::SimParticle * &gt; daughters, double threshold)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00443">PhotoNuclearDQM.cxx:443</a></div></div>
+<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_abfb2f95a64aa62de5f637706cd6dc243"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#abfb2f95a64aa62de5f637706cd6dc243">dqm::PhotoNuclearDQM::findRecoilProperties</a></div><div class="ttdeci">void findRecoilProperties(const ldmx::SimParticle *recoil)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00062">PhotoNuclearDQM.cxx:62</a></div></div>
+<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_ac47e248285a94ae6bd77aa18d7d9f7ea"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#ac47e248285a94ae6bd77aa18d7d9f7ea">dqm::PhotoNuclearDQM::findParticleKinematics</a></div><div class="ttdeci">void findParticleKinematics(const std::vector&lt; const ldmx::SimParticle * &gt; &amp;pnDaughters)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00070">PhotoNuclearDQM.cxx:70</a></div></div>
+<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_afa33d6b1ea02de7a9c631ad1c6cc7b45"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#afa33d6b1ea02de7a9c631ad1c6cc7b45">dqm::PhotoNuclearDQM::findDaughters</a></div><div class="ttdeci">std::vector&lt; const ldmx::SimParticle * &gt; findDaughters(const std::map&lt; int, ldmx::SimParticle &gt; particleMap, const ldmx::SimParticle *parent) const</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00030">PhotoNuclearDQM.cxx:30</a></div></div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_ae8a2bfe0849be1531e195438c1eaba4c"><div class="ttname"><a href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">framework::EventProcessor::histograms_</a></div><div class="ttdeci">HistogramHelper histograms_</div><div class="ttdoc">Interface class for making and filling histograms.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00216">EventProcessor.h:216</a></div></div>
 <div class="ttc" id="aclassframework_1_1HistogramHelper_html_a43c753c04a441dc6ae654bc48ff47198"><div class="ttname"><a href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">framework::HistogramHelper::fill</a></div><div class="ttdeci">void fill(const std::string &amp;name, const double &amp;val)</div><div class="ttdef"><b>Definition:</b> <a href="Histograms_8h_source.html#l00166">Histograms.h:166</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimParticle_html"><div class="ttname"><a href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a></div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00023">SimParticle.h:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00397">classifyCompactEvent()</a>, <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00276">classifyEvent()</a>, <a class="el" href="Histograms_8h_source.html#l00166">framework::HistogramHelper::fill()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00216">framework::EventProcessor::histograms_</a>.</p>
+<p class="reference">References <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00443">classifyCompactEvent()</a>, <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00337">classifyEvent()</a>, <a class="el" href="Histograms_8h_source.html#l00166">framework::HistogramHelper::fill()</a>, <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00030">findDaughters()</a>, <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00070">findParticleKinematics()</a>, <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00062">findRecoilProperties()</a>, <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00137">findSubleadingKinematics()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00216">framework::EventProcessor::histograms_</a>.</p>
 
 </div>
 </div>
-<a id="a03479c3556d1ad2d90aeff858e04c45e" name="a03479c3556d1ad2d90aeff858e04c45e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03479c3556d1ad2d90aeff858e04c45e">&#9670;&#160;</a></span>classifyCompactEvent()</h2>
+<a id="aae250c61dc709524522b38b4d7d8dcb5" name="aae250c61dc709524522b38b4d7d8dcb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae250c61dc709524522b38b4d7d8dcb5">&#9670;&#160;</a></span>classifyCompactEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,7 +480,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int dqm::PhotoNuclearDQM::classifyCompactEvent </td>
+          <td class="memname">PhotoNuclearDQM::CompactEventType dqm::PhotoNuclearDQM::classifyCompactEvent </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *&#160;</td>
           <td class="paramname"><em>pnGamma</em>, </td>
@@ -463,59 +511,72 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >Method used to classify events in a compact manner. </p>
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00397">397</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  399</span>                                                                         {</div>
-<div class="line"><span class="lineno">  400</span>  <span class="keywordtype">short</span> n{0}, n_t{0}, k0l{0}, kp{0}, k0s{0}, soft{0};</div>
-<div class="line"><span class="lineno">  401</span> </div>
-<div class="line"><span class="lineno">  402</span>  <span class="comment">// Loop through all of the PN daughters and extract kinematic</span></div>
-<div class="line"><span class="lineno">  403</span>  <span class="comment">// information.</span></div>
-<div class="line"><span class="lineno">  404</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; daughter : daughters) {</div>
-<div class="line"><span class="lineno">  405</span>    <span class="comment">// Calculate the kinetic energy</span></div>
-<div class="line"><span class="lineno">  406</span>    <span class="keyword">auto</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
-<div class="line"><span class="lineno">  407</span> </div>
-<div class="line"><span class="lineno">  408</span>    <span class="comment">// Get the PDG ID</span></div>
-<div class="line"><span class="lineno">  409</span>    <span class="keyword">auto</span> pdgID{abs(daughter-&gt;getPdgID())};</div>
-<div class="line"><span class="lineno">  410</span> </div>
-<div class="line"><span class="lineno">  411</span>    <span class="keywordflow">if</span> (ke &lt; 500) {</div>
-<div class="line"><span class="lineno">  412</span>      soft++;</div>
-<div class="line"><span class="lineno">  413</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  414</span>    }</div>
-<div class="line"><span class="lineno">  415</span> </div>
-<div class="line"><span class="lineno">  416</span>    <span class="keywordflow">if</span> (ke &gt;= 0.8 * pnGamma-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a2b1cc687cebced244614ba2e84acbb17">getEnergy</a>()) {</div>
-<div class="line"><span class="lineno">  417</span>      <span class="keywordflow">if</span> (pdgID == 2112)</div>
-<div class="line"><span class="lineno">  418</span>        n++;</div>
-<div class="line"><span class="lineno">  419</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 130)</div>
-<div class="line"><span class="lineno">  420</span>        k0l++;</div>
-<div class="line"><span class="lineno">  421</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 321)</div>
-<div class="line"><span class="lineno">  422</span>        kp++;</div>
-<div class="line"><span class="lineno">  423</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 310)</div>
-<div class="line"><span class="lineno">  424</span>        k0s++;</div>
-<div class="line"><span class="lineno">  425</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  426</span>    }</div>
-<div class="line"><span class="lineno">  427</span> </div>
-<div class="line"><span class="lineno">  428</span>    <span class="keywordflow">if</span> ((pdgID == 2112) &amp;&amp; ke &gt; threshold) n_t++;</div>
-<div class="line"><span class="lineno">  429</span>  }</div>
-<div class="line"><span class="lineno">  430</span> </div>
-<div class="line"><span class="lineno">  431</span>  <span class="keywordtype">int</span> neutral_kaons{k0l + k0s};</div>
-<div class="line"><span class="lineno">  432</span> </div>
-<div class="line"><span class="lineno">  433</span>  <span class="keywordflow">if</span> (n != 0) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  434</span>  <span class="keywordflow">if</span> (kp != 0) <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  435</span>  <span class="keywordflow">if</span> (neutral_kaons != 0) <span class="keywordflow">return</span> 2;</div>
-<div class="line"><span class="lineno">  436</span>  <span class="keywordflow">if</span> (n_t == 2) <span class="keywordflow">return</span> 3;</div>
-<div class="line"><span class="lineno">  437</span>  <span class="keywordflow">if</span> (soft == daughters.size()) <span class="keywordflow">return</span> 4;</div>
-<div class="line"><span class="lineno">  438</span> </div>
-<div class="line"><span class="lineno">  439</span>  <span class="keywordflow">return</span> 5;</div>
-<div class="line"><span class="lineno">  440</span>}</div>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00443">443</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  445</span>                                                                          {</div>
+<div class="line"><span class="lineno">  446</span>  <span class="keywordtype">short</span> n{0}, n_t{0}, k0l{0}, kp{0}, k0s{0}, soft{0};</div>
+<div class="line"><span class="lineno">  447</span> </div>
+<div class="line"><span class="lineno">  448</span>  <span class="comment">// Loop through all of the PN daughters and extract kinematic</span></div>
+<div class="line"><span class="lineno">  449</span>  <span class="comment">// information.</span></div>
+<div class="line"><span class="lineno">  450</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;daughter : daughters) {</div>
+<div class="line"><span class="lineno">  451</span>    <span class="comment">// Calculate the kinetic energy</span></div>
+<div class="line"><span class="lineno">  452</span>    <span class="keyword">auto</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
+<div class="line"><span class="lineno">  453</span> </div>
+<div class="line"><span class="lineno">  454</span>    <span class="comment">// Get the PDG ID</span></div>
+<div class="line"><span class="lineno">  455</span>    <span class="keyword">auto</span> pdgID{abs(daughter-&gt;getPdgID())};</div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>    <span class="keywordflow">if</span> (ke &lt; 500) {</div>
+<div class="line"><span class="lineno">  458</span>      soft++;</div>
+<div class="line"><span class="lineno">  459</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  460</span>    }</div>
+<div class="line"><span class="lineno">  461</span> </div>
+<div class="line"><span class="lineno">  462</span>    <span class="keywordflow">if</span> (ke &gt;= 0.8 * pnGamma-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a2b1cc687cebced244614ba2e84acbb17">getEnergy</a>()) {</div>
+<div class="line"><span class="lineno">  463</span>      <span class="keywordflow">if</span> (pdgID == 2112) {</div>
+<div class="line"><span class="lineno">  464</span>        n++;</div>
+<div class="line"><span class="lineno">  465</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 130) {</div>
+<div class="line"><span class="lineno">  466</span>        k0l++;</div>
+<div class="line"><span class="lineno">  467</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 321) {</div>
+<div class="line"><span class="lineno">  468</span>        kp++;</div>
+<div class="line"><span class="lineno">  469</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 310) {</div>
+<div class="line"><span class="lineno">  470</span>        k0s++;</div>
+<div class="line"><span class="lineno">  471</span>      }</div>
+<div class="line"><span class="lineno">  472</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  473</span>    }</div>
+<div class="line"><span class="lineno">  474</span> </div>
+<div class="line"><span class="lineno">  475</span>    <span class="keywordflow">if</span> ((pdgID == 2112) &amp;&amp; ke &gt; threshold) {</div>
+<div class="line"><span class="lineno">  476</span>      n_t++;</div>
+<div class="line"><span class="lineno">  477</span>    }</div>
+<div class="line"><span class="lineno">  478</span>  }</div>
+<div class="line"><span class="lineno">  479</span> </div>
+<div class="line"><span class="lineno">  480</span>  <span class="keywordtype">int</span> neutral_kaons{k0l + k0s};</div>
+<div class="line"><span class="lineno">  481</span> </div>
+<div class="line"><span class="lineno">  482</span>  <span class="keywordflow">if</span> (n != 0) {</div>
+<div class="line"><span class="lineno">  483</span>    <span class="keywordflow">return</span> PhotoNuclearDQM::CompactEventType::single_neutron;</div>
+<div class="line"><span class="lineno">  484</span>  }</div>
+<div class="line"><span class="lineno">  485</span>  <span class="keywordflow">if</span> (kp != 0) {</div>
+<div class="line"><span class="lineno">  486</span>    <span class="keywordflow">return</span> PhotoNuclearDQM::CompactEventType::single_charged_kaon;</div>
+<div class="line"><span class="lineno">  487</span>  }</div>
+<div class="line"><span class="lineno">  488</span>  <span class="keywordflow">if</span> (neutral_kaons != 0) {</div>
+<div class="line"><span class="lineno">  489</span>    <span class="keywordflow">return</span> PhotoNuclearDQM::CompactEventType::single_neutral_kaon;</div>
+<div class="line"><span class="lineno">  490</span>  }</div>
+<div class="line"><span class="lineno">  491</span>  <span class="keywordflow">if</span> (n_t == 2) {</div>
+<div class="line"><span class="lineno">  492</span>    <span class="keywordflow">return</span> PhotoNuclearDQM::CompactEventType::two_neutrons;</div>
+<div class="line"><span class="lineno">  493</span>  }</div>
+<div class="line"><span class="lineno">  494</span>  <span class="keywordflow">if</span> (soft == daughters.size()) {</div>
+<div class="line"><span class="lineno">  495</span>    <span class="keywordflow">return</span> PhotoNuclearDQM::CompactEventType::soft;</div>
+<div class="line"><span class="lineno">  496</span>  }</div>
+<div class="line"><span class="lineno">  497</span> </div>
+<div class="line"><span class="lineno">  498</span>  <span class="keywordflow">return</span> PhotoNuclearDQM::CompactEventType::other;</div>
+<div class="line"><span class="lineno">  499</span>}</div>
 <div class="ttc" id="aclassldmx_1_1SimParticle_html_a2b1cc687cebced244614ba2e84acbb17"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a2b1cc687cebced244614ba2e84acbb17">ldmx::SimParticle::getEnergy</a></div><div class="ttdeci">double getEnergy() const</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00064">SimParticle.h:64</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="SimParticle_8h_source.html#l00064">ldmx::SimParticle::getEnergy()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00106">analyze()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00256">analyze()</a>.</p>
 
 </div>
 </div>
-<a id="a8b2f328a7af51819c50b6ff06913a452" name="a8b2f328a7af51819c50b6ff06913a452"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b2f328a7af51819c50b6ff06913a452">&#9670;&#160;</a></span>classifyEvent()</h2>
+<a id="a4f4268a5461413fb5d0035baa2690ba5" name="a4f4268a5461413fb5d0035baa2690ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f4268a5461413fb5d0035baa2690ba5">&#9670;&#160;</a></span>classifyEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,7 +585,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int dqm::PhotoNuclearDQM::classifyEvent </td>
+          <td class="memname">PhotoNuclearDQM::EventType dqm::PhotoNuclearDQM::classifyEvent </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt;&#160;</td>
           <td class="paramname"><em>daughters</em>, </td>
@@ -547,130 +608,115 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Method used to classify events. </p>
+<p >Method used to classify events. Note: Assumes that daughters is sorted by kinetic energy. </p>
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00276">276</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  277</span>                                                                         {</div>
-<div class="line"><span class="lineno">  278</span>  <span class="keywordtype">short</span> n{0}, p{0}, pi{0}, pi0{0}, exotic{0}, k0l{0}, kp{0}, k0s{0}, lambda{0};</div>
-<div class="line"><span class="lineno">  279</span> </div>
-<div class="line"><span class="lineno">  280</span>  <span class="comment">// Loop through all of the PN daughters and extract kinematic</span></div>
-<div class="line"><span class="lineno">  281</span>  <span class="comment">// information.</span></div>
-<div class="line"><span class="lineno">  282</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; daughter : daughters) {</div>
-<div class="line"><span class="lineno">  283</span>    <span class="comment">// Calculate the kinetic energy</span></div>
-<div class="line"><span class="lineno">  284</span>    <span class="keyword">auto</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
-<div class="line"><span class="lineno">  285</span> </div>
-<div class="line"><span class="lineno">  286</span>    <span class="comment">// If the kinetic energy is below threshold, continue</span></div>
-<div class="line"><span class="lineno">  287</span>    <span class="keywordflow">if</span> (ke &lt;= threshold) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  288</span> </div>
-<div class="line"><span class="lineno">  289</span>    <span class="comment">// Get the PDG ID</span></div>
-<div class="line"><span class="lineno">  290</span>    <span class="keyword">auto</span> pdgID{abs(daughter-&gt;getPdgID())};</div>
-<div class="line"><span class="lineno">  291</span> </div>
-<div class="line"><span class="lineno">  292</span>    <span class="keywordflow">if</span> (pdgID == 2112)</div>
-<div class="line"><span class="lineno">  293</span>      n++;</div>
-<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 2212)</div>
-<div class="line"><span class="lineno">  295</span>      p++;</div>
-<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 211)</div>
-<div class="line"><span class="lineno">  297</span>      pi++;</div>
-<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 111)</div>
-<div class="line"><span class="lineno">  299</span>      pi0++;</div>
-<div class="line"><span class="lineno">  300</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 130)</div>
-<div class="line"><span class="lineno">  301</span>      k0l++;</div>
-<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 321)</div>
-<div class="line"><span class="lineno">  303</span>      kp++;</div>
-<div class="line"><span class="lineno">  304</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 310)</div>
-<div class="line"><span class="lineno">  305</span>      k0s++;</div>
-<div class="line"><span class="lineno">  306</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  307</span>      exotic++;</div>
-<div class="line"><span class="lineno">  308</span>  }</div>
-<div class="line"><span class="lineno">  309</span> </div>
-<div class="line"><span class="lineno">  310</span>  <span class="keywordtype">int</span> kaons = k0l + kp + k0s;</div>
-<div class="line"><span class="lineno">  311</span>  <span class="keywordtype">int</span> nucleons = n + p;</div>
-<div class="line"><span class="lineno">  312</span>  <span class="keywordtype">int</span> pions = pi + pi0;</div>
-<div class="line"><span class="lineno">  313</span>  <span class="keywordtype">int</span> count = nucleons + pions + exotic + kaons;</div>
-<div class="line"><span class="lineno">  314</span>  <span class="keywordtype">int</span> count_a = p + pions + exotic + kaons;</div>
-<div class="line"><span class="lineno">  315</span>  <span class="keywordtype">int</span> count_b = pions + exotic + kaons;</div>
-<div class="line"><span class="lineno">  316</span>  <span class="keywordtype">int</span> count_c = nucleons + pi0 + exotic + kaons;</div>
-<div class="line"><span class="lineno">  317</span>  <span class="keywordtype">int</span> count_d = n + pi0 + exotic + k0l + kp + k0s;</div>
-<div class="line"><span class="lineno">  318</span>  <span class="keywordtype">int</span> count_e = p + pi0 + exotic + k0l + kp + k0s;</div>
-<div class="line"><span class="lineno">  319</span>  <span class="keywordtype">int</span> count_f = n + p + pi + exotic + k0l + kp + k0s;</div>
-<div class="line"><span class="lineno">  320</span>  <span class="keywordtype">int</span> count_g = n + pi + pi0 + exotic + k0l + kp + k0s;</div>
-<div class="line"><span class="lineno">  321</span>  <span class="keywordtype">int</span> count_h = n + p + pi + pi0 + k0l + kp + k0s;</div>
-<div class="line"><span class="lineno">  322</span>  <span class="keywordtype">int</span> count_i = p + pi + exotic + k0l + kp + k0s;</div>
-<div class="line"><span class="lineno">  323</span>  <span class="keywordtype">int</span> count_j = n + pi + exotic + k0l + kp + k0s;</div>
-<div class="line"><span class="lineno">  324</span>  <span class="keywordtype">int</span> count_k = nucleons + pions + exotic + kp + k0s;</div>
-<div class="line"><span class="lineno">  325</span>  <span class="keywordtype">int</span> count_l = nucleons + pions + exotic + k0l + k0s;</div>
-<div class="line"><span class="lineno">  326</span>  <span class="keywordtype">int</span> count_m = nucleons + pions + exotic + kp + k0l;</div>
-<div class="line"><span class="lineno">  327</span>  <span class="keywordtype">int</span> count_n = pi0 + exotic + kaons;</div>
-<div class="line"><span class="lineno">  328</span>  <span class="keywordtype">int</span> count_o = pi + exotic + kaons;</div>
-<div class="line"><span class="lineno">  329</span>  <span class="keywordtype">int</span> count_p = exotic + kaons;</div>
-<div class="line"><span class="lineno">  330</span> </div>
-<div class="line"><span class="lineno">  331</span>  <span class="keywordflow">if</span> (count == 0) <span class="keywordflow">return</span> 0;  <span class="comment">// Nothing hard</span></div>
-<div class="line"><span class="lineno">  332</span> </div>
-<div class="line"><span class="lineno">  333</span>  <span class="keywordflow">if</span> (n == 1) {</div>
-<div class="line"><span class="lineno">  334</span>    <span class="keywordflow">if</span> (count_a == 0)</div>
-<div class="line"><span class="lineno">  335</span>      <span class="keywordflow">return</span> 1;  <span class="comment">// 1n</span></div>
-<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((p == 1) &amp;&amp; (count_b == 0))</div>
-<div class="line"><span class="lineno">  337</span>      <span class="keywordflow">return</span> 15;  <span class="comment">// pn</span></div>
-<div class="line"><span class="lineno">  338</span>  }</div>
-<div class="line"><span class="lineno">  339</span> </div>
-<div class="line"><span class="lineno">  340</span>  <span class="keywordflow">if</span> ((n == 2) &amp;&amp; (count_a == 0)) <span class="keywordflow">return</span> 2;  <span class="comment">// 2 n</span></div>
-<div class="line"><span class="lineno">  341</span> </div>
-<div class="line"><span class="lineno">  342</span>  <span class="keywordflow">if</span> ((n &gt;= 3) &amp;&amp; (count_a == 0)) <span class="keywordflow">return</span> 3;  <span class="comment">// &gt;= 3 n</span></div>
-<div class="line"><span class="lineno">  343</span> </div>
-<div class="line"><span class="lineno">  344</span>  <span class="keywordflow">if</span> (pi == 1) {</div>
-<div class="line"><span class="lineno">  345</span>    <span class="keywordflow">if</span> (count_c == 0)</div>
-<div class="line"><span class="lineno">  346</span>      <span class="keywordflow">return</span> 4;  <span class="comment">// 1 pi</span></div>
-<div class="line"><span class="lineno">  347</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((p == 1) &amp;&amp; (count_d == 0))</div>
-<div class="line"><span class="lineno">  348</span>      <span class="keywordflow">return</span> 7;  <span class="comment">// 1 pi 1 p</span></div>
-<div class="line"><span class="lineno">  349</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((p == 2) &amp;&amp; (count_d == 0))</div>
-<div class="line"><span class="lineno">  350</span>      <span class="keywordflow">return</span> 8;  <span class="comment">// 1 pi 1 p</span></div>
-<div class="line"><span class="lineno">  351</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((n == 1) &amp;&amp; (count_e == 0))</div>
-<div class="line"><span class="lineno">  352</span>      <span class="keywordflow">return</span> 7;  <span class="comment">// 1 pi 1 n</span></div>
-<div class="line"><span class="lineno">  353</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((n == 2) &amp;&amp; (count_e == 0))</div>
-<div class="line"><span class="lineno">  354</span>      <span class="keywordflow">return</span> 8;  <span class="comment">// 1 pi 1 n</span></div>
-<div class="line"><span class="lineno">  355</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((n == 1) &amp;&amp; (p == 1) &amp;&amp; (count_n == 0))</div>
-<div class="line"><span class="lineno">  356</span>      <span class="keywordflow">return</span> 8;</div>
-<div class="line"><span class="lineno">  357</span>  }</div>
-<div class="line"><span class="lineno">  358</span> </div>
-<div class="line"><span class="lineno">  359</span>  <span class="keywordflow">if</span> (pi == 2) {</div>
-<div class="line"><span class="lineno">  360</span>    <span class="keywordflow">if</span> (count_c == 0)</div>
-<div class="line"><span class="lineno">  361</span>      <span class="keywordflow">return</span> 5;  <span class="comment">// 2pi</span></div>
-<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((p == 1) &amp;&amp; (count_d == 0))</div>
-<div class="line"><span class="lineno">  363</span>      <span class="keywordflow">return</span> 9;  <span class="comment">// 2pi p</span></div>
-<div class="line"><span class="lineno">  364</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((n == 1) &amp;&amp; (count_e == 0))</div>
-<div class="line"><span class="lineno">  365</span>      <span class="keywordflow">return</span> 9;  <span class="comment">// 2pi n</span></div>
-<div class="line"><span class="lineno">  366</span>  }</div>
-<div class="line"><span class="lineno">  367</span> </div>
-<div class="line"><span class="lineno">  368</span>  <span class="keywordflow">if</span> (pi0 == 1) {</div>
-<div class="line"><span class="lineno">  369</span>    <span class="keywordflow">if</span> (count_f == 0)</div>
-<div class="line"><span class="lineno">  370</span>      <span class="keywordflow">return</span> 6;  <span class="comment">// 1 pi0</span></div>
-<div class="line"><span class="lineno">  371</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((n == 1) &amp;&amp; (count_i == 0))</div>
-<div class="line"><span class="lineno">  372</span>      <span class="keywordflow">return</span> 10;  <span class="comment">// 1pi0 1 p</span></div>
-<div class="line"><span class="lineno">  373</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((n == 2) &amp;&amp; (count_i == 0))</div>
-<div class="line"><span class="lineno">  374</span>      <span class="keywordflow">return</span> 11;  <span class="comment">// 1pi0 1 p</span></div>
-<div class="line"><span class="lineno">  375</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((p == 1) &amp;&amp; (count_j == 0))</div>
-<div class="line"><span class="lineno">  376</span>      <span class="keywordflow">return</span> 10;  <span class="comment">// 1pi0 1 n</span></div>
-<div class="line"><span class="lineno">  377</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((p == 2) &amp;&amp; (count_j == 0))</div>
-<div class="line"><span class="lineno">  378</span>      <span class="keywordflow">return</span> 11;</div>
-<div class="line"><span class="lineno">  379</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((n == 1) &amp;&amp; (p == 1) &amp;&amp; (count_o == 0))</div>
-<div class="line"><span class="lineno">  380</span>      <span class="keywordflow">return</span> 11;</div>
-<div class="line"><span class="lineno">  381</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((pi == 1) &amp;&amp; ((p == 1) || (n == 1)) &amp;&amp; (count_p == 0))</div>
-<div class="line"><span class="lineno">  382</span>      <span class="keywordflow">return</span> 12;</div>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00337">337</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  338</span>                                                                          {</div>
+<div class="line"><span class="lineno">  339</span>  <span class="keywordtype">short</span> n{0}, p{0}, pi{0}, pi0{0}, exotic{0}, k0l{0}, kp{0}, k0s{0}, lambda{0};</div>
+<div class="line"><span class="lineno">  340</span> </div>
+<div class="line"><span class="lineno">  341</span>  <span class="comment">// Loop through all of the PN daughters and extract kinematic</span></div>
+<div class="line"><span class="lineno">  342</span>  <span class="comment">// information.</span></div>
+<div class="line"><span class="lineno">  343</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;daughter : daughters) {</div>
+<div class="line"><span class="lineno">  344</span>    <span class="comment">// Calculate the kinetic energy</span></div>
+<div class="line"><span class="lineno">  345</span>    <span class="keyword">auto</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
+<div class="line"><span class="lineno">  346</span> </div>
+<div class="line"><span class="lineno">  347</span>    <span class="comment">// Assuming the daughters are sorted by kinetic energy, if the kinetic</span></div>
+<div class="line"><span class="lineno">  348</span>    <span class="comment">// energy is below threshold, we don&#39;t need to look at any further</span></div>
+<div class="line"><span class="lineno">  349</span>    <span class="comment">// particles.</span></div>
+<div class="line"><span class="lineno">  350</span>    <span class="keywordflow">if</span> (ke &lt;= threshold) {</div>
+<div class="line"><span class="lineno">  351</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  352</span>    }</div>
+<div class="line"><span class="lineno">  353</span> </div>
+<div class="line"><span class="lineno">  354</span>    <span class="comment">// Get the PDG ID</span></div>
+<div class="line"><span class="lineno">  355</span>    <span class="keyword">auto</span> pdgID{abs(daughter-&gt;getPdgID())};</div>
+<div class="line"><span class="lineno">  356</span> </div>
+<div class="line"><span class="lineno">  357</span>    <span class="keywordflow">if</span> (pdgID == 2112) {</div>
+<div class="line"><span class="lineno">  358</span>      n++;</div>
+<div class="line"><span class="lineno">  359</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 2212) {</div>
+<div class="line"><span class="lineno">  360</span>      p++;</div>
+<div class="line"><span class="lineno">  361</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 211) {</div>
+<div class="line"><span class="lineno">  362</span>      pi++;</div>
+<div class="line"><span class="lineno">  363</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 111) {</div>
+<div class="line"><span class="lineno">  364</span>      pi0++;</div>
+<div class="line"><span class="lineno">  365</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 130) {</div>
+<div class="line"><span class="lineno">  366</span>      k0l++;</div>
+<div class="line"><span class="lineno">  367</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 321) {</div>
+<div class="line"><span class="lineno">  368</span>      kp++;</div>
+<div class="line"><span class="lineno">  369</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pdgID == 310) {</div>
+<div class="line"><span class="lineno">  370</span>      k0s++;</div>
+<div class="line"><span class="lineno">  371</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  372</span>      exotic++;</div>
+<div class="line"><span class="lineno">  373</span>    }</div>
+<div class="line"><span class="lineno">  374</span>  }</div>
+<div class="line"><span class="lineno">  375</span> </div>
+<div class="line"><span class="lineno">  376</span>  <span class="keywordtype">int</span> kaons = k0l + kp + k0s;</div>
+<div class="line"><span class="lineno">  377</span>  <span class="keywordtype">int</span> nucleons = n + p;</div>
+<div class="line"><span class="lineno">  378</span>  <span class="keywordtype">int</span> pions = pi + pi0;</div>
+<div class="line"><span class="lineno">  379</span>  <span class="keywordtype">int</span> count = nucleons + pions + exotic + kaons;</div>
+<div class="line"><span class="lineno">  380</span> </div>
+<div class="line"><span class="lineno">  381</span>  <span class="keywordflow">if</span> (count == 0) {</div>
+<div class="line"><span class="lineno">  382</span>    <span class="keywordflow">return</span> EventType::nothing_hard;</div>
 <div class="line"><span class="lineno">  383</span>  }</div>
-<div class="line"><span class="lineno">  384</span> </div>
-<div class="line"><span class="lineno">  385</span>  <span class="keywordflow">if</span> ((p == 1) &amp;&amp; (count_g == 0)) <span class="keywordflow">return</span> 13;  <span class="comment">// 1 p</span></div>
-<div class="line"><span class="lineno">  386</span>  <span class="keywordflow">if</span> ((p == 2) &amp;&amp; (count_g == 0)) <span class="keywordflow">return</span> 14;  <span class="comment">// 2 p</span></div>
-<div class="line"><span class="lineno">  387</span> </div>
-<div class="line"><span class="lineno">  388</span>  <span class="keywordflow">if</span> (k0l == 1) <span class="keywordflow">return</span> 16;</div>
-<div class="line"><span class="lineno">  389</span>  <span class="keywordflow">if</span> (kp == 1) <span class="keywordflow">return</span> 17;</div>
-<div class="line"><span class="lineno">  390</span>  <span class="keywordflow">if</span> (k0s == 1) <span class="keywordflow">return</span> 18;</div>
-<div class="line"><span class="lineno">  391</span> </div>
-<div class="line"><span class="lineno">  392</span>  <span class="keywordflow">if</span> ((exotic &gt; 0) &amp;&amp; (count_h == 0)) <span class="keywordflow">return</span> 19;</div>
-<div class="line"><span class="lineno">  393</span> </div>
-<div class="line"><span class="lineno">  394</span>  <span class="keywordflow">return</span> 20;</div>
-<div class="line"><span class="lineno">  395</span>}</div>
+<div class="line"><span class="lineno">  384</span>  <span class="keywordflow">if</span> (count == 1) {</div>
+<div class="line"><span class="lineno">  385</span>    <span class="keywordflow">if</span> (n == 1) {</div>
+<div class="line"><span class="lineno">  386</span>      <span class="keywordflow">return</span> EventType::single_neutron;</div>
+<div class="line"><span class="lineno">  387</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p == 1) {</div>
+<div class="line"><span class="lineno">  388</span>      <span class="keywordflow">return</span> EventType::single_proton;</div>
+<div class="line"><span class="lineno">  389</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pi0 == 1) {</div>
+<div class="line"><span class="lineno">  390</span>      <span class="keywordflow">return</span> EventType::single_neutral_pion;</div>
+<div class="line"><span class="lineno">  391</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pi == 1) {</div>
+<div class="line"><span class="lineno">  392</span>      <span class="keywordflow">return</span> EventType::single_charged_pion;</div>
+<div class="line"><span class="lineno">  393</span>    }</div>
+<div class="line"><span class="lineno">  394</span>  }</div>
+<div class="line"><span class="lineno">  395</span>  <span class="keywordflow">if</span> (count == 2) {</div>
+<div class="line"><span class="lineno">  396</span>    <span class="keywordflow">if</span> (n == 2) {</div>
+<div class="line"><span class="lineno">  397</span>      <span class="keywordflow">return</span> EventType::two_neutrons;</div>
+<div class="line"><span class="lineno">  398</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n == 1 &amp;&amp; p == 1) {</div>
+<div class="line"><span class="lineno">  399</span>      <span class="keywordflow">return</span> EventType::proton_neutron;</div>
+<div class="line"><span class="lineno">  400</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p == 2) {</div>
+<div class="line"><span class="lineno">  401</span>      <span class="keywordflow">return</span> EventType::two_protons;</div>
+<div class="line"><span class="lineno">  402</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pi == 2) {</div>
+<div class="line"><span class="lineno">  403</span>      <span class="keywordflow">return</span> EventType::two_charged_pions;</div>
+<div class="line"><span class="lineno">  404</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pi == 1 &amp;&amp; nucleons == 1) {</div>
+<div class="line"><span class="lineno">  405</span>      <span class="keywordflow">return</span> EventType::single_charged_pion_and_nucleon;</div>
+<div class="line"><span class="lineno">  406</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pi0 == 1 &amp;&amp; nucleons == 1) {</div>
+<div class="line"><span class="lineno">  407</span>      <span class="keywordflow">return</span> EventType::single_neutral_pion_and_nucleon;</div>
+<div class="line"><span class="lineno">  408</span>    }</div>
+<div class="line"><span class="lineno">  409</span>  }</div>
+<div class="line"><span class="lineno">  410</span> </div>
+<div class="line"><span class="lineno">  411</span>  <span class="keywordflow">if</span> (count == 3) {</div>
+<div class="line"><span class="lineno">  412</span>    <span class="keywordflow">if</span> (pi == 1 &amp;&amp; nucleons == 2) {</div>
+<div class="line"><span class="lineno">  413</span>      <span class="keywordflow">return</span> EventType::single_charged_pion_and_two_nucleons;</div>
+<div class="line"><span class="lineno">  414</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pi == 2 &amp;&amp; nucleons == 1) {</div>
+<div class="line"><span class="lineno">  415</span>      <span class="keywordflow">return</span> EventType::two_charged_pions_and_nucleon;</div>
+<div class="line"><span class="lineno">  416</span>    } <span class="comment">// else</span></div>
+<div class="line"><span class="lineno">  417</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pi0 == 1 &amp;&amp; nucleons == 2) {</div>
+<div class="line"><span class="lineno">  418</span>      <span class="keywordflow">return</span> EventType::single_neutral_pion_and_two_nucleons;</div>
+<div class="line"><span class="lineno">  419</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pi0 == 1 &amp;&amp; nucleons == 1 &amp;&amp; pi == 1) {</div>
+<div class="line"><span class="lineno">  420</span>      <span class="keywordflow">return</span> EventType::single_neutral_pion_charged_pion_and_nucleon;</div>
+<div class="line"><span class="lineno">  421</span>    }</div>
+<div class="line"><span class="lineno">  422</span>  }</div>
+<div class="line"><span class="lineno">  423</span>  <span class="keywordflow">if</span> (count &gt;= 3 &amp;&amp; count == n) {</div>
+<div class="line"><span class="lineno">  424</span>    <span class="keywordflow">return</span> EventType::three_or_more_neutrons;</div>
+<div class="line"><span class="lineno">  425</span>  }</div>
+<div class="line"><span class="lineno">  426</span> </div>
+<div class="line"><span class="lineno">  427</span>  <span class="keywordflow">if</span> (kaons == 1) {</div>
+<div class="line"><span class="lineno">  428</span>    <span class="keywordflow">if</span> (k0l == 1) {</div>
+<div class="line"><span class="lineno">  429</span>      <span class="keywordflow">return</span> EventType::klong;</div>
+<div class="line"><span class="lineno">  430</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kp == 1) {</div>
+<div class="line"><span class="lineno">  431</span>      <span class="keywordflow">return</span> EventType::charged_kaon;</div>
+<div class="line"><span class="lineno">  432</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k0s == 1) {</div>
+<div class="line"><span class="lineno">  433</span>      <span class="keywordflow">return</span> EventType::kshort;</div>
+<div class="line"><span class="lineno">  434</span>    }</div>
+<div class="line"><span class="lineno">  435</span>  }</div>
+<div class="line"><span class="lineno">  436</span>  <span class="keywordflow">if</span> (exotic == count &amp;&amp; count != 0) {</div>
+<div class="line"><span class="lineno">  437</span>    <span class="keywordflow">return</span> EventType::exotics;</div>
+<div class="line"><span class="lineno">  438</span>  }</div>
+<div class="line"><span class="lineno">  439</span> </div>
+<div class="line"><span class="lineno">  440</span>  <span class="keywordflow">return</span> EventType::multibody;</div>
+<div class="line"><span class="lineno">  441</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00106">analyze()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00256">analyze()</a>.</p>
 
 </div>
 </div>
@@ -707,13 +753,364 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a21156f6f3954394925e9a265de9d702a">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00102">102</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                                     {</div>
-<div class="line"><span class="lineno">  103</span>  verbose_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;verbose&quot;</span>);</div>
-<div class="line"><span class="lineno">  104</span>}</div>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00251">251</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>                                                                     {</div>
+<div class="line"><span class="lineno">  252</span>  verbose_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;verbose&quot;</span>);</div>
+<div class="line"><span class="lineno">  253</span>  count_light_ions_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;count_light_ions&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  254</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>.</p>
+
+</div>
+</div>
+<a id="afa33d6b1ea02de7a9c631ad1c6cc7b45" name="afa33d6b1ea02de7a9c631ad1c6cc7b45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa33d6b1ea02de7a9c631ad1c6cc7b45">&#9670;&#160;</a></span>findDaughters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; dqm::PhotoNuclearDQM::findDaughters </td>
+          <td>(</td>
+          <td class="paramtype">const std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt;&#160;</td>
+          <td class="paramname"><em>particleMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Find all daughter particles of a parent. Particles are included if they&gt;</p>
+<ul>
+<li>Are in the particle map,</li>
+<li>Are not photons or nuclear fragment, and</li>
+<li>Are not a light ion (Z &lt; 4) if the count_light_ions_ parameter is set to false</li>
+</ul>
+<p >The products are sorted by kinetic energy, in descending order. </p>
+
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00030">30</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>                                         {</div>
+<div class="line"><span class="lineno">   33</span>  std::vector&lt;const ldmx::SimParticle *&gt; pnDaughters;</div>
+<div class="line"><span class="lineno">   34</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;daughterTrackID : parent-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">getDaughters</a>()) {</div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">// skip daughters that weren&#39;t saved</span></div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (particleMap.count(daughterTrackID) == 0) {</div>
+<div class="line"><span class="lineno">   37</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <span class="keyword">auto</span> daughter{&amp;(particleMap.at(daughterTrackID))};</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="comment">// Get the PDG ID</span></div>
+<div class="line"><span class="lineno">   43</span>    <span class="keyword">auto</span> pdgID{daughter-&gt;getPdgID()};</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">// Ignore photons and nuclei</span></div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (pdgID == 22 ||</div>
+<div class="line"><span class="lineno">   47</span>        (pdgID &gt; 10000 &amp;&amp; (!count_light_ions_ || !<a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#a1ddf5b48550c120185506981a0c575da">isLightIon</a>(pdgID)))) {</div>
+<div class="line"><span class="lineno">   48</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="line"><span class="lineno">   50</span>    pnDaughters.push_back(daughter);</div>
+<div class="line"><span class="lineno">   51</span>  }</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>  std::sort(pnDaughters.begin(), pnDaughters.end(),</div>
+<div class="line"><span class="lineno">   54</span>            [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;lhs, <span class="keyword">const</span> <span class="keyword">auto</span> &amp;rhs) {</div>
+<div class="line"><span class="lineno">   55</span>              double lhs_ke = lhs-&gt;getEnergy() - lhs-&gt;getMass();</div>
+<div class="line"><span class="lineno">   56</span>              double rhs_ke = rhs-&gt;getEnergy() - rhs-&gt;getMass();</div>
+<div class="line"><span class="lineno">   57</span>              return lhs_ke &gt; rhs_ke;</div>
+<div class="line"><span class="lineno">   58</span>            });</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordflow">return</span> pnDaughters;</div>
+<div class="line"><span class="lineno">   61</span>}</div>
+<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_a1ddf5b48550c120185506981a0c575da"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#a1ddf5b48550c120185506981a0c575da">dqm::PhotoNuclearDQM::isLightIon</a></div><div class="ttdeci">constexpr bool isLightIon(const int pdgCode) const</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8h_source.html#l00142">PhotoNuclearDQM.h:142</a></div></div>
+<div class="ttc" id="aclassldmx_1_1SimParticle_html_a7783d529d15db32efdd35b2cf858786e"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">ldmx::SimParticle::getDaughters</a></div><div class="ttdeci">std::vector&lt; int &gt; getDaughters() const</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00147">SimParticle.h:147</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="SimParticle_8h_source.html#l00147">ldmx::SimParticle::getDaughters()</a>, and <a class="el" href="PhotoNuclearDQM_8h_source.html#l00142">isLightIon()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00256">analyze()</a>.</p>
+
+</div>
+</div>
+<a id="ac47e248285a94ae6bd77aa18d7d9f7ea" name="ac47e248285a94ae6bd77aa18d7d9f7ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac47e248285a94ae6bd77aa18d7d9f7ea">&#9670;&#160;</a></span>findParticleKinematics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dqm::PhotoNuclearDQM::findParticleKinematics </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pnDaughters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Fill histograms related to kinematics of PN products. </p>
+
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00070">70</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>                                                           {</div>
+<div class="line"><span class="lineno">   72</span>  <span class="keywordtype">double</span> hardest_ke{-1}, hardest_theta{-1};</div>
+<div class="line"><span class="lineno">   73</span>  <span class="keywordtype">double</span> hardest_proton_ke{-1}, hardest_proton_theta{-1};</div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordtype">double</span> hardest_neutron_ke{-1}, hardest_neutron_theta{-1};</div>
+<div class="line"><span class="lineno">   75</span>  <span class="keywordtype">double</span> hardest_pion_ke{-1}, hardest_pion_theta{-1};</div>
+<div class="line"><span class="lineno">   76</span>  <span class="keywordtype">double</span> total_ke{0};</div>
+<div class="line"><span class="lineno">   77</span>  <span class="keywordtype">double</span> total_neutron_ke{0};</div>
+<div class="line"><span class="lineno">   78</span>  <span class="keywordtype">int</span> neutron_multiplicity{0};</div>
+<div class="line"><span class="lineno">   79</span>  <span class="comment">// Loop through all of the PN daughters and extract kinematic</span></div>
+<div class="line"><span class="lineno">   80</span>  <span class="comment">// information.</span></div>
+<div class="line"><span class="lineno">   81</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> *daughter : pnDaughters) {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="comment">// skip daughters that weren&#39;t saved</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="comment">// Get the PDG ID</span></div>
+<div class="line"><span class="lineno">   85</span>    <span class="keyword">auto</span> pdgID{daughter-&gt;getPdgID()};</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment">// Calculate the kinetic energy</span></div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordtype">double</span> ke{daughter-&gt;getEnergy() - daughter-&gt;getMass()};</div>
+<div class="line"><span class="lineno">   89</span>    total_ke += ke;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    std::vector&lt;double&gt; vec{daughter-&gt;getMomentum()};</div>
+<div class="line"><span class="lineno">   92</span>    TVector3 pvec(vec[0], vec[1], vec[2]);</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">//  Calculate the polar angle</span></div>
+<div class="line"><span class="lineno">   95</span>    <span class="keyword">auto</span> theta{pvec.Theta() * (180 / 3.14159)};</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (hardest_ke &lt; ke) {</div>
+<div class="line"><span class="lineno">   98</span>      hardest_ke = ke;</div>
+<div class="line"><span class="lineno">   99</span>      hardest_theta = theta;</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span> ((pdgID == 2112)) {</div>
+<div class="line"><span class="lineno">  103</span>      total_neutron_ke += ke;</div>
+<div class="line"><span class="lineno">  104</span>      neutron_multiplicity++;</div>
+<div class="line"><span class="lineno">  105</span>      <span class="keywordflow">if</span> (hardest_neutron_ke &lt; ke) {</div>
+<div class="line"><span class="lineno">  106</span>        hardest_neutron_ke = ke;</div>
+<div class="line"><span class="lineno">  107</span>        hardest_neutron_theta = theta;</div>
+<div class="line"><span class="lineno">  108</span>      }</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span> ((pdgID == 2212) &amp;&amp; (hardest_proton_ke &lt; ke)) {</div>
+<div class="line"><span class="lineno">  112</span>      hardest_proton_ke = ke;</div>
+<div class="line"><span class="lineno">  113</span>      hardest_proton_theta = theta;</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (((std::abs(pdgID) == 211) || (pdgID == 111)) &amp;&amp;</div>
+<div class="line"><span class="lineno">  117</span>        (hardest_pion_ke &lt; ke)) {</div>
+<div class="line"><span class="lineno">  118</span>      hardest_pion_ke = ke;</div>
+<div class="line"><span class="lineno">  119</span>      hardest_pion_theta = theta;</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
+<div class="line"><span class="lineno">  121</span>  }</div>
+<div class="line"><span class="lineno">  122</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_ke&quot;</span>, hardest_ke);</div>
+<div class="line"><span class="lineno">  123</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_theta&quot;</span>, hardest_theta);</div>
+<div class="line"><span class="lineno">  124</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;h_ke_h_theta&quot;</span>, hardest_ke, hardest_theta);</div>
+<div class="line"><span class="lineno">  125</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_p_ke&quot;</span>, hardest_proton_ke);</div>
+<div class="line"><span class="lineno">  126</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_p_theta&quot;</span>, hardest_proton_theta);</div>
+<div class="line"><span class="lineno">  127</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_n_ke&quot;</span>, hardest_neutron_ke);</div>
+<div class="line"><span class="lineno">  128</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_n_theta&quot;</span>, hardest_neutron_theta);</div>
+<div class="line"><span class="lineno">  129</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_pi_ke&quot;</span>, hardest_pion_ke);</div>
+<div class="line"><span class="lineno">  130</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;hardest_pi_theta&quot;</span>, hardest_pion_theta);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_neutron_mult&quot;</span>, neutron_multiplicity);</div>
+<div class="line"><span class="lineno">  133</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_total_ke&quot;</span>, total_ke);</div>
+<div class="line"><span class="lineno">  134</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;pn_total_neutron_ke&quot;</span>, total_neutron_ke);</div>
+<div class="line"><span class="lineno">  135</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Histograms_8h_source.html#l00166">framework::HistogramHelper::fill()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00216">framework::EventProcessor::histograms_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00256">analyze()</a>.</p>
+
+</div>
+</div>
+<a id="abfb2f95a64aa62de5f637706cd6dc243" name="abfb2f95a64aa62de5f637706cd6dc243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb2f95a64aa62de5f637706cd6dc243">&#9670;&#160;</a></span>findRecoilProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dqm::PhotoNuclearDQM::findRecoilProperties </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *&#160;</td>
+          <td class="paramname"><em>recoil</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Fill the recoil electron-histograms </p>
+
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00062">62</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>                                                                        {</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;recoil_vertex_x&quot;</span>, recoil-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a467f5d411cd95eaeab77503ee072eca0">getVertex</a>()[0]);</div>
+<div class="line"><span class="lineno">   65</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;recoil_vertex_y&quot;</span>, recoil-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a467f5d411cd95eaeab77503ee072eca0">getVertex</a>()[1]);</div>
+<div class="line"><span class="lineno">   66</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;recoil_vertex_z&quot;</span>, recoil-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a467f5d411cd95eaeab77503ee072eca0">getVertex</a>()[2]);</div>
+<div class="line"><span class="lineno">   67</span>  <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;recoil_vertex_x:recoil_vertex_y&quot;</span>, recoil-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a467f5d411cd95eaeab77503ee072eca0">getVertex</a>()[0],</div>
+<div class="line"><span class="lineno">   68</span>                   recoil-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a467f5d411cd95eaeab77503ee072eca0">getVertex</a>()[1]);</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+<div class="ttc" id="aclassldmx_1_1SimParticle_html_a467f5d411cd95eaeab77503ee072eca0"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a467f5d411cd95eaeab77503ee072eca0">ldmx::SimParticle::getVertex</a></div><div class="ttdeci">std::vector&lt; double &gt; getVertex() const</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00099">SimParticle.h:99</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Histograms_8h_source.html#l00166">framework::HistogramHelper::fill()</a>, <a class="el" href="SimParticle_8h_source.html#l00099">ldmx::SimParticle::getVertex()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00216">framework::EventProcessor::histograms_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00256">analyze()</a>.</p>
+
+</div>
+</div>
+<a id="a1588dc3ac9bf588800bc58cfbbe93f88" name="a1588dc3ac9bf588800bc58cfbbe93f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1588dc3ac9bf588800bc58cfbbe93f88">&#9670;&#160;</a></span>findSubleadingKinematics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dqm::PhotoNuclearDQM::findSubleadingKinematics </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> *&#160;</td>
+          <td class="paramname"><em>pnGamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pnDaughters</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const EventType&#160;</td>
+          <td class="paramname"><em>eventType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Fill histograms related to the kinematics and subleading particles for 1n, kaon, and 2n type events. Note: This assumes that the daughter particles are sorted by energy. </p>
+
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00137">137</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>                                              {</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>  <span class="comment">// Note: Assumes sorted by energy</span></div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordtype">double</span> subleading_ke{-9999};</div>
+<div class="line"><span class="lineno">  145</span>  <span class="keywordtype">double</span> nEnergy{-9999}, energyDiff{-9999}, energyFrac{-9999};</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>  nEnergy = pnDaughters[0]-&gt;getEnergy() - pnDaughters[0]-&gt;getMass();</div>
+<div class="line"><span class="lineno">  148</span>  subleading_ke = -9999;</div>
+<div class="line"><span class="lineno">  149</span>  <span class="keywordflow">if</span> (pnDaughters.size() &gt; 1) {</div>
+<div class="line"><span class="lineno">  150</span>    subleading_ke = pnDaughters[1]-&gt;getEnergy() - pnDaughters[1]-&gt;getMass();</div>
+<div class="line"><span class="lineno">  151</span>  }</div>
+<div class="line"><span class="lineno">  152</span>  energyDiff = pnGamma-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a2b1cc687cebced244614ba2e84acbb17">getEnergy</a>() - nEnergy;</div>
+<div class="line"><span class="lineno">  153</span>  energyFrac = nEnergy / pnGamma-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a2b1cc687cebced244614ba2e84acbb17">getEnergy</a>();</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordflow">if</span> (eventType == EventType::single_neutron) {</div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_ke:2nd_h_ke&quot;</span>, nEnergy, subleading_ke);</div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_neutron_energy&quot;</span>, nEnergy);</div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_energy_diff&quot;</span>, energyDiff);</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1n_energy_frac&quot;</span>, energyFrac);</div>
+<div class="line"><span class="lineno">  160</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eventType == EventType::two_neutrons) {</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;2n_n2_energy&quot;</span>, subleading_ke);</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keyword">auto</span> energyFrac2n = (nEnergy + subleading_ke) / pnGamma-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a2b1cc687cebced244614ba2e84acbb17">getEnergy</a>();</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;2n_energy_frac&quot;</span>, energyFrac2n);</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;2n_energy_other&quot;</span>, pnGamma-&gt;<a class="code hl_function" href="classldmx_1_1SimParticle.html#a2b1cc687cebced244614ba2e84acbb17">getEnergy</a>() - energyFrac2n);</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eventType == EventType::charged_kaon) {</div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1kp_ke:2nd_h_ke&quot;</span>, nEnergy, subleading_ke);</div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1kp_energy&quot;</span>, nEnergy);</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1kp_energy_diff&quot;</span>, energyDiff);</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1kp_energy_frac&quot;</span>, energyFrac);</div>
+<div class="line"><span class="lineno">  171</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (eventType == EventType::klong || eventType == EventType::kshort) {</div>
+<div class="line"><span class="lineno">  172</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1k0_ke:2nd_h_ke&quot;</span>, nEnergy, subleading_ke);</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1k0_energy&quot;</span>, nEnergy);</div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1k0_energy_diff&quot;</span>, energyDiff);</div>
+<div class="line"><span class="lineno">  175</span>    <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a43c753c04a441dc6ae654bc48ff47198">fill</a>(<span class="stringliteral">&quot;1k0_energy_frac&quot;</span>, energyFrac);</div>
+<div class="line"><span class="lineno">  176</span>  }</div>
+<div class="line"><span class="lineno">  177</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Histograms_8h_source.html#l00166">framework::HistogramHelper::fill()</a>, <a class="el" href="SimParticle_8h_source.html#l00064">ldmx::SimParticle::getEnergy()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00216">framework::EventProcessor::histograms_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00256">analyze()</a>.</p>
+
+</div>
+</div>
+<a id="a1ddf5b48550c120185506981a0c575da" name="a1ddf5b48550c120185506981a0c575da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ddf5b48550c120185506981a0c575da">&#9670;&#160;</a></span>isLightIon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool dqm::PhotoNuclearDQM::isLightIon </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>pdgCode</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Check if the PDG code corresponds to a light ion.</p>
+<p >Nuclear PDG codes are given by ±10LZZZAAAI So to find the atomic number, we first divide by 10 (to lose the I-component) and then take the modulo with 1000.</p>
+<p >TODO: Repeated code from SimCore, could probably live elsewhere. </p>
+
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8h_source.html#l00142">142</a> of file <a class="el" href="PhotoNuclearDQM_8h_source.html">PhotoNuclearDQM.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>                                                     {</div>
+<div class="line"><span class="lineno">  143</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  144</span>    <span class="comment">// TODO: Is the &lt; check necessary?</span></div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">if</span> (pdgCode &gt; 1000000000 &amp;&amp; pdgCode &lt; 10000000000) {</div>
+<div class="line"><span class="lineno">  146</span>      <span class="comment">// Check if the atomic number is less than or equal to 4</span></div>
+<div class="line"><span class="lineno">  147</span>      <span class="keywordflow">return</span> ((pdgCode / 10) % 1000) &lt;= 4;</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00030">findDaughters()</a>.</p>
 
 </div>
 </div>
@@ -744,247 +1141,115 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#ab54bb3abaafcb4f4b4b42d0a2ff616a9">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00030">30</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>                                     {</div>
-<div class="line"><span class="lineno">   31</span>  std::vector&lt;std::string&gt; labels = {<span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><span class="lineno">   32</span>                                     <span class="stringliteral">&quot;Nothing hard&quot;</span>,   <span class="comment">// 0</span></div>
-<div class="line"><span class="lineno">   33</span>                                     <span class="stringliteral">&quot;1 n&quot;</span>,            <span class="comment">// 1</span></div>
-<div class="line"><span class="lineno">   34</span>                                     <span class="stringliteral">&quot;2 n&quot;</span>,            <span class="comment">// 2</span></div>
-<div class="line"><span class="lineno">   35</span>                                     <span class="stringliteral">&quot;#geq 3 n&quot;</span>,       <span class="comment">// 3</span></div>
-<div class="line"><span class="lineno">   36</span>                                     <span class="stringliteral">&quot;1 #pi&quot;</span>,          <span class="comment">// 4</span></div>
-<div class="line"><span class="lineno">   37</span>                                     <span class="stringliteral">&quot;2 #pi&quot;</span>,          <span class="comment">// 5</span></div>
-<div class="line"><span class="lineno">   38</span>                                     <span class="stringliteral">&quot;1 #pi_{0}&quot;</span>,      <span class="comment">// 6</span></div>
-<div class="line"><span class="lineno">   39</span>                                     <span class="stringliteral">&quot;1 #pi A&quot;</span>,        <span class="comment">// 7</span></div>
-<div class="line"><span class="lineno">   40</span>                                     <span class="stringliteral">&quot;1 #pi 2 A&quot;</span>,      <span class="comment">// 8</span></div>
-<div class="line"><span class="lineno">   41</span>                                     <span class="stringliteral">&quot;2 #pi A&quot;</span>,        <span class="comment">// 9</span></div>
-<div class="line"><span class="lineno">   42</span>                                     <span class="stringliteral">&quot;1 #pi_{0} A&quot;</span>,    <span class="comment">// 10</span></div>
-<div class="line"><span class="lineno">   43</span>                                     <span class="stringliteral">&quot;1 #pi_{0} 2 A&quot;</span>,  <span class="comment">// 11</span></div>
-<div class="line"><span class="lineno">   44</span>                                     <span class="stringliteral">&quot;#pi_{0} #pi A&quot;</span>,  <span class="comment">// 12</span></div>
-<div class="line"><span class="lineno">   45</span>                                     <span class="stringliteral">&quot;1 p&quot;</span>,            <span class="comment">// 13</span></div>
-<div class="line"><span class="lineno">   46</span>                                     <span class="stringliteral">&quot;2 p&quot;</span>,            <span class="comment">// 14</span></div>
-<div class="line"><span class="lineno">   47</span>                                     <span class="stringliteral">&quot;pn&quot;</span>,             <span class="comment">// 15</span></div>
-<div class="line"><span class="lineno">   48</span>                                     <span class="stringliteral">&quot;K^{0}_{L} X&quot;</span>,    <span class="comment">// 16</span></div>
-<div class="line"><span class="lineno">   49</span>                                     <span class="stringliteral">&quot;K X&quot;</span>,            <span class="comment">// 17</span></div>
-<div class="line"><span class="lineno">   50</span>                                     <span class="stringliteral">&quot;K^{0}_{S} X&quot;</span>,    <span class="comment">// 18</span></div>
-<div class="line"><span class="lineno">   51</span>                                     <span class="stringliteral">&quot;exotics&quot;</span>,        <span class="comment">// 19</span></div>
-<div class="line"><span class="lineno">   52</span>                                     <span class="stringliteral">&quot;multi-body&quot;</span>,     <span class="comment">// 20</span></div>
-<div class="line"><span class="lineno">   53</span>                                     <span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>  std::vector&lt;TH1*&gt; hists = {</div>
-<div class="line"><span class="lineno">   56</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type&quot;</span>),</div>
-<div class="line"><span class="lineno">   57</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_500mev&quot;</span>),</div>
-<div class="line"><span class="lineno">   58</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_2000mev&quot;</span>),</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>  };</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilabel{1}; ilabel &lt; labels.size(); ++ilabel) {</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; hist : hists) {</div>
-<div class="line"><span class="lineno">   64</span>      hist-&gt;GetXaxis()-&gt;SetBinLabel(ilabel, labels[ilabel - 1].c_str());</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
-<div class="line"><span class="lineno">   66</span>  }</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>  labels = {<span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><span class="lineno">   69</span>            <span class="stringliteral">&quot;1 n&quot;</span>,      <span class="comment">// 0</span></div>
-<div class="line"><span class="lineno">   70</span>            <span class="stringliteral">&quot;K#pm X&quot;</span>,   <span class="comment">// 1</span></div>
-<div class="line"><span class="lineno">   71</span>            <span class="stringliteral">&quot;1 K^{0}&quot;</span>,  <span class="comment">// 2</span></div>
-<div class="line"><span class="lineno">   72</span>            <span class="stringliteral">&quot;2 n&quot;</span>,      <span class="comment">// 3</span></div>
-<div class="line"><span class="lineno">   73</span>            <span class="stringliteral">&quot;Soft&quot;</span>,     <span class="comment">// 4</span></div>
-<div class="line"><span class="lineno">   74</span>            <span class="stringliteral">&quot;Other&quot;</span>,    <span class="comment">// 5</span></div>
-<div class="line"><span class="lineno">   75</span>            <span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>  hists = {</div>
-<div class="line"><span class="lineno">   78</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_compact&quot;</span>),</div>
-<div class="line"><span class="lineno">   79</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_compact_500mev&quot;</span>),</div>
-<div class="line"><span class="lineno">   80</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_compact_2000mev&quot;</span>),</div>
-<div class="line"><span class="lineno">   81</span>  };</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilabel{1}; ilabel &lt; labels.size(); ++ilabel) {</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; hist : hists) {</div>
-<div class="line"><span class="lineno">   85</span>      hist-&gt;GetXaxis()-&gt;SetBinLabel(ilabel, labels[ilabel - 1].c_str());</div>
-<div class="line"><span class="lineno">   86</span>    }</div>
-<div class="line"><span class="lineno">   87</span>  }</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>  std::vector&lt;std::string&gt; n_labels = {<span class="stringliteral">&quot;&quot;</span>,         <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><span class="lineno">   90</span>                                       <span class="stringliteral">&quot;nn&quot;</span>,        <span class="comment">// 1</span></div>
-<div class="line"><span class="lineno">   91</span>                                       <span class="stringliteral">&quot;pn&quot;</span>,        <span class="comment">// 2</span></div>
-<div class="line"><span class="lineno">   92</span>                                       <span class="stringliteral">&quot;#pi^{+}n&quot;</span>,  <span class="comment">// 3</span></div>
-<div class="line"><span class="lineno">   93</span>                                       <span class="stringliteral">&quot;#pi^{0}n&quot;</span>,  <span class="comment">// 4</span></div>
-<div class="line"><span class="lineno">   94</span>                                       <span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>  TH1* hist = <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;1n_event_type&quot;</span>);</div>
-<div class="line"><span class="lineno">   97</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilabel{1}; ilabel &lt; n_labels.size(); ++ilabel) {</div>
-<div class="line"><span class="lineno">   98</span>    hist-&gt;GetXaxis()-&gt;SetBinLabel(ilabel, n_labels[ilabel - 1].c_str());</div>
-<div class="line"><span class="lineno">   99</span>  }</div>
-<div class="line"><span class="lineno">  100</span>}</div>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00178">178</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>                                     {</div>
+<div class="line"><span class="lineno">  179</span>  std::vector&lt;std::string&gt; labels = {<span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><span class="lineno">  180</span>                                     <span class="stringliteral">&quot;Nothing hard&quot;</span>,  <span class="comment">// 0</span></div>
+<div class="line"><span class="lineno">  181</span>                                     <span class="stringliteral">&quot;1 n&quot;</span>,           <span class="comment">// 1</span></div>
+<div class="line"><span class="lineno">  182</span>                                     <span class="stringliteral">&quot;2 n&quot;</span>,           <span class="comment">// 2</span></div>
+<div class="line"><span class="lineno">  183</span>                                     <span class="stringliteral">&quot;#geq 3 n&quot;</span>,      <span class="comment">// 3</span></div>
+<div class="line"><span class="lineno">  184</span>                                     <span class="stringliteral">&quot;1 #pi&quot;</span>,         <span class="comment">// 4</span></div>
+<div class="line"><span class="lineno">  185</span>                                     <span class="stringliteral">&quot;2 #pi&quot;</span>,         <span class="comment">// 5</span></div>
+<div class="line"><span class="lineno">  186</span>                                     <span class="stringliteral">&quot;1 #pi_{0}&quot;</span>,     <span class="comment">// 6</span></div>
+<div class="line"><span class="lineno">  187</span>                                     <span class="stringliteral">&quot;1 #pi A&quot;</span>,       <span class="comment">// 7</span></div>
+<div class="line"><span class="lineno">  188</span>                                     <span class="stringliteral">&quot;1 #pi 2 A&quot;</span>,     <span class="comment">// 8</span></div>
+<div class="line"><span class="lineno">  189</span>                                     <span class="stringliteral">&quot;2 #pi A&quot;</span>,       <span class="comment">// 9</span></div>
+<div class="line"><span class="lineno">  190</span>                                     <span class="stringliteral">&quot;1 #pi_{0} A&quot;</span>,   <span class="comment">// 10</span></div>
+<div class="line"><span class="lineno">  191</span>                                     <span class="stringliteral">&quot;1 #pi_{0} 2 A&quot;</span>, <span class="comment">// 11</span></div>
+<div class="line"><span class="lineno">  192</span>                                     <span class="stringliteral">&quot;#pi_{0} #pi A&quot;</span>, <span class="comment">// 12</span></div>
+<div class="line"><span class="lineno">  193</span>                                     <span class="stringliteral">&quot;1 p&quot;</span>,           <span class="comment">// 13</span></div>
+<div class="line"><span class="lineno">  194</span>                                     <span class="stringliteral">&quot;2 p&quot;</span>,           <span class="comment">// 14</span></div>
+<div class="line"><span class="lineno">  195</span>                                     <span class="stringliteral">&quot;pn&quot;</span>,            <span class="comment">// 15</span></div>
+<div class="line"><span class="lineno">  196</span>                                     <span class="stringliteral">&quot;K^{0}_{L} X&quot;</span>,   <span class="comment">// 16</span></div>
+<div class="line"><span class="lineno">  197</span>                                     <span class="stringliteral">&quot;K X&quot;</span>,           <span class="comment">// 17</span></div>
+<div class="line"><span class="lineno">  198</span>                                     <span class="stringliteral">&quot;K^{0}_{S} X&quot;</span>,   <span class="comment">// 18</span></div>
+<div class="line"><span class="lineno">  199</span>                                     <span class="stringliteral">&quot;exotics&quot;</span>,       <span class="comment">// 19</span></div>
+<div class="line"><span class="lineno">  200</span>                                     <span class="stringliteral">&quot;multi-body&quot;</span>,    <span class="comment">// 20</span></div>
+<div class="line"><span class="lineno">  201</span>                                     <span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>  std::vector&lt;TH1 *&gt; hists = {</div>
+<div class="line"><span class="lineno">  204</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type&quot;</span>),</div>
+<div class="line"><span class="lineno">  205</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_500mev&quot;</span>),</div>
+<div class="line"><span class="lineno">  206</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_2000mev&quot;</span>),</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>  };</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilabel{1}; ilabel &lt; labels.size(); ++ilabel) {</div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;hist : hists) {</div>
+<div class="line"><span class="lineno">  212</span>      hist-&gt;GetXaxis()-&gt;SetBinLabel(ilabel, labels[ilabel - 1].c_str());</div>
+<div class="line"><span class="lineno">  213</span>    }</div>
+<div class="line"><span class="lineno">  214</span>  }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>  labels = {<span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><span class="lineno">  217</span>            <span class="stringliteral">&quot;1 n&quot;</span>,     <span class="comment">// 0</span></div>
+<div class="line"><span class="lineno">  218</span>            <span class="stringliteral">&quot;K#pm X&quot;</span>,  <span class="comment">// 1</span></div>
+<div class="line"><span class="lineno">  219</span>            <span class="stringliteral">&quot;1 K^{0}&quot;</span>, <span class="comment">// 2</span></div>
+<div class="line"><span class="lineno">  220</span>            <span class="stringliteral">&quot;2 n&quot;</span>,     <span class="comment">// 3</span></div>
+<div class="line"><span class="lineno">  221</span>            <span class="stringliteral">&quot;Soft&quot;</span>,    <span class="comment">// 4</span></div>
+<div class="line"><span class="lineno">  222</span>            <span class="stringliteral">&quot;Other&quot;</span>,   <span class="comment">// 5</span></div>
+<div class="line"><span class="lineno">  223</span>            <span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>  hists = {</div>
+<div class="line"><span class="lineno">  226</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_compact&quot;</span>),</div>
+<div class="line"><span class="lineno">  227</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_compact_500mev&quot;</span>),</div>
+<div class="line"><span class="lineno">  228</span>      <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;event_type_compact_2000mev&quot;</span>),</div>
+<div class="line"><span class="lineno">  229</span>  };</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilabel{1}; ilabel &lt; labels.size(); ++ilabel) {</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;hist : hists) {</div>
+<div class="line"><span class="lineno">  233</span>      hist-&gt;GetXaxis()-&gt;SetBinLabel(ilabel, labels[ilabel - 1].c_str());</div>
+<div class="line"><span class="lineno">  234</span>    }</div>
+<div class="line"><span class="lineno">  235</span>  }</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>  std::vector&lt;std::string&gt; n_labels = {<span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><span class="lineno">  238</span>                                       <span class="stringliteral">&quot;nn&quot;</span>,       <span class="comment">// 0</span></div>
+<div class="line"><span class="lineno">  239</span>                                       <span class="stringliteral">&quot;pn&quot;</span>,       <span class="comment">// 1</span></div>
+<div class="line"><span class="lineno">  240</span>                                       <span class="stringliteral">&quot;#pi^{+}n&quot;</span>, <span class="comment">// 2</span></div>
+<div class="line"><span class="lineno">  241</span>                                       <span class="stringliteral">&quot;#pi^{0}n&quot;</span>, <span class="comment">// 3</span></div>
+<div class="line"><span class="lineno">  242</span>                                       <span class="stringliteral">&quot;other&quot;</span>,    <span class="comment">// 4</span></div>
+<div class="line"><span class="lineno">  243</span>                                       <span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>  TH1 *hist = <a class="code hl_variable" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a>.<a class="code hl_function" href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">get</a>(<span class="stringliteral">&quot;1n_event_type&quot;</span>);</div>
+<div class="line"><span class="lineno">  246</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilabel{1}; ilabel &lt; n_labels.size(); ++ilabel) {</div>
+<div class="line"><span class="lineno">  247</span>    hist-&gt;GetXaxis()-&gt;SetBinLabel(ilabel, n_labels[ilabel - 1].c_str());</div>
+<div class="line"><span class="lineno">  248</span>  }</div>
+<div class="line"><span class="lineno">  249</span>}</div>
 <div class="ttc" id="aclassframework_1_1HistogramHelper_html_a266aea147a4a082dcfa1bbeb432d1bd9"><div class="ttname"><a href="classframework_1_1HistogramHelper.html#a266aea147a4a082dcfa1bbeb432d1bd9">framework::HistogramHelper::get</a></div><div class="ttdeci">TH1 * get(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="Histograms_8h_source.html#l00188">Histograms.h:188</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Histograms_8h_source.html#l00188">framework::HistogramHelper::get()</a>, and <a class="el" href="EventProcessor_8h_source.html#l00216">framework::EventProcessor::histograms_</a>.</p>
 
 </div>
 </div>
-<a id="adf74d4c9b24ea3d16d3cf43fd5b14103" name="adf74d4c9b24ea3d16d3cf43fd5b14103"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf74d4c9b24ea3d16d3cf43fd5b14103">&#9670;&#160;</a></span>printDaughters()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; int &gt; dqm::PhotoNuclearDQM::printDaughters </td>
-          <td>(</td>
-          <td class="paramtype">std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt;&#160;</td>
-          <td class="paramname"><em>particleMap</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a>&#160;</td>
-          <td class="paramname"><em>particle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>depth</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Print the daughters of a particle.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">particleMap</td><td>The map containing the SimParticles. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">particle</td><td>The particle whose daughters will be printed. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>The tree depth.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>[out] A vector with the track IDs of particles that have already been printed. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00464">464</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  466</span>                                               {</div>
-<div class="line"><span class="lineno">  467</span>  std::vector&lt;int&gt; printedParticles;</div>
-<div class="line"><span class="lineno">  468</span> </div>
-<div class="line"><span class="lineno">  469</span>  <span class="comment">// Don&#39;t print anything if a particle doesn&#39;t have any daughters</span></div>
-<div class="line"><span class="lineno">  470</span>  <span class="keywordflow">if</span> (particle.<a class="code hl_function" href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">getDaughters</a>().size() == 0) <span class="keywordflow">return</span> printedParticles;</div>
-<div class="line"><span class="lineno">  471</span> </div>
-<div class="line"><span class="lineno">  472</span>  <span class="comment">// Generate the prefix</span></div>
-<div class="line"><span class="lineno">  473</span>  std::string prefix{<span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><span class="lineno">  474</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> i{0}; i &lt; depth; ++i) prefix += <span class="stringliteral">&quot;\t&quot;</span>;</div>
-<div class="line"><span class="lineno">  475</span> </div>
-<div class="line"><span class="lineno">  476</span>  <span class="comment">// Loop through all of the daughter particles and print them</span></div>
-<div class="line"><span class="lineno">  477</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; daughter : particle.<a class="code hl_function" href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">getDaughters</a>()) {</div>
-<div class="line"><span class="lineno">  478</span>    <span class="comment">// Print the ith daughter particle</span></div>
-<div class="line"><span class="lineno">  479</span>    std::cout &lt;&lt; prefix;</div>
-<div class="line"><span class="lineno">  480</span>    particleMap[daughter].Print();</div>
-<div class="line"><span class="lineno">  481</span>    printedParticles.push_back(daughter);</div>
-<div class="line"><span class="lineno">  482</span> </div>
-<div class="line"><span class="lineno">  483</span>    <span class="comment">// Print the Daughters</span></div>
-<div class="line"><span class="lineno">  484</span>    std::vector&lt;int&gt; printedDaughters =</div>
-<div class="line"><span class="lineno">  485</span>        <a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#adf74d4c9b24ea3d16d3cf43fd5b14103">printDaughters</a>(particleMap, particleMap[daughter], depth + 1);</div>
-<div class="line"><span class="lineno">  486</span>    printedParticles.insert(printedParticles.end(), printedDaughters.begin(),</div>
-<div class="line"><span class="lineno">  487</span>                            printedDaughters.end());</div>
-<div class="line"><span class="lineno">  488</span>  }</div>
-<div class="line"><span class="lineno">  489</span>}</div>
-<div class="ttc" id="aclassdqm_1_1PhotoNuclearDQM_html_adf74d4c9b24ea3d16d3cf43fd5b14103"><div class="ttname"><a href="classdqm_1_1PhotoNuclearDQM.html#adf74d4c9b24ea3d16d3cf43fd5b14103">dqm::PhotoNuclearDQM::printDaughters</a></div><div class="ttdeci">std::vector&lt; int &gt; printDaughters(std::map&lt; int, ldmx::SimParticle &gt; particleMap, const ldmx::SimParticle particle, int depth)</div><div class="ttdef"><b>Definition:</b> <a href="PhotoNuclearDQM_8cxx_source.html#l00464">PhotoNuclearDQM.cxx:464</a></div></div>
-<div class="ttc" id="aclassldmx_1_1SimParticle_html_a7783d529d15db32efdd35b2cf858786e"><div class="ttname"><a href="classldmx_1_1SimParticle.html#a7783d529d15db32efdd35b2cf858786e">ldmx::SimParticle::getDaughters</a></div><div class="ttdeci">std::vector&lt; int &gt; getDaughters() const</div><div class="ttdef"><b>Definition:</b> <a href="SimParticle_8h_source.html#l00147">SimParticle.h:147</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimParticle_8h_source.html#l00147">ldmx::SimParticle::getDaughters()</a>, and <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00464">printDaughters()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00464">printDaughters()</a>, and <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00442">printParticleTree()</a>.</p>
-
-</div>
-</div>
-<a id="a151f5e4724076455a7821bb0224497af" name="a151f5e4724076455a7821bb0224497af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a151f5e4724076455a7821bb0224497af">&#9670;&#160;</a></span>printParticleTree()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void dqm::PhotoNuclearDQM::printParticleTree </td>
-          <td>(</td>
-          <td class="paramtype">std::map&lt; int, <a class="el" href="classldmx_1_1SimParticle.html">ldmx::SimParticle</a> &gt;&#160;</td>
-          <td class="paramname"><em>particleMap</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Print the particle tree.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">particleMap</td><td>The map containing the SimParticles. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00442">442</a> of file <a class="el" href="PhotoNuclearDQM_8cxx_source.html">PhotoNuclearDQM.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  443</span>                                              {</div>
-<div class="line"><span class="lineno">  444</span>  std::vector&lt;int&gt; printedParticles;</div>
-<div class="line"><span class="lineno">  445</span> </div>
-<div class="line"><span class="lineno">  446</span>  <span class="comment">// Loop through the particle map</span></div>
-<div class="line"><span class="lineno">  447</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [trackID, simParticle] : particleMap) {</div>
-<div class="line"><span class="lineno">  448</span>    <span class="comment">// Print the particle only if it has daughters</span></div>
-<div class="line"><span class="lineno">  449</span>    <span class="keywordflow">if</span> ((simParticle.getDaughters().size() != 0) &amp;</div>
-<div class="line"><span class="lineno">  450</span>        (std::find(printedParticles.begin(), printedParticles.end(), trackID) ==</div>
-<div class="line"><span class="lineno">  451</span>         printedParticles.end())) {</div>
-<div class="line"><span class="lineno">  452</span>      simParticle.Print();</div>
-<div class="line"><span class="lineno">  453</span>      printedParticles.push_back(trackID);</div>
-<div class="line"><span class="lineno">  454</span> </div>
-<div class="line"><span class="lineno">  455</span>      <span class="comment">// Print the daughters</span></div>
-<div class="line"><span class="lineno">  456</span>      std::vector&lt;int&gt; printedDaughters =</div>
-<div class="line"><span class="lineno">  457</span>          <a class="code hl_function" href="classdqm_1_1PhotoNuclearDQM.html#adf74d4c9b24ea3d16d3cf43fd5b14103">printDaughters</a>(particleMap, simParticle, 1);</div>
-<div class="line"><span class="lineno">  458</span>      printedParticles.insert(printedParticles.end(), printedDaughters.begin(),</div>
-<div class="line"><span class="lineno">  459</span>                              printedDaughters.end());</div>
-<div class="line"><span class="lineno">  460</span>    }</div>
-<div class="line"><span class="lineno">  461</span>  }</div>
-<div class="line"><span class="lineno">  462</span>}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="PhotoNuclearDQM_8cxx_source.html#l00464">printDaughters()</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6ecc21c597236345b42bbf341200cf2f" name="a6ecc21c597236345b42bbf341200cf2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ecc21c597236345b42bbf341200cf2f">&#9670;&#160;</a></span>count_light_ions_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dqm::PhotoNuclearDQM::count_light_ions_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8h_source.html#l00153">153</a> of file <a class="el" href="PhotoNuclearDQM_8h_source.html">PhotoNuclearDQM.h</a>.</p>
+
+</div>
+</div>
 <a id="ac85f0cc361328fd7fc1526025475f33d" name="ac85f0cc361328fd7fc1526025475f33d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac85f0cc361328fd7fc1526025475f33d">&#9670;&#160;</a></span>verbose_</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool dqm::PhotoNuclearDQM::verbose_</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8h_source.html#l00074">74</a> of file <a class="el" href="PhotoNuclearDQM_8h_source.html">PhotoNuclearDQM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PhotoNuclearDQM_8h_source.html#l00152">152</a> of file <a class="el" href="PhotoNuclearDQM_8h_source.html">PhotoNuclearDQM.h</a>.</p>
 
 </div>
 </div>
