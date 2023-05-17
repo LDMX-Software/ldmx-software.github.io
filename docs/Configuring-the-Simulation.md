@@ -275,7 +275,6 @@ corresponding filter from `Biasing.particle_filter`.
 | `BertiniSingleNeutronModel`    | `PhotoNuclearTopologyFilter.SingleNeutronFilter()` | Similar, but requires exactly one neutron with kinetic energy above the threshold. By default, is applied to interactions with any nucleus.      |
 | `BertiniAtLeastNProductsModel` | A matching version of`PhotoNuclearProductsFilter`  | Similar, but requires at least N particles of a list of particle IDs (e.g. kaons) in the final state.                                            |
 | `NoPhotoNuclearModel`          |                                                    | Removes photonuclear interactions entirely from the simulation                                                                                   |
-                          |
 
 
 
