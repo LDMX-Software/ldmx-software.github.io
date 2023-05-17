@@ -109,7 +109,31 @@ myFilter = particle_filter.PhotoNuclearProductsFilter().kaon()
 # Add the filter at the end of the current list of user actions. 
 mySim.actions.extend([myFilter])
 ```
-   
+
+## Special models 
+
+### Default Bertini cascade
+
+The default model used is the `BertiniModel`. Unlike the other models, it does not create any new hadronic process. Rather, it overrides the function responsible from removing the original Bertini cascade process with an empty function. 
+
+```python
+from LDMX.SimCore import photonuclear_models as pn 
+# This is the default model
+myModel = pn.BertiniModel()
+mySim.photonuclear_model = myModel
+```
+
+### Disabling photonuclear interactions
+
+The `NoPhotoNuclearModel` removes the `photonNuclear` process entirely, preventing Geant4 from performing any photo nuclear reactions. Can be useful for studies where you want to only look at electromagnetic showers with high statistics. Like `BertiniModel`, it does not create any hadronic process and features an empty `ConstructGammaProcess`. Note that when using this model, you have to be careful not to use any features of ldmx-sw that require a process with the name `photonNuclear` to be present. An example of this is the photonuclear bias operators but there may be others.
+
+```python
+from LDMX.SimCore import photonuclear_models as pn 
+myModel = pn.NoPhotoNuclearModel()
+mySim.photonuclear_model = myModel
+```
+
+
 Details
 ---
 

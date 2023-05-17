@@ -274,6 +274,8 @@ corresponding filter from `Biasing.particle_filter`.
 | `BertiniNothingHardModel`      | `PhotoNuclearTopologyFilter.NothingHardFilter()`   | A model that forces high energy PN interactions with heavy nuclei to produce events where no product has more than some threshold kinetic energy |
 | `BertiniSingleNeutronModel`    | `PhotoNuclearTopologyFilter.SingleNeutronFilter()` | Similar, but requires exactly one neutron with kinetic energy above the threshold. By default, is applied to interactions with any nucleus.      |
 | `BertiniAtLeastNProductsModel` | A matching version of`PhotoNuclearProductsFilter`  | Similar, but requires at least N particles of a list of particle IDs (e.g. kaons) in the final state.                                            |
+| `NoPhotoNuclearModel`          |                                                    | Removes photonuclear interactions entirely from the simulation                                                                                   |
+                          |
 
 
 
