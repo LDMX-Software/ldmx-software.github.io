@@ -46,20 +46,19 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classsimcore_1_1GammaPhysics-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">simcore::GammaPhysics Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Adds extra gamma particle physics for simulation.  
- <a href="classsimcore_1_1GammaPhysics.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aea3c8cf93684bcd708ff2f47101612d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1GammaPhysics.html#aea3c8cf93684bcd708ff2f47101612d4">GammaPhysics</a> (const G4String &amp;name=&quot;GammaPhysics&quot;)</td></tr>
+<tr class="memitem:a1deceb0e82304d36a7abb9e02db128d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1GammaPhysics.html#a1deceb0e82304d36a7abb9e02db128d9">GammaPhysics</a> (const G4String &amp;name, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;parameters)</td></tr>
+<tr class="separator:a1deceb0e82304d36a7abb9e02db128d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3c8cf93684bcd708ff2f47101612d4"><td class="memItemLeft" align="right" valign="top"><a id="aea3c8cf93684bcd708ff2f47101612d4" name="aea3c8cf93684bcd708ff2f47101612d4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>GammaPhysics</b> (const G4String &amp;name=&quot;GammaPhysics&quot;)</td></tr>
 <tr class="separator:aea3c8cf93684bcd708ff2f47101612d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1d888b43c07178a73b27bcb161ecd12"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1GammaPhysics.html#ae1d888b43c07178a73b27bcb161ecd12">~GammaPhysics</a> ()</td></tr>
 <tr class="separator:ae1d888b43c07178a73b27bcb161ecd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -67,42 +66,76 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a443f8cc9dc7858bd24349a6c3bb91791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addc066ea1bbd82c52cc844ed48ba3de9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1GammaPhysics.html#addc066ea1bbd82c52cc844ed48ba3de9">ConstructProcess</a> ()</td></tr>
 <tr class="separator:addc066ea1bbd82c52cc844ed48ba3de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e85e969f8b11543c83414b47c5b0aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1GammaPhysics.html#a92e85e969f8b11543c83414b47c5b0aa">SetPhotonNuclearAsFirstProcess</a> () const</td></tr>
+<tr class="separator:a92e85e969f8b11543c83414b47c5b0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac001fe625d1b9440131ab928371003f4"><td class="memItemLeft" align="right" valign="top">G4ProcessManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1GammaPhysics.html#ac001fe625d1b9440131ab928371003f4">GetGammaProcessManager</a> () const</td></tr>
+<tr class="separator:ac001fe625d1b9440131ab928371003f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a83e179cda5b425b396b0d430cb25021b"><td class="memItemLeft" align="right" valign="top">G4GammaConversionToMuons&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1GammaPhysics.html#a83e179cda5b425b396b0d430cb25021b">gammaConvProcess</a></td></tr>
 <tr class="separator:a83e179cda5b425b396b0d430cb25021b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee248c3947cd1ac9daae422a0ef324e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1GammaPhysics.html#aaee248c3947cd1ac9daae422a0ef324e">modelParameters</a></td></tr>
+<tr class="separator:aaee248c3947cd1ac9daae422a0ef324e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Adds extra gamma particle physics for simulation. </p>
-<dl class="section note"><dt>Note</dt><dd>Currently adds gamma -&gt; mumu reaction using the <em>G4GammaConversionToMuons</em> process. Also changes ordering of gamma processes such that photonNuclear and GammaToMuMu are called first. </dd></dl>
+<div class="textblock"><p >extra gamma particle physics for simulation and sets up the photonuclear model to use from the configuration</p>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
+<p>Is responsible for selecting the photonuclear model from the python configuration. Currently adds gamma -&gt; mumu reaction using the <em>G4GammaConversionToMuons</em> process. Also changes ordering of gamma processes such that photonNuclear and GammaToMuMu are called first. </p>
 
-<p class="definition">Definition at line <a class="el" href="GammaPhysics_8h_source.html#l00030">30</a> of file <a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8h_source.html#l00033">33</a> of file <a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aea3c8cf93684bcd708ff2f47101612d4" name="aea3c8cf93684bcd708ff2f47101612d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea3c8cf93684bcd708ff2f47101612d4">&#9670;&#160;</a></span>GammaPhysics()</h2>
+<a id="a1deceb0e82304d36a7abb9e02db128d9" name="a1deceb0e82304d36a7abb9e02db128d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1deceb0e82304d36a7abb9e02db128d9">&#9670;&#160;</a></span>GammaPhysics()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">simcore::GammaPhysics::GammaPhysics </td>
           <td>(</td>
           <td class="paramtype">const G4String &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code>&quot;GammaPhysics&quot;</code></td><td>)</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>parameters</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p >Class constructor. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the physics. </td></tr>
+    <tr><td class="paramname">parameters</td><td>The python configuration </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="GammaPhysics_8cxx_source.html#l00012">12</a> of file <a class="el" href="GammaPhysics_8cxx_source.html">GammaPhysics.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>    : G4VPhysicsConstructor(name) {}</div>
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8h_source.html#l00040">40</a> of file <a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>      : G4VPhysicsConstructor(name),</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="classsimcore_1_1GammaPhysics.html#aaee248c3947cd1ac9daae422a0ef324e">modelParameters</a>{parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&gt;(</div>
+<div class="line"><span class="lineno">   44</span>            <span class="stringliteral">&quot;photonuclear_model&quot;</span>)} {}</div>
+<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
+<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1GammaPhysics_html_aaee248c3947cd1ac9daae422a0ef324e"><div class="ttname"><a href="classsimcore_1_1GammaPhysics.html#aaee248c3947cd1ac9daae422a0ef324e">simcore::GammaPhysics::modelParameters</a></div><div class="ttdeci">framework::config::Parameters modelParameters</div><div class="ttdef"><b>Definition:</b> <a href="GammaPhysics_8h_source.html#l00084">GammaPhysics.h:84</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -130,8 +163,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Class destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="GammaPhysics_8cxx_source.html#l00015">15</a> of file <a class="el" href="GammaPhysics_8cxx_source.html">GammaPhysics.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8cxx_source.html#l00012">12</a> of file <a class="el" href="GammaPhysics_8cxx_source.html">GammaPhysics.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -160,8 +193,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Construct particles (no-op). </p>
 
-<p class="definition">Definition at line <a class="el" href="GammaPhysics_8h_source.html#l00046">46</a> of file <a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8h_source.html#l00055">55</a> of file <a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -181,41 +214,107 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Construct the process (gamma to muons). </p>
 
-<p class="definition">Definition at line <a class="el" href="GammaPhysics_8cxx_source.html#l00023">23</a> of file <a class="el" href="GammaPhysics_8cxx_source.html">GammaPhysics.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>                                    {</div>
-<div class="line"><span class="lineno">   24</span>  aParticleIterator-&gt;reset();</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>  <span class="comment">// Loop through all of the particles and find the &quot;gamma&quot;.</span></div>
-<div class="line"><span class="lineno">   27</span>  <span class="keywordflow">while</span> ((*aParticleIterator)()) {</div>
-<div class="line"><span class="lineno">   28</span>    G4ParticleDefinition* particle = aParticleIterator-&gt;value();</div>
-<div class="line"><span class="lineno">   29</span>    G4ProcessManager* pmanager = particle-&gt;GetProcessManager();</div>
-<div class="line"><span class="lineno">   30</span>    G4String particleName = particle-&gt;GetParticleName();</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (particleName == <span class="stringliteral">&quot;gamma&quot;</span>) {</div>
-<div class="line"><span class="lineno">   33</span>      <span class="comment">// Get the process list associated with the gamma.</span></div>
-<div class="line"><span class="lineno">   34</span>      G4ProcessVector* vProcess = pmanager-&gt;GetProcessList();</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>      <span class="comment">// Search the list for the process &quot;photoNuclear&quot;.  When found,</span></div>
-<div class="line"><span class="lineno">   37</span>      <span class="comment">// change the calling order so photonNuclear is called before</span></div>
-<div class="line"><span class="lineno">   38</span>      <span class="comment">// EM processes. The biasing operator needs the photonNuclear</span></div>
-<div class="line"><span class="lineno">   39</span>      <span class="comment">// process to be called first because the cross-section is</span></div>
-<div class="line"><span class="lineno">   40</span>      <span class="comment">// needed to bias down other process.</span></div>
-<div class="line"><span class="lineno">   41</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iProcess = 0; iProcess &lt; vProcess-&gt;size(); ++iProcess) {</div>
-<div class="line"><span class="lineno">   42</span>        G4String processName = (*vProcess)[iProcess]-&gt;GetProcessName();</div>
-<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (processName == <span class="stringliteral">&quot;photonNuclear&quot;</span>) {</div>
-<div class="line"><span class="lineno">   44</span>          pmanager-&gt;SetProcessOrderingToFirst((*vProcess)[iProcess],</div>
-<div class="line"><span class="lineno">   45</span>                                              G4ProcessVectorDoItIndex::idxAll);</div>
-<div class="line"><span class="lineno">   46</span>        }</div>
-<div class="line"><span class="lineno">   47</span>      }</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>      <span class="comment">// Add the gamma -&gt; mumu to the physics list.</span></div>
-<div class="line"><span class="lineno">   50</span>      pmanager-&gt;AddDiscreteProcess(&amp;<a class="code hl_variable" href="classsimcore_1_1GammaPhysics.html#a83e179cda5b425b396b0d430cb25021b">gammaConvProcess</a>);</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
-<div class="line"><span class="lineno">   52</span>  }</div>
-<div class="line"><span class="lineno">   53</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1GammaPhysics_html_a83e179cda5b425b396b0d430cb25021b"><div class="ttname"><a href="classsimcore_1_1GammaPhysics.html#a83e179cda5b425b396b0d430cb25021b">simcore::GammaPhysics::gammaConvProcess</a></div><div class="ttdeci">G4GammaConversionToMuons gammaConvProcess</div><div class="ttdef"><b>Definition:</b> <a href="GammaPhysics_8h_source.html#l00057">GammaPhysics.h:57</a></div></div>
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8cxx_source.html#l00052">52</a> of file <a class="el" href="GammaPhysics_8cxx_source.html">GammaPhysics.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>                                    {</div>
+<div class="line"><span class="lineno">   53</span>  G4ProcessManager* processManager = <a class="code hl_function" href="classsimcore_1_1GammaPhysics.html#ac001fe625d1b9440131ab928371003f4">GetGammaProcessManager</a>();</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>  <span class="keyword">auto</span> pn = <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">PhotoNuclearModel::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#ad038eaa2c027b9cbf45b49ec53ff3d80">make</a>(</div>
+<div class="line"><span class="lineno">   56</span>      <a class="code hl_variable" href="classsimcore_1_1GammaPhysics.html#aaee248c3947cd1ac9daae422a0ef324e">modelParameters</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;class_name&quot;</span>),</div>
+<div class="line"><span class="lineno">   57</span>      <a class="code hl_variable" href="classsimcore_1_1GammaPhysics.html#aaee248c3947cd1ac9daae422a0ef324e">modelParameters</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;instance_name&quot;</span>),</div>
+<div class="line"><span class="lineno">   58</span>      <a class="code hl_variable" href="classsimcore_1_1GammaPhysics.html#aaee248c3947cd1ac9daae422a0ef324e">modelParameters</a>);</div>
+<div class="line"><span class="lineno">   59</span>  pn-&gt;removeExistingModel(processManager);</div>
+<div class="line"><span class="lineno">   60</span>  pn-&gt;ConstructGammaProcess(processManager);</div>
+<div class="line"><span class="lineno">   61</span>  <a class="code hl_function" href="classsimcore_1_1GammaPhysics.html#a92e85e969f8b11543c83414b47c5b0aa">SetPhotonNuclearAsFirstProcess</a>();</div>
+<div class="line"><span class="lineno">   62</span>  <span class="comment">// Add the gamma -&gt; mumu to the physics list.</span></div>
+<div class="line"><span class="lineno">   63</span>  processManager-&gt;AddDiscreteProcess(&amp;<a class="code hl_variable" href="classsimcore_1_1GammaPhysics.html#a83e179cda5b425b396b0d430cb25021b">gammaConvProcess</a>);</div>
+<div class="line"><span class="lineno">   64</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1Factory_html_abdbb8169a68e3ac620b3b296e0279e91"><div class="ttname"><a href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">simcore::Factory::get</a></div><div class="ttdeci">static Factory &amp; get()</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00217">Factory.h:217</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1Factory_html_ad038eaa2c027b9cbf45b49ec53ff3d80"><div class="ttname"><a href="classsimcore_1_1Factory.html#ad038eaa2c027b9cbf45b49ec53ff3d80">simcore::Factory::make</a></div><div class="ttdeci">PrototypePtr make(const std::string &amp;full_name, PrototypeConstructorArgs... maker_args)</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00264">Factory.h:264</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1GammaPhysics_html_a83e179cda5b425b396b0d430cb25021b"><div class="ttname"><a href="classsimcore_1_1GammaPhysics.html#a83e179cda5b425b396b0d430cb25021b">simcore::GammaPhysics::gammaConvProcess</a></div><div class="ttdeci">G4GammaConversionToMuons gammaConvProcess</div><div class="ttdef"><b>Definition:</b> <a href="GammaPhysics_8h_source.html#l00080">GammaPhysics.h:80</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1GammaPhysics_html_a92e85e969f8b11543c83414b47c5b0aa"><div class="ttname"><a href="classsimcore_1_1GammaPhysics.html#a92e85e969f8b11543c83414b47c5b0aa">simcore::GammaPhysics::SetPhotonNuclearAsFirstProcess</a></div><div class="ttdeci">void SetPhotonNuclearAsFirstProcess() const</div><div class="ttdef"><b>Definition:</b> <a href="GammaPhysics_8cxx_source.html#l00038">GammaPhysics.cxx:38</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1GammaPhysics_html_ac001fe625d1b9440131ab928371003f4"><div class="ttname"><a href="classsimcore_1_1GammaPhysics.html#ac001fe625d1b9440131ab928371003f4">simcore::GammaPhysics::GetGammaProcessManager</a></div><div class="ttdeci">G4ProcessManager * GetGammaProcessManager() const</div><div class="ttdef"><b>Definition:</b> <a href="GammaPhysics_8cxx_source.html#l00020">GammaPhysics.cxx:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GammaPhysics_8h_source.html#l00057">gammaConvProcess</a>.</p>
+<p class="reference">References <a class="el" href="GammaPhysics_8h_source.html#l00080">gammaConvProcess</a>, <a class="el" href="Factory_8h_source.html#l00217">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::get()</a>, <a class="el" href="GammaPhysics_8cxx_source.html#l00020">GetGammaProcessManager()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="Factory_8h_source.html#l00264">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::make()</a>, <a class="el" href="GammaPhysics_8h_source.html#l00084">modelParameters</a>, and <a class="el" href="GammaPhysics_8cxx_source.html#l00038">SetPhotonNuclearAsFirstProcess()</a>.</p>
+
+</div>
+</div>
+<a id="ac001fe625d1b9440131ab928371003f4" name="ac001fe625d1b9440131ab928371003f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac001fe625d1b9440131ab928371003f4">&#9670;&#160;</a></span>GetGammaProcessManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">G4ProcessManager * simcore::GammaPhysics::GetGammaProcessManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Not entirely clear that there isn't a simpler way to do this, but to keep this function extraction to a pure refactoring, I'm leaving it here for now. /Einar</p>
+
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8cxx_source.html#l00020">20</a> of file <a class="el" href="GammaPhysics_8cxx_source.html">GammaPhysics.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>                                                             {</div>
+<div class="line"><span class="lineno">   26</span>  aParticleIterator-&gt;reset();</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>  <span class="comment">// Loop through all of the particles and find the &quot;gamma&quot;.</span></div>
+<div class="line"><span class="lineno">   29</span>  <span class="keywordflow">while</span> ((*aParticleIterator)()) {</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keyword">auto</span> particle{aParticleIterator-&gt;value()};</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keyword">auto</span> particleName{particle-&gt;GetParticleName()};</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (particleName == <span class="stringliteral">&quot;gamma&quot;</span>) {</div>
+<div class="line"><span class="lineno">   33</span>      <span class="keywordflow">return</span> particle-&gt;GetProcessManager();</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
+<div class="line"><span class="lineno">   36</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="GammaPhysics_8cxx_source.html#l00052">ConstructProcess()</a>, and <a class="el" href="GammaPhysics_8cxx_source.html#l00038">SetPhotonNuclearAsFirstProcess()</a>.</p>
+
+</div>
+</div>
+<a id="a92e85e969f8b11543c83414b47c5b0aa" name="a92e85e969f8b11543c83414b47c5b0aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e85e969f8b11543c83414b47c5b0aa">&#9670;&#160;</a></span>SetPhotonNuclearAsFirstProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void simcore::GammaPhysics::SetPhotonNuclearAsFirstProcess </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Search the list for the process "photoNuclear". When found, change the calling order so photonNuclear is called before EM processes. The biasing operator needs the photonNuclear process to be called first because the cross-section is needed to bias down other process. </p>
+
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8cxx_source.html#l00038">38</a> of file <a class="el" href="GammaPhysics_8cxx_source.html">GammaPhysics.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>                                                        {</div>
+<div class="line"><span class="lineno">   39</span>  <span class="keyword">auto</span> processManager{<a class="code hl_function" href="classsimcore_1_1GammaPhysics.html#ac001fe625d1b9440131ab928371003f4">GetGammaProcessManager</a>()};</div>
+<div class="line"><span class="lineno">   40</span>  <span class="comment">// Get the process list associated with the gamma.</span></div>
+<div class="line"><span class="lineno">   41</span>  <span class="keyword">const</span> <span class="keyword">auto</span> processes{processManager-&gt;GetProcessList()};</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i{0}; i &lt; processes-&gt;size(); ++i) {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keyword">const</span> <span class="keyword">auto</span> process{(*processes)[i]};</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keyword">const</span> <span class="keyword">auto</span> processName{process-&gt;GetProcessName()};</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (processName == <span class="stringliteral">&quot;photonNuclear&quot;</span>) {</div>
+<div class="line"><span class="lineno">   47</span>      processManager-&gt;SetProcessOrderingToFirst(</div>
+<div class="line"><span class="lineno">   48</span>          process, G4ProcessVectorDoItIndex::idxAll);</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+<div class="line"><span class="lineno">   51</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="GammaPhysics_8cxx_source.html#l00020">GetGammaProcessManager()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GammaPhysics_8cxx_source.html#l00052">ConstructProcess()</a>.</p>
 
 </div>
 </div>
@@ -241,9 +340,36 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The gamma to muons process. </p>
 
-<p class="definition">Definition at line <a class="el" href="GammaPhysics_8h_source.html#l00057">57</a> of file <a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8h_source.html#l00080">80</a> of file <a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GammaPhysics_8cxx_source.html#l00023">ConstructProcess()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GammaPhysics_8cxx_source.html#l00052">ConstructProcess()</a>.</p>
+
+</div>
+</div>
+<a id="aaee248c3947cd1ac9daae422a0ef324e" name="aaee248c3947cd1ac9daae422a0ef324e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee248c3947cd1ac9daae422a0ef324e">&#9670;&#160;</a></span>modelParameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> simcore::GammaPhysics::modelParameters</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Parameters from the configuration to pass along to the photonuclear model. </p>
+
+<p class="definition">Definition at line <a class="el" href="GammaPhysics_8h_source.html#l00084">84</a> of file <a class="el" href="GammaPhysics_8h_source.html">GammaPhysics.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GammaPhysics_8cxx_source.html#l00052">ConstructProcess()</a>.</p>
 
 </div>
 </div>
