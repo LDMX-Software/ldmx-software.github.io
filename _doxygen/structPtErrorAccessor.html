@@ -66,7 +66,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00346">346</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00348">348</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7bffdbf5f2124590cc90095b5aa4354b" name="a7bffdbf5f2124590cc90095b5aa4354b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7bffdbf5f2124590cc90095b5aa4354b">&#9670;&#160;</a></span>operator()()</h2>
@@ -99,18 +99,19 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00356">356</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  356</span>                                    {</div>
-<div class="line"><span class="lineno">  357</span>    <span class="keywordflow">if</span> (qop_value and qop_error and theta_value and theta_error) {</div>
-<div class="line"><span class="lineno">  358</span>      <span class="keywordtype">float</span> qop_v = qop_value-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  359</span>      <span class="keywordtype">float</span> qop_e = qop_error-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  360</span>      <span class="keywordtype">float</span> theta_v = theta_value-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  361</span>      <span class="keywordtype">float</span> theta_e = theta_error-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  362</span>      <span class="keywordflow">return</span> std::cos(theta_v) / qop_v * theta_e -</div>
-<div class="line"><span class="lineno">  363</span>             std::sin(theta_v) / (qop_v * qop_v) * qop_e;</div>
-<div class="line"><span class="lineno">  364</span>    }</div>
-<div class="line"><span class="lineno">  365</span>    <span class="keywordflow">return</span> std::numeric_limits&lt;float&gt;::infinity();</div>
-<div class="line"><span class="lineno">  366</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00358">358</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  358</span>                                    {</div>
+<div class="line"><span class="lineno">  359</span>    <span class="keywordflow">if</span> (qop_value != <span class="keyword">nullptr</span> and qop_error != <span class="keyword">nullptr</span> and</div>
+<div class="line"><span class="lineno">  360</span>        theta_value != <span class="keyword">nullptr</span> and theta_error != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  361</span>      <span class="keywordtype">float</span> qop_v = qop_value-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  362</span>      <span class="keywordtype">float</span> qop_e = qop_error-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  363</span>      <span class="keywordtype">float</span> theta_v = theta_value-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  364</span>      <span class="keywordtype">float</span> theta_e = theta_error-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  365</span>      <span class="keywordflow">return</span> std::cos(theta_v) / qop_v * theta_e -</div>
+<div class="line"><span class="lineno">  366</span>             std::sin(theta_v) / (qop_v * qop_v) * qop_e;</div>
+<div class="line"><span class="lineno">  367</span>    }</div>
+<div class="line"><span class="lineno">  368</span>    <span class="keywordflow">return</span> std::numeric_limits&lt;float&gt;::infinity();</div>
+<div class="line"><span class="lineno">  369</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -127,7 +128,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00348">348</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00350">350</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 
 </div>
 </div>
@@ -143,7 +144,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00347">347</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00349">349</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 
 </div>
 </div>
@@ -159,7 +160,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00351">351</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00353">353</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 
 </div>
 </div>
@@ -175,7 +176,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00350">350</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00352">352</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 
 </div>
 </div>

@@ -49,7 +49,7 @@ $(function() {
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Visualization. </p>
 <p >The measurement calibrator can be a function or a class/struct able to retrieve the sim hits container. It gets by CKF passing the propagated TrackState. The measurement calibrator gets called for every propagation and a new track state is passed which contains the source link. The measurement calibrator unpacks the source link from the TrackState and casts to the implemented source link (in ldmx case we use an IndexSourceLink). Retrieve the index from the source link and look up the hit in the sim container. Then fill up the trackState with the projected measurement</p>
-<p >ts.calibrated().block&lt;2&gt;(0) = surface.globalToLocal(simHit.position) ts.clabiratedCov = simHit cov ts.data().measDim = 2 Matrix H = makeProj() ts.setProjector(H)   Where ts is the proxyTrackState  H Matrix projector (this is only for u and v) (1 0 0 0 0 0)  (0 1 0 0 0 0) Calibrator to convert an index source link to a measurement. The measurement could be a space point or a local cluster on surface. TODO: use local measurements instead of global space points. <br  />
+<p >ts.calibrated().block&lt;2&gt;(0) = surface.globalToLocal(simHit.position) ts.clabiratedCov = simHit cov ts.data().measDim = 2 Matrix H = makeProj() ts.setProjector(H)   Where ts is the proxyTrackState  H Matrix projector (this is only for u and v) (1 0 0 0 0 0)   (0 1 0 0 0 0) Calibrator to convert an index source link to a measurement. The measurement could be a space point or a local cluster on surface. TODO: use local measurements instead of global space points. <br  />
  </p>
 </div></div><!-- contents -->
 <!-- start footer part -->

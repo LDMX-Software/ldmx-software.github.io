@@ -57,16 +57,16 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Acts/Geometry/GeometryIdentifier.hpp&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//#include &quot;ActsExamples/Utilities/GroupBy.hpp&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//#include &quot;ActsExamples/Utilities/Range.hpp&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;Tracking/Sim/GroupBy.h&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;Tracking/Sim/Range.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Acts/EventData/SourceLink.hpp&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;Acts/Geometry/GeometryIdentifier.hpp&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;Acts/Surfaces/Surface.hpp&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;Tracking/Sim/GroupBy.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;Tracking/Sim/Range.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;boost/container/flat_map.hpp&gt;</span></div>
@@ -227,25 +227,10 @@ $(function() {
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <span class="comment">// pointer to the container</span></div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keyword">const</span> Container* container = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <span class="comment">// count the number of elements with requested geoId</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="keywordtype">size_t</span> count(<span class="keyword">const</span> Acts::GeometryIdentifier&amp; geoId)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    assert(container != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordflow">return</span> container-&gt;count(geoId);</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  }</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  <span class="comment">// get the range of elements with requested geoId</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  std::pair&lt;Iterator, Iterator&gt; range(</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      <span class="keyword">const</span> Acts::GeometryIdentifier&amp; geoId)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    assert(container != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">return</span> container-&gt;equal_range(geoId);</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  }</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="comment">// get the element using the iterator</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <span class="keyword">const</span> Value&amp; at(<span class="keyword">const</span> Iterator&amp; it)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *it; }</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>};</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>}  <span class="comment">// namespace ActsExamples</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>};</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>}  <span class="comment">// namespace ActsExamples</span></div>
 <div class="ttc" id="aclassActsExamples_1_1Range_html"><div class="ttname"><a href="classActsExamples_1_1Range.html">ActsExamples::Range</a></div><div class="ttdef"><b>Definition:</b> <a href="Range_8h_source.html#l00027">Range.h:27</a></div></div>
 <div class="ttc" id="astructActsExamples_1_1GeometryIdMultisetAccessor_html"><div class="ttname"><a href="structActsExamples_1_1GeometryIdMultisetAccessor.html">ActsExamples::GeometryIdMultisetAccessor</a></div><div class="ttdef"><b>Definition:</b> <a href="GeometryContainers_8h_source.html#l00222">GeometryContainers.h:222</a></div></div>
 <div class="ttc" id="astructActsExamples_1_1detail_1_1CompareGeometryId_html"><div class="ttname"><a href="structActsExamples_1_1detail_1_1CompareGeometryId.html">ActsExamples::detail::CompareGeometryId</a></div><div class="ttdef"><b>Definition:</b> <a href="GeometryContainers_8h_source.html#l00061">GeometryContainers.h:61</a></div></div>

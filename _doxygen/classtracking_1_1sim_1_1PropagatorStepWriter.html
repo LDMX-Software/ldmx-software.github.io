@@ -64,8 +64,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a14f042b6915e355e9bdca56bf0ecf7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c2f8483b348e958ee8a756c531da864"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#a4c2f8483b348e958ee8a756c531da864">~PropagatorStepWriter</a> ()</td></tr>
 <tr class="separator:a4c2f8483b348e958ee8a756c531da864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f87324aeca1dd829e69724615032678"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#a9f87324aeca1dd829e69724615032678">WriteSteps</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event, const std::vector&lt; PropagationSteps &gt; &amp;stepCollection, const std::vector&lt; <a class="el" href="classldmx_1_1LdmxSpacePoint.html">ldmx::LdmxSpacePoint</a> * &gt; ldmxsps, const Acts::Vector3 &amp;start_pos, const Acts::Vector3 &amp;start_mom)</td></tr>
-<tr class="separator:a9f87324aeca1dd829e69724615032678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7f3bf76310e80ddece863323fd5c52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#adc7f3bf76310e80ddece863323fd5c52">WriteSteps</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event, const std::vector&lt; PropagationSteps &gt; &amp;stepCollection, const std::vector&lt; <a class="el" href="classldmx_1_1Measurement.html">ldmx::Measurement</a> &gt; &amp;measurements, const Acts::Vector3 &amp;start_pos, const Acts::Vector3 &amp;start_mom)</td></tr>
+<tr class="separator:adc7f3bf76310e80ddece863323fd5c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -283,8 +283,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9f87324aeca1dd829e69724615032678" name="a9f87324aeca1dd829e69724615032678"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f87324aeca1dd829e69724615032678">&#9670;&#160;</a></span>WriteSteps()</h2>
+<a id="adc7f3bf76310e80ddece863323fd5c52" name="adc7f3bf76310e80ddece863323fd5c52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc7f3bf76310e80ddece863323fd5c52">&#9670;&#160;</a></span>WriteSteps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,8 +304,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classldmx_1_1LdmxSpacePoint.html">ldmx::LdmxSpacePoint</a> * &gt;&#160;</td>
-          <td class="paramname"><em>ldmxsps</em>, </td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classldmx_1_1Measurement.html">ldmx::Measurement</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>measurements</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -347,12 +347,12 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   91</span>  <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#a8873f5c72e35fa11e898b730fee41af1">m_start_pos</a>.clear();</div>
 <div class="line"><span class="lineno">   92</span>  <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#ac83bbba23665c082ee2c44752ca2421a">m_start_mom</a>.clear();</div>
 <div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; ldmxsp : ldmxsps) {</div>
-<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#a3b11833bc9170ca1978cf408cb430514">m_hit_x</a>.push_back(ldmxsp-&gt;x());</div>
-<div class="line"><span class="lineno">   96</span>    <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#afb56a34da346f17cffb6b2457daaaa98">m_hit_y</a>.push_back(ldmxsp-&gt;y());</div>
-<div class="line"><span class="lineno">   97</span>    <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#a549e188b100eb9bde67cc85b08c24256">m_hit_z</a>.push_back(ldmxsp-&gt;z());</div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; meas : measurements) {</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#a3b11833bc9170ca1978cf408cb430514">m_hit_x</a>.push_back(meas.getGlobalPosition()[0]);</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#afb56a34da346f17cffb6b2457daaaa98">m_hit_y</a>.push_back(meas.getGlobalPosition()[1]);</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#a549e188b100eb9bde67cc85b08c24256">m_hit_z</a>.push_back(meas.getGlobalPosition()[2]);</div>
 <div class="line"><span class="lineno">   98</span>  }</div>
-<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">   99</span>  </div>
 <div class="line"><span class="lineno">  100</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; 3; i++) {</div>
 <div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#a8873f5c72e35fa11e898b730fee41af1">m_start_pos</a>.push_back(start_pos(i));</div>
 <div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="classtracking_1_1sim_1_1PropagatorStepWriter.html#ac83bbba23665c082ee2c44752ca2421a">m_start_mom</a>.push_back(start_mom(i));</div>

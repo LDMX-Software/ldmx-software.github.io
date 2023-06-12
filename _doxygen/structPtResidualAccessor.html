@@ -70,7 +70,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This the dedicted pT residual accessor. </p>
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00324">324</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00325">325</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7020c13fa22214059658a51c609d135b" name="a7020c13fa22214059658a51c609d135b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7020c13fa22214059658a51c609d135b">&#9670;&#160;</a></span>operator()()</h2>
@@ -103,16 +103,17 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00334">334</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  334</span>                                    {</div>
-<div class="line"><span class="lineno">  335</span>    <span class="keywordflow">if</span> (qop_value and theta_value and reference_pt) {</div>
-<div class="line"><span class="lineno">  336</span>      <span class="keywordtype">float</span> p = 1. / std::abs(qop_value-&gt;at(entry));</div>
-<div class="line"><span class="lineno">  337</span>      <span class="keywordtype">float</span> theta = theta_value-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  338</span>      <span class="keywordtype">float</span> pt_true = reference_pt-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  339</span>      <span class="keywordflow">return</span> (p * sin(theta) - pt_true);</div>
-<div class="line"><span class="lineno">  340</span>    }</div>
-<div class="line"><span class="lineno">  341</span>    <span class="keywordflow">return</span> std::numeric_limits&lt;float&gt;::infinity();</div>
-<div class="line"><span class="lineno">  342</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00335">335</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  335</span>                                    {</div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">if</span> (qop_value != <span class="keyword">nullptr</span> and theta_value != <span class="keyword">nullptr</span> and</div>
+<div class="line"><span class="lineno">  337</span>        reference_pt != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  338</span>      <span class="keywordtype">float</span> p = 1. / std::abs(qop_value-&gt;at(entry));</div>
+<div class="line"><span class="lineno">  339</span>      <span class="keywordtype">float</span> theta = theta_value-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  340</span>      <span class="keywordtype">float</span> pt_true = reference_pt-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  341</span>      <span class="keywordflow">return</span> (p * sin(theta) - pt_true);</div>
+<div class="line"><span class="lineno">  342</span>    }</div>
+<div class="line"><span class="lineno">  343</span>    <span class="keywordflow">return</span> std::numeric_limits&lt;float&gt;::infinity();</div>
+<div class="line"><span class="lineno">  344</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -129,7 +130,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00325">325</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00326">326</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 
 </div>
 </div>
@@ -145,7 +146,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00329">329</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00330">330</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 
 </div>
 </div>
@@ -161,7 +162,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00327">327</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00328">328</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 
 </div>
 </div>

@@ -99,14 +99,15 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CommonUtils_8h_source.html#l00312">312</a> of file <a class="el" href="CommonUtils_8h_source.html">CommonUtils.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  312</span>                                    {</div>
-<div class="line"><span class="lineno">  313</span>    <span class="keywordflow">if</span> (qop_value and reference_charge and reference_p) {</div>
-<div class="line"><span class="lineno">  314</span>      <span class="keywordtype">float</span> v = qop_value-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  315</span>      <span class="keywordtype">float</span> q_true = reference_charge-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  316</span>      <span class="keywordtype">float</span> p_true = reference_p-&gt;at(entry);</div>
-<div class="line"><span class="lineno">  317</span>      <span class="keywordflow">return</span> (v - q_true / p_true);</div>
-<div class="line"><span class="lineno">  318</span>    }</div>
-<div class="line"><span class="lineno">  319</span>    <span class="keywordflow">return</span> std::numeric_limits&lt;float&gt;::infinity();</div>
-<div class="line"><span class="lineno">  320</span>  }</div>
+<div class="line"><span class="lineno">  313</span>    <span class="keywordflow">if</span> (qop_value != <span class="keyword">nullptr</span> and reference_charge != <span class="keyword">nullptr</span> and</div>
+<div class="line"><span class="lineno">  314</span>        reference_p != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  315</span>      <span class="keywordtype">float</span> v = qop_value-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  316</span>      <span class="keywordtype">float</span> q_true = reference_charge-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  317</span>      <span class="keywordtype">float</span> p_true = reference_p-&gt;at(entry);</div>
+<div class="line"><span class="lineno">  318</span>      <span class="keywordflow">return</span> (v - q_true / p_true);</div>
+<div class="line"><span class="lineno">  319</span>    }</div>
+<div class="line"><span class="lineno">  320</span>    <span class="keywordflow">return</span> std::numeric_limits&lt;float&gt;::infinity();</div>
+<div class="line"><span class="lineno">  321</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

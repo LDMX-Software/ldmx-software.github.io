@@ -77,7 +77,7 @@ template&lt;typename external_spacepoint_t &gt; </td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="SeedToTrackParamMaker_8h_source.html#l00015">15</a> of file <a class="el" href="SeedToTrackParamMaker_8h_source.html">SeedToTrackParamMaker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SeedToTrackParamMaker_8h_source.html#l00016">16</a> of file <a class="el" href="SeedToTrackParamMaker_8h_source.html">SeedToTrackParamMaker.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac1ebe9e9f8a7a4c2bfce41a77011d867" name="ac1ebe9e9f8a7a4c2bfce41a77011d867"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac1ebe9e9f8a7a4c2bfce41a77011d867">&#9670;&#160;</a></span>SeedToTrackParamMaker()</h2>
@@ -102,8 +102,8 @@ template&lt;typename external_spacepoint_t &gt; </td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SeedToTrackParamMaker_8h_source.html#l00018">18</a> of file <a class="el" href="SeedToTrackParamMaker_8h_source.html">SeedToTrackParamMaker.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="SeedToTrackParamMaker_8h_source.html#l00019">19</a> of file <a class="el" href="SeedToTrackParamMaker_8h_source.html">SeedToTrackParamMaker.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -190,137 +190,137 @@ template&lt;typename spacepoint_iterator_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>optional bound parameters </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SeedToTrackParamMaker_8h_source.html#l00090">90</a> of file <a class="el" href="SeedToTrackParamMaker_8h_source.html">SeedToTrackParamMaker.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>                                                                                        {</div>
-<div class="line"><span class="lineno">   94</span>  </div>
-<div class="line"><span class="lineno">   95</span>    <span class="comment">// Check the number of provided space points</span></div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">size_t</span> numSP = std::distance(spBegin, spEnd);</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (numSP != 3) {</div>
-<div class="line"><span class="lineno">   98</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;ERROR::less than 3 point provided&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><span class="lineno">   99</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>    <span class="comment">// Convert bField to Tesla</span></div>
-<div class="line"><span class="lineno">  103</span>    Acts::ActsScalar bFieldInTesla = bField.norm() / Acts::UnitConstants::T;</div>
-<div class="line"><span class="lineno">  104</span>    Acts::ActsScalar bFieldMinInTesla = bFieldMin / Acts::UnitConstants::T;</div>
-<div class="line"><span class="lineno">  105</span>    <span class="comment">// Check if magnetic field is too small</span></div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">if</span> (bFieldInTesla &lt; bFieldMinInTesla) {</div>
-<div class="line"><span class="lineno">  107</span>      <span class="comment">// @todo shall we use straight-line estimation and use default q/pt in such</span></div>
-<div class="line"><span class="lineno">  108</span>      <span class="comment">// case?</span></div>
-<div class="line"><span class="lineno">  109</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;The magnetic field at the bottom space point: B = &quot;</span></div>
-<div class="line"><span class="lineno">  110</span>               &lt;&lt; bFieldInTesla &lt;&lt; <span class="stringliteral">&quot; T is smaller than |B|_min = &quot;</span></div>
-<div class="line"><span class="lineno">  111</span>               &lt;&lt; bFieldMinInTesla &lt;&lt; <span class="stringliteral">&quot; T. Estimation is not performed.&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>    <span class="comment">// The global positions of the bottom, middle and space points</span></div>
-<div class="line"><span class="lineno">  116</span>    std::array&lt;Acts::Vector3, 3&gt; spGlobalPositions = {Acts::Vector3::Zero(), Acts::Vector3::Zero(),</div>
-<div class="line"><span class="lineno">  117</span>      Acts::Vector3::Zero()};</div>
-<div class="line"><span class="lineno">  118</span>    <span class="comment">// The first, second and third space point are assumed to be bottom, middle</span></div>
-<div class="line"><span class="lineno">  119</span>    <span class="comment">// and top space point, respectively</span></div>
-<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> isp = 0; isp &lt; 3; ++isp) {</div>
-<div class="line"><span class="lineno">  121</span>      spacepoint_iterator_t it = std::next(spBegin, isp);</div>
-<div class="line"><span class="lineno">  122</span>      <span class="keywordflow">if</span> (*it == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><span class="lineno">  123</span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Empty space point found. This should not happen.&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  125</span>      }</div>
-<div class="line"><span class="lineno">  126</span>      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; sp = *it;</div>
-<div class="line"><span class="lineno">  127</span>      spGlobalPositions[isp] = Acts::Vector3(sp-&gt;x(), sp-&gt;y(), sp-&gt;z());</div>
-<div class="line"><span class="lineno">  128</span>    }</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>    <span class="comment">// Define a new coordinate frame with its origin at the bottom space point, z</span></div>
-<div class="line"><span class="lineno">  131</span>    <span class="comment">// axis along the magnetic field direction and y axis perpendicular to vector</span></div>
-<div class="line"><span class="lineno">  132</span>    <span class="comment">// from the bottom to middle space point. Hence, the projection of the middle</span></div>
-<div class="line"><span class="lineno">  133</span>    <span class="comment">// space point on the tranverse plane will be located at the x axis of the new</span></div>
-<div class="line"><span class="lineno">  134</span>    <span class="comment">// frame.</span></div>
-<div class="line"><span class="lineno">  135</span>    Acts::Vector3 relVec = spGlobalPositions[1] - spGlobalPositions[0];</div>
-<div class="line"><span class="lineno">  136</span>    Acts::Vector3 newZAxis = bField.normalized();</div>
-<div class="line"><span class="lineno">  137</span>    Acts::Vector3 newYAxis = newZAxis.cross(relVec).normalized();</div>
-<div class="line"><span class="lineno">  138</span>    Acts::Vector3 newXAxis = newYAxis.cross(newZAxis);</div>
-<div class="line"><span class="lineno">  139</span>    Acts::RotationMatrix3 rotation;</div>
-<div class="line"><span class="lineno">  140</span>    rotation.col(0) = newXAxis;</div>
-<div class="line"><span class="lineno">  141</span>    rotation.col(1) = newYAxis;</div>
-<div class="line"><span class="lineno">  142</span>    rotation.col(2) = newZAxis;</div>
-<div class="line"><span class="lineno">  143</span>    <span class="comment">// The center of the new frame is at the bottom space point</span></div>
-<div class="line"><span class="lineno">  144</span>    Acts::Translation3 trans(spGlobalPositions[0]);</div>
-<div class="line"><span class="lineno">  145</span>    <span class="comment">// The transform which constructs the new frame</span></div>
-<div class="line"><span class="lineno">  146</span>    Acts::Transform3 transform(trans * rotation);</div>
-<div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>    <span class="comment">// The coordinate of the middle and top space point in the new frame</span></div>
-<div class="line"><span class="lineno">  149</span>    Acts::Vector3 local1 = transform.inverse() * spGlobalPositions[1];</div>
-<div class="line"><span class="lineno">  150</span>    Acts::Vector3 local2 = transform.inverse() * spGlobalPositions[2];</div>
-<div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>    <span class="comment">// Lambda to transform the coordinates to the (u, v) space</span></div>
-<div class="line"><span class="lineno">  153</span>    <span class="keyword">auto</span> uvTransform = [](<span class="keyword">const</span> Acts::Vector3&amp; local) -&gt; Acts::Vector2 {</div>
-<div class="line"><span class="lineno">  154</span>      Acts::Vector2 uv;</div>
-<div class="line"><span class="lineno">  155</span>      Acts::ActsScalar denominator = local.x() * local.x() + local.y() * local.y();</div>
-<div class="line"><span class="lineno">  156</span>      uv.x() = local.x() / denominator;</div>
-<div class="line"><span class="lineno">  157</span>      uv.y() = local.y() / denominator;</div>
-<div class="line"><span class="lineno">  158</span>      <span class="keywordflow">return</span> uv;</div>
-<div class="line"><span class="lineno">  159</span>    };</div>
-<div class="line"><span class="lineno">  160</span>    <span class="comment">// The uv1.y() should be zero</span></div>
-<div class="line"><span class="lineno">  161</span>    Acts::Vector2 uv1 = uvTransform(local1);</div>
-<div class="line"><span class="lineno">  162</span>    Acts::Vector2 uv2 = uvTransform(local2);</div>
-<div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>    <span class="comment">// A,B are slope and intercept of the straight line in the u,v plane</span></div>
-<div class="line"><span class="lineno">  165</span>    <span class="comment">// connecting the three points</span></div>
-<div class="line"><span class="lineno">  166</span>    Acts::ActsScalar A = (uv2.y() - uv1.y()) / (uv2.x() - uv1.x());</div>
-<div class="line"><span class="lineno">  167</span>    Acts::ActsScalar B = uv2.y() - A * uv2.x();</div>
-<div class="line"><span class="lineno">  168</span>    <span class="comment">// Curvature (with a sign) estimate</span></div>
-<div class="line"><span class="lineno">  169</span>    Acts::ActsScalar rho = -2.0 * B / std::hypot(1., A);</div>
-<div class="line"><span class="lineno">  170</span>    <span class="comment">// The projection of the top space point on the transverse plane of the new</span></div>
-<div class="line"><span class="lineno">  171</span>    <span class="comment">// frame</span></div>
-<div class="line"><span class="lineno">  172</span>    Acts::ActsScalar rn = local2.x() * local2.x() + local2.y() * local2.y();</div>
-<div class="line"><span class="lineno">  173</span>    <span class="comment">// The (1/tanTheta) of momentum in the new frame,</span></div>
-<div class="line"><span class="lineno">  174</span>    Acts::ActsScalar invTanTheta =</div>
-<div class="line"><span class="lineno">  175</span>        local2.z() * std::sqrt(1. / rn) / (1. + rho * rho * rn);</div>
-<div class="line"><span class="lineno">  176</span>    <span class="comment">// The momentum direction in the new frame (the center of the circle has the</span></div>
-<div class="line"><span class="lineno">  177</span>    <span class="comment">// coordinate (-1.*A/(2*B), 1./(2*B)))</span></div>
-<div class="line"><span class="lineno">  178</span>    Acts::Vector3 transDirection(1., A, std::hypot(1, A) * invTanTheta);</div>
-<div class="line"><span class="lineno">  179</span>    <span class="comment">// Transform it back to the original frame</span></div>
-<div class="line"><span class="lineno">  180</span>    Acts::Vector3 direction = rotation * transDirection.normalized();</div>
-<div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>    <span class="comment">// Initialize the bound parameters vector</span></div>
-<div class="line"><span class="lineno">  183</span>    Acts::BoundVector params = Acts::BoundVector::Zero();</div>
-<div class="line"><span class="lineno">  184</span> </div>
-<div class="line"><span class="lineno">  185</span>    <span class="comment">// The estimated phi and theta</span></div>
-<div class="line"><span class="lineno">  186</span>    params[Acts::eBoundPhi] = Acts::VectorHelpers::phi(direction);</div>
-<div class="line"><span class="lineno">  187</span>    params[Acts::eBoundTheta] = Acts::VectorHelpers::theta(direction);</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>    Acts::Vector3 bottomLocalPos = Tp.inverse() * spGlobalPositions[0];</div>
-<div class="line"><span class="lineno">  190</span>        </div>
-<div class="line"><span class="lineno">  191</span>    <span class="comment">// The estimated loc0 and loc1</span></div>
-<div class="line"><span class="lineno">  192</span>    params[Acts::eBoundLoc0] = bottomLocalPos.x();</div>
-<div class="line"><span class="lineno">  193</span>    params[Acts::eBoundLoc1] = bottomLocalPos.y();</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>    <span class="comment">// The estimated q/pt in [GeV/c]^-1 (note that the pt is the projection of</span></div>
-<div class="line"><span class="lineno">  196</span>    <span class="comment">// momentum on the transverse plane of the new frame)</span></div>
-<div class="line"><span class="lineno">  197</span>    Acts::ActsScalar qOverPt = rho * (Acts::UnitConstants::m) / (0.3 * bFieldInTesla);</div>
-<div class="line"><span class="lineno">  198</span>    <span class="comment">// The estimated q/p in [GeV/c]^-1</span></div>
-<div class="line"><span class="lineno">  199</span>    params[Acts::eBoundQOverP] = qOverPt / std::hypot(1., invTanTheta);</div>
-<div class="line"><span class="lineno">  200</span> </div>
-<div class="line"><span class="lineno">  201</span>    <span class="comment">// The estimated momentum, and its projection along the magnetic field</span></div>
-<div class="line"><span class="lineno">  202</span>    <span class="comment">// diretion</span></div>
-<div class="line"><span class="lineno">  203</span>    Acts::ActsScalar pInGeV = std::abs(1.0 / params[Acts::eBoundQOverP]);</div>
-<div class="line"><span class="lineno">  204</span>    Acts::ActsScalar pzInGeV = 1.0 / std::abs(qOverPt) * invTanTheta;</div>
-<div class="line"><span class="lineno">  205</span>    Acts::ActsScalar massInGeV = mass / Acts::UnitConstants::GeV;</div>
-<div class="line"><span class="lineno">  206</span>    <span class="comment">// The estimated velocity, and its projection along the magnetic field</span></div>
-<div class="line"><span class="lineno">  207</span>    <span class="comment">// diretion</span></div>
-<div class="line"><span class="lineno">  208</span>    Acts::ActsScalar v = pInGeV / std::hypot(pInGeV, massInGeV);</div>
-<div class="line"><span class="lineno">  209</span>    Acts::ActsScalar vz = pzInGeV / std::hypot(pInGeV, massInGeV);</div>
-<div class="line"><span class="lineno">  210</span>    <span class="comment">// The z coordinate of the bottom space point along the magnetic field</span></div>
-<div class="line"><span class="lineno">  211</span>    <span class="comment">// direction</span></div>
-<div class="line"><span class="lineno">  212</span>    Acts::ActsScalar pathz = spGlobalPositions[0].dot(bField) / bField.norm();</div>
-<div class="line"><span class="lineno">  213</span>    <span class="comment">// The estimated time (use path length along magnetic field only if it&#39;s not</span></div>
-<div class="line"><span class="lineno">  214</span>    <span class="comment">// zero)</span></div>
-<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">if</span> (pathz != 0) {</div>
-<div class="line"><span class="lineno">  216</span>      params[Acts::eBoundTime] = pathz / vz;</div>
-<div class="line"><span class="lineno">  217</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  218</span>      params[Acts::eBoundTime] = spGlobalPositions[0].norm() / v;</div>
-<div class="line"><span class="lineno">  219</span>    }</div>
-<div class="line"><span class="lineno">  220</span> </div>
-<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">return</span> params;</div>
-<div class="line"><span class="lineno">  222</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="SeedToTrackParamMaker_8h_source.html#l00091">91</a> of file <a class="el" href="SeedToTrackParamMaker_8h_source.html">SeedToTrackParamMaker.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>                                                                                        {</div>
+<div class="line"><span class="lineno">   95</span>  </div>
+<div class="line"><span class="lineno">   96</span>    <span class="comment">// Check the number of provided space points</span></div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">size_t</span> numSP = std::distance(spBegin, spEnd);</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (numSP != 3) {</div>
+<div class="line"><span class="lineno">   99</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;ERROR::less than 3 point provided&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <span class="comment">// Convert bField to Tesla</span></div>
+<div class="line"><span class="lineno">  104</span>    Acts::ActsScalar bFieldInTesla = bField.norm() / Acts::UnitConstants::T;</div>
+<div class="line"><span class="lineno">  105</span>    Acts::ActsScalar bFieldMinInTesla = bFieldMin / Acts::UnitConstants::T;</div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">// Check if magnetic field is too small</span></div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (bFieldInTesla &lt; bFieldMinInTesla) {</div>
+<div class="line"><span class="lineno">  108</span>      <span class="comment">// @todo shall we use straight-line estimation and use default q/pt in such</span></div>
+<div class="line"><span class="lineno">  109</span>      <span class="comment">// case?</span></div>
+<div class="line"><span class="lineno">  110</span>      std::cout&lt;&lt;<span class="stringliteral">&quot;The magnetic field at the bottom space point: B = &quot;</span></div>
+<div class="line"><span class="lineno">  111</span>               &lt;&lt; bFieldInTesla &lt;&lt; <span class="stringliteral">&quot; T is smaller than |B|_min = &quot;</span></div>
+<div class="line"><span class="lineno">  112</span>               &lt;&lt; bFieldMinInTesla &lt;&lt; <span class="stringliteral">&quot; T. Estimation is not performed.&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  113</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="comment">// The global positions of the bottom, middle and space points</span></div>
+<div class="line"><span class="lineno">  117</span>    std::array&lt;Acts::Vector3, 3&gt; spGlobalPositions = {Acts::Vector3::Zero(), Acts::Vector3::Zero(),</div>
+<div class="line"><span class="lineno">  118</span>      Acts::Vector3::Zero()};</div>
+<div class="line"><span class="lineno">  119</span>    <span class="comment">// The first, second and third space point are assumed to be bottom, middle</span></div>
+<div class="line"><span class="lineno">  120</span>    <span class="comment">// and top space point, respectively</span></div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> isp = 0; isp &lt; 3; ++isp) {</div>
+<div class="line"><span class="lineno">  122</span>      spacepoint_iterator_t it = std::next(spBegin, isp);</div>
+<div class="line"><span class="lineno">  123</span>      <span class="keywordflow">if</span> (*it == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  124</span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Empty space point found. This should not happen.&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  126</span>      }</div>
+<div class="line"><span class="lineno">  127</span>      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; sp = *it;</div>
+<div class="line"><span class="lineno">  128</span>      spGlobalPositions[isp] = Acts::Vector3(sp-&gt;x(), sp-&gt;y(), sp-&gt;z());</div>
+<div class="line"><span class="lineno">  129</span>    }</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <span class="comment">// Define a new coordinate frame with its origin at the bottom space point, z</span></div>
+<div class="line"><span class="lineno">  132</span>    <span class="comment">// axis along the magnetic field direction and y axis perpendicular to vector</span></div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">// from the bottom to middle space point. Hence, the projection of the middle</span></div>
+<div class="line"><span class="lineno">  134</span>    <span class="comment">// space point on the tranverse plane will be located at the x axis of the new</span></div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">// frame.</span></div>
+<div class="line"><span class="lineno">  136</span>    Acts::Vector3 relVec = spGlobalPositions[1] - spGlobalPositions[0];</div>
+<div class="line"><span class="lineno">  137</span>    Acts::Vector3 newZAxis = bField.normalized();</div>
+<div class="line"><span class="lineno">  138</span>    Acts::Vector3 newYAxis = newZAxis.cross(relVec).normalized();</div>
+<div class="line"><span class="lineno">  139</span>    Acts::Vector3 newXAxis = newYAxis.cross(newZAxis);</div>
+<div class="line"><span class="lineno">  140</span>    Acts::RotationMatrix3 rotation;</div>
+<div class="line"><span class="lineno">  141</span>    rotation.col(0) = newXAxis;</div>
+<div class="line"><span class="lineno">  142</span>    rotation.col(1) = newYAxis;</div>
+<div class="line"><span class="lineno">  143</span>    rotation.col(2) = newZAxis;</div>
+<div class="line"><span class="lineno">  144</span>    <span class="comment">// The center of the new frame is at the bottom space point</span></div>
+<div class="line"><span class="lineno">  145</span>    Acts::Translation3 trans(spGlobalPositions[0]);</div>
+<div class="line"><span class="lineno">  146</span>    <span class="comment">// The transform which constructs the new frame</span></div>
+<div class="line"><span class="lineno">  147</span>    Acts::Transform3 transform(trans * rotation);</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="comment">// The coordinate of the middle and top space point in the new frame</span></div>
+<div class="line"><span class="lineno">  150</span>    Acts::Vector3 local1 = transform.inverse() * spGlobalPositions[1];</div>
+<div class="line"><span class="lineno">  151</span>    Acts::Vector3 local2 = transform.inverse() * spGlobalPositions[2];</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    <span class="comment">// Lambda to transform the coordinates to the (u, v) space</span></div>
+<div class="line"><span class="lineno">  154</span>    <span class="keyword">auto</span> uvTransform = [](<span class="keyword">const</span> Acts::Vector3&amp; local) -&gt; Acts::Vector2 {</div>
+<div class="line"><span class="lineno">  155</span>      Acts::Vector2 uv;</div>
+<div class="line"><span class="lineno">  156</span>      Acts::ActsScalar denominator = local.x() * local.x() + local.y() * local.y();</div>
+<div class="line"><span class="lineno">  157</span>      uv.x() = local.x() / denominator;</div>
+<div class="line"><span class="lineno">  158</span>      uv.y() = local.y() / denominator;</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">return</span> uv;</div>
+<div class="line"><span class="lineno">  160</span>    };</div>
+<div class="line"><span class="lineno">  161</span>    <span class="comment">// The uv1.y() should be zero</span></div>
+<div class="line"><span class="lineno">  162</span>    Acts::Vector2 uv1 = uvTransform(local1);</div>
+<div class="line"><span class="lineno">  163</span>    Acts::Vector2 uv2 = uvTransform(local2);</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>    <span class="comment">// A,B are slope and intercept of the straight line in the u,v plane</span></div>
+<div class="line"><span class="lineno">  166</span>    <span class="comment">// connecting the three points</span></div>
+<div class="line"><span class="lineno">  167</span>    Acts::ActsScalar A = (uv2.y() - uv1.y()) / (uv2.x() - uv1.x());</div>
+<div class="line"><span class="lineno">  168</span>    Acts::ActsScalar B = uv2.y() - A * uv2.x();</div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">// Curvature (with a sign) estimate</span></div>
+<div class="line"><span class="lineno">  170</span>    Acts::ActsScalar rho = -2.0 * B / std::hypot(1., A);</div>
+<div class="line"><span class="lineno">  171</span>    <span class="comment">// The projection of the top space point on the transverse plane of the new</span></div>
+<div class="line"><span class="lineno">  172</span>    <span class="comment">// frame</span></div>
+<div class="line"><span class="lineno">  173</span>    Acts::ActsScalar rn = local2.x() * local2.x() + local2.y() * local2.y();</div>
+<div class="line"><span class="lineno">  174</span>    <span class="comment">// The (1/tanTheta) of momentum in the new frame,</span></div>
+<div class="line"><span class="lineno">  175</span>    Acts::ActsScalar invTanTheta =</div>
+<div class="line"><span class="lineno">  176</span>        local2.z() * std::sqrt(1. / rn) / (1. + rho * rho * rn);</div>
+<div class="line"><span class="lineno">  177</span>    <span class="comment">// The momentum direction in the new frame (the center of the circle has the</span></div>
+<div class="line"><span class="lineno">  178</span>    <span class="comment">// coordinate (-1.*A/(2*B), 1./(2*B)))</span></div>
+<div class="line"><span class="lineno">  179</span>    Acts::Vector3 transDirection(1., A, std::hypot(1, A) * invTanTheta);</div>
+<div class="line"><span class="lineno">  180</span>    <span class="comment">// Transform it back to the original frame</span></div>
+<div class="line"><span class="lineno">  181</span>    Acts::Vector3 direction = rotation * transDirection.normalized();</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <span class="comment">// Initialize the bound parameters vector</span></div>
+<div class="line"><span class="lineno">  184</span>    Acts::BoundVector params = Acts::BoundVector::Zero();</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>    <span class="comment">// The estimated phi and theta</span></div>
+<div class="line"><span class="lineno">  187</span>    params[Acts::eBoundPhi] = Acts::VectorHelpers::phi(direction);</div>
+<div class="line"><span class="lineno">  188</span>    params[Acts::eBoundTheta] = Acts::VectorHelpers::theta(direction);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    Acts::Vector3 bottomLocalPos = Tp.inverse() * spGlobalPositions[0];</div>
+<div class="line"><span class="lineno">  191</span>        </div>
+<div class="line"><span class="lineno">  192</span>    <span class="comment">// The estimated loc0 and loc1</span></div>
+<div class="line"><span class="lineno">  193</span>    params[Acts::eBoundLoc0] = bottomLocalPos.x();</div>
+<div class="line"><span class="lineno">  194</span>    params[Acts::eBoundLoc1] = bottomLocalPos.y();</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    <span class="comment">// The estimated q/pt in [GeV/c]^-1 (note that the pt is the projection of</span></div>
+<div class="line"><span class="lineno">  197</span>    <span class="comment">// momentum on the transverse plane of the new frame)</span></div>
+<div class="line"><span class="lineno">  198</span>    Acts::ActsScalar qOverPt = rho * (Acts::UnitConstants::m) / (0.3 * bFieldInTesla);</div>
+<div class="line"><span class="lineno">  199</span>    <span class="comment">// The estimated q/p in [GeV/c]^-1</span></div>
+<div class="line"><span class="lineno">  200</span>    params[Acts::eBoundQOverP] = qOverPt / std::hypot(1., invTanTheta);</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>    <span class="comment">// The estimated momentum, and its projection along the magnetic field</span></div>
+<div class="line"><span class="lineno">  203</span>    <span class="comment">// diretion</span></div>
+<div class="line"><span class="lineno">  204</span>    Acts::ActsScalar pInGeV = std::abs(1.0 / params[Acts::eBoundQOverP]);</div>
+<div class="line"><span class="lineno">  205</span>    Acts::ActsScalar pzInGeV = 1.0 / std::abs(qOverPt) * invTanTheta;</div>
+<div class="line"><span class="lineno">  206</span>    Acts::ActsScalar massInGeV = mass / Acts::UnitConstants::GeV;</div>
+<div class="line"><span class="lineno">  207</span>    <span class="comment">// The estimated velocity, and its projection along the magnetic field</span></div>
+<div class="line"><span class="lineno">  208</span>    <span class="comment">// diretion</span></div>
+<div class="line"><span class="lineno">  209</span>    Acts::ActsScalar v = pInGeV / std::hypot(pInGeV, massInGeV);</div>
+<div class="line"><span class="lineno">  210</span>    Acts::ActsScalar vz = pzInGeV / std::hypot(pInGeV, massInGeV);</div>
+<div class="line"><span class="lineno">  211</span>    <span class="comment">// The z coordinate of the bottom space point along the magnetic field</span></div>
+<div class="line"><span class="lineno">  212</span>    <span class="comment">// direction</span></div>
+<div class="line"><span class="lineno">  213</span>    Acts::ActsScalar pathz = spGlobalPositions[0].dot(bField) / bField.norm();</div>
+<div class="line"><span class="lineno">  214</span>    <span class="comment">// The estimated time (use path length along magnetic field only if it&#39;s not</span></div>
+<div class="line"><span class="lineno">  215</span>    <span class="comment">// zero)</span></div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (pathz != 0) {</div>
+<div class="line"><span class="lineno">  217</span>      params[Acts::eBoundTime] = pathz / vz;</div>
+<div class="line"><span class="lineno">  218</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  219</span>      params[Acts::eBoundTime] = spGlobalPositions[0].norm() / v;</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">return</span> params;</div>
+<div class="line"><span class="lineno">  223</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -419,22 +419,22 @@ template&lt;typename external_spacepoint_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SeedToTrackParamMaker_8h_source.html#l00029">29</a> of file <a class="el" href="SeedToTrackParamMaker_8h_source.html">SeedToTrackParamMaker.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                            {</div>
-<div class="line"><span class="lineno">   31</span>            </div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordtype">float</span> trackDir = cos(phi)*(r1[0] - r2[0]) + sin(phi)*(r1[1]-r2[1]);</div>
-<div class="line"><span class="lineno">   33</span>            </div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (trackDir &lt; 0) {</div>
-<div class="line"><span class="lineno">   35</span>      phi = M_PI + phi;</div>
-<div class="line"><span class="lineno">   36</span>      rho = -rho;</div>
-<div class="line"><span class="lineno">   37</span>      d   = -d;</div>
-<div class="line"><span class="lineno">   38</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span>            </div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   42</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="SeedToTrackParamMaker_8h_source.html#l00030">30</a> of file <a class="el" href="SeedToTrackParamMaker_8h_source.html">SeedToTrackParamMaker.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>                                                            {</div>
+<div class="line"><span class="lineno">   32</span>            </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">float</span> trackDir = cos(phi)*(r1[0] - r2[0]) + sin(phi)*(r1[1]-r2[1]);</div>
+<div class="line"><span class="lineno">   34</span>            </div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> (trackDir &lt; 0) {</div>
+<div class="line"><span class="lineno">   36</span>      phi = M_PI + phi;</div>
+<div class="line"><span class="lineno">   37</span>      rho = -rho;</div>
+<div class="line"><span class="lineno">   38</span>      d   = -d;</div>
+<div class="line"><span class="lineno">   39</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
+<div class="line"><span class="lineno">   41</span>            </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

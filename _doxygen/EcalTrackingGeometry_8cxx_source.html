@@ -446,8 +446,8 @@ $(function() {
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>  <span class="keywordtype">double</span> thickness =</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>      rings.front()-&gt;surfaceMaterial()-&gt;materialSlab(ploc).thickness();</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  lcfg.envelopeX = std::pair&lt;double, double&gt;{thickness / 2. + clearance,</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>                                             thickness / 2. + clearance};</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  lcfg.envelopeX = std::array&lt;double, 2&gt;{thickness / 2. + clearance,</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    thickness / 2. + clearance};</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  lcfg.active = active;</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  <span class="keywordflow">return</span> lcfg;</div>
@@ -455,7 +455,7 @@ $(function() {
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>}  <span class="comment">// namespace reco</span></div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>}  <span class="comment">// namespace tracking</span></div>
 <div class="ttc" id="aclasstracking_1_1reco_1_1EcalTrackingGeometry_html_a41ecf22f4889f9ce62c07c7ddc3c71c8"><div class="ttname"><a href="classtracking_1_1reco_1_1EcalTrackingGeometry.html#a41ecf22f4889f9ce62c07c7ddc3c71c8">tracking::reco::EcalTrackingGeometry::convertHexToActsSurface</a></div><div class="ttdeci">std::shared_ptr&lt; const Acts::Surface &gt; convertHexToActsSurface(const G4VPhysicalVolume &amp;phex)</div><div class="ttdef"><b>Definition:</b> <a href="EcalTrackingGeometry_8cxx_source.html#l00309">EcalTrackingGeometry.cxx:309</a></div></div>
-<div class="ttc" id="anamespacetracking_html"><div class="ttname"><a href="namespacetracking.html">tracking</a></div><div class="ttdoc">Visualization.</div><div class="ttdef"><b>Definition:</b> <a href="BaseTrackingGeometry_8h_source.html#l00035">BaseTrackingGeometry.h:35</a></div></div>
+<div class="ttc" id="anamespacetracking_html"><div class="ttname"><a href="namespacetracking.html">tracking</a></div><div class="ttdoc">Visualization.</div><div class="ttdef"><b>Definition:</b> <a href="TrackerDigiDQM_8h_source.html#l00006">TrackerDigiDQM.h:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

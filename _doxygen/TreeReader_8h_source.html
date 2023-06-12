@@ -196,7 +196,7 @@ $(function() {
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  }</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="comment">// The variables</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  uint32_t eventId;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  uint32_t eventId = 0;</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="structTrackStatesReader.html#a42042b900f9897dfcd5cb306b53911c3">  158</a></span>  std::vector&lt;float&gt;* <a class="code hl_variable" href="structTrackStatesReader.html#a42042b900f9897dfcd5cb306b53911c3">LOC0_prt</a> =</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keyword">new</span> std::vector&lt;float&gt;;  </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="structTrackStatesReader.html#a4cd07d59d12695e7106b1bb3ddcbb713">  160</a></span>  std::vector&lt;float&gt;* <a class="code hl_variable" href="structTrackStatesReader.html#a4cd07d59d12695e7106b1bb3ddcbb713">LOC1_prt</a> =</div>
@@ -324,7 +324,7 @@ $(function() {
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno"><a class="line" href="structTrackStatesReader.html#afb8548ffd6e1dc451e96ab05e78844a7">  282</a></span>  std::vector&lt;bool&gt;* <a class="code hl_variable" href="structTrackStatesReader.html#afb8548ffd6e1dc451e96ab05e78844a7">filtered</a> = <span class="keyword">new</span> std::vector&lt;bool&gt;;   </div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="structTrackStatesReader.html#a22dc8ec5b7a030cba99ff90f7b96c671">  283</a></span>  std::vector&lt;bool&gt;* <a class="code hl_variable" href="structTrackStatesReader.html#a22dc8ec5b7a030cba99ff90f7b96c671">smoothed</a> = <span class="keyword">new</span> std::vector&lt;bool&gt;;   </div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nStates, nMeasurements;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nStates = 0, nMeasurements = 0;</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>};</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="structTrackSummaryReader.html">  291</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTrackSummaryReader.html">TrackSummaryReader</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structTreeReader.html">TreeReader</a> {</div>
@@ -358,8 +358,8 @@ $(function() {
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;t_pT&quot;</span>, &amp;t_pT);</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;t_d0&quot;</span>, &amp;t_d0);</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;t_z0&quot;</span>, &amp;t_z0);</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;t_charge&quot;</span>,&amp;t_charge);</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;t_time&quot;</span>,&amp;t_time);</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;t_charge&quot;</span>, &amp;t_charge);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;t_time&quot;</span>, &amp;t_time);</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;eLOC0_fit&quot;</span>, &amp;eLOC0_fit);</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;eLOC1_fit&quot;</span>, &amp;eLOC1_fit);</div>
@@ -386,7 +386,7 @@ $(function() {
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  }</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  <span class="comment">// The variables</span></div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  uint32_t eventId;</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  uint32_t eventId = 0;</div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  std::vector&lt;unsigned int&gt;* nStates = <span class="keyword">new</span> std::vector&lt;unsigned int&gt;;</div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  std::vector&lt;unsigned int&gt;* nMeasurements = <span class="keyword">new</span> std::vector&lt;unsigned int&gt;;</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  std::vector&lt;unsigned int&gt;* nOutliers = <span class="keyword">new</span> std::vector&lt;unsigned int&gt;;</div>

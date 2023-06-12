@@ -48,6 +48,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classldmx_1_1Measurement-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ldmx::Measurement Class Reference</div></div>
 </div><!--header-->
@@ -55,22 +56,43 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aef7a60d47e2eb9d879437205ac38f74f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#aef7a60d47e2eb9d879437205ac38f74f">setGlobalPosition</a> (float x, float y, float z)</td></tr>
-<tr class="separator:aef7a60d47e2eb9d879437205ac38f74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6529584e61b8fb14b878aae5d5234e2"><td class="memItemLeft" align="right" valign="top">std::array&lt; float, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#ad6529584e61b8fb14b878aae5d5234e2">getGlobalPosition</a> ()</td></tr>
-<tr class="separator:ad6529584e61b8fb14b878aae5d5234e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d5ad6205809dbdbae09c20a3b718a40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a3d5ad6205809dbdbae09c20a3b718a40">setLocalPosition</a> (float u, float v)</td></tr>
-<tr class="separator:a3d5ad6205809dbdbae09c20a3b718a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65926f4a5e43fff5f92cafe7eb5f6f22"><td class="memItemLeft" align="right" valign="top">std::array&lt; float, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a65926f4a5e43fff5f92cafe7eb5f6f22">getLocalPosition</a> ()</td></tr>
-<tr class="separator:a65926f4a5e43fff5f92cafe7eb5f6f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb165d1aa0ca924ca1d7cfa4274bc8e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#afb165d1aa0ca924ca1d7cfa4274bc8e4">setTime</a> (float t)</td></tr>
-<tr class="separator:afb165d1aa0ca924ca1d7cfa4274bc8e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2973323fbd7e895f276cd840754e2f6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#ad2973323fbd7e895f276cd840754e2f6">getTime</a> ()</td></tr>
-<tr class="separator:ad2973323fbd7e895f276cd840754e2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f03f6dbba82bc7b06dfa62e12b1bd45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a3f03f6dbba82bc7b06dfa62e12b1bd45">setLayer</a> (int layerid)</td></tr>
-<tr class="separator:a3f03f6dbba82bc7b06dfa62e12b1bd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95a42f99d4fddf48f37c4e27ca0ec236"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a95a42f99d4fddf48f37c4e27ca0ec236">getLayer</a> ()</td></tr>
-<tr class="separator:a95a42f99d4fddf48f37c4e27ca0ec236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334c4792636a4a8c975c1a6b25f60f4d"><td class="memItemLeft" align="right" valign="top"><a id="a334c4792636a4a8c975c1a6b25f60f4d" name="a334c4792636a4a8c975c1a6b25f60f4d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Measurement</b> ()=default</td></tr>
+<tr class="memdesc:a334c4792636a4a8c975c1a6b25f60f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a334c4792636a4a8c975c1a6b25f60f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22df937acba01005d5a8552c3c304543"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a22df937acba01005d5a8552c3c304543">Measurement</a> (const <a class="el" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a> &amp;hit, const float &amp;cov_uu=0.05, const float &amp;cov_vv=1.0)</td></tr>
+<tr class="separator:a22df937acba01005d5a8552c3c304543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4d4592abec9876d4ceeda26b8036d8"><td class="memItemLeft" align="right" valign="top"><a id="a2a4d4592abec9876d4ceeda26b8036d8" name="a2a4d4592abec9876d4ceeda26b8036d8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Measurement</b> ()=default</td></tr>
+<tr class="memdesc:a2a4d4592abec9876d4ceeda26b8036d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
+<tr class="separator:a2a4d4592abec9876d4ceeda26b8036d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cea5d52d05a9ecac7ae4cd76463d8b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a4cea5d52d05a9ecac7ae4cd76463d8b8">setGlobalPosition</a> (const float &amp;x, const float &amp;y, const float &amp;z)</td></tr>
+<tr class="separator:a4cea5d52d05a9ecac7ae4cd76463d8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3791f09f693f215dc5cff2452d33cea2"><td class="memItemLeft" align="right" valign="top">std::array&lt; float, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a3791f09f693f215dc5cff2452d33cea2">getGlobalPosition</a> () const</td></tr>
+<tr class="separator:a3791f09f693f215dc5cff2452d33cea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2ca1366a69b815180943f6d460dc414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#ad2ca1366a69b815180943f6d460dc414">setLocalPosition</a> (const float &amp;u, const float &amp;v)</td></tr>
+<tr class="separator:ad2ca1366a69b815180943f6d460dc414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7337cc91a2e6e97ae00d47a8dc127556"><td class="memItemLeft" align="right" valign="top">std::array&lt; float, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a7337cc91a2e6e97ae00d47a8dc127556">getLocalPosition</a> () const</td></tr>
+<tr class="separator:a7337cc91a2e6e97ae00d47a8dc127556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cd037b202cb3a097702dd54021b0ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#ad5cd037b202cb3a097702dd54021b0ee">setLocalCovariance</a> (const float &amp;cov_uu, const float &amp;cov_vv)</td></tr>
+<tr class="separator:ad5cd037b202cb3a097702dd54021b0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79fb1998fe7752eff84e87dd923689bc"><td class="memItemLeft" align="right" valign="top">std::array&lt; float, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a79fb1998fe7752eff84e87dd923689bc">getLocalCovariance</a> () const</td></tr>
+<tr class="separator:a79fb1998fe7752eff84e87dd923689bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390947df37364e4f2157f85c58cbb757"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a390947df37364e4f2157f85c58cbb757">setTime</a> (const float &amp;t)</td></tr>
+<tr class="separator:a390947df37364e4f2157f85c58cbb757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e42dc12d93757f0106580b98e15f58"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a03e42dc12d93757f0106580b98e15f58">getTime</a> () const</td></tr>
+<tr class="separator:a03e42dc12d93757f0106580b98e15f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace370f204acc17d79de7e54df8e80d69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#ace370f204acc17d79de7e54df8e80d69">setLayerID</a> (const int &amp;layerid)</td></tr>
+<tr class="separator:ace370f204acc17d79de7e54df8e80d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f59aa6a325a446c84811d7755a5f53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a51f59aa6a325a446c84811d7755a5f53">getLayerID</a> () const</td></tr>
+<tr class="separator:a51f59aa6a325a446c84811d7755a5f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66248b89a573b465099b2a50a1ac0d85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a66248b89a573b465099b2a50a1ac0d85">getLayer</a> () const</td></tr>
+<tr class="separator:a66248b89a573b465099b2a50a1ac0d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71b908be1942db6a5259f83f230c573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#ae71b908be1942db6a5259f83f230c573">addTrackId</a> (int trkId)</td></tr>
+<tr class="memdesc:ae71b908be1942db6a5259f83f230c573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a trackId to the internal vector.  <a href="classldmx_1_1Measurement.html#ae71b908be1942db6a5259f83f230c573">More...</a><br /></td></tr>
+<tr class="separator:ae71b908be1942db6a5259f83f230c573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17f6bb7cb9d89138510ab9087dc3f7fa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a17f6bb7cb9d89138510ab9087dc3f7fa">getTrackIds</a> ()</td></tr>
+<tr class="separator:a17f6bb7cb9d89138510ab9087dc3f7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -80,27 +102,101 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa8a6d152afd18aa0e647ea149445885b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#aa8a6d152afd18aa0e647ea149445885b">x_</a></td></tr>
+<tr class="memitem:aa8a6d152afd18aa0e647ea149445885b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#aa8a6d152afd18aa0e647ea149445885b">x_</a> {0.}</td></tr>
+<tr class="memdesc:aa8a6d152afd18aa0e647ea149445885b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global position in x (mm).  <a href="classldmx_1_1Measurement.html#aa8a6d152afd18aa0e647ea149445885b">More...</a><br /></td></tr>
 <tr class="separator:aa8a6d152afd18aa0e647ea149445885b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb12332428b4c58b2f61e9e5fe95225e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#aeb12332428b4c58b2f61e9e5fe95225e">y_</a></td></tr>
+<tr class="memitem:aeb12332428b4c58b2f61e9e5fe95225e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#aeb12332428b4c58b2f61e9e5fe95225e">y_</a> {0.}</td></tr>
+<tr class="memdesc:aeb12332428b4c58b2f61e9e5fe95225e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global position in x (mm).  <a href="classldmx_1_1Measurement.html#aeb12332428b4c58b2f61e9e5fe95225e">More...</a><br /></td></tr>
 <tr class="separator:aeb12332428b4c58b2f61e9e5fe95225e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93f7b9ca3fbbba797ad6bbd9371341bc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a93f7b9ca3fbbba797ad6bbd9371341bc">z_</a></td></tr>
+<tr class="memitem:a93f7b9ca3fbbba797ad6bbd9371341bc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a93f7b9ca3fbbba797ad6bbd9371341bc">z_</a> {0.}</td></tr>
+<tr class="memdesc:a93f7b9ca3fbbba797ad6bbd9371341bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global position in x (mm).  <a href="classldmx_1_1Measurement.html#a93f7b9ca3fbbba797ad6bbd9371341bc">More...</a><br /></td></tr>
 <tr class="separator:a93f7b9ca3fbbba797ad6bbd9371341bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa58c2a77e38f6ba108509d4649018e75"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#aa58c2a77e38f6ba108509d4649018e75">t_</a></td></tr>
+<tr class="memitem:aa58c2a77e38f6ba108509d4649018e75"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#aa58c2a77e38f6ba108509d4649018e75">t_</a> {0.}</td></tr>
+<tr class="memdesc:aa58c2a77e38f6ba108509d4649018e75"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classldmx_1_1Measurement.html">Measurement</a> time (ns).  <a href="classldmx_1_1Measurement.html#aa58c2a77e38f6ba108509d4649018e75">More...</a><br /></td></tr>
 <tr class="separator:aa58c2a77e38f6ba108509d4649018e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a966df006ee644d6e587826b884e71771"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a966df006ee644d6e587826b884e71771">u_</a></td></tr>
+<tr class="memitem:a966df006ee644d6e587826b884e71771"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a966df006ee644d6e587826b884e71771">u_</a> {0.}</td></tr>
+<tr class="memdesc:a966df006ee644d6e587826b884e71771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local position in u (mm).  <a href="classldmx_1_1Measurement.html#a966df006ee644d6e587826b884e71771">More...</a><br /></td></tr>
 <tr class="separator:a966df006ee644d6e587826b884e71771"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77ce458a1038bd3b3a7ad690f8be0076"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a77ce458a1038bd3b3a7ad690f8be0076">v_</a></td></tr>
+<tr class="memitem:a77ce458a1038bd3b3a7ad690f8be0076"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a77ce458a1038bd3b3a7ad690f8be0076">v_</a> {0.}</td></tr>
+<tr class="memdesc:a77ce458a1038bd3b3a7ad690f8be0076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local position in v (mm).  <a href="classldmx_1_1Measurement.html#a77ce458a1038bd3b3a7ad690f8be0076">More...</a><br /></td></tr>
 <tr class="separator:a77ce458a1038bd3b3a7ad690f8be0076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4c803f7cdcc44b820544d96ecd4f19d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#af4c803f7cdcc44b820544d96ecd4f19d">layerid_</a></td></tr>
+<tr class="memitem:af4c803f7cdcc44b820544d96ecd4f19d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#af4c803f7cdcc44b820544d96ecd4f19d">layerid_</a> {0}</td></tr>
+<tr class="memdesc:af4c803f7cdcc44b820544d96ecd4f19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the sensor where the measurement took place.  <a href="classldmx_1_1Measurement.html#af4c803f7cdcc44b820544d96ecd4f19d">More...</a><br /></td></tr>
 <tr class="separator:af4c803f7cdcc44b820544d96ecd4f19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eed4c8891ccaf2119404dda14a197a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a3eed4c8891ccaf2119404dda14a197a7">layer_</a> {0}</td></tr>
+<tr class="memdesc:a3eed4c8891ccaf2119404dda14a197a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The layer number internal to the tracker.  <a href="classldmx_1_1Measurement.html#a3eed4c8891ccaf2119404dda14a197a7">More...</a><br /></td></tr>
+<tr class="separator:a3eed4c8891ccaf2119404dda14a197a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8942f213b957872f6036d41f196e8893"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a8942f213b957872f6036d41f196e8893">edep_</a> {0.}</td></tr>
+<tr class="memdesc:a8942f213b957872f6036d41f196e8893"><td class="mdescLeft">&#160;</td><td class="mdescRight">The energy deposited in the sensor where the measurement took place.  <a href="classldmx_1_1Measurement.html#a8942f213b957872f6036d41f196e8893">More...</a><br /></td></tr>
+<tr class="separator:a8942f213b957872f6036d41f196e8893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae3ae5bb46046339a3d776fc7ced442"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#adae3ae5bb46046339a3d776fc7ced442">cov_uu_</a> {0.}</td></tr>
+<tr class="memdesc:adae3ae5bb46046339a3d776fc7ced442"><td class="mdescLeft">&#160;</td><td class="mdescRight">cov(U, U)  <a href="classldmx_1_1Measurement.html#adae3ae5bb46046339a3d776fc7ced442">More...</a><br /></td></tr>
+<tr class="separator:adae3ae5bb46046339a3d776fc7ced442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bf41e26d0b9d5eb9ede4f0f223b489"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a03bf41e26d0b9d5eb9ede4f0f223b489">cov_vv_</a> {0.}</td></tr>
+<tr class="memdesc:a03bf41e26d0b9d5eb9ede4f0f223b489"><td class="mdescLeft">&#160;</td><td class="mdescRight">cov(V, V)  <a href="classldmx_1_1Measurement.html#a03bf41e26d0b9d5eb9ede4f0f223b489">More...</a><br /></td></tr>
+<tr class="separator:a03bf41e26d0b9d5eb9ede4f0f223b489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff2f0d6969f97caefd8df81a149866af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#aff2f0d6969f97caefd8df81a149866af">id_</a> {0}</td></tr>
+<tr class="memdesc:aff2f0d6969f97caefd8df81a149866af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the hit.  <a href="classldmx_1_1Measurement.html#aff2f0d6969f97caefd8df81a149866af">More...</a><br /></td></tr>
+<tr class="separator:aff2f0d6969f97caefd8df81a149866af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c6f38efee63208bb029d0b02495d6c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a81c6f38efee63208bb029d0b02495d6c">trackIds_</a> {}</td></tr>
+<tr class="memdesc:a81c6f38efee63208bb029d0b02495d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">TrackIDs the vector of TrackIDs that form the measurement.  <a href="classldmx_1_1Measurement.html#a81c6f38efee63208bb029d0b02495d6c">More...</a><br /></td></tr>
+<tr class="separator:a81c6f38efee63208bb029d0b02495d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a2b9156b774823244d2d2cec2db3677ca"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classldmx_1_1Measurement.html#a2b9156b774823244d2d2cec2db3677ca">operator&lt;&lt;</a> (std::ostream &amp;output, const <a class="el" href="classldmx_1_1Measurement.html">Measurement</a> &amp;measurement)</td></tr>
+<tr class="separator:a2b9156b774823244d2d2cec2db3677ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00008">8</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00012">12</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5717ac1da12e56343c4e706f6fe85248" name="a5717ac1da12e56343c4e706f6fe85248"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5717ac1da12e56343c4e706f6fe85248">&#9670;&#160;</a></span>Measurement()</h2>
+<a id="a22df937acba01005d5a8552c3c304543" name="a22df937acba01005d5a8552c3c304543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22df937acba01005d5a8552c3c304543">&#9670;&#160;</a></span>Measurement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ldmx::Measurement::Measurement </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a> &amp;&#160;</td>
+          <td class="paramname"><em>hit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>cov_uu</em> = <code>0.05</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>cov_vv</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Constructor that uses a <a class="el" href="classldmx_1_1SimTrackerHit.html" title="Represents a simulated tracker hit in the simulation.">SimTrackerHit</a> to populate the global position, deposited energy, ID and measurement time. The cov(U, U) and cov(V, V) are optional.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hit</td><td>The <a class="el" href="classldmx_1_1SimTrackerHit.html" title="Represents a simulated tracker hit in the simulation.">SimTrackerHit</a> used to set the initial <a class="el" href="classldmx_1_1Measurement.html">Measurement</a> values. </td></tr>
+    <tr><td class="paramname">cov_uu</td><td>cov(U, U) </td></tr>
+    <tr><td class="paramname">cov_vv</td><td>cov(V, V) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae71b908be1942db6a5259f83f230c573" name="ae71b908be1942db6a5259f83f230c573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71b908be1942db6a5259f83f230c573">&#9670;&#160;</a></span>addTrackId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,9 +205,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ldmx::Measurement::Measurement </td>
+          <td class="memname">void ldmx::Measurement::addTrackId </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>trkId</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -122,42 +219,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00012">12</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>{};</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aed332778f68f235784ad3095d5510401" name="aed332778f68f235784ad3095d5510401"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed332778f68f235784ad3095d5510401">&#9670;&#160;</a></span>~Measurement()</h2>
+<p>Add a trackId to the internal vector. </p>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual ldmx::Measurement::~Measurement </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00014">14</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00113">113</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>{<a class="code hl_variable" href="classldmx_1_1Measurement.html#a81c6f38efee63208bb029d0b02495d6c">trackIds_</a>.push_back(trkId);};</div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_a81c6f38efee63208bb029d0b02495d6c"><div class="ttname"><a href="classldmx_1_1Measurement.html#a81c6f38efee63208bb029d0b02495d6c">ldmx::Measurement::trackIds_</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; trackIds_</div><div class="ttdoc">TrackIDs the vector of TrackIDs that form the measurement.</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00162">Measurement.h:162</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00162">trackIds_</a>.</p>
+
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad6529584e61b8fb14b878aae5d5234e2" name="ad6529584e61b8fb14b878aae5d5234e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6529584e61b8fb14b878aae5d5234e2">&#9670;&#160;</a></span>getGlobalPosition()</h2>
+<a id="a3791f09f693f215dc5cff2452d33cea2" name="a3791f09f693f215dc5cff2452d33cea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3791f09f693f215dc5cff2452d33cea2">&#9670;&#160;</a></span>getGlobalPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +242,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">std::array&lt; float, 3 &gt; ldmx::Measurement::getGlobalPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -178,14 +251,24 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The global position of the measurement as an array. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00017">17</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>{<span class="keywordflow">return</span> std::array&lt;float,3&gt;{{x_,y_,z_}};};</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00047">47</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>                                                             {</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">return</span> std::array&lt;float, 3&gt;{<a class="code hl_variable" href="classldmx_1_1Measurement.html#aa8a6d152afd18aa0e647ea149445885b">x_</a>, <a class="code hl_variable" href="classldmx_1_1Measurement.html#aeb12332428b4c58b2f61e9e5fe95225e">y_</a>, <a class="code hl_variable" href="classldmx_1_1Measurement.html#a93f7b9ca3fbbba797ad6bbd9371341bc">z_</a>};</div>
+<div class="line"><span class="lineno">   49</span>  };</div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_a93f7b9ca3fbbba797ad6bbd9371341bc"><div class="ttname"><a href="classldmx_1_1Measurement.html#a93f7b9ca3fbbba797ad6bbd9371341bc">ldmx::Measurement::z_</a></div><div class="ttdeci">float z_</div><div class="ttdoc">The global position in x (mm).</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00142">Measurement.h:142</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_aa8a6d152afd18aa0e647ea149445885b"><div class="ttname"><a href="classldmx_1_1Measurement.html#aa8a6d152afd18aa0e647ea149445885b">ldmx::Measurement::x_</a></div><div class="ttdeci">float x_</div><div class="ttdoc">The global position in x (mm).</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00138">Measurement.h:138</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_aeb12332428b4c58b2f61e9e5fe95225e"><div class="ttname"><a href="classldmx_1_1Measurement.html#aeb12332428b4c58b2f61e9e5fe95225e">ldmx::Measurement::y_</a></div><div class="ttdeci">float y_</div><div class="ttdoc">The global position in x (mm).</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00140">Measurement.h:140</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00138">x_</a>, <a class="el" href="Measurement_8h_source.html#l00140">y_</a>, and <a class="el" href="Measurement_8h_source.html#l00142">z_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TrackerDigiDQM_8cxx_source.html#l00008">tracking::dqm::TrackerDigiDQM::analyze()</a>, and <a class="el" href="DigitizationProcessor_8cxx_source.html#l00210">tracking::reco::DigitizationProcessor::digitizeHits()</a>.</p>
+
 </div>
 </div>
-<a id="a95a42f99d4fddf48f37c4e27ca0ec236" name="a95a42f99d4fddf48f37c4e27ca0ec236"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95a42f99d4fddf48f37c4e27ca0ec236">&#9670;&#160;</a></span>getLayer()</h2>
+<a id="a66248b89a573b465099b2a50a1ac0d85" name="a66248b89a573b465099b2a50a1ac0d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66248b89a573b465099b2a50a1ac0d85">&#9670;&#160;</a></span>getLayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +280,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">int ldmx::Measurement::getLayer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -206,14 +289,85 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The layer number internal to the tracker. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00026">26</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{<span class="keywordflow">return</span> layerid_;};</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00109">109</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1Measurement.html#a3eed4c8891ccaf2119404dda14a197a7">layer_</a>; }</div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_a3eed4c8891ccaf2119404dda14a197a7"><div class="ttname"><a href="classldmx_1_1Measurement.html#a3eed4c8891ccaf2119404dda14a197a7">ldmx::Measurement::layer_</a></div><div class="ttdeci">int layer_</div><div class="ttdoc">The layer number internal to the tracker.</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00152">Measurement.h:152</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00152">layer_</a>.</p>
+
 </div>
 </div>
-<a id="a65926f4a5e43fff5f92cafe7eb5f6f22" name="a65926f4a5e43fff5f92cafe7eb5f6f22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65926f4a5e43fff5f92cafe7eb5f6f22">&#9670;&#160;</a></span>getLocalPosition()</h2>
+<a id="a51f59aa6a325a446c84811d7755a5f53" name="a51f59aa6a325a446c84811d7755a5f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f59aa6a325a446c84811d7755a5f53">&#9670;&#160;</a></span>getLayerID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ldmx::Measurement::getLayerID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The layer ID of the sensor associated with this measurement. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00106">106</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1Measurement.html#af4c803f7cdcc44b820544d96ecd4f19d">layerid_</a>; };</div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_af4c803f7cdcc44b820544d96ecd4f19d"><div class="ttname"><a href="classldmx_1_1Measurement.html#af4c803f7cdcc44b820544d96ecd4f19d">ldmx::Measurement::layerid_</a></div><div class="ttdeci">int layerid_</div><div class="ttdoc">The ID of the sensor where the measurement took place.</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00150">Measurement.h:150</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00150">layerid_</a>.</p>
+
+</div>
+</div>
+<a id="a79fb1998fe7752eff84e87dd923689bc" name="a79fb1998fe7752eff84e87dd923689bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79fb1998fe7752eff84e87dd923689bc">&#9670;&#160;</a></span>getLocalCovariance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; float, 2 &gt; ldmx::Measurement::getLocalCovariance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The covariance of the local coordinates as an array { cov(U, U), cov(V, V) }. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00081">81</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                                              {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> std::array&lt;float, 2&gt;{<a class="code hl_variable" href="classldmx_1_1Measurement.html#adae3ae5bb46046339a3d776fc7ced442">cov_uu_</a>, <a class="code hl_variable" href="classldmx_1_1Measurement.html#a03bf41e26d0b9d5eb9ede4f0f223b489">cov_vv_</a>};</div>
+<div class="line"><span class="lineno">   83</span>  };</div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_a03bf41e26d0b9d5eb9ede4f0f223b489"><div class="ttname"><a href="classldmx_1_1Measurement.html#a03bf41e26d0b9d5eb9ede4f0f223b489">ldmx::Measurement::cov_vv_</a></div><div class="ttdeci">float cov_vv_</div><div class="ttdoc">cov(V, V)</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00158">Measurement.h:158</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_adae3ae5bb46046339a3d776fc7ced442"><div class="ttname"><a href="classldmx_1_1Measurement.html#adae3ae5bb46046339a3d776fc7ced442">ldmx::Measurement::cov_uu_</a></div><div class="ttdeci">float cov_uu_</div><div class="ttdoc">cov(U, U)</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00156">Measurement.h:156</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00156">cov_uu_</a>, and <a class="el" href="Measurement_8h_source.html#l00158">cov_vv_</a>.</p>
+
+</div>
+</div>
+<a id="a7337cc91a2e6e97ae00d47a8dc127556" name="a7337cc91a2e6e97ae00d47a8dc127556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7337cc91a2e6e97ae00d47a8dc127556">&#9670;&#160;</a></span>getLocalPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +379,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">std::array&lt; float, 2 &gt; ldmx::Measurement::getLocalPosition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -234,14 +388,21 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The local position of the measurement as an array. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00020">20</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>{<span class="keywordflow">return</span> std::array&lt;float,2&gt;{{u_, v_}};};</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00064">64</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                            {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> std::array&lt;float, 2&gt;{<a class="code hl_variable" href="classldmx_1_1Measurement.html#a966df006ee644d6e587826b884e71771">u_</a>, <a class="code hl_variable" href="classldmx_1_1Measurement.html#a77ce458a1038bd3b3a7ad690f8be0076">v_</a>};</div>
+<div class="line"><span class="lineno">   66</span>  };</div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_a77ce458a1038bd3b3a7ad690f8be0076"><div class="ttname"><a href="classldmx_1_1Measurement.html#a77ce458a1038bd3b3a7ad690f8be0076">ldmx::Measurement::v_</a></div><div class="ttdeci">float v_</div><div class="ttdoc">Local position in v (mm).</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00148">Measurement.h:148</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_a966df006ee644d6e587826b884e71771"><div class="ttname"><a href="classldmx_1_1Measurement.html#a966df006ee644d6e587826b884e71771">ldmx::Measurement::u_</a></div><div class="ttdeci">float u_</div><div class="ttdoc">Local position in u (mm).</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00146">Measurement.h:146</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00146">u_</a>, and <a class="el" href="Measurement_8h_source.html#l00148">v_</a>.</p>
+
 </div>
 </div>
-<a id="ad2973323fbd7e895f276cd840754e2f6" name="ad2973323fbd7e895f276cd840754e2f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2973323fbd7e895f276cd840754e2f6">&#9670;&#160;</a></span>getTime()</h2>
+<a id="a03e42dc12d93757f0106580b98e15f58" name="a03e42dc12d93757f0106580b98e15f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e42dc12d93757f0106580b98e15f58">&#9670;&#160;</a></span>getTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,6 +414,38 @@ Private Attributes</h2></td></tr>
           <td class="memname">float ldmx::Measurement::getTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The hit time in ns. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00093">93</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1Measurement.html#aa58c2a77e38f6ba108509d4649018e75">t_</a>; };</div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_aa58c2a77e38f6ba108509d4649018e75"><div class="ttname"><a href="classldmx_1_1Measurement.html#aa58c2a77e38f6ba108509d4649018e75">ldmx::Measurement::t_</a></div><div class="ttdeci">float t_</div><div class="ttdoc">Measurement time (ns).</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00144">Measurement.h:144</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00144">t_</a>.</p>
+
+</div>
+</div>
+<a id="a17f6bb7cb9d89138510ab9087dc3f7fa" name="a17f6bb7cb9d89138510ab9087dc3f7fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17f6bb7cb9d89138510ab9087dc3f7fa">&#9670;&#160;</a></span>getTrackIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; unsigned int &gt; ldmx::Measurement::getTrackIds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -262,14 +455,17 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the sim particle IDs that compose the measurement </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00023">23</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>{<span class="keywordflow">return</span> t_;};</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00115">115</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classldmx_1_1Measurement.html#a81c6f38efee63208bb029d0b02495d6c">trackIds_</a>;};</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00162">trackIds_</a>.</p>
+
 </div>
 </div>
-<a id="aef7a60d47e2eb9d879437205ac38f74f" name="aef7a60d47e2eb9d879437205ac38f74f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef7a60d47e2eb9d879437205ac38f74f">&#9670;&#160;</a></span>setGlobalPosition()</h2>
+<a id="a4cea5d52d05a9ecac7ae4cd76463d8b8" name="a4cea5d52d05a9ecac7ae4cd76463d8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cea5d52d05a9ecac7ae4cd76463d8b8">&#9670;&#160;</a></span>setGlobalPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,19 +476,19 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ldmx::Measurement::setGlobalPosition </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">const float &amp;&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">const float &amp;&#160;</td>
           <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">const float &amp;&#160;</td>
           <td class="paramname"><em>z</em>&#160;</td>
         </tr>
         <tr>
@@ -307,14 +503,31 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Set the global position i.e. position of the measurement in the detector frame.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Position in x in mm. </td></tr>
+    <tr><td class="paramname">y</td><td>Position in y in mm. </td></tr>
+    <tr><td class="paramname">z</td><td>Position in z in mm. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00016">16</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>{x_ = x; y_ = y; z_ = z;};</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00040">40</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                                         {</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#aa8a6d152afd18aa0e647ea149445885b">x_</a> = x;</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#aeb12332428b4c58b2f61e9e5fe95225e">y_</a> = y;</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#a93f7b9ca3fbbba797ad6bbd9371341bc">z_</a> = z;</div>
+<div class="line"><span class="lineno">   44</span>  };</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00138">x_</a>, <a class="el" href="Measurement_8h_source.html#l00140">y_</a>, and <a class="el" href="Measurement_8h_source.html#l00142">z_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DigitizationProcessor_8cxx_source.html#l00210">tracking::reco::DigitizationProcessor::digitizeHits()</a>.</p>
+
 </div>
 </div>
-<a id="a3f03f6dbba82bc7b06dfa62e12b1bd45" name="a3f03f6dbba82bc7b06dfa62e12b1bd45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f03f6dbba82bc7b06dfa62e12b1bd45">&#9670;&#160;</a></span>setLayer()</h2>
+<a id="ace370f204acc17d79de7e54df8e80d69" name="ace370f204acc17d79de7e54df8e80d69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace370f204acc17d79de7e54df8e80d69">&#9670;&#160;</a></span>setLayerID()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,9 +536,9 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ldmx::Measurement::setLayer </td>
+          <td class="memname">void ldmx::Measurement::setLayerID </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>layerid</em></td><td>)</td>
           <td></td>
         </tr>
@@ -336,14 +549,82 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Set the layer ID of the sensor where this measurement took place.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layerid</td><td>The layer ID of the sensor associated with this measurement. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00025">25</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>{layerid_ = layerid;};</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00100">100</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                                      {</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#af4c803f7cdcc44b820544d96ecd4f19d">layerid_</a> = layerid;</div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#a3eed4c8891ccaf2119404dda14a197a7">layer_</a> = ((<a class="code hl_variable" href="classldmx_1_1Measurement.html#af4c803f7cdcc44b820544d96ecd4f19d">layerid_</a> / 100) % 10 - 1) * 2 + layerid % 2;</div>
+<div class="line"><span class="lineno">  103</span>  };</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00152">layer_</a>, and <a class="el" href="Measurement_8h_source.html#l00150">layerid_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DigitizationProcessor_8cxx_source.html#l00210">tracking::reco::DigitizationProcessor::digitizeHits()</a>.</p>
+
 </div>
 </div>
-<a id="a3d5ad6205809dbdbae09c20a3b718a40" name="a3d5ad6205809dbdbae09c20a3b718a40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d5ad6205809dbdbae09c20a3b718a40">&#9670;&#160;</a></span>setLocalPosition()</h2>
+<a id="ad5cd037b202cb3a097702dd54021b0ee" name="ad5cd037b202cb3a097702dd54021b0ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5cd037b202cb3a097702dd54021b0ee">&#9670;&#160;</a></span>setLocalCovariance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ldmx::Measurement::setLocalCovariance </td>
+          <td>(</td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>cov_uu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>cov_vv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Set cov(U,U) and cov(V, V).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cov_uu</td><td>cov(U, U). </td></tr>
+    <tr><td class="paramname">cov_vv</td><td>cov(V, V). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00074">74</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                                    {</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#adae3ae5bb46046339a3d776fc7ced442">cov_uu_</a> = cov_uu;</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#a03bf41e26d0b9d5eb9ede4f0f223b489">cov_vv_</a> = cov_vv;</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00156">cov_uu_</a>, and <a class="el" href="Measurement_8h_source.html#l00158">cov_vv_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DigitizationProcessor_8cxx_source.html#l00210">tracking::reco::DigitizationProcessor::digitizeHits()</a>.</p>
+
+</div>
+</div>
+<a id="ad2ca1366a69b815180943f6d460dc414" name="ad2ca1366a69b815180943f6d460dc414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2ca1366a69b815180943f6d460dc414">&#9670;&#160;</a></span>setLocalPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,13 +635,13 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ldmx::Measurement::setLocalPosition </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">const float &amp;&#160;</td>
           <td class="paramname"><em>u</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">const float &amp;&#160;</td>
           <td class="paramname"><em>v</em>&#160;</td>
         </tr>
         <tr>
@@ -375,14 +656,29 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Set the local position i.e. position of the measurement in the reference frame of the surface where the hit was created.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>Position in U in mm. </td></tr>
+    <tr><td class="paramname">v</td><td>Position in V in mm. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00019">19</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>{u_ = u; v_ = v;};</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00058">58</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>                                                        {</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#a966df006ee644d6e587826b884e71771">u_</a> = u;</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="classldmx_1_1Measurement.html#a77ce458a1038bd3b3a7ad690f8be0076">v_</a> = v;</div>
+<div class="line"><span class="lineno">   61</span>  };</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00146">u_</a>, and <a class="el" href="Measurement_8h_source.html#l00148">v_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DigitizationProcessor_8cxx_source.html#l00210">tracking::reco::DigitizationProcessor::digitizeHits()</a>.</p>
+
 </div>
 </div>
-<a id="afb165d1aa0ca924ca1d7cfa4274bc8e4" name="afb165d1aa0ca924ca1d7cfa4274bc8e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb165d1aa0ca924ca1d7cfa4274bc8e4">&#9670;&#160;</a></span>setTime()</h2>
+<a id="a390947df37364e4f2157f85c58cbb757" name="a390947df37364e4f2157f85c58cbb757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390947df37364e4f2157f85c58cbb757">&#9670;&#160;</a></span>setTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +689,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ldmx::Measurement::setTime </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">const float &amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
           <td></td>
         </tr>
@@ -404,13 +700,204 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Set the measurement time in ns.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The time in ns. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00022">22</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{t_ = t; };</div>
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00090">90</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{ <a class="code hl_variable" href="classldmx_1_1Measurement.html#aa58c2a77e38f6ba108509d4649018e75">t_</a> = t; };</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="Measurement_8h_source.html#l00144">t_</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a2b9156b774823244d2d2cec2db3677ca" name="a2b9156b774823244d2d2cec2db3677ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9156b774823244d2d2cec2db3677ca">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1Measurement.html">Measurement</a> &amp;&#160;</td>
+          <td class="paramname"><em>measurement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Overload the stream insertion operator to output a string representation of this <a class="el" href="classldmx_1_1Measurement.html">Measurement</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">output</td><td>The output stream where the string representation will be inserted. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">measurement</td><td>The <a class="el" href="classldmx_1_1Measurement.html">Measurement</a> object to print.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>[out] An ostream object with the string representation of <a class="el" href="classldmx_1_1Measurement.html">Measurement</a>. </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="adae3ae5bb46046339a3d776fc7ced442" name="adae3ae5bb46046339a3d776fc7ced442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae3ae5bb46046339a3d776fc7ced442">&#9670;&#160;</a></span>cov_uu_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ldmx::Measurement::cov_uu_ {0.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>cov(U, U) </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00156">156</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00081">getLocalCovariance()</a>, and <a class="el" href="Measurement_8h_source.html#l00074">setLocalCovariance()</a>.</p>
+
+</div>
+</div>
+<a id="a03bf41e26d0b9d5eb9ede4f0f223b489" name="a03bf41e26d0b9d5eb9ede4f0f223b489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03bf41e26d0b9d5eb9ede4f0f223b489">&#9670;&#160;</a></span>cov_vv_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ldmx::Measurement::cov_vv_ {0.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>cov(V, V) </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00158">158</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00081">getLocalCovariance()</a>, and <a class="el" href="Measurement_8h_source.html#l00074">setLocalCovariance()</a>.</p>
+
+</div>
+</div>
+<a id="a8942f213b957872f6036d41f196e8893" name="a8942f213b957872f6036d41f196e8893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8942f213b957872f6036d41f196e8893">&#9670;&#160;</a></span>edep_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ldmx::Measurement::edep_ {0.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The energy deposited in the sensor where the measurement took place. </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00154">154</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+</div>
+</div>
+<a id="aff2f0d6969f97caefd8df81a149866af" name="aff2f0d6969f97caefd8df81a149866af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2f0d6969f97caefd8df81a149866af">&#9670;&#160;</a></span>id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ldmx::Measurement::id_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The ID of the hit. </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00160">160</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+</div>
+</div>
+<a id="a3eed4c8891ccaf2119404dda14a197a7" name="a3eed4c8891ccaf2119404dda14a197a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eed4c8891ccaf2119404dda14a197a7">&#9670;&#160;</a></span>layer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ldmx::Measurement::layer_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The layer number internal to the tracker. </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00152">152</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00109">getLayer()</a>, and <a class="el" href="Measurement_8h_source.html#l00100">setLayerID()</a>.</p>
+
+</div>
+</div>
 <a id="af4c803f7cdcc44b820544d96ecd4f19d" name="af4c803f7cdcc44b820544d96ecd4f19d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4c803f7cdcc44b820544d96ecd4f19d">&#9670;&#160;</a></span>layerid_</h2>
 
@@ -421,7 +908,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ldmx::Measurement::layerid_</td>
+          <td class="memname">int ldmx::Measurement::layerid_ {0}</td>
         </tr>
       </table>
   </td>
@@ -431,7 +918,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00032">32</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<p>The ID of the sensor where the measurement took place. </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00150">150</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00106">getLayerID()</a>, and <a class="el" href="Measurement_8h_source.html#l00100">setLayerID()</a>.</p>
 
 </div>
 </div>
@@ -445,7 +936,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float ldmx::Measurement::t_</td>
+          <td class="memname">float ldmx::Measurement::t_ {0.}</td>
         </tr>
       </table>
   </td>
@@ -455,7 +946,39 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00030">30</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<p><a class="el" href="classldmx_1_1Measurement.html">Measurement</a> time (ns). </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00144">144</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00093">getTime()</a>, and <a class="el" href="Measurement_8h_source.html#l00090">setTime()</a>.</p>
+
+</div>
+</div>
+<a id="a81c6f38efee63208bb029d0b02495d6c" name="a81c6f38efee63208bb029d0b02495d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c6f38efee63208bb029d0b02495d6c">&#9670;&#160;</a></span>trackIds_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;unsigned int&gt; ldmx::Measurement::trackIds_ {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TrackIDs the vector of TrackIDs that form the measurement. </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00162">162</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00113">addTrackId()</a>, and <a class="el" href="Measurement_8h_source.html#l00115">getTrackIds()</a>.</p>
 
 </div>
 </div>
@@ -469,7 +992,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float ldmx::Measurement::u_</td>
+          <td class="memname">float ldmx::Measurement::u_ {0.}</td>
         </tr>
       </table>
   </td>
@@ -479,7 +1002,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00031">31</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<p>Local position in u (mm). </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00146">146</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00064">getLocalPosition()</a>, and <a class="el" href="Measurement_8h_source.html#l00058">setLocalPosition()</a>.</p>
 
 </div>
 </div>
@@ -493,7 +1020,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float ldmx::Measurement::v_</td>
+          <td class="memname">float ldmx::Measurement::v_ {0.}</td>
         </tr>
       </table>
   </td>
@@ -503,7 +1030,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00031">31</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<p>Local position in v (mm). </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00148">148</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00064">getLocalPosition()</a>, and <a class="el" href="Measurement_8h_source.html#l00058">setLocalPosition()</a>.</p>
 
 </div>
 </div>
@@ -517,7 +1048,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float ldmx::Measurement::x_</td>
+          <td class="memname">float ldmx::Measurement::x_ {0.}</td>
         </tr>
       </table>
   </td>
@@ -527,7 +1058,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00030">30</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<p>The global position in x (mm). </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00138">138</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00047">getGlobalPosition()</a>, and <a class="el" href="Measurement_8h_source.html#l00040">setGlobalPosition()</a>.</p>
 
 </div>
 </div>
@@ -541,7 +1076,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float ldmx::Measurement::y_</td>
+          <td class="memname">float ldmx::Measurement::y_ {0.}</td>
         </tr>
       </table>
   </td>
@@ -551,7 +1086,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00030">30</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<p>The global position in x (mm). </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00140">140</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00047">getGlobalPosition()</a>, and <a class="el" href="Measurement_8h_source.html#l00040">setGlobalPosition()</a>.</p>
 
 </div>
 </div>
@@ -565,7 +1104,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float ldmx::Measurement::z_</td>
+          <td class="memname">float ldmx::Measurement::z_ {0.}</td>
         </tr>
       </table>
   </td>
@@ -575,7 +1114,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00030">30</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+<p>The global position in x (mm). </p>
+
+<p class="definition">Definition at line <a class="el" href="Measurement_8h_source.html#l00142">142</a> of file <a class="el" href="Measurement_8h_source.html">Measurement.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Measurement_8h_source.html#l00047">getGlobalPosition()</a>, and <a class="el" href="Measurement_8h_source.html#l00040">setGlobalPosition()</a>.</p>
 
 </div>
 </div>

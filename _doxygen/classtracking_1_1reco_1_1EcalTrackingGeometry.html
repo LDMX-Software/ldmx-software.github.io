@@ -416,8 +416,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  404</span>  <span class="keywordtype">double</span> thickness =</div>
 <div class="line"><span class="lineno">  405</span>      rings.front()-&gt;surfaceMaterial()-&gt;materialSlab(ploc).thickness();</div>
 <div class="line"><span class="lineno">  406</span> </div>
-<div class="line"><span class="lineno">  407</span>  lcfg.envelopeX = std::pair&lt;double, double&gt;{thickness / 2. + clearance,</div>
-<div class="line"><span class="lineno">  408</span>                                             thickness / 2. + clearance};</div>
+<div class="line"><span class="lineno">  407</span>  lcfg.envelopeX = std::array&lt;double, 2&gt;{thickness / 2. + clearance,</div>
+<div class="line"><span class="lineno">  408</span>    thickness / 2. + clearance};</div>
 <div class="line"><span class="lineno">  409</span>  lcfg.active = active;</div>
 <div class="line"><span class="lineno">  410</span> </div>
 <div class="line"><span class="lineno">  411</span>  <span class="keywordflow">return</span> lcfg;</div>

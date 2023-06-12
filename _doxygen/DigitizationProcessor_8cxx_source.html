@@ -56,326 +56,303 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceframework.html">framework</a>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetracking.html">tracking</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span>reco {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>DigitizationProcessor::DigitizationProcessor(<span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                                             <a class="code hl_class" href="classframework_1_1Process.html">framework::Process</a>&amp; process)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    : <a class="code hl_namespace" href="namespaceframework.html">framework</a>::<a class="code hl_class" href="classframework_1_1Producer.html">Producer</a>(name, process) {}</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>DigitizationProcessor::~DigitizationProcessor() {}</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classtracking_1_1reco_1_1DigitizationProcessor.html#a716eb44812f249ffac8359426da382e2">   19</a></span><span class="keywordtype">void</span> DigitizationProcessor::onProcessStart() {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  gctx_ = Acts::GeometryContext();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  normal_ = std::make_shared&lt;std::normal_distribution&lt;float&gt;&gt;(0., 1.);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Loading the tracking geometry&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">// Load the tracking geometry</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  ldmx_tg = std::make_shared&lt;tracking::reco::TrackersTrackingGeometry&gt;(</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <span class="stringliteral">&quot;/Users/pbutti/sw/ldmx-sw/Detectors/data/ldmx-det-v12/detector.gdml&quot;</span>,</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      &amp;gctx_, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span>tracking::reco {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>DigitizationProcessor::DigitizationProcessor(<span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                             <a class="code hl_class" href="classframework_1_1Process.html">framework::Process</a>&amp; process)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    : <a class="code hl_namespace" href="namespaceframework.html">framework</a>::<a class="code hl_class" href="classframework_1_1Producer.html">Producer</a>(name, process) {}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classtracking_1_1reco_1_1DigitizationProcessor.html#a716eb44812f249ffac8359426da382e2">   16</a></span><span class="keywordtype">void</span> DigitizationProcessor::onProcessStart() {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  gctx_ = Acts::GeometryContext();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  normal_ = std::make_shared&lt;std::normal_distribution&lt;float&gt;&gt;(0., 1.);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Loading the tracking geometry&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="comment">// Load the tracking geometry</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  ldmx_tg = std::make_shared&lt;tracking::reco::TrackersTrackingGeometry&gt;(</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      detector_, &amp;gctx_, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">// Module Bounds =&gt; Take them from the tracking geometry TODO</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keyword">auto</span> moduleBounds = std::make_shared&lt;const Acts::RectangleBounds&gt;(</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      20.17 * Acts::UnitConstants::mm, 50 * Acts::UnitConstants::mm);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="comment">// Module Bounds =&gt; Take them from the tracking geometry TODO</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">auto</span> moduleBounds = std::make_shared&lt;const Acts::RectangleBounds&gt;(</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      20.17 * Acts::UnitConstants::mm, 50 * Acts::UnitConstants::mm);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">// I assume 5 APVs</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">int</span> nbinsx = 128 * 5;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="comment">// Strips</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">int</span> nbinsy = 1;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="comment">// Thickness = 0.320 mm</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">double</span> thickness = 0.320 * Acts::UnitConstants::mm;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">// Lorentz angle</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">double</span> lAngle = 0.01;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">// Energy threshold</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">double</span> eThresh = 0.;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">// Analogue readout</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">bool</span> isAnalog = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="comment">// I assume 5 APVs</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">int</span> nbinsx = 128 * 5;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="comment">// Strips</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">int</span> nbinsy = 1;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="comment">// Thickness = 0.320 mm</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">double</span> thickness = 0.320 * Acts::UnitConstants::mm;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="comment">// Lorentz angle</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">double</span> lAngle = 0.01;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">// Energy threshold</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">double</span> eThresh = 0.;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="comment">// Analogue readout</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">bool</span> isAnalog = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">// Cartesian segmentation</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">auto</span> cSegmentation = std::make_shared&lt;const Acts::CartesianSegmentation&gt;(</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      moduleBounds, nbinsx, nbinsy);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// Cartesian segmentation</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">auto</span> cSegmentation = std::make_shared&lt;const Acts::CartesianSegmentation&gt;(</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      moduleBounds, nbinsx, nbinsy);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// Negative side readout =&gt; TODO Make sure this is correct!</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">//  - Ask Paul what does this mean: depending on how local w is oriented</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">// TODO: load proper lorentz angle</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">// Negative side readout =&gt; TODO Make sure this is correct!</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="comment">//  - Ask Paul what does this mean: depending on how local w is oriented</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">// TODO: load proper lorentz angle</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  Acts::DigitizationModule ndModule(cSegmentation, thickness * 0.5, -1, lAngle,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                    eThresh, isAnalog);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  std::cout &lt;&lt; getName() &lt;&lt; <span class="stringliteral">&quot; Initialization done&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  Acts::DigitizationModule ndModule(cSegmentation, thickness * 0.5, -1, lAngle,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                    eThresh, isAnalog);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  std::cout &lt;&lt; getName() &lt;&lt; <span class="stringliteral">&quot; Initialization done&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="comment">// Seed the generator</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  generator_.seed(1);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="comment">// Seed the generator</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  generator_.seed(1);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classtracking_1_1reco_1_1DigitizationProcessor.html#a837c5e2a3bd694f06078cd0d15ee3a4b">   69</a></span><span class="keywordtype">void</span> DigitizationProcessor::configure(</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp; parameters) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  hit_collection_ =</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;hit_collection&quot;</span>, <span class="stringliteral">&quot;TaggerSimHits&quot;</span>);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  out_collection_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;out_collection&quot;</span>,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                                         <span class="stringliteral">&quot;OutputMeasuements&quot;</span>);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  min_e_dep_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;min_e_dep&quot;</span>, 0.05);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  track_id_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;track_id&quot;</span>, -1);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  do_smearing_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;do_smearing&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  sigma_u_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;sigma_u&quot;</span>, 0.01);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  sigma_v_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;sigma_v&quot;</span>, 0.);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  merge_hits_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;merge_hits&quot;</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classtracking_1_1reco_1_1DigitizationProcessor.html#a837c5e2a3bd694f06078cd0d15ee3a4b">   65</a></span><span class="keywordtype">void</span> DigitizationProcessor::configure(</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&amp; parameters) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  detector_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;detector&quot;</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  hit_collection_ =</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;hit_collection&quot;</span>, <span class="stringliteral">&quot;TaggerSimHits&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  out_collection_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;out_collection&quot;</span>,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                                         <span class="stringliteral">&quot;OutputMeasuements&quot;</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  min_e_dep_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;min_e_dep&quot;</span>, 0.05);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  track_id_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;track_id&quot;</span>, -1);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  do_smearing_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;do_smearing&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  sigma_u_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;sigma_u&quot;</span>, 0.01);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  sigma_v_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;sigma_v&quot;</span>, 0.);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  merge_hits_ = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;merge_hits&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classtracking_1_1reco_1_1DigitizationProcessor.html#a60a77067a8835201f1b8411dc247b76a">   80</a></span><span class="keywordtype">void</span> DigitizationProcessor::produce(<a class="code hl_class" href="classframework_1_1Event.html">framework::Event</a>&amp; event) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="comment">// Get the tracking geometry</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classtracking_1_1reco_1_1DigitizationProcessor.html#a60a77067a8835201f1b8411dc247b76a">   83</a></span><span class="keywordtype">void</span> DigitizationProcessor::produce(<a class="code hl_class" href="classframework_1_1Event.html">framework::Event</a>&amp; event) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="comment">// Get the tracking geometry</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">const</span> <span class="keyword">auto</span> tGeometry = ldmx_tg-&gt;getTG();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; Getting the tracking geometry:&quot;</span> &lt;&lt; tGeometry;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="comment">// Mode 0: Load simulated hits and produce smeared 1d measurements</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="comment">// Mode 1: Load simulated hits and produce digitized 1d measurements</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">const</span> <span class="keyword">auto</span> tGeometry = ldmx_tg-&gt;getTG();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot; Getting the tracking geometry:&quot;</span> &lt;&lt; tGeometry;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">// Mode 0: Load simulated hits and produce smeared 1d measurements</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="comment">// Mode 1: Load simulated hits and produce digitized 1d measurements</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">const</span> std::vector&lt;ldmx::SimTrackerHit&gt; sim_hits =</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a>&gt;(hit_collection_);</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  std::vector&lt;ldmx::LdmxSpacePoint*&gt; digitized_hits;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  std::vector&lt;ldmx::SimTrackerHit&gt; merged_hits;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keyword">const</span> std::vector&lt;ldmx::SimTrackerHit&gt; sim_hits =</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keyword">event</span>.getCollection&lt;<a class="code hl_class" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a>&gt;(hit_collection_);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  std::vector&lt;ldmx::SimTrackerHit&gt; merged_hits;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">if</span> (merge_hits_) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    mergeSimHits(sim_hits, merged_hits);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    digitizeHits(merged_hits, digitized_hits);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  std::vector&lt;ldmx::Measurement&gt; measurements;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordflow">if</span> (merge_hits_) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    mergeSimHits(sim_hits, merged_hits);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    measurements = digitizeHits(merged_hits);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    measurements = digitizeHits(sim_hits);</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    digitizeHits(sim_hits, digitized_hits);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="comment">// Get the measurements and run clustering</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  std::vector&lt;ldmx::Measurement&gt; output_measurements;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> dh : digitized_hits) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_class" href="classldmx_1_1Measurement.html">ldmx::Measurement</a> m;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    m.setGlobalPosition(dh-&gt;global_pos_(0), dh-&gt;global_pos_(1),</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                        dh-&gt;global_pos_(2));</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    m.setLocalPosition(dh-&gt;local_pos_(0), dh-&gt;local_pos_(1));</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    m.setTime(-999);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    m.setLayer(dh-&gt;layer());</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    output_measurements.push_back(m);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keyword">event</span>.add(out_collection_, measurements);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">// This method merges hits that have the same track_id on the same layer.</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">// The energy of the merged hit is the sum of the energy of the single sub-hits</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">// The position/momentum of the merged hit is the energy-weighted average</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">// sihits = vector of hits to merge</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">// mergedHits = total merged collection</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">bool</span> DigitizationProcessor::mergeHits(</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">const</span> std::vector&lt;ldmx::SimTrackerHit&gt;&amp; sihits,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    std::vector&lt;ldmx::SimTrackerHit&gt;&amp; mergedHits) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">if</span> (sihits.size() &lt; 1) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordflow">if</span> (sihits.size() == 1) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    mergedHits.push_back(sihits[0]);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  ldmx_log(debug)&lt;&lt; <span class="stringliteral">&quot;Output measurements &quot;</span> &lt;&lt; output_measurements.size();</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                 </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keyword">event</span>.add(out_collection_, output_measurements);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classtracking_1_1reco_1_1DigitizationProcessor.html#ac07daa5f9661e3813cb1dd2141bb7843">  129</a></span><span class="keywordtype">void</span> DigitizationProcessor::onProcessEnd() {}</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">// This method merges hits that have the same track_id on the same layer.</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">// The energy of the merged hit is the sum of the energy of the single sub-hits</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">// The position/momentum of the merged hit is the energy-weighted average</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">// sihits = vector of hits to merge</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">// mergedHits = total merged collection</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keywordtype">bool</span> DigitizationProcessor::mergeHits(</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keyword">const</span> std::vector&lt;ldmx::SimTrackerHit&gt;&amp; sihits,</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    std::vector&lt;ldmx::SimTrackerHit&gt;&amp; mergedHits) {</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordflow">if</span> (sihits.size() &lt; 1) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keywordflow">if</span> (sihits.size() == 1) {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    mergedHits.push_back(sihits[0]);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  }</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <a class="code hl_class" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a> mergedHit;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">// Since all the hits will be on the same sensor, just use the ID of the first</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a766dff1ca723236e48f8ef6d88f6d0c9">setLayerID</a>(sihits[0].getLayerID());</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a258350005d7d5d3521b60248ca5be1c8">setModuleID</a>(sihits[0].getModuleID());</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a639044b03ced00dbec1e08d4ea158e1b">setID</a>(sihits[0].getID());</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#ad6464ad484e43d9fcda360e2ebd6486e">setTrackID</a>(sihits[0].getTrackID());</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordtype">double</span> X{0}, Y{0}, Z{0}, PX{0}, PY{0}, PZ{0};</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordtype">double</span> T{0}, E{0}, EDEP{0}, path{0};</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordtype">int</span> pdgID{0};</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  pdgID = sihits[0].getPdgID();</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> hit : sihits) {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">double</span> edep_hit = hit.getEdep();</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    EDEP += edep_hit;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    E += hit.getEnergy();</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    T += edep_hit * hit.getTime();</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    X += edep_hit * hit.getPosition()[0];</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    Y += edep_hit * hit.getPosition()[1];</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    Z += edep_hit * hit.getPosition()[2];</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    PX += edep_hit * hit.getMomentum()[0];</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    PY += edep_hit * hit.getMomentum()[1];</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    PZ += edep_hit * hit.getMomentum()[2];</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    path += edep_hit * hit.getPathLength();</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">if</span> (hit.getPdgID() != pdgID) {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;ERROR:: Found hits with compatible sensorID and track_id &quot;</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                   <span class="stringliteral">&quot;but different PDGID&quot;</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;TRACKID ==&quot;</span> &lt;&lt; hit.getTrackID() &lt;&lt; <span class="stringliteral">&quot; vs &quot;</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                &lt;&lt; sihits[0].getTrackID() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;PDGID== &quot;</span> &lt;&lt; hit.getPdgID() &lt;&lt; <span class="stringliteral">&quot; vs &quot;</span> &lt;&lt; pdgID &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a4fdf3b470c1b624568c126b7ed3ad7ca">setTime</a>(T / EDEP);</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a662fc20bd8c86ae209c0b1efdf76a889">setPosition</a>(X / EDEP, Y / EDEP, Z / EDEP);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#ae5ffa11967342e6bc8f8bcb03fc7fcea">setMomentum</a>(PX / EDEP, PY / EDEP, PZ / EDEP);</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a8b8f72e6d6094e56ddabc1548a071503">setPathLength</a>(path / EDEP);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#aa072229b731080c14cef25f5e631656d">setEnergy</a>(E);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a007a15befbe02ec190b4e6ef2cebe25d">setEdep</a>(EDEP);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#ad1b4243d8039e3412dbff8a0118902d8">setPdgID</a>(pdgID);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <a class="code hl_class" href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a> mergedHit;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="comment">// Since all the hits will be on the same sensor, just use the ID of the first</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a766dff1ca723236e48f8ef6d88f6d0c9">setLayerID</a>(sihits[0].getLayerID());</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a258350005d7d5d3521b60248ca5be1c8">setModuleID</a>(sihits[0].getModuleID());</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a639044b03ced00dbec1e08d4ea158e1b">setID</a>(sihits[0].getID());</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#ad6464ad484e43d9fcda360e2ebd6486e">setTrackID</a>(sihits[0].getTrackID());</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keywordtype">double</span> X{0}, Y{0}, Z{0}, PX{0}, PY{0}, PZ{0};</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">double</span> T{0}, E{0}, EDEP{0}, path{0};</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordtype">int</span> pdgID{0};</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  pdgID = sihits[0].getPdgID();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> hit : sihits) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">double</span> edep_hit = hit.getEdep();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    EDEP += edep_hit;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    E += hit.getEnergy();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    T += edep_hit * hit.getTime();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    X += edep_hit * hit.getPosition()[0];</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    Y += edep_hit * hit.getPosition()[1];</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    Z += edep_hit * hit.getPosition()[2];</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    PX += edep_hit * hit.getMomentum()[0];</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    PY += edep_hit * hit.getMomentum()[1];</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    PZ += edep_hit * hit.getMomentum()[2];</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    path += edep_hit * hit.getPathLength();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">if</span> (hit.getPdgID() != pdgID) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;ERROR:: Found hits with compatible sensorID and track_id &quot;</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                   <span class="stringliteral">&quot;but different PDGID&quot;</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;TRACKID ==&quot;</span> &lt;&lt; hit.getTrackID() &lt;&lt; <span class="stringliteral">&quot; vs &quot;</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                &lt;&lt; sihits[0].getTrackID() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;PDGID== &quot;</span> &lt;&lt; hit.getPdgID() &lt;&lt; <span class="stringliteral">&quot; vs &quot;</span> &lt;&lt; pdgID &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a4fdf3b470c1b624568c126b7ed3ad7ca">setTime</a>(T / EDEP);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a662fc20bd8c86ae209c0b1efdf76a889">setPosition</a>(X / EDEP, Y / EDEP, Z / EDEP);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#ae5ffa11967342e6bc8f8bcb03fc7fcea">setMomentum</a>(PX / EDEP, PY / EDEP, PZ / EDEP);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a8b8f72e6d6094e56ddabc1548a071503">setPathLength</a>(path / EDEP);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#aa072229b731080c14cef25f5e631656d">setEnergy</a>(E);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#a007a15befbe02ec190b4e6ef2cebe25d">setEdep</a>(EDEP);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  mergedHit.<a class="code hl_function" href="classldmx_1_1SimTrackerHit.html#ad1b4243d8039e3412dbff8a0118902d8">setPdgID</a>(pdgID);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  mergedHits.push_back(mergedHit);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">// TODO avoid copies and use references</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keywordtype">bool</span> DigitizationProcessor::mergeSimHits(</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keyword">const</span> std::vector&lt;ldmx::SimTrackerHit&gt;&amp; sim_hits,</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    std::vector&lt;ldmx::SimTrackerHit&gt;&amp; merged_hits) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="comment">// The first key is the index of the sensitive element ID, second key is the</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="comment">// track_id</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  std::map&lt;int, std::map&lt;int, std::vector&lt;ldmx::SimTrackerHit&gt;&gt;&gt; hitmap;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> hit : sim_hits) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index = tracking::sim::utils::getSensorID(hit);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> trackid = hit.getTrackID();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    hitmap[index][trackid].push_back(hit);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;hitmap being filled, size::[&quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot;][&quot;</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                    &lt;&lt; trackid &lt;&lt; <span class="stringliteral">&quot;] size &quot;</span> &lt;&lt; hitmap[index][trackid].size();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  }</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  mergedHits.push_back(mergedHit);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment">// TODO avoid copies and use references</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keywordtype">bool</span> DigitizationProcessor::mergeSimHits(</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">const</span> std::vector&lt;ldmx::SimTrackerHit&gt;&amp; sim_hits,</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    std::vector&lt;ldmx::SimTrackerHit&gt;&amp; merged_hits) {</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="comment">// The first key is the index of the sensitive element ID, second key is the</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="comment">// track_id</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  std::map&lt;int, std::map&lt;int, std::vector&lt;ldmx::SimTrackerHit&gt;&gt;&gt; hitmap;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keyword">typedef</span> std::map&lt;int,</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                   std::map&lt;int, std::vector&lt;ldmx::SimTrackerHit&gt;&gt;&gt;::iterator</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      hitmap_it1;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keyword">typedef</span> std::map&lt;int, std::vector&lt;ldmx::SimTrackerHit&gt;&gt;::iterator hitmap_it2;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keywordflow">for</span> (hitmap_it1 it = hitmap.begin(); it != hitmap.end(); it++) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordflow">for</span> (hitmap_it2 it2 = it-&gt;second.begin(); it2 != it-&gt;second.end(); it2++) {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      mergeHits(it2-&gt;second, merged_hits);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Sim_hits Size=&quot;</span> &lt;&lt; sim_hits.size()</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                  &lt;&lt; <span class="stringliteral">&quot;Merged_hits Size=&quot;</span> &lt;&lt; merged_hits.size();</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> hit : sim_hits) {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index = tracking::sim::utils::getSensorID(hit);</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> trackid = hit.getTrackID();</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    hitmap[index][trackid].push_back(hit);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;hitmap being filled, size::[&quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot;][&quot;</span> &lt;&lt; trackid</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                    &lt;&lt; <span class="stringliteral">&quot;] size &quot;</span> &lt;&lt; hitmap[index][trackid].size();</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  }</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keyword">typedef</span> std::map&lt;int,</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                   std::map&lt;int, std::vector&lt;ldmx::SimTrackerHit&gt;&gt;&gt;::iterator</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>      hitmap_it1;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <span class="keyword">typedef</span> std::map&lt;int, std::vector&lt;ldmx::SimTrackerHit&gt;&gt;::iterator hitmap_it2;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="keywordflow">for</span> (hitmap_it1 it = hitmap.begin(); it != hitmap.end(); it++) {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordflow">for</span> (hitmap_it2 it2 = it-&gt;second.begin(); it2 != it-&gt;second.end(); it2++) {</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      mergeHits(it2-&gt;second, merged_hits);</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    }</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  }</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Sim_hits Size=&quot;</span> &lt;&lt; sim_hits.size()</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                  &lt;&lt; <span class="stringliteral">&quot;Merged_hits Size=&quot;</span> &lt;&lt; merged_hits.size();</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="comment">//for (auto hit : sim_hits) hit.Print();</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="comment">//for (auto mhit : merged_hits) mhit.Print();</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="keywordtype">void</span> DigitizationProcessor::digitizeHits(</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keyword">const</span> std::vector&lt;ldmx::SimTrackerHit&gt;&amp; sim_hits,</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    std::vector&lt;ldmx::LdmxSpacePoint*&gt;&amp; ldmxsps) {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Found:&quot;</span> &lt;&lt; sim_hits.size() &lt;&lt; <span class="stringliteral">&quot; sim hits in the &quot;</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                  &lt;&lt; hit_collection_;</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="comment">// Convert to ldmxsps</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; simHit : sim_hits) {</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="comment">// Remove low energy deposit hits</span></div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span> (simHit.getEdep() &gt; min_e_dep_) {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <span class="keywordflow">if</span> (track_id_ &gt; 0 &amp;&amp; simHit.getTrackID() != track_id_) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>      <a class="code hl_class" href="classldmx_1_1LdmxSpacePoint.html">ldmx::LdmxSpacePoint</a>* ldmxsp =</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>          tracking::sim::utils::convertSimHitToLdmxSpacePoint(simHit);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      <span class="comment">// Get the layer from the ldmxsp</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> layerid = ldmxsp-&gt;layer();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="comment">// for (auto hit : sim_hits) hit.Print();</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="comment">// for (auto mhit : merged_hits) mhit.Print();</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classtracking_1_1reco_1_1DigitizationProcessor.html#af7e0f98bec8feeba832f509a008f51c6">  210</a></span>std::vector&lt;ldmx::Measurement&gt; DigitizationProcessor::digitizeHits(</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keyword">const</span> std::vector&lt;ldmx::SimTrackerHit&gt;&amp; sim_hits) {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Found:&quot;</span> &lt;&lt; sim_hits.size() &lt;&lt; <span class="stringliteral">&quot; sim hits in the &quot;</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                  &lt;&lt; hit_collection_;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  std::vector&lt;ldmx::Measurement&gt; measurements;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="comment">// Loop over all SimTrackerHits and</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="comment">// * Use the position of the SimTrackerHit (global position) and the surface</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  <span class="comment">//   the hit was created on to extract the local coordinates.</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="comment">// * If specified, smear the local coordinates and update the global</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="comment">//   coordinates.</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="comment">// * Create a Measurement object.</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; sim_hit : sim_hits) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">// Remove low energy deposit hits</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">if</span> (sim_hit.getEdep() &gt; min_e_dep_) {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      <span class="keywordflow">if</span> (track_id_ &gt; 0 &amp;&amp; sim_hit.getTrackID() != track_id_) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      <a class="code hl_class" href="classldmx_1_1Measurement.html">ldmx::Measurement</a> measurement(sim_hit);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>      <span class="comment">// Get the layer ID.</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      <span class="keyword">auto</span> layer_id = tracking::sim::utils::getSensorID(sim_hit);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>      measurement.<a class="code hl_function" href="classldmx_1_1Measurement.html#ace370f204acc17d79de7e54df8e80d69">setLayerID</a>(layer_id);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <span class="comment">// Get the surface</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keyword">auto</span> hit_surface{ldmx_tg-&gt;getSurface(layer_id)};</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      <span class="keywordflow">if</span> (hit_surface) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        <span class="comment">// Transform from global to local coordinates.</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="comment">// hit_surface-&gt;toStream(gctx_, std::cout);</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Local to global&quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                        &lt;&lt; hit_surface-&gt;transform(gctx_).rotation() &lt;&lt; std::endl</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                        &lt;&lt; hit_surface-&gt;transform(gctx_).translation();</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        Acts::Vector3 dummy_momentum;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        Acts::Vector2 local_pos;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        <span class="keywordtype">double</span> surface_thickness = 0.320 * Acts::UnitConstants::mm;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        Acts::Vector3 global_pos(measurement.<a class="code hl_function" href="classldmx_1_1Measurement.html#a3791f09f693f215dc5cff2452d33cea2">getGlobalPosition</a>()[0],</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                                 measurement.<a class="code hl_function" href="classldmx_1_1Measurement.html#a3791f09f693f215dc5cff2452d33cea2">getGlobalPosition</a>()[1],</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                                 measurement.<a class="code hl_function" href="classldmx_1_1Measurement.html#a3791f09f693f215dc5cff2452d33cea2">getGlobalPosition</a>()[2]);</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      <span class="comment">// Get the surface</span></div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      <span class="keyword">const</span> Acts::Surface* hit_surface = ldmx_tg-&gt;getSurface(layerid);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>      </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>      <span class="keywordflow">if</span> (hit_surface) {</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <span class="comment">// Transform the ldmx space point from global to local and store the</span></div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="comment">// information</span></div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Global hit position on layer::&quot;</span> &lt;&lt; ldmxsp-&gt;layer()</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                        &lt;&lt; ldmxsp-&gt;global_pos_;</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="comment">//hit_surface-&gt;toStream(gctx_, std::cout);</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        ldmx_log(debug) &lt;&lt; <span class="stringliteral">&quot;Local to global&quot;</span></div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                        &lt;&lt; std::endl&lt;&lt; hit_surface-&gt;transform(gctx_).rotation()</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                        &lt;&lt; std::endl&lt;&lt; hit_surface-&gt;transform(gctx_).translation();</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        Acts::Vector3 dummy_momentum;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        Acts::Vector2 local_pos;</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordtype">double</span> surface_thickness = 0.320 * Acts::UnitConstants::mm;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>          local_pos = hit_surface</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                      -&gt;globalToLocal(gctx_, ldmxsp-&gt;global_pos_,</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                                      dummy_momentum, surface_thickness)</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                      .value();</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>          std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING:: hit not on surface.. Skipping.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>          std::cout &lt;&lt; ldmxsp-&gt;global_pos_ &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>          <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        }</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <span class="comment">// Smear the local position</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        </div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="keywordflow">if</span> (do_smearing_) {</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>          <span class="keywordtype">float</span> smear_factor{(*normal_)(generator_)};</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>          </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>          local_pos[0] += smear_factor * sigma_u_;</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>          smear_factor = (*normal_)(generator_);</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>          local_pos[1] += smear_factor * sigma_v_;</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>          </div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>          </div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>          <span class="comment">// update covariance</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>          ldmxsp-&gt;setLocalCovariance(sigma_u_ * sigma_u_, sigma_v_ * sigma_v_);</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>          </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>          <span class="comment">// cache the acts x coordinate</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>          <span class="keywordtype">double</span> original_x = ldmxsp-&gt;global_pos_(0);</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>          </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>          <span class="comment">// transform to global</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>          ldmxsp-&gt;global_pos_ =</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>              hit_surface-&gt;localToGlobal(gctx_, local_pos, dummy_momentum);</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>          <span class="comment">// update the acts x location</span></div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>          ldmxsp-&gt;global_pos_(0) = original_x;</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>          </div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        }  <span class="comment">// do smearing</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        ldmxsp-&gt;local_pos_ = local_pos;</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        ldmxsps.push_back(ldmxsp);</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      }  <span class="comment">// hit_surface exists</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    }    <span class="comment">// energy cut</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  }  <span class="comment">// loop on sim-hits</span></div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>}  <span class="comment">// digitizeHits</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>}  <span class="comment">// namespace reco</span></div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>}  <span class="comment">// namespace tracking</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><a class="code hl_define" href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a>(tracking::reco, DigitizationProcessor)</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>          local_pos = hit_surface</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                          -&gt;globalToLocal(gctx_, global_pos, dummy_momentum,</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                                          surface_thickness)</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                          .value();</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>          std::cout &lt;&lt; <span class="stringliteral">&quot;WARNING:: hit not on surface.. Skipping.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>          <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="comment">// Smear the local position</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordflow">if</span> (do_smearing_) {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>          <span class="keywordtype">float</span> smear_factor{(*normal_)(generator_)};</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>          local_pos[0] += smear_factor * sigma_u_;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>          smear_factor = (*normal_)(generator_);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>          local_pos[1] += smear_factor * sigma_v_;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>          <span class="comment">// update covariance</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>          measurement.<a class="code hl_function" href="classldmx_1_1Measurement.html#ad5cd037b202cb3a097702dd54021b0ee">setLocalCovariance</a>(sigma_u_ * sigma_u_,</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                                         sigma_v_ * sigma_v_);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>          <span class="comment">// transform to global</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>          <span class="keyword">auto</span> global_pos{</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>              hit_surface-&gt;localToGlobal(gctx_, local_pos, dummy_momentum)};</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>          measurement.<a class="code hl_function" href="classldmx_1_1Measurement.html#a4cea5d52d05a9ecac7ae4cd76463d8b8">setGlobalPosition</a>(measurement.<a class="code hl_function" href="classldmx_1_1Measurement.html#a3791f09f693f215dc5cff2452d33cea2">getGlobalPosition</a>()[0],</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                                        global_pos(1), global_pos(2));</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        }  <span class="comment">// do smearing</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        measurement.<a class="code hl_function" href="classldmx_1_1Measurement.html#ad2ca1366a69b815180943f6d460dc414">setLocalPosition</a>(local_pos(0), local_pos(1));</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        measurements.push_back(measurement);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>      }  <span class="comment">// hit_surface exists</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }    <span class="comment">// energy cut</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  }      <span class="comment">// loop on sim-hits</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keywordflow">return</span> measurements;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>}  <span class="comment">// digitizeHits</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>}  <span class="comment">// namespace tracking::reco</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><a class="code hl_define" href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a>(tracking::reco, DigitizationProcessor)</div>
 <div class="ttc" id="aEventProcessor_8h_html_a7896421cd58ee79a1eb300ec836c6c92"><div class="ttname"><a href="EventProcessor_8h.html#a7896421cd58ee79a1eb300ec836c6c92">DECLARE_PRODUCER_NS</a></div><div class="ttdeci">#define DECLARE_PRODUCER_NS(NS, CLASS)</div><div class="ttdoc">Macro which allows the framework to construct a producer given its name during configuration.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00371">EventProcessor.h:371</a></div></div>
 <div class="ttc" id="aclassframework_1_1Event_html"><div class="ttname"><a href="classframework_1_1Event.html">framework::Event</a></div><div class="ttdoc">Implements an event buffer system for storing event data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00040">Event.h:40</a></div></div>
 <div class="ttc" id="aclassframework_1_1Process_html"><div class="ttname"><a href="classframework_1_1Process.html">framework::Process</a></div><div class="ttdoc">Class which represents the process under execution.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00035">Process.h:35</a></div></div>
 <div class="ttc" id="aclassframework_1_1Producer_html"><div class="ttname"><a href="classframework_1_1Producer.html">framework::Producer</a></div><div class="ttdoc">Base class for a module which produces a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00252">EventProcessor.h:252</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclassldmx_1_1LdmxSpacePoint_html"><div class="ttname"><a href="classldmx_1_1LdmxSpacePoint.html">ldmx::LdmxSpacePoint</a></div><div class="ttdef"><b>Definition:</b> <a href="LdmxSpacePoint_8h_source.html#l00018">LdmxSpacePoint.h:18</a></div></div>
-<div class="ttc" id="aclassldmx_1_1Measurement_html"><div class="ttname"><a href="classldmx_1_1Measurement.html">ldmx::Measurement</a></div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00008">Measurement.h:8</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html"><div class="ttname"><a href="classldmx_1_1Measurement.html">ldmx::Measurement</a></div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00012">Measurement.h:12</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_a3791f09f693f215dc5cff2452d33cea2"><div class="ttname"><a href="classldmx_1_1Measurement.html#a3791f09f693f215dc5cff2452d33cea2">ldmx::Measurement::getGlobalPosition</a></div><div class="ttdeci">std::array&lt; float, 3 &gt; getGlobalPosition() const</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00047">Measurement.h:47</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_a4cea5d52d05a9ecac7ae4cd76463d8b8"><div class="ttname"><a href="classldmx_1_1Measurement.html#a4cea5d52d05a9ecac7ae4cd76463d8b8">ldmx::Measurement::setGlobalPosition</a></div><div class="ttdeci">void setGlobalPosition(const float &amp;x, const float &amp;y, const float &amp;z)</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00040">Measurement.h:40</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_ace370f204acc17d79de7e54df8e80d69"><div class="ttname"><a href="classldmx_1_1Measurement.html#ace370f204acc17d79de7e54df8e80d69">ldmx::Measurement::setLayerID</a></div><div class="ttdeci">void setLayerID(const int &amp;layerid)</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00100">Measurement.h:100</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_ad2ca1366a69b815180943f6d460dc414"><div class="ttname"><a href="classldmx_1_1Measurement.html#ad2ca1366a69b815180943f6d460dc414">ldmx::Measurement::setLocalPosition</a></div><div class="ttdeci">void setLocalPosition(const float &amp;u, const float &amp;v)</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00058">Measurement.h:58</a></div></div>
+<div class="ttc" id="aclassldmx_1_1Measurement_html_ad5cd037b202cb3a097702dd54021b0ee"><div class="ttname"><a href="classldmx_1_1Measurement.html#ad5cd037b202cb3a097702dd54021b0ee">ldmx::Measurement::setLocalCovariance</a></div><div class="ttdeci">void setLocalCovariance(const float &amp;cov_uu, const float &amp;cov_vv)</div><div class="ttdef"><b>Definition:</b> <a href="Measurement_8h_source.html#l00074">Measurement.h:74</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimTrackerHit_html"><div class="ttname"><a href="classldmx_1_1SimTrackerHit.html">ldmx::SimTrackerHit</a></div><div class="ttdoc">Represents a simulated tracker hit in the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="SimTrackerHit_8h_source.html#l00024">SimTrackerHit.h:24</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimTrackerHit_html_a007a15befbe02ec190b4e6ef2cebe25d"><div class="ttname"><a href="classldmx_1_1SimTrackerHit.html#a007a15befbe02ec190b4e6ef2cebe25d">ldmx::SimTrackerHit::setEdep</a></div><div class="ttdeci">void setEdep(const float edep)</div><div class="ttdef"><b>Definition:</b> <a href="SimTrackerHit_8h_source.html#l00146">SimTrackerHit.h:146</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimTrackerHit_html_a258350005d7d5d3521b60248ca5be1c8"><div class="ttname"><a href="classldmx_1_1SimTrackerHit.html#a258350005d7d5d3521b60248ca5be1c8">ldmx::SimTrackerHit::setModuleID</a></div><div class="ttdeci">void setModuleID(const int moduleID)</div><div class="ttdef"><b>Definition:</b> <a href="SimTrackerHit_8h_source.html#l00132">SimTrackerHit.h:132</a></div></div>
@@ -389,7 +366,6 @@ $(function() {
 <div class="ttc" id="aclassldmx_1_1SimTrackerHit_html_ad6464ad484e43d9fcda360e2ebd6486e"><div class="ttname"><a href="classldmx_1_1SimTrackerHit.html#ad6464ad484e43d9fcda360e2ebd6486e">ldmx::SimTrackerHit::setTrackID</a></div><div class="ttdeci">void setTrackID(const int simTrackID)</div><div class="ttdef"><b>Definition:</b> <a href="SimTrackerHit_8h_source.html#l00181">SimTrackerHit.h:181</a></div></div>
 <div class="ttc" id="aclassldmx_1_1SimTrackerHit_html_ae5ffa11967342e6bc8f8bcb03fc7fcea"><div class="ttname"><a href="classldmx_1_1SimTrackerHit.html#ae5ffa11967342e6bc8f8bcb03fc7fcea">ldmx::SimTrackerHit::setMomentum</a></div><div class="ttdeci">void setMomentum(const float px, const float py, const float pz)</div></div>
 <div class="ttc" id="anamespaceframework_html"><div class="ttname"><a href="namespaceframework.html">framework</a></div><div class="ttdoc">All classes in the ldmx-sw project use this namespace.</div><div class="ttdef"><b>Definition:</b> <a href="Bus_8h_source.html#l00014">Bus.h:14</a></div></div>
-<div class="ttc" id="anamespacetracking_html"><div class="ttname"><a href="namespacetracking.html">tracking</a></div><div class="ttdoc">Visualization.</div><div class="ttdef"><b>Definition:</b> <a href="BaseTrackingGeometry_8h_source.html#l00035">BaseTrackingGeometry.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
