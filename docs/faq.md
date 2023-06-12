@@ -5,6 +5,16 @@ layout: default
 # What the F.A.Q.?
 Frequent issues and potholes that new collaborators run into while starting their work with LDMX software.
 
+### How do I update the version of the container I am using?
+We've added this command to the `ldmx` command line program.
+In general, it is safe to just update to the latest version.
+```
+ldmx pull dev latest
+```
+This explicitly pulls the latest version no matter what,
+so it will download the image even if it is the same as
+one already on your computer.
+
 ### My display isn't working when using Windoze and WSL!
 
 You probably are seeing an error that looks like:

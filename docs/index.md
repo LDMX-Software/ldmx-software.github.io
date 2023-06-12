@@ -24,6 +24,7 @@ layout: default
   - [Exercises]({% link docs/Startup-Exercises.md %})
 
 # All the Details
+- [Container-Software Compatibility]({% link docs/compatibility.md %})
 - [Contributing]({% link docs/Contributing-to-ldmx-sw.md %})
 - [Configuring the Simulation]({% link docs/Configuring-the-Simulation.md %})
 - [Logging]({% link docs/Logging.md %})

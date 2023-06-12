@@ -43,3 +43,18 @@ In ldmx-sw we follow the [Google Style Guide](https://google.github.io/styleguid
 - [emacs](https://raw.githubusercontent.com/google/styleguide/gh-pages/google-c-style.el)
 - [google/vim-codefmt](https://github.com/google/vim-codefmt)
 - [rhysd/vim-clang-format](https://github.com/rhysd/vim-clang-format)
+
+## Pull Requests with Submodule Updates
+LDMX organizes some of its code in ldmx-sw into 
+[git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) so that they
+can be developed somewhat independently from the central ldmx-sw repository.
+From a `git` point of view, these git submodules are separate entitites from
+ldmx-sw and ldmx-sw only knows the specific commit that it should load when
+`git submodules update` is called. For this reason, updates that require changes
+to submodules as well as ldmx-sw should have two PRs: one for the updates within
+the submodule and one for updating the commit reference of the submodule in 
+ldmx-sw.
+
+In order to avoid confusion from commit references that are pseudo-random, it
+is **highly encouraged** that a new release and tag are made for the submodule
+when updating ldmx-sw to a new submodule version.
