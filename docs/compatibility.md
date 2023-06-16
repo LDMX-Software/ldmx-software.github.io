@@ -39,8 +39,10 @@ build config | meaning
 -------------|---------
 default      | No parameters given to `cmake` besides necessary ones
 no testing   | disable testing which is enabled by default[^1]
+force legacy onnx | ldmx-sw's CMake code for finding ONNX didn't work well and so it needs to be modified slightly[^2]
 sanitizers | enable one or more of the sanitizers, cmake: `-DENABLE_SANITIZER_*=ON`
 detector id bindings | enable detector ID python bindings, cmake: `-DBUILD_DETECTORID_BINDINGS=ON`
+patch cmake | need to do both `no testing` and `force legacy onnx`
 
 [^1]: Currently in ldmx-sw, there isn't a command-line option to disable the
       testing so one must comment out the `build_test()` line in `ldmx-sw/CMakeLists.txt`.
@@ -48,6 +50,10 @@ detector id bindings | enable detector ID python bindings, cmake: `-DBUILD_DETEC
       unless you need to stay on an old version for a good reason it would be much 
       better to update your branch to a newer version of ldmx-sw and update the container
       to the newest version as well.
+
+[^2]: Forcing legacy onnx is relatively simple and can be done by commenting out the
+      `find_path` call within the `ldmx-sw/cmake/FindONNXRuntime.cmake` file. This
+      prevents CMake from finding the system install in newer containers.
 
 ### Pre-v3.0.0
 No containers have been studied for older versions of ldmx-sw.
@@ -60,14 +66,14 @@ so that it could run in a container image.
 build config | container version
 ---|---
 default | < v4.0.0
-no testing | >= v4.0.0
+patch cmake | >= v4.0.0
 
 ### >=v3.1.1 and < v3.1.12
 
 build config | container version
 ---|---
 default | < v4.0.0
-no testing | >= v4.0.0
+patch cmake | >= v4.0.0
 with sanitizers | > v3.2
 
 ### >= v3.1.12 and < v3.2.4
@@ -75,7 +81,7 @@ with sanitizers | > v3.2
 build config | container version
 ---|---
 default | < v4.0.0
-no testing | >= v4.0.0
+patch cmake | >= v4.0.0
 with sanitizers | > v3.2
 with detector id bindings | > v3.3
 
@@ -89,6 +95,5 @@ no-testing release by three.
 build config | container version
 ---|---
 default | >= v4.0.0
-no testing | >= v3.3 (to test)
-no det id bindings and no testing | >= v3.2
-no det id bindings and no sanitizers and no testing | >= v3.0
+no det id bindings | >= v3.2
+no det id bindings and no sanitizers | >= v3.0
