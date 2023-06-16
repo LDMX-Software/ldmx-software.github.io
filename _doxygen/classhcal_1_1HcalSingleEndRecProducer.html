@@ -105,8 +105,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a008adf050b2c16ba59cf5a28d0f7334f"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalSingleEndRecProducer.html#a008adf050b2c16ba59cf5a28d0f7334f">extract_measurements</a> (const <a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">ldmx::HgcrocDigiCollection::HgcrocDigi</a> &amp;digi, double pedestal)</td></tr>
-<tr class="separator:a008adf050b2c16ba59cf5a28d0f7334f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4238c0e0bcd9cbe44a9313ee818abdf6"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalSingleEndRecProducer.html#a4238c0e0bcd9cbe44a9313ee818abdf6">extract_measurements</a> (const <a class="el" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html">ldmx::HgcrocDigiCollection::HgcrocDigi</a> &amp;digi, double pedestal, double bx_shift)</td></tr>
+<tr class="separator:a4238c0e0bcd9cbe44a9313ee818abdf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -195,8 +195,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00059">59</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>      : <a class="code hl_function" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a>(n, p) {}</div>
+<p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00060">60</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>      : <a class="code hl_function" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a>(n, p) {}</div>
 <div class="ttc" id="aclassframework_1_1Producer_html_a27ea7492352028e450f24f4750c62e1b"><div class="ttname"><a href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">framework::Producer::Producer</a></div><div class="ttdeci">Producer(const std::string &amp;name, Process &amp;process)</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8cxx_source.html#l00068">EventProcessor.cxx:68</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -237,18 +237,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a21156f6f3954394925e9a265de9d702a">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">103</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>                                                                     {</div>
-<div class="line"><span class="lineno">  104</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a5be3507d8293cd7a950fb128eb996ec2">pass_name_</a> = p.getParameter(<span class="stringliteral">&quot;pass_name&quot;</span>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a5be3507d8293cd7a950fb128eb996ec2">pass_name_</a>);</div>
-<div class="line"><span class="lineno">  105</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8fae632b25cd772aff9d69c88324c50d">coll_name_</a> = p.getParameter(<span class="stringliteral">&quot;coll_name&quot;</span>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8fae632b25cd772aff9d69c88324c50d">coll_name_</a>);</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#aca4a826e6d4aed015009e816e15219a1">rec_pass_name_</a> = p.getParameter(<span class="stringliteral">&quot;rec_pass_name&quot;</span>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#aca4a826e6d4aed015009e816e15219a1">rec_pass_name_</a>);</div>
-<div class="line"><span class="lineno">  108</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8d9c3e0a42ba74f37c298bcf9a428747">rec_coll_name_</a> = p.getParameter(<span class="stringliteral">&quot;rec_coll_name&quot;</span>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8d9c3e0a42ba74f37c298bcf9a428747">rec_coll_name_</a>);</div>
-<div class="line"><span class="lineno">  109</span>  </div>
-<div class="line"><span class="lineno">  110</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a39a35e371f75b494b08c70ab8afab7bf">pe_per_mip_</a> = p.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;pe_per_mip&quot;</span>);</div>
-<div class="line"><span class="lineno">  111</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a0a7d3bead39ec2cd78e432fa5543079f">mip_energy_</a> = p.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;mip_energy&quot;</span>);</div>
-<div class="line"><span class="lineno">  112</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#ab47582482144cf2f803f3d0b97859143">clock_cycle_</a> = p.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;clock_cycle&quot;</span>);</div>
-<div class="line"><span class="lineno">  113</span>}</div>
+<p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00117">117</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>                                                                     {</div>
+<div class="line"><span class="lineno">  118</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a5be3507d8293cd7a950fb128eb996ec2">pass_name_</a> = p.getParameter(<span class="stringliteral">&quot;pass_name&quot;</span>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a5be3507d8293cd7a950fb128eb996ec2">pass_name_</a>);</div>
+<div class="line"><span class="lineno">  119</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8fae632b25cd772aff9d69c88324c50d">coll_name_</a> = p.getParameter(<span class="stringliteral">&quot;coll_name&quot;</span>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8fae632b25cd772aff9d69c88324c50d">coll_name_</a>);</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#aca4a826e6d4aed015009e816e15219a1">rec_pass_name_</a> = p.getParameter(<span class="stringliteral">&quot;rec_pass_name&quot;</span>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#aca4a826e6d4aed015009e816e15219a1">rec_pass_name_</a>);</div>
+<div class="line"><span class="lineno">  122</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8d9c3e0a42ba74f37c298bcf9a428747">rec_coll_name_</a> = p.getParameter(<span class="stringliteral">&quot;rec_coll_name&quot;</span>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8d9c3e0a42ba74f37c298bcf9a428747">rec_coll_name_</a>);</div>
+<div class="line"><span class="lineno">  123</span>  </div>
+<div class="line"><span class="lineno">  124</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a39a35e371f75b494b08c70ab8afab7bf">pe_per_mip_</a> = p.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;pe_per_mip&quot;</span>);</div>
+<div class="line"><span class="lineno">  125</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a0a7d3bead39ec2cd78e432fa5543079f">mip_energy_</a> = p.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;mip_energy&quot;</span>);</div>
+<div class="line"><span class="lineno">  126</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#ab47582482144cf2f803f3d0b97859143">clock_cycle_</a> = p.getParameter&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;clock_cycle&quot;</span>);</div>
+<div class="line"><span class="lineno">  127</span>}</div>
 <div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_a0a7d3bead39ec2cd78e432fa5543079f"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#a0a7d3bead39ec2cd78e432fa5543079f">hcal::HcalSingleEndRecProducer::mip_energy_</a></div><div class="ttdeci">double mip_energy_</div><div class="ttdoc">energy per MIP [MeV]</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00026">HcalSingleEndRecProducer.cxx:26</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_a39a35e371f75b494b08c70ab8afab7bf"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#a39a35e371f75b494b08c70ab8afab7bf">hcal::HcalSingleEndRecProducer::pe_per_mip_</a></div><div class="ttdeci">double pe_per_mip_</div><div class="ttdoc">number of PEs per MIP</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00024">HcalSingleEndRecProducer.cxx:24</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_a5be3507d8293cd7a950fb128eb996ec2"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#a5be3507d8293cd7a950fb128eb996ec2">hcal::HcalSingleEndRecProducer::pass_name_</a></div><div class="ttdeci">std::string pass_name_</div><div class="ttdoc">name of pass of digis to use</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00015">HcalSingleEndRecProducer.cxx:15</a></div></div>
@@ -261,8 +261,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a008adf050b2c16ba59cf5a28d0f7334f" name="a008adf050b2c16ba59cf5a28d0f7334f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a008adf050b2c16ba59cf5a28d0f7334f">&#9670;&#160;</a></span>extract_measurements()</h2>
+<a id="a4238c0e0bcd9cbe44a9313ee818abdf6" name="a4238c0e0bcd9cbe44a9313ee818abdf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4238c0e0bcd9cbe44a9313ee818abdf6">&#9670;&#160;</a></span>extract_measurements()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +280,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>pedestal</em>&#160;</td>
+          <td class="paramname"><em>pedestal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bx_shift</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -296,63 +302,76 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p >extract toa, sum adc, and sum tot from the input raw digi</p>
 <p >in the far future, we can make these member functions ofthe HgcrocDigi class; however, right now as we develop our reconstruction method it is helpful to have more flexible control on how we extract these measurements</p>
-<p >with C++17 structured bindings, this tuple return can be bound to separate variables: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> [ toa, sum_adc, sum_tot ] = <a class="code hl_function" href="classhcal_1_1HcalSingleEndRecProducer.html#a008adf050b2c16ba59cf5a28d0f7334f">extract_measurements</a>(digi,pedestal,isoi);</div>
-<div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_a008adf050b2c16ba59cf5a28d0f7334f"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#a008adf050b2c16ba59cf5a28d0f7334f">hcal::HcalSingleEndRecProducer::extract_measurements</a></div><div class="ttdeci">std::tuple&lt; double, double, int &gt; extract_measurements(const ldmx::HgcrocDigiCollection::HgcrocDigi &amp;digi, double pedestal)</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00067">HcalSingleEndRecProducer.cxx:67</a></div></div>
+<p >with C++17 structured bindings, this tuple return can be bound to separate variables: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> [ toa, sum_adc, sum_tot ] = <a class="code hl_function" href="classhcal_1_1HcalSingleEndRecProducer.html#a4238c0e0bcd9cbe44a9313ee818abdf6">extract_measurements</a>(digi,pedestal,bx_shift);</div>
+<div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_a4238c0e0bcd9cbe44a9313ee818abdf6"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#a4238c0e0bcd9cbe44a9313ee818abdf6">hcal::HcalSingleEndRecProducer::extract_measurements</a></div><div class="ttdeci">std::tuple&lt; double, double, int &gt; extract_measurements(const ldmx::HgcrocDigiCollection::HgcrocDigi &amp;digi, double pedestal, double bx_shift)</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00068">HcalSingleEndRecProducer.cxx:68</a></div></div>
 </div><!-- fragment --><p> giving us the dual benefit of separate variable names while only having to loop over the samples within a single digi once</p>
 <p >Uses isoi_ and clock_cycle_ member variables to convert TOA into ns since beginning of Sample Of Interest (SOI)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">digi</td><td>handle to HgcrocDigi to extract from </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pedestal</td><td>pedestal for this channel </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">shift</td><td>in BX associated to TOA for this channel </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>tuple of (toa [ns since SOI], sum_adc, sum_tot) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">67</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>                                                                     {</div>
-<div class="line"><span class="lineno">   69</span>  <span class="comment">// sum_adc = total of all but first in-time adc measurements</span></div>
-<div class="line"><span class="lineno">   70</span>  <span class="keywordtype">double</span> sum_adc{0};</div>
-<div class="line"><span class="lineno">   71</span>  <span class="comment">// sum_tot = total of all tot measurements</span></div>
-<div class="line"><span class="lineno">   72</span>  <span class="keywordtype">int</span> sum_tot{0};</div>
-<div class="line"><span class="lineno">   73</span>  <span class="comment">// first, get time of arrival w.r.t to start BX</span></div>
-<div class="line"><span class="lineno">   74</span>  <span class="keywordtype">int</span> toa_sample{0}, toa_startbx{0};</div>
-<div class="line"><span class="lineno">   75</span>  <span class="comment">// and figure out sample of maximum amplitude</span></div>
-<div class="line"><span class="lineno">   76</span>  <span class="keywordtype">int</span> max_sample{0};</div>
-<div class="line"><span class="lineno">   77</span>  <span class="keywordtype">double</span> max_meas{0};</div>
-<div class="line"><span class="lineno">   78</span>  <span class="keywordflow">for</span> (std::size_t i_sample{0}; i_sample &lt; digi.size(); i_sample++) {</div>
-<div class="line"><span class="lineno">   79</span>    <span class="comment">// adc logic</span></div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (i_sample &gt; 0) sum_adc += (digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a>() - pedestal);</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>    <span class="comment">// tot logic</span></div>
-<div class="line"><span class="lineno">   83</span>    sum_tot += digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a6f320e86c12b372c397cd15536abda31">tot</a>();</div>
+<p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00068">68</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                                                        {</div>
+<div class="line"><span class="lineno">   70</span>  <span class="comment">// sum_adc = total of all but first in-time adc measurements</span></div>
+<div class="line"><span class="lineno">   71</span>  <span class="keywordtype">double</span> sum_adc{0};</div>
+<div class="line"><span class="lineno">   72</span>  <span class="comment">// sum_tot = total of all tot measurements</span></div>
+<div class="line"><span class="lineno">   73</span>  <span class="keywordtype">int</span> sum_tot{0};</div>
+<div class="line"><span class="lineno">   74</span>  <span class="comment">// first, get time of arrival w.r.t to start BX</span></div>
+<div class="line"><span class="lineno">   75</span>  <span class="keywordtype">int</span> toa_sample{0}, toa_startbx{0};</div>
+<div class="line"><span class="lineno">   76</span>  <span class="comment">// get the correction for the wrong BX assignment</span></div>
+<div class="line"><span class="lineno">   77</span>  <span class="keywordtype">int</span> bx_to_time{0};</div>
+<div class="line"><span class="lineno">   78</span>  <span class="comment">// and figure out sample of maximum amplitude</span></div>
+<div class="line"><span class="lineno">   79</span>  <span class="keywordtype">int</span> max_sample{0};</div>
+<div class="line"><span class="lineno">   80</span>  <span class="keywordtype">double</span> max_meas{0};</div>
+<div class="line"><span class="lineno">   81</span>  <span class="keywordflow">for</span> (std::size_t i_sample{0}; i_sample &lt; digi.size(); i_sample++) {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="comment">// adc logic</span></div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (i_sample &gt; 0) sum_adc += (digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a>() - pedestal);</div>
 <div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    <span class="comment">// toa logic</span></div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ad1dbf45015cc1f6dde3a126dd7b06264">toa</a>() &gt; 0) {</div>
-<div class="line"><span class="lineno">   87</span>      toa_startbx = digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ad1dbf45015cc1f6dde3a126dd7b06264">toa</a>() * (<a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#ab47582482144cf2f803f3d0b97859143">clock_cycle_</a> / 1024);</div>
-<div class="line"><span class="lineno">   88</span>      toa_sample = i_sample;</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a>() - pedestal &gt; max_meas) {</div>
-<div class="line"><span class="lineno">   91</span>      max_meas = digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a>() - pedestal;</div>
-<div class="line"><span class="lineno">   92</span>      max_sample = i_sample;</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
-<div class="line"><span class="lineno">   94</span>  }</div>
-<div class="line"><span class="lineno">   95</span>  <span class="comment">// get toa w.r.t the peak</span></div>
-<div class="line"><span class="lineno">   96</span>  <span class="keywordtype">double</span> toa = (max_sample - toa_sample) * <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#ab47582482144cf2f803f3d0b97859143">clock_cycle_</a> - toa_startbx;</div>
-<div class="line"><span class="lineno">   97</span>  <span class="comment">// get toa w.r.t the SOI</span></div>
-<div class="line"><span class="lineno">   98</span>  toa += ((int)<a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#aac16499dd489d7bba51b0fe8bbacdb50">isoi_</a> - max_sample) * <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#ab47582482144cf2f803f3d0b97859143">clock_cycle_</a>;</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>  <span class="keywordflow">return</span> std::make_tuple(toa, sum_adc, sum_tot);</div>
-<div class="line"><span class="lineno">  101</span>}</div>
-<div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_aac16499dd489d7bba51b0fe8bbacdb50"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#aac16499dd489d7bba51b0fe8bbacdb50">hcal::HcalSingleEndRecProducer::isoi_</a></div><div class="ttdeci">unsigned int isoi_</div><div class="ttdoc">sample of interest index</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00030">HcalSingleEndRecProducer.cxx:30</a></div></div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">// tot logic</span></div>
+<div class="line"><span class="lineno">   86</span>    sum_tot += digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a6f320e86c12b372c397cd15536abda31">tot</a>();</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">// toa logic</span></div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ad1dbf45015cc1f6dde3a126dd7b06264">toa</a>() &gt; 0) {</div>
+<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">if</span> (digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ad1dbf45015cc1f6dde3a126dd7b06264">toa</a>() &gt;= bx_shift) {</div>
+<div class="line"><span class="lineno">   91</span>    toa_sample = i_sample;</div>
+<div class="line"><span class="lineno">   92</span>      }</div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   94</span>    toa_sample = i_sample + 1;</div>
+<div class="line"><span class="lineno">   95</span>      }</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>      <span class="comment">// sum toa in given bx - given that multiple bx may be associated with the TOA measurement</span></div>
+<div class="line"><span class="lineno">   98</span>      toa_startbx += digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ad1dbf45015cc1f6dde3a126dd7b06264">toa</a>() * (<a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#ab47582482144cf2f803f3d0b97859143">clock_cycle_</a> / 1024) + (<a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#ab47582482144cf2f803f3d0b97859143">clock_cycle_</a> * toa_sample);</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span>    </div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a>() - pedestal &gt; max_meas) {</div>
+<div class="line"><span class="lineno">  102</span>      max_meas = digi.<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">at</a>(i_sample).<a class="code hl_function" href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">adc_t</a>() - pedestal;</div>
+<div class="line"><span class="lineno">  103</span>      max_sample = i_sample;</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+<div class="line"><span class="lineno">  106</span>  <span class="comment">// get toa</span></div>
+<div class="line"><span class="lineno">  107</span>  <span class="keywordtype">double</span> toa = toa_startbx;</div>
+<div class="line"><span class="lineno">  108</span>  </div>
+<div class="line"><span class="lineno">  109</span>  <span class="comment">// get toa w.r.t the peak</span></div>
+<div class="line"><span class="lineno">  110</span>  <span class="comment">//double toa = (max_sample - toa_sample) * clock_cycle_ - toa_startbx;</span></div>
+<div class="line"><span class="lineno">  111</span>  <span class="comment">// get toa w.r.t the SOI</span></div>
+<div class="line"><span class="lineno">  112</span>  <span class="comment">//toa += ((int)isoi_ - max_sample) * clock_cycle_;</span></div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>  <span class="keywordflow">return</span> std::make_tuple(toa, sum_adc, sum_tot);</div>
+<div class="line"><span class="lineno">  115</span>}</div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi_html_ad1c886f049a41155b2c6d728031d4418"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1HgcrocDigi.html#ad1c886f049a41155b2c6d728031d4418">ldmx::HgcrocDigiCollection::HgcrocDigi::at</a></div><div class="ttdeci">HgcrocDigiCollection::Sample at(unsigned int i_sample) const</div><div class="ttdoc">get the sample at a specific index in the digi</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00289">HgcrocDigiCollection.h:289</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_a18c201441a441989c0e0f828f55c4a61"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a18c201441a441989c0e0f828f55c4a61">ldmx::HgcrocDigiCollection::Sample::adc_t</a></div><div class="ttdeci">int adc_t() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00171">HgcrocDigiCollection.h:171</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_a6f320e86c12b372c397cd15536abda31"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#a6f320e86c12b372c397cd15536abda31">ldmx::HgcrocDigiCollection::Sample::tot</a></div><div class="ttdeci">int tot() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00144">HgcrocDigiCollection.h:144</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_1_1Sample_html_ad1dbf45015cc1f6dde3a126dd7b06264"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection_1_1Sample.html#ad1dbf45015cc1f6dde3a126dd7b06264">ldmx::HgcrocDigiCollection::Sample::toa</a></div><div class="ttdeci">int toa() const</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00126">HgcrocDigiCollection.h:126</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00171">ldmx::HgcrocDigiCollection::Sample::adc_t()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00289">ldmx::HgcrocDigiCollection::HgcrocDigi::at()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00028">clock_cycle_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00030">isoi_</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00126">ldmx::HgcrocDigiCollection::Sample::toa()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00144">ldmx::HgcrocDigiCollection::Sample::tot()</a>.</p>
+<p class="reference">References <a class="el" href="HgcrocDigiCollection_8h_source.html#l00171">ldmx::HgcrocDigiCollection::Sample::adc_t()</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00289">ldmx::HgcrocDigiCollection::HgcrocDigi::at()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00028">clock_cycle_</a>, <a class="el" href="HgcrocDigiCollection_8h_source.html#l00126">ldmx::HgcrocDigiCollection::Sample::toa()</a>, and <a class="el" href="HgcrocDigiCollection_8h_source.html#l00144">ldmx::HgcrocDigiCollection::Sample::tot()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">produce()</a>.</p>
 
 </div>
 </div>
@@ -388,72 +407,71 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">115</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>                                                            {</div>
-<div class="line"><span class="lineno">  116</span>  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hcalGeometry = getCondition&lt;ldmx::HcalGeometry&gt;(</div>
-<div class="line"><span class="lineno">  117</span>      <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>);</div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; conditions{</div>
-<div class="line"><span class="lineno">  120</span>      getCondition&lt;HcalReconConditions&gt;(<a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">HcalReconConditions::CONDITIONS_NAME</a>)};</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>  <span class="keyword">auto</span> hcalDigis =</div>
-<div class="line"><span class="lineno">  123</span>      <span class="keyword">event</span>.getObject&lt;<a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>&gt;(<a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8fae632b25cd772aff9d69c88324c50d">coll_name_</a>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a5be3507d8293cd7a950fb128eb996ec2">pass_name_</a>);</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>  std::vector&lt;ldmx::HcalHit&gt; hcalRecHits;</div>
-<div class="line"><span class="lineno">  126</span> </div>
-<div class="line"><span class="lineno">  127</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#aac16499dd489d7bba51b0fe8bbacdb50">isoi_</a> = hcalDigis.getSampleOfInterestIndex();</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; digi : hcalDigis) {</div>
-<div class="line"><span class="lineno">  130</span>    <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> id_digi(digi.id());</div>
-<div class="line"><span class="lineno">  131</span>    <a class="code hl_class" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> id(id_digi.section(), id_digi.layer(), id_digi.strip());</div>
+<p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">129</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                                                            {</div>
+<div class="line"><span class="lineno">  130</span>  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hcalGeometry = getCondition&lt;ldmx::HcalGeometry&gt;(</div>
+<div class="line"><span class="lineno">  131</span>      <a class="code hl_variable" href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>);</div>
 <div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>    <span class="comment">// amplitude/TOT reconstruction</span></div>
-<div class="line"><span class="lineno">  134</span>    <span class="keywordtype">double</span> num_mips_equivalent{0};</div>
-<div class="line"><span class="lineno">  135</span>    <span class="keyword">auto</span> [toa, sum_adc, sum_tot] =</div>
-<div class="line"><span class="lineno">  136</span>        <a class="code hl_function" href="classhcal_1_1HcalSingleEndRecProducer.html#a008adf050b2c16ba59cf5a28d0f7334f">extract_measurements</a>(digi, conditions.adcPedestal(digi.id()));</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keyword">auto</span> is_adc = conditions.is_adc(digi.id(), sum_tot);</div>
-<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (is_adc) {</div>
-<div class="line"><span class="lineno">  139</span>      <span class="keywordtype">double</span> adc_calib = sum_adc / conditions.adcGain(digi.id(), 0);</div>
-<div class="line"><span class="lineno">  140</span>      num_mips_equivalent = adc_calib;</div>
-<div class="line"><span class="lineno">  141</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  142</span>      <span class="keywordtype">double</span> tot_calib = conditions.linearize(digi.id(), sum_tot);</div>
-<div class="line"><span class="lineno">  143</span>      num_mips_equivalent = tot_calib;</div>
-<div class="line"><span class="lineno">  144</span>    }</div>
-<div class="line"><span class="lineno">  145</span>    <span class="keywordtype">int</span> PEs = num_mips_equivalent * <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a39a35e371f75b494b08c70ab8afab7bf">pe_per_mip_</a>;</div>
-<div class="line"><span class="lineno">  146</span>    <span class="keywordtype">double</span> reconstructed_energy =</div>
-<div class="line"><span class="lineno">  147</span>        num_mips_equivalent * <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a39a35e371f75b494b08c70ab8afab7bf">pe_per_mip_</a> * <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a0a7d3bead39ec2cd78e432fa5543079f">mip_energy_</a>;</div>
-<div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span>    <span class="comment">// time reconstruction</span></div>
-<div class="line"><span class="lineno">  150</span>    <span class="comment">//    right now, just using the decoded TOA converted to ns (done above)</span></div>
-<div class="line"><span class="lineno">  151</span>    <span class="comment">//    we could attempt to correct for time walk here</span></div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordtype">double</span> hitTime = toa;</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>    <span class="comment">// position single ended</span></div>
-<div class="line"><span class="lineno">  155</span>    <span class="keyword">auto</span> position = hcalGeometry.getStripCenterPosition(<span class="keywordtype">id</span>);</div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>    <span class="comment">// reconstructed Hit</span></div>
-<div class="line"><span class="lineno">  158</span>    <a class="code hl_class" href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a> recHit;</div>
-<div class="line"><span class="lineno">  159</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a2d6ec38056cae0551fc4797f41f70ca8">setID</a>(<span class="keywordtype">id</span>.raw());</div>
-<div class="line"><span class="lineno">  160</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a4e27b8b75b5c31e8df4e6b91b990eefa">setXPos</a>(position.X());</div>
-<div class="line"><span class="lineno">  161</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a0e87292d2c4b99a8aa8503179a427914">setYPos</a>(position.Y());</div>
-<div class="line"><span class="lineno">  162</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a4c53b3749aab62c9e0878abdb698464f">setZPos</a>(position.Z());</div>
-<div class="line"><span class="lineno">  163</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#a2c1bb057e2b7d5d66be040c7498290e0">setSection</a>(<span class="keywordtype">id</span>.section());</div>
-<div class="line"><span class="lineno">  164</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#aca7cb69bd44c04a8420dc066ac142236">setStrip</a>(<span class="keywordtype">id</span>.strip());</div>
-<div class="line"><span class="lineno">  165</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#af9d426977d957c777bb3967547b89b8c">setLayer</a>(<span class="keywordtype">id</span>.layer());</div>
-<div class="line"><span class="lineno">  166</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#a3747bfc94e74e9a5d6558b0c3b2016b4">setEnd</a>(id_digi.end());</div>
-<div class="line"><span class="lineno">  167</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#afb0fb16907e79bc046832be2384e75a6">setPE</a>(PEs);</div>
-<div class="line"><span class="lineno">  168</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#a9edbd22919d974344cb92a9707bebe66">setMinPE</a>(PEs);</div>
-<div class="line"><span class="lineno">  169</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a5cd5e530e62a0629b6f3209f77974fd9">setAmplitude</a>(num_mips_equivalent);</div>
-<div class="line"><span class="lineno">  170</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a63067db3972e32ed26f2b3a5ea8e46f8">setEnergy</a>(reconstructed_energy);</div>
-<div class="line"><span class="lineno">  171</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">setTime</a>(hitTime);</div>
-<div class="line"><span class="lineno">  172</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#a932123954af2f7eee61c54f901ac1b86">setIsADC</a>(is_adc);</div>
-<div class="line"><span class="lineno">  173</span>    hcalRecHits.push_back(recHit);</div>
-<div class="line"><span class="lineno">  174</span>  }</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>  <span class="comment">// add collection to event bus</span></div>
-<div class="line"><span class="lineno">  177</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8d9c3e0a42ba74f37c298bcf9a428747">rec_coll_name_</a>, hcalRecHits);</div>
-<div class="line"><span class="lineno">  178</span>}</div>
+<div class="line"><span class="lineno">  133</span>  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; conditions{</div>
+<div class="line"><span class="lineno">  134</span>      getCondition&lt;HcalReconConditions&gt;(<a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">HcalReconConditions::CONDITIONS_NAME</a>)};</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>  <span class="keyword">auto</span> hcalDigis =</div>
+<div class="line"><span class="lineno">  137</span>      <span class="keyword">event</span>.getObject&lt;<a class="code hl_class" href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a>&gt;(<a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8fae632b25cd772aff9d69c88324c50d">coll_name_</a>, <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a5be3507d8293cd7a950fb128eb996ec2">pass_name_</a>);</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>  std::vector&lt;ldmx::HcalHit&gt; hcalRecHits;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>  <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#aac16499dd489d7bba51b0fe8bbacdb50">isoi_</a> = hcalDigis.getSampleOfInterestIndex();</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; digi : hcalDigis) {</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_class" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> id_digi(digi.id());</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_class" href="classldmx_1_1HcalID.html">ldmx::HcalID</a> id(id_digi.section(), id_digi.layer(), id_digi.strip());</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    <span class="comment">// amplitude/TOT reconstruction</span></div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordtype">double</span> num_mips_equivalent{0};</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keyword">auto</span> [toa, sum_adc, sum_tot] =</div>
+<div class="line"><span class="lineno">  150</span>      <a class="code hl_function" href="classhcal_1_1HcalSingleEndRecProducer.html#a4238c0e0bcd9cbe44a9313ee818abdf6">extract_measurements</a>(digi, conditions.adcPedestal(digi.id()), conditions.toaCalib(digi.id(), 0));</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keyword">auto</span> is_adc = conditions.is_adc(digi.id(), sum_tot);</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (is_adc) {</div>
+<div class="line"><span class="lineno">  153</span>      <span class="keywordtype">double</span> adc_calib = sum_adc / conditions.adcGain(digi.id(), 0);</div>
+<div class="line"><span class="lineno">  154</span>      num_mips_equivalent = adc_calib;</div>
+<div class="line"><span class="lineno">  155</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  156</span>      <span class="keywordtype">double</span> tot_calib = conditions.linearize(digi.id(), sum_tot);</div>
+<div class="line"><span class="lineno">  157</span>      num_mips_equivalent = tot_calib / conditions.adcGain(digi.id(), 0);</div>
+<div class="line"><span class="lineno">  158</span>    }</div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordtype">int</span> PEs = num_mips_equivalent * <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a39a35e371f75b494b08c70ab8afab7bf">pe_per_mip_</a>;</div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordtype">double</span> reconstructed_energy =</div>
+<div class="line"><span class="lineno">  161</span>        num_mips_equivalent * <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a39a35e371f75b494b08c70ab8afab7bf">pe_per_mip_</a> * <a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a0a7d3bead39ec2cd78e432fa5543079f">mip_energy_</a>;</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="comment">// time reconstruction</span></div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordtype">double</span> hitTime = toa;</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>    <span class="comment">// position single ended (taken directly from geometry)</span></div>
+<div class="line"><span class="lineno">  167</span>    <span class="keyword">auto</span> position = hcalGeometry.getStripCenterPosition(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">// reconstructed Hit</span></div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_class" href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a> recHit;</div>
+<div class="line"><span class="lineno">  171</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a2d6ec38056cae0551fc4797f41f70ca8">setID</a>(<span class="keywordtype">id</span>.raw());</div>
+<div class="line"><span class="lineno">  172</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a4e27b8b75b5c31e8df4e6b91b990eefa">setXPos</a>(position.X());</div>
+<div class="line"><span class="lineno">  173</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a0e87292d2c4b99a8aa8503179a427914">setYPos</a>(position.Y());</div>
+<div class="line"><span class="lineno">  174</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a4c53b3749aab62c9e0878abdb698464f">setZPos</a>(position.Z());</div>
+<div class="line"><span class="lineno">  175</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#a2c1bb057e2b7d5d66be040c7498290e0">setSection</a>(<span class="keywordtype">id</span>.section());</div>
+<div class="line"><span class="lineno">  176</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#aca7cb69bd44c04a8420dc066ac142236">setStrip</a>(<span class="keywordtype">id</span>.strip());</div>
+<div class="line"><span class="lineno">  177</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#af9d426977d957c777bb3967547b89b8c">setLayer</a>(<span class="keywordtype">id</span>.layer());</div>
+<div class="line"><span class="lineno">  178</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#a3747bfc94e74e9a5d6558b0c3b2016b4">setEnd</a>(id_digi.end());</div>
+<div class="line"><span class="lineno">  179</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#afb0fb16907e79bc046832be2384e75a6">setPE</a>(PEs);</div>
+<div class="line"><span class="lineno">  180</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#a9edbd22919d974344cb92a9707bebe66">setMinPE</a>(PEs);</div>
+<div class="line"><span class="lineno">  181</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a5cd5e530e62a0629b6f3209f77974fd9">setAmplitude</a>(num_mips_equivalent);</div>
+<div class="line"><span class="lineno">  182</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a63067db3972e32ed26f2b3a5ea8e46f8">setEnergy</a>(reconstructed_energy);</div>
+<div class="line"><span class="lineno">  183</span>    recHit.<a class="code hl_function" href="classldmx_1_1CalorimeterHit.html#a590256945dbfaa97d2528b9f260b6760">setTime</a>(hitTime);</div>
+<div class="line"><span class="lineno">  184</span>    recHit.<a class="code hl_function" href="classldmx_1_1HcalHit.html#a932123954af2f7eee61c54f901ac1b86">setIsADC</a>(is_adc);</div>
+<div class="line"><span class="lineno">  185</span>    hcalRecHits.push_back(recHit);</div>
+<div class="line"><span class="lineno">  186</span>  }</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>  <span class="comment">// add collection to event bus</span></div>
+<div class="line"><span class="lineno">  189</span>  <span class="keyword">event</span>.add(<a class="code hl_variable" href="classhcal_1_1HcalSingleEndRecProducer.html#a8d9c3e0a42ba74f37c298bcf9a428747">rec_coll_name_</a>, hcalRecHits);</div>
+<div class="line"><span class="lineno">  190</span>}</div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a5177db6b660569fa13807234c222f0d3"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">hcal::HcalReconConditions::CONDITIONS_NAME</a></div><div class="ttdeci">static const std::string CONDITIONS_NAME</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00041">HcalReconConditions.h:41</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalSingleEndRecProducer_html_aac16499dd489d7bba51b0fe8bbacdb50"><div class="ttname"><a href="classhcal_1_1HcalSingleEndRecProducer.html#aac16499dd489d7bba51b0fe8bbacdb50">hcal::HcalSingleEndRecProducer::isoi_</a></div><div class="ttdeci">unsigned int isoi_</div><div class="ttdoc">sample of interest index</div><div class="ttdef"><b>Definition:</b> <a href="HcalSingleEndRecProducer_8cxx_source.html#l00030">HcalSingleEndRecProducer.cxx:30</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a0e87292d2c4b99a8aa8503179a427914"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a0e87292d2c4b99a8aa8503179a427914">ldmx::CalorimeterHit::setYPos</a></div><div class="ttdeci">void setYPos(float ypos)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00123">CalorimeterHit.h:123</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a2d6ec38056cae0551fc4797f41f70ca8"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a2d6ec38056cae0551fc4797f41f70ca8">ldmx::CalorimeterHit::setID</a></div><div class="ttdeci">void setID(int id)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00057">CalorimeterHit.h:57</a></div></div>
 <div class="ttc" id="aclassldmx_1_1CalorimeterHit_html_a4c53b3749aab62c9e0878abdb698464f"><div class="ttname"><a href="classldmx_1_1CalorimeterHit.html#a4c53b3749aab62c9e0878abdb698464f">ldmx::CalorimeterHit::setZPos</a></div><div class="ttdeci">void setZPos(float zpos)</div><div class="ttdef"><b>Definition:</b> <a href="CalorimeterHit_8h_source.html#l00135">CalorimeterHit.h:135</a></div></div>
@@ -464,17 +482,17 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassldmx_1_1HcalDigiID_html"><div class="ttname"><a href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a></div><div class="ttdoc">Extension of HcalAbstractID providing access to HCal digi information.</div><div class="ttdef"><b>Definition:</b> <a href="HcalDigiID_8h_source.html#l00013">HcalDigiID.h:13</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalGeometry_html_a509523c5f18a53d16be9d6a79e6e590a"><div class="ttname"><a href="classldmx_1_1HcalGeometry.html#a509523c5f18a53d16be9d6a79e6e590a">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static constexpr const char * CONDITIONS_OBJECT_NAME</div><div class="ttdef"><b>Definition:</b> <a href="HcalGeometry_8h_source.html#l00042">HcalGeometry.h:42</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalHit_html"><div class="ttname"><a href="classldmx_1_1HcalHit.html">ldmx::HcalHit</a></div><div class="ttdoc">Stores reconstructed hit information from the HCAL.</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00023">HcalHit.h:23</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_a2c1bb057e2b7d5d66be040c7498290e0"><div class="ttname"><a href="classldmx_1_1HcalHit.html#a2c1bb057e2b7d5d66be040c7498290e0">ldmx::HcalHit::setSection</a></div><div class="ttdeci">void setSection(int section)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00108">HcalHit.h:108</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_a3747bfc94e74e9a5d6558b0c3b2016b4"><div class="ttname"><a href="classldmx_1_1HcalHit.html#a3747bfc94e74e9a5d6558b0c3b2016b4">ldmx::HcalHit::setEnd</a></div><div class="ttdeci">void setEnd(int end)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00126">HcalHit.h:126</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_a932123954af2f7eee61c54f901ac1b86"><div class="ttname"><a href="classldmx_1_1HcalHit.html#a932123954af2f7eee61c54f901ac1b86">ldmx::HcalHit::setIsADC</a></div><div class="ttdeci">void setIsADC(int isADC)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00132">HcalHit.h:132</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_a9edbd22919d974344cb92a9707bebe66"><div class="ttname"><a href="classldmx_1_1HcalHit.html#a9edbd22919d974344cb92a9707bebe66">ldmx::HcalHit::setMinPE</a></div><div class="ttdeci">void setMinPE(float minpe)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00102">HcalHit.h:102</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_aca7cb69bd44c04a8420dc066ac142236"><div class="ttname"><a href="classldmx_1_1HcalHit.html#aca7cb69bd44c04a8420dc066ac142236">ldmx::HcalHit::setStrip</a></div><div class="ttdeci">void setStrip(int strip)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00120">HcalHit.h:120</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_af9d426977d957c777bb3967547b89b8c"><div class="ttname"><a href="classldmx_1_1HcalHit.html#af9d426977d957c777bb3967547b89b8c">ldmx::HcalHit::setLayer</a></div><div class="ttdeci">void setLayer(int layer)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00114">HcalHit.h:114</a></div></div>
-<div class="ttc" id="aclassldmx_1_1HcalHit_html_afb0fb16907e79bc046832be2384e75a6"><div class="ttname"><a href="classldmx_1_1HcalHit.html#afb0fb16907e79bc046832be2384e75a6">ldmx::HcalHit::setPE</a></div><div class="ttdeci">void setPE(float pe)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00095">HcalHit.h:95</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalHit_html_a2c1bb057e2b7d5d66be040c7498290e0"><div class="ttname"><a href="classldmx_1_1HcalHit.html#a2c1bb057e2b7d5d66be040c7498290e0">ldmx::HcalHit::setSection</a></div><div class="ttdeci">void setSection(int section)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00132">HcalHit.h:132</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalHit_html_a3747bfc94e74e9a5d6558b0c3b2016b4"><div class="ttname"><a href="classldmx_1_1HcalHit.html#a3747bfc94e74e9a5d6558b0c3b2016b4">ldmx::HcalHit::setEnd</a></div><div class="ttdeci">void setEnd(int end)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00150">HcalHit.h:150</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalHit_html_a932123954af2f7eee61c54f901ac1b86"><div class="ttname"><a href="classldmx_1_1HcalHit.html#a932123954af2f7eee61c54f901ac1b86">ldmx::HcalHit::setIsADC</a></div><div class="ttdeci">void setIsADC(int isADC)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00156">HcalHit.h:156</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalHit_html_a9edbd22919d974344cb92a9707bebe66"><div class="ttname"><a href="classldmx_1_1HcalHit.html#a9edbd22919d974344cb92a9707bebe66">ldmx::HcalHit::setMinPE</a></div><div class="ttdeci">void setMinPE(float minpe)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00126">HcalHit.h:126</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalHit_html_aca7cb69bd44c04a8420dc066ac142236"><div class="ttname"><a href="classldmx_1_1HcalHit.html#aca7cb69bd44c04a8420dc066ac142236">ldmx::HcalHit::setStrip</a></div><div class="ttdeci">void setStrip(int strip)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00144">HcalHit.h:144</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalHit_html_af9d426977d957c777bb3967547b89b8c"><div class="ttname"><a href="classldmx_1_1HcalHit.html#af9d426977d957c777bb3967547b89b8c">ldmx::HcalHit::setLayer</a></div><div class="ttdeci">void setLayer(int layer)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00138">HcalHit.h:138</a></div></div>
+<div class="ttc" id="aclassldmx_1_1HcalHit_html_afb0fb16907e79bc046832be2384e75a6"><div class="ttname"><a href="classldmx_1_1HcalHit.html#afb0fb16907e79bc046832be2384e75a6">ldmx::HcalHit::setPE</a></div><div class="ttdeci">void setPE(float pe)</div><div class="ttdef"><b>Definition:</b> <a href="HcalHit_8h_source.html#l00119">HcalHit.h:119</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HcalID_html"><div class="ttname"><a href="classldmx_1_1HcalID.html">ldmx::HcalID</a></div><div class="ttdoc">Implements detector ids for HCal subdetector.</div><div class="ttdef"><b>Definition:</b> <a href="HcalID_8h_source.html#l00019">HcalID.h:19</a></div></div>
 <div class="ttc" id="aclassldmx_1_1HgcrocDigiCollection_html"><div class="ttname"><a href="classldmx_1_1HgcrocDigiCollection.html">ldmx::HgcrocDigiCollection</a></div><div class="ttdoc">Represents a collection of the digi hits readout by an HGCROC.</div><div class="ttdef"><b>Definition:</b> <a href="HgcrocDigiCollection_8h_source.html#l00042">HgcrocDigiCollection.h:42</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00017">coll_name_</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00041">hcal::HcalReconConditions::CONDITIONS_NAME</a>, <a class="el" href="HcalGeometry_8h_source.html#l00042">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="HcalDigiID_8h_source.html#l00105">ldmx::HcalDigiID::end()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurements()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00030">isoi_</a>, <a class="el" href="HcalDigiID_8h_source.html#l00081">ldmx::HcalDigiID::layer()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00026">mip_energy_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00015">pass_name_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00024">pe_per_mip_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00021">rec_coll_name_</a>, <a class="el" href="HcalDigiID_8h_source.html#l00075">ldmx::HcalDigiID::section()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00073">ldmx::CalorimeterHit::setAmplitude()</a>, <a class="el" href="HcalHit_8h_source.html#l00126">ldmx::HcalHit::setEnd()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00087">ldmx::CalorimeterHit::setEnergy()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00057">ldmx::CalorimeterHit::setID()</a>, <a class="el" href="HcalHit_8h_source.html#l00132">ldmx::HcalHit::setIsADC()</a>, <a class="el" href="HcalHit_8h_source.html#l00114">ldmx::HcalHit::setLayer()</a>, <a class="el" href="HcalHit_8h_source.html#l00102">ldmx::HcalHit::setMinPE()</a>, <a class="el" href="HcalHit_8h_source.html#l00095">ldmx::HcalHit::setPE()</a>, <a class="el" href="HcalHit_8h_source.html#l00108">ldmx::HcalHit::setSection()</a>, <a class="el" href="HcalHit_8h_source.html#l00120">ldmx::HcalHit::setStrip()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00099">ldmx::CalorimeterHit::setTime()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00111">ldmx::CalorimeterHit::setXPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00123">ldmx::CalorimeterHit::setYPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00135">ldmx::CalorimeterHit::setZPos()</a>, and <a class="el" href="HcalDigiID_8h_source.html#l00099">ldmx::HcalDigiID::strip()</a>.</p>
+<p class="reference">References <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00017">coll_name_</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00041">hcal::HcalReconConditions::CONDITIONS_NAME</a>, <a class="el" href="HcalGeometry_8h_source.html#l00042">ldmx::HcalGeometry::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="HcalDigiID_8h_source.html#l00105">ldmx::HcalDigiID::end()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00068">extract_measurements()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00030">isoi_</a>, <a class="el" href="HcalDigiID_8h_source.html#l00081">ldmx::HcalDigiID::layer()</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00026">mip_energy_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00015">pass_name_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00024">pe_per_mip_</a>, <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00021">rec_coll_name_</a>, <a class="el" href="HcalDigiID_8h_source.html#l00075">ldmx::HcalDigiID::section()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00073">ldmx::CalorimeterHit::setAmplitude()</a>, <a class="el" href="HcalHit_8h_source.html#l00150">ldmx::HcalHit::setEnd()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00087">ldmx::CalorimeterHit::setEnergy()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00057">ldmx::CalorimeterHit::setID()</a>, <a class="el" href="HcalHit_8h_source.html#l00156">ldmx::HcalHit::setIsADC()</a>, <a class="el" href="HcalHit_8h_source.html#l00138">ldmx::HcalHit::setLayer()</a>, <a class="el" href="HcalHit_8h_source.html#l00126">ldmx::HcalHit::setMinPE()</a>, <a class="el" href="HcalHit_8h_source.html#l00119">ldmx::HcalHit::setPE()</a>, <a class="el" href="HcalHit_8h_source.html#l00132">ldmx::HcalHit::setSection()</a>, <a class="el" href="HcalHit_8h_source.html#l00144">ldmx::HcalHit::setStrip()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00099">ldmx::CalorimeterHit::setTime()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00111">ldmx::CalorimeterHit::setXPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00123">ldmx::CalorimeterHit::setYPos()</a>, <a class="el" href="CalorimeterHit_8h_source.html#l00135">ldmx::CalorimeterHit::setZPos()</a>, and <a class="el" href="HcalDigiID_8h_source.html#l00099">ldmx::HcalDigiID::strip()</a>.</p>
 
 </div>
 </div>
@@ -503,7 +521,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00028">28</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00117">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00068">extract_measurements()</a>.</p>
 
 </div>
 </div>
@@ -531,7 +549,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00017">17</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00117">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">produce()</a>.</p>
 
 </div>
 </div>
@@ -559,7 +577,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00030">30</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00067">extract_measurements()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">produce()</a>.</p>
 
 </div>
 </div>
@@ -587,7 +605,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00026">26</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00117">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">produce()</a>.</p>
 
 </div>
 </div>
@@ -615,7 +633,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00015">15</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00117">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">produce()</a>.</p>
 
 </div>
 </div>
@@ -643,7 +661,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00024">24</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00117">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">produce()</a>.</p>
 
 </div>
 </div>
@@ -671,7 +689,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00021">21</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00117">configure()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">produce()</a>.</p>
 
 </div>
 </div>
@@ -699,7 +717,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00019">19</a> of file <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html">HcalSingleEndRecProducer.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00103">configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00117">configure()</a>.</p>
 
 </div>
 </div>

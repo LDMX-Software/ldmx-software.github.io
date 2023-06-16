@@ -89,6 +89,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a4da959e6fa575dc463e23ba9224a24ea"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditionsProvider.html#a4da959e6fa575dc463e23ba9224a24ea">tot_calib_</a></td></tr>
 <tr class="memdesc:a4da959e6fa575dc463e23ba9224a24ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of condition object for hcal tot calibrations  <a href="classhcal_1_1HcalReconConditionsProvider.html#a4da959e6fa575dc463e23ba9224a24ea">More...</a><br /></td></tr>
 <tr class="separator:a4da959e6fa575dc463e23ba9224a24ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b88bd3a2cfb6e58d3e824c37a922af"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditionsProvider.html#ae3b88bd3a2cfb6e58d3e824c37a922af">toa_calib_</a></td></tr>
+<tr class="memdesc:ae3b88bd3a2cfb6e58d3e824c37a922af"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of condition object for hcal toa calibrations  <a href="classhcal_1_1HcalReconConditionsProvider.html#ae3b88bd3a2cfb6e58d3e824c37a922af">More...</a><br /></td></tr>
+<tr class="separator:ae3b88bd3a2cfb6e58d3e824c37a922af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -113,7 +116,7 @@ Additional Inherited Members</h2></td></tr>
 <p >the most complicated task it does is calculate the "minimum" IOV from the parent conditions to make sure that it is updated as soon as it needs to be updated.</p>
 <p >@TODO Right now, no minimum IOV calculation is being done. We just have our IOV be one run at a time. </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00062">62</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00065">65</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa785994cdba422db02aba74a594b8a29" name="aa785994cdba422db02aba74a594b8a29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa785994cdba422db02aba74a594b8a29">&#9670;&#160;</a></span>HcalReconConditionsProvider()</h2>
@@ -177,27 +180,29 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00081">81</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>      : <a class="code hl_class" href="classConditionsObjectProvider.html">ConditionsObjectProvider</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">hcal::HcalReconConditions::CONDITIONS_NAME</a>,</div>
-<div class="line"><span class="lineno">   86</span>                                 tagname, parameters, proc) {</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (name != <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">HcalReconConditions::CONDITIONS_NAME</a>) {</div>
-<div class="line"><span class="lineno">   88</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;BadConfig&quot;</span>,</div>
-<div class="line"><span class="lineno">   89</span>                      <span class="stringliteral">&quot;The name provided to HcalReconConditionsProvider &quot;</span> +</div>
-<div class="line"><span class="lineno">   90</span>                          name + <span class="stringliteral">&quot; is not equal to the expected name &quot;</span> +</div>
-<div class="line"><span class="lineno">   91</span>                          <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">HcalReconConditions::CONDITIONS_NAME</a>);</div>
-<div class="line"><span class="lineno">   92</span>    }</div>
-<div class="line"><span class="lineno">   93</span>    <a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a0a91066458843160014dfefeb13bd879">adc_gain_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;adc_gain&quot;</span>);</div>
-<div class="line"><span class="lineno">   94</span>    <a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a378d04a45fff7adc1cc331c2e6b95e36">adc_ped_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;adc_ped&quot;</span>);</div>
-<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a4da959e6fa575dc463e23ba9224a24ea">tot_calib_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;tot_calib&quot;</span>);</div>
-<div class="line"><span class="lineno">   96</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00086">86</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>      : <a class="code hl_class" href="classConditionsObjectProvider.html">ConditionsObjectProvider</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">hcal::HcalReconConditions::CONDITIONS_NAME</a>,</div>
+<div class="line"><span class="lineno">   91</span>                                 tagname, parameters, proc) {</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (name != <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">HcalReconConditions::CONDITIONS_NAME</a>) {</div>
+<div class="line"><span class="lineno">   93</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;BadConfig&quot;</span>,</div>
+<div class="line"><span class="lineno">   94</span>                      <span class="stringliteral">&quot;The name provided to HcalReconConditionsProvider &quot;</span> +</div>
+<div class="line"><span class="lineno">   95</span>                          name + <span class="stringliteral">&quot; is not equal to the expected name &quot;</span> +</div>
+<div class="line"><span class="lineno">   96</span>                          <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">HcalReconConditions::CONDITIONS_NAME</a>);</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a0a91066458843160014dfefeb13bd879">adc_gain_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;adc_gain&quot;</span>);</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a378d04a45fff7adc1cc331c2e6b95e36">adc_ped_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;adc_ped&quot;</span>);</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a4da959e6fa575dc463e23ba9224a24ea">tot_calib_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;tot_calib&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#ae3b88bd3a2cfb6e58d3e824c37a922af">toa_calib_</a> = parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;toa_calib&quot;</span>);</div>
+<div class="line"><span class="lineno">  102</span>  }</div>
 <div class="ttc" id="aclassConditionsObjectProvider_html"><div class="ttname"><a href="classConditionsObjectProvider.html">ConditionsObjectProvider</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalReconConditionsProvider_html_a0a91066458843160014dfefeb13bd879"><div class="ttname"><a href="classhcal_1_1HcalReconConditionsProvider.html#a0a91066458843160014dfefeb13bd879">hcal::HcalReconConditionsProvider::adc_gain_</a></div><div class="ttdeci">std::string adc_gain_</div><div class="ttdoc">name of condition object for hcal adc gains</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8cxx_source.html#l00064">HcalReconConditions.cxx:64</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalReconConditionsProvider_html_a378d04a45fff7adc1cc331c2e6b95e36"><div class="ttname"><a href="classhcal_1_1HcalReconConditionsProvider.html#a378d04a45fff7adc1cc331c2e6b95e36">hcal::HcalReconConditionsProvider::adc_ped_</a></div><div class="ttdeci">std::string adc_ped_</div><div class="ttdoc">name of condition object for hcal adc pedestals</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8cxx_source.html#l00066">HcalReconConditions.cxx:66</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalReconConditionsProvider_html_a4da959e6fa575dc463e23ba9224a24ea"><div class="ttname"><a href="classhcal_1_1HcalReconConditionsProvider.html#a4da959e6fa575dc463e23ba9224a24ea">hcal::HcalReconConditionsProvider::tot_calib_</a></div><div class="ttdeci">std::string tot_calib_</div><div class="ttdoc">name of condition object for hcal tot calibrations</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8cxx_source.html#l00068">HcalReconConditions.cxx:68</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditionsProvider_html_a0a91066458843160014dfefeb13bd879"><div class="ttname"><a href="classhcal_1_1HcalReconConditionsProvider.html#a0a91066458843160014dfefeb13bd879">hcal::HcalReconConditionsProvider::adc_gain_</a></div><div class="ttdeci">std::string adc_gain_</div><div class="ttdoc">name of condition object for hcal adc gains</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8cxx_source.html#l00067">HcalReconConditions.cxx:67</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditionsProvider_html_a378d04a45fff7adc1cc331c2e6b95e36"><div class="ttname"><a href="classhcal_1_1HcalReconConditionsProvider.html#a378d04a45fff7adc1cc331c2e6b95e36">hcal::HcalReconConditionsProvider::adc_ped_</a></div><div class="ttdeci">std::string adc_ped_</div><div class="ttdoc">name of condition object for hcal adc pedestals</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8cxx_source.html#l00069">HcalReconConditions.cxx:69</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditionsProvider_html_a4da959e6fa575dc463e23ba9224a24ea"><div class="ttname"><a href="classhcal_1_1HcalReconConditionsProvider.html#a4da959e6fa575dc463e23ba9224a24ea">hcal::HcalReconConditionsProvider::tot_calib_</a></div><div class="ttdeci">std::string tot_calib_</div><div class="ttdoc">name of condition object for hcal tot calibrations</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8cxx_source.html#l00071">HcalReconConditions.cxx:71</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditionsProvider_html_ae3b88bd3a2cfb6e58d3e824c37a922af"><div class="ttname"><a href="classhcal_1_1HcalReconConditionsProvider.html#ae3b88bd3a2cfb6e58d3e824c37a922af">hcal::HcalReconConditionsProvider::toa_calib_</a></div><div class="ttdeci">std::string toa_calib_</div><div class="ttdoc">name of condition object for hcal toa calibrations</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8cxx_source.html#l00073">HcalReconConditions.cxx:73</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a5177db6b660569fa13807234c222f0d3"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">hcal::HcalReconConditions::CONDITIONS_NAME</a></div><div class="ttdeci">static const std::string CONDITIONS_NAME</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00041">HcalReconConditions.h:41</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalReconConditions_8cxx_source.html#l00064">adc_gain_</a>, <a class="el" href="HcalReconConditions_8cxx_source.html#l00066">adc_ped_</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00041">hcal::HcalReconConditions::CONDITIONS_NAME</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00068">tot_calib_</a>.</p>
+<p class="reference">References <a class="el" href="HcalReconConditions_8cxx_source.html#l00067">adc_gain_</a>, <a class="el" href="HcalReconConditions_8cxx_source.html#l00069">adc_ped_</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00041">hcal::HcalReconConditions::CONDITIONS_NAME</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="HcalReconConditions_8cxx_source.html#l00073">toa_calib_</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00071">tot_calib_</a>.</p>
 
 </div>
 </div>
@@ -233,29 +238,33 @@ Expects the parent condition tables to all be <a class="el" href="classcondition
 
 <p>Implements <a class="el" href="classframework_1_1ConditionsObjectProvider.html#aaed8ba78375f14ddb835b53bb9a295b9">framework::ConditionsObjectProvider</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00111">111</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>                                                              {</div>
-<div class="line"><span class="lineno">  112</span>    <span class="comment">// requestParentCondition does check current context for validity</span></div>
-<div class="line"><span class="lineno">  113</span>    <span class="comment">// to avoid extra constructions</span></div>
-<div class="line"><span class="lineno">  114</span>    <span class="keyword">auto</span> [adc_gain_co, adc_gain_iov] =</div>
-<div class="line"><span class="lineno">  115</span>        <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a37c8a350878fd374d526cd9716b47f1e">requestParentCondition</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a0a91066458843160014dfefeb13bd879">adc_gain_</a>, context);</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keyword">auto</span> [adc_ped_co, adc_ped_iov] = <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a37c8a350878fd374d526cd9716b47f1e">requestParentCondition</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a378d04a45fff7adc1cc331c2e6b95e36">adc_ped_</a>, context);</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keyword">auto</span> [tot_calib_co, tot_calib_iov] =</div>
-<div class="line"><span class="lineno">  118</span>        <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a37c8a350878fd374d526cd9716b47f1e">requestParentCondition</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a4da959e6fa575dc463e23ba9224a24ea">tot_calib_</a>, context);</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    <span class="comment">// deduce &quot;minimum&quot; IOV</span></div>
-<div class="line"><span class="lineno">  121</span>    <span class="comment">//  Framework #56 : https://github.com/LDMX-Software/Framework/issues/56</span></div>
-<div class="line"><span class="lineno">  122</span>    <span class="keyword">auto</span> min_iov = adc_ped_iov;</div>
-<div class="line"><span class="lineno">  123</span>    <span class="comment">// use std::move(min_iov) in return statement below</span></div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>    <span class="comment">// wrap</span></div>
-<div class="line"><span class="lineno">  126</span>    <a class="code hl_class" href="classframework_1_1ConditionsObject.html">framework::ConditionsObject</a>* co = <span class="keyword">new</span> <a class="code hl_class" href="classhcal_1_1HcalReconConditions.html">hcal::HcalReconConditions</a>(</div>
-<div class="line"><span class="lineno">  127</span>        <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a>&amp;<span class="keyword">&gt;</span>(*adc_ped_co),</div>
-<div class="line"><span class="lineno">  128</span>        <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a>&amp;<span class="keyword">&gt;</span>(*adc_gain_co),</div>
-<div class="line"><span class="lineno">  129</span>        <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a>&amp;<span class="keyword">&gt;</span>(*tot_calib_co));</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">return</span> {co, <a class="code hl_class" href="classframework_1_1ConditionsIOV.html">framework::ConditionsIOV</a>(context.<a class="code hl_function" href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">getRun</a>(), context.<a class="code hl_function" href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">getRun</a>())};</div>
-<div class="line"><span class="lineno">  132</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00117">117</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>                                                              {</div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">// requestParentCondition does check current context for validity</span></div>
+<div class="line"><span class="lineno">  119</span>    <span class="comment">// to avoid extra constructions</span></div>
+<div class="line"><span class="lineno">  120</span>    <span class="keyword">auto</span> [adc_gain_co, adc_gain_iov] =</div>
+<div class="line"><span class="lineno">  121</span>        <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a37c8a350878fd374d526cd9716b47f1e">requestParentCondition</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a0a91066458843160014dfefeb13bd879">adc_gain_</a>, context);</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keyword">auto</span> [adc_ped_co, adc_ped_iov] = <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a37c8a350878fd374d526cd9716b47f1e">requestParentCondition</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a378d04a45fff7adc1cc331c2e6b95e36">adc_ped_</a>, context);</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keyword">auto</span> [tot_calib_co, tot_calib_iov] =</div>
+<div class="line"><span class="lineno">  124</span>        <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a37c8a350878fd374d526cd9716b47f1e">requestParentCondition</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#a4da959e6fa575dc463e23ba9224a24ea">tot_calib_</a>, context);</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keyword">auto</span> [toa_calib_co, toa_calib_iov] =</div>
+<div class="line"><span class="lineno">  126</span>      <a class="code hl_function" href="classframework_1_1ConditionsObjectProvider.html#a37c8a350878fd374d526cd9716b47f1e">requestParentCondition</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditionsProvider.html#ae3b88bd3a2cfb6e58d3e824c37a922af">toa_calib_</a>, context);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    <span class="comment">// deduce &quot;minimum&quot; IOV</span></div>
+<div class="line"><span class="lineno">  129</span>    <span class="comment">//  Framework #56 : https://github.com/LDMX-Software/Framework/issues/56</span></div>
+<div class="line"><span class="lineno">  130</span>    <span class="keyword">auto</span> min_iov = adc_ped_iov;</div>
+<div class="line"><span class="lineno">  131</span>    <span class="comment">// use std::move(min_iov) in return statement below</span></div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">// wrap</span></div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_class" href="classframework_1_1ConditionsObject.html">framework::ConditionsObject</a>* co = <span class="keyword">new</span> <a class="code hl_class" href="classhcal_1_1HcalReconConditions.html">hcal::HcalReconConditions</a>(</div>
+<div class="line"><span class="lineno">  135</span>        <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a>&amp;<span class="keyword">&gt;</span>(*adc_ped_co),</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a>&amp;<span class="keyword">&gt;</span>(*adc_gain_co),</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a>&amp;<span class="keyword">&gt;</span>(*tot_calib_co),</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a>&amp;<span class="keyword">&gt;</span>(*toa_calib_co)</div>
+<div class="line"><span class="lineno">  139</span>                                    );</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">return</span> {co, <a class="code hl_class" href="classframework_1_1ConditionsIOV.html">framework::ConditionsIOV</a>(context.<a class="code hl_function" href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">getRun</a>(), context.<a class="code hl_function" href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">getRun</a>())};</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
 <div class="ttc" id="aclassconditions_1_1DoubleTableCondition_html"><div class="ttname"><a href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a></div><div class="ttdef"><b>Definition:</b> <a href="SimpleTableCondition_8h_source.html#l00187">SimpleTableCondition.h:187</a></div></div>
 <div class="ttc" id="aclassframework_1_1ConditionsIOV_html"><div class="ttname"><a href="classframework_1_1ConditionsIOV.html">framework::ConditionsIOV</a></div><div class="ttdoc">Class which defines the run/event/type range for which a given condition is valid,...</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsIOV_8h_source.html#l00033">ConditionsIOV.h:33</a></div></div>
 <div class="ttc" id="aclassframework_1_1ConditionsObjectProvider_html_a37c8a350878fd374d526cd9716b47f1e"><div class="ttname"><a href="classframework_1_1ConditionsObjectProvider.html#a37c8a350878fd374d526cd9716b47f1e">framework::ConditionsObjectProvider::requestParentCondition</a></div><div class="ttdeci">std::pair&lt; const ConditionsObject *, ConditionsIOV &gt; requestParentCondition(const std::string &amp;name, const ldmx::EventHeader &amp;context)</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObjectProvider_8cxx_source.html#l00018">ConditionsObjectProvider.cxx:18</a></div></div>
@@ -263,7 +272,7 @@ Expects the parent condition tables to all be <a class="el" href="classcondition
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html">hcal::HcalReconConditions</a></div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00017">HcalReconConditions.h:17</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventHeader_html_a23013e70fa0d1c1255215aed5849ecd4"><div class="ttname"><a href="classldmx_1_1EventHeader.html#a23013e70fa0d1c1255215aed5849ecd4">ldmx::EventHeader::getRun</a></div><div class="ttdeci">int getRun() const</div><div class="ttdef"><b>Definition:</b> <a href="EventHeader_8h_source.html#l00082">EventHeader.h:82</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalReconConditions_8cxx_source.html#l00064">adc_gain_</a>, <a class="el" href="HcalReconConditions_8cxx_source.html#l00066">adc_ped_</a>, <a class="el" href="ConditionsObjectProvider_8cxx_source.html#l00018">framework::ConditionsObjectProvider::requestParentCondition()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00068">tot_calib_</a>.</p>
+<p class="reference">References <a class="el" href="HcalReconConditions_8cxx_source.html#l00067">adc_gain_</a>, <a class="el" href="HcalReconConditions_8cxx_source.html#l00069">adc_ped_</a>, <a class="el" href="ConditionsObjectProvider_8cxx_source.html#l00018">framework::ConditionsObjectProvider::requestParentCondition()</a>, <a class="el" href="HcalReconConditions_8cxx_source.html#l00073">toa_calib_</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00071">tot_calib_</a>.</p>
 
 </div>
 </div>
@@ -290,9 +299,9 @@ Expects the parent condition tables to all be <a class="el" href="classcondition
 
 <p>name of condition object for hcal adc gains </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00064">64</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00067">67</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00111">getCondition()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00081">HcalReconConditionsProvider()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00117">getCondition()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00086">HcalReconConditionsProvider()</a>.</p>
 
 </div>
 </div>
@@ -318,9 +327,37 @@ Expects the parent condition tables to all be <a class="el" href="classcondition
 
 <p>name of condition object for hcal adc pedestals </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00066">66</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00069">69</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00111">getCondition()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00081">HcalReconConditionsProvider()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00117">getCondition()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00086">HcalReconConditionsProvider()</a>.</p>
+
+</div>
+</div>
+<a id="ae3b88bd3a2cfb6e58d3e824c37a922af" name="ae3b88bd3a2cfb6e58d3e824c37a922af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b88bd3a2cfb6e58d3e824c37a922af">&#9670;&#160;</a></span>toa_calib_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string hcal::HcalReconConditionsProvider::toa_calib_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>name of condition object for hcal toa calibrations </p>
+
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00073">73</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00117">getCondition()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00086">HcalReconConditionsProvider()</a>.</p>
 
 </div>
 </div>
@@ -346,9 +383,9 @@ Expects the parent condition tables to all be <a class="el" href="classcondition
 
 <p>name of condition object for hcal tot calibrations </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00068">68</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00071">71</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00111">getCondition()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00081">HcalReconConditionsProvider()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00117">getCondition()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00086">HcalReconConditionsProvider()</a>.</p>
 
 </div>
 </div>

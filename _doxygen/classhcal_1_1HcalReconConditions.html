@@ -57,8 +57,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a90e4ef833b2037cf5ead15336385a56b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditions.html#a90e4ef833b2037cf5ead15336385a56b">HcalReconConditions</a> (const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;adc_ped, const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;adc_gain, const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;tot_calib)</td></tr>
-<tr class="separator:a90e4ef833b2037cf5ead15336385a56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9961962d07cd85b8c11fe32bd918a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditions.html#a6f9961962d07cd85b8c11fe32bd918a7">HcalReconConditions</a> (const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;adc_ped, const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;adc_gain, const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;tot_calib, const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;toa_calib)</td></tr>
+<tr class="separator:a6f9961962d07cd85b8c11fe32bd918a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5694b04dc50a4e9fb9abd85d6fc6f356"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditions.html#a5694b04dc50a4e9fb9abd85d6fc6f356">adcPedestal</a> (const <a class="el" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> &amp;id, int idx=0) const</td></tr>
 <tr class="separator:a5694b04dc50a4e9fb9abd85d6fc6f356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18fa0833fc78249d454fb18338f4475a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditions.html#a18fa0833fc78249d454fb18338f4475a">adcGain</a> (const <a class="el" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> &amp;id, int idx=0) const</td></tr>
@@ -69,6 +69,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a501f45362e9ff9dfd003ccc911c35289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53fa029018efbd2451b00bf0c7bef1e7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a> (const <a class="el" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> &amp;id, int idx=0) const</td></tr>
 <tr class="separator:a53fa029018efbd2451b00bf0c7bef1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb121716f2740169d6a69d26bd312d7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditions.html#aabb121716f2740169d6a69d26bd312d7">toaCalib</a> (const <a class="el" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> &amp;id, int idx=0) const</td></tr>
+<tr class="separator:aabb121716f2740169d6a69d26bd312d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classframework_1_1ConditionsObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classframework_1_1ConditionsObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classframework_1_1ConditionsObject.html">framework::ConditionsObject</a></td></tr>
 <tr class="memitem:a47cde9473f38ece4308bc86449b7f7cd inherit pub_methods_classframework_1_1ConditionsObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1ConditionsObject.html#a47cde9473f38ece4308bc86449b7f7cd">ConditionsObject</a> (const std::string &amp;name)</td></tr>
 <tr class="separator:a47cde9473f38ece4308bc86449b7f7cd inherit pub_methods_classframework_1_1ConditionsObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,6 +125,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a885c1d1cca9e546294f3a56e0bdebb5f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditions.html#a885c1d1cca9e546294f3a56e0bdebb5f">tot_calibs_</a></td></tr>
 <tr class="memdesc:a885c1d1cca9e546294f3a56e0bdebb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">reference to the table of conditions storing the tot calibrations  <a href="classhcal_1_1HcalReconConditions.html#a885c1d1cca9e546294f3a56e0bdebb5f">More...</a><br /></td></tr>
 <tr class="separator:a885c1d1cca9e546294f3a56e0bdebb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4240d058db95d7e7b8031f89908d4f6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhcal_1_1HcalReconConditions.html#af4240d058db95d7e7b8031f89908d4f6">toa_calibs_</a></td></tr>
+<tr class="memdesc:af4240d058db95d7e7b8031f89908d4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">reference to the table of conditions storing the toa calibrations  <a href="classhcal_1_1HcalReconConditions.html#af4240d058db95d7e7b8031f89908d4f6">More...</a><br /></td></tr>
+<tr class="separator:af4240d058db95d7e7b8031f89908d4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class to wrap around the various recon condition tables</p>
@@ -130,8 +135,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00017">17</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a90e4ef833b2037cf5ead15336385a56b" name="a90e4ef833b2037cf5ead15336385a56b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90e4ef833b2037cf5ead15336385a56b">&#9670;&#160;</a></span>HcalReconConditions()</h2>
+<a id="a6f9961962d07cd85b8c11fe32bd918a7" name="a6f9961962d07cd85b8c11fe32bd918a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9961962d07cd85b8c11fe32bd918a7">&#9670;&#160;</a></span>HcalReconConditions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +157,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;&#160;</td>
-          <td class="paramname"><em>tot_calib</em>&#160;</td>
+          <td class="paramname"><em>tot_calib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a> &amp;&#160;</td>
+          <td class="paramname"><em>toa_calib</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -166,21 +177,24 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">adc_ped</td><td>double table of ADC pedestals </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">adc_gain</td><td>double table of ADC gains </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tot_ped</td><td>double table of TOT calibrations </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tot_calib</td><td>double table of TOT calibrations </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">toa_calib</td><td>double table of TOA calibrations </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00010">10</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    : <a class="code hl_class" href="classframework_1_1ConditionsObject.html">framework::ConditionsObject</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">HcalReconConditions::CONDITIONS_NAME</a>),</div>
-<div class="line"><span class="lineno">   15</span>      <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a2f7c50fa40ef32ba9f4dd29bbe3af910">adc_pedestals_</a>{adc_ped},</div>
-<div class="line"><span class="lineno">   16</span>      <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#ade7cab3a6a13b4473cecabcc5ef30f64">adc_gains_</a>{adc_gain},</div>
-<div class="line"><span class="lineno">   17</span>      <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a885c1d1cca9e546294f3a56e0bdebb5f">tot_calibs_</a>{tot_calib} {}</div>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>    : <a class="code hl_class" href="classframework_1_1ConditionsObject.html">framework::ConditionsObject</a>(<a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">HcalReconConditions::CONDITIONS_NAME</a>),</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a2f7c50fa40ef32ba9f4dd29bbe3af910">adc_pedestals_</a>{adc_ped},</div>
+<div class="line"><span class="lineno">   18</span>      <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#ade7cab3a6a13b4473cecabcc5ef30f64">adc_gains_</a>{adc_gain},</div>
+<div class="line"><span class="lineno">   19</span>      <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a885c1d1cca9e546294f3a56e0bdebb5f">tot_calibs_</a>{tot_calib},</div>
+<div class="line"><span class="lineno">   20</span>      <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#af4240d058db95d7e7b8031f89908d4f6">toa_calibs_</a>{toa_calib} {}</div>
 <div class="ttc" id="aclassframework_1_1ConditionsObject_html"><div class="ttname"><a href="classframework_1_1ConditionsObject.html">framework::ConditionsObject</a></div><div class="ttdoc">Base class for all conditions objects, very simple.</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsObject_8h_source.html#l00018">ConditionsObject.h:18</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a2f7c50fa40ef32ba9f4dd29bbe3af910"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a2f7c50fa40ef32ba9f4dd29bbe3af910">hcal::HcalReconConditions::adc_pedestals_</a></div><div class="ttdeci">const conditions::DoubleTableCondition &amp; adc_pedestals_</div><div class="ttdoc">reference to the table of conditions storing the adc pedestals</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00117">HcalReconConditions.h:117</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a2f7c50fa40ef32ba9f4dd29bbe3af910"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a2f7c50fa40ef32ba9f4dd29bbe3af910">hcal::HcalReconConditions::adc_pedestals_</a></div><div class="ttdeci">const conditions::DoubleTableCondition &amp; adc_pedestals_</div><div class="ttdoc">reference to the table of conditions storing the adc pedestals</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00131">HcalReconConditions.h:131</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a5177db6b660569fa13807234c222f0d3"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a5177db6b660569fa13807234c222f0d3">hcal::HcalReconConditions::CONDITIONS_NAME</a></div><div class="ttdeci">static const std::string CONDITIONS_NAME</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00041">HcalReconConditions.h:41</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a885c1d1cca9e546294f3a56e0bdebb5f"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a885c1d1cca9e546294f3a56e0bdebb5f">hcal::HcalReconConditions::tot_calibs_</a></div><div class="ttdeci">const conditions::DoubleTableCondition &amp; tot_calibs_</div><div class="ttdoc">reference to the table of conditions storing the tot calibrations</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00121">HcalReconConditions.h:121</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_ade7cab3a6a13b4473cecabcc5ef30f64"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#ade7cab3a6a13b4473cecabcc5ef30f64">hcal::HcalReconConditions::adc_gains_</a></div><div class="ttdeci">const conditions::DoubleTableCondition &amp; adc_gains_</div><div class="ttdoc">reference to the table of conditions storing the adc gains</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00119">HcalReconConditions.h:119</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a885c1d1cca9e546294f3a56e0bdebb5f"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a885c1d1cca9e546294f3a56e0bdebb5f">hcal::HcalReconConditions::tot_calibs_</a></div><div class="ttdeci">const conditions::DoubleTableCondition &amp; tot_calibs_</div><div class="ttdoc">reference to the table of conditions storing the tot calibrations</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00135">HcalReconConditions.h:135</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_ade7cab3a6a13b4473cecabcc5ef30f64"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#ade7cab3a6a13b4473cecabcc5ef30f64">hcal::HcalReconConditions::adc_gains_</a></div><div class="ttdeci">const conditions::DoubleTableCondition &amp; adc_gains_</div><div class="ttdoc">reference to the table of conditions storing the adc gains</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00133">HcalReconConditions.h:133</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_af4240d058db95d7e7b8031f89908d4f6"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#af4240d058db95d7e7b8031f89908d4f6">hcal::HcalReconConditions::toa_calibs_</a></div><div class="ttdeci">const conditions::DoubleTableCondition &amp; toa_calibs_</div><div class="ttdoc">reference to the table of conditions storing the toa calibrations</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00137">HcalReconConditions.h:137</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -228,13 +242,13 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the ADC threshold for that chip in fC/counts </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00075">75</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>                                                              {</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#ade7cab3a6a13b4473cecabcc5ef30f64">adc_gains_</a>.<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>.raw(), idx);</div>
-<div class="line"><span class="lineno">   77</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00078">78</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                                                              {</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#ade7cab3a6a13b4473cecabcc5ef30f64">adc_gains_</a>.<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>.raw(), idx);</div>
+<div class="line"><span class="lineno">   80</span>  }</div>
 <div class="ttc" id="aclassconditions_1_1HomogenousTableCondition_html_a025ceb80d04d648b8ffc14888fd09e96"><div class="ttname"><a href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">conditions::HomogenousTableCondition::get</a></div><div class="ttdeci">T get(unsigned int id, unsigned int col) const</div><div class="ttdef"><b>Definition:</b> <a href="SimpleTableCondition_8h_source.html#l00145">SimpleTableCondition.h:145</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalReconConditions_8h_source.html#l00119">adc_gains_</a>, and <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>.</p>
+<p class="reference">References <a class="el" href="HcalReconConditions_8h_source.html#l00133">adc_gains_</a>, and <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>.</p>
 
 </div>
 </div>
@@ -281,12 +295,12 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the ADC pedestal for that chip in counts </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00061">61</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>                                                                  {</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a2f7c50fa40ef32ba9f4dd29bbe3af910">adc_pedestals_</a>.<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>.raw(), idx);</div>
-<div class="line"><span class="lineno">   63</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00064">64</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                                  {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a2f7c50fa40ef32ba9f4dd29bbe3af910">adc_pedestals_</a>.<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>.raw(), idx);</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalReconConditions_8h_source.html#l00117">adc_pedestals_</a>, and <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>.</p>
+<p class="reference">References <a class="el" href="HcalReconConditions_8h_source.html#l00131">adc_pedestals_</a>, and <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>.</p>
 
 </div>
 </div>
@@ -325,27 +339,27 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if digi is in ADC mode </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00019">19</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>                                                       {</div>
-<div class="line"><span class="lineno">   21</span>  <span class="comment">// check if the linearization has been done correctly</span></div>
-<div class="line"><span class="lineno">   22</span>  <span class="comment">//  a non-zero flag value is implicitly converted to true</span></div>
-<div class="line"><span class="lineno">   23</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a1c42da6f6951cc4d04e7ab2e130f96f9">i_flagged</a>) == 1) {</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   25</span>  }</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>  <span class="comment">// if we are in ADC range (which was used as a reference in linearization),</span></div>
-<div class="line"><span class="lineno">   28</span>  <span class="comment">// we use ADC</span></div>
-<div class="line"><span class="lineno">   29</span>  <span class="keywordflow">if</span> (sum_tot &lt; <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a01d566aebd608ce9f180062193eb22c2">i_lower_offset</a>)) {</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   31</span>  }</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   34</span>}</div>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00022">22</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                       {</div>
+<div class="line"><span class="lineno">   24</span>  <span class="comment">// check if the linearization has been done correctly</span></div>
+<div class="line"><span class="lineno">   25</span>  <span class="comment">//  a non-zero flag value is implicitly converted to true</span></div>
+<div class="line"><span class="lineno">   26</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a1c42da6f6951cc4d04e7ab2e130f96f9">i_flagged</a>) == 1) {</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   28</span>  }</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>  <span class="comment">// if we are in ADC range (which was used as a reference in linearization),</span></div>
+<div class="line"><span class="lineno">   31</span>  <span class="comment">// we use ADC</span></div>
+<div class="line"><span class="lineno">   32</span>  <span class="keywordflow">if</span> (sum_tot &lt; <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a01d566aebd608ce9f180062193eb22c2">i_lower_offset</a>)) {</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   34</span>  }</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   37</span>}</div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a01d566aebd608ce9f180062193eb22c2"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a01d566aebd608ce9f180062193eb22c2">hcal::HcalReconConditions::i_lower_offset</a></div><div class="ttdeci">static const unsigned int i_lower_offset</div><div class="ttdoc">index of lower_offset in tot_calib table</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00032">HcalReconConditions.h:32</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a1c42da6f6951cc4d04e7ab2e130f96f9"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a1c42da6f6951cc4d04e7ab2e130f96f9">hcal::HcalReconConditions::i_flagged</a></div><div class="ttdeci">static const unsigned int i_flagged</div><div class="ttdoc">index of flagged in tot_calib table</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00038">HcalReconConditions.h:38</a></div></div>
-<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a53fa029018efbd2451b00bf0c7bef1e7"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">hcal::HcalReconConditions::totCalib</a></div><div class="ttdeci">double totCalib(const ldmx::HcalDigiID &amp;id, int idx=0) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00111">HcalReconConditions.h:111</a></div></div>
+<div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a53fa029018efbd2451b00bf0c7bef1e7"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">hcal::HcalReconConditions::totCalib</a></div><div class="ttdeci">double totCalib(const ldmx::HcalDigiID &amp;id, int idx=0) const</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00114">HcalReconConditions.h:114</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalReconConditions_8h_source.html#l00038">i_flagged</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00032">i_lower_offset</a>, and <a class="el" href="HcalReconConditions_8h_source.html#l00111">totCalib()</a>.</p>
+<p class="reference">References <a class="el" href="HcalReconConditions_8h_source.html#l00038">i_flagged</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00032">i_lower_offset</a>, and <a class="el" href="HcalReconConditions_8h_source.html#l00114">totCalib()</a>.</p>
 
 </div>
 </div>
@@ -385,21 +399,21 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>linearized amplitude </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">36</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                            {</div>
-<div class="line"><span class="lineno">   38</span>  <span class="comment">// we know we have a linearization fit and are in TOT range,</span></div>
-<div class="line"><span class="lineno">   39</span>  <span class="comment">//  the lower side of TOT needs to be linearized with a specialized power law</span></div>
-<div class="line"><span class="lineno">   40</span>  <span class="keywordflow">if</span> (sum_tot &lt; <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#aa9d5fda6d93546c0cce03d4b5737d394">i_cut_point_tot</a>)) {</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> pow((sum_tot - <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a01d566aebd608ce9f180062193eb22c2">i_lower_offset</a>)) /</div>
-<div class="line"><span class="lineno">   42</span>                   <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#ac39c44fb604266567ad84f564888e392">i_low_slope</a>),</div>
-<div class="line"><span class="lineno">   43</span>               1 / <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#afdb2d6fbbaa6fd047036fa5301cf5b45">i_low_power</a>)) +</div>
-<div class="line"><span class="lineno">   44</span>           <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#abfa0616790b11535a0cc4536c0f91cbb">i_tot_not</a>);</div>
-<div class="line"><span class="lineno">   45</span>  }</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>  <span class="comment">// we know sum_tot is &gt;= lower offset and &gt;= tot cut</span></div>
-<div class="line"><span class="lineno">   48</span>  <span class="comment">//  higher tot, linearized with adc using a simple linear mapping</span></div>
-<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">return</span> (sum_tot - <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a0d1331b9c63dde93cd0e5761bdfd48e4">i_high_offset</a>)) * <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#aa45b977ddca3fb908324e28258cd1d5c">i_high_slope</a>);</div>
-<div class="line"><span class="lineno">   50</span>}</div>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">39</a> of file <a class="el" href="HcalReconConditions_8cxx_source.html">HcalReconConditions.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                            {</div>
+<div class="line"><span class="lineno">   41</span>  <span class="comment">// we know we have a linearization fit and are in TOT range,</span></div>
+<div class="line"><span class="lineno">   42</span>  <span class="comment">//  the lower side of TOT needs to be linearized with a specialized power law</span></div>
+<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">if</span> (sum_tot &lt; <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#aa9d5fda6d93546c0cce03d4b5737d394">i_cut_point_tot</a>)) {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> pow((sum_tot - <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a01d566aebd608ce9f180062193eb22c2">i_lower_offset</a>)) /</div>
+<div class="line"><span class="lineno">   45</span>                   <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#ac39c44fb604266567ad84f564888e392">i_low_slope</a>),</div>
+<div class="line"><span class="lineno">   46</span>               1 / <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#afdb2d6fbbaa6fd047036fa5301cf5b45">i_low_power</a>)) +</div>
+<div class="line"><span class="lineno">   47</span>           <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#abfa0616790b11535a0cc4536c0f91cbb">i_tot_not</a>);</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>  <span class="comment">// we know sum_tot is &gt;= lower offset and &gt;= tot cut</span></div>
+<div class="line"><span class="lineno">   51</span>  <span class="comment">//  higher tot, linearized with adc using a simple linear mapping</span></div>
+<div class="line"><span class="lineno">   52</span>  <span class="keywordflow">return</span> (sum_tot - <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a0d1331b9c63dde93cd0e5761bdfd48e4">i_high_offset</a>)) * <a class="code hl_function" href="classhcal_1_1HcalReconConditions.html#a53fa029018efbd2451b00bf0c7bef1e7">totCalib</a>(<span class="keywordtype">id</span>, <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#aa45b977ddca3fb908324e28258cd1d5c">i_high_slope</a>);</div>
+<div class="line"><span class="lineno">   53</span>}</div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_a0d1331b9c63dde93cd0e5761bdfd48e4"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#a0d1331b9c63dde93cd0e5761bdfd48e4">hcal::HcalReconConditions::i_high_offset</a></div><div class="ttdeci">static const unsigned int i_high_offset</div><div class="ttdoc">index of high_offset in tot_calib table</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00026">HcalReconConditions.h:26</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_aa45b977ddca3fb908324e28258cd1d5c"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#aa45b977ddca3fb908324e28258cd1d5c">hcal::HcalReconConditions::i_high_slope</a></div><div class="ttdeci">static const unsigned int i_high_slope</div><div class="ttdoc">index of high_slope in tot_calib table</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00024">HcalReconConditions.h:24</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_aa9d5fda6d93546c0cce03d4b5737d394"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#aa9d5fda6d93546c0cce03d4b5737d394">hcal::HcalReconConditions::i_cut_point_tot</a></div><div class="ttdeci">static const unsigned int i_cut_point_tot</div><div class="ttdoc">index of cut_point_tot in tot_calib table</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00022">HcalReconConditions.h:22</a></div></div>
@@ -407,7 +421,59 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_ac39c44fb604266567ad84f564888e392"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#ac39c44fb604266567ad84f564888e392">hcal::HcalReconConditions::i_low_slope</a></div><div class="ttdeci">static const unsigned int i_low_slope</div><div class="ttdoc">index of low_slope in tot_calib table</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00028">HcalReconConditions.h:28</a></div></div>
 <div class="ttc" id="aclasshcal_1_1HcalReconConditions_html_afdb2d6fbbaa6fd047036fa5301cf5b45"><div class="ttname"><a href="classhcal_1_1HcalReconConditions.html#afdb2d6fbbaa6fd047036fa5301cf5b45">hcal::HcalReconConditions::i_low_power</a></div><div class="ttdeci">static const unsigned int i_low_power</div><div class="ttdoc">index of low_power in tot_calib table</div><div class="ttdef"><b>Definition:</b> <a href="HcalReconConditions_8h_source.html#l00030">HcalReconConditions.h:30</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="HcalReconConditions_8h_source.html#l00022">i_cut_point_tot</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00026">i_high_offset</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00024">i_high_slope</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00030">i_low_power</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00028">i_low_slope</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00032">i_lower_offset</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00034">i_tot_not</a>, and <a class="el" href="HcalReconConditions_8h_source.html#l00111">totCalib()</a>.</p>
+<p class="reference">References <a class="el" href="HcalReconConditions_8h_source.html#l00022">i_cut_point_tot</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00026">i_high_offset</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00024">i_high_slope</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00030">i_low_power</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00028">i_low_slope</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00032">i_lower_offset</a>, <a class="el" href="HcalReconConditions_8h_source.html#l00034">i_tot_not</a>, and <a class="el" href="HcalReconConditions_8h_source.html#l00114">totCalib()</a>.</p>
+
+</div>
+</div>
+<a id="aabb121716f2740169d6a69d26bd312d7" name="aabb121716f2740169d6a69d26bd312d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb121716f2740169d6a69d26bd312d7">&#9670;&#160;</a></span>toaCalib()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double hcal::HcalReconConditions::toaCalib </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classldmx_1_1HcalDigiID.html">ldmx::HcalDigiID</a> &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >get a TOA calibration value</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>HCal Digi ID for specific chip </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>of column in condition file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the TOA calibration for that i </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00125">125</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>                                                               {</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#af4240d058db95d7e7b8031f89908d4f6">toa_calibs_</a>.<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>.raw(), idx);</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>, and <a class="el" href="HcalReconConditions_8h_source.html#l00137">toa_calibs_</a>.</p>
 
 </div>
 </div>
@@ -455,14 +521,14 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the TOT calibration for that i </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00111">111</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>                                                               {</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a885c1d1cca9e546294f3a56e0bdebb5f">tot_calibs_</a>.<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>.raw(), idx);</div>
-<div class="line"><span class="lineno">  113</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00114">114</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>                                                               {</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classhcal_1_1HcalReconConditions.html#a885c1d1cca9e546294f3a56e0bdebb5f">tot_calibs_</a>.<a class="code hl_function" href="classconditions_1_1HomogenousTableCondition.html#a025ceb80d04d648b8ffc14888fd09e96">get</a>(<span class="keywordtype">id</span>.raw(), idx);</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>, and <a class="el" href="HcalReconConditions_8h_source.html#l00121">tot_calibs_</a>.</p>
+<p class="reference">References <a class="el" href="SimpleTableCondition_8h_source.html#l00145">conditions::HomogenousTableCondition&lt; T &gt;::get()</a>, and <a class="el" href="HcalReconConditions_8h_source.html#l00135">tot_calibs_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00019">is_adc()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">linearize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00022">is_adc()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">linearize()</a>.</p>
 
 </div>
 </div>
@@ -489,9 +555,9 @@ Private Attributes</h2></td></tr>
 
 <p>reference to the table of conditions storing the adc gains </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00119">119</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00133">133</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8h_source.html#l00075">adcGain()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8h_source.html#l00078">adcGain()</a>.</p>
 
 </div>
 </div>
@@ -517,9 +583,9 @@ Private Attributes</h2></td></tr>
 
 <p>reference to the table of conditions storing the adc pedestals </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00117">117</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00131">131</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8h_source.html#l00061">adcPedestal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8h_source.html#l00064">adcPedestal()</a>.</p>
 
 </div>
 </div>
@@ -546,7 +612,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00041">41</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00081">hcal::HcalReconConditionsProvider::HcalReconConditionsProvider()</a>, <a class="el" href="HcalRecProducer_8cxx_source.html#l00111">hcal::HcalRecProducer::produce()</a>, <a class="el" href="HcalDoubleEndRecProducer_8cxx_source.html#l00050">hcal::HcalDoubleEndRecProducer::produce()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00115">hcal::HcalSingleEndRecProducer::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00086">hcal::HcalReconConditionsProvider::HcalReconConditionsProvider()</a>, <a class="el" href="HcalRecProducer_8cxx_source.html#l00111">hcal::HcalRecProducer::produce()</a>, <a class="el" href="HcalDoubleEndRecProducer_8cxx_source.html#l00053">hcal::HcalDoubleEndRecProducer::produce()</a>, and <a class="el" href="HcalSingleEndRecProducer_8cxx_source.html#l00129">hcal::HcalSingleEndRecProducer::produce()</a>.</p>
 
 </div>
 </div>
@@ -600,7 +666,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00022">22</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">linearize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">linearize()</a>.</p>
 
 </div>
 </div>
@@ -628,7 +694,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00038">38</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00019">is_adc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00022">is_adc()</a>.</p>
 
 </div>
 </div>
@@ -656,7 +722,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00026">26</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">linearize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">linearize()</a>.</p>
 
 </div>
 </div>
@@ -684,7 +750,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00024">24</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">linearize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">linearize()</a>.</p>
 
 </div>
 </div>
@@ -712,7 +778,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00030">30</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">linearize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">linearize()</a>.</p>
 
 </div>
 </div>
@@ -740,7 +806,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00028">28</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">linearize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">linearize()</a>.</p>
 
 </div>
 </div>
@@ -768,7 +834,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00032">32</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00019">is_adc()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">linearize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00022">is_adc()</a>, and <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">linearize()</a>.</p>
 
 </div>
 </div>
@@ -822,7 +888,35 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00034">34</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00036">linearize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8cxx_source.html#l00039">linearize()</a>.</p>
+
+</div>
+</div>
+<a id="af4240d058db95d7e7b8031f89908d4f6" name="af4240d058db95d7e7b8031f89908d4f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4240d058db95d7e7b8031f89908d4f6">&#9670;&#160;</a></span>toa_calibs_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classconditions_1_1DoubleTableCondition.html">conditions::DoubleTableCondition</a>&amp; hcal::HcalReconConditions::toa_calibs_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>reference to the table of conditions storing the toa calibrations </p>
+
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00137">137</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8h_source.html#l00125">toaCalib()</a>.</p>
 
 </div>
 </div>
@@ -848,9 +942,9 @@ Private Attributes</h2></td></tr>
 
 <p>reference to the table of conditions storing the tot calibrations </p>
 
-<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00121">121</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HcalReconConditions_8h_source.html#l00135">135</a> of file <a class="el" href="HcalReconConditions_8h_source.html">HcalReconConditions.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8h_source.html#l00111">totCalib()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HcalReconConditions_8h_source.html#l00114">totCalib()</a>.</p>
 
 </div>
 </div>

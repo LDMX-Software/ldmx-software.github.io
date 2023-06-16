@@ -54,7 +54,9 @@ $(function() {
 
 <p>Test the operation of Framework processing.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;catch.hpp&quot;</code><br />
+<div class="textblock"><code>#include &lt;catch2/catch_test_macros.hpp&gt;</code><br />
+<code>#include &lt;catch2/catch_approx.hpp&gt;</code><br />
+<code>#include &lt;catch2/matchers/catch_matchers.hpp&gt;</code><br />
 <code>#include &lt;cstdio&gt;</code><br />
 <code>#include &quot;TFile.h&quot;</code><br />
 <code>#include &quot;TH1F.h&quot;</code><br />
@@ -127,14 +129,14 @@ Functions</h2></td></tr>
 <p >@func removeFile Deletes the file and returns whether the deletion was successful.</p>
 <p >This is just a helper function during development. Sometimes it is helpful to leave the generated files, so maybe we can make the removal optional? </p>
 
-<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00386">386</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  386</span>                                                  {</div>
-<div class="line"><span class="lineno">  387</span>  <span class="keywordflow">return</span> remove(filepath.c_str()) == 0;</div>
-<div class="line"><span class="lineno">  388</span>}</div>
+<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00390">390</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  390</span>                                                  {</div>
+<div class="line"><span class="lineno">  391</span>  <span class="keywordflow">return</span> remove(filepath.c_str()) == 0;</div>
+<div class="line"><span class="lineno">  392</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00386">framework::test::removeFile()</a>.</p>
+<p class="reference">References <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00390">framework::test::removeFile()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00386">framework::test::removeFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00390">framework::test::removeFile()</a>.</p>
 
 </div>
 </div>
@@ -163,23 +165,23 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p >@func run the process for the input parameters </p>
 
-<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00393">393</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  393</span>                                                                    {</div>
-<div class="line"><span class="lineno">  394</span>  <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> configuration;</div>
-<div class="line"><span class="lineno">  395</span>  configuration.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(parameters);</div>
-<div class="line"><span class="lineno">  396</span>  <a class="code hl_typedef" href="namespaceframework.html#a548efdd3e0acc7f4da72ecfbd5c46e6f">ProcessHandle</a> p;</div>
-<div class="line"><span class="lineno">  397</span>  <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">  398</span>    p = std::make_unique&lt;Process&gt;(configuration);</div>
-<div class="line"><span class="lineno">  399</span>  } <span class="keywordflow">catch</span> (<a class="code hl_class" href="classframework_1_1exception_1_1Exception.html">framework::exception::Exception</a>&amp; e) {</div>
-<div class="line"><span class="lineno">  400</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;Config Error [&quot;</span> &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#ac106c1ea8c5baee7d6cab2ffd28b6e5b">name</a>() &lt;&lt; <span class="stringliteral">&quot;] : &quot;</span> &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#a63ecd83adc5da06e609b10b4525eaa02">message</a>()</div>
-<div class="line"><span class="lineno">  401</span>              &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  402</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;  at &quot;</span> &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#af5000d72541cd8cffbf1d049992f935e">module</a>() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#a506744603e60127bccc7d080265d140e">line</a>() &lt;&lt; <span class="stringliteral">&quot; in &quot;</span></div>
-<div class="line"><span class="lineno">  403</span>              &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#a141ad038ac0040613de8f7c299b9202e">function</a>() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  404</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  405</span>  }</div>
-<div class="line"><span class="lineno">  406</span>  p-&gt;run();</div>
-<div class="line"><span class="lineno">  407</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  408</span>}</div>
+<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00397">397</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  397</span>                                                                    {</div>
+<div class="line"><span class="lineno">  398</span>  <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> configuration;</div>
+<div class="line"><span class="lineno">  399</span>  configuration.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(parameters);</div>
+<div class="line"><span class="lineno">  400</span>  <a class="code hl_typedef" href="namespaceframework.html#a548efdd3e0acc7f4da72ecfbd5c46e6f">ProcessHandle</a> p;</div>
+<div class="line"><span class="lineno">  401</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  402</span>    p = std::make_unique&lt;Process&gt;(configuration);</div>
+<div class="line"><span class="lineno">  403</span>  } <span class="keywordflow">catch</span> (<a class="code hl_class" href="classframework_1_1exception_1_1Exception.html">framework::exception::Exception</a>&amp; e) {</div>
+<div class="line"><span class="lineno">  404</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;Config Error [&quot;</span> &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#ac106c1ea8c5baee7d6cab2ffd28b6e5b">name</a>() &lt;&lt; <span class="stringliteral">&quot;] : &quot;</span> &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#a63ecd83adc5da06e609b10b4525eaa02">message</a>()</div>
+<div class="line"><span class="lineno">  405</span>              &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  406</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;  at &quot;</span> &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#af5000d72541cd8cffbf1d049992f935e">module</a>() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#a506744603e60127bccc7d080265d140e">line</a>() &lt;&lt; <span class="stringliteral">&quot; in &quot;</span></div>
+<div class="line"><span class="lineno">  407</span>              &lt;&lt; e.<a class="code hl_function" href="classframework_1_1exception_1_1Exception.html#a141ad038ac0040613de8f7c299b9202e">function</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  408</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  409</span>  }</div>
+<div class="line"><span class="lineno">  410</span>  p-&gt;run();</div>
+<div class="line"><span class="lineno">  411</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  412</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00027">Parameters.h:27</a></div></div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a861122abc8b0007140c5c5443799f7e0"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">framework::config::Parameters::setParameters</a></div><div class="ttdeci">void setParameters(std::map&lt; std::string, std::any &gt; parameters)</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00041">Parameters.h:41</a></div></div>
 <div class="ttc" id="aclassframework_1_1exception_1_1Exception_html"><div class="ttname"><a href="classframework_1_1exception_1_1Exception.html">framework::exception::Exception</a></div><div class="ttdoc">Standard base exception class with some useful output information.</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00020">Exception.h:20</a></div></div>
@@ -190,9 +192,9 @@ Functions</h2></td></tr>
 <div class="ttc" id="aclassframework_1_1exception_1_1Exception_html_af5000d72541cd8cffbf1d049992f935e"><div class="ttname"><a href="classframework_1_1exception_1_1Exception.html#af5000d72541cd8cffbf1d049992f935e">framework::exception::Exception::module</a></div><div class="ttdeci">const std::string &amp; module() const</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00068">Exception.h:68</a></div></div>
 <div class="ttc" id="anamespaceframework_html_a548efdd3e0acc7f4da72ecfbd5c46e6f"><div class="ttname"><a href="namespaceframework.html#a548efdd3e0acc7f4da72ecfbd5c46e6f">framework::ProcessHandle</a></div><div class="ttdeci">std::unique_ptr&lt; Process &gt; ProcessHandle</div><div class="ttdef"><b>Definition:</b> <a href="Process_8h_source.html#l00232">Process.h:232</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Exception_8h_source.html#l00074">framework::exception::Exception::function()</a>, <a class="el" href="Exception_8h_source.html#l00080">framework::exception::Exception::line()</a>, <a class="el" href="Exception_8h_source.html#l00062">framework::exception::Exception::message()</a>, <a class="el" href="Exception_8h_source.html#l00068">framework::exception::Exception::module()</a>, <a class="el" href="Exception_8h_source.html#l00056">framework::exception::Exception::name()</a>, <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00393">framework::test::runProcess()</a>, and <a class="el" href="Parameters_8h_source.html#l00041">framework::config::Parameters::setParameters()</a>.</p>
+<p class="reference">References <a class="el" href="Exception_8h_source.html#l00074">framework::exception::Exception::function()</a>, <a class="el" href="Exception_8h_source.html#l00080">framework::exception::Exception::line()</a>, <a class="el" href="Exception_8h_source.html#l00062">framework::exception::Exception::message()</a>, <a class="el" href="Exception_8h_source.html#l00068">framework::exception::Exception::module()</a>, <a class="el" href="Exception_8h_source.html#l00056">framework::exception::Exception::name()</a>, <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00397">framework::test::runProcess()</a>, and <a class="el" href="Parameters_8h_source.html#l00041">framework::config::Parameters::setParameters()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00393">framework::test::runProcess()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00397">framework::test::runProcess()</a>.</p>
 
 </div>
 </div>
@@ -245,254 +247,254 @@ Functions</h2></td></tr>
 <li>skimming events (only keeping events meeting a certain criteria) </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00449">449</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  449</span>                                                                        {</div>
-<div class="line"><span class="lineno">  450</span> </div>
-<div class="line"><span class="lineno">  451</span>  <span class="comment">// these parameters aren&#39;t tested/changed, so we set them out here</span></div>
-<div class="line"><span class="lineno">  452</span>  std::map&lt;std::string, std::any&gt; process;</div>
-<div class="line"><span class="lineno">  453</span>  process[<span class="stringliteral">&quot;passName&quot;</span>] = std::string(<span class="stringliteral">&quot;test&quot;</span>);</div>
-<div class="line"><span class="lineno">  454</span>  process[<span class="stringliteral">&quot;compressionSetting&quot;</span>] = 9;</div>
-<div class="line"><span class="lineno">  455</span>  process[<span class="stringliteral">&quot;maxTriesPerEvent&quot;</span>] = 1;</div>
-<div class="line"><span class="lineno">  456</span>  process[<span class="stringliteral">&quot;logFrequency&quot;</span>] = -1;</div>
-<div class="line"><span class="lineno">  457</span>  process[<span class="stringliteral">&quot;termLogLevel&quot;</span>] = 4;</div>
-<div class="line"><span class="lineno">  458</span>  process[<span class="stringliteral">&quot;fileLogLevel&quot;</span>] = 4;</div>
-<div class="line"><span class="lineno">  459</span>  process[<span class="stringliteral">&quot;logFileName&quot;</span>] = std::string();</div>
-<div class="line"><span class="lineno">  460</span>  process[<span class="stringliteral">&quot;tree_name&quot;</span>] = std::string(<span class="stringliteral">&quot;LDMX_Events&quot;</span>); </div>
-<div class="line"><span class="lineno">  461</span> </div>
-<div class="line"><span class="lineno">  462</span>  process[<span class="stringliteral">&quot;histogramFile&quot;</span>] =</div>
-<div class="line"><span class="lineno">  463</span>      std::string(<span class="stringliteral">&quot;&quot;</span>);                  <span class="comment">// will be changed in some branches</span></div>
-<div class="line"><span class="lineno">  464</span>  process[<span class="stringliteral">&quot;maxEvents&quot;</span>] = -1;            <span class="comment">// will be changed</span></div>
-<div class="line"><span class="lineno">  465</span>  process[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">true</span>;  <span class="comment">// will be changed in some branches</span></div>
-<div class="line"><span class="lineno">  466</span>  process[<span class="stringliteral">&quot;run&quot;</span>] = -1;                  <span class="comment">// will be changed in some branches</span></div>
-<div class="line"><span class="lineno">  467</span> </div>
-<div class="line"><span class="lineno">  468</span>  std::map&lt;std::string, std::any&gt; producerParameters;</div>
-<div class="line"><span class="lineno">  469</span>  producerParameters[<span class="stringliteral">&quot;className&quot;</span>] =</div>
-<div class="line"><span class="lineno">  470</span>      std::string(<span class="stringliteral">&quot;framework::test::TestProducer&quot;</span>);</div>
-<div class="line"><span class="lineno">  471</span>  producerParameters[<span class="stringliteral">&quot;instanceName&quot;</span>] = std::string(<span class="stringliteral">&quot;TestProducer&quot;</span>);</div>
-<div class="line"><span class="lineno">  472</span>  producerParameters[<span class="stringliteral">&quot;createRunHeader&quot;</span>] = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  473</span> </div>
-<div class="line"><span class="lineno">  474</span>  std::map&lt;std::string, std::any&gt; analyzerParameters;</div>
-<div class="line"><span class="lineno">  475</span>  analyzerParameters[<span class="stringliteral">&quot;className&quot;</span>] =</div>
-<div class="line"><span class="lineno">  476</span>      std::string(<span class="stringliteral">&quot;framework::test::TestAnalyzer&quot;</span>);</div>
-<div class="line"><span class="lineno">  477</span>  analyzerParameters[<span class="stringliteral">&quot;instanceName&quot;</span>] = std::string(<span class="stringliteral">&quot;TestAnalyzer&quot;</span>);</div>
-<div class="line"><span class="lineno">  478</span> </div>
-<div class="line"><span class="lineno">  479</span>  <span class="comment">// parameters classes to wrap parameters in</span></div>
-<div class="line"><span class="lineno">  480</span>  <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> processConfig, producerConfig,</div>
-<div class="line"><span class="lineno">  481</span>      analyzerConfig;  <span class="comment">// parameters classes to wrap parameters in</span></div>
-<div class="line"><span class="lineno">  482</span>  analyzerConfig.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(analyzerParameters);</div>
-<div class="line"><span class="lineno">  483</span> </div>
-<div class="line"><span class="lineno">  484</span>  <span class="comment">// declare used and re-used types, not used in all branches</span></div>
-<div class="line"><span class="lineno">  485</span>  std::vector&lt;framework::config::Parameters&gt; sequence;</div>
-<div class="line"><span class="lineno">  486</span>  std::vector&lt;std::string&gt; inputFiles, outputFiles;</div>
+<p class="definition">Definition at line <a class="el" href="FunctionalCoreTest_8cxx_source.html#l00453">453</a> of file <a class="el" href="FunctionalCoreTest_8cxx_source.html">FunctionalCoreTest.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  453</span>                                                                        {</div>
+<div class="line"><span class="lineno">  454</span> </div>
+<div class="line"><span class="lineno">  455</span>  <span class="comment">// these parameters aren&#39;t tested/changed, so we set them out here</span></div>
+<div class="line"><span class="lineno">  456</span>  std::map&lt;std::string, std::any&gt; process;</div>
+<div class="line"><span class="lineno">  457</span>  process[<span class="stringliteral">&quot;passName&quot;</span>] = std::string(<span class="stringliteral">&quot;test&quot;</span>);</div>
+<div class="line"><span class="lineno">  458</span>  process[<span class="stringliteral">&quot;compressionSetting&quot;</span>] = 9;</div>
+<div class="line"><span class="lineno">  459</span>  process[<span class="stringliteral">&quot;maxTriesPerEvent&quot;</span>] = 1;</div>
+<div class="line"><span class="lineno">  460</span>  process[<span class="stringliteral">&quot;logFrequency&quot;</span>] = -1;</div>
+<div class="line"><span class="lineno">  461</span>  process[<span class="stringliteral">&quot;termLogLevel&quot;</span>] = 4;</div>
+<div class="line"><span class="lineno">  462</span>  process[<span class="stringliteral">&quot;fileLogLevel&quot;</span>] = 4;</div>
+<div class="line"><span class="lineno">  463</span>  process[<span class="stringliteral">&quot;logFileName&quot;</span>] = std::string();</div>
+<div class="line"><span class="lineno">  464</span>  process[<span class="stringliteral">&quot;tree_name&quot;</span>] = std::string(<span class="stringliteral">&quot;LDMX_Events&quot;</span>); </div>
+<div class="line"><span class="lineno">  465</span> </div>
+<div class="line"><span class="lineno">  466</span>  process[<span class="stringliteral">&quot;histogramFile&quot;</span>] =</div>
+<div class="line"><span class="lineno">  467</span>      std::string(<span class="stringliteral">&quot;&quot;</span>);                  <span class="comment">// will be changed in some branches</span></div>
+<div class="line"><span class="lineno">  468</span>  process[<span class="stringliteral">&quot;maxEvents&quot;</span>] = -1;            <span class="comment">// will be changed</span></div>
+<div class="line"><span class="lineno">  469</span>  process[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">true</span>;  <span class="comment">// will be changed in some branches</span></div>
+<div class="line"><span class="lineno">  470</span>  process[<span class="stringliteral">&quot;run&quot;</span>] = -1;                  <span class="comment">// will be changed in some branches</span></div>
+<div class="line"><span class="lineno">  471</span> </div>
+<div class="line"><span class="lineno">  472</span>  std::map&lt;std::string, std::any&gt; producerParameters;</div>
+<div class="line"><span class="lineno">  473</span>  producerParameters[<span class="stringliteral">&quot;className&quot;</span>] =</div>
+<div class="line"><span class="lineno">  474</span>      std::string(<span class="stringliteral">&quot;framework::test::TestProducer&quot;</span>);</div>
+<div class="line"><span class="lineno">  475</span>  producerParameters[<span class="stringliteral">&quot;instanceName&quot;</span>] = std::string(<span class="stringliteral">&quot;TestProducer&quot;</span>);</div>
+<div class="line"><span class="lineno">  476</span>  producerParameters[<span class="stringliteral">&quot;createRunHeader&quot;</span>] = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  477</span> </div>
+<div class="line"><span class="lineno">  478</span>  std::map&lt;std::string, std::any&gt; analyzerParameters;</div>
+<div class="line"><span class="lineno">  479</span>  analyzerParameters[<span class="stringliteral">&quot;className&quot;</span>] =</div>
+<div class="line"><span class="lineno">  480</span>      std::string(<span class="stringliteral">&quot;framework::test::TestAnalyzer&quot;</span>);</div>
+<div class="line"><span class="lineno">  481</span>  analyzerParameters[<span class="stringliteral">&quot;instanceName&quot;</span>] = std::string(<span class="stringliteral">&quot;TestAnalyzer&quot;</span>);</div>
+<div class="line"><span class="lineno">  482</span> </div>
+<div class="line"><span class="lineno">  483</span>  <span class="comment">// parameters classes to wrap parameters in</span></div>
+<div class="line"><span class="lineno">  484</span>  <a class="code hl_class" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> processConfig, producerConfig,</div>
+<div class="line"><span class="lineno">  485</span>      analyzerConfig;  <span class="comment">// parameters classes to wrap parameters in</span></div>
+<div class="line"><span class="lineno">  486</span>  analyzerConfig.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(analyzerParameters);</div>
 <div class="line"><span class="lineno">  487</span> </div>
-<div class="line"><span class="lineno">  488</span>  SECTION(<span class="stringliteral">&quot;Production Mode&quot;</span>) {</div>
-<div class="line"><span class="lineno">  489</span>    <span class="comment">// no input files, only output files</span></div>
-<div class="line"><span class="lineno">  490</span> </div>
-<div class="line"><span class="lineno">  491</span>    outputFiles = {<span class="stringliteral">&quot;test_productionmode_events.root&quot;</span>};</div>
-<div class="line"><span class="lineno">  492</span>    process[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
-<div class="line"><span class="lineno">  493</span>    process[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 3;</div>
-<div class="line"><span class="lineno">  494</span>    process[<span class="stringliteral">&quot;run&quot;</span>] = 3;</div>
-<div class="line"><span class="lineno">  495</span> </div>
-<div class="line"><span class="lineno">  496</span>    producerParameters[<span class="stringliteral">&quot;createRunHeader&quot;</span>] = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  497</span>    producerConfig.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(producerParameters);</div>
-<div class="line"><span class="lineno">  498</span> </div>
-<div class="line"><span class="lineno">  499</span>    sequence = {producerConfig};</div>
-<div class="line"><span class="lineno">  500</span>    process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
-<div class="line"><span class="lineno">  501</span> </div>
-<div class="line"><span class="lineno">  502</span>    SECTION(<span class="stringliteral">&quot;only producers&quot;</span>) {</div>
-<div class="line"><span class="lineno">  503</span>      SECTION(<span class="stringliteral">&quot;no drop/keep rules&quot;</span>) {</div>
-<div class="line"><span class="lineno">  504</span>        <span class="comment">// Process owns and deletes the processors</span></div>
-<div class="line"><span class="lineno">  505</span>        REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  506</span>        CHECK_THAT(outputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 3, 1));</div>
-<div class="line"><span class="lineno">  507</span>      }</div>
-<div class="line"><span class="lineno">  508</span> </div>
-<div class="line"><span class="lineno">  509</span>      SECTION(<span class="stringliteral">&quot;drop TestCollection&quot;</span>) {</div>
-<div class="line"><span class="lineno">  510</span>        std::vector&lt;std::string&gt; keep = {<span class="stringliteral">&quot;drop .*Collection.*&quot;</span>};</div>
-<div class="line"><span class="lineno">  511</span>        process[<span class="stringliteral">&quot;keep&quot;</span>] = keep;</div>
-<div class="line"><span class="lineno">  512</span>        REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  513</span>        CHECK_THAT(outputFiles.at(0),</div>
-<div class="line"><span class="lineno">  514</span>                   <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 3, 1, <span class="keyword">false</span>));</div>
-<div class="line"><span class="lineno">  515</span>      }</div>
-<div class="line"><span class="lineno">  516</span> </div>
-<div class="line"><span class="lineno">  517</span>      SECTION(<span class="stringliteral">&quot;skim for even indexed events&quot;</span>) {</div>
-<div class="line"><span class="lineno">  518</span>        process[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  519</span>        std::vector&lt;std::string&gt; rules = {<span class="stringliteral">&quot;TestProducer&quot;</span>, <span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><span class="lineno">  520</span>        process[<span class="stringliteral">&quot;skimRules&quot;</span>] = rules;</div>
-<div class="line"><span class="lineno">  521</span>        REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  522</span>        CHECK_THAT(outputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 1, 1));</div>
-<div class="line"><span class="lineno">  523</span>      }</div>
-<div class="line"><span class="lineno">  524</span>    }</div>
-<div class="line"><span class="lineno">  525</span> </div>
-<div class="line"><span class="lineno">  526</span>    SECTION(<span class="stringliteral">&quot;with Analyses&quot;</span>) {</div>
-<div class="line"><span class="lineno">  527</span>      std::string hist_file_path =</div>
-<div class="line"><span class="lineno">  528</span>          <span class="stringliteral">&quot;test_productionmode_withanalyses_hists.root&quot;</span>;</div>
+<div class="line"><span class="lineno">  488</span>  <span class="comment">// declare used and re-used types, not used in all branches</span></div>
+<div class="line"><span class="lineno">  489</span>  std::vector&lt;framework::config::Parameters&gt; sequence;</div>
+<div class="line"><span class="lineno">  490</span>  std::vector&lt;std::string&gt; inputFiles, outputFiles;</div>
+<div class="line"><span class="lineno">  491</span> </div>
+<div class="line"><span class="lineno">  492</span>  SECTION(<span class="stringliteral">&quot;Production Mode&quot;</span>) {</div>
+<div class="line"><span class="lineno">  493</span>    <span class="comment">// no input files, only output files</span></div>
+<div class="line"><span class="lineno">  494</span> </div>
+<div class="line"><span class="lineno">  495</span>    outputFiles = {<span class="stringliteral">&quot;test_productionmode_events.root&quot;</span>};</div>
+<div class="line"><span class="lineno">  496</span>    process[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
+<div class="line"><span class="lineno">  497</span>    process[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 3;</div>
+<div class="line"><span class="lineno">  498</span>    process[<span class="stringliteral">&quot;run&quot;</span>] = 3;</div>
+<div class="line"><span class="lineno">  499</span> </div>
+<div class="line"><span class="lineno">  500</span>    producerParameters[<span class="stringliteral">&quot;createRunHeader&quot;</span>] = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  501</span>    producerConfig.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(producerParameters);</div>
+<div class="line"><span class="lineno">  502</span> </div>
+<div class="line"><span class="lineno">  503</span>    sequence = {producerConfig};</div>
+<div class="line"><span class="lineno">  504</span>    process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
+<div class="line"><span class="lineno">  505</span> </div>
+<div class="line"><span class="lineno">  506</span>    SECTION(<span class="stringliteral">&quot;only producers&quot;</span>) {</div>
+<div class="line"><span class="lineno">  507</span>      SECTION(<span class="stringliteral">&quot;no drop/keep rules&quot;</span>) {</div>
+<div class="line"><span class="lineno">  508</span>        <span class="comment">// Process owns and deletes the processors</span></div>
+<div class="line"><span class="lineno">  509</span>        REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  510</span>        CHECK_THAT(outputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 3, 1));</div>
+<div class="line"><span class="lineno">  511</span>      }</div>
+<div class="line"><span class="lineno">  512</span> </div>
+<div class="line"><span class="lineno">  513</span>      SECTION(<span class="stringliteral">&quot;drop TestCollection&quot;</span>) {</div>
+<div class="line"><span class="lineno">  514</span>        std::vector&lt;std::string&gt; keep = {<span class="stringliteral">&quot;drop .*Collection.*&quot;</span>};</div>
+<div class="line"><span class="lineno">  515</span>        process[<span class="stringliteral">&quot;keep&quot;</span>] = keep;</div>
+<div class="line"><span class="lineno">  516</span>        REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  517</span>        CHECK_THAT(outputFiles.at(0),</div>
+<div class="line"><span class="lineno">  518</span>                   <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 3, 1, <span class="keyword">false</span>));</div>
+<div class="line"><span class="lineno">  519</span>      }</div>
+<div class="line"><span class="lineno">  520</span> </div>
+<div class="line"><span class="lineno">  521</span>      SECTION(<span class="stringliteral">&quot;skim for even indexed events&quot;</span>) {</div>
+<div class="line"><span class="lineno">  522</span>        process[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  523</span>        std::vector&lt;std::string&gt; rules = {<span class="stringliteral">&quot;TestProducer&quot;</span>, <span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><span class="lineno">  524</span>        process[<span class="stringliteral">&quot;skimRules&quot;</span>] = rules;</div>
+<div class="line"><span class="lineno">  525</span>        REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  526</span>        CHECK_THAT(outputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 1, 1));</div>
+<div class="line"><span class="lineno">  527</span>      }</div>
+<div class="line"><span class="lineno">  528</span>    }</div>
 <div class="line"><span class="lineno">  529</span> </div>
-<div class="line"><span class="lineno">  530</span>      process[<span class="stringliteral">&quot;histogramFile&quot;</span>] = hist_file_path;</div>
-<div class="line"><span class="lineno">  531</span> </div>
-<div class="line"><span class="lineno">  532</span>      sequence.push_back(analyzerConfig);</div>
-<div class="line"><span class="lineno">  533</span>      process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
-<div class="line"><span class="lineno">  534</span> </div>
-<div class="line"><span class="lineno">  535</span>      SECTION(<span class="stringliteral">&quot;no drop/keep rules&quot;</span>) {</div>
-<div class="line"><span class="lineno">  536</span>        REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  537</span>        CHECK_THAT(outputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 3, 1));</div>
-<div class="line"><span class="lineno">  538</span>      }</div>
-<div class="line"><span class="lineno">  539</span> </div>
-<div class="line"><span class="lineno">  540</span>      SECTION(<span class="stringliteral">&quot;drop TestCollection&quot;</span>) {</div>
-<div class="line"><span class="lineno">  541</span>        std::vector&lt;std::string&gt; keep = {<span class="stringliteral">&quot;drop .*Collection.*&quot;</span>};</div>
-<div class="line"><span class="lineno">  542</span>        process[<span class="stringliteral">&quot;keep&quot;</span>] = keep;</div>
-<div class="line"><span class="lineno">  543</span>        REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  544</span>        CHECK_THAT(outputFiles.at(0),</div>
-<div class="line"><span class="lineno">  545</span>                   <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 3, 1, <span class="keyword">false</span>));</div>
-<div class="line"><span class="lineno">  546</span>      }</div>
-<div class="line"><span class="lineno">  547</span> </div>
-<div class="line"><span class="lineno">  548</span>      SECTION(<span class="stringliteral">&quot;skim for even indexed events&quot;</span>) {</div>
-<div class="line"><span class="lineno">  549</span>        process[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  550</span>        std::vector&lt;std::string&gt; rules = {<span class="stringliteral">&quot;TestProducer&quot;</span>, <span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><span class="lineno">  551</span>        process[<span class="stringliteral">&quot;skimRules&quot;</span>] = rules;</div>
-<div class="line"><span class="lineno">  552</span>        REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  553</span>        CHECK_THAT(outputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 1, 1));</div>
-<div class="line"><span class="lineno">  554</span>      }</div>
-<div class="line"><span class="lineno">  555</span> </div>
-<div class="line"><span class="lineno">  556</span>      CHECK_THAT(hist_file_path, <a class="code hl_class" href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a>(1 + 2 + 3));</div>
-<div class="line"><span class="lineno">  557</span>      CHECK(framework::test::removeFile(hist_file_path));</div>
-<div class="line"><span class="lineno">  558</span>    }</div>
+<div class="line"><span class="lineno">  530</span>    SECTION(<span class="stringliteral">&quot;with Analyses&quot;</span>) {</div>
+<div class="line"><span class="lineno">  531</span>      std::string hist_file_path =</div>
+<div class="line"><span class="lineno">  532</span>          <span class="stringliteral">&quot;test_productionmode_withanalyses_hists.root&quot;</span>;</div>
+<div class="line"><span class="lineno">  533</span> </div>
+<div class="line"><span class="lineno">  534</span>      process[<span class="stringliteral">&quot;histogramFile&quot;</span>] = hist_file_path;</div>
+<div class="line"><span class="lineno">  535</span> </div>
+<div class="line"><span class="lineno">  536</span>      sequence.push_back(analyzerConfig);</div>
+<div class="line"><span class="lineno">  537</span>      process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
+<div class="line"><span class="lineno">  538</span> </div>
+<div class="line"><span class="lineno">  539</span>      SECTION(<span class="stringliteral">&quot;no drop/keep rules&quot;</span>) {</div>
+<div class="line"><span class="lineno">  540</span>        REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  541</span>        CHECK_THAT(outputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 3, 1));</div>
+<div class="line"><span class="lineno">  542</span>      }</div>
+<div class="line"><span class="lineno">  543</span> </div>
+<div class="line"><span class="lineno">  544</span>      SECTION(<span class="stringliteral">&quot;drop TestCollection&quot;</span>) {</div>
+<div class="line"><span class="lineno">  545</span>        std::vector&lt;std::string&gt; keep = {<span class="stringliteral">&quot;drop .*Collection.*&quot;</span>};</div>
+<div class="line"><span class="lineno">  546</span>        process[<span class="stringliteral">&quot;keep&quot;</span>] = keep;</div>
+<div class="line"><span class="lineno">  547</span>        REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  548</span>        CHECK_THAT(outputFiles.at(0),</div>
+<div class="line"><span class="lineno">  549</span>                   <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 3, 1, <span class="keyword">false</span>));</div>
+<div class="line"><span class="lineno">  550</span>      }</div>
+<div class="line"><span class="lineno">  551</span> </div>
+<div class="line"><span class="lineno">  552</span>      SECTION(<span class="stringliteral">&quot;skim for even indexed events&quot;</span>) {</div>
+<div class="line"><span class="lineno">  553</span>        process[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  554</span>        std::vector&lt;std::string&gt; rules = {<span class="stringliteral">&quot;TestProducer&quot;</span>, <span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><span class="lineno">  555</span>        process[<span class="stringliteral">&quot;skimRules&quot;</span>] = rules;</div>
+<div class="line"><span class="lineno">  556</span>        REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  557</span>        CHECK_THAT(outputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 1, 1));</div>
+<div class="line"><span class="lineno">  558</span>      }</div>
 <div class="line"><span class="lineno">  559</span> </div>
-<div class="line"><span class="lineno">  560</span>    CHECK(framework::test::removeFile(outputFiles.at(0)));</div>
-<div class="line"><span class="lineno">  561</span>  }  <span class="comment">// Production Mode</span></div>
-<div class="line"><span class="lineno">  562</span> </div>
-<div class="line"><span class="lineno">  563</span>  SECTION(<span class="stringliteral">&quot;Need Input Files&quot;</span>) {</div>
-<div class="line"><span class="lineno">  564</span>    inputFiles = {<span class="stringliteral">&quot;test_needinputfiles_2_events.root&quot;</span>,</div>
-<div class="line"><span class="lineno">  565</span>                  <span class="stringliteral">&quot;test_needinputfiles_3_events.root&quot;</span>,</div>
-<div class="line"><span class="lineno">  566</span>                  <span class="stringliteral">&quot;test_needinputfiles_4_events.root&quot;</span>};</div>
-<div class="line"><span class="lineno">  567</span> </div>
-<div class="line"><span class="lineno">  568</span>    producerParameters[<span class="stringliteral">&quot;createRunHeader&quot;</span>] = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  569</span>    producerConfig.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(producerParameters);</div>
-<div class="line"><span class="lineno">  570</span> </div>
-<div class="line"><span class="lineno">  571</span>    sequence = {producerConfig};</div>
-<div class="line"><span class="lineno">  572</span> </div>
-<div class="line"><span class="lineno">  573</span>    <span class="keyword">auto</span> makeInputs = process;</div>
-<div class="line"><span class="lineno">  574</span>    makeInputs[<span class="stringliteral">&quot;passName&quot;</span>] = std::string(<span class="stringliteral">&quot;makeInputs&quot;</span>);</div>
-<div class="line"><span class="lineno">  575</span>    makeInputs[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
+<div class="line"><span class="lineno">  560</span>      CHECK_THAT(hist_file_path, <a class="code hl_class" href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a>(1 + 2 + 3));</div>
+<div class="line"><span class="lineno">  561</span>      CHECK(framework::test::removeFile(hist_file_path));</div>
+<div class="line"><span class="lineno">  562</span>    }</div>
+<div class="line"><span class="lineno">  563</span> </div>
+<div class="line"><span class="lineno">  564</span>    CHECK(framework::test::removeFile(outputFiles.at(0)));</div>
+<div class="line"><span class="lineno">  565</span>  }  <span class="comment">// Production Mode</span></div>
+<div class="line"><span class="lineno">  566</span> </div>
+<div class="line"><span class="lineno">  567</span>  SECTION(<span class="stringliteral">&quot;Need Input Files&quot;</span>) {</div>
+<div class="line"><span class="lineno">  568</span>    inputFiles = {<span class="stringliteral">&quot;test_needinputfiles_2_events.root&quot;</span>,</div>
+<div class="line"><span class="lineno">  569</span>                  <span class="stringliteral">&quot;test_needinputfiles_3_events.root&quot;</span>,</div>
+<div class="line"><span class="lineno">  570</span>                  <span class="stringliteral">&quot;test_needinputfiles_4_events.root&quot;</span>};</div>
+<div class="line"><span class="lineno">  571</span> </div>
+<div class="line"><span class="lineno">  572</span>    producerParameters[<span class="stringliteral">&quot;createRunHeader&quot;</span>] = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  573</span>    producerConfig.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(producerParameters);</div>
+<div class="line"><span class="lineno">  574</span> </div>
+<div class="line"><span class="lineno">  575</span>    sequence = {producerConfig};</div>
 <div class="line"><span class="lineno">  576</span> </div>
-<div class="line"><span class="lineno">  577</span>    outputFiles = {inputFiles.at(0)};</div>
-<div class="line"><span class="lineno">  578</span>    makeInputs[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
-<div class="line"><span class="lineno">  579</span>    makeInputs[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 2;</div>
-<div class="line"><span class="lineno">  580</span>    makeInputs[<span class="stringliteral">&quot;run&quot;</span>] = 2;</div>
-<div class="line"><span class="lineno">  581</span> </div>
-<div class="line"><span class="lineno">  582</span>    REQUIRE(framework::test::runProcess(makeInputs));</div>
-<div class="line"><span class="lineno">  583</span>    REQUIRE_THAT(inputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 2, 1));</div>
-<div class="line"><span class="lineno">  584</span> </div>
-<div class="line"><span class="lineno">  585</span>    outputFiles = {inputFiles.at(1)};</div>
-<div class="line"><span class="lineno">  586</span>    makeInputs[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
-<div class="line"><span class="lineno">  587</span>    makeInputs[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 3;</div>
-<div class="line"><span class="lineno">  588</span>    makeInputs[<span class="stringliteral">&quot;run&quot;</span>] = 3;</div>
-<div class="line"><span class="lineno">  589</span> </div>
-<div class="line"><span class="lineno">  590</span>    REQUIRE(framework::test::runProcess(makeInputs));</div>
-<div class="line"><span class="lineno">  591</span>    REQUIRE_THAT(inputFiles.at(1), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 3, 1));</div>
-<div class="line"><span class="lineno">  592</span> </div>
-<div class="line"><span class="lineno">  593</span>    outputFiles = {inputFiles.at(2)};</div>
-<div class="line"><span class="lineno">  594</span>    makeInputs[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
-<div class="line"><span class="lineno">  595</span>    makeInputs[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 4;</div>
-<div class="line"><span class="lineno">  596</span>    makeInputs[<span class="stringliteral">&quot;run&quot;</span>] = 4;</div>
-<div class="line"><span class="lineno">  597</span> </div>
-<div class="line"><span class="lineno">  598</span>    REQUIRE(framework::test::runProcess(makeInputs));</div>
-<div class="line"><span class="lineno">  599</span>    REQUIRE_THAT(inputFiles.at(2), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 4, 1));</div>
-<div class="line"><span class="lineno">  600</span> </div>
-<div class="line"><span class="lineno">  601</span>    SECTION(<span class="stringliteral">&quot;Analysis Mode&quot;</span>) {</div>
-<div class="line"><span class="lineno">  602</span>      <span class="comment">// no output files, only histogram output</span></div>
-<div class="line"><span class="lineno">  603</span> </div>
-<div class="line"><span class="lineno">  604</span>      sequence = {analyzerConfig};</div>
-<div class="line"><span class="lineno">  605</span>      process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
-<div class="line"><span class="lineno">  606</span> </div>
-<div class="line"><span class="lineno">  607</span>      std::string hist_file_path = <span class="stringliteral">&quot;test_analysismode_hists.root&quot;</span>;</div>
-<div class="line"><span class="lineno">  608</span>      process[<span class="stringliteral">&quot;histogramFile&quot;</span>] = hist_file_path;</div>
-<div class="line"><span class="lineno">  609</span> </div>
-<div class="line"><span class="lineno">  610</span>      SECTION(<span class="stringliteral">&quot;one input file&quot;</span>) {</div>
-<div class="line"><span class="lineno">  611</span>        std::vector&lt;std::string&gt; inputFile = {inputFiles.at(0)};</div>
-<div class="line"><span class="lineno">  612</span>        process[<span class="stringliteral">&quot;inputFiles&quot;</span>] = inputFile;</div>
-<div class="line"><span class="lineno">  613</span>        REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  614</span>        CHECK_THAT(hist_file_path, <a class="code hl_class" href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a>(1 + 2));</div>
-<div class="line"><span class="lineno">  615</span>        CHECK(framework::test::removeFile(hist_file_path));</div>
-<div class="line"><span class="lineno">  616</span>      }</div>
-<div class="line"><span class="lineno">  617</span> </div>
-<div class="line"><span class="lineno">  618</span>      SECTION(<span class="stringliteral">&quot;multiple input files&quot;</span>) {</div>
-<div class="line"><span class="lineno">  619</span>        process[<span class="stringliteral">&quot;inputFiles&quot;</span>] = inputFiles;</div>
-<div class="line"><span class="lineno">  620</span>        REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  621</span>        CHECK_THAT(hist_file_path, <a class="code hl_class" href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a>(1 + 2 + 1 + 2 + 3 +</div>
-<div class="line"><span class="lineno">  622</span>                                                             1 + 2 + 3 + 4));</div>
-<div class="line"><span class="lineno">  623</span>        CHECK(framework::test::removeFile(hist_file_path));</div>
-<div class="line"><span class="lineno">  624</span>      }</div>
-<div class="line"><span class="lineno">  625</span> </div>
-<div class="line"><span class="lineno">  626</span>    }  <span class="comment">// Analysis Mode</span></div>
-<div class="line"><span class="lineno">  627</span> </div>
-<div class="line"><span class="lineno">  628</span>    SECTION(<span class="stringliteral">&quot;Merge Mode&quot;</span>) {</div>
-<div class="line"><span class="lineno">  629</span>      <span class="comment">// many input files to one output file</span></div>
-<div class="line"><span class="lineno">  630</span> </div>
-<div class="line"><span class="lineno">  631</span>      process[<span class="stringliteral">&quot;inputFiles&quot;</span>] = inputFiles;</div>
-<div class="line"><span class="lineno">  632</span> </div>
-<div class="line"><span class="lineno">  633</span>      std::string event_file_path = <span class="stringliteral">&quot;test_mergemode_events.root&quot;</span>;</div>
-<div class="line"><span class="lineno">  634</span>      outputFiles = {event_file_path};</div>
-<div class="line"><span class="lineno">  635</span>      process[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
+<div class="line"><span class="lineno">  577</span>    <span class="keyword">auto</span> makeInputs = process;</div>
+<div class="line"><span class="lineno">  578</span>    makeInputs[<span class="stringliteral">&quot;passName&quot;</span>] = std::string(<span class="stringliteral">&quot;makeInputs&quot;</span>);</div>
+<div class="line"><span class="lineno">  579</span>    makeInputs[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
+<div class="line"><span class="lineno">  580</span> </div>
+<div class="line"><span class="lineno">  581</span>    outputFiles = {inputFiles.at(0)};</div>
+<div class="line"><span class="lineno">  582</span>    makeInputs[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
+<div class="line"><span class="lineno">  583</span>    makeInputs[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 2;</div>
+<div class="line"><span class="lineno">  584</span>    makeInputs[<span class="stringliteral">&quot;run&quot;</span>] = 2;</div>
+<div class="line"><span class="lineno">  585</span> </div>
+<div class="line"><span class="lineno">  586</span>    REQUIRE(framework::test::runProcess(makeInputs));</div>
+<div class="line"><span class="lineno">  587</span>    REQUIRE_THAT(inputFiles.at(0), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 2, 1));</div>
+<div class="line"><span class="lineno">  588</span> </div>
+<div class="line"><span class="lineno">  589</span>    outputFiles = {inputFiles.at(1)};</div>
+<div class="line"><span class="lineno">  590</span>    makeInputs[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
+<div class="line"><span class="lineno">  591</span>    makeInputs[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 3;</div>
+<div class="line"><span class="lineno">  592</span>    makeInputs[<span class="stringliteral">&quot;run&quot;</span>] = 3;</div>
+<div class="line"><span class="lineno">  593</span> </div>
+<div class="line"><span class="lineno">  594</span>    REQUIRE(framework::test::runProcess(makeInputs));</div>
+<div class="line"><span class="lineno">  595</span>    REQUIRE_THAT(inputFiles.at(1), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 3, 1));</div>
+<div class="line"><span class="lineno">  596</span> </div>
+<div class="line"><span class="lineno">  597</span>    outputFiles = {inputFiles.at(2)};</div>
+<div class="line"><span class="lineno">  598</span>    makeInputs[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
+<div class="line"><span class="lineno">  599</span>    makeInputs[<span class="stringliteral">&quot;maxEvents&quot;</span>] = 4;</div>
+<div class="line"><span class="lineno">  600</span>    makeInputs[<span class="stringliteral">&quot;run&quot;</span>] = 4;</div>
+<div class="line"><span class="lineno">  601</span> </div>
+<div class="line"><span class="lineno">  602</span>    REQUIRE(framework::test::runProcess(makeInputs));</div>
+<div class="line"><span class="lineno">  603</span>    REQUIRE_THAT(inputFiles.at(2), <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 4, 1));</div>
+<div class="line"><span class="lineno">  604</span> </div>
+<div class="line"><span class="lineno">  605</span>    SECTION(<span class="stringliteral">&quot;Analysis Mode&quot;</span>) {</div>
+<div class="line"><span class="lineno">  606</span>      <span class="comment">// no output files, only histogram output</span></div>
+<div class="line"><span class="lineno">  607</span> </div>
+<div class="line"><span class="lineno">  608</span>      sequence = {analyzerConfig};</div>
+<div class="line"><span class="lineno">  609</span>      process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
+<div class="line"><span class="lineno">  610</span> </div>
+<div class="line"><span class="lineno">  611</span>      std::string hist_file_path = <span class="stringliteral">&quot;test_analysismode_hists.root&quot;</span>;</div>
+<div class="line"><span class="lineno">  612</span>      process[<span class="stringliteral">&quot;histogramFile&quot;</span>] = hist_file_path;</div>
+<div class="line"><span class="lineno">  613</span> </div>
+<div class="line"><span class="lineno">  614</span>      SECTION(<span class="stringliteral">&quot;one input file&quot;</span>) {</div>
+<div class="line"><span class="lineno">  615</span>        std::vector&lt;std::string&gt; inputFile = {inputFiles.at(0)};</div>
+<div class="line"><span class="lineno">  616</span>        process[<span class="stringliteral">&quot;inputFiles&quot;</span>] = inputFile;</div>
+<div class="line"><span class="lineno">  617</span>        REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  618</span>        CHECK_THAT(hist_file_path, <a class="code hl_class" href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a>(1 + 2));</div>
+<div class="line"><span class="lineno">  619</span>        CHECK(framework::test::removeFile(hist_file_path));</div>
+<div class="line"><span class="lineno">  620</span>      }</div>
+<div class="line"><span class="lineno">  621</span> </div>
+<div class="line"><span class="lineno">  622</span>      SECTION(<span class="stringliteral">&quot;multiple input files&quot;</span>) {</div>
+<div class="line"><span class="lineno">  623</span>        process[<span class="stringliteral">&quot;inputFiles&quot;</span>] = inputFiles;</div>
+<div class="line"><span class="lineno">  624</span>        REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  625</span>        CHECK_THAT(hist_file_path, <a class="code hl_class" href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a>(1 + 2 + 1 + 2 + 3 +</div>
+<div class="line"><span class="lineno">  626</span>                                                             1 + 2 + 3 + 4));</div>
+<div class="line"><span class="lineno">  627</span>        CHECK(framework::test::removeFile(hist_file_path));</div>
+<div class="line"><span class="lineno">  628</span>      }</div>
+<div class="line"><span class="lineno">  629</span> </div>
+<div class="line"><span class="lineno">  630</span>    }  <span class="comment">// Analysis Mode</span></div>
+<div class="line"><span class="lineno">  631</span> </div>
+<div class="line"><span class="lineno">  632</span>    SECTION(<span class="stringliteral">&quot;Merge Mode&quot;</span>) {</div>
+<div class="line"><span class="lineno">  633</span>      <span class="comment">// many input files to one output file</span></div>
+<div class="line"><span class="lineno">  634</span> </div>
+<div class="line"><span class="lineno">  635</span>      process[<span class="stringliteral">&quot;inputFiles&quot;</span>] = inputFiles;</div>
 <div class="line"><span class="lineno">  636</span> </div>
-<div class="line"><span class="lineno">  637</span>      SECTION(<span class="stringliteral">&quot;with analyzers&quot;</span>) {</div>
-<div class="line"><span class="lineno">  638</span>        sequence = {analyzerConfig};</div>
-<div class="line"><span class="lineno">  639</span> </div>
-<div class="line"><span class="lineno">  640</span>        std::string hist_file_path = <span class="stringliteral">&quot;test_mergemode_withanalyzers_hists.root&quot;</span>;</div>
-<div class="line"><span class="lineno">  641</span> </div>
-<div class="line"><span class="lineno">  642</span>        process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
-<div class="line"><span class="lineno">  643</span>        process[<span class="stringliteral">&quot;histogramFile&quot;</span>] = hist_file_path;</div>
-<div class="line"><span class="lineno">  644</span> </div>
-<div class="line"><span class="lineno">  645</span>        SECTION(<span class="stringliteral">&quot;no drop/keep rules&quot;</span>) {</div>
-<div class="line"><span class="lineno">  646</span>          REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  647</span>          CHECK_THAT(event_file_path,</div>
-<div class="line"><span class="lineno">  648</span>                     <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 2 + 3 + 4, 3));</div>
-<div class="line"><span class="lineno">  649</span>        }</div>
-<div class="line"><span class="lineno">  650</span> </div>
-<div class="line"><span class="lineno">  651</span>        SECTION(<span class="stringliteral">&quot;drop TestCollection&quot;</span>) {</div>
-<div class="line"><span class="lineno">  652</span>          std::vector&lt;std::string&gt; keep = {<span class="stringliteral">&quot;drop .*Collection.*&quot;</span>};</div>
-<div class="line"><span class="lineno">  653</span>          process[<span class="stringliteral">&quot;keep&quot;</span>] = keep;</div>
-<div class="line"><span class="lineno">  654</span>          REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  655</span>          CHECK_THAT(event_file_path,</div>
-<div class="line"><span class="lineno">  656</span>                     <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 2 + 3 + 4, 3, <span class="keyword">false</span>));</div>
-<div class="line"><span class="lineno">  657</span>        }</div>
-<div class="line"><span class="lineno">  658</span> </div>
-<div class="line"><span class="lineno">  659</span>        CHECK_THAT(hist_file_path, <a class="code hl_class" href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a>(1 + 2 + 1 + 2 + 3 +</div>
-<div class="line"><span class="lineno">  660</span>                                                             1 + 2 + 3 + 4));</div>
-<div class="line"><span class="lineno">  661</span>        CHECK(framework::test::removeFile(hist_file_path));</div>
-<div class="line"><span class="lineno">  662</span>      }</div>
-<div class="line"><span class="lineno">  663</span> </div>
-<div class="line"><span class="lineno">  664</span>      SECTION(<span class="stringliteral">&quot;with producers&quot;</span>) {</div>
-<div class="line"><span class="lineno">  665</span>        producerParameters[<span class="stringliteral">&quot;createRunHeader&quot;</span>] = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  666</span>        producerConfig.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(producerParameters);</div>
-<div class="line"><span class="lineno">  667</span>        sequence = {producerConfig};</div>
-<div class="line"><span class="lineno">  668</span> </div>
-<div class="line"><span class="lineno">  669</span>        process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
-<div class="line"><span class="lineno">  670</span> </div>
-<div class="line"><span class="lineno">  671</span>        SECTION(<span class="stringliteral">&quot;not listening to storage hints&quot;</span>) {</div>
-<div class="line"><span class="lineno">  672</span>          REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  673</span>          CHECK_THAT(event_file_path,</div>
-<div class="line"><span class="lineno">  674</span>                     <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 2 + 3 + 4, 3));</div>
-<div class="line"><span class="lineno">  675</span>        }</div>
-<div class="line"><span class="lineno">  676</span> </div>
-<div class="line"><span class="lineno">  677</span>        SECTION(<span class="stringliteral">&quot;skim for even indexed events&quot;</span>) {</div>
-<div class="line"><span class="lineno">  678</span>          process[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  679</span>          std::vector&lt;std::string&gt; rules = {<span class="stringliteral">&quot;TestProducer&quot;</span>, <span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><span class="lineno">  680</span>          process[<span class="stringliteral">&quot;skimRules&quot;</span>] = rules;</div>
-<div class="line"><span class="lineno">  681</span>          REQUIRE(framework::test::runProcess(process));</div>
-<div class="line"><span class="lineno">  682</span>          CHECK_THAT(event_file_path,</div>
-<div class="line"><span class="lineno">  683</span>                     <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 1 + 1 + 2, 3));</div>
-<div class="line"><span class="lineno">  684</span>        }</div>
-<div class="line"><span class="lineno">  685</span>      }</div>
-<div class="line"><span class="lineno">  686</span> </div>
-<div class="line"><span class="lineno">  687</span>      CHECK(framework::test::removeFile(event_file_path));</div>
-<div class="line"><span class="lineno">  688</span> </div>
-<div class="line"><span class="lineno">  689</span>    }  <span class="comment">// Merge Mode</span></div>
+<div class="line"><span class="lineno">  637</span>      std::string event_file_path = <span class="stringliteral">&quot;test_mergemode_events.root&quot;</span>;</div>
+<div class="line"><span class="lineno">  638</span>      outputFiles = {event_file_path};</div>
+<div class="line"><span class="lineno">  639</span>      process[<span class="stringliteral">&quot;outputFiles&quot;</span>] = outputFiles;</div>
+<div class="line"><span class="lineno">  640</span> </div>
+<div class="line"><span class="lineno">  641</span>      SECTION(<span class="stringliteral">&quot;with analyzers&quot;</span>) {</div>
+<div class="line"><span class="lineno">  642</span>        sequence = {analyzerConfig};</div>
+<div class="line"><span class="lineno">  643</span> </div>
+<div class="line"><span class="lineno">  644</span>        std::string hist_file_path = <span class="stringliteral">&quot;test_mergemode_withanalyzers_hists.root&quot;</span>;</div>
+<div class="line"><span class="lineno">  645</span> </div>
+<div class="line"><span class="lineno">  646</span>        process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
+<div class="line"><span class="lineno">  647</span>        process[<span class="stringliteral">&quot;histogramFile&quot;</span>] = hist_file_path;</div>
+<div class="line"><span class="lineno">  648</span> </div>
+<div class="line"><span class="lineno">  649</span>        SECTION(<span class="stringliteral">&quot;no drop/keep rules&quot;</span>) {</div>
+<div class="line"><span class="lineno">  650</span>          REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  651</span>          CHECK_THAT(event_file_path,</div>
+<div class="line"><span class="lineno">  652</span>                     <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 2 + 3 + 4, 3));</div>
+<div class="line"><span class="lineno">  653</span>        }</div>
+<div class="line"><span class="lineno">  654</span> </div>
+<div class="line"><span class="lineno">  655</span>        SECTION(<span class="stringliteral">&quot;drop TestCollection&quot;</span>) {</div>
+<div class="line"><span class="lineno">  656</span>          std::vector&lt;std::string&gt; keep = {<span class="stringliteral">&quot;drop .*Collection.*&quot;</span>};</div>
+<div class="line"><span class="lineno">  657</span>          process[<span class="stringliteral">&quot;keep&quot;</span>] = keep;</div>
+<div class="line"><span class="lineno">  658</span>          REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  659</span>          CHECK_THAT(event_file_path,</div>
+<div class="line"><span class="lineno">  660</span>                     <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;makeInputs&quot;</span>, 2 + 3 + 4, 3, <span class="keyword">false</span>));</div>
+<div class="line"><span class="lineno">  661</span>        }</div>
+<div class="line"><span class="lineno">  662</span> </div>
+<div class="line"><span class="lineno">  663</span>        CHECK_THAT(hist_file_path, <a class="code hl_class" href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a>(1 + 2 + 1 + 2 + 3 +</div>
+<div class="line"><span class="lineno">  664</span>                                                             1 + 2 + 3 + 4));</div>
+<div class="line"><span class="lineno">  665</span>        CHECK(framework::test::removeFile(hist_file_path));</div>
+<div class="line"><span class="lineno">  666</span>      }</div>
+<div class="line"><span class="lineno">  667</span> </div>
+<div class="line"><span class="lineno">  668</span>      SECTION(<span class="stringliteral">&quot;with producers&quot;</span>) {</div>
+<div class="line"><span class="lineno">  669</span>        producerParameters[<span class="stringliteral">&quot;createRunHeader&quot;</span>] = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  670</span>        producerConfig.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a861122abc8b0007140c5c5443799f7e0">setParameters</a>(producerParameters);</div>
+<div class="line"><span class="lineno">  671</span>        sequence = {producerConfig};</div>
+<div class="line"><span class="lineno">  672</span> </div>
+<div class="line"><span class="lineno">  673</span>        process[<span class="stringliteral">&quot;sequence&quot;</span>] = sequence;</div>
+<div class="line"><span class="lineno">  674</span> </div>
+<div class="line"><span class="lineno">  675</span>        SECTION(<span class="stringliteral">&quot;not listening to storage hints&quot;</span>) {</div>
+<div class="line"><span class="lineno">  676</span>          REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  677</span>          CHECK_THAT(event_file_path,</div>
+<div class="line"><span class="lineno">  678</span>                     <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 2 + 3 + 4, 3));</div>
+<div class="line"><span class="lineno">  679</span>        }</div>
+<div class="line"><span class="lineno">  680</span> </div>
+<div class="line"><span class="lineno">  681</span>        SECTION(<span class="stringliteral">&quot;skim for even indexed events&quot;</span>) {</div>
+<div class="line"><span class="lineno">  682</span>          process[<span class="stringliteral">&quot;skimDefaultIsKeep&quot;</span>] = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  683</span>          std::vector&lt;std::string&gt; rules = {<span class="stringliteral">&quot;TestProducer&quot;</span>, <span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><span class="lineno">  684</span>          process[<span class="stringliteral">&quot;skimRules&quot;</span>] = rules;</div>
+<div class="line"><span class="lineno">  685</span>          REQUIRE(framework::test::runProcess(process));</div>
+<div class="line"><span class="lineno">  686</span>          CHECK_THAT(event_file_path,</div>
+<div class="line"><span class="lineno">  687</span>                     <a class="code hl_class" href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a>(<span class="stringliteral">&quot;test&quot;</span>, 1 + 1 + 2, 3));</div>
+<div class="line"><span class="lineno">  688</span>        }</div>
+<div class="line"><span class="lineno">  689</span>      }</div>
 <div class="line"><span class="lineno">  690</span> </div>
-<div class="line"><span class="lineno">  691</span>  }  <span class="comment">// need input files</span></div>
+<div class="line"><span class="lineno">  691</span>      CHECK(framework::test::removeFile(event_file_path));</div>
 <div class="line"><span class="lineno">  692</span> </div>
-<div class="line"><span class="lineno">  693</span>}  <span class="comment">// process test</span></div>
-<div class="ttc" id="aclassframework_1_1test_1_1isGoodEventFile_html"><div class="ttname"><a href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a></div><div class="ttdef"><b>Definition:</b> <a href="FunctionalCoreTest_8cxx_source.html#l00233">FunctionalCoreTest.cxx:233</a></div></div>
-<div class="ttc" id="aclassframework_1_1test_1_1isGoodHistogramFile_html"><div class="ttname"><a href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a></div><div class="ttdef"><b>Definition:</b> <a href="FunctionalCoreTest_8cxx_source.html#l00171">FunctionalCoreTest.cxx:171</a></div></div>
+<div class="line"><span class="lineno">  693</span>    }  <span class="comment">// Merge Mode</span></div>
+<div class="line"><span class="lineno">  694</span> </div>
+<div class="line"><span class="lineno">  695</span>  }  <span class="comment">// need input files</span></div>
+<div class="line"><span class="lineno">  696</span> </div>
+<div class="line"><span class="lineno">  697</span>}  <span class="comment">// process test</span></div>
+<div class="ttc" id="aclassframework_1_1test_1_1isGoodEventFile_html"><div class="ttname"><a href="classframework_1_1test_1_1isGoodEventFile.html">framework::test::isGoodEventFile</a></div><div class="ttdef"><b>Definition:</b> <a href="FunctionalCoreTest_8cxx_source.html#l00237">FunctionalCoreTest.cxx:237</a></div></div>
+<div class="ttc" id="aclassframework_1_1test_1_1isGoodHistogramFile_html"><div class="ttname"><a href="classframework_1_1test_1_1isGoodHistogramFile.html">framework::test::isGoodHistogramFile</a></div><div class="ttdef"><b>Definition:</b> <a href="FunctionalCoreTest_8cxx_source.html#l00175">FunctionalCoreTest.cxx:175</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Parameters_8h_source.html#l00041">framework::config::Parameters::setParameters()</a>.</p>
 
