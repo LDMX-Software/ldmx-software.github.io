@@ -164,12 +164,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >add the event packet to the input crc </p>
 
-<p class="definition">Definition at line <a class="el" href="EventPacket_8cxx_source.html#l00057">57</a> of file <a class="el" href="EventPacket_8cxx_source.html">EventPacket.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>                                                {</div>
-<div class="line"><span class="lineno">   58</span>  std::vector&lt;uint32_t&gt; h{<a class="code hl_function" href="classpacking_1_1rawdatafile_1_1EventPacket.html#a955ab39a4782c5afde1a7d07262cf1e4">header</a>()},t{<a class="code hl_function" href="classpacking_1_1rawdatafile_1_1EventPacket.html#abe78f176402510eb18e49ab87e535ca7">tail</a>()};</div>
-<div class="line"><span class="lineno">   59</span>  c &lt;&lt; h &lt;&lt; subsys_data_ &lt;&lt; t;</div>
-<div class="line"><span class="lineno">   60</span>  <span class="keywordflow">return</span> c;</div>
-<div class="line"><span class="lineno">   61</span>}</div>
+<p class="definition">Definition at line <a class="el" href="EventPacket_8cxx_source.html#l00059">59</a> of file <a class="el" href="EventPacket_8cxx_source.html">EventPacket.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>                                                {</div>
+<div class="line"><span class="lineno">   60</span>  std::vector&lt;uint32_t&gt; h{<a class="code hl_function" href="classpacking_1_1rawdatafile_1_1EventPacket.html#a955ab39a4782c5afde1a7d07262cf1e4">header</a>()},t{<a class="code hl_function" href="classpacking_1_1rawdatafile_1_1EventPacket.html#abe78f176402510eb18e49ab87e535ca7">tail</a>()};</div>
+<div class="line"><span class="lineno">   61</span>  c &lt;&lt; h &lt;&lt; subsys_data_ &lt;&lt; t;</div>
+<div class="line"><span class="lineno">   62</span>  <span class="keywordflow">return</span> c;</div>
+<div class="line"><span class="lineno">   63</span>}</div>
 <div class="ttc" id="aclasspacking_1_1rawdatafile_1_1EventPacket_html_a955ab39a4782c5afde1a7d07262cf1e4"><div class="ttname"><a href="classpacking_1_1rawdatafile_1_1EventPacket.html#a955ab39a4782c5afde1a7d07262cf1e4">packing::rawdatafile::EventPacket::header</a></div><div class="ttdeci">std::vector&lt; uint32_t &gt; header() const</div><div class="ttdoc">Get the header words.</div><div class="ttdef"><b>Definition:</b> <a href="EventPacket_8cxx_source.html#l00025">EventPacket.cxx:25</a></div></div>
 <div class="ttc" id="aclasspacking_1_1rawdatafile_1_1EventPacket_html_abe78f176402510eb18e49ab87e535ca7"><div class="ttname"><a href="classpacking_1_1rawdatafile_1_1EventPacket.html#abe78f176402510eb18e49ab87e535ca7">packing::rawdatafile::EventPacket::tail</a></div><div class="ttdeci">std::vector&lt; uint32_t &gt; tail() const</div><div class="ttdoc">Get the tail words.</div><div class="ttdef"><b>Definition:</b> <a href="EventPacket_8cxx_source.html#l00032">EventPacket.cxx:32</a></div></div>
 </div><!-- fragment -->
@@ -230,7 +230,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   29</span>  <span class="keywordflow">return</span> { id_ , word };</div>
 <div class="line"><span class="lineno">   30</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="EventPacket_8cxx_source.html#l00057">add()</a>, and <a class="el" href="EventPacket_8cxx_source.html#l00051">write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EventPacket_8cxx_source.html#l00059">add()</a>, and <a class="el" href="EventPacket_8cxx_source.html#l00053">write()</a>.</p>
 
 </div>
 </div>
@@ -293,7 +293,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   46</span>  r.read(subsys_data_, num_subsys);</div>
 <div class="line"><span class="lineno">   47</span> </div>
 <div class="line"><span class="lineno">   48</span>  r &gt;&gt; crc_;</div>
-<div class="line"><span class="lineno">   49</span>}</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>  <span class="keywordflow">return</span> r;</div>
+<div class="line"><span class="lineno">   51</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Reader_8h_source.html#l00113">packing::utility::Reader::read()</a>.</p>
 
@@ -321,7 +323,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   33</span>  <span class="keywordflow">return</span> { crc_ };</div>
 <div class="line"><span class="lineno">   34</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="EventPacket_8cxx_source.html#l00057">add()</a>, and <a class="el" href="EventPacket_8cxx_source.html#l00051">write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EventPacket_8cxx_source.html#l00059">add()</a>, and <a class="el" href="EventPacket_8cxx_source.html#l00053">write()</a>.</p>
 
 </div>
 </div>
@@ -342,12 +344,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >write the event packet to the input writer </p>
 
-<p class="definition">Definition at line <a class="el" href="EventPacket_8cxx_source.html#l00051">51</a> of file <a class="el" href="EventPacket_8cxx_source.html">EventPacket.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>                                                        {</div>
-<div class="line"><span class="lineno">   52</span>  std::vector&lt;uint32_t&gt; h{<a class="code hl_function" href="classpacking_1_1rawdatafile_1_1EventPacket.html#a955ab39a4782c5afde1a7d07262cf1e4">header</a>()},t{<a class="code hl_function" href="classpacking_1_1rawdatafile_1_1EventPacket.html#abe78f176402510eb18e49ab87e535ca7">tail</a>()};</div>
-<div class="line"><span class="lineno">   53</span>  w &lt;&lt; h &lt;&lt; subsys_data_ &lt;&lt; t;</div>
-<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">return</span> w;</div>
-<div class="line"><span class="lineno">   55</span>}</div>
+<p class="definition">Definition at line <a class="el" href="EventPacket_8cxx_source.html#l00053">53</a> of file <a class="el" href="EventPacket_8cxx_source.html">EventPacket.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                        {</div>
+<div class="line"><span class="lineno">   54</span>  std::vector&lt;uint32_t&gt; h{<a class="code hl_function" href="classpacking_1_1rawdatafile_1_1EventPacket.html#a955ab39a4782c5afde1a7d07262cf1e4">header</a>()},t{<a class="code hl_function" href="classpacking_1_1rawdatafile_1_1EventPacket.html#abe78f176402510eb18e49ab87e535ca7">tail</a>()};</div>
+<div class="line"><span class="lineno">   55</span>  w &lt;&lt; h &lt;&lt; subsys_data_ &lt;&lt; t;</div>
+<div class="line"><span class="lineno">   56</span>  <span class="keywordflow">return</span> w;</div>
+<div class="line"><span class="lineno">   57</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="EventPacket_8cxx_source.html#l00025">header()</a>, and <a class="el" href="EventPacket_8cxx_source.html#l00032">tail()</a>.</p>
 
