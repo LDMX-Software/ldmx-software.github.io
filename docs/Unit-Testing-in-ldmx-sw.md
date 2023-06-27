@@ -170,11 +170,11 @@ Some useful options for `ctest` include
 - `--output-on-failure` Will output the contents of `stdout` of any failing test 
 - `--verbose`/`-V` and `--extra-verbose`/`-VV` 
 
-If you want to pass any command line arguments to the `run_test` executable (see [Catch2 documentation](https://github.com/catchorg/Catch2/blob/devel/docs/command-line.md#top)), you will have to invoke the executable directly. A common reason for doing this would be to run a particular subset of the test suit, e.g. all the tests in the `Ecal` module. To invoke the executable manually, enter the `Testing` directory in the build directory and run the executable in the build directory 
+If you want to pass any command line arguments to the `run_test` executable (see [Catch2 documentation](https://github.com/catchorg/Catch2/blob/devel/docs/command-line.md#top)), you will have to invoke the executable directly. A common reason for doing this would be to run a particular subset of the test suit, e.g. all the tests in the `Ecal` module. To invoke the executable manually, enter the `test` directory in the build directory and run the executable in the build directory 
 ```sh 
 cd build
 ldmx make install 
-cd Testing/
+cd test/
 ldmx ../run_test [Ecal] # Only run tests matching [Ecal]
 ```
 
