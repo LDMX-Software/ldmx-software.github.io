@@ -28,7 +28,7 @@ Please follow these guidelines when writing a new test and please write tests of
 
 ---
 
-Just to give you an example, here is a basic test that would be compiled into the `ldmx-test` executable.
+Just to give you an example, here is a basic test that would be compiled into the `run_test` executable.
 
 ```c++
 //file is MyModule/test/MyTest.cxx
