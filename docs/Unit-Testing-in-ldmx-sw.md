@@ -28,7 +28,7 @@ Please follow these guidelines when writing a new test and please write tests of
 
 ---
 
-Just to give you an example, here is a basic test that would be compiled into the `ldmx-test` executable.
+Just to give you an example, here is a basic test that would be compiled into the `run_test` executable.
 
 ```c++
 //file is MyModule/test/MyTest.cxx
@@ -153,8 +153,33 @@ TEST_CASE( "Testing the full running of MyProcessor" , "[MyModule]" ) {
 
 # ctest in ldmx-sw
 Currently, we add different Catch2-tests grouped by which module they are in to the general `ctest` command to run together.
-Further development could include other tests to be attached to `ctest`.
+Further development could include other tests to be attached to `ctest`. 
 
+
+## Invoking the test suite 
+To run the full test suite enter the build directory and invoke `ldmx ctest`. 
+
+```sh 
+cd build 
+ldmx make install 
+ldmx ctest
+```
+
+Some useful options for `ctest` include 
+- `--rerun-failed` Will skip any tests that didn't fail last time 
+- `--output-on-failure` Will output the contents of `stdout` of any failing test 
+- `--verbose`/`-V` and `--extra-verbose`/`-VV` 
+
+If you want to pass any command line arguments to the `run_test` executable (see [Catch2 documentation](https://github.com/catchorg/Catch2/blob/devel/docs/command-line.md#top)), you will have to invoke the executable directly. A common reason for doing this would be to run a particular subset of the test suit, e.g. all the tests in the `Ecal` module. To invoke the executable manually, enter the `Testing` directory in the build directory and run the executable in the build directory 
+```sh 
+cd build
+ldmx make install 
+cd Testing/
+ldmx ../run_test [Ecal] # Only run tests matching [Ecal]
+```
+
+*Note:* Since the python configuration will import python modules from the install directory, you have to run `ldmx make install` and not just `ldmx make` before running your tests if you have made changes to any python files.
+ 
 # GitHub Actions and ldmx-sw
 We use a variety of GitHub actions to write several different GitHub workflows to not only test ldmx-sw, but also generate documentation and build production images.
 A good starting place to look at these actions is in the [.github/workflows](https://github.com/LDMX-Software/ldmx-sw/tree/trunk/.github/workflows) directory of ldmx-sw.
