@@ -177,6 +177,9 @@ ldmx make install
 cd Testing/
 ldmx ../run_test [Ecal] # Only run tests matching [Ecal]
 ```
+
+*Note:* Since the python configuration will import python modules from the install directory, you have to run `ldmx make install` and not just `ldmx make` before running your tests if you have made changes to any python files.
+ 
 # GitHub Actions and ldmx-sw
 We use a variety of GitHub actions to write several different GitHub workflows to not only test ldmx-sw, but also generate documentation and build production images.
 A good starting place to look at these actions is in the [.github/workflows](https://github.com/LDMX-Software/ldmx-sw/tree/trunk/.github/workflows) directory of ldmx-sw.
