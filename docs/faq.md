@@ -15,7 +15,7 @@ root 'my-macro.C("/path/to/input/file.root",72,42.0)'
 Using the `ldmx` command to run this in the container would look like
 ```
 ldmx root <<EOF
-my-macro.C("/path/to/input/file.root",72,42.0)
+.x my-macro.C("/path/to/input/file.root",72,42.0)
 EOF
 ```
 The context for this can be found on [GitHub Issue #1169](https://github.com/LDMX-Software/ldmx-sw/issues/1169).
