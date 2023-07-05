@@ -5,6 +5,20 @@ layout: default
 # What the F.A.Q.?
 Frequent issues and potholes that new collaborators run into while starting their work with LDMX software.
 
+### Running ROOT Macros from the Command Line
+ROOT uses shell-reserved characters in order to mark command line arguments as specific inputs to the function it is parsing and running as a macro.
+This makes passing these arguments through our shell infrastructure difficult and one needs a hack to get around this.
+Outside of the container, one might execute a ROOT macro like
+```
+root 'my-macro.C("/path/to/input/file.root",72,42.0)'
+```
+Using the `ldmx` command to run this in the container would look like
+```
+ldmx root <<EOF
+my-macro.C("/path/to/input/file.root",72,42.0)
+EOF
+```
+The context for this can be found on [GitHub Issue #1169](https://github.com/LDMX-Software/ldmx-sw/issues/1169).
 
 ### Installing on SDF: No space left on the device
 
