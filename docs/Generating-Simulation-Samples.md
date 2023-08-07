@@ -125,3 +125,17 @@ p.outputFiles = [ "output.root" ]
 # at beginning of run and wait for user to press enter to start
 p.pause()
 ```
+
+
+## Resimulation 
+
+If you want to resimulate a subset of events, in one or more event files you can use `ReSimulation` producer. 
+
+```python
+mySim = mySimConfiguration # However the configuration for the original events was set up 
+reSim = mySim.resimulate() # No argument provided, resimulate all events in the input files 
+reSim = mySim.resimulate([1,45,78]) # Resimulate only event number 1, 45, 78 
+p.inputFiles = ['myFile1.root', 'myFile2.root']
+```
+
+This will 
