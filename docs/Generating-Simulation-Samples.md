@@ -138,4 +138,22 @@ reSim = mySim.resimulate([1,45,78]) # Resimulate only event number 1, 45, 78
 p.inputFiles = ['myFile1.root', 'myFile2.root']
 ```
 
-This will 
+This will re-run the Geant4 simulation for the events you specified for both files set with the `inputFiles` variables. If you have multiple input files containing events with the same event number, both will be resimulated. Make sure that the pass name for your process isn't the same as the one used for producing the original files or you will end up with ambiguous outputs.
+
+You can't create a `ReSimulator` from scratch, it needs a simulation configuration to be based of. 
+
+
+### How it works 
+
+The `ReSimulation` producer is relatively straight forward. In the regular `Simulator`, we record the current state of the Geant4 random number generator into the event header when an event simulation concluded succesfully. The `ReSimulator` will read the RNG state from the event header and set the Geant4 RNG state accordingly. 
+
+This comes with some caveats 
+- Only the random number state of the Geant4 configuration is affected. If any other producer relies on some random number sequence outside of the `Simulator` (e.g. for producing noise), the output from running these producers on resimulated hits may differ. 
+- If you make any changes to the configuration of the `ReSimulator` compared to the original `Simulator` producer, the simulation will only be identical up to the first point where Geant4 sees a difference. This means that the later in the simulation your change occurs, the better the odds that you will have a useful resimulation. 
+
+
+One way you can attempt to check for this would be to run a filter or an analyzer which checks that a sufficient part of your simulation is the same as the original event. A typical use case would be to check that the same photonuclear interaction occurred which could be done by comparing the relevant parts of the `SimParticle` collection from both producers. 
+
+
+
+
