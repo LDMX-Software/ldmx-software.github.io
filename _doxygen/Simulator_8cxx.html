@@ -51,26 +51,26 @@ $(function() {
 <p>Producer that runs Geant4 simulation inside of ldmx-app.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Simulator_8h_source.html">SimCore/Simulator.h</a>&quot;</code><br />
+<code>#include &quot;Framework/EventFile.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="Process_8h_source.html">Framework/Process.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RandomNumberSeedService_8h_source.html">Framework/RandomNumberSeedService.h</a>&quot;</code><br />
 <code>#include &quot;Framework/Version.h&quot;</code><br />
-<code>#include &quot;Framework/EventFile.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="APrimePhysics_8h_source.html">SimCore/APrimePhysics.h</a>&quot;</code><br />
 <code>#include &quot;SimCore/DetectorConstruction.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="G4Session_8h_source.html">SimCore/G4Session.h</a>&quot;</code><br />
-<code>#include &quot;SimCore/XsecBiasingOperator.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="TrackingAction_8h_source.html">SimCore/G4User/TrackingAction.h</a>&quot;</code><br />
+<code>#include &quot;SimCore/Geo/ParserFactory.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="PrimaryGenerator_8h_source.html">SimCore/PrimaryGenerator.h</a>&quot;</code><br />
 <code>#include &quot;SimCore/SensitiveDetector.h&quot;</code><br />
-<code>#include &quot;SimCore/Geo/ParserFactory.h&quot;</code><br />
 <code>#include &quot;SimCore/UserEventInformation.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="TrackingAction_8h_source.html">SimCore/G4User/TrackingAction.h</a>&quot;</code><br />
-<code>#include &quot;G4UIsession.hh&quot;</code><br />
-<code>#include &quot;G4UImanager.hh&quot;</code><br />
+<code>#include &quot;SimCore/XsecBiasingOperator.h&quot;</code><br />
 <code>#include &quot;G4BiasingProcessInterface.hh&quot;</code><br />
-<code>#include &quot;G4Electron.hh&quot;</code><br />
 <code>#include &quot;G4CascadeParameters.hh&quot;</code><br />
+<code>#include &quot;G4Electron.hh&quot;</code><br />
 <code>#include &quot;G4GDMLParser.hh&quot;</code><br />
 <code>#include &quot;G4GeometryManager.hh&quot;</code><br />
+<code>#include &quot;G4UImanager.hh&quot;</code><br />
+<code>#include &quot;G4UIsession.hh&quot;</code><br />
 <code>#include &quot;Randomize.hh&quot;</code><br />
 </div>
 <p><a href="Simulator_8cxx_source.html">Go to the source code of this file.</a></p>

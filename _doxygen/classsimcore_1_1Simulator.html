@@ -48,7 +48,6 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classsimcore_1_1Simulator-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">simcore::Simulator Class Reference</div></div>
 </div><!--header-->
@@ -63,8 +62,8 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0a34f186a7e25044f9983f71f8d161fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a0a34f186a7e25044f9983f71f8d161fd">Simulator</a> (const std::string &amp;name, <a class="el" href="classframework_1_1Process.html">framework::Process</a> &amp;process)</td></tr>
 <tr class="separator:a0a34f186a7e25044f9983f71f8d161fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad16ae901186bc5cd2aae43680093d840"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#ad16ae901186bc5cd2aae43680093d840">~Simulator</a> ()</td></tr>
-<tr class="separator:ad16ae901186bc5cd2aae43680093d840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace25455c7828f0020a6f8037f84d89a0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#ace25455c7828f0020a6f8037f84d89a0">~Simulator</a> ()=default</td></tr>
+<tr class="separator:ace25455c7828f0020a6f8037f84d89a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06cc159cd123f26fbeff35ac36d461b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a06cc159cd123f26fbeff35ac36d461b9">configure</a> (<a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;parameters) final override</td></tr>
 <tr class="separator:a06cc159cd123f26fbeff35ac36d461b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a426a9b637d1d30e6b2645abf642c39ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a426a9b637d1d30e6b2645abf642c39ef">beforeNewRun</a> (<a class="el" href="classldmx_1_1RunHeader.html">ldmx::RunHeader</a> &amp;header) final override</td></tr>
@@ -75,11 +74,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abc4b3e3d95f7f83899e0393a0eccc209"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8e514877233554188b53e23bda61e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a8e8e514877233554188b53e23bda61e7">onFileClose</a> (<a class="el" href="classframework_1_1EventFile.html">framework::EventFile</a> &amp;eventFile) final override</td></tr>
 <tr class="separator:a8e8e514877233554188b53e23bda61e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4662ab2d52463508042e7d8276a4112c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a4662ab2d52463508042e7d8276a4112c">onProcessStart</a> () final override</td></tr>
-<tr class="separator:a4662ab2d52463508042e7d8276a4112c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9ef989f094167177660967fe5057a66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#ad9ef989f094167177660967fe5057a66">onProcessEnd</a> () final override</td></tr>
 <tr class="memdesc:ad9ef989f094167177660967fe5057a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback called once processing is complete.  <a href="classsimcore_1_1Simulator.html#ad9ef989f094167177660967fe5057a66">More...</a><br /></td></tr>
 <tr class="separator:ad9ef989f094167177660967fe5057a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classsimcore_1_1SimulatorBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsimcore_1_1SimulatorBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classsimcore_1_1SimulatorBase.html">simcore::SimulatorBase</a></td></tr>
+<tr class="memitem:a58255cbe0254ff349c48dbf8771af46e inherit pub_methods_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a58255cbe0254ff349c48dbf8771af46e">SimulatorBase</a> (const std::string &amp;name, <a class="el" href="classframework_1_1Process.html">framework::Process</a> &amp;process)</td></tr>
+<tr class="separator:a58255cbe0254ff349c48dbf8771af46e inherit pub_methods_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5691230fa74900b84253a99034fceb05 inherit pub_methods_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a5691230fa74900b84253a99034fceb05">configure</a> (<a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;parameters) override</td></tr>
+<tr class="separator:a5691230fa74900b84253a99034fceb05 inherit pub_methods_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classframework_1_1Producer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classframework_1_1Producer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classframework_1_1Producer.html">framework::Producer</a></td></tr>
 <tr class="memitem:a27ea7492352028e450f24f4750c62e1b inherit pub_methods_classframework_1_1Producer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1Producer.html#a27ea7492352028e450f24f4750c62e1b">Producer</a> (const std::string &amp;name, <a class="el" href="classframework_1_1Process.html">Process</a> &amp;process)</td></tr>
 <tr class="separator:a27ea7492352028e450f24f4750c62e1b inherit pub_methods_classframework_1_1Producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,22 +126,11 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a992eac92079f73ad2d70d7ab7c09cd1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a992eac92079f73ad2d70d7ab7c09cd1e">allowed</a> (const std::string &amp;command) const</td></tr>
-<tr class="separator:a992eac92079f73ad2d70d7ab7c09cd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154ed724ab2579aa88cbf17ae95da3b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a154ed724ab2579aa88cbf17ae95da3b3">setSeeds</a> (std::vector&lt; int &gt; seeds)</td></tr>
 <tr class="separator:a154ed724ab2579aa88cbf17ae95da3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ad042a5ed67950fb6d9543bd4cc213caa"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsimcore_1_1RunManager.html">RunManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a></td></tr>
-<tr class="memdesc:ad042a5ed67950fb6d9543bd4cc213caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager controlling G4 simulation run.  <a href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">More...</a><br /></td></tr>
-<tr class="separator:ad042a5ed67950fb6d9543bd4cc213caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6163281b6787af2ad373ce980b1cd0c3"><td class="memItemLeft" align="right" valign="top">G4UImanager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a6163281b6787af2ad373ce980b1cd0c3">uiManager_</a> {nullptr}</td></tr>
-<tr class="memdesc:a6163281b6787af2ad373ce980b1cd0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">User interface handle.  <a href="classsimcore_1_1Simulator.html#a6163281b6787af2ad373ce980b1cd0c3">More...</a><br /></td></tr>
-<tr class="separator:a6163281b6787af2ad373ce980b1cd0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c030acf54ba0f105b42423e6637f06c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; G4UIsession &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">sessionHandle_</a></td></tr>
-<tr class="memdesc:a9c030acf54ba0f105b42423e6637f06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle to the G4Session -&gt; how to deal with G4cout and G4cerr.  <a href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">More...</a><br /></td></tr>
-<tr class="separator:a9c030acf54ba0f105b42423e6637f06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ce1cf2d1637cc77391ce25f26819950"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">numEventsBegan_</a> {0}</td></tr>
 <tr class="memdesc:a4ce1cf2d1637cc77391ce25f26819950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of events started.  <a href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">More...</a><br /></td></tr>
 <tr class="separator:a4ce1cf2d1637cc77391ce25f26819950"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,20 +140,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ad6b01ac44aa0a3a80aa48603a1e0aef8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#ad6b01ac44aa0a3a80aa48603a1e0aef8">run_</a> {-1}</td></tr>
 <tr class="memdesc:ad6b01ac44aa0a3a80aa48603a1e0aef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">the run number (for accessing the run header in onFileClose  <a href="classsimcore_1_1Simulator.html#ad6b01ac44aa0a3a80aa48603a1e0aef8">More...</a><br /></td></tr>
 <tr class="separator:ad6b01ac44aa0a3a80aa48603a1e0aef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11716de741e1aea74d61608039657fa0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsimcore_1_1ConditionsInterface.html">ConditionsInterface</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a11716de741e1aea74d61608039657fa0">conditionsIntf_</a></td></tr>
-<tr class="memdesc:a11716de741e1aea74d61608039657fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditions interface.  <a href="classsimcore_1_1Simulator.html#a11716de741e1aea74d61608039657fa0">More...</a><br /></td></tr>
-<tr class="separator:a11716de741e1aea74d61608039657fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c9be0796db1a041cf0ea20deb253ef1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a></td></tr>
-<tr class="memdesc:a5c9be0796db1a041cf0ea20deb253ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameters used to configure the simulation.  <a href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">More...</a><br /></td></tr>
-<tr class="separator:a5c9be0796db1a041cf0ea20deb253ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a989dd7e0845622152ffc6abb1fc99345"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a989dd7e0845622152ffc6abb1fc99345">verbosity_</a> {1}</td></tr>
-<tr class="memdesc:a989dd7e0845622152ffc6abb1fc99345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vebosity for the simulation.  <a href="classsimcore_1_1Simulator.html#a989dd7e0845622152ffc6abb1fc99345">More...</a><br /></td></tr>
-<tr class="separator:a989dd7e0845622152ffc6abb1fc99345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a981aae2f783d991f016598a4099adce9"><td class="memItemLeft" align="right" valign="top">static const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1Simulator.html#a981aae2f783d991f016598a4099adce9">invalidCommands_</a></td></tr>
-<tr class="separator:a981aae2f783d991f016598a4099adce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -172,9 +149,46 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_attribs_classframework_1_1Producer"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classframework_1_1Producer')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classframework_1_1Producer.html">framework::Producer</a></td></tr>
 <tr class="memitem:a6433d7808e67a79fc83d4c6f7e57224a inherit pub_static_attribs_classframework_1_1Producer"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1Producer.html#a6433d7808e67a79fc83d4c6f7e57224a">CLASSTYPE</a> {1}</td></tr>
 <tr class="separator:a6433d7808e67a79fc83d4c6f7e57224a inherit pub_static_attribs_classframework_1_1Producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classsimcore_1_1SimulatorBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classsimcore_1_1SimulatorBase')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classsimcore_1_1SimulatorBase.html">simcore::SimulatorBase</a></td></tr>
+<tr class="memitem:af4d369acf549818a4dfa8e90efa5d2aa inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#af4d369acf549818a4dfa8e90efa5d2aa">onProcessEnd</a> () override</td></tr>
+<tr class="memdesc:af4d369acf549818a4dfa8e90efa5d2aa inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback called once processing is complete.  <a href="classsimcore_1_1SimulatorBase.html#af4d369acf549818a4dfa8e90efa5d2aa">More...</a><br /></td></tr>
+<tr class="separator:af4d369acf549818a4dfa8e90efa5d2aa inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae219a79166394fe24b78b9448c884323 inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#ae219a79166394fe24b78b9448c884323">onProcessStart</a> () override</td></tr>
+<tr class="separator:ae219a79166394fe24b78b9448c884323 inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0199ebbff5c466a668cf4eac7cb06686 inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a0199ebbff5c466a668cf4eac7cb06686">updateEventHeader</a> (<a class="el" href="classldmx_1_1EventHeader.html">ldmx::EventHeader</a> &amp;eventHeader) const</td></tr>
+<tr class="separator:a0199ebbff5c466a668cf4eac7cb06686 inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63a9129b76418131d26a3474d91994b7 inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a63a9129b76418131d26a3474d91994b7">saveTracks</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event)</td></tr>
+<tr class="separator:a63a9129b76418131d26a3474d91994b7 inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea3fd6c06a214ab064a30c5eee4bd9b inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#aaea3fd6c06a214ab064a30c5eee4bd9b">saveSDHits</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event)</td></tr>
+<tr class="separator:aaea3fd6c06a214ab064a30c5eee4bd9b inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53fc48a1ac378efb9bd9dc26f4c16892 inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a53fc48a1ac378efb9bd9dc26f4c16892">produce</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event) override=0</td></tr>
+<tr class="separator:a53fc48a1ac378efb9bd9dc26f4c16892 inherit pro_methods_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classframework_1_1EventProcessor"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classframework_1_1EventProcessor')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classframework_1_1EventProcessor.html">framework::EventProcessor</a></td></tr>
 <tr class="memitem:a8d42387da8fbb2d1f01f5ecebb64dd7d inherit pro_methods_classframework_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a> ()</td></tr>
 <tr class="separator:a8d42387da8fbb2d1f01f5ecebb64dd7d inherit pro_methods_classframework_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classsimcore_1_1SimulatorBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classsimcore_1_1SimulatorBase')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classsimcore_1_1SimulatorBase.html">simcore::SimulatorBase</a></td></tr>
+<tr class="memitem:a48a1cfd5753ddf89cc7c32c97d0a399d inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsimcore_1_1ConditionsInterface.html">ConditionsInterface</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a48a1cfd5753ddf89cc7c32c97d0a399d">conditionsIntf_</a></td></tr>
+<tr class="memdesc:a48a1cfd5753ddf89cc7c32c97d0a399d inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditions interface.  <a href="classsimcore_1_1SimulatorBase.html#a48a1cfd5753ddf89cc7c32c97d0a399d">More...</a><br /></td></tr>
+<tr class="separator:a48a1cfd5753ddf89cc7c32c97d0a399d inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f3debabae4b227db3ee6a193d6f442 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">G4UImanager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a45f3debabae4b227db3ee6a193d6f442">uiManager_</a> {nullptr}</td></tr>
+<tr class="memdesc:a45f3debabae4b227db3ee6a193d6f442 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">User interface handle.  <a href="classsimcore_1_1SimulatorBase.html#a45f3debabae4b227db3ee6a193d6f442">More...</a><br /></td></tr>
+<tr class="separator:a45f3debabae4b227db3ee6a193d6f442 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5171eaccd9a8f58cfb3dc44419a8cba4 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsimcore_1_1RunManager.html">RunManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a5171eaccd9a8f58cfb3dc44419a8cba4">runManager_</a></td></tr>
+<tr class="memdesc:a5171eaccd9a8f58cfb3dc44419a8cba4 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager controlling G4 simulation run.  <a href="classsimcore_1_1SimulatorBase.html#a5171eaccd9a8f58cfb3dc44419a8cba4">More...</a><br /></td></tr>
+<tr class="separator:a5171eaccd9a8f58cfb3dc44419a8cba4 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9eb7e1430bf2f05ef623e9b2e9e14f2 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; G4UIsession &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#ac9eb7e1430bf2f05ef623e9b2e9e14f2">sessionHandle_</a></td></tr>
+<tr class="memdesc:ac9eb7e1430bf2f05ef623e9b2e9e14f2 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle to the G4Session -&gt; how to deal with G4cout and G4cerr.  <a href="classsimcore_1_1SimulatorBase.html#ac9eb7e1430bf2f05ef623e9b2e9e14f2">More...</a><br /></td></tr>
+<tr class="separator:ac9eb7e1430bf2f05ef623e9b2e9e14f2 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b55688a2e1ba64453741da378c1d3e0 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a9b55688a2e1ba64453741da378c1d3e0">verbosity_</a> {1}</td></tr>
+<tr class="memdesc:a9b55688a2e1ba64453741da378c1d3e0 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vebosity for the simulation.  <a href="classsimcore_1_1SimulatorBase.html#a9b55688a2e1ba64453741da378c1d3e0">More...</a><br /></td></tr>
+<tr class="separator:a9b55688a2e1ba64453741da378c1d3e0 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd239fdc20c8c67f2127b7bf95ce46eb inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">parameters_</a></td></tr>
+<tr class="memdesc:afd239fdc20c8c67f2127b7bf95ce46eb inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameters used to configure the simulation.  <a href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">More...</a><br /></td></tr>
+<tr class="separator:afd239fdc20c8c67f2127b7bf95ce46eb inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a286f93dabf70ccf6e599d4140caa64f3 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a286f93dabf70ccf6e599d4140caa64f3">preInitCommands_</a></td></tr>
+<tr class="separator:a286f93dabf70ccf6e599d4140caa64f3 inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b5f21905ed15a5aae7fc1b0b0f514b inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#a95b5f21905ed15a5aae7fc1b0b0f514b">postInitCommands_</a></td></tr>
+<tr class="separator:a95b5f21905ed15a5aae7fc1b0b0f514b inherit pro_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classframework_1_1EventProcessor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classframework_1_1EventProcessor')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classframework_1_1EventProcessor.html">framework::EventProcessor</a></td></tr>
 <tr class="memitem:ae8a2bfe0849be1531e195438c1eaba4c inherit pro_attribs_classframework_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classframework_1_1HistogramHelper.html">HistogramHelper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">histograms_</a></td></tr>
 <tr class="memdesc:ae8a2bfe0849be1531e195438c1eaba4c inherit pro_attribs_classframework_1_1EventProcessor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface class for making and filling histograms.  <a href="classframework_1_1EventProcessor.html#ae8a2bfe0849be1531e195438c1eaba4c">More...</a><br /></td></tr>
@@ -185,6 +199,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ae350c3e5c91a69b8910bf1229ed21430 inherit pro_attribs_classframework_1_1EventProcessor"><td class="memItemLeft" align="right" valign="top">logging::logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classframework_1_1EventProcessor.html#ae350c3e5c91a69b8910bf1229ed21430">theLog_</a></td></tr>
 <tr class="memdesc:ae350c3e5c91a69b8910bf1229ed21430 inherit pro_attribs_classframework_1_1EventProcessor"><td class="mdescLeft">&#160;</td><td class="mdescRight">The logger for this <a class="el" href="classframework_1_1EventProcessor.html" title="Base class for all event processing components.">EventProcessor</a>.  <a href="classframework_1_1EventProcessor.html#ae350c3e5c91a69b8910bf1229ed21430">More...</a><br /></td></tr>
 <tr class="separator:ae350c3e5c91a69b8910bf1229ed21430 inherit pro_attribs_classframework_1_1EventProcessor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classsimcore_1_1SimulatorBase"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classsimcore_1_1SimulatorBase')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classsimcore_1_1SimulatorBase.html">simcore::SimulatorBase</a></td></tr>
+<tr class="memitem:af74e442be28bd675724b23213ef32883 inherit pro_static_attribs_classsimcore_1_1SimulatorBase"><td class="memItemLeft" align="right" valign="top">static const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SimulatorBase.html#af74e442be28bd675724b23213ef32883">invalidCommands_</a></td></tr>
+<tr class="separator:af74e442be28bd675724b23213ef32883 inherit pro_static_attribs_classsimcore_1_1SimulatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Producer that runs Geant4 simulation inside of ldmx-app. </p>
@@ -227,45 +244,14 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00056">56</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>    : <a class="code hl_class" href="classframework_1_1Producer.html">framework::Producer</a>(name, process), <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a11716de741e1aea74d61608039657fa0">conditionsIntf_</a>(<span class="keyword">this</span>) {</div>
-<div class="line"><span class="lineno">   58</span>  <span class="comment">// Get the ui manager from geant</span></div>
-<div class="line"><span class="lineno">   59</span>  <span class="comment">//      This pointer is handled by Geant4</span></div>
-<div class="line"><span class="lineno">   60</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a6163281b6787af2ad373ce980b1cd0c3">uiManager_</a> = G4UImanager::GetUIpointer();</div>
-<div class="line"><span class="lineno">   61</span>}</div>
-<div class="ttc" id="aclassframework_1_1Producer_html"><div class="ttname"><a href="classframework_1_1Producer.html">framework::Producer</a></div><div class="ttdoc">Base class for a module which produces a data product.</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00252">EventProcessor.h:252</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a11716de741e1aea74d61608039657fa0"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a11716de741e1aea74d61608039657fa0">simcore::Simulator::conditionsIntf_</a></div><div class="ttdeci">ConditionsInterface conditionsIntf_</div><div class="ttdoc">Conditions interface.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00164">Simulator.h:164</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a6163281b6787af2ad373ce980b1cd0c3"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a6163281b6787af2ad373ce980b1cd0c3">simcore::Simulator::uiManager_</a></div><div class="ttdeci">G4UImanager * uiManager_</div><div class="ttdoc">User interface handle.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00145">Simulator.h:145</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00145">uiManager_</a>.</p>
-
-</div>
-</div>
-<a id="ad16ae901186bc5cd2aae43680093d840" name="ad16ae901186bc5cd2aae43680093d840"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad16ae901186bc5cd2aae43680093d840">&#9670;&#160;</a></span>~Simulator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">simcore::Simulator::~Simulator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Destructor.</p>
-<p >Deletes hanging pointers </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00063">63</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00045">45</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>    : <a class="code hl_class" href="classsimcore_1_1SimulatorBase.html">simcore::SimulatorBase</a>(name, process) {}</div>
+<div class="ttc" id="aclasssimcore_1_1SimulatorBase_html"><div class="ttname"><a href="classsimcore_1_1SimulatorBase.html">simcore::SimulatorBase</a></div><div class="ttdef"><b>Definition:</b> <a href="SimulatorBase_8h_source.html#l00023">SimulatorBase.h:23</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a992eac92079f73ad2d70d7ab7c09cd1e" name="a992eac92079f73ad2d70d7ab7c09cd1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a992eac92079f73ad2d70d7ab7c09cd1e">&#9670;&#160;</a></span>allowed()</h2>
+<a id="ace25455c7828f0020a6f8037f84d89a0" name="ace25455c7828f0020a6f8037f84d89a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace25455c7828f0020a6f8037f84d89a0">&#9670;&#160;</a></span>~Simulator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,41 +260,23 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool simcore::Simulator::allowed </td>
+          <td class="memname">virtual simcore::Simulator::~Simulator </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>command</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Check if the input command is allowed to be run.</p>
-<p >Looks for sub-strings matching the ones listed as an invalid command. These invalid commands are mostly commands where control has been handed over to <a class="el" href="classsimcore_1_1Simulator.html" title="Producer that runs Geant4 simulation inside of ldmx-app.">Simulator</a>. </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00359">359</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  359</span>                                                      {</div>
-<div class="line"><span class="lineno">  360</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; invalidSubstring : <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a981aae2f783d991f016598a4099adce9">invalidCommands_</a>) {</div>
-<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">if</span> (command.find(invalidSubstring) != std::string::npos) {</div>
-<div class="line"><span class="lineno">  362</span>      <span class="comment">// found invalid substring in this command ==&gt; NOT ALLOWED</span></div>
-<div class="line"><span class="lineno">  363</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  364</span>    }</div>
-<div class="line"><span class="lineno">  365</span>  }</div>
-<div class="line"><span class="lineno">  366</span>  <span class="comment">// checked all invalid commands ==&gt; ALLOWED</span></div>
-<div class="line"><span class="lineno">  367</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  368</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a981aae2f783d991f016598a4099adce9"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a981aae2f783d991f016598a4099adce9">simcore::Simulator::invalidCommands_</a></div><div class="ttdeci">static const std::vector&lt; std::string &gt; invalidCommands_</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00152">Simulator.h:152</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00152">invalidCommands_</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00065">configure()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00284">onProcessStart()</a>.</p>
+<p >Destructor. </p>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a426a9b637d1d30e6b2645abf642c39ef" name="a426a9b637d1d30e6b2645abf642c39ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a426a9b637d1d30e6b2645abf642c39ef">&#9670;&#160;</a></span>beforeNewRun()</h2>
 
@@ -339,88 +307,87 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p ><a class="el" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">SensitiveDetector::Factory::get()</a>.apply([&amp;header](auto sd) { sd-&gt;RecordConfig(header); });</p>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1Producer.html#a8b68d090cd4e50c3c572825bc57bebff">framework::Producer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00146">146</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>                                                  {</div>
-<div class="line"><span class="lineno">  147</span>  <span class="comment">// Get the detector header from the user detector construction</span></div>
-<div class="line"><span class="lineno">  148</span>  DetectorConstruction* detector =</div>
-<div class="line"><span class="lineno">  149</span>      <span class="keyword">static_cast&lt;</span>RunManager*<span class="keyword">&gt;</span>(RunManager::GetRunManager())</div>
-<div class="line"><span class="lineno">  150</span>          -&gt;getDetectorConstruction();</div>
-<div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">setDetectorName</a>(detector-&gt;getDetectorName());</div>
-<div class="line"><span class="lineno">  153</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#ad0f85c8c3c37aaf25c5f4cf8b2345476">setDescription</a>(<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;description&quot;</span>));</div>
-<div class="line"><span class="lineno">  154</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#af018cc3e5c3bf3645dbeb22796d355df">setIntParameter</a>(</div>
-<div class="line"><span class="lineno">  155</span>      <span class="stringliteral">&quot;Included Scoring Planes&quot;</span>,</div>
-<div class="line"><span class="lineno">  156</span>      !<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;scoringPlanes&quot;</span>).empty());</div>
-<div class="line"><span class="lineno">  157</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#af018cc3e5c3bf3645dbeb22796d355df">setIntParameter</a>(</div>
-<div class="line"><span class="lineno">  158</span>      <span class="stringliteral">&quot;Use Random Seed from Event Header&quot;</span>,</div>
-<div class="line"><span class="lineno">  159</span>      <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;rootPrimaryGenUseSeed&quot;</span>));</div>
-<div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>  <span class="comment">// lambda function for dumping 3-vectors into the run header</span></div>
-<div class="line"><span class="lineno">  162</span>  <span class="keyword">auto</span> threeVectorDump = [&amp;header](<span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><span class="lineno">  163</span>                                   <span class="keyword">const</span> std::vector&lt;double&gt;&amp; vec) {</div>
-<div class="line"><span class="lineno">  164</span>    header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a24662eaa1e2aa9e59ae9fa753f521b20">setFloatParameter</a>(name + <span class="stringliteral">&quot; X&quot;</span>, vec.at(0));</div>
-<div class="line"><span class="lineno">  165</span>    header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a24662eaa1e2aa9e59ae9fa753f521b20">setFloatParameter</a>(name + <span class="stringliteral">&quot; Y&quot;</span>, vec.at(1));</div>
-<div class="line"><span class="lineno">  166</span>    header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a24662eaa1e2aa9e59ae9fa753f521b20">setFloatParameter</a>(name + <span class="stringliteral">&quot; Z&quot;</span>, vec.at(2));</div>
-<div class="line"><span class="lineno">  167</span>  };</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>  <span class="keyword">auto</span> beamSpotSmear{</div>
-<div class="line"><span class="lineno">  170</span>      <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;beamSpotSmear&quot;</span>, {})};</div>
-<div class="line"><span class="lineno">  171</span>  <span class="keywordflow">if</span> (!beamSpotSmear.empty())</div>
-<div class="line"><span class="lineno">  172</span>    threeVectorDump(<span class="stringliteral">&quot;Smear Beam Spot [mm]&quot;</span>, beamSpotSmear);</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>  <span class="comment">// lambda function for dumping vectors of strings to the run header</span></div>
-<div class="line"><span class="lineno">  175</span>  <span class="keyword">auto</span> stringVectorDump = [&amp;header](<span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><span class="lineno">  176</span>                                    <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; vec) {</div>
-<div class="line"><span class="lineno">  177</span>    <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; val : vec) {</div>
-<div class="line"><span class="lineno">  179</span>      header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a566440ba2c8c3a9efad7ef0fd19181c8">setStringParameter</a>(name + <span class="stringliteral">&quot; &quot;</span> + std::to_string(++index), val);</div>
-<div class="line"><span class="lineno">  180</span>    }</div>
-<div class="line"><span class="lineno">  181</span>  };</div>
-<div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span>  stringVectorDump(<span class="stringliteral">&quot;Pre Init Command&quot;</span>,</div>
-<div class="line"><span class="lineno">  184</span>                   <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::string&gt;&gt;(</div>
-<div class="line"><span class="lineno">  185</span>                       <span class="stringliteral">&quot;preInitCommands&quot;</span>, {}));</div>
-<div class="line"><span class="lineno">  186</span>  stringVectorDump(<span class="stringliteral">&quot;Post Init Command&quot;</span>,</div>
-<div class="line"><span class="lineno">  187</span>                   <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::string&gt;&gt;(</div>
-<div class="line"><span class="lineno">  188</span>                       <span class="stringliteral">&quot;postInitCommands&quot;</span>, {}));</div>
-<div class="line"><span class="lineno">  189</span> </div>
-<div class="line"><span class="lineno">  190</span>  <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">simcore::XsecBiasingOperator::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">apply</a>([&amp;header](<span class="keyword">auto</span> bop) {</div>
-<div class="line"><span class="lineno">  191</span>      bop-&gt;RecordConfig(header);</div>
-<div class="line"><span class="lineno">  192</span>      });</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>  <span class="keywordtype">int</span> counter = 0;</div>
-<div class="line"><span class="lineno">  195</span>  <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">PrimaryGenerator::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">apply</a>([&amp;header,&amp;counter](<span class="keyword">auto</span> gen) {</div>
-<div class="line"><span class="lineno">  196</span>        std::string gen_id = <span class="stringliteral">&quot;Gen&quot;</span>+std::to_string(counter++);</div>
-<div class="line"><span class="lineno">  197</span>        gen-&gt;RecordConfig(gen_id, header);</div>
-<div class="line"><span class="lineno">  198</span>      });</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  206</span>  <span class="comment">// Set a string parameter with the Geant4 SHA-1.</span></div>
-<div class="line"><span class="lineno">  207</span>  <span class="keywordflow">if</span> (G4RunManagerKernel::GetRunManagerKernel()) {</div>
-<div class="line"><span class="lineno">  208</span>    G4String g4Version{</div>
-<div class="line"><span class="lineno">  209</span>        G4RunManagerKernel::GetRunManagerKernel()-&gt;GetVersionString()};</div>
-<div class="line"><span class="lineno">  210</span>    header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a566440ba2c8c3a9efad7ef0fd19181c8">setStringParameter</a>(<span class="stringliteral">&quot;Geant4 revision&quot;</span>, g4Version);</div>
-<div class="line"><span class="lineno">  211</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  212</span>    ldmx_log(warn) &lt;&lt; <span class="stringliteral">&quot;Unable to access G4 RunManager Kernel. Will not store &quot;</span></div>
-<div class="line"><span class="lineno">  213</span>                      <span class="stringliteral">&quot;G4 Version string.&quot;</span>;</div>
-<div class="line"><span class="lineno">  214</span>  }</div>
-<div class="line"><span class="lineno">  215</span> </div>
-<div class="line"><span class="lineno">  216</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a566440ba2c8c3a9efad7ef0fd19181c8">setStringParameter</a>(<span class="stringliteral">&quot;ldmx-sw revision&quot;</span>, GIT_SHA1);</div>
-<div class="line"><span class="lineno">  217</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00052">52</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>                                                  {</div>
+<div class="line"><span class="lineno">   53</span>  <span class="comment">// Get the detector header from the user detector construction</span></div>
+<div class="line"><span class="lineno">   54</span>  DetectorConstruction* detector =</div>
+<div class="line"><span class="lineno">   55</span>      <span class="keyword">dynamic_cast&lt;</span>RunManager*<span class="keyword">&gt;</span>(RunManager::GetRunManager())</div>
+<div class="line"><span class="lineno">   56</span>          -&gt;getDetectorConstruction();</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">setDetectorName</a>(detector-&gt;getDetectorName());</div>
+<div class="line"><span class="lineno">   59</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#ad0f85c8c3c37aaf25c5f4cf8b2345476">setDescription</a>(<a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;description&quot;</span>));</div>
+<div class="line"><span class="lineno">   60</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#af018cc3e5c3bf3645dbeb22796d355df">setIntParameter</a>(</div>
+<div class="line"><span class="lineno">   61</span>      <span class="stringliteral">&quot;Included Scoring Planes&quot;</span>,</div>
+<div class="line"><span class="lineno">   62</span>      !<a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;scoringPlanes&quot;</span>).empty());</div>
+<div class="line"><span class="lineno">   63</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#af018cc3e5c3bf3645dbeb22796d355df">setIntParameter</a>(</div>
+<div class="line"><span class="lineno">   64</span>      <span class="stringliteral">&quot;Use Random Seed from Event Header&quot;</span>,</div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;rootPrimaryGenUseSeed&quot;</span>));</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>  <span class="comment">// lambda function for dumping 3-vectors into the run header</span></div>
+<div class="line"><span class="lineno">   68</span>  <span class="keyword">auto</span> threeVectorDump = [&amp;header](<span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><span class="lineno">   69</span>                                   <span class="keyword">const</span> std::vector&lt;double&gt;&amp; vec) {</div>
+<div class="line"><span class="lineno">   70</span>    header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a24662eaa1e2aa9e59ae9fa753f521b20">setFloatParameter</a>(name + <span class="stringliteral">&quot; X&quot;</span>, vec.at(0));</div>
+<div class="line"><span class="lineno">   71</span>    header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a24662eaa1e2aa9e59ae9fa753f521b20">setFloatParameter</a>(name + <span class="stringliteral">&quot; Y&quot;</span>, vec.at(1));</div>
+<div class="line"><span class="lineno">   72</span>    header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a24662eaa1e2aa9e59ae9fa753f521b20">setFloatParameter</a>(name + <span class="stringliteral">&quot; Z&quot;</span>, vec.at(2));</div>
+<div class="line"><span class="lineno">   73</span>  };</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>  <span class="keyword">auto</span> beamSpotSmear{</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;double&gt;&gt;(<span class="stringliteral">&quot;beamSpotSmear&quot;</span>, {})};</div>
+<div class="line"><span class="lineno">   77</span>  <span class="keywordflow">if</span> (!beamSpotSmear.empty()) {</div>
+<div class="line"><span class="lineno">   78</span>    threeVectorDump(<span class="stringliteral">&quot;Smear Beam Spot [mm]&quot;</span>, beamSpotSmear);</div>
+<div class="line"><span class="lineno">   79</span>  }</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>  <span class="comment">// lambda function for dumping vectors of strings to the run header</span></div>
+<div class="line"><span class="lineno">   82</span>  <span class="keyword">auto</span> stringVectorDump = [&amp;header](<span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><span class="lineno">   83</span>                                    <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; vec) {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; val : vec) {</div>
+<div class="line"><span class="lineno">   86</span>      header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a566440ba2c8c3a9efad7ef0fd19181c8">setStringParameter</a>(name + <span class="stringliteral">&quot; &quot;</span> + std::to_string(++index), val);</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+<div class="line"><span class="lineno">   88</span>  };</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>  stringVectorDump(<span class="stringliteral">&quot;Pre Init Command&quot;</span>,</div>
+<div class="line"><span class="lineno">   91</span>                   <a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::string&gt;&gt;(</div>
+<div class="line"><span class="lineno">   92</span>                       <span class="stringliteral">&quot;preInitCommands&quot;</span>, {}));</div>
+<div class="line"><span class="lineno">   93</span>  stringVectorDump(<span class="stringliteral">&quot;Post Init Command&quot;</span>,</div>
+<div class="line"><span class="lineno">   94</span>                   <a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::string&gt;&gt;(</div>
+<div class="line"><span class="lineno">   95</span>                       <span class="stringliteral">&quot;postInitCommands&quot;</span>, {}));</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>  <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">simcore::XsecBiasingOperator::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">apply</a>(</div>
+<div class="line"><span class="lineno">   98</span>      [&amp;header](<span class="keyword">auto</span> bop) { bop-&gt;RecordConfig(header); });</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>  <span class="keywordtype">int</span> counter = 0;</div>
+<div class="line"><span class="lineno">  101</span>  <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">PrimaryGenerator::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">apply</a>([&amp;header, &amp;counter](<span class="keyword">auto</span> gen) {</div>
+<div class="line"><span class="lineno">  102</span>    std::string gen_id = <span class="stringliteral">&quot;Gen&quot;</span> + std::to_string(counter++);</div>
+<div class="line"><span class="lineno">  103</span>    gen-&gt;RecordConfig(gen_id, header);</div>
+<div class="line"><span class="lineno">  104</span>  });</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>  <span class="comment">// Set a string parameter with the Geant4 SHA-1.</span></div>
+<div class="line"><span class="lineno">  107</span>  <span class="keywordflow">if</span> (G4RunManagerKernel::GetRunManagerKernel()) {</div>
+<div class="line"><span class="lineno">  108</span>    G4String g4Version{</div>
+<div class="line"><span class="lineno">  109</span>        G4RunManagerKernel::GetRunManagerKernel()-&gt;GetVersionString()};</div>
+<div class="line"><span class="lineno">  110</span>    header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a566440ba2c8c3a9efad7ef0fd19181c8">setStringParameter</a>(<span class="stringliteral">&quot;Geant4 revision&quot;</span>, g4Version);</div>
+<div class="line"><span class="lineno">  111</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  112</span>    ldmx_log(warn) &lt;&lt; <span class="stringliteral">&quot;Unable to access G4 RunManager Kernel. Will not store &quot;</span></div>
+<div class="line"><span class="lineno">  113</span>                      <span class="stringliteral">&quot;G4 Version string.&quot;</span>;</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>  header.<a class="code hl_function" href="classldmx_1_1RunHeader.html#a566440ba2c8c3a9efad7ef0fd19181c8">setStringParameter</a>(<span class="stringliteral">&quot;ldmx-sw revision&quot;</span>, GIT_SHA1);</div>
+<div class="line"><span class="lineno">  117</span>}</div>
 <div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_a18206b7c01007dd706abce7e5505eae1"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">framework::config::Parameters::getParameter</a></div><div class="ttdeci">T getParameter(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00089">Parameters.h:89</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_a24662eaa1e2aa9e59ae9fa753f521b20"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a24662eaa1e2aa9e59ae9fa753f521b20">ldmx::RunHeader::setFloatParameter</a></div><div class="ttdeci">void setFloatParameter(const std::string &amp;name, float value)</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00137">RunHeader.h:137</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_a42e321c3639bb8fc2021ae0d8664744c"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a42e321c3639bb8fc2021ae0d8664744c">ldmx::RunHeader::setDetectorName</a></div><div class="ttdeci">void setDetectorName(const std::string &amp;det)</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00048">RunHeader.h:48</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_a566440ba2c8c3a9efad7ef0fd19181c8"><div class="ttname"><a href="classldmx_1_1RunHeader.html#a566440ba2c8c3a9efad7ef0fd19181c8">ldmx::RunHeader::setStringParameter</a></div><div class="ttdeci">void setStringParameter(const std::string &amp;name, std::string value)</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00162">RunHeader.h:162</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_ad0f85c8c3c37aaf25c5f4cf8b2345476"><div class="ttname"><a href="classldmx_1_1RunHeader.html#ad0f85c8c3c37aaf25c5f4cf8b2345476">ldmx::RunHeader::setDescription</a></div><div class="ttdeci">void setDescription(const std::string &amp;des)</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00060">RunHeader.h:60</a></div></div>
 <div class="ttc" id="aclassldmx_1_1RunHeader_html_af018cc3e5c3bf3645dbeb22796d355df"><div class="ttname"><a href="classldmx_1_1RunHeader.html#af018cc3e5c3bf3645dbeb22796d355df">ldmx::RunHeader::setIntParameter</a></div><div class="ttdeci">void setIntParameter(const std::string &amp;name, int value)</div><div class="ttdef"><b>Definition:</b> <a href="RunHeader_8h_source.html#l00112">RunHeader.h:112</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Factory_html_aa0f06c8d4ea2c8d7bba4485a9e5560e7"><div class="ttname"><a href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">simcore::Factory::apply</a></div><div class="ttdeci">void apply(UnaryFunction f) const</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00282">Factory.h:282</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1Factory_html_aa0f06c8d4ea2c8d7bba4485a9e5560e7"><div class="ttname"><a href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">simcore::Factory::apply</a></div><div class="ttdeci">void apply(UnaryFunction f) const</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00283">Factory.h:283</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1Factory_html_abdbb8169a68e3ac620b3b296e0279e91"><div class="ttname"><a href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">simcore::Factory::get</a></div><div class="ttdeci">static Factory &amp; get()</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00217">Factory.h:217</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a5c9be0796db1a041cf0ea20deb253ef1"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">simcore::Simulator::parameters_</a></div><div class="ttdeci">framework::config::Parameters parameters_</div><div class="ttdoc">The parameters used to configure the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00171">Simulator.h:171</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1SimulatorBase_html_afd239fdc20c8c67f2127b7bf95ce46eb"><div class="ttname"><a href="classsimcore_1_1SimulatorBase.html#afd239fdc20c8c67f2127b7bf95ce46eb">simcore::SimulatorBase::parameters_</a></div><div class="ttdeci">framework::config::Parameters parameters_</div><div class="ttdoc">The parameters used to configure the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="SimulatorBase_8h_source.html#l00064">SimulatorBase.h:64</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Factory_8h_source.html#l00282">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::apply()</a>, <a class="el" href="Factory_8h_source.html#l00217">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::get()</a>, <a class="el" href="DetectorConstruction_8h_source.html#l00065">simcore::DetectorConstruction::getDetectorName()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="Simulator_8h_source.html#l00171">parameters_</a>, <a class="el" href="RunHeader_8h_source.html#l00060">ldmx::RunHeader::setDescription()</a>, <a class="el" href="RunHeader_8h_source.html#l00048">ldmx::RunHeader::setDetectorName()</a>, <a class="el" href="RunHeader_8h_source.html#l00137">ldmx::RunHeader::setFloatParameter()</a>, <a class="el" href="RunHeader_8h_source.html#l00112">ldmx::RunHeader::setIntParameter()</a>, and <a class="el" href="RunHeader_8h_source.html#l00162">ldmx::RunHeader::setStringParameter()</a>.</p>
+<p class="reference">References <a class="el" href="Factory_8h_source.html#l00283">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::apply()</a>, <a class="el" href="Factory_8h_source.html#l00217">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::get()</a>, <a class="el" href="DetectorConstruction_8h_source.html#l00065">simcore::DetectorConstruction::getDetectorName()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="SimulatorBase_8h_source.html#l00064">simcore::SimulatorBase::parameters_</a>, <a class="el" href="RunHeader_8h_source.html#l00060">ldmx::RunHeader::setDescription()</a>, <a class="el" href="RunHeader_8h_source.html#l00048">ldmx::RunHeader::setDetectorName()</a>, <a class="el" href="RunHeader_8h_source.html#l00137">ldmx::RunHeader::setFloatParameter()</a>, <a class="el" href="RunHeader_8h_source.html#l00112">ldmx::RunHeader::setIntParameter()</a>, and <a class="el" href="RunHeader_8h_source.html#l00162">ldmx::RunHeader::setStringParameter()</a>.</p>
 
 </div>
 </div>
@@ -457,96 +424,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a21156f6f3954394925e9a265de9d702a">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00065">65</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>                                                               {</div>
-<div class="line"><span class="lineno">   66</span>  <span class="comment">// parameters used to configure the simulation</span></div>
-<div class="line"><span class="lineno">   67</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a> = parameters;</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>  <span class="comment">// Set the verbosity level.  The default level  is 0.</span></div>
-<div class="line"><span class="lineno">   70</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a989dd7e0845622152ffc6abb1fc99345">verbosity_</a> = <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;verbosity&quot;</span>);</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>  <span class="comment">// in past versions of SimCore, the run number for the simulation was</span></div>
-<div class="line"><span class="lineno">   73</span>  <span class="comment">// passed directly to the simulator class rather than pulled from central</span></div>
-<div class="line"><span class="lineno">   74</span>  <span class="comment">// framework. This is here to prevent the user from accidentally using the</span></div>
-<div class="line"><span class="lineno">   75</span>  <span class="comment">// old style.</span></div>
-<div class="line"><span class="lineno">   76</span>  <span class="keywordflow">if</span> (parameters.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#ad81bea1ff780f8c2511f3e2eb09838b2">exists</a>(<span class="stringliteral">&quot;runNumber&quot;</span>)) {</div>
-<div class="line"><span class="lineno">   77</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;InvalidParam&quot;</span>,</div>
-<div class="line"><span class="lineno">   78</span>      <span class="stringliteral">&quot;Remove old-style of setting the simulation run number (sim.runNumber).&quot;</span></div>
-<div class="line"><span class="lineno">   79</span>      <span class="stringliteral">&quot; Replace with using the Process object (p.run).&quot;</span>);</div>
-<div class="line"><span class="lineno">   80</span>  }</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>  <span class="comment">// If the verbosity level is set to 0,</span></div>
-<div class="line"><span class="lineno">   83</span>  <span class="comment">// If the verbosity level is &gt; 1, log everything to a file. Otherwise,</span></div>
-<div class="line"><span class="lineno">   84</span>  <span class="comment">// dump the output. If a prefix has been specified, append it ot the</span></div>
-<div class="line"><span class="lineno">   85</span>  <span class="comment">// log message.</span></div>
-<div class="line"><span class="lineno">   86</span>  <span class="keyword">auto</span> loggingPrefix = <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;logging_prefix&quot;</span>);</div>
-<div class="line"><span class="lineno">   87</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a989dd7e0845622152ffc6abb1fc99345">verbosity_</a> == 0)</div>
-<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">sessionHandle_</a> = std::make_unique&lt;BatchSession&gt;();</div>
-<div class="line"><span class="lineno">   89</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a989dd7e0845622152ffc6abb1fc99345">verbosity_</a> &gt; 1) {</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (loggingPrefix.empty())</div>
-<div class="line"><span class="lineno">   91</span>      <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">sessionHandle_</a> = std::make_unique&lt;LoggedSession&gt;();</div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   93</span>      <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">sessionHandle_</a> = std::make_unique&lt;LoggedSession&gt;(</div>
-<div class="line"><span class="lineno">   94</span>          loggingPrefix + <span class="stringliteral">&quot;_G4cout.log&quot;</span>, loggingPrefix + <span class="stringliteral">&quot;_G4cerr.log&quot;</span>);</div>
-<div class="line"><span class="lineno">   95</span>  }</div>
-<div class="line"><span class="lineno">   96</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">sessionHandle_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   97</span>    <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a6163281b6787af2ad373ce980b1cd0c3">uiManager_</a>-&gt;SetCoutDestination(<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">sessionHandle_</a>.get());</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>  <span class="comment">// Instantiate the run manager.</span></div>
-<div class="line"><span class="lineno">  100</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a> = std::make_unique&lt;RunManager&gt;(<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>, <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a11716de741e1aea74d61608039657fa0">conditionsIntf_</a>);</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>  <span class="comment">// Instantiate the GDML parser and corresponding messenger owned and</span></div>
-<div class="line"><span class="lineno">  103</span>  <span class="comment">// managed by DetectorConstruction</span></div>
-<div class="line"><span class="lineno">  104</span>  <span class="keyword">auto</span> parser{<a class="code hl_function" href="classsimcore_1_1geo_1_1ParserFactory.html#ac454f4c13edd8fdcfc165c7020fab7ec">simcore::geo::ParserFactory::getInstance</a>().<a class="code hl_function" href="classsimcore_1_1geo_1_1ParserFactory.html#a847b65c18f507ee58d7b577b7b33e796">createParser</a>(</div>
-<div class="line"><span class="lineno">  105</span>      <span class="stringliteral">&quot;gdml&quot;</span>, parameters, <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a11716de741e1aea74d61608039657fa0">conditionsIntf_</a>)};</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>  <span class="comment">// Instantiate the class so cascade parameters can be set.</span></div>
-<div class="line"><span class="lineno">  108</span>  G4CascadeParameters::Instance();</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>  <span class="comment">// Set the DetectorConstruction instance used to build the detector</span></div>
-<div class="line"><span class="lineno">  111</span>  <span class="comment">// from the GDML description.</span></div>
-<div class="line"><span class="lineno">  112</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;SetUserInitialization(</div>
-<div class="line"><span class="lineno">  113</span>      <span class="keyword">new</span> DetectorConstruction(parser, <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>, <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a11716de741e1aea74d61608039657fa0">conditionsIntf_</a>));</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>  <span class="comment">// Parse the detector geometry and validate if specified.</span></div>
-<div class="line"><span class="lineno">  116</span>  <span class="keyword">auto</span> detectorPath{<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::string&gt;(<span class="stringliteral">&quot;detector&quot;</span>)};</div>
-<div class="line"><span class="lineno">  117</span>  <span class="keyword">auto</span> validateGeometry{<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;validate_detector&quot;</span>)};</div>
-<div class="line"><span class="lineno">  118</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsimcore_1_1Simulator.html#a989dd7e0845622152ffc6abb1fc99345">verbosity_</a> &gt; 0) {</div>
-<div class="line"><span class="lineno">  119</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[ Simulator ] : Reading in geometry from &#39;&quot;</span> &lt;&lt; detectorPath</div>
-<div class="line"><span class="lineno">  120</span>              &lt;&lt; <span class="stringliteral">&quot;&#39;... &quot;</span> &lt;&lt; std::flush;</div>
-<div class="line"><span class="lineno">  121</span>  }</div>
-<div class="line"><span class="lineno">  122</span>  G4GeometryManager::GetInstance()-&gt;OpenGeometry();</div>
-<div class="line"><span class="lineno">  123</span>  parser-&gt;read();</div>
-<div class="line"><span class="lineno">  124</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;DefineWorldVolume(parser-&gt;GetWorldVolume());</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>  <span class="keyword">auto</span> preInitCommands =</div>
-<div class="line"><span class="lineno">  127</span>      <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::string&gt;&gt;(<span class="stringliteral">&quot;preInitCommands&quot;</span>, {});</div>
-<div class="line"><span class="lineno">  128</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; cmd : preInitCommands) {</div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classsimcore_1_1Simulator.html#a992eac92079f73ad2d70d7ab7c09cd1e">allowed</a>(cmd)) {</div>
-<div class="line"><span class="lineno">  130</span>      <span class="keywordtype">int</span> g4Ret = <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a6163281b6787af2ad373ce980b1cd0c3">uiManager_</a>-&gt;ApplyCommand(cmd);</div>
-<div class="line"><span class="lineno">  131</span>      <span class="keywordflow">if</span> (g4Ret &gt; 0) {</div>
-<div class="line"><span class="lineno">  132</span>        EXCEPTION_RAISE(<span class="stringliteral">&quot;PreInitCmd&quot;</span>,</div>
-<div class="line"><span class="lineno">  133</span>                        <span class="stringliteral">&quot;Pre Initialization command &#39;&quot;</span> + cmd +</div>
-<div class="line"><span class="lineno">  134</span>                            <span class="stringliteral">&quot;&#39; returned a failue status from Geant4: &quot;</span> +</div>
-<div class="line"><span class="lineno">  135</span>                            std::to_string(g4Ret));</div>
-<div class="line"><span class="lineno">  136</span>      }</div>
-<div class="line"><span class="lineno">  137</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  138</span>      EXCEPTION_RAISE(</div>
-<div class="line"><span class="lineno">  139</span>          <span class="stringliteral">&quot;PreInitCmd&quot;</span>,</div>
-<div class="line"><span class="lineno">  140</span>          <span class="stringliteral">&quot;Pre Initialization command &#39;&quot;</span> + cmd +</div>
-<div class="line"><span class="lineno">  141</span>              <span class="stringliteral">&quot;&#39; is not allowed because another part of Simulator handles it.&quot;</span>);</div>
-<div class="line"><span class="lineno">  142</span>    }</div>
-<div class="line"><span class="lineno">  143</span>  }</div>
-<div class="line"><span class="lineno">  144</span>}</div>
-<div class="ttc" id="aclassframework_1_1config_1_1Parameters_html_ad81bea1ff780f8c2511f3e2eb09838b2"><div class="ttname"><a href="classframework_1_1config_1_1Parameters.html#ad81bea1ff780f8c2511f3e2eb09838b2">framework::config::Parameters::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8h_source.html#l00071">Parameters.h:71</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a989dd7e0845622152ffc6abb1fc99345"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a989dd7e0845622152ffc6abb1fc99345">simcore::Simulator::verbosity_</a></div><div class="ttdeci">int verbosity_</div><div class="ttdoc">Vebosity for the simulation.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00174">Simulator.h:174</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a992eac92079f73ad2d70d7ab7c09cd1e"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a992eac92079f73ad2d70d7ab7c09cd1e">simcore::Simulator::allowed</a></div><div class="ttdeci">bool allowed(const std::string &amp;command) const</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8cxx_source.html#l00359">Simulator.cxx:359</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a9c030acf54ba0f105b42423e6637f06c"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">simcore::Simulator::sessionHandle_</a></div><div class="ttdeci">std::unique_ptr&lt; G4UIsession &gt; sessionHandle_</div><div class="ttdoc">Handle to the G4Session -&gt; how to deal with G4cout and G4cerr.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00148">Simulator.h:148</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_ad042a5ed67950fb6d9543bd4cc213caa"><div class="ttname"><a href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">simcore::Simulator::runManager_</a></div><div class="ttdeci">std::unique_ptr&lt; RunManager &gt; runManager_</div><div class="ttdoc">Manager controlling G4 simulation run.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00142">Simulator.h:142</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1geo_1_1ParserFactory_html_a847b65c18f507ee58d7b577b7b33e796"><div class="ttname"><a href="classsimcore_1_1geo_1_1ParserFactory.html#a847b65c18f507ee58d7b577b7b33e796">simcore::geo::ParserFactory::createParser</a></div><div class="ttdeci">Parser * createParser(const std::string &amp;name, framework::config::Parameters &amp;parameters, simcore::ConditionsInterface &amp;ci)</div><div class="ttdef"><b>Definition:</b> <a href="ParserFactory_8cxx_source.html#l00025">ParserFactory.cxx:25</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1geo_1_1ParserFactory_html_ac454f4c13edd8fdcfc165c7020fab7ec"><div class="ttname"><a href="classsimcore_1_1geo_1_1ParserFactory.html#ac454f4c13edd8fdcfc165c7020fab7ec">simcore::geo::ParserFactory::getInstance</a></div><div class="ttdeci">static ParserFactory &amp; getInstance()</div><div class="ttdoc">Get the instance to this factory.</div><div class="ttdef"><b>Definition:</b> <a href="ParserFactory_8cxx_source.html#l00014">ParserFactory.cxx:14</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00048">48</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                               {</div>
+<div class="line"><span class="lineno">   49</span>  <a class="code hl_function" href="classsimcore_1_1SimulatorBase.html#a5691230fa74900b84253a99034fceb05">SimulatorBase::configure</a>(parameters);</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1SimulatorBase_html_a5691230fa74900b84253a99034fceb05"><div class="ttname"><a href="classsimcore_1_1SimulatorBase.html#a5691230fa74900b84253a99034fceb05">simcore::SimulatorBase::configure</a></div><div class="ttdeci">void configure(framework::config::Parameters &amp;parameters) override</div><div class="ttdef"><b>Definition:</b> <a href="SimulatorBase_8cxx_source.html#l00106">SimulatorBase.cxx:106</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8cxx_source.html#l00359">allowed()</a>, <a class="el" href="Simulator_8h_source.html#l00164">conditionsIntf_</a>, <a class="el" href="ParserFactory_8cxx_source.html#l00025">simcore::geo::ParserFactory::createParser()</a>, <a class="el" href="Parameters_8h_source.html#l00071">framework::config::Parameters::exists()</a>, <a class="el" href="ParserFactory_8cxx_source.html#l00014">simcore::geo::ParserFactory::getInstance()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="Simulator_8h_source.html#l00171">parameters_</a>, <a class="el" href="Simulator_8h_source.html#l00142">runManager_</a>, <a class="el" href="Simulator_8h_source.html#l00148">sessionHandle_</a>, <a class="el" href="Simulator_8h_source.html#l00145">uiManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00174">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="SimulatorBase_8cxx_source.html#l00106">simcore::SimulatorBase::configure()</a>.</p>
 
 </div>
 </div>
@@ -583,26 +467,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a6692c259d89b5ad39ceb2a302cd7e0e5">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00320">320</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  320</span>                                                    {</div>
-<div class="line"><span class="lineno">  321</span>  <span class="comment">// End the current run and print out some basic statistics if verbose</span></div>
-<div class="line"><span class="lineno">  322</span>  <span class="comment">// level &gt; 0.</span></div>
-<div class="line"><span class="lineno">  323</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;TerminateEventLoop();</div>
-<div class="line"><span class="lineno">  324</span> </div>
-<div class="line"><span class="lineno">  325</span>  <span class="comment">// Pass the **real** number of events to the persistency manager</span></div>
-<div class="line"><span class="lineno">  326</span>  <span class="keyword">auto</span> rh = file.getRunHeader(<a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad6b01ac44aa0a3a80aa48603a1e0aef8">run_</a>);</div>
-<div class="line"><span class="lineno">  327</span>  rh.setIntParameter(<span class="stringliteral">&quot;Event Count&quot;</span>, <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a7cb61b4e4c8cc8a7dae48a885469a763">numEventsCompleted_</a>);</div>
-<div class="line"><span class="lineno">  328</span>  rh.setIntParameter(<span class="stringliteral">&quot;Events Began&quot;</span>, <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">numEventsBegan_</a>);</div>
-<div class="line"><span class="lineno">  329</span> </div>
-<div class="line"><span class="lineno">  330</span>  <span class="comment">// Persist any remaining events, call the end of run action and</span></div>
-<div class="line"><span class="lineno">  331</span>  <span class="comment">// terminate the Geant4 kernel.</span></div>
-<div class="line"><span class="lineno">  332</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;RunTermination();</div>
-<div class="line"><span class="lineno">  333</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a4ce1cf2d1637cc77391ce25f26819950"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">simcore::Simulator::numEventsBegan_</a></div><div class="ttdeci">int numEventsBegan_</div><div class="ttdoc">Number of events started.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00155">Simulator.h:155</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a7cb61b4e4c8cc8a7dae48a885469a763"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a7cb61b4e4c8cc8a7dae48a885469a763">simcore::Simulator::numEventsCompleted_</a></div><div class="ttdeci">int numEventsCompleted_</div><div class="ttdoc">Number of events completed.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00158">Simulator.h:158</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_ad6b01ac44aa0a3a80aa48603a1e0aef8"><div class="ttname"><a href="classsimcore_1_1Simulator.html#ad6b01ac44aa0a3a80aa48603a1e0aef8">simcore::Simulator::run_</a></div><div class="ttdeci">int run_</div><div class="ttdoc">the run number (for accessing the run header in onFileClose</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00161">Simulator.h:161</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00169">169</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  169</span>                                                    {</div>
+<div class="line"><span class="lineno">  170</span>  <span class="comment">// Pass the **real** number of events to the persistency manager</span></div>
+<div class="line"><span class="lineno">  171</span>  <span class="keyword">auto</span> rh = file.getRunHeader(<a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad6b01ac44aa0a3a80aa48603a1e0aef8">run_</a>);</div>
+<div class="line"><span class="lineno">  172</span>  rh.setIntParameter(<span class="stringliteral">&quot;Event Count&quot;</span>, <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a7cb61b4e4c8cc8a7dae48a885469a763">numEventsCompleted_</a>);</div>
+<div class="line"><span class="lineno">  173</span>  rh.setIntParameter(<span class="stringliteral">&quot;Events Began&quot;</span>, <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">numEventsBegan_</a>);</div>
+<div class="line"><span class="lineno">  174</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1Simulator_html_a4ce1cf2d1637cc77391ce25f26819950"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">simcore::Simulator::numEventsBegan_</a></div><div class="ttdeci">int numEventsBegan_</div><div class="ttdoc">Number of events started.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00122">Simulator.h:122</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1Simulator_html_a7cb61b4e4c8cc8a7dae48a885469a763"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a7cb61b4e4c8cc8a7dae48a885469a763">simcore::Simulator::numEventsCompleted_</a></div><div class="ttdeci">int numEventsCompleted_</div><div class="ttdoc">Number of events completed.</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00125">Simulator.h:125</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1Simulator_html_ad6b01ac44aa0a3a80aa48603a1e0aef8"><div class="ttname"><a href="classsimcore_1_1Simulator.html#ad6b01ac44aa0a3a80aa48603a1e0aef8">simcore::Simulator::run_</a></div><div class="ttdeci">int run_</div><div class="ttdoc">the run number (for accessing the run header in onFileClose</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8h_source.html#l00128">Simulator.h:128</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EventFile_8cxx_source.html#l00354">framework::EventFile::getRunHeader()</a>, <a class="el" href="Simulator_8h_source.html#l00155">numEventsBegan_</a>, <a class="el" href="Simulator_8h_source.html#l00158">numEventsCompleted_</a>, <a class="el" href="Simulator_8h_source.html#l00161">run_</a>, <a class="el" href="Simulator_8h_source.html#l00142">runManager_</a>, and <a class="el" href="RunHeader_8h_source.html#l00112">ldmx::RunHeader::setIntParameter()</a>.</p>
+<p class="reference">References <a class="el" href="EventFile_8cxx_source.html#l00354">framework::EventFile::getRunHeader()</a>, <a class="el" href="Simulator_8h_source.html#l00122">numEventsBegan_</a>, <a class="el" href="Simulator_8h_source.html#l00125">numEventsCompleted_</a>, <a class="el" href="Simulator_8h_source.html#l00128">run_</a>, and <a class="el" href="RunHeader_8h_source.html#l00112">ldmx::RunHeader::setIntParameter()</a>.</p>
 
 </div>
 </div>
@@ -639,23 +515,24 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a93e19454e18fd62bc2081d40b3f41c62">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00219">219</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  219</span>                                                {</div>
-<div class="line"><span class="lineno">  220</span>  <span class="keyword">const</span> <a class="code hl_class" href="classframework_1_1RandomNumberSeedService.html">framework::RandomNumberSeedService</a>&amp; rseed = getCondition&lt;framework::RandomNumberSeedService&gt;(</div>
-<div class="line"><span class="lineno">  221</span>      <a class="code hl_variable" href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>);</div>
-<div class="line"><span class="lineno">  222</span>  std::vector&lt;int&gt; seeds;</div>
-<div class="line"><span class="lineno">  223</span>  seeds.push_back(rseed.<a class="code hl_function" href="classframework_1_1RandomNumberSeedService.html#a8678b993114299bd7afee487367fb249">getSeed</a>(<span class="stringliteral">&quot;Simulator[0]&quot;</span>));</div>
-<div class="line"><span class="lineno">  224</span>  seeds.push_back(rseed.<a class="code hl_function" href="classframework_1_1RandomNumberSeedService.html#a8678b993114299bd7afee487367fb249">getSeed</a>(<span class="stringliteral">&quot;Simulator[1]&quot;</span>));</div>
-<div class="line"><span class="lineno">  225</span>  <a class="code hl_function" href="classsimcore_1_1Simulator.html#a154ed724ab2579aa88cbf17ae95da3b3">setSeeds</a>(seeds);</div>
-<div class="line"><span class="lineno">  226</span> </div>
-<div class="line"><span class="lineno">  227</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad6b01ac44aa0a3a80aa48603a1e0aef8">run_</a> = rh.getRunNumber();</div>
-<div class="line"><span class="lineno">  228</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00119">119</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                                                       {</div>
+<div class="line"><span class="lineno">  120</span>  <span class="keyword">const</span> <a class="code hl_class" href="classframework_1_1RandomNumberSeedService.html">framework::RandomNumberSeedService</a>&amp; rseed =</div>
+<div class="line"><span class="lineno">  121</span>      getCondition&lt;framework::RandomNumberSeedService&gt;(</div>
+<div class="line"><span class="lineno">  122</span>          <a class="code hl_variable" href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>);</div>
+<div class="line"><span class="lineno">  123</span>  std::vector&lt;int&gt; seeds;</div>
+<div class="line"><span class="lineno">  124</span>  seeds.push_back(rseed.<a class="code hl_function" href="classframework_1_1RandomNumberSeedService.html#a8678b993114299bd7afee487367fb249">getSeed</a>(<span class="stringliteral">&quot;Simulator[0]&quot;</span>));</div>
+<div class="line"><span class="lineno">  125</span>  seeds.push_back(rseed.<a class="code hl_function" href="classframework_1_1RandomNumberSeedService.html#a8678b993114299bd7afee487367fb249">getSeed</a>(<span class="stringliteral">&quot;Simulator[1]&quot;</span>));</div>
+<div class="line"><span class="lineno">  126</span>  <a class="code hl_function" href="classsimcore_1_1Simulator.html#a154ed724ab2579aa88cbf17ae95da3b3">setSeeds</a>(seeds);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad6b01ac44aa0a3a80aa48603a1e0aef8">run_</a> = runHeader.getRunNumber();</div>
+<div class="line"><span class="lineno">  129</span>}</div>
 <div class="ttc" id="aclassframework_1_1RandomNumberSeedService_html"><div class="ttname"><a href="classframework_1_1RandomNumberSeedService.html">framework::RandomNumberSeedService</a></div><div class="ttdef"><b>Definition:</b> <a href="RandomNumberSeedService_8h_source.html#l00033">RandomNumberSeedService.h:34</a></div></div>
 <div class="ttc" id="aclassframework_1_1RandomNumberSeedService_html_a48e87463ea63d1862064cad26d5b9bb4"><div class="ttname"><a href="classframework_1_1RandomNumberSeedService.html#a48e87463ea63d1862064cad26d5b9bb4">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a></div><div class="ttdeci">static const std::string CONDITIONS_OBJECT_NAME</div><div class="ttdoc">Conditions object name.</div><div class="ttdef"><b>Definition:</b> <a href="RandomNumberSeedService_8h_source.html#l00037">RandomNumberSeedService.h:37</a></div></div>
 <div class="ttc" id="aclassframework_1_1RandomNumberSeedService_html_a8678b993114299bd7afee487367fb249"><div class="ttname"><a href="classframework_1_1RandomNumberSeedService.html#a8678b993114299bd7afee487367fb249">framework::RandomNumberSeedService::getSeed</a></div><div class="ttdeci">uint64_t getSeed(const std::string &amp;name) const</div><div class="ttdef"><b>Definition:</b> <a href="RandomNumberSeedService_8cxx_source.html#l00056">RandomNumberSeedService.cxx:56</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1Simulator_html_a154ed724ab2579aa88cbf17ae95da3b3"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a154ed724ab2579aa88cbf17ae95da3b3">simcore::Simulator::setSeeds</a></div><div class="ttdeci">void setSeeds(std::vector&lt; int &gt; seeds)</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8cxx_source.html#l00370">Simulator.cxx:370</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1Simulator_html_a154ed724ab2579aa88cbf17ae95da3b3"><div class="ttname"><a href="classsimcore_1_1Simulator.html#a154ed724ab2579aa88cbf17ae95da3b3">simcore::Simulator::setSeeds</a></div><div class="ttdeci">void setSeeds(std::vector&lt; int &gt; seeds)</div><div class="ttdef"><b>Definition:</b> <a href="Simulator_8cxx_source.html#l00183">Simulator.cxx:183</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="RandomNumberSeedService_8h_source.html#l00037">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="RunHeader_8h_source.html#l00042">ldmx::RunHeader::getRunNumber()</a>, <a class="el" href="RandomNumberSeedService_8cxx_source.html#l00056">framework::RandomNumberSeedService::getSeed()</a>, <a class="el" href="Simulator_8h_source.html#l00161">run_</a>, and <a class="el" href="Simulator_8cxx_source.html#l00370">setSeeds()</a>.</p>
+<p class="reference">References <a class="el" href="RandomNumberSeedService_8h_source.html#l00037">framework::RandomNumberSeedService::CONDITIONS_OBJECT_NAME</a>, <a class="el" href="RunHeader_8h_source.html#l00042">ldmx::RunHeader::getRunNumber()</a>, <a class="el" href="RandomNumberSeedService_8cxx_source.html#l00056">framework::RandomNumberSeedService::getSeed()</a>, <a class="el" href="Simulator_8h_source.html#l00128">run_</a>, and <a class="el" href="Simulator_8cxx_source.html#l00183">setSeeds()</a>.</p>
 
 </div>
 </div>
@@ -686,101 +563,16 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#a527ebdf1fe665011964d9ce42a5521ad">framework::EventProcessor</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00335">335</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  335</span>                             {</div>
-<div class="line"><span class="lineno">  336</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;[ Simulator ] : &quot;</span></div>
-<div class="line"><span class="lineno">  337</span>            &lt;&lt; <span class="stringliteral">&quot;Started &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">numEventsBegan_</a> &lt;&lt; <span class="stringliteral">&quot; events to produce &quot;</span></div>
-<div class="line"><span class="lineno">  338</span>            &lt;&lt; <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a7cb61b4e4c8cc8a7dae48a885469a763">numEventsCompleted_</a> &lt;&lt; <span class="stringliteral">&quot; events.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  339</span> </div>
-<div class="line"><span class="lineno">  340</span>  <span class="comment">// Delete Run Manager</span></div>
-<div class="line"><span class="lineno">  341</span>  <span class="comment">// From Geant4 Basic Example B01:</span></div>
-<div class="line"><span class="lineno">  342</span>  <span class="comment">//      Job termination</span></div>
-<div class="line"><span class="lineno">  343</span>  <span class="comment">//      Free the store: user actions, physics list and detector descriptions</span></div>
-<div class="line"><span class="lineno">  344</span>  <span class="comment">//      are owned and deleted by the run manager, so they should not be</span></div>
-<div class="line"><span class="lineno">  345</span>  <span class="comment">//      deleted in the main() program</span></div>
-<div class="line"><span class="lineno">  346</span>  <span class="comment">// This needs to happen here because otherwise, Geant4 objects are deleted</span></div>
-<div class="line"><span class="lineno">  347</span>  <span class="comment">// twice:</span></div>
-<div class="line"><span class="lineno">  348</span>  <span class="comment">//  1. When the histogram file is closed (all ROOT objects created during</span></div>
-<div class="line"><span class="lineno">  349</span>  <span class="comment">//  processing are put there because ROOT)</span></div>
-<div class="line"><span class="lineno">  350</span>  <span class="comment">//  2. When Simulator is deleted because runManager_ is a unique_ptr</span></div>
-<div class="line"><span class="lineno">  351</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>.reset(<span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  352</span> </div>
-<div class="line"><span class="lineno">  353</span>  <span class="comment">// Delete the G4UIsession</span></div>
-<div class="line"><span class="lineno">  354</span>  <span class="comment">// I don&#39;t think this needs to happen here, but since we are cleaning up loose</span></div>
-<div class="line"><span class="lineno">  355</span>  <span class="comment">// ends...</span></div>
-<div class="line"><span class="lineno">  356</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a9c030acf54ba0f105b42423e6637f06c">sessionHandle_</a>.reset(<span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  357</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00176">176</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>                             {</div>
+<div class="line"><span class="lineno">  177</span>  <a class="code hl_function" href="classsimcore_1_1SimulatorBase.html#af4d369acf549818a4dfa8e90efa5d2aa">SimulatorBase::onProcessEnd</a>();</div>
+<div class="line"><span class="lineno">  178</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;[ Simulator ] : &quot;</span></div>
+<div class="line"><span class="lineno">  179</span>            &lt;&lt; <span class="stringliteral">&quot;Started &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">numEventsBegan_</a> &lt;&lt; <span class="stringliteral">&quot; events to produce &quot;</span></div>
+<div class="line"><span class="lineno">  180</span>            &lt;&lt; <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a7cb61b4e4c8cc8a7dae48a885469a763">numEventsCompleted_</a> &lt;&lt; <span class="stringliteral">&quot; events.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  181</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1SimulatorBase_html_af4d369acf549818a4dfa8e90efa5d2aa"><div class="ttname"><a href="classsimcore_1_1SimulatorBase.html#af4d369acf549818a4dfa8e90efa5d2aa">simcore::SimulatorBase::onProcessEnd</a></div><div class="ttdeci">void onProcessEnd() override</div><div class="ttdoc">Callback called once processing is complete.</div><div class="ttdef"><b>Definition:</b> <a href="SimulatorBase_8cxx_source.html#l00028">SimulatorBase.cxx:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00155">numEventsBegan_</a>, <a class="el" href="Simulator_8h_source.html#l00158">numEventsCompleted_</a>, <a class="el" href="Simulator_8h_source.html#l00142">runManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00148">sessionHandle_</a>.</p>
-
-</div>
-</div>
-<a id="a4662ab2d52463508042e7d8276a4112c" name="a4662ab2d52463508042e7d8276a4112c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4662ab2d52463508042e7d8276a4112c">&#9670;&#160;</a></span>onProcessStart()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void simcore::Simulator::onProcessStart </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Initialization of simulation</p>
-<p >This uses the parameters set in the configure method to construct and initialize the simulation objects.</p>
-<p >This function runs the post init setup commands. </p>
-
-<p>Reimplemented from <a class="el" href="classframework_1_1EventProcessor.html#ab54bb3abaafcb4f4b4b42d0a2ff616a9">framework::EventProcessor</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00284">284</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  284</span>                               {</div>
-<div class="line"><span class="lineno">  285</span>  <span class="comment">// initialize run</span></div>
-<div class="line"><span class="lineno">  286</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;Initialize();</div>
-<div class="line"><span class="lineno">  287</span> </div>
-<div class="line"><span class="lineno">  288</span>  <span class="comment">// Get the extra simulation configuring commands</span></div>
-<div class="line"><span class="lineno">  289</span>  <span class="keyword">auto</span> postInitCommands = <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a5c9be0796db1a041cf0ea20deb253ef1">parameters_</a>.<a class="code hl_function" href="classframework_1_1config_1_1Parameters.html#a18206b7c01007dd706abce7e5505eae1">getParameter</a>&lt;std::vector&lt;std::string&gt;&gt;(</div>
-<div class="line"><span class="lineno">  290</span>      <span class="stringliteral">&quot;postInitCommands&quot;</span>, {});</div>
-<div class="line"><span class="lineno">  291</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; cmd : postInitCommands) {</div>
-<div class="line"><span class="lineno">  292</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classsimcore_1_1Simulator.html#a992eac92079f73ad2d70d7ab7c09cd1e">allowed</a>(cmd)) {</div>
-<div class="line"><span class="lineno">  293</span>      <span class="keywordtype">int</span> g4Ret = <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a6163281b6787af2ad373ce980b1cd0c3">uiManager_</a>-&gt;ApplyCommand(cmd);</div>
-<div class="line"><span class="lineno">  294</span>      <span class="keywordflow">if</span> (g4Ret &gt; 0) {</div>
-<div class="line"><span class="lineno">  295</span>        EXCEPTION_RAISE(<span class="stringliteral">&quot;PostInitCmd&quot;</span>,</div>
-<div class="line"><span class="lineno">  296</span>                        <span class="stringliteral">&quot;Post Initialization command &#39;&quot;</span> + cmd +</div>
-<div class="line"><span class="lineno">  297</span>                            <span class="stringliteral">&quot;&#39; returned a failue status from Geant4: &quot;</span> +</div>
-<div class="line"><span class="lineno">  298</span>                            std::to_string(g4Ret));</div>
-<div class="line"><span class="lineno">  299</span>      }</div>
-<div class="line"><span class="lineno">  300</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  301</span>      EXCEPTION_RAISE(</div>
-<div class="line"><span class="lineno">  302</span>          <span class="stringliteral">&quot;PostInitCmd&quot;</span>,</div>
-<div class="line"><span class="lineno">  303</span>          <span class="stringliteral">&quot;Post Initialization command &#39;&quot;</span> + cmd +</div>
-<div class="line"><span class="lineno">  304</span>              <span class="stringliteral">&quot;&#39; is not allowed because another part of Simulator handles it.&quot;</span>);</div>
-<div class="line"><span class="lineno">  305</span>    }</div>
-<div class="line"><span class="lineno">  306</span>  }</div>
-<div class="line"><span class="lineno">  307</span> </div>
-<div class="line"><span class="lineno">  308</span>  <span class="comment">// Instantiate the scoring worlds including any parallel worlds.</span></div>
-<div class="line"><span class="lineno">  309</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;ConstructScoringWorlds();</div>
-<div class="line"><span class="lineno">  310</span> </div>
-<div class="line"><span class="lineno">  311</span>  <span class="comment">// Initialize the current run</span></div>
-<div class="line"><span class="lineno">  312</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;RunInitialization();</div>
-<div class="line"><span class="lineno">  313</span> </div>
-<div class="line"><span class="lineno">  314</span>  <span class="comment">// Initialize the event processing</span></div>
-<div class="line"><span class="lineno">  315</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;InitializeEventLoop(1);</div>
-<div class="line"><span class="lineno">  316</span> </div>
-<div class="line"><span class="lineno">  317</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  318</span>}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="Simulator_8cxx_source.html#l00359">allowed()</a>, <a class="el" href="Parameters_8h_source.html#l00089">framework::config::Parameters::getParameter()</a>, <a class="el" href="Simulator_8h_source.html#l00171">parameters_</a>, <a class="el" href="Simulator_8h_source.html#l00142">runManager_</a>, and <a class="el" href="Simulator_8h_source.html#l00145">uiManager_</a>.</p>
+<p class="reference">References <a class="el" href="Simulator_8h_source.html#l00122">numEventsBegan_</a>, <a class="el" href="Simulator_8h_source.html#l00125">numEventsCompleted_</a>, and <a class="el" href="SimulatorBase_8cxx_source.html#l00028">simcore::SimulatorBase::onProcessEnd()</a>.</p>
 
 </div>
 </div>
@@ -815,70 +607,52 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classframework_1_1Producer.html#a8591fb1e12fd5d8b1f2a5838d030042e">framework::Producer</a>.</p>
+<p>Implements <a class="el" href="classsimcore_1_1SimulatorBase.html#a53fc48a1ac378efb9bd9dc26f4c16892">simcore::SimulatorBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00230">230</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  230</span>                                             {</div>
-<div class="line"><span class="lineno">  231</span>  <span class="comment">// Generate and process a Geant4 event.</span></div>
-<div class="line"><span class="lineno">  232</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">numEventsBegan_</a>++;</div>
-<div class="line"><span class="lineno">  233</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;ProcessOneEvent(event.<a class="code hl_function" href="classframework_1_1Event.html#aa2ea48f0c859b63a622c93e3ed2e355a">getEventHeader</a>().<a class="code hl_function" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>());</div>
-<div class="line"><span class="lineno">  234</span> </div>
-<div class="line"><span class="lineno">  235</span>  <span class="comment">// If a Geant4 event has been aborted, skip the rest of the processing</span></div>
-<div class="line"><span class="lineno">  236</span>  <span class="comment">// sequence. This will immediately force the simulation to move on to</span></div>
-<div class="line"><span class="lineno">  237</span>  <span class="comment">// the next event.</span></div>
-<div class="line"><span class="lineno">  238</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;GetCurrentEvent()-&gt;IsAborted()) {</div>
-<div class="line"><span class="lineno">  239</span>    <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;TerminateOneEvent();  <span class="comment">// clean up event objects</span></div>
-<div class="line"><span class="lineno">  240</span>    <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">SensitiveDetector::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">apply</a>([](<span class="keyword">auto</span> sd) {</div>
-<div class="line"><span class="lineno">  241</span>        sd-&gt;EndOfEvent();</div>
-<div class="line"><span class="lineno">  242</span>    });</div>
-<div class="line"><span class="lineno">  243</span>    this-&gt;<a class="code hl_function" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a>();                <span class="comment">// get out of processors loop</span></div>
-<div class="line"><span class="lineno">  244</span>  }</div>
-<div class="line"><span class="lineno">  245</span> </div>
-<div class="line"><span class="lineno">  246</span>  <span class="comment">// Terminate the event.  This checks if an event is to be stored or</span></div>
-<div class="line"><span class="lineno">  247</span>  <span class="comment">// stacked for later.</span></div>
-<div class="line"><span class="lineno">  248</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a7cb61b4e4c8cc8a7dae48a885469a763">numEventsCompleted_</a>++;</div>
-<div class="line"><span class="lineno">  249</span> </div>
-<div class="line"><span class="lineno">  250</span>  <span class="comment">// store event-wide information in EventHeader</span></div>
-<div class="line"><span class="lineno">  251</span>  <span class="keyword">auto</span> event_info = <span class="keyword">static_cast&lt;</span>UserEventInformation *<span class="keyword">&gt;</span>(</div>
-<div class="line"><span class="lineno">  252</span>      <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;GetCurrentEvent()</div>
-<div class="line"><span class="lineno">  253</span>        -&gt;GetUserInformation());</div>
-<div class="line"><span class="lineno">  254</span>  <span class="keyword">auto</span>&amp; event_header = <span class="keyword">event</span>.getEventHeader();</div>
-<div class="line"><span class="lineno">  255</span>  event_header.setWeight(event_info-&gt;getWeight());</div>
-<div class="line"><span class="lineno">  256</span>  event_header.setFloatParameter(<span class="stringliteral">&quot;total_photonuclear_energy&quot;</span>,</div>
-<div class="line"><span class="lineno">  257</span>                                event_info-&gt;getPNEnergy());</div>
-<div class="line"><span class="lineno">  258</span>  event_header.setFloatParameter(<span class="stringliteral">&quot;total_electronuclear_energy&quot;</span>,</div>
-<div class="line"><span class="lineno">  259</span>                                event_info-&gt;getENEnergy());</div>
-<div class="line"><span class="lineno">  260</span> </div>
-<div class="line"><span class="lineno">  261</span>  <span class="comment">// Save the state of the random engine to an output stream. A string</span></div>
-<div class="line"><span class="lineno">  262</span>  <span class="comment">// is then extracted and saved to the event header.</span></div>
-<div class="line"><span class="lineno">  263</span>  std::ostringstream stream;</div>
-<div class="line"><span class="lineno">  264</span>  G4Random::saveFullState(stream);</div>
-<div class="line"><span class="lineno">  265</span>  <span class="comment">// std::cout &lt;&lt; stream.str() &lt;&lt; std::endl;</span></div>
-<div class="line"><span class="lineno">  266</span>  event_header.setStringParameter(<span class="stringliteral">&quot;eventSeed&quot;</span>, stream.str());</div>
-<div class="line"><span class="lineno">  267</span> </div>
-<div class="line"><span class="lineno">  268</span>  <span class="comment">// track storage</span></div>
-<div class="line"><span class="lineno">  269</span>  TrackMap&amp; tracks{<a class="code hl_function" href="classsimcore_1_1g4user_1_1TrackingAction.html#abbab03b25ea59c65a57819968a847892">g4user::TrackingAction::get</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1g4user_1_1TrackingAction.html#a54eda98e1b04872db6c5bf12f5d6ec18">getTrackMap</a>()};</div>
-<div class="line"><span class="lineno">  270</span>  tracks.<a class="code hl_function" href="classsimcore_1_1TrackMap.html#abf3d5c14645119e25914a681e221cde9">traceAncestry</a>();</div>
-<div class="line"><span class="lineno">  271</span>  <span class="keyword">event</span>.add(<span class="stringliteral">&quot;SimParticles&quot;</span>, tracks.getParticleMap());</div>
-<div class="line"><span class="lineno">  272</span> </div>
-<div class="line"><span class="lineno">  273</span>  <span class="comment">// Copy hit objects from SD hit collections into the output event.</span></div>
-<div class="line"><span class="lineno">  274</span>  <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">SensitiveDetector::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">apply</a>([&amp;event](<span class="keyword">auto</span> sd) {</div>
-<div class="line"><span class="lineno">  275</span>        sd-&gt;saveHits(event);</div>
-<div class="line"><span class="lineno">  276</span>        sd-&gt;EndOfEvent();</div>
-<div class="line"><span class="lineno">  277</span>      });</div>
-<div class="line"><span class="lineno">  278</span> </div>
-<div class="line"><span class="lineno">  279</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#ad042a5ed67950fb6d9543bd4cc213caa">runManager_</a>-&gt;TerminateOneEvent();</div>
-<div class="line"><span class="lineno">  280</span> </div>
-<div class="line"><span class="lineno">  281</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  282</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00131">131</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>                                             {</div>
+<div class="line"><span class="lineno">  132</span>  <span class="comment">// Generate and process a Geant4 event.</span></div>
+<div class="line"><span class="lineno">  133</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a4ce1cf2d1637cc77391ce25f26819950">numEventsBegan_</a>++;</div>
+<div class="line"><span class="lineno">  134</span>  <span class="comment">// Save the state of the random engine to an output stream. A string</span></div>
+<div class="line"><span class="lineno">  135</span>  <span class="comment">// is then extracted and saved to the event header.</span></div>
+<div class="line"><span class="lineno">  136</span>  std::ostringstream stream;</div>
+<div class="line"><span class="lineno">  137</span>  G4Random::saveFullState(stream);</div>
+<div class="line"><span class="lineno">  138</span>  <a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#a5171eaccd9a8f58cfb3dc44419a8cba4">runManager_</a>-&gt;ProcessOneEvent(event.<a class="code hl_function" href="classframework_1_1Event.html#aa2ea48f0c859b63a622c93e3ed2e355a">getEventHeader</a>().<a class="code hl_function" href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">getEventNumber</a>());</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>  <span class="comment">// If a Geant4 event has been aborted, skip the rest of the processing</span></div>
+<div class="line"><span class="lineno">  141</span>  <span class="comment">// sequence. This will immediately force the simulation to move on to</span></div>
+<div class="line"><span class="lineno">  142</span>  <span class="comment">// the next event.</span></div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#a5171eaccd9a8f58cfb3dc44419a8cba4">runManager_</a>-&gt;GetCurrentEvent()-&gt;IsAborted()) {</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#a5171eaccd9a8f58cfb3dc44419a8cba4">runManager_</a>-&gt;TerminateOneEvent();  <span class="comment">// clean up event objects</span></div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_function" href="classsimcore_1_1Factory.html#abdbb8169a68e3ac620b3b296e0279e91">SensitiveDetector::Factory::get</a>().<a class="code hl_function" href="classsimcore_1_1Factory.html#aa0f06c8d4ea2c8d7bba4485a9e5560e7">apply</a>(</div>
+<div class="line"><span class="lineno">  146</span>        [](<span class="keyword">auto</span> sd) { sd-&gt;OnFinishedEvent(); });</div>
+<div class="line"><span class="lineno">  147</span>    this-&gt;<a class="code hl_function" href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">abortEvent</a>();  <span class="comment">// get out of processors loop</span></div>
+<div class="line"><span class="lineno">  148</span>  }</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>  <span class="comment">// Terminate the event.  This checks if an event is to be stored or</span></div>
+<div class="line"><span class="lineno">  151</span>  <span class="comment">// stacked for later.</span></div>
+<div class="line"><span class="lineno">  152</span>  <a class="code hl_variable" href="classsimcore_1_1Simulator.html#a7cb61b4e4c8cc8a7dae48a885469a763">numEventsCompleted_</a>++;</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>  <span class="comment">// store event-wide information in EventHeader</span></div>
+<div class="line"><span class="lineno">  155</span>  <span class="keyword">auto</span>&amp; event_header = <span class="keyword">event</span>.getEventHeader();</div>
+<div class="line"><span class="lineno">  156</span>  updateEventHeader(event_header);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>  event_header.setStringParameter(<span class="stringliteral">&quot;eventSeed&quot;</span>, stream.str());</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  saveTracks(event);</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>  saveSDHits(event);</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>  <a class="code hl_variable" href="classsimcore_1_1SimulatorBase.html#a5171eaccd9a8f58cfb3dc44419a8cba4">runManager_</a>-&gt;TerminateOneEvent();</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  167</span>}</div>
 <div class="ttc" id="aclassframework_1_1EventProcessor_html_a8d42387da8fbb2d1f01f5ecebb64dd7d"><div class="ttname"><a href="classframework_1_1EventProcessor.html#a8d42387da8fbb2d1f01f5ecebb64dd7d">framework::EventProcessor::abortEvent</a></div><div class="ttdeci">void abortEvent()</div><div class="ttdef"><b>Definition:</b> <a href="EventProcessor_8h_source.html#l00213">EventProcessor.h:213</a></div></div>
 <div class="ttc" id="aclassframework_1_1Event_html_aa2ea48f0c859b63a622c93e3ed2e355a"><div class="ttname"><a href="classframework_1_1Event.html#aa2ea48f0c859b63a622c93e3ed2e355a">framework::Event::getEventHeader</a></div><div class="ttdeci">ldmx::EventHeader &amp; getEventHeader()</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00057">Event.h:57</a></div></div>
 <div class="ttc" id="aclassldmx_1_1EventHeader_html_a8152a5d36972d1c0671ee54a0bf1a794"><div class="ttname"><a href="classldmx_1_1EventHeader.html#a8152a5d36972d1c0671ee54a0bf1a794">ldmx::EventHeader::getEventNumber</a></div><div class="ttdeci">int getEventNumber() const</div><div class="ttdef"><b>Definition:</b> <a href="EventHeader_8h_source.html#l00076">EventHeader.h:76</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_abf3d5c14645119e25914a681e221cde9"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#abf3d5c14645119e25914a681e221cde9">simcore::TrackMap::traceAncestry</a></div><div class="ttdeci">void traceAncestry()</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00084">TrackMap.cxx:84</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1g4user_1_1TrackingAction_html_a54eda98e1b04872db6c5bf12f5d6ec18"><div class="ttname"><a href="classsimcore_1_1g4user_1_1TrackingAction.html#a54eda98e1b04872db6c5bf12f5d6ec18">simcore::g4user::TrackingAction::getTrackMap</a></div><div class="ttdeci">TrackMap &amp; getTrackMap()</div><div class="ttdef"><b>Definition:</b> <a href="TrackingAction_8h_source.html#l00110">TrackingAction.h:110</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1g4user_1_1TrackingAction_html_abbab03b25ea59c65a57819968a847892"><div class="ttname"><a href="classsimcore_1_1g4user_1_1TrackingAction.html#abbab03b25ea59c65a57819968a847892">simcore::g4user::TrackingAction::get</a></div><div class="ttdeci">static TrackingAction * get()</div><div class="ttdef"><b>Definition:</b> <a href="TrackingAction_8h_source.html#l00116">TrackingAction.h:116</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1SimulatorBase_html_a5171eaccd9a8f58cfb3dc44419a8cba4"><div class="ttname"><a href="classsimcore_1_1SimulatorBase.html#a5171eaccd9a8f58cfb3dc44419a8cba4">simcore::SimulatorBase::runManager_</a></div><div class="ttdeci">std::unique_ptr&lt; RunManager &gt; runManager_</div><div class="ttdoc">Manager controlling G4 simulation run.</div><div class="ttdef"><b>Definition:</b> <a href="SimulatorBase_8h_source.html#l00048">SimulatorBase.h:48</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00213">framework::EventProcessor::abortEvent()</a>, <a class="el" href="Factory_8h_source.html#l00282">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::apply()</a>, <a class="el" href="Factory_8h_source.html#l00217">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::get()</a>, <a class="el" href="TrackingAction_8h_source.html#l00116">simcore::g4user::TrackingAction::get()</a>, <a class="el" href="Event_8h_source.html#l00057">framework::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00076">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="TrackingAction_8h_source.html#l00110">simcore::g4user::TrackingAction::getTrackMap()</a>, <a class="el" href="Simulator_8h_source.html#l00155">numEventsBegan_</a>, <a class="el" href="Simulator_8h_source.html#l00158">numEventsCompleted_</a>, <a class="el" href="Simulator_8h_source.html#l00142">runManager_</a>, <a class="el" href="UserEventInformation_8h_source.html#l00033">simcore::UserEventInformation::setWeight()</a>, and <a class="el" href="TrackMap_8cxx_source.html#l00084">simcore::TrackMap::traceAncestry()</a>.</p>
+<p class="reference">References <a class="el" href="EventProcessor_8h_source.html#l00213">framework::EventProcessor::abortEvent()</a>, <a class="el" href="Factory_8h_source.html#l00283">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::apply()</a>, <a class="el" href="Factory_8h_source.html#l00217">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::get()</a>, <a class="el" href="Event_8h_source.html#l00057">framework::Event::getEventHeader()</a>, <a class="el" href="EventHeader_8h_source.html#l00076">ldmx::EventHeader::getEventNumber()</a>, <a class="el" href="Simulator_8h_source.html#l00122">numEventsBegan_</a>, <a class="el" href="Simulator_8h_source.html#l00125">numEventsCompleted_</a>, and <a class="el" href="SimulatorBase_8h_source.html#l00048">simcore::SimulatorBase::runManager_</a>.</p>
 
 </div>
 </div>
@@ -913,97 +687,39 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00370">370</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  370</span>                                             {</div>
-<div class="line"><span class="lineno">  371</span>  <span class="comment">// If no seeds have been specified then return immediately.</span></div>
-<div class="line"><span class="lineno">  372</span>  <span class="keywordflow">if</span> (seeds.empty()) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  373</span> </div>
-<div class="line"><span class="lineno">  374</span>  <span class="comment">// If seeds are specified, make sure that the container has at least</span></div>
-<div class="line"><span class="lineno">  375</span>  <span class="comment">// two seeds.  If not, throw an exception.</span></div>
-<div class="line"><span class="lineno">  376</span>  <span class="keywordflow">if</span> (seeds.size() == 1) {</div>
-<div class="line"><span class="lineno">  377</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;ConfigurationException&quot;</span>,</div>
-<div class="line"><span class="lineno">  378</span>                    <span class="stringliteral">&quot;At least two seeds need to be specified.&quot;</span>);</div>
-<div class="line"><span class="lineno">  379</span>  }</div>
-<div class="line"><span class="lineno">  380</span> </div>
-<div class="line"><span class="lineno">  381</span>  <span class="comment">// Create the array of seeds and pass them to G4Random.  Currently,</span></div>
-<div class="line"><span class="lineno">  382</span>  <span class="comment">// only 100 seeds can be specified at a time.  If less than 100</span></div>
-<div class="line"><span class="lineno">  383</span>  <span class="comment">// seeds are specified, the remaining slots are set to 0.</span></div>
-<div class="line"><span class="lineno">  384</span>  std::vector&lt;long&gt; seedVec(100, 0);</div>
-<div class="line"><span class="lineno">  385</span>  <span class="keywordflow">for</span> (std::size_t index{0}; index &lt; seeds.size(); ++index)</div>
-<div class="line"><span class="lineno">  386</span>    seedVec[index] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(seeds[index]);</div>
-<div class="line"><span class="lineno">  387</span> </div>
-<div class="line"><span class="lineno">  388</span>  <span class="comment">// Pass the array of seeds to the random engine.</span></div>
-<div class="line"><span class="lineno">  389</span>  G4Random::setTheSeeds(&amp;seedVec[0]);</div>
-<div class="line"><span class="lineno">  390</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Simulator_8cxx_source.html#l00183">183</a> of file <a class="el" href="Simulator_8cxx_source.html">Simulator.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>                                             {</div>
+<div class="line"><span class="lineno">  184</span>  <span class="comment">// If no seeds have been specified then return immediately.</span></div>
+<div class="line"><span class="lineno">  185</span>  <span class="keywordflow">if</span> (seeds.empty()) {</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  187</span>  }</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>  <span class="comment">// If seeds are specified, make sure that the container has at least</span></div>
+<div class="line"><span class="lineno">  190</span>  <span class="comment">// two seeds.  If not, throw an exception.</span></div>
+<div class="line"><span class="lineno">  191</span>  <span class="keywordflow">if</span> (seeds.size() == 1) {</div>
+<div class="line"><span class="lineno">  192</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;ConfigurationException&quot;</span>,</div>
+<div class="line"><span class="lineno">  193</span>                    <span class="stringliteral">&quot;At least two seeds need to be specified.&quot;</span>);</div>
+<div class="line"><span class="lineno">  194</span>  }</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>  <span class="comment">// Create the array of seeds and pass them to G4Random.  Currently,</span></div>
+<div class="line"><span class="lineno">  197</span>  <span class="comment">// only 100 seeds can be specified at a time.  If less than 100</span></div>
+<div class="line"><span class="lineno">  198</span>  <span class="comment">// seeds are specified, the remaining slots are set to 0.</span></div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>  <span class="keyword">constexpr</span> <span class="keywordtype">int</span> max_number_of_seeds{100};</div>
+<div class="line"><span class="lineno">  201</span>  std::vector&lt;long&gt; seedVec(max_number_of_seeds, 0);</div>
+<div class="line"><span class="lineno">  202</span>  <span class="keywordflow">for</span> (std::size_t index{0}; index &lt; seeds.size(); ++index) {</div>
+<div class="line"><span class="lineno">  203</span>    seedVec[index] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(seeds[index]);</div>
+<div class="line"><span class="lineno">  204</span>  }</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>  <span class="comment">// Pass the array of seeds to the random engine.</span></div>
+<div class="line"><span class="lineno">  207</span>  G4Random::setTheSeeds(seedVec.data());</div>
+<div class="line"><span class="lineno">  208</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00219">onNewRun()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00119">onNewRun()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a11716de741e1aea74d61608039657fa0" name="a11716de741e1aea74d61608039657fa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11716de741e1aea74d61608039657fa0">&#9670;&#160;</a></span>conditionsIntf_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsimcore_1_1ConditionsInterface.html">ConditionsInterface</a> simcore::Simulator::conditionsIntf_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Conditions interface. </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00164">164</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00065">configure()</a>.</p>
-
-</div>
-</div>
-<a id="a981aae2f783d991f016598a4099adce9" name="a981aae2f783d991f016598a4099adce9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a981aae2f783d991f016598a4099adce9">&#9670;&#160;</a></span>invalidCommands_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; std::string &gt; simcore::Simulator::invalidCommands_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <span class="stringliteral">&quot;/run/initialize&quot;</span>,        </div>
-<div class="line">    <span class="stringliteral">&quot;/run/beamOn&quot;</span>,            </div>
-<div class="line">    <span class="stringliteral">&quot;/random/setSeeds&quot;</span>,       </div>
-<div class="line">    <span class="stringliteral">&quot;ldmx&quot;</span>,                   </div>
-<div class="line">    <span class="stringliteral">&quot;/persistency/gdml/read&quot;</span>  </div>
-<div class="line">                              </div>
-<div class="line">}</div>
-</div><!-- fragment --><p >Commands not allowed to be passed from python config file This is because <a class="el" href="classsimcore_1_1Simulator.html" title="Producer that runs Geant4 simulation inside of ldmx-app.">Simulator</a> already runs them. </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00152">152</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00359">allowed()</a>.</p>
-
-</div>
-</div>
 <a id="a4ce1cf2d1637cc77391ce25f26819950" name="a4ce1cf2d1637cc77391ce25f26819950"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ce1cf2d1637cc77391ce25f26819950">&#9670;&#160;</a></span>numEventsBegan_</h2>
 
@@ -1026,9 +742,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Number of events started. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00155">155</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00122">122</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00320">onFileClose()</a>, <a class="el" href="Simulator_8cxx_source.html#l00335">onProcessEnd()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00230">produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00169">onFileClose()</a>, <a class="el" href="Simulator_8cxx_source.html#l00176">onProcessEnd()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00131">produce()</a>.</p>
 
 </div>
 </div>
@@ -1054,37 +770,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Number of events completed. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00158">158</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00125">125</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00320">onFileClose()</a>, <a class="el" href="Simulator_8cxx_source.html#l00335">onProcessEnd()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00230">produce()</a>.</p>
-
-</div>
-</div>
-<a id="a5c9be0796db1a041cf0ea20deb253ef1" name="a5c9be0796db1a041cf0ea20deb253ef1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c9be0796db1a041cf0ea20deb253ef1">&#9670;&#160;</a></span>parameters_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> simcore::Simulator::parameters_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The parameters used to configure the simulation. </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00171">171</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00146">beforeNewRun()</a>, <a class="el" href="Simulator_8cxx_source.html#l00065">configure()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00284">onProcessStart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00169">onFileClose()</a>, <a class="el" href="Simulator_8cxx_source.html#l00176">onProcessEnd()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00131">produce()</a>.</p>
 
 </div>
 </div>
@@ -1110,121 +798,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>the run number (for accessing the run header in onFileClose </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00161">161</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00128">128</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00320">onFileClose()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00219">onNewRun()</a>.</p>
-
-</div>
-</div>
-<a id="ad042a5ed67950fb6d9543bd4cc213caa" name="ad042a5ed67950fb6d9543bd4cc213caa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad042a5ed67950fb6d9543bd4cc213caa">&#9670;&#160;</a></span>runManager_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsimcore_1_1RunManager.html">RunManager</a>&gt; simcore::Simulator::runManager_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Manager controlling G4 simulation run. </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00142">142</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00065">configure()</a>, <a class="el" href="Simulator_8cxx_source.html#l00320">onFileClose()</a>, <a class="el" href="Simulator_8cxx_source.html#l00335">onProcessEnd()</a>, <a class="el" href="Simulator_8cxx_source.html#l00284">onProcessStart()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00230">produce()</a>.</p>
-
-</div>
-</div>
-<a id="a9c030acf54ba0f105b42423e6637f06c" name="a9c030acf54ba0f105b42423e6637f06c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c030acf54ba0f105b42423e6637f06c">&#9670;&#160;</a></span>sessionHandle_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt;G4UIsession&gt; simcore::Simulator::sessionHandle_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Handle to the G4Session -&gt; how to deal with G4cout and G4cerr. </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00148">148</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00065">configure()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00335">onProcessEnd()</a>.</p>
-
-</div>
-</div>
-<a id="a6163281b6787af2ad373ce980b1cd0c3" name="a6163281b6787af2ad373ce980b1cd0c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6163281b6787af2ad373ce980b1cd0c3">&#9670;&#160;</a></span>uiManager_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">G4UImanager* simcore::Simulator::uiManager_ {nullptr}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>User interface handle. </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00145">145</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00065">configure()</a>, <a class="el" href="Simulator_8cxx_source.html#l00284">onProcessStart()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00056">Simulator()</a>.</p>
-
-</div>
-</div>
-<a id="a989dd7e0845622152ffc6abb1fc99345" name="a989dd7e0845622152ffc6abb1fc99345"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a989dd7e0845622152ffc6abb1fc99345">&#9670;&#160;</a></span>verbosity_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int simcore::Simulator::verbosity_ {1}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Vebosity for the simulation. </p>
-
-<p class="definition">Definition at line <a class="el" href="Simulator_8h_source.html#l00174">174</a> of file <a class="el" href="Simulator_8h_source.html">Simulator.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00065">configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00169">onFileClose()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00119">onNewRun()</a>.</p>
 
 </div>
 </div>

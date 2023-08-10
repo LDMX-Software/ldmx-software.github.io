@@ -224,7 +224,7 @@ Executable</h3>
 <div class="line"><span class="preprocessor">#include &quot;LibraryEntry.hpp&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
-<div class="line">  std::string full_cpp_name{argv[1]}; </div>
+<div class="line">  std::string full_cpp_name{argv[1]};</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    <span class="keyword">auto</span> entry_ptr{LibraryEntry::Factory::get().make(full_cpp_name)};</div>
 <div class="line">    std::cout &lt;&lt; entry_ptr-&gt;name() &lt;&lt; std::endl;</div>
@@ -295,15 +295,15 @@ template&lt;class UnaryFunction &gt; </div>
 <p >Apply the input UnaryFunction to each entry in the inventory</p>
 <p >UnaryFunction is simply passed dirctly to std::for_each so look there for requirements upon it. </p>
 
-<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00282">282</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  282</span>                                    {</div>
-<div class="line"><span class="lineno">  283</span>    std::for_each(<a class="code hl_variable" href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">warehouse_</a>.begin(), <a class="code hl_variable" href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">warehouse_</a>.end(), f);</div>
-<div class="line"><span class="lineno">  284</span>  }</div>
-<div class="ttc" id="aclasssimcore_1_1Factory_html_a4715a1cf0d9bdae23704d8fc4c456fa0"><div class="ttname"><a href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">simcore::Factory::warehouse_</a></div><div class="ttdeci">std::vector&lt; PrototypePtr &gt; warehouse_</div><div class="ttdoc">warehouse of objects that have already been created</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00324">Factory.h:324</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00283">283</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  283</span>                                    {</div>
+<div class="line"><span class="lineno">  284</span>    std::for_each(<a class="code hl_variable" href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">warehouse_</a>.begin(), <a class="code hl_variable" href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">warehouse_</a>.end(), f);</div>
+<div class="line"><span class="lineno">  285</span>  }</div>
+<div class="ttc" id="aclasssimcore_1_1Factory_html_a4715a1cf0d9bdae23704d8fc4c456fa0"><div class="ttname"><a href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">simcore::Factory::warehouse_</a></div><div class="ttdeci">std::vector&lt; PrototypePtr &gt; warehouse_</div><div class="ttdoc">warehouse of objects that have already been created</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00326">Factory.h:326</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Factory_8h_source.html#l00324">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::warehouse_</a>.</p>
+<p class="reference">References <a class="el" href="Factory_8h_source.html#l00326">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::warehouse_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00146">simcore::Simulator::beforeNewRun()</a>, <a class="el" href="Simulator_8cxx_source.html#l00230">simcore::Simulator::produce()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00052">simcore::RunManager::setupPhysics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00052">simcore::Simulator::beforeNewRun()</a>, <a class="el" href="Simulator_8cxx_source.html#l00131">simcore::Simulator::produce()</a>, <a class="el" href="ReSimulator_8cxx_source.html#l00021">simcore::ReSimulator::produce()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00050">simcore::RunManager::setupPhysics()</a>.</p>
 
 </div>
 </div>
@@ -350,9 +350,9 @@ template&lt;typename DerivedType &gt; </div>
 <div class="line"><span class="lineno">  243</span>    <a class="code hl_variable" href="classsimcore_1_1Factory.html#af867e472ad25e9a987f965931d1ea7c3">library_</a>[full_name] = &amp;maker&lt;DerivedType&gt;;</div>
 <div class="line"><span class="lineno">  244</span>    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="classsimcore_1_1Factory.html#af867e472ad25e9a987f965931d1ea7c3">library_</a>);</div>
 <div class="line"><span class="lineno">  245</span>  }</div>
-<div class="ttc" id="aclasssimcore_1_1Factory_html_af867e472ad25e9a987f965931d1ea7c3"><div class="ttname"><a href="classsimcore_1_1Factory.html#af867e472ad25e9a987f965931d1ea7c3">simcore::Factory::library_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, PrototypeMaker &gt; library_</div><div class="ttdoc">library of possible objects to create</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00321">Factory.h:321</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1Factory_html_af867e472ad25e9a987f965931d1ea7c3"><div class="ttname"><a href="classsimcore_1_1Factory.html#af867e472ad25e9a987f965931d1ea7c3">simcore::Factory::library_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, PrototypeMaker &gt; library_</div><div class="ttdoc">library of possible objects to create</div><div class="ttdef"><b>Definition:</b> <a href="Factory_8h_source.html#l00323">Factory.h:323</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Factory_8h_source.html#l00321">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::library_</a>.</p>
+<p class="reference">References <a class="el" href="Factory_8h_source.html#l00323">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::library_</a>.</p>
 
 </div>
 </div>
@@ -391,7 +391,7 @@ template&lt;typename Prototype , typename PrototypePtr , typename... PrototypeCo
 <div class="line"><span class="lineno">  220</span>  }</div>
 <div class="ttc" id="aclasssimcore_1_1Factory_html_ad14351915c748c3258c60b1acca42797"><div class="ttname"><a href="classsimcore_1_1Factory.html#ad14351915c748c3258c60b1acca42797">simcore::Factory::Factory</a></div><div class="ttdeci">Factory()=default</div><div class="ttdoc">private constructor to prevent creation</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00146">simcore::Simulator::beforeNewRun()</a>, <a class="el" href="GammaPhysics_8cxx_source.html#l00052">simcore::GammaPhysics::ConstructProcess()</a>, <a class="el" href="RunManager_8cxx_source.html#l00102">simcore::RunManager::Initialize()</a>, <a class="el" href="Simulator_8cxx_source.html#l00230">simcore::Simulator::produce()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00052">simcore::RunManager::setupPhysics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Simulator_8cxx_source.html#l00052">simcore::Simulator::beforeNewRun()</a>, <a class="el" href="GammaPhysics_8cxx_source.html#l00056">simcore::GammaPhysics::ConstructProcess()</a>, <a class="el" href="RunManager_8cxx_source.html#l00100">simcore::RunManager::Initialize()</a>, <a class="el" href="Simulator_8cxx_source.html#l00131">simcore::Simulator::produce()</a>, <a class="el" href="ReSimulator_8cxx_source.html#l00021">simcore::ReSimulator::produce()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00050">simcore::RunManager::setupPhysics()</a>.</p>
 
 </div>
 </div>
@@ -448,20 +448,20 @@ template&lt;typename Prototype , typename PrototypePtr , typename... PrototypeCo
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pointer to the parent class that the objects derive from. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00264">264</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  265</span>                                                            {</div>
-<div class="line"><span class="lineno">  266</span>    <span class="keyword">auto</span> lib_it{<a class="code hl_variable" href="classsimcore_1_1Factory.html#af867e472ad25e9a987f965931d1ea7c3">library_</a>.find(full_name)};</div>
-<div class="line"><span class="lineno">  267</span>    <span class="keywordflow">if</span> (lib_it == <a class="code hl_variable" href="classsimcore_1_1Factory.html#af867e472ad25e9a987f965931d1ea7c3">library_</a>.end()) {</div>
-<div class="line"><span class="lineno">  268</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;SimFactory&quot;</span>,<span class="stringliteral">&quot;An object named &quot;</span>+full_name+</div>
-<div class="line"><span class="lineno">  269</span>          <span class="stringliteral">&quot; has not been declared.&quot;</span>);</div>
-<div class="line"><span class="lineno">  270</span>    }</div>
-<div class="line"><span class="lineno">  271</span>    <a class="code hl_variable" href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">warehouse_</a>.emplace_back(lib_it-&gt;second(maker_args...));</div>
-<div class="line"><span class="lineno">  272</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">warehouse_</a>.back();</div>
-<div class="line"><span class="lineno">  273</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00265">265</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  266</span>                                                            {</div>
+<div class="line"><span class="lineno">  267</span>    <span class="keyword">auto</span> lib_it{<a class="code hl_variable" href="classsimcore_1_1Factory.html#af867e472ad25e9a987f965931d1ea7c3">library_</a>.find(full_name)};</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordflow">if</span> (lib_it == <a class="code hl_variable" href="classsimcore_1_1Factory.html#af867e472ad25e9a987f965931d1ea7c3">library_</a>.end()) {</div>
+<div class="line"><span class="lineno">  269</span>      EXCEPTION_RAISE(<span class="stringliteral">&quot;SimFactory&quot;</span>, <span class="stringliteral">&quot;An object named &quot;</span> + full_name +</div>
+<div class="line"><span class="lineno">  270</span>                                        <span class="stringliteral">&quot; has not been declared.&quot;</span>);</div>
+<div class="line"><span class="lineno">  271</span>    }</div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_variable" href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">warehouse_</a>.emplace_back(lib_it-&gt;second(maker_args...));</div>
+<div class="line"><span class="lineno">  273</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1Factory.html#a4715a1cf0d9bdae23704d8fc4c456fa0">warehouse_</a>.back();</div>
+<div class="line"><span class="lineno">  274</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Factory_8h_source.html#l00321">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::library_</a>, and <a class="el" href="Factory_8h_source.html#l00324">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::warehouse_</a>.</p>
+<p class="reference">References <a class="el" href="Factory_8h_source.html#l00323">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::library_</a>, and <a class="el" href="Factory_8h_source.html#l00326">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::warehouse_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GammaPhysics_8cxx_source.html#l00052">simcore::GammaPhysics::ConstructProcess()</a>, <a class="el" href="RunManager_8cxx_source.html#l00102">simcore::RunManager::Initialize()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00052">simcore::RunManager::setupPhysics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GammaPhysics_8cxx_source.html#l00056">simcore::GammaPhysics::ConstructProcess()</a>, <a class="el" href="RunManager_8cxx_source.html#l00100">simcore::RunManager::Initialize()</a>, and <a class="el" href="RunManager_8cxx_source.html#l00050">simcore::RunManager::setupPhysics()</a>.</p>
 
 </div>
 </div>
@@ -511,10 +511,11 @@ template&lt;typename DerivedType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00313">313</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  313</span>                                                              {</div>
-<div class="line"><span class="lineno">  314</span>    <span class="keywordflow">return</span> PrototypePtr(<span class="keyword">new</span> DerivedType(std::forward&lt;PrototypeConstructorArgs&gt;(args)...));</div>
-<div class="line"><span class="lineno">  315</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00314">314</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  314</span>                                                              {</div>
+<div class="line"><span class="lineno">  315</span>    <span class="keywordflow">return</span> PrototypePtr(</div>
+<div class="line"><span class="lineno">  316</span>        <span class="keyword">new</span> DerivedType(std::forward&lt;PrototypeConstructorArgs&gt;(args)...));</div>
+<div class="line"><span class="lineno">  317</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -543,9 +544,9 @@ template&lt;typename Prototype , typename PrototypePtr , typename... PrototypeCo
 
 <p>library of possible objects to create </p>
 
-<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00321">321</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00323">323</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Factory_8h_source.html#l00241">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::declare()</a>, and <a class="el" href="Factory_8h_source.html#l00264">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::make()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Factory_8h_source.html#l00241">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::declare()</a>, and <a class="el" href="Factory_8h_source.html#l00265">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::make()</a>.</p>
 
 </div>
 </div>
@@ -573,9 +574,9 @@ template&lt;typename Prototype , typename PrototypePtr , typename... PrototypeCo
 
 <p>warehouse of objects that have already been created </p>
 
-<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00324">324</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Factory_8h_source.html#l00326">326</a> of file <a class="el" href="Factory_8h_source.html">Factory.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Factory_8h_source.html#l00282">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::apply()</a>, and <a class="el" href="Factory_8h_source.html#l00264">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::make()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Factory_8h_source.html#l00283">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::apply()</a>, and <a class="el" href="Factory_8h_source.html#l00265">simcore::Factory&lt; Prototype, PrototypePtr, PrototypeConstructorArgs &gt;::make()</a>.</p>
 
 </div>
 </div>

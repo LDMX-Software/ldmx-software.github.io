@@ -138,9 +138,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   43</span>    }</div>
 <div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classsimcore_1_1VisAttributesStore.html#aca92eac414cd85b6cdc334f3a26679c2">visAttributesMap_</a>.clear();</div>
 <div class="line"><span class="lineno">   45</span>  }</div>
-<div class="ttc" id="aclasssimcore_1_1VisAttributesStore_html_aca92eac414cd85b6cdc334f3a26679c2"><div class="ttname"><a href="classsimcore_1_1VisAttributesStore.html#aca92eac414cd85b6cdc334f3a26679c2">simcore::VisAttributesStore::visAttributesMap_</a></div><div class="ttdeci">VisAttributesMap visAttributesMap_</div><div class="ttdef"><b>Definition:</b> <a href="VisAttributesStore_8h_source.html#l00075">VisAttributesStore.h:75</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1VisAttributesStore_html_aca92eac414cd85b6cdc334f3a26679c2"><div class="ttname"><a href="classsimcore_1_1VisAttributesStore.html#aca92eac414cd85b6cdc334f3a26679c2">simcore::VisAttributesStore::visAttributesMap_</a></div><div class="ttdeci">VisAttributesMap visAttributesMap_</div><div class="ttdef"><b>Definition:</b> <a href="VisAttributesStore_8h_source.html#l00076">VisAttributesStore.h:76</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00075">visAttributesMap_</a>.</p>
+<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00076">visAttributesMap_</a>.</p>
 
 </div>
 </div>
@@ -186,14 +186,14 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00066">66</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>                                                        {</div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classsimcore_1_1VisAttributesStore.html#aca92eac414cd85b6cdc334f3a26679c2">visAttributesMap_</a>[name] = visAttributes;</div>
-<div class="line"><span class="lineno">   69</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00067">67</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>                                                        {</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="classsimcore_1_1VisAttributesStore.html#aca92eac414cd85b6cdc334f3a26679c2">visAttributesMap_</a>[name] = visAttributes;</div>
+<div class="line"><span class="lineno">   70</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00075">visAttributesMap_</a>.</p>
+<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00076">visAttributesMap_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="AuxInfoReader_8cxx_source.html#l00259">simcore::geo::AuxInfoReader::createVisAttributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AuxInfoReader_8cxx_source.html#l00248">simcore::geo::AuxInfoReader::createVisAttributes()</a>.</p>
 
 </div>
 </div>
@@ -227,7 +227,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> &amp;INSTANCE;</div>
 <div class="line"><span class="lineno">   33</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="AuxInfoReader_8cxx_source.html#l00066">simcore::geo::AuxInfoReader::assignAuxInfoToVolumes()</a>, and <a class="el" href="AuxInfoReader_8cxx_source.html#l00259">simcore::geo::AuxInfoReader::createVisAttributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AuxInfoReader_8cxx_source.html#l00061">simcore::geo::AuxInfoReader::assignAuxInfoToVolumes()</a>, and <a class="el" href="AuxInfoReader_8cxx_source.html#l00248">simcore::geo::AuxInfoReader::createVisAttributes()</a>.</p>
 
 </div>
 </div>
@@ -267,14 +267,15 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   53</span>    <span class="keywordflow">try</span> {</div>
 <div class="line"><span class="lineno">   54</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1VisAttributesStore.html#aca92eac414cd85b6cdc334f3a26679c2">visAttributesMap_</a>.at(name);</div>
 <div class="line"><span class="lineno">   55</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::out_of_range&amp; oor) {</div>
-<div class="line"><span class="lineno">   56</span>      G4cout &lt;&lt; <span class="stringliteral">&quot;[ WARN ] : VisAttribute &#39;&quot;</span> &lt;&lt; name </div>
-<div class="line"><span class="lineno">   57</span>        &lt;&lt; <span class="stringliteral">&quot;&#39; not recognized. Ignoring.&quot;</span> &lt;&lt; G4endl;</div>
-<div class="line"><span class="lineno">   58</span>    }</div>
-<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="line"><span class="lineno">   56</span>      G4cout &lt;&lt; <span class="stringliteral">&quot;[ WARN ] : VisAttribute &#39;&quot;</span> &lt;&lt; name</div>
+<div class="line"><span class="lineno">   57</span>             &lt;&lt; <span class="stringliteral">&quot;&#39; not recognized. Ignoring.&quot;</span> &lt;&lt; G4endl;</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00075">visAttributesMap_</a>.</p>
+<p class="reference">References <a class="el" href="VisAttributesStore_8h_source.html#l00076">visAttributesMap_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="AuxInfoReader_8cxx_source.html#l00066">simcore::geo::AuxInfoReader::assignAuxInfoToVolumes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AuxInfoReader_8cxx_source.html#l00061">simcore::geo::AuxInfoReader::assignAuxInfoToVolumes()</a>.</p>
 
 </div>
 </div>
@@ -300,9 +301,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The map of names to vis attributes. </p>
 
-<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00075">75</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VisAttributesStore_8h_source.html#l00076">76</a> of file <a class="el" href="VisAttributesStore_8h_source.html">VisAttributesStore.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VisAttributesStore_8h_source.html#l00066">addVisAttributes()</a>, <a class="el" href="VisAttributesStore_8h_source.html#l00052">getVisAttributes()</a>, and <a class="el" href="VisAttributesStore_8h_source.html#l00040">~VisAttributesStore()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VisAttributesStore_8h_source.html#l00067">addVisAttributes()</a>, <a class="el" href="VisAttributesStore_8h_source.html#l00052">getVisAttributes()</a>, and <a class="el" href="VisAttributesStore_8h_source.html#l00040">~VisAttributesStore()</a>.</p>
 
 </div>
 </div>

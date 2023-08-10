@@ -134,40 +134,40 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00015">15</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>                                        {</div>
-<div class="line"><span class="lineno">   16</span>  std::istringstream iss(line);</div>
-<div class="line"><span class="lineno">   17</span>  std::vector&lt;std::string&gt; tokens;</div>
-<div class="line"><span class="lineno">   18</span>  <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   19</span>    std::string elem;</div>
-<div class="line"><span class="lineno">   20</span>    iss &gt;&gt; elem;</div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> (elem.size() != 0) {</div>
-<div class="line"><span class="lineno">   22</span>      tokens.push_back(elem);</div>
-<div class="line"><span class="lineno">   23</span>    }</div>
-<div class="line"><span class="lineno">   24</span>  } <span class="keywordflow">while</span> (iss);</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>  <span class="keywordflow">if</span> (tokens.size() != 13) {</div>
-<div class="line"><span class="lineno">   27</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;TokenNum&quot;</span>,</div>
-<div class="line"><span class="lineno">   28</span>                    <span class="stringliteral">&quot;Wrong number of tokens in LHE particle record.&quot;</span>);</div>
-<div class="line"><span class="lineno">   29</span>  }</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a28685cc85b9f5a17975dd0bf42b8ca65">idup_</a> = atof(tokens[0].c_str());</div>
-<div class="line"><span class="lineno">   32</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a51cd0b424d19b1b791c6a4a72fb4389d">istup_</a> = atoi(tokens[1].c_str());</div>
-<div class="line"><span class="lineno">   33</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a765b11df4c1de0a6ac9e5e13acd32e27">mothup_</a>[0] = atoi(tokens[2].c_str());</div>
-<div class="line"><span class="lineno">   34</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a765b11df4c1de0a6ac9e5e13acd32e27">mothup_</a>[1] = atoi(tokens[3].c_str());</div>
-<div class="line"><span class="lineno">   35</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a71b9a08270f71e6882dad3b6817067fb">icolup_</a>[0] = atoi(tokens[4].c_str());</div>
-<div class="line"><span class="lineno">   36</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a71b9a08270f71e6882dad3b6817067fb">icolup_</a>[1] = atoi(tokens[5].c_str());</div>
-<div class="line"><span class="lineno">   37</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[0] = atof(tokens[6].c_str());</div>
-<div class="line"><span class="lineno">   38</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[1] = atof(tokens[7].c_str());</div>
-<div class="line"><span class="lineno">   39</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[2] = atof(tokens[8].c_str());</div>
-<div class="line"><span class="lineno">   40</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[3] = atof(tokens[9].c_str());</div>
-<div class="line"><span class="lineno">   41</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[4] = atof(tokens[10].c_str());</div>
-<div class="line"><span class="lineno">   42</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#af6cccb6c4addecd07719df07ae690541">vtimup_</a> = atof(tokens[11].c_str());</div>
-<div class="line"><span class="lineno">   43</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a64ca72172fca5f9a6acb65e52ef16ed5">spinup_</a> = atof(tokens[12].c_str());</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">mothers_</a>[0] = NULL;</div>
-<div class="line"><span class="lineno">   46</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">mothers_</a>[1] = NULL;</div>
-<div class="line"><span class="lineno">   47</span>}</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00017">17</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                        {</div>
+<div class="line"><span class="lineno">   18</span>  std::istringstream iss(line);</div>
+<div class="line"><span class="lineno">   19</span>  std::vector&lt;std::string&gt; tokens;</div>
+<div class="line"><span class="lineno">   20</span>  <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   21</span>    std::string elem;</div>
+<div class="line"><span class="lineno">   22</span>    iss &gt;&gt; elem;</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (elem.size() != 0) {</div>
+<div class="line"><span class="lineno">   24</span>      tokens.push_back(elem);</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="line"><span class="lineno">   26</span>  } <span class="keywordflow">while</span> (iss);</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>  <span class="keywordflow">if</span> (tokens.size() != 13) {</div>
+<div class="line"><span class="lineno">   29</span>    EXCEPTION_RAISE(<span class="stringliteral">&quot;TokenNum&quot;</span>,</div>
+<div class="line"><span class="lineno">   30</span>                    <span class="stringliteral">&quot;Wrong number of tokens in LHE particle record.&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>  }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a28685cc85b9f5a17975dd0bf42b8ca65">idup_</a> = atof(tokens[0].c_str());</div>
+<div class="line"><span class="lineno">   34</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a51cd0b424d19b1b791c6a4a72fb4389d">istup_</a> = atoi(tokens[1].c_str());</div>
+<div class="line"><span class="lineno">   35</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a765b11df4c1de0a6ac9e5e13acd32e27">mothup_</a>[0] = atoi(tokens[2].c_str());</div>
+<div class="line"><span class="lineno">   36</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a765b11df4c1de0a6ac9e5e13acd32e27">mothup_</a>[1] = atoi(tokens[3].c_str());</div>
+<div class="line"><span class="lineno">   37</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a71b9a08270f71e6882dad3b6817067fb">icolup_</a>[0] = atoi(tokens[4].c_str());</div>
+<div class="line"><span class="lineno">   38</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a71b9a08270f71e6882dad3b6817067fb">icolup_</a>[1] = atoi(tokens[5].c_str());</div>
+<div class="line"><span class="lineno">   39</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[0] = atof(tokens[6].c_str());</div>
+<div class="line"><span class="lineno">   40</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[1] = atof(tokens[7].c_str());</div>
+<div class="line"><span class="lineno">   41</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[2] = atof(tokens[8].c_str());</div>
+<div class="line"><span class="lineno">   42</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[3] = atof(tokens[9].c_str());</div>
+<div class="line"><span class="lineno">   43</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[4] = atof(tokens[10].c_str());</div>
+<div class="line"><span class="lineno">   44</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#af6cccb6c4addecd07719df07ae690541">vtimup_</a> = atof(tokens[11].c_str());</div>
+<div class="line"><span class="lineno">   45</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a64ca72172fca5f9a6acb65e52ef16ed5">spinup_</a> = atof(tokens[12].c_str());</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">mothers_</a>[0] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   48</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">mothers_</a>[1] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   49</span>}</div>
 <div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a28685cc85b9f5a17975dd0bf42b8ca65"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a28685cc85b9f5a17975dd0bf42b8ca65">simcore::lhe::LHEParticle::idup_</a></div><div class="ttdeci">int idup_</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8h_source.html#l00107">LHEParticle.h:107</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a3ce245d4f2656acd532ea8c55c2a78dc"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">simcore::lhe::LHEParticle::mothers_</a></div><div class="ttdeci">LHEParticle * mothers_[2]</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8h_source.html#l00102">LHEParticle.h:102</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a51cd0b424d19b1b791c6a4a72fb4389d"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a51cd0b424d19b1b791c6a4a72fb4389d">simcore::lhe::LHEParticle::istup_</a></div><div class="ttdeci">int istup_</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8h_source.html#l00112">LHEParticle.h:112</a></div></div>
@@ -199,12 +199,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the particle color (ICOLUP) by index. </p><dl class="section return"><dt>Returns</dt><dd>The particle color by index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00055">55</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a71b9a08270f71e6882dad3b6817067fb">icolup_</a>[i]; }</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00057">57</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a71b9a08270f71e6882dad3b6817067fb">icolup_</a>[i]; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00122">icolup_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00069">print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00071">print()</a>.</p>
 
 </div>
 </div>
@@ -224,12 +224,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the PDG code (IDUP). </p><dl class="section return"><dt>Returns</dt><dd>The PDG code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00049">49</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a28685cc85b9f5a17975dd0bf42b8ca65">idup_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00051">51</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a28685cc85b9f5a17975dd0bf42b8ca65">idup_</a>; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00107">idup_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00034">simcore::generators::LHEPrimaryGenerator::GeneratePrimaryVertex()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00069">print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00034">simcore::generators::LHEPrimaryGenerator::GeneratePrimaryVertex()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00071">print()</a>.</p>
 
 </div>
 </div>
@@ -249,12 +249,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the status code (ISTUP). </p><dl class="section return"><dt>Returns</dt><dd>The status code. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00051">51</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a51cd0b424d19b1b791c6a4a72fb4389d">istup_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00053">53</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a51cd0b424d19b1b791c6a4a72fb4389d">istup_</a>; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00112">istup_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00034">simcore::generators::LHEPrimaryGenerator::GeneratePrimaryVertex()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00069">print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00034">simcore::generators::LHEPrimaryGenerator::GeneratePrimaryVertex()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00071">print()</a>.</p>
 
 </div>
 </div>
@@ -275,8 +275,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Get a mother particle by index. </p><dl class="section return"><dt>Returns</dt><dd>The mother particle at the index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00067">67</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">mothers_</a>[i]; }</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00069">69</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">mothers_</a>[i]; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00102">mothers_</a>.</p>
 
@@ -301,12 +301,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Get a mother particle index (MOTHUP) by index. </p><dl class="section return"><dt>Returns</dt><dd>The mother particle by index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00053">53</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a765b11df4c1de0a6ac9e5e13acd32e27">mothup_</a>[i]; }</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00055">55</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a765b11df4c1de0a6ac9e5e13acd32e27">mothup_</a>[i]; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00117">mothup_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00069">print()</a>, and <a class="el" href="LHEReader_8cxx_source.html#l00015">simcore::lhe::LHEReader::readNextEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00071">print()</a>, and <a class="el" href="LHEReader_8cxx_source.html#l00015">simcore::lhe::LHEReader::readNextEvent()</a>.</p>
 
 </div>
 </div>
@@ -327,12 +327,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Get a momentum component (PUP) by index. Defined in order: E/C, Px, Py, Pz, mass </p><dl class="section return"><dt>Returns</dt><dd>The momentum component by index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00057">57</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[i]; }</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00059">59</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac8e87ee9862c6bd05604914ab996eb68">pup_</a>[i]; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00127">pup_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00034">simcore::generators::LHEPrimaryGenerator::GeneratePrimaryVertex()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00069">print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00034">simcore::generators::LHEPrimaryGenerator::GeneratePrimaryVertex()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00071">print()</a>.</p>
 
 </div>
 </div>
@@ -352,12 +352,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the particle's spin (SPINUP). </p><dl class="section return"><dt>Returns</dt><dd>The particle's spin. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00061">61</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a64ca72172fca5f9a6acb65e52ef16ed5">spinup_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00063">63</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a64ca72172fca5f9a6acb65e52ef16ed5">spinup_</a>; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00137">spinup_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00069">print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00071">print()</a>.</p>
 
 </div>
 </div>
@@ -377,12 +377,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the proper lifetime (VTIMUP). </p><dl class="section return"><dt>Returns</dt><dd>The particle's proper lifetime. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00059">59</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#af6cccb6c4addecd07719df07ae690541">vtimup_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00061">61</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#af6cccb6c4addecd07719df07ae690541">vtimup_</a>; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00132">vtimup_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00034">simcore::generators::LHEPrimaryGenerator::GeneratePrimaryVertex()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00069">print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEPrimaryGenerator_8cxx_source.html#l00034">simcore::generators::LHEPrimaryGenerator::GeneratePrimaryVertex()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00071">print()</a>.</p>
 
 </div>
 </div>
@@ -408,26 +408,26 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00069">69</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                {</div>
-<div class="line"><span class="lineno">   70</span>  stream &lt;&lt; <span class="stringliteral">&quot;LHEParticle { &quot;</span></div>
-<div class="line"><span class="lineno">   71</span>         &lt;&lt; <span class="stringliteral">&quot;IDUP: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#ad07e91b6c2447b3d54597123c0cf7e8c">getIDUP</a>() &lt;&lt; <span class="stringliteral">&quot;, ISTUP: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac0a11ffc078a7372ce6f8ebb325a0e1e">getISTUP</a>()</div>
-<div class="line"><span class="lineno">   72</span>         &lt;&lt; <span class="stringliteral">&quot;, MOTHUP[0]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a1445602b61f2150924754592736d0c36">getMOTHUP</a>(0) &lt;&lt; <span class="stringliteral">&quot;, MOTHUP[1]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a1445602b61f2150924754592736d0c36">getMOTHUP</a>(1)</div>
-<div class="line"><span class="lineno">   73</span>         &lt;&lt; <span class="stringliteral">&quot;, ICOLUP[0]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#adba8963c2f5e498e6491ab9c0f3d4f5a">getICOLUP</a>(0) &lt;&lt; <span class="stringliteral">&quot;, ICOLUP[1]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#adba8963c2f5e498e6491ab9c0f3d4f5a">getICOLUP</a>(1)</div>
-<div class="line"><span class="lineno">   74</span>         &lt;&lt; <span class="stringliteral">&quot;, PUP[0]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(0) &lt;&lt; <span class="stringliteral">&quot;, PUP[1]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(1)</div>
-<div class="line"><span class="lineno">   75</span>         &lt;&lt; <span class="stringliteral">&quot;, PUP[2]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(2) &lt;&lt; <span class="stringliteral">&quot;, PUP[3]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(3)</div>
-<div class="line"><span class="lineno">   76</span>         &lt;&lt; <span class="stringliteral">&quot;, PUP[4]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(4) &lt;&lt; <span class="stringliteral">&quot;, VTIMUP: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a6cb9450963ed444438b95be9d383bade">getVTIMUP</a>()</div>
-<div class="line"><span class="lineno">   77</span>         &lt;&lt; <span class="stringliteral">&quot;, SPINUP: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a5927698dc577bbfb66849dbb16a9f7a8">getSPINUP</a>() &lt;&lt; <span class="stringliteral">&quot; }&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   78</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a1445602b61f2150924754592736d0c36"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a1445602b61f2150924754592736d0c36">simcore::lhe::LHEParticle::getMOTHUP</a></div><div class="ttdeci">int getMOTHUP(int) const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00053">LHEParticle.cxx:53</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a2747fbdc98fa1227c96455689d985530"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">simcore::lhe::LHEParticle::getPUP</a></div><div class="ttdeci">double getPUP(int) const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00057">LHEParticle.cxx:57</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a5927698dc577bbfb66849dbb16a9f7a8"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a5927698dc577bbfb66849dbb16a9f7a8">simcore::lhe::LHEParticle::getSPINUP</a></div><div class="ttdeci">double getSPINUP() const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00061">LHEParticle.cxx:61</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a6cb9450963ed444438b95be9d383bade"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a6cb9450963ed444438b95be9d383bade">simcore::lhe::LHEParticle::getVTIMUP</a></div><div class="ttdeci">double getVTIMUP() const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00059">LHEParticle.cxx:59</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_ac0a11ffc078a7372ce6f8ebb325a0e1e"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#ac0a11ffc078a7372ce6f8ebb325a0e1e">simcore::lhe::LHEParticle::getISTUP</a></div><div class="ttdeci">int getISTUP() const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00051">LHEParticle.cxx:51</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_ad07e91b6c2447b3d54597123c0cf7e8c"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#ad07e91b6c2447b3d54597123c0cf7e8c">simcore::lhe::LHEParticle::getIDUP</a></div><div class="ttdeci">int getIDUP() const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00049">LHEParticle.cxx:49</a></div></div>
-<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_adba8963c2f5e498e6491ab9c0f3d4f5a"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#adba8963c2f5e498e6491ab9c0f3d4f5a">simcore::lhe::LHEParticle::getICOLUP</a></div><div class="ttdeci">int getICOLUP(int) const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00055">LHEParticle.cxx:55</a></div></div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00071">71</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>                                                {</div>
+<div class="line"><span class="lineno">   72</span>  stream &lt;&lt; <span class="stringliteral">&quot;LHEParticle { &quot;</span></div>
+<div class="line"><span class="lineno">   73</span>         &lt;&lt; <span class="stringliteral">&quot;IDUP: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#ad07e91b6c2447b3d54597123c0cf7e8c">getIDUP</a>() &lt;&lt; <span class="stringliteral">&quot;, ISTUP: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#ac0a11ffc078a7372ce6f8ebb325a0e1e">getISTUP</a>()</div>
+<div class="line"><span class="lineno">   74</span>         &lt;&lt; <span class="stringliteral">&quot;, MOTHUP[0]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a1445602b61f2150924754592736d0c36">getMOTHUP</a>(0) &lt;&lt; <span class="stringliteral">&quot;, MOTHUP[1]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a1445602b61f2150924754592736d0c36">getMOTHUP</a>(1)</div>
+<div class="line"><span class="lineno">   75</span>         &lt;&lt; <span class="stringliteral">&quot;, ICOLUP[0]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#adba8963c2f5e498e6491ab9c0f3d4f5a">getICOLUP</a>(0) &lt;&lt; <span class="stringliteral">&quot;, ICOLUP[1]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#adba8963c2f5e498e6491ab9c0f3d4f5a">getICOLUP</a>(1)</div>
+<div class="line"><span class="lineno">   76</span>         &lt;&lt; <span class="stringliteral">&quot;, PUP[0]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(0) &lt;&lt; <span class="stringliteral">&quot;, PUP[1]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(1)</div>
+<div class="line"><span class="lineno">   77</span>         &lt;&lt; <span class="stringliteral">&quot;, PUP[2]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(2) &lt;&lt; <span class="stringliteral">&quot;, PUP[3]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(3)</div>
+<div class="line"><span class="lineno">   78</span>         &lt;&lt; <span class="stringliteral">&quot;, PUP[4]: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">getPUP</a>(4) &lt;&lt; <span class="stringliteral">&quot;, VTIMUP: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a6cb9450963ed444438b95be9d383bade">getVTIMUP</a>()</div>
+<div class="line"><span class="lineno">   79</span>         &lt;&lt; <span class="stringliteral">&quot;, SPINUP: &quot;</span> &lt;&lt; <a class="code hl_function" href="classsimcore_1_1lhe_1_1LHEParticle.html#a5927698dc577bbfb66849dbb16a9f7a8">getSPINUP</a>() &lt;&lt; <span class="stringliteral">&quot; }&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   80</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a1445602b61f2150924754592736d0c36"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a1445602b61f2150924754592736d0c36">simcore::lhe::LHEParticle::getMOTHUP</a></div><div class="ttdeci">int getMOTHUP(int) const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00055">LHEParticle.cxx:55</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a2747fbdc98fa1227c96455689d985530"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a2747fbdc98fa1227c96455689d985530">simcore::lhe::LHEParticle::getPUP</a></div><div class="ttdeci">double getPUP(int) const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00059">LHEParticle.cxx:59</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a5927698dc577bbfb66849dbb16a9f7a8"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a5927698dc577bbfb66849dbb16a9f7a8">simcore::lhe::LHEParticle::getSPINUP</a></div><div class="ttdeci">double getSPINUP() const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00063">LHEParticle.cxx:63</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_a6cb9450963ed444438b95be9d383bade"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#a6cb9450963ed444438b95be9d383bade">simcore::lhe::LHEParticle::getVTIMUP</a></div><div class="ttdeci">double getVTIMUP() const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00061">LHEParticle.cxx:61</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_ac0a11ffc078a7372ce6f8ebb325a0e1e"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#ac0a11ffc078a7372ce6f8ebb325a0e1e">simcore::lhe::LHEParticle::getISTUP</a></div><div class="ttdeci">int getISTUP() const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00053">LHEParticle.cxx:53</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_ad07e91b6c2447b3d54597123c0cf7e8c"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#ad07e91b6c2447b3d54597123c0cf7e8c">simcore::lhe::LHEParticle::getIDUP</a></div><div class="ttdeci">int getIDUP() const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00051">LHEParticle.cxx:51</a></div></div>
+<div class="ttc" id="aclasssimcore_1_1lhe_1_1LHEParticle_html_adba8963c2f5e498e6491ab9c0f3d4f5a"><div class="ttname"><a href="classsimcore_1_1lhe_1_1LHEParticle.html#adba8963c2f5e498e6491ab9c0f3d4f5a">simcore::lhe::LHEParticle::getICOLUP</a></div><div class="ttdeci">int getICOLUP(int) const</div><div class="ttdef"><b>Definition:</b> <a href="LHEParticle_8cxx_source.html#l00057">LHEParticle.cxx:57</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="LHEParticle_8cxx_source.html#l00055">getICOLUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00049">getIDUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00051">getISTUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00053">getMOTHUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00057">getPUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00061">getSPINUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00059">getVTIMUP()</a>.</p>
+<p class="reference">References <a class="el" href="LHEParticle_8cxx_source.html#l00057">getICOLUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00051">getIDUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00053">getISTUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00055">getMOTHUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00059">getPUP()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00063">getSPINUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00061">getVTIMUP()</a>.</p>
 
 </div>
 </div>
@@ -464,10 +464,10 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00063">63</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                                                      {</div>
-<div class="line"><span class="lineno">   64</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">mothers_</a>[i] = mother;</div>
-<div class="line"><span class="lineno">   65</span>}</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00065">65</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>                                                      {</div>
+<div class="line"><span class="lineno">   66</span>  <a class="code hl_variable" href="classsimcore_1_1lhe_1_1LHEParticle.html#a3ce245d4f2656acd532ea8c55c2a78dc">mothers_</a>[i] = mother;</div>
+<div class="line"><span class="lineno">   67</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="LHEParticle_8h_source.html#l00102">mothers_</a>.</p>
 
@@ -517,11 +517,11 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00080">80</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>                                                                        {</div>
-<div class="line"><span class="lineno">   81</span>  particle.print(stream);</div>
-<div class="line"><span class="lineno">   82</span>  <span class="keywordflow">return</span> stream;</div>
-<div class="line"><span class="lineno">   83</span>}</div>
+<p class="definition">Definition at line <a class="el" href="LHEParticle_8cxx_source.html#l00082">82</a> of file <a class="el" href="LHEParticle_8cxx_source.html">LHEParticle.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>                                                                        {</div>
+<div class="line"><span class="lineno">   83</span>  particle.print(stream);</div>
+<div class="line"><span class="lineno">   84</span>  <span class="keywordflow">return</span> stream;</div>
+<div class="line"><span class="lineno">   85</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -549,7 +549,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LHEParticle_8h_source.html#l00122">122</a> of file <a class="el" href="LHEParticle_8h_source.html">LHEParticle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00055">getICOLUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00015">LHEParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00057">getICOLUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00017">LHEParticle()</a>.</p>
 
 </div>
 </div>
@@ -576,7 +576,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LHEParticle_8h_source.html#l00107">107</a> of file <a class="el" href="LHEParticle_8h_source.html">LHEParticle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00049">getIDUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00015">LHEParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00051">getIDUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00017">LHEParticle()</a>.</p>
 
 </div>
 </div>
@@ -603,7 +603,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LHEParticle_8h_source.html#l00112">112</a> of file <a class="el" href="LHEParticle_8h_source.html">LHEParticle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00051">getISTUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00015">LHEParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00053">getISTUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00017">LHEParticle()</a>.</p>
 
 </div>
 </div>
@@ -630,7 +630,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LHEParticle_8h_source.html#l00102">102</a> of file <a class="el" href="LHEParticle_8h_source.html">LHEParticle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00067">getMother()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00015">LHEParticle()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00063">setMother()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00069">getMother()</a>, <a class="el" href="LHEParticle_8cxx_source.html#l00017">LHEParticle()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00065">setMother()</a>.</p>
 
 </div>
 </div>
@@ -657,7 +657,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LHEParticle_8h_source.html#l00117">117</a> of file <a class="el" href="LHEParticle_8h_source.html">LHEParticle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00053">getMOTHUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00015">LHEParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00055">getMOTHUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00017">LHEParticle()</a>.</p>
 
 </div>
 </div>
@@ -684,7 +684,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LHEParticle_8h_source.html#l00127">127</a> of file <a class="el" href="LHEParticle_8h_source.html">LHEParticle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00057">getPUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00015">LHEParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00059">getPUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00017">LHEParticle()</a>.</p>
 
 </div>
 </div>
@@ -711,7 +711,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LHEParticle_8h_source.html#l00137">137</a> of file <a class="el" href="LHEParticle_8h_source.html">LHEParticle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00061">getSPINUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00015">LHEParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00063">getSPINUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00017">LHEParticle()</a>.</p>
 
 </div>
 </div>
@@ -738,7 +738,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="LHEParticle_8h_source.html#l00132">132</a> of file <a class="el" href="LHEParticle_8h_source.html">LHEParticle.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00059">getVTIMUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00015">LHEParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LHEParticle_8cxx_source.html#l00061">getVTIMUP()</a>, and <a class="el" href="LHEParticle_8cxx_source.html#l00017">LHEParticle()</a>.</p>
 
 </div>
 </div>

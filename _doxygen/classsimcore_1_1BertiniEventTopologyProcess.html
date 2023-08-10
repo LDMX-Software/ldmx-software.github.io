@@ -223,12 +223,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00126">126</a> of file <a class="el" href="BertiniEventTopologyProcess_8h_source.html">BertiniEventTopologyProcess.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>                                           {</div>
-<div class="line"><span class="lineno">  127</span>    <span class="keyword">auto</span> event_info{<span class="keyword">static_cast&lt;</span>UserEventInformation*<span class="keyword">&gt;</span>(</div>
-<div class="line"><span class="lineno">  128</span>        G4EventManager::GetEventManager()-&gt;GetUserInformation())};</div>
-<div class="line"><span class="lineno">  129</span>    event_info-&gt;incWeight(1. / N);</div>
-<div class="line"><span class="lineno">  130</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00125">125</a> of file <a class="el" href="BertiniEventTopologyProcess_8h_source.html">BertiniEventTopologyProcess.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>                                           {</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keyword">auto</span> event_info{<span class="keyword">static_cast&lt;</span>UserEventInformation*<span class="keyword">&gt;</span>(</div>
+<div class="line"><span class="lineno">  127</span>        G4EventManager::GetEventManager()-&gt;GetUserInformation())};</div>
+<div class="line"><span class="lineno">  128</span>    event_info-&gt;incWeight(1. / N);</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -261,15 +261,14 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00092">92</a> of file <a class="el" href="BertiniEventTopologyProcess_8h_source.html">BertiniEventTopologyProcess.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   92</span>                                                     {</div>
 <div class="line"><span class="lineno">   93</span>    <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   94</span>    <span class="comment">// TODO: Is the &lt; check necessary?</span></div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (pdgCode &gt; 1000000000 &amp;&amp; pdgCode &lt; 10000000000) {</div>
-<div class="line"><span class="lineno">   96</span>      <span class="comment">// Check if the atomic number is less than or equal to 4</span></div>
-<div class="line"><span class="lineno">   97</span>      <span class="keywordflow">return</span> ((pdgCode / 10) % 1000) &lt;= 4;</div>
-<div class="line"><span class="lineno">   98</span>    }</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span> (pdgCode &gt; 1000000000) {</div>
+<div class="line"><span class="lineno">   95</span>      <span class="comment">// Check if the atomic number is less than or equal to 4</span></div>
+<div class="line"><span class="lineno">   96</span>      <span class="keywordflow">return</span> ((pdgCode / 10) % 1000) &lt;= 4;</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   99</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00114">skipCountingParticle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00113">skipCountingParticle()</a>.</p>
 
 </div>
 </div>
@@ -300,10 +299,10 @@ Private Attributes</h2></td></tr>
 <p >If count_light_ions_ is set, we also match PDG codes for nuclei with atomic number &lt; 4. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classsimcore_1_1BertiniEventTopologyProcess.html#ad79df56d319b8180ec543ca5d4a2fd86">isLightIon</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00114">114</a> of file <a class="el" href="BertiniEventTopologyProcess_8h_source.html">BertiniEventTopologyProcess.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>                                                               {</div>
-<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> !(pdgcode &lt; 10000 || count_light_ions_ &amp;&amp; <a class="code hl_function" href="classsimcore_1_1BertiniEventTopologyProcess.html#ad79df56d319b8180ec543ca5d4a2fd86">isLightIon</a>(pdgcode));</div>
-<div class="line"><span class="lineno">  116</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00113">113</a> of file <a class="el" href="BertiniEventTopologyProcess_8h_source.html">BertiniEventTopologyProcess.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>                                                               {</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> !(pdgcode &lt; 10000 || (count_light_ions_ &amp;&amp; <a class="code hl_function" href="classsimcore_1_1BertiniEventTopologyProcess.html#ad79df56d319b8180ec543ca5d4a2fd86">isLightIon</a>(pdgcode)));</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
 <div class="ttc" id="aclasssimcore_1_1BertiniEventTopologyProcess_html_ad79df56d319b8180ec543ca5d4a2fd86"><div class="ttname"><a href="classsimcore_1_1BertiniEventTopologyProcess.html#ad79df56d319b8180ec543ca5d4a2fd86">simcore::BertiniEventTopologyProcess::isLightIon</a></div><div class="ttdeci">constexpr bool isLightIon(const int pdgCode) const</div><div class="ttdef"><b>Definition:</b> <a href="BertiniEventTopologyProcess_8h_source.html#l00092">BertiniEventTopologyProcess.h:92</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00092">isLightIon()</a>.</p>
@@ -331,7 +330,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00133">133</a> of file <a class="el" href="BertiniEventTopologyProcess_8h_source.html">BertiniEventTopologyProcess.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BertiniEventTopologyProcess_8h_source.html#l00132">132</a> of file <a class="el" href="BertiniEventTopologyProcess_8h_source.html">BertiniEventTopologyProcess.h</a>.</p>
 
 </div>
 </div>

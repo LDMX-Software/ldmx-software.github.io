@@ -182,7 +182,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  119</span>  }</div>
 <div class="ttc" id="aclasssimcore_1_1g4user_1_1TrackingAction_html_a53f0ccada33a5aedde3cf768860cbd22"><div class="ttname"><a href="classsimcore_1_1g4user_1_1TrackingAction.html#a53f0ccada33a5aedde3cf768860cbd22">simcore::g4user::TrackingAction::TrackingAction</a></div><div class="ttdeci">TrackingAction()</div><div class="ttdef"><b>Definition:</b> <a href="TrackingAction_8h_source.html#l00041">TrackingAction.h:41</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="EventAction_8cxx_source.html#l00025">simcore::g4user::EventAction::BeginOfEventAction()</a>, <a class="el" href="UserAction_8cxx_source.html#l00029">simcore::UserAction::getCurrentParticleMap()</a>, <a class="el" href="SensitiveDetector_8h_source.html#l00134">simcore::SensitiveDetector::getTrackMap()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00230">simcore::Simulator::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EventAction_8cxx_source.html#l00025">simcore::g4user::EventAction::BeginOfEventAction()</a>, <a class="el" href="UserAction_8cxx_source.html#l00027">simcore::UserAction::getCurrentParticleMap()</a>, and <a class="el" href="SensitiveDetector_8h_source.html#l00138">simcore::SensitiveDetector::getTrackMap()</a>.</p>
 
 </div>
 </div>
@@ -216,7 +216,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="TrackingAction_8h_source.html#l00135">trackMap_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EventAction_8cxx_source.html#l00025">simcore::g4user::EventAction::BeginOfEventAction()</a>, <a class="el" href="UserAction_8cxx_source.html#l00029">simcore::UserAction::getCurrentParticleMap()</a>, <a class="el" href="SensitiveDetector_8h_source.html#l00134">simcore::SensitiveDetector::getTrackMap()</a>, and <a class="el" href="Simulator_8cxx_source.html#l00230">simcore::Simulator::produce()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EventAction_8cxx_source.html#l00025">simcore::g4user::EventAction::BeginOfEventAction()</a>, <a class="el" href="UserAction_8cxx_source.html#l00027">simcore::UserAction::getCurrentParticleMap()</a>, and <a class="el" href="SensitiveDetector_8h_source.html#l00138">simcore::SensitiveDetector::getTrackMap()</a>.</p>
 
 </div>
 </div>
@@ -248,23 +248,23 @@ Private Attributes</h2></td></tr>
 </dl>
 <p >If a track is to-be saved and it is being killed, save the track into the map. This is where a track is chosen to be put into the output particle map. If its save flag is true <b>for any reason</b> at this point, then it will be in the output map.</p>
 
-<p class="definition">Definition at line <a class="el" href="TrackingAction_8cxx_source.html#l00067">67</a> of file <a class="el" href="TrackingAction_8cxx_source.html">TrackingAction.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>                                                                {</div>
-<div class="line"><span class="lineno">   68</span>  <span class="comment">// Activate user tracking actions</span></div>
-<div class="line"><span class="lineno">   69</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; trackingAction : <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#afa27c70cbcbc78eaa4524b0f1936d875">trackingActions_</a>)</div>
-<div class="line"><span class="lineno">   70</span>    trackingAction-&gt;PostUserTrackingAction(track);</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   79</span>  <span class="keyword">auto</span> track_info{<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">UserTrackInformation::get</a>(track)};</div>
-<div class="line"><span class="lineno">   80</span>  <span class="keywordflow">if</span> (track_info-&gt;getSaveFlag() and</div>
-<div class="line"><span class="lineno">   81</span>      track-&gt;GetTrackStatus() == G4TrackStatus::fStopAndKill) {</div>
-<div class="line"><span class="lineno">   82</span>    <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#a99ab40e27889b3a3e8960e4767891e0a">trackMap_</a>.<a class="code hl_function" href="classsimcore_1_1TrackMap.html#a987632720c8a4dcd34438445e48ecaa0">save</a>(track);</div>
-<div class="line"><span class="lineno">   83</span>  }</div>
-<div class="line"><span class="lineno">   84</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a987632720c8a4dcd34438445e48ecaa0"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a987632720c8a4dcd34438445e48ecaa0">simcore::TrackMap::save</a></div><div class="ttdeci">void save(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00032">TrackMap.cxx:32</a></div></div>
+<p class="definition">Definition at line <a class="el" href="TrackingAction_8cxx_source.html#l00066">66</a> of file <a class="el" href="TrackingAction_8cxx_source.html">TrackingAction.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                                {</div>
+<div class="line"><span class="lineno">   67</span>  <span class="comment">// Activate user tracking actions</span></div>
+<div class="line"><span class="lineno">   68</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; trackingAction : <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#afa27c70cbcbc78eaa4524b0f1936d875">trackingActions_</a>)</div>
+<div class="line"><span class="lineno">   69</span>    trackingAction-&gt;PostUserTrackingAction(track);</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   78</span>  <span class="keyword">auto</span> track_info{<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">UserTrackInformation::get</a>(track)};</div>
+<div class="line"><span class="lineno">   79</span>  <span class="keywordflow">if</span> (track_info-&gt;getSaveFlag() and</div>
+<div class="line"><span class="lineno">   80</span>      track-&gt;GetTrackStatus() == G4TrackStatus::fStopAndKill) {</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#a99ab40e27889b3a3e8960e4767891e0a">trackMap_</a>.<a class="code hl_function" href="classsimcore_1_1TrackMap.html#a987632720c8a4dcd34438445e48ecaa0">save</a>(track);</div>
+<div class="line"><span class="lineno">   82</span>  }</div>
+<div class="line"><span class="lineno">   83</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1TrackMap_html_a987632720c8a4dcd34438445e48ecaa0"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a987632720c8a4dcd34438445e48ecaa0">simcore::TrackMap::save</a></div><div class="ttdeci">void save(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00033">TrackMap.cxx:33</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_a05d99ef5ad9cc9e31abcfb5505bc2b9e"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">simcore::UserTrackInformation::get</a></div><div class="ttdeci">static UserTrackInformation * get(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8cxx_source.html#l00010">UserTrackInformation.cxx:10</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1g4user_1_1TrackingAction_html_afa27c70cbcbc78eaa4524b0f1936d875"><div class="ttname"><a href="classsimcore_1_1g4user_1_1TrackingAction.html#afa27c70cbcbc78eaa4524b0f1936d875">simcore::g4user::TrackingAction::trackingActions_</a></div><div class="ttdeci">std::vector&lt; UserAction * &gt; trackingActions_</div><div class="ttdoc">custom user actions to be called before and after processing a track</div><div class="ttdef"><b>Definition:</b> <a href="TrackingAction_8h_source.html#l00132">TrackingAction.h:132</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserTrackInformation_8cxx_source.html#l00010">simcore::UserTrackInformation::get()</a>, <a class="el" href="TrackMap_8cxx_source.html#l00032">simcore::TrackMap::save()</a>, <a class="el" href="TrackingAction_8h_source.html#l00132">trackingActions_</a>, and <a class="el" href="TrackingAction_8h_source.html#l00135">trackMap_</a>.</p>
+<p class="reference">References <a class="el" href="UserTrackInformation_8cxx_source.html#l00010">simcore::UserTrackInformation::get()</a>, <a class="el" href="TrackMap_8cxx_source.html#l00033">simcore::TrackMap::save()</a>, <a class="el" href="TrackingAction_8h_source.html#l00132">trackingActions_</a>, and <a class="el" href="TrackingAction_8h_source.html#l00135">trackMap_</a>.</p>
 
 </div>
 </div>
@@ -307,43 +307,43 @@ Private Attributes</h2></td></tr>
 </dl>
 <p >Always save a particle if any of the following are true it has gen status == 1 (primary) it is in a region without region info it is in a region that is marked to store secondaries DON'T change the save-status even if these are false The track's save-status is false by default when the track-info is constructed and the track's save-status could have been modified by a user action <b>prior</b> to the track being processed for the first time. For example, this happens if the user wants to save the secondaries of a particular track.</p>
 
-<p class="definition">Definition at line <a class="el" href="TrackingAction_8cxx_source.html#l00018">18</a> of file <a class="el" href="TrackingAction_8cxx_source.html">TrackingAction.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                                                               {</div>
-<div class="line"><span class="lineno">   19</span>  <span class="keywordflow">if</span> (not <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#a99ab40e27889b3a3e8960e4767891e0a">trackMap_</a>.<a class="code hl_function" href="classsimcore_1_1TrackMap.html#a07e01d1ed897706a15a59fc7ecd42873">contains</a>(track)) {</div>
-<div class="line"><span class="lineno">   20</span>    <span class="comment">// New Track</span></div>
-<div class="line"><span class="lineno">   21</span>    </div>
-<div class="line"><span class="lineno">   22</span>    <span class="comment">// get track information and initialize our new track</span></div>
-<div class="line"><span class="lineno">   23</span>    <span class="comment">//  this will create a new track info object if it doesn&#39;t exist</span></div>
-<div class="line"><span class="lineno">   24</span>    <span class="keyword">auto</span> track_info{<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">UserTrackInformation::get</a>(track)};</div>
-<div class="line"><span class="lineno">   25</span>    track_info-&gt;<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a64fc969470f9d22ddfb725403f585e1a">initialize</a>(track);</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="comment">// Get the region info for where the track was created (could be NULL)</span></div>
-<div class="line"><span class="lineno">   28</span>    <span class="keyword">auto</span> regionInfo = (UserRegionInformation*)track-&gt;GetLogicalVolumeAtVertex()</div>
-<div class="line"><span class="lineno">   29</span>                          -&gt;GetRegion()</div>
-<div class="line"><span class="lineno">   30</span>                          -&gt;GetUserInformation();</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="comment">// Get the gen status if track was primary</span></div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">int</span> curGenStatus = -1;</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (track-&gt;GetDynamicParticle()-&gt;GetPrimaryParticle()) {</div>
-<div class="line"><span class="lineno">   35</span>      <span class="keyword">auto</span> primaryInfo = <span class="keyword">dynamic_cast&lt;</span>UserPrimaryParticleInformation*<span class="keyword">&gt;</span>(</div>
-<div class="line"><span class="lineno">   36</span>          track-&gt;GetDynamicParticle()</div>
-<div class="line"><span class="lineno">   37</span>              -&gt;GetPrimaryParticle()</div>
-<div class="line"><span class="lineno">   38</span>              -&gt;GetUserInformation());</div>
-<div class="line"><span class="lineno">   39</span>      curGenStatus = primaryInfo-&gt;getHepEvtStatus();</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (curGenStatus == 1 or !regionInfo or regionInfo-&gt;getStoreSecondaries()) {</div>
-<div class="line"><span class="lineno">   55</span>      track_info-&gt;setSaveFlag(<span class="keyword">true</span>); </div>
-<div class="line"><span class="lineno">   56</span>    }</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    <span class="comment">// insert this track into the event&#39;s track map</span></div>
-<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#a99ab40e27889b3a3e8960e4767891e0a">trackMap_</a>.<a class="code hl_function" href="classsimcore_1_1TrackMap.html#ada353df3b799ca06e53601d7c0eed577">insert</a>(track);</div>
-<div class="line"><span class="lineno">   60</span>  }</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>  <span class="comment">// Activate user tracking actions</span></div>
-<div class="line"><span class="lineno">   63</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; trackingAction : <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#afa27c70cbcbc78eaa4524b0f1936d875">trackingActions_</a>)</div>
-<div class="line"><span class="lineno">   64</span>    trackingAction-&gt;PreUserTrackingAction(track);</div>
-<div class="line"><span class="lineno">   65</span>}</div>
+<p class="definition">Definition at line <a class="el" href="TrackingAction_8cxx_source.html#l00017">17</a> of file <a class="el" href="TrackingAction_8cxx_source.html">TrackingAction.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                                               {</div>
+<div class="line"><span class="lineno">   18</span>  <span class="keywordflow">if</span> (not <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#a99ab40e27889b3a3e8960e4767891e0a">trackMap_</a>.<a class="code hl_function" href="classsimcore_1_1TrackMap.html#a07e01d1ed897706a15a59fc7ecd42873">contains</a>(track)) {</div>
+<div class="line"><span class="lineno">   19</span>    <span class="comment">// New Track</span></div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="comment">// get track information and initialize our new track</span></div>
+<div class="line"><span class="lineno">   22</span>    <span class="comment">//  this will create a new track info object if it doesn&#39;t exist</span></div>
+<div class="line"><span class="lineno">   23</span>    <span class="keyword">auto</span> track_info{<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a05d99ef5ad9cc9e31abcfb5505bc2b9e">UserTrackInformation::get</a>(track)};</div>
+<div class="line"><span class="lineno">   24</span>    track_info-&gt;<a class="code hl_function" href="classsimcore_1_1UserTrackInformation.html#a64fc969470f9d22ddfb725403f585e1a">initialize</a>(track);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="comment">// Get the region info for where the track was created (could be NULL)</span></div>
+<div class="line"><span class="lineno">   27</span>    <span class="keyword">auto</span> regionInfo = (UserRegionInformation*)track-&gt;GetLogicalVolumeAtVertex()</div>
+<div class="line"><span class="lineno">   28</span>                          -&gt;GetRegion()</div>
+<div class="line"><span class="lineno">   29</span>                          -&gt;GetUserInformation();</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment">// Get the gen status if track was primary</span></div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordtype">int</span> curGenStatus = -1;</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (track-&gt;GetDynamicParticle()-&gt;GetPrimaryParticle()) {</div>
+<div class="line"><span class="lineno">   34</span>      <span class="keyword">auto</span> primaryInfo = <span class="keyword">dynamic_cast&lt;</span>UserPrimaryParticleInformation*<span class="keyword">&gt;</span>(</div>
+<div class="line"><span class="lineno">   35</span>          track-&gt;GetDynamicParticle()</div>
+<div class="line"><span class="lineno">   36</span>              -&gt;GetPrimaryParticle()</div>
+<div class="line"><span class="lineno">   37</span>              -&gt;GetUserInformation());</div>
+<div class="line"><span class="lineno">   38</span>      curGenStatus = primaryInfo-&gt;getHepEvtStatus();</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (curGenStatus == 1 or !regionInfo or regionInfo-&gt;getStoreSecondaries()) {</div>
+<div class="line"><span class="lineno">   54</span>      track_info-&gt;setSaveFlag(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="comment">// insert this track into the event&#39;s track map</span></div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#a99ab40e27889b3a3e8960e4767891e0a">trackMap_</a>.<a class="code hl_function" href="classsimcore_1_1TrackMap.html#ada353df3b799ca06e53601d7c0eed577">insert</a>(track);</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>  <span class="comment">// Activate user tracking actions</span></div>
+<div class="line"><span class="lineno">   62</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; trackingAction : <a class="code hl_variable" href="classsimcore_1_1g4user_1_1TrackingAction.html#afa27c70cbcbc78eaa4524b0f1936d875">trackingActions_</a>)</div>
+<div class="line"><span class="lineno">   63</span>    trackingAction-&gt;PreUserTrackingAction(track);</div>
+<div class="line"><span class="lineno">   64</span>}</div>
 <div class="ttc" id="aclasssimcore_1_1TrackMap_html_a07e01d1ed897706a15a59fc7ecd42873"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#a07e01d1ed897706a15a59fc7ecd42873">simcore::TrackMap::contains</a></div><div class="ttdeci">bool contains(const G4Track *track) const</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8h_source.html#l00040">TrackMap.h:40</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1TrackMap_html_ada353df3b799ca06e53601d7c0eed577"><div class="ttname"><a href="classsimcore_1_1TrackMap.html#ada353df3b799ca06e53601d7c0eed577">simcore::TrackMap::insert</a></div><div class="ttdeci">void insert(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="TrackMap_8cxx_source.html#l00009">TrackMap.cxx:9</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1UserTrackInformation_html_a64fc969470f9d22ddfb725403f585e1a"><div class="ttname"><a href="classsimcore_1_1UserTrackInformation.html#a64fc969470f9d22ddfb725403f585e1a">simcore::UserTrackInformation::initialize</a></div><div class="ttdeci">void initialize(const G4Track *track)</div><div class="ttdef"><b>Definition:</b> <a href="UserTrackInformation_8cxx_source.html#l00017">UserTrackInformation.cxx:17</a></div></div>
@@ -417,7 +417,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TrackingAction_8h_source.html#l00132">132</a> of file <a class="el" href="TrackingAction_8h_source.html">TrackingAction.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TrackingAction_8cxx_source.html#l00067">PostUserTrackingAction()</a>, <a class="el" href="TrackingAction_8cxx_source.html#l00018">PreUserTrackingAction()</a>, and <a class="el" href="TrackingAction_8h_source.html#l00126">registerAction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrackingAction_8cxx_source.html#l00066">PostUserTrackingAction()</a>, <a class="el" href="TrackingAction_8cxx_source.html#l00017">PreUserTrackingAction()</a>, and <a class="el" href="TrackingAction_8h_source.html#l00126">registerAction()</a>.</p>
 
 </div>
 </div>
@@ -444,7 +444,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TrackingAction_8h_source.html#l00135">135</a> of file <a class="el" href="TrackingAction_8h_source.html">TrackingAction.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TrackingAction_8h_source.html#l00110">getTrackMap()</a>, <a class="el" href="TrackingAction_8cxx_source.html#l00067">PostUserTrackingAction()</a>, and <a class="el" href="TrackingAction_8cxx_source.html#l00018">PreUserTrackingAction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TrackingAction_8h_source.html#l00110">getTrackMap()</a>, <a class="el" href="TrackingAction_8cxx_source.html#l00066">PostUserTrackingAction()</a>, and <a class="el" href="TrackingAction_8cxx_source.html#l00017">PreUserTrackingAction()</a>.</p>
 
 </div>
 </div>

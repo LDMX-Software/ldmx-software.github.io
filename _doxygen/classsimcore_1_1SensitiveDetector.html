@@ -65,18 +65,18 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6fa9bed692725b95f19af2acd8ca6606"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a6fa9bed692725b95f19af2acd8ca6606">SensitiveDetector</a> (const std::string &amp;name, <a class="el" href="classsimcore_1_1ConditionsInterface.html">simcore::ConditionsInterface</a> &amp;ci, const <a class="el" href="classframework_1_1config_1_1Parameters.html">framework::config::Parameters</a> &amp;parameters)</td></tr>
 <tr class="separator:a6fa9bed692725b95f19af2acd8ca6606"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16225357a782a8a2ebf91c9b1da50207"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a16225357a782a8a2ebf91c9b1da50207">~SensitiveDetector</a> ()</td></tr>
-<tr class="separator:a16225357a782a8a2ebf91c9b1da50207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba13388311a321a260e585afbef0b154"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#aba13388311a321a260e585afbef0b154">~SensitiveDetector</a> ()=default</td></tr>
+<tr class="separator:aba13388311a321a260e585afbef0b154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87dcc37929d04f3043b60045173270c2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a87dcc37929d04f3043b60045173270c2">isSensDet</a> (G4LogicalVolume *lv) const =0</td></tr>
 <tr class="separator:a87dcc37929d04f3043b60045173270c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e5f4a4f0f522d4260f04cb803ea7848"><td class="memItemLeft" align="right" valign="top">virtual G4bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a8e5f4a4f0f522d4260f04cb803ea7848">ProcessHits</a> (G4Step *step, G4TouchableHistory *hist)=0</td></tr>
-<tr class="separator:a8e5f4a4f0f522d4260f04cb803ea7848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2a2b4baaa89ef8a3e2806efe368851"><td class="memItemLeft" align="right" valign="top">virtual G4bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a1d2a2b4baaa89ef8a3e2806efe368851">ProcessHits</a> (G4Step *step, G4TouchableHistory *hist) override=0</td></tr>
+<tr class="separator:a1d2a2b4baaa89ef8a3e2806efe368851"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7301b913f77eea9991f632395fcc2dbc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a7301b913f77eea9991f632395fcc2dbc">saveHits</a> (<a class="el" href="classframework_1_1Event.html">framework::Event</a> &amp;event)=0</td></tr>
 <tr class="separator:a7301b913f77eea9991f632395fcc2dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade8034a854e9e8aa68dc3abbe4109bcd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#ade8034a854e9e8aa68dc3abbe4109bcd">EndOfEvent</a> (G4HCofThisEvent *) final override</td></tr>
-<tr class="separator:ade8034a854e9e8aa68dc3abbe4109bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4df81a01b527179654d7ca55e3dbe8bc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#a4df81a01b527179654d7ca55e3dbe8bc">EndOfEvent</a> ()=0</td></tr>
-<tr class="separator:a4df81a01b527179654d7ca55e3dbe8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf701b379acf37760b875844da58dc0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#aabf701b379acf37760b875844da58dc0">EndOfEvent</a> (G4HCofThisEvent *) override</td></tr>
+<tr class="separator:aabf701b379acf37760b875844da58dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9499ee7b2f1771bfa57fa82b5a7dd86"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1SensitiveDetector.html#ae9499ee7b2f1771bfa57fa82b5a7dd86">OnFinishedEvent</a> ()=0</td></tr>
+<tr class="separator:ae9499ee7b2f1771bfa57fa82b5a7dd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -97,7 +97,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Dynamically loaded Geant4 <a class="el" href="classsimcore_1_1SensitiveDetector.html">SensitiveDetector</a> for saving hits in specific volumes within the simulation </p>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00023">23</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00022">22</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad20e1bb4778553f3f07b81815f5dad15" name="ad20e1bb4778553f3f07b81815f5dad15"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad20e1bb4778553f3f07b81815f5dad15">&#9670;&#160;</a></span>Factory</h2>
@@ -113,7 +113,7 @@ Private Attributes</h2></td></tr>
 <p >The SD <a class="el" href="classsimcore_1_1Factory.html">Factory</a></p>
 <p >We have the factory create raw pointers since the G4SDManager handles destruction of all of the registered SensitiveDetectors. </p>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00042">42</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00040">40</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
 
 </div>
 </div>
@@ -159,17 +159,17 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8cxx_source.html#l00012">12</a> of file <a class="el" href="SensitiveDetector_8cxx_source.html">SensitiveDetector.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>    : G4VSensitiveDetector(name), <a class="code hl_variable" href="classsimcore_1_1SensitiveDetector.html#a156d60eacc55987e505769f034985085">conditions_interface_</a>(ci) {</div>
-<div class="line"><span class="lineno">   16</span>  <span class="comment">// register us with the manager</span></div>
-<div class="line"><span class="lineno">   17</span>  G4SDManager::GetSDMpointer()-&gt;AddNewDetector(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   18</span>}</div>
-<div class="ttc" id="aclasssimcore_1_1SensitiveDetector_html_a156d60eacc55987e505769f034985085"><div class="ttname"><a href="classsimcore_1_1SensitiveDetector.html#a156d60eacc55987e505769f034985085">simcore::SensitiveDetector::conditions_interface_</a></div><div class="ttdeci">simcore::ConditionsInterface &amp; conditions_interface_</div><div class="ttdoc">Handle to our interface to conditions objects.</div><div class="ttdef"><b>Definition:</b> <a href="SensitiveDetector_8h_source.html#l00140">SensitiveDetector.h:140</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8cxx_source.html#l00011">11</a> of file <a class="el" href="SensitiveDetector_8cxx_source.html">SensitiveDetector.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>    : G4VSensitiveDetector(name), <a class="code hl_variable" href="classsimcore_1_1SensitiveDetector.html#a156d60eacc55987e505769f034985085">conditions_interface_</a>(ci) {</div>
+<div class="line"><span class="lineno">   15</span>  <span class="comment">// register us with the manager</span></div>
+<div class="line"><span class="lineno">   16</span>  G4SDManager::GetSDMpointer()-&gt;AddNewDetector(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   17</span>}</div>
+<div class="ttc" id="aclasssimcore_1_1SensitiveDetector_html_a156d60eacc55987e505769f034985085"><div class="ttname"><a href="classsimcore_1_1SensitiveDetector.html#a156d60eacc55987e505769f034985085">simcore::SensitiveDetector::conditions_interface_</a></div><div class="ttdeci">simcore::ConditionsInterface &amp; conditions_interface_</div><div class="ttdoc">Handle to our interface to conditions objects.</div><div class="ttdef"><b>Definition:</b> <a href="SensitiveDetector_8h_source.html#l00144">SensitiveDetector.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a16225357a782a8a2ebf91c9b1da50207" name="a16225357a782a8a2ebf91c9b1da50207"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16225357a782a8a2ebf91c9b1da50207">&#9670;&#160;</a></span>~SensitiveDetector()</h2>
+<a id="aba13388311a321a260e585afbef0b154" name="aba13388311a321a260e585afbef0b154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba13388311a321a260e585afbef0b154">&#9670;&#160;</a></span>~SensitiveDetector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +178,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">simcore::SensitiveDetector::~SensitiveDetector </td>
+          <td class="memname">virtual simcore::SensitiveDetector::~SensitiveDetector </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -186,48 +186,17 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p >Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8cxx_source.html#l00020">20</a> of file <a class="el" href="SensitiveDetector_8cxx_source.html">SensitiveDetector.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>{}</div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4df81a01b527179654d7ca55e3dbe8bc" name="a4df81a01b527179654d7ca55e3dbe8bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4df81a01b527179654d7ca55e3dbe8bc">&#9670;&#160;</a></span>EndOfEvent() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void simcore::SensitiveDetector::EndOfEvent </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >Cleanup SD and prepare a new-event state </p>
-
-<p>Implemented in <a class="el" href="classsimcore_1_1EcalSD.html#a01d82c3294e8deb520d5376d20bb0e3e">simcore::EcalSD</a>, <a class="el" href="classsimcore_1_1HcalSD.html#afd643578143657988a27ead69dd6fb37">simcore::HcalSD</a>, <a class="el" href="classsimcore_1_1ScoringPlaneSD.html#aae654b9600633c2a2baaf0ae225c19ae">simcore::ScoringPlaneSD</a>, <a class="el" href="classsimcore_1_1TrackerSD.html#a250365d64c3d8a583fed5e2663e6807c">simcore::TrackerSD</a>, and <a class="el" href="classsimcore_1_1TrigScintSD.html#aad95d472b4d17abf14a6caa064de01ce">simcore::TrigScintSD</a>.</p>
-
-</div>
-</div>
-<a id="ade8034a854e9e8aa68dc3abbe4109bcd" name="ade8034a854e9e8aa68dc3abbe4109bcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade8034a854e9e8aa68dc3abbe4109bcd">&#9670;&#160;</a></span>EndOfEvent() <span class="overload">[2/2]</span></h2>
+<a id="aabf701b379acf37760b875844da58dc0" name="aabf701b379acf37760b875844da58dc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf701b379acf37760b875844da58dc0">&#9670;&#160;</a></span>EndOfEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,15 +214,16 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p >This is Geant4's handle to tell us the event is ending</p>
-<p >Since we are handling the Hit Collections (HC) directly, the input to this function is of no use to us. This is simply here to make sure that we can reset the SD to a new-event state whether or not a given event was serialized. </p>
+<p >Since we are handling the Hit Collections (HC) directly, the input to this function is of no use to us. This is simply here to make sure that we can reset the SD to a new-event state whether or not a given event was serialized.</p>
+<dl class="section note"><dt>Note</dt><dd>: If you are looking for the callback that is used in LDMX-sw when a <a class="el" href="classsimcore_1_1Simulator.html" title="Producer that runs Geant4 simulation inside of ldmx-app.">Simulator</a> event finishes, you want <code>OnFinishedEvent</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00091">91</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00094">94</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,13 +274,13 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>condition object requested </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00115">115</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>                                                                            {</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1SensitiveDetector.html#a156d60eacc55987e505769f034985085">conditions_interface_</a>.<a class="code hl_function" href="classsimcore_1_1ConditionsInterface.html#acd9a0943916e254859a4b7a765550804">getCondition</a>&lt;T&gt;(condition_name);</div>
-<div class="line"><span class="lineno">  117</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00119">119</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                                                         {</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1SensitiveDetector.html#a156d60eacc55987e505769f034985085">conditions_interface_</a>.<a class="code hl_function" href="classsimcore_1_1ConditionsInterface.html#acd9a0943916e254859a4b7a765550804">getCondition</a>&lt;T&gt;(condition_name);</div>
+<div class="line"><span class="lineno">  121</span>  }</div>
 <div class="ttc" id="aclasssimcore_1_1ConditionsInterface_html_acd9a0943916e254859a4b7a765550804"><div class="ttname"><a href="classsimcore_1_1ConditionsInterface.html#acd9a0943916e254859a4b7a765550804">simcore::ConditionsInterface::getCondition</a></div><div class="ttdeci">const T &amp; getCondition(const std::string &amp;condition_name)</div><div class="ttdef"><b>Definition:</b> <a href="ConditionsInterface_8h_source.html#l00033">ConditionsInterface.h:33</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="SensitiveDetector_8h_source.html#l00140">conditions_interface_</a>, and <a class="el" href="ConditionsInterface_8h_source.html#l00033">simcore::ConditionsInterface::getCondition()</a>.</p>
+<p class="reference">References <a class="el" href="SensitiveDetector_8h_source.html#l00144">conditions_interface_</a>, and <a class="el" href="ConditionsInterface_8h_source.html#l00033">simcore::ConditionsInterface::getCondition()</a>.</p>
 
 </div>
 </div>
@@ -339,16 +309,16 @@ template&lt;class T &gt; </div>
 <p >Get a handle to the current track map.</p>
 <p >The track map is created only after the event begins, so you will get a segmentation violation if you call this function before an event has started. </p>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00134">134</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>                                      {</div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classsimcore_1_1g4user_1_1TrackingAction.html#abbab03b25ea59c65a57819968a847892">simcore::g4user::TrackingAction::get</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1g4user_1_1TrackingAction.html#a54eda98e1b04872db6c5bf12f5d6ec18">getTrackMap</a>();</div>
-<div class="line"><span class="lineno">  136</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00138">138</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>                                      {</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classsimcore_1_1g4user_1_1TrackingAction.html#abbab03b25ea59c65a57819968a847892">simcore::g4user::TrackingAction::get</a>()-&gt;<a class="code hl_function" href="classsimcore_1_1g4user_1_1TrackingAction.html#a54eda98e1b04872db6c5bf12f5d6ec18">getTrackMap</a>();</div>
+<div class="line"><span class="lineno">  140</span>  }</div>
 <div class="ttc" id="aclasssimcore_1_1g4user_1_1TrackingAction_html_a54eda98e1b04872db6c5bf12f5d6ec18"><div class="ttname"><a href="classsimcore_1_1g4user_1_1TrackingAction.html#a54eda98e1b04872db6c5bf12f5d6ec18">simcore::g4user::TrackingAction::getTrackMap</a></div><div class="ttdeci">TrackMap &amp; getTrackMap()</div><div class="ttdef"><b>Definition:</b> <a href="TrackingAction_8h_source.html#l00110">TrackingAction.h:110</a></div></div>
 <div class="ttc" id="aclasssimcore_1_1g4user_1_1TrackingAction_html_abbab03b25ea59c65a57819968a847892"><div class="ttname"><a href="classsimcore_1_1g4user_1_1TrackingAction.html#abbab03b25ea59c65a57819968a847892">simcore::g4user::TrackingAction::get</a></div><div class="ttdeci">static TrackingAction * get()</div><div class="ttdef"><b>Definition:</b> <a href="TrackingAction_8h_source.html#l00116">TrackingAction.h:116</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="TrackingAction_8h_source.html#l00116">simcore::g4user::TrackingAction::get()</a>, and <a class="el" href="TrackingAction_8h_source.html#l00110">simcore::g4user::TrackingAction::getTrackMap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="EcalSD_8cxx_source.html#l00028">simcore::EcalSD::ProcessHits()</a>, and <a class="el" href="HcalSD_8cxx_source.html#l00059">simcore::HcalSD::ProcessHits()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalSD_8cxx_source.html#l00026">simcore::EcalSD::ProcessHits()</a>, and <a class="el" href="HcalSD_8cxx_source.html#l00057">simcore::HcalSD::ProcessHits()</a>.</p>
 
 </div>
 </div>
@@ -384,14 +354,14 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if step is coming from neutral/charged genatino </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8cxx_source.html#l00022">22</a> of file <a class="el" href="SensitiveDetector_8cxx_source.html">SensitiveDetector.cxx</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                           {</div>
-<div class="line"><span class="lineno">   23</span>  <span class="keyword">auto</span> particle_def{step-&gt;GetTrack()-&gt;GetDefinition()};</div>
-<div class="line"><span class="lineno">   24</span>  <span class="keywordflow">return</span> (particle_def == G4Geantino::Definition() or</div>
-<div class="line"><span class="lineno">   25</span>          particle_def == G4ChargedGeantino::Definition());</div>
-<div class="line"><span class="lineno">   26</span>}</div>
+<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8cxx_source.html#l00019">19</a> of file <a class="el" href="SensitiveDetector_8cxx_source.html">SensitiveDetector.cxx</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                           {</div>
+<div class="line"><span class="lineno">   20</span>  <span class="keyword">auto</span> particle_def{step-&gt;GetTrack()-&gt;GetDefinition()};</div>
+<div class="line"><span class="lineno">   21</span>  <span class="keywordflow">return</span> (particle_def == G4Geantino::Definition() or</div>
+<div class="line"><span class="lineno">   22</span>          particle_def == G4ChargedGeantino::Definition());</div>
+<div class="line"><span class="lineno">   23</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="EcalSD_8cxx_source.html#l00028">simcore::EcalSD::ProcessHits()</a>, <a class="el" href="HcalSD_8cxx_source.html#l00059">simcore::HcalSD::ProcessHits()</a>, <a class="el" href="TrackerSD_8cxx_source.html#l00026">simcore::TrackerSD::ProcessHits()</a>, and <a class="el" href="TrigScintSD_8cxx_source.html#l00027">simcore::TrigScintSD::ProcessHits()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="EcalSD_8cxx_source.html#l00026">simcore::EcalSD::ProcessHits()</a>, <a class="el" href="HcalSD_8cxx_source.html#l00057">simcore::HcalSD::ProcessHits()</a>, <a class="el" href="TrigScintSD_8cxx_source.html#l00025">simcore::TrigScintSD::ProcessHits()</a>, and <a class="el" href="TrackerSD_8cxx_source.html#l00020">simcore::TrackerSD::ProcessHits()</a>.</p>
 
 </div>
 </div>
@@ -431,8 +401,36 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a8e5f4a4f0f522d4260f04cb803ea7848" name="a8e5f4a4f0f522d4260f04cb803ea7848"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e5f4a4f0f522d4260f04cb803ea7848">&#9670;&#160;</a></span>ProcessHits()</h2>
+<a id="ae9499ee7b2f1771bfa57fa82b5a7dd86" name="ae9499ee7b2f1771bfa57fa82b5a7dd86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9499ee7b2f1771bfa57fa82b5a7dd86">&#9670;&#160;</a></span>OnFinishedEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void simcore::SensitiveDetector::OnFinishedEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Cleanup SD and prepare a new-event state. </p>
+
+<p>Implemented in <a class="el" href="classsimcore_1_1EcalSD.html#a35a87950475d04d76998f1d8011eb790">simcore::EcalSD</a>, <a class="el" href="classsimcore_1_1HcalSD.html#a1e8f246c59d4366e463b0116e9d0f12e">simcore::HcalSD</a>, <a class="el" href="classsimcore_1_1ScoringPlaneSD.html#a4c338027608fc1dd390a91f90eb8fccd">simcore::ScoringPlaneSD</a>, <a class="el" href="classsimcore_1_1TrackerSD.html#aa83e16b537b0eb076f6fb959675fbd1c">simcore::TrackerSD</a>, and <a class="el" href="classsimcore_1_1TrigScintSD.html#a4bd35c0e5c5e5f62456167a7ce6e5d9c">simcore::TrigScintSD</a>.</p>
+
+</div>
+</div>
+<a id="a1d2a2b4baaa89ef8a3e2806efe368851" name="a1d2a2b4baaa89ef8a3e2806efe368851"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d2a2b4baaa89ef8a3e2806efe368851">&#9670;&#160;</a></span>ProcessHits()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -460,7 +458,7 @@ template&lt;class T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -473,7 +471,7 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classsimcore_1_1EcalSD.html#a7947cb78da317790d439bba58a8c75cc">simcore::EcalSD</a>, <a class="el" href="classsimcore_1_1HcalSD.html#a39d5e61b0b77ddff9c2efea486ec17f7">simcore::HcalSD</a>, <a class="el" href="classsimcore_1_1ScoringPlaneSD.html#ac7dbbe5df5e7ecb09913886808048708">simcore::ScoringPlaneSD</a>, <a class="el" href="classsimcore_1_1TrackerSD.html#a273dfb0e631ca07fffde4ac3d4fbd8a2">simcore::TrackerSD</a>, and <a class="el" href="classsimcore_1_1TrigScintSD.html#a4606aea247de786ddcfcce896ac813f4">simcore::TrigScintSD</a>.</p>
+<p>Implemented in <a class="el" href="classsimcore_1_1EcalSD.html#a4be72ce00373235d079e5a0e7306bd67">simcore::EcalSD</a>, <a class="el" href="classsimcore_1_1HcalSD.html#a39d5e61b0b77ddff9c2efea486ec17f7">simcore::HcalSD</a>, <a class="el" href="classsimcore_1_1ScoringPlaneSD.html#ac7dbbe5df5e7ecb09913886808048708">simcore::ScoringPlaneSD</a>, <a class="el" href="classsimcore_1_1TrigScintSD.html#a4606aea247de786ddcfcce896ac813f4">simcore::TrigScintSD</a>, and <a class="el" href="classsimcore_1_1TrackerSD.html#a2f8de6d5bc234c1d439559f0e9f12b6a">simcore::TrackerSD</a>.</p>
 
 </div>
 </div>
@@ -539,9 +537,9 @@ template&lt;class T &gt; </div>
 
 <p>Handle to our interface to conditions objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00140">140</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SensitiveDetector_8h_source.html#l00144">144</a> of file <a class="el" href="SensitiveDetector_8h_source.html">SensitiveDetector.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SensitiveDetector_8h_source.html#l00115">getCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SensitiveDetector_8h_source.html#l00119">getCondition()</a>.</p>
 
 </div>
 </div>
