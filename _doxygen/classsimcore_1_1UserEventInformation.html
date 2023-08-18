@@ -73,6 +73,10 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~UserEventInformat
 <tr class="memitem:a96189d3785f82af9a4e227f86d1b6e50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">decBremCandidateCount</a> ()</td></tr>
 <tr class="memdesc:a96189d3785f82af9a4e227f86d1b6e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease the number of brem candidates in an event.  <a href="classsimcore_1_1UserEventInformation.html#a96189d3785f82af9a4e227f86d1b6e50">More...</a><br /></td></tr>
 <tr class="separator:a96189d3785f82af9a4e227f86d1b6e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24380987990c4d16efc2961a3b1d266b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserEventInformation.html#a24380987990c4d16efc2961a3b1d266b">setDarkBremMaterialZ</a> (double z)</td></tr>
+<tr class="separator:a24380987990c4d16efc2961a3b1d266b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8614fce1a1a56d8200f9a1e980d7087b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserEventInformation.html#a8614fce1a1a56d8200f9a1e980d7087b">getDarkBremMaterialZ</a> () const</td></tr>
+<tr class="separator:a8614fce1a1a56d8200f9a1e980d7087b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ff8406af0487f1bc3cdbce9d0e983f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserEventInformation.html#a1ff8406af0487f1bc3cdbce9d0e983f9">setWeight</a> (double weight)</td></tr>
 <tr class="separator:a1ff8406af0487f1bc3cdbce9d0e983f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfb9f6c589373d35a23c7e34587d2c6d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserEventInformation.html#abfb9f6c589373d35a23c7e34587d2c6d">getWeight</a> ()</td></tr>
@@ -113,6 +117,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3ad5fb6ef2ce09162aae810248acd102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa923de50a86c1fd9b77c0677725cf173"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserEventInformation.html#aa923de50a86c1fd9b77c0677725cf173">last_step_en_</a> {false}</td></tr>
 <tr class="separator:aa923de50a86c1fd9b77c0677725cf173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3e29557bc8dfa5f1094cffabcc67a98"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimcore_1_1UserEventInformation.html#af3e29557bc8dfa5f1094cffabcc67a98">db_material_z_</a> {-1.}</td></tr>
+<tr class="separator:af3e29557bc8dfa5f1094cffabcc67a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Encapsulates user defined information associated with a Geant4 event. </p>
@@ -150,11 +156,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00065">65</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a3ad5fb6ef2ce09162aae810248acd102">total_electronuclear_energy_</a> += delta; }</div>
-<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_a3ad5fb6ef2ce09162aae810248acd102"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#a3ad5fb6ef2ce09162aae810248acd102">simcore::UserEventInformation::total_electronuclear_energy_</a></div><div class="ttdeci">double total_electronuclear_energy_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00137">UserEventInformation.h:137</a></div></div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00082">82</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a3ad5fb6ef2ce09162aae810248acd102">total_electronuclear_energy_</a> += delta; }</div>
+<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_a3ad5fb6ef2ce09162aae810248acd102"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#a3ad5fb6ef2ce09162aae810248acd102">simcore::UserEventInformation::total_electronuclear_energy_</a></div><div class="ttdeci">double total_electronuclear_energy_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00154">UserEventInformation.h:154</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00137">total_electronuclear_energy_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00154">total_electronuclear_energy_</a>.</p>
 
 </div>
 </div>
@@ -189,11 +195,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00058">58</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a9361392271265c72909a7f1cbc9a4f67">total_photonuclear_energy_</a> += delta; }</div>
-<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_a9361392271265c72909a7f1cbc9a4f67"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#a9361392271265c72909a7f1cbc9a4f67">simcore::UserEventInformation::total_photonuclear_energy_</a></div><div class="ttdeci">double total_photonuclear_energy_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00123">UserEventInformation.h:123</a></div></div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00075">75</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a9361392271265c72909a7f1cbc9a4f67">total_photonuclear_energy_</a> += delta; }</div>
+<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_a9361392271265c72909a7f1cbc9a4f67"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#a9361392271265c72909a7f1cbc9a4f67">simcore::UserEventInformation::total_photonuclear_energy_</a></div><div class="ttdeci">double total_photonuclear_energy_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00140">UserEventInformation.h:140</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00123">total_photonuclear_energy_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00140">total_photonuclear_energy_</a>.</p>
 
 </div>
 </div>
@@ -221,11 +227,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The total number of brem candidates that this event contains. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00051">51</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a8896043791936db7cf4bd216d8ac40c1">bremCandidateCount_</a>; }</div>
-<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_a8896043791936db7cf4bd216d8ac40c1"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#a8896043791936db7cf4bd216d8ac40c1">simcore::UserEventInformation::bremCandidateCount_</a></div><div class="ttdeci">int bremCandidateCount_</div><div class="ttdoc">Total number of brem candidates in the event.</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00105">UserEventInformation.h:105</a></div></div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00068">68</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a8896043791936db7cf4bd216d8ac40c1">bremCandidateCount_</a>; }</div>
+<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_a8896043791936db7cf4bd216d8ac40c1"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#a8896043791936db7cf4bd216d8ac40c1">simcore::UserEventInformation::bremCandidateCount_</a></div><div class="ttdeci">int bremCandidateCount_</div><div class="ttdoc">Total number of brem candidates in the event.</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00122">UserEventInformation.h:122</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00105">bremCandidateCount_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00122">bremCandidateCount_</a>.</p>
 
 </div>
 </div>
@@ -257,9 +263,48 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00025">25</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a8896043791936db7cf4bd216d8ac40c1">bremCandidateCount_</a> -= 1; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00105">bremCandidateCount_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00122">bremCandidateCount_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="TargetProcessFilter_8cxx_source.html#l00049">biasing::TargetProcessFilter::stepping()</a>.</p>
+
+</div>
+</div>
+<a id="a8614fce1a1a56d8200f9a1e980d7087b" name="a8614fce1a1a56d8200f9a1e980d7087b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8614fce1a1a56d8200f9a1e980d7087b">&#9670;&#160;</a></span>getDarkBremMaterialZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double simcore::UserEventInformation::getDarkBremMaterialZ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Get the Z of the element in which the dark brem ocurred</p>
+<dl class="section note"><dt>Note</dt><dd>This will return -1 if no dark brem ocurred within this event.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>atomic Z of element in which the dark brem ocurred </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00042">42</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#af3e29557bc8dfa5f1094cffabcc67a98">db_material_z_</a>; }</div>
+<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_af3e29557bc8dfa5f1094cffabcc67a98"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#af3e29557bc8dfa5f1094cffabcc67a98">simcore::UserEventInformation::db_material_z_</a></div><div class="ttdeci">double db_material_z_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00167">UserEventInformation.h:167</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00167">db_material_z_</a>.</p>
 
 </div>
 </div>
@@ -287,10 +332,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the total energy that went EN </p><dl class="section return"><dt>Returns</dt><dd>total simulated energy that went EN in this event </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00077">77</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a3ad5fb6ef2ce09162aae810248acd102">total_electronuclear_energy_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00094">94</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a3ad5fb6ef2ce09162aae810248acd102">total_electronuclear_energy_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00137">total_electronuclear_energy_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00154">total_electronuclear_energy_</a>.</p>
 
 </div>
 </div>
@@ -318,10 +363,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Get the total energy that went PN </p><dl class="section return"><dt>Returns</dt><dd>total simulated energy that went PN in this event </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00071">71</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a9361392271265c72909a7f1cbc9a4f67">total_photonuclear_energy_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00088">88</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a9361392271265c72909a7f1cbc9a4f67">total_photonuclear_energy_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00123">total_photonuclear_energy_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00140">total_photonuclear_energy_</a>.</p>
 
 </div>
 </div>
@@ -349,11 +394,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The event weight </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00037">37</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#ae2d80f8516d9b979585bac5718ed1085">weight_</a>; }</div>
-<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_ae2d80f8516d9b979585bac5718ed1085"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#ae2d80f8516d9b979585bac5718ed1085">simcore::UserEventInformation::weight_</a></div><div class="ttdeci">double weight_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00114">UserEventInformation.h:114</a></div></div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00054">54</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#ae2d80f8516d9b979585bac5718ed1085">weight_</a>; }</div>
+<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_ae2d80f8516d9b979585bac5718ed1085"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#ae2d80f8516d9b979585bac5718ed1085">simcore::UserEventInformation::weight_</a></div><div class="ttdeci">double weight_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00131">UserEventInformation.h:131</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00114">weight_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00131">weight_</a>.</p>
 
 </div>
 </div>
@@ -385,7 +430,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00022">22</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#a8896043791936db7cf4bd216d8ac40c1">bremCandidateCount_</a> += 1; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00105">bremCandidateCount_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00122">bremCandidateCount_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="TargetBremFilter_8cxx_source.html#l00049">biasing::TargetBremFilter::stepping()</a>.</p>
 
@@ -422,10 +467,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00045">45</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#ae2d80f8516d9b979585bac5718ed1085">weight_</a> *= step_weight; }</div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00062">62</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#ae2d80f8516d9b979585bac5718ed1085">weight_</a> *= step_weight; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00114">weight_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00131">weight_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SteppingAction_8cxx_source.html#l00005">simcore::g4user::SteppingAction::UserSteppingAction()</a>.</p>
 
@@ -461,11 +506,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00095">95</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#aa923de50a86c1fd9b77c0677725cf173">last_step_en_</a> = yes; }</div>
-<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_aa923de50a86c1fd9b77c0677725cf173"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#aa923de50a86c1fd9b77c0677725cf173">simcore::UserEventInformation::last_step_en_</a></div><div class="ttdeci">bool last_step_en_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00142">UserEventInformation.h:142</a></div></div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00112">112</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#aa923de50a86c1fd9b77c0677725cf173">last_step_en_</a> = yes; }</div>
+<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_aa923de50a86c1fd9b77c0677725cf173"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#aa923de50a86c1fd9b77c0677725cf173">simcore::UserEventInformation::last_step_en_</a></div><div class="ttdeci">bool last_step_en_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00159">UserEventInformation.h:159</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00142">last_step_en_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00159">last_step_en_</a>.</p>
 
 </div>
 </div>
@@ -499,11 +544,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00083">83</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#afb0a2749d2092355770553afc5f6e5c1">last_step_pn_</a> = yes; }</div>
-<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_afb0a2749d2092355770553afc5f6e5c1"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#afb0a2749d2092355770553afc5f6e5c1">simcore::UserEventInformation::last_step_pn_</a></div><div class="ttdeci">bool last_step_pn_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00128">UserEventInformation.h:128</a></div></div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00100">100</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#afb0a2749d2092355770553afc5f6e5c1">last_step_pn_</a> = yes; }</div>
+<div class="ttc" id="aclasssimcore_1_1UserEventInformation_html_afb0a2749d2092355770553afc5f6e5c1"><div class="ttname"><a href="classsimcore_1_1UserEventInformation.html#afb0a2749d2092355770553afc5f6e5c1">simcore::UserEventInformation::last_step_pn_</a></div><div class="ttdeci">bool last_step_pn_</div><div class="ttdef"><b>Definition:</b> <a href="UserEventInformation_8h_source.html#l00145">UserEventInformation.h:145</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00128">last_step_pn_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00145">last_step_pn_</a>.</p>
 
 </div>
 </div>
@@ -541,7 +586,45 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   15</span>            &lt;&lt; std::endl;</div>
 <div class="line"><span class="lineno">   16</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00105">bremCandidateCount_</a>, <a class="el" href="UserEventInformation_8h_source.html#l00137">total_electronuclear_energy_</a>, <a class="el" href="UserEventInformation_8h_source.html#l00123">total_photonuclear_energy_</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00114">weight_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00122">bremCandidateCount_</a>, <a class="el" href="UserEventInformation_8h_source.html#l00154">total_electronuclear_energy_</a>, <a class="el" href="UserEventInformation_8h_source.html#l00140">total_photonuclear_energy_</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00131">weight_</a>.</p>
+
+</div>
+</div>
+<a id="a24380987990c4d16efc2961a3b1d266b" name="a24380987990c4d16efc2961a3b1d266b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24380987990c4d16efc2961a3b1d266b">&#9670;&#160;</a></span>setDarkBremMaterialZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void simcore::UserEventInformation::setDarkBremMaterialZ </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>z</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Set the Z of the element in which the dark brem ocurred</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>atomic Z of element in which the dark brem ocurred </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00032">32</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#af3e29557bc8dfa5f1094cffabcc67a98">db_material_z_</a> = z; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00167">db_material_z_</a>.</p>
 
 </div>
 </div>
@@ -576,10 +659,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00032">32</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#ae2d80f8516d9b979585bac5718ed1085">weight_</a> = weight; }</div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00049">49</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>{ <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#ae2d80f8516d9b979585bac5718ed1085">weight_</a> = weight; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00114">weight_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00131">weight_</a>.</p>
 
 </div>
 </div>
@@ -607,10 +690,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Was the last step a EN interaction? </p><dl class="section return"><dt>Returns</dt><dd>true if it was </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00101">101</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#aa923de50a86c1fd9b77c0677725cf173">last_step_en_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00118">118</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#aa923de50a86c1fd9b77c0677725cf173">last_step_en_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00142">last_step_en_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00159">last_step_en_</a>.</p>
 
 </div>
 </div>
@@ -638,10 +721,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Was the last step a PN interaction? </p><dl class="section return"><dt>Returns</dt><dd>true if it was </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00089">89</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#afb0a2749d2092355770553afc5f6e5c1">last_step_pn_</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00106">106</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classsimcore_1_1UserEventInformation.html#afb0a2749d2092355770553afc5f6e5c1">last_step_pn_</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00128">last_step_pn_</a>.</p>
+<p class="reference">References <a class="el" href="UserEventInformation_8h_source.html#l00145">last_step_pn_</a>.</p>
 
 </div>
 </div>
@@ -668,9 +751,37 @@ Private Attributes</h2></td></tr>
 
 <p>Total number of brem candidates in the event. </p>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00105">105</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00122">122</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00051">bremCandidateCount()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00025">decBremCandidateCount()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00022">incBremCandidateCount()</a>, and <a class="el" href="UserEventInformation_8cxx_source.html#l00010">Print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00068">bremCandidateCount()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00025">decBremCandidateCount()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00022">incBremCandidateCount()</a>, and <a class="el" href="UserEventInformation_8cxx_source.html#l00010">Print()</a>.</p>
+
+</div>
+</div>
+<a id="af3e29557bc8dfa5f1094cffabcc67a98" name="af3e29557bc8dfa5f1094cffabcc67a98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3e29557bc8dfa5f1094cffabcc67a98">&#9670;&#160;</a></span>db_material_z_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double simcore::UserEventInformation::db_material_z_ {-1.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >atomic Z of the element in which dark brem occurred (-1 if didn't happen)</p>
+<p >The default is -1. and so will provide unphysical results if the dark brem did not occur within the event in question. </p>
+
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00167">167</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00042">getDarkBremMaterialZ()</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00032">setDarkBremMaterialZ()</a>.</p>
 
 </div>
 </div>
@@ -695,9 +806,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Was the most recent step a electron-nuclear interaction? </p>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00142">142</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00159">159</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00095">lastStepWasEN()</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00101">wasLastStepEN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00112">lastStepWasEN()</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00118">wasLastStepEN()</a>.</p>
 
 </div>
 </div>
@@ -722,9 +833,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Was the most recent step a photon-nuclear interaction? </p>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00128">128</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00145">145</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00083">lastStepWasPN()</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00089">wasLastStepPN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00100">lastStepWasPN()</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00106">wasLastStepPN()</a>.</p>
 
 </div>
 </div>
@@ -750,9 +861,9 @@ Private Attributes</h2></td></tr>
 <p >The total energy that went into the electron-nuclear interaction</p>
 <dl class="section note"><dt>Note</dt><dd>The action TrackNuclearEnergy relies on the assumption that this running total starts at 0, so the value of this member variable should always be 0 at construction. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00137">137</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00154">154</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00065">addENEnergy()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00077">getENEnergy()</a>, and <a class="el" href="UserEventInformation_8cxx_source.html#l00010">Print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00082">addENEnergy()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00094">getENEnergy()</a>, and <a class="el" href="UserEventInformation_8cxx_source.html#l00010">Print()</a>.</p>
 
 </div>
 </div>
@@ -778,9 +889,9 @@ Private Attributes</h2></td></tr>
 <p >The total energy that went into the photon-nuclear interaction</p>
 <dl class="section note"><dt>Note</dt><dd>The action TrackNuclearEnergy relies on the assumption that this running total starts at 0, so the value of this member variable should always be 0 at construction. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00123">123</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00140">140</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00058">addPNEnergy()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00071">getPNEnergy()</a>, and <a class="el" href="UserEventInformation_8cxx_source.html#l00010">Print()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00075">addPNEnergy()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00088">getPNEnergy()</a>, and <a class="el" href="UserEventInformation_8cxx_source.html#l00010">Print()</a>.</p>
 
 </div>
 </div>
@@ -806,9 +917,9 @@ Private Attributes</h2></td></tr>
 <p >The event weight</p>
 <dl class="section note"><dt>Note</dt><dd>The action WeightByStep relies on the assumption that this weight <em>starts at 1</em>, so the value of this member variable should always be 1. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00114">114</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UserEventInformation_8h_source.html#l00131">131</a> of file <a class="el" href="UserEventInformation_8h_source.html">UserEventInformation.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00037">getWeight()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00045">incWeight()</a>, <a class="el" href="UserEventInformation_8cxx_source.html#l00010">Print()</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00032">setWeight()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserEventInformation_8h_source.html#l00054">getWeight()</a>, <a class="el" href="UserEventInformation_8h_source.html#l00062">incWeight()</a>, <a class="el" href="UserEventInformation_8cxx_source.html#l00010">Print()</a>, and <a class="el" href="UserEventInformation_8h_source.html#l00049">setWeight()</a>.</p>
 
 </div>
 </div>

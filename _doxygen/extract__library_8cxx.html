@@ -141,9 +141,9 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> 2;</div>
 <div class="line"><span class="lineno">   79</span>  }</div>
 <div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>  std::map&lt;double, std::vector&lt;g4db::OutgoingKinematics&gt;&gt; lib;</div>
-<div class="line"><span class="lineno">   82</span>  <a class="code hl_function" href="namespaceg4db.html#a35fb2e67c162103f16baf7a5463d235d">parseLibrary</a>(db_lib, aprime_id, lib);</div>
-<div class="line"><span class="lineno">   83</span>  <a class="code hl_function" href="namespaceg4db.html#a0994d804b9ab8749bb519bb682b6ce4a">dumpLibrary</a>(output, lib);</div>
+<div class="line"><span class="lineno">   81</span>  std::map&lt;int, std::map&lt;double, std::vector&lt;g4db::OutgoingKinematics&gt;&gt;&gt; lib;</div>
+<div class="line"><span class="lineno">   82</span>  <a class="code hl_function" href="namespaceg4db.html#aeb20d92b785bc3bd4b49716e57c31951">parseLibrary</a>(db_lib, aprime_id, lib);</div>
+<div class="line"><span class="lineno">   83</span>  <a class="code hl_function" href="namespaceg4db.html#ac233198f46aede3c840ac70da4980bde">dumpLibrary</a>(output, lib);</div>
 <div class="line"><span class="lineno">   84</span> </div>
 <div class="line"><span class="lineno">   85</span>  output.close();</div>
 <div class="line"><span class="lineno">   86</span>  <span class="keywordflow">return</span> 0;</div>
@@ -152,8 +152,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   89</span>  <span class="keywordflow">return</span> 127;</div>
 <div class="line"><span class="lineno">   90</span>}</div>
 <div class="ttc" id="aextract__library_8cxx_html_a2ef30c42cbc289d899a8be5d2d8f77d0"><div class="ttname"><a href="extract__library_8cxx.html#a2ef30c42cbc289d899a8be5d2d8f77d0">usage</a></div><div class="ttdeci">void usage()</div><div class="ttdef"><b>Definition:</b> <a href="extract__library_8cxx_source.html#l00014">extract_library.cxx:14</a></div></div>
-<div class="ttc" id="anamespaceg4db_html_a0994d804b9ab8749bb519bb682b6ce4a"><div class="ttname"><a href="namespaceg4db.html#a0994d804b9ab8749bb519bb682b6ce4a">g4db::dumpLibrary</a></div><div class="ttdeci">void dumpLibrary(std::ostream &amp;o, const std::map&lt; double, std::vector&lt; OutgoingKinematics &gt; &gt; &amp;lib)</div><div class="ttdef"><b>Definition:</b> <a href="ParseLibrary_8cxx_source.html#l00221">ParseLibrary.cxx:221</a></div></div>
-<div class="ttc" id="anamespaceg4db_html_a35fb2e67c162103f16baf7a5463d235d"><div class="ttname"><a href="namespaceg4db.html#a35fb2e67c162103f16baf7a5463d235d">g4db::parseLibrary</a></div><div class="ttdeci">void parseLibrary(const std::string &amp;path, int aprime_lhe_id, std::map&lt; double, std::vector&lt; OutgoingKinematics &gt; &gt; &amp;lib)</div><div class="ttdef"><b>Definition:</b> <a href="ParseLibrary_8cxx_source.html#l00164">ParseLibrary.cxx:164</a></div></div>
+<div class="ttc" id="anamespaceg4db_html_ac233198f46aede3c840ac70da4980bde"><div class="ttname"><a href="namespaceg4db.html#ac233198f46aede3c840ac70da4980bde">g4db::dumpLibrary</a></div><div class="ttdeci">void dumpLibrary(std::ostream &amp;o, const std::map&lt; int, std::map&lt; double, std::vector&lt; OutgoingKinematics &gt; &gt; &gt; &amp;lib)</div><div class="ttdef"><b>Definition:</b> <a href="ParseLibrary_8cxx_source.html#l00246">ParseLibrary.cxx:246</a></div></div>
+<div class="ttc" id="anamespaceg4db_html_aeb20d92b785bc3bd4b49716e57c31951"><div class="ttname"><a href="namespaceg4db.html#aeb20d92b785bc3bd4b49716e57c31951">g4db::parseLibrary</a></div><div class="ttdeci">void parseLibrary(const std::string &amp;path, int aprime_lhe_id, std::map&lt; int, std::map&lt; double, std::vector&lt; OutgoingKinematics &gt; &gt; &gt; &amp;lib)</div><div class="ttdef"><b>Definition:</b> <a href="ParseLibrary_8cxx_source.html#l00189">ParseLibrary.cxx:189</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="extract__library_8cxx_source.html#l00014">usage()</a>.</p>
 
