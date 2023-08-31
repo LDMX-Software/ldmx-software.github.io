@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Container
 
 > _Note:_ This method is _highly_ recommended. The extra details below are not for the faint of heart.

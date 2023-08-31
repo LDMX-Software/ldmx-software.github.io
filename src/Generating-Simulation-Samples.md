@@ -1,7 +1,3 @@
----
-layout: default
----
-
 The generation of simulation samples is done mainly by the Geant4 package with several additions stored in the `SimCore` module of ldmx-sw. However, you do not need to know the simulation to this level of depth. The `Simulator` producer in the `SimCore` module is your messenger to run the simulation. Here, I will go through its basic usage. For more information about _all_ of the available parameters, please see the documentation on [Configuring the Simulation]({% link docs/Configuring-the-Simulation.md %}).
 
 ### Basic Usage

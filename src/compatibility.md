@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Container-Software Compatibility
 
 Often we need to introduce new dependencies in order to do new things

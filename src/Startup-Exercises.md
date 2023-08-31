@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Start-Up Exercises
 
 This page assumes you (the reader) already has some experience with `git` and the command line.

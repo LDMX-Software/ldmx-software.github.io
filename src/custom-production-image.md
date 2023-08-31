@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Using a Custom Production Image
 
 Using a container has many advantages and one of them is the ability to develop code on one machine (e.g. your personal laptop), 
