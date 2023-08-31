@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # What the F.A.Q.?
 Frequent issues and potholes that new collaborators run into while starting their work with LDMX software.
 

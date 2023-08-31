@@ -1,7 +1,3 @@
----
-layout: default
----
-
 If the objects already in an Event module do not suit your purposes, you can define your own Event Bus Object that will carry your data between processors. You will need to meet a few requirements in order for your class to be able to be added to the event bus.
 
 * Write the class header and implementation files like normal. Let's say the name of your class is `ClassName`.

@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Structure of Event Processors
 
 In ldmx-sw, processors have a structure that overlap between C++ and python where we attempt to use the strengths of both languages.

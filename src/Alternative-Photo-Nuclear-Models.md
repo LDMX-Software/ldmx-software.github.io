@@ -1,7 +1,3 @@
----
-layout: default
----
-
 This page details the options in LDMX-sw that allow you to change the default model used in Geant4 for modelling photo nuclear interactions. 
 
 Example use cases:

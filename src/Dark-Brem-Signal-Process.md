@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Modern ldmx-sw
 
 The signal generation is done by using a custom Geant4 physics process to interact with a "model" for how dark brem occurs.

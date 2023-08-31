@@ -1,7 +1,3 @@
----
-layout: default
----
-
 This page details all of the parameters you can use to tune the simulation to behave how you want it to.
 
 General

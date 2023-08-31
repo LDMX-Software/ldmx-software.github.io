@@ -1,7 +1,3 @@
----
-layout: default
----
-
 In ldmx-sw we use an several tools for our testing framework: 
 - [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top)
 - [ctest](https://cmake.org/cmake/help/latest/manual/ctest.1.html)

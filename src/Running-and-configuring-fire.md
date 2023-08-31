@@ -1,7 +1,3 @@
----
-layout: default
----
-
 The `fire` application is used for simulation, reconstruction, and analysis of data from the LDMX experiment.  The application receives its configuration for a given purpose by interpreting a python script which contains instructions about what C++ code to run and what parameters to use.  The python script is _not_ run for each event, but instead is used to determine the configuration of the C++ code which is run for each event.
 
 ## Brief summary of running `fire`
