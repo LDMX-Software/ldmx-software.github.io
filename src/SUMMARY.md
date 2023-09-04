@@ -25,5 +25,5 @@
 - [Container-less Building (not recommended)](Building-ldmx-sw-containerless.md)
 
 # Reference
-- [C++ Doxygen Manual](_doxygen/index.html)
-- [Python Config Manual](_sphinx/index.html)
+- [C++ Doxygen Manual](cpp_refman.html)
+- [Python Config Manual](python_refman.html)
