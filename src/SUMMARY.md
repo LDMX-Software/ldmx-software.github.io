@@ -20,7 +20,7 @@
 # For Developers
 - [Container-Software Compatibility](compatibility.md)
 - [Contributing](Contributing-to-ldmx-sw.md)
-  - [Merging PRs in ldmx-sw](merging-prs.md)
+  - [PRs in ldmx-sw](prs.md)
   - [Unit Testing](Unit-Testing-in-ldmx-sw.md)
 - [Structure of Event Processors](Structure-of-Event-Processors.md)
 - [Logging](Logging.md)
