@@ -1,3 +1,5 @@
+# Running and Configuring `fire`
+
 The `fire` application is used for simulation, reconstruction, and analysis of data from the LDMX experiment.  The application receives its configuration for a given purpose by interpreting a python script which contains instructions about what C++ code to run and what parameters to use.  The python script is _not_ run for each event, but instead is used to determine the configuration of the C++ code which is run for each event.
 
 ## Brief summary of running `fire`
@@ -17,13 +19,14 @@ These can be used in many ways to adjust the behavior of the script.  Some examp
 
 The Process object represents the overall processing step.  It **must be included** in any `fire` configuration.  When the Process is constructed, the user must provide a processing pass name.  This processing pass name is used to identify the products in the data file and cannot be repeated when later processing the same file.  The pass name is useful when a file has been processed multiple times -- for example, when reprocessing a file with new calibration constants. 
 
-In the example above, the pass name is `practice`, so the line which constructs the Process is:
+As an example, the pass name is `practice`, so the line which constructs the Process is:
 ```python
 p = ldmxcfg.Process("practice")
 ```
 
 Here is a list of some of the most important process options and what they control.
-It is encouraged to browse the python modules themselves for all the details, but you can also call `help(ldmxcfg.Process)` in `python` to see the documentation.
+It is encouraged to browse the python modules themselves for all the details, 
+but you can also call `help(ldmxcfg.Process)` in `python` to see the documentation.
 
 - `passName` (string)
    - **required** Given in the constructor, tag for the process as a whole.
@@ -56,10 +59,6 @@ It is encouraged to browse the python modules themselves for all the details, bu
    - List of drop/keep rules to help ldmx-sw know which collections to put into output file(s)
    - Slightly complicated, see the [documentation of EventFile](https://ldmx-software.github.io/ldmx-sw/html/classldmx_1_1EventFile.html)
    - For example: `[ "drop .*SimHits.*" , "keep Ecal.*" ]`
-- `libraries` (list of strings)
-   - List of dynamic libraries to load before processing
-   - If the library you're loading is not within ldmx-sw, the full path needs to be given.
-   - For example: `[ "libEventProc.so" , "libSimApplication.so" ]`
 - `skimDefaultIsKeep` (bool)
    - Should the process keep events unless told to drop by a processor?
    - Default is `True`: events will be kept unless processors use `setStorageHint`.
@@ -76,20 +75,3 @@ p.skimConsider('ecalVeto') #process should listen to storage hints from ecalVeto
 - `logFrequency` (int)
    - How frequently should the processor tell you what event number it is on?
    - Default is `-1` which is never.
-
-## Tips and Tricks
-
-There are two simple and very helpful features of using a python script as our configuration file.
-Firstly, python has a very easy-to-use [argument parsing library](https://docs.python.org/3/library/argparse.html). This library can be used within an ldmx-sw configuration script in order to change the parameters you are passing to the processors or even to change which processors you use.
-
-Secondly, python has good libraries for working with your operating system: `os` and `sys`. These libraries can mainly be used to work with getting paths to files which is helpful for running over all the files in a given directory:
-```python
-p.inputFiles = [
-    os.path.join(myDirectory, f) 
-    for f in os.listdir(myDirectory) if os.path.isfile(os.path.join(myDirectory, f))
-]
-```
-or formatting the output file name to correspond to the input with some prefix or suffix:
-```python
-p.outputFiles = [ 'myPrefix_' + p.inputFiles[0].replace( '.root' , '' ) + '_mySuffix' + '.root' ]
-```

@@ -1,4 +1,8 @@
-The following is a summary of the getting started slide deck found at https://tinyurl.com/uvq8l28.
+# Getting Started at SLAC
+
+> Note: This page is old and refers to a now-deprecated cluster at SLAC as well as ldmx-sw programs that have been removed. We are keeping it around "just in case" but unless it goes through a significant re-write, it is probably best to be ignored.
+
+The following is a summary of [Overview of ldmx-sw with examples specific to running at SLAC](https://tinyurl.com/y9lzvzwv)
 
 Note: The recipe that follows only works on the centos 7 machines.
 

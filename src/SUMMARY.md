@@ -5,7 +5,9 @@
 - [What the F.A.Q.?](faq.md)
 - [Generating Simulation Samples](Generating-Simulation-Samples.md)
 - [Getting Started at SLAC](Getting-Started-with-ldmx-sw-at-SLAC.md)
-- [Running and Configuring ldmx](Running-and-configuring-fire.md)
+- [Running and Configuring fire](Running-and-configuring-fire.md)
+  - [Drop Keep Rules]()
+  - [Tips and Tricks](fire-config-tips.md)
 - [Exercises](Startup-Exercises.md)
 
 # User Guides

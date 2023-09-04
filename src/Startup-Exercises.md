@@ -69,7 +69,7 @@ For the purposes of the rest of these exercises,
 you should have a single file of ~100 events so that it can be analyzed fairly quickly. 
 If you want to skip to writing your own analyzers and you already have an event file, then you can skip to the next exercise.
 
-Read through [Running and Configuring `fire`]({% link docs/Running-and-configuring-fire.md %}) 
+Read through [Running and Configuring `fire`](Running-and-configuring-fire.md) 
 to learn more about the python configuration scripts. 
 The configuration script provided there gives an example of a script you could use to generate the small event file to analyze. 
 Mess around with the parameters and look at the processors used in that script to make your sample your own and learn more!
@@ -192,17 +192,7 @@ Now we are ready to track the path of the primary electron in the event.
 
 0. We want to know the full kinematic information for the primary electron along its journey. Start by thinking of what we need to find and how we could calculate it if it isn't directly available in the data file. This isn't as easy as taking the starting and ending points stored in `SimParticle`. These points don't take into account any scattering that occurs along the particle's real path in the simulation which would lead to a curved path instead of a straight line.
 1. Make a producer template and use it to try to track the primary electron through the first few events in your file. What collections do you need to get? How do you determine the electrons energy or momentum at a specific time/place? Print this information to your screen to see if it makes sense. This processor can be in your ldmx-analysis repository. Only the new event bus object needs to be inside of ldmx-sw.
-2. Write a C++ class that will store this path information for the primary electron and follow the [instructions]({% link docs/Creating-a-new-Event-Bus-Object.md %}) on how to add it to the LDMX event bus. This step is complicated and _will_ take some patience.
+2. Write a C++ class that will store this path information for the primary electron and follow the [instructions](Creating-a-new-Event-Bus-Object.md) on how to add it to the LDMX event bus. This step is complicated and _will_ take some patience.
 3. Add your object to the event bus and check that it is being added. How would you check that the path is being determined correctly? How would you check that the momentum/energy at each point along the path is being determined correctly?
 4. Write an analyzer to make a histogram of the real path length of the primary electron (_not_ the straight line distance between the starting and ending points). You could make this histogram inside of your producer, but you should make a separate analyzer to double check that the object you added to the event bus can be accessed by other processors.
 
-## 5. Draw your new event object in `ldmx-eve`
-
-_Note: The Event Display is not as cleanly structured as the other parts you have worked with. This exercise may take longer than the previous ones due to this complexity. It also requires your additions to be made inside of ldmx-sw instead of in your personal ldmx-analysis repository._
-
-You now have a file containing the path of the primary electron for each event. This is a very visual object and it would be nice to be able to see what the path of the primary electron looks like. `ldmx-eve` is the event display tool inside of `ldmx-sw`, and you can add your object to the list of objects that are drawn so that you can see what your path looks like.
-
-0. Look through the `EventDisplay` module to gain some familiarity with how it is structured. You will be editing the `EventDisplay` and `EventObjects` classes.
-1. The `EventDisplay` class is the object that constructs the display and gets the objects from the event bus. Look through its header and source file and copy the structure of `hcalDigiHits` or some other event object (there are several). There are many places that need to be edited in both the header and source files.
-2. The `EventObjects` class is the object that draws the objects found in the event bus. This is where you would add in a drawing method. Again, follow the examples already there to see what you need to do. A good starting point would be trying to get your new draw method to simply print some information about the primary electron path to the screen before you worry about drawing something in the display.
-3. Make sure to cleanup any hanging pointers that you have created.
