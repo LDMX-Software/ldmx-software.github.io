@@ -22,6 +22,12 @@ In some browsers, this will still flash the HTML page and in really old browsers
 so it is helpful to put the link to the destination in the `<body>` of the page so users can
 access it if the redirect fails.
 
+Right now, the redirects I've added do not do any styling of the page that is displayed while
+the browser is redirecting. This could be improved to use the mdbook style like all of the other
+pages but I'm unsure on how to do this. One method could be to use mdbook's
+[preprocessors](https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html) to
+write a basic redirect file which is then updated to the correct style by mdbook's HTML renderer.
+
 ### Old Links
 In order to prevent confusion, I've added in some symlinks from the old manual paths to the new paths.
 These are the `_doxygen/index.html` and `_sphinx/index.html` links and a similar strategy could be
