@@ -29,7 +29,6 @@ pages but I'm unsure on how to do this. One method could be to use mdbook's
 write a basic redirect file which is then updated to the correct style by mdbook's HTML renderer.
 
 ### Old Links
-In order to prevent confusion, I've added in some symlinks from the old manual paths to the new paths.
-These are the `_doxygen/index.html` and `_sphinx/index.html` links and a similar strategy could be
-used in the future if other links wish to be deprecated. I don't see a reason to ever remove these links
-unless we can find a way to check that nobody is using them.
+In order to prevent confusion, I've added some redirects to mdbook so that old paths to the
+reference manuals are still usable. If any future pages are moved/renamed, one should consider
+doing the same so that the page is still accessible.
