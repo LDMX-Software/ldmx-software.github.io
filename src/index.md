@@ -6,7 +6,11 @@
 Welcome to the **L**ight **D**ark **M**atter e**X**periment!
 This is the central page for documenting our software.
 Here, you will find manually written documents as well as links to
-other manuals related to the software.
+other manuals related to the software. This site is generated using 
+[mdbook](https://rust-lang.github.io/mdBook/index.html) which has 
+[a helpful page on how to read a site formatted like this](https://rust-lang.github.io/mdBook/guide/reading.html).
+All of the pages are hosted here except for the pages in the **Reference** section
+which are links to the manuals hosted at different sites.
 
 Below is a list of past video tutorials that are available online. Some of them
 may be out of date, but they can still be helpful in defining what kind
