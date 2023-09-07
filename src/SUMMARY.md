@@ -14,7 +14,9 @@
 - [Creating your own production image](custom-production-image.md)
 - [Creating a new Event Bus Object](Creating-a-new-Event-Bus-Object.md)
 - [Configuring the Simulation](Configuring-the-Simulation.md)
-- [Dark Brem (Signal) Process](Dark-Brem-Signal-Process.md)
+- [Dark Brem Signal Samples](dark-brem/intro.md)
+  - [How to Run]()
+  - [Legacy Instructions](dark-brem/legacy.md)
 - [Alternative photo-nuclear models](Alternative-Photo-Nuclear-Models.md)
 
 # For Developers

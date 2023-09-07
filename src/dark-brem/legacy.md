@@ -1,4 +1,12 @@
-# Modern ldmx-sw
+# Legacy Information
+Below, I've kept copies of previous documentation on this G4DarkBreM-style of generating signal samples.
+If you are using an up-to-date version of ldmx-sw, it would be helpful to ignore the documentation below,
+but it may be helpful if you need to generate signal samples when required to use an older version of ldmx-sw.
+
+---
+# v3.0.0 ldmx-sw
+
+**Warning:** Names and source code has been moved in order to isolate this method of producing signal into its own package. These changes were applied to ldmx-sw in v3.2.1.
 
 The signal generation is done by using a custom Geant4 physics process to interact with a "model" for how dark brem occurs.
 Currently, we only have one "model" defined (the `VertexLibraryModel`), but the code structure allows for creating other models without changes to the physics process.
@@ -27,7 +35,7 @@ A first discussion of the configurable parameters of the process and this first 
 ---
 # v2.3.0 ldmx-sw
 
-**Deprecation Warning:** Drastic updates are planned to the signal simulation and will be apart of ldmx-sw version 3.0.
+**Warning:** Drastic updates done to the signal simulation apart of ldmx-sw v3.0.0.
 
 The signal generation is done by a custom Geant4 physics process. This custom physics process `G4eDarkBremsstrahlung` has a corresponding model `G4eDarkBremsstrahlungModel` which handles most of the simulation work. The physics list entry `APrimePhysics` and the process are mainly there to conform to Geant4's framework and pass parameters to the model.
 
@@ -69,8 +77,3 @@ Undefined | Mimics old simulation style, but allows Geant4 to have other process
 The _Negatives_ category for `ForwardOnly` motivates a "dictionary" of LHE events so that we can always be "close enough" to the energy of the incoming electron. Analysis by Michael Revering (UMN) showed that "close-enough" was within 0.5-1 GeV, so using this feature is not seen as necessary for our current purposes. This feature can be implemented<sup>[1](#technical)</sup>; however, the first pass assumes only one input LHE file with a single beam energy for the electrons. 
 
 <a name="technical">1</a>: Actually, Michael Revering already implemented this for his work on CMS. I (Tom Eichlersmith) just commented it out for easier integration into ldmx-sw. Implementing this feature would be as easy as uncommenting a section of code and change the parameter `madGraphFilePath` to mean a _directory_ of LHE files to read into the dictionary instead of a single file.
-
----
-# Old Simulation Style
-
-The old simulation style used the [LHEPrimaryGenerator]({% link docs/Configuring-the-Simulation.md %}) to setup the electron and A' as primaries. The vertex of the primaries imported from the LHE files would be smeared around the target, but the electron's energy would stay fixed at the energy simulated for the LHE files.
