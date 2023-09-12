@@ -127,3 +127,87 @@ sim.actions.extend([
 ```
 
 That's it! After configuring the simulation in this way, events will be produced that have a dark brem interaction ocurring within the target region that have a dark photon with at least 2GeV of energy. One can then add this simulation to the processing sequence and add other emulation and reconstruction processes after it to study the sample in more detail.
+
+## Batch Running
+Suppose you've gotten pretty familiar with the signal samples generating single files for each of the different mass points you wish to study, but now you want to scale up this analysis to larger samples so you can more precisely study how your analysis effects the signal distributions. This is where batch running comes in! Below, I've copied a `bash` script I've used at UMN to generate large signal samples. It avoids the use of dark-brem-lib-gen's `env.sh` script as well as ldmx-sw's `ldmx-env.sh` script by writing container-running commands manually.
+
+You may notice that there are actually three steps in this script and not only two. 
+Since the LHE files generated for the reference library are often only used for the reference library, 
+we can "extract" them into a single CSV file which is about ten times smaller than all of the LHE files, 
+saving space by throwing away information that is not needed by G4DarkBreM. 
+Doing this helps save the space required for large samples but retains the ability 
+to re-simulate without having to re-generate the library.
+
+At UMN, our batch scheduler HTCondor copies any files written to the working area to the 
+output directory for us, so no copying is done in this script. Additionally, we instruct HTCondor to copy
+our desired `config.py` into the working area before this script is executed. 
+Your batch system may work differently, and in that case, you would need to modify the script. 
+This script expects two environment variables to be defined: 
+`DBGEN_IMAGE` which is the full path to a SIF holding a version of dark-brem-lib-gen 
+and `FIRE_IMAGE` which is the full path to a ldmx-sw production SIF that can run the `config.py` script.
+Then the command line arguments are the dark photon mass and the run number to use for random seeding.
+
+```bash
+#!/bin/bash
+# bash script to run full pipeline of signal simulation
+
+# error out if any of the commands we run return non-zero status
+set -o errexit
+# print every command that is deduced by bash so the batch logs can show us
+# exactly what was run
+set -o xtrace
+
+__generate_library__() {
+  mkdir -p dbgen-scratch
+  apptainer run \
+    --no-home \
+    --cleanenv \
+    --bind $(pwd):/output,$(realpath dbgen-scratch):/working \
+    ${DBGEN_IMAGE} \
+    --target tungsten silicon copper oxygen \
+    --apmass ${1} \
+    --run ${2}
+  return $?
+}
+
+__extract_library__() {
+  # deduce library path
+  local lib=$(echo electron_*_run_*)
+  [ -d "${lib}" ] || return 1
+  apptainer run \
+    --no-home \
+    --cleanenv \
+    --env LDMX_BASE=$(pwd) \
+    --bind $(pwd) \
+    ${FIRE_IMAGE} \
+    . g4db-extract-library ${lib}
+  lib=$(echo *.csv)
+  [ -f "${lib}" ] || return 1
+  gzip "${lib}"
+  return $?
+}
+
+__detector_sim__() {
+  local lib=$(echo *.csv.gz)
+  [ -f "${lib}" ] || return 1
+  apptainer run \
+    --no-home \
+    --cleanenv \
+    --env LDMX_BASE=$(pwd) \
+    --bind $(pwd) \
+    ${FIRE_IMAGE} \
+    . fire config.py ${lib}
+  return $?
+}
+
+__main__() {
+  local mass=${1}
+  local run_number=${2}
+  __generate_library__ ${mass} ${run_number} || return $?
+  __extract_library__ || return $?
+  __detector_sim__
+  return $?
+}
+
+__main__ $@
+```
