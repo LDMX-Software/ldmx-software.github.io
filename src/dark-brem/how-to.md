@@ -81,3 +81,49 @@ to reference as examples.
   within the target. This function is what we will unpack below to explain the various pieces configuring
   the simulation.
 
+The `dark_brem` function linked above has four "parts" that do a few different tasks. We will walk through them in order.
+
+### Base Construction
+The first few lines of the function merely construct the simulation with the desired detector, a standard electron beam generator and the beam-spot smearing we expect to see in the beam.
+```python
+sim = simulator.simulator( "target_dark_brem_" + str(ap_mass) + "_MeV" )
+sim.description = "One e- fired far upstream with Dark Brem turned on and biased up in target"
+sim.setDetector( detector , True )
+sim.generators.append( generators.single_4gev_e_upstream_tagger() )
+sim.beamSpotSmear = [ 20., 80., 0. ] #mm
+```
+This stuff will remain pretty similar across many different types of samples used for physics analyses.
+
+### Model Configuration
+The next section configures the dark brem model and activates it so the simulation will allow dark brem to happen.
+```python
+from LDMX.SimCore import dark_brem
+db_model = dark_brem.G4DarkBreMModel(lhe)
+db_model.threshold = 2. #GeV - minimum energy electron needs to have to dark brem
+db_model.epsilon   = 0.01 #decrease epsilon from one to help with Geant4 biasing calculations
+sim.dark_brem.activate( ap_mass , db_model )
+```
+This is where we pass the reference library `lhe` and the dark photon mass `ap_mass` to the simulation so that it is capable of simulating dark brem in the way we desire. Even though dark brem is activated, it still may be overwhelmed by other processes that are more likely to occur so we need further configuration.
+
+### Biasing
+First, we need to artificailly increase the biasing factor of the dark brem so that it is more likely to happen. We do this inside of the target because that is where we want these interactions to occur.
+```python
+sim.biasing_operators = [
+    bias_operators.DarkBrem.target(sim.dark_brem.ap_mass**2 / db_model.epsilon**2)
+]
+```
+
+### Filtering
+Biasing is not perfect however and we don't want to bias too much because then there wouldn't be a realistically flat position distribution of where the dark brem occurred within the target. For these reasons, we also need to attach filters to the simulation so that events are only kept if our specific requirements are met. Below, we have a few filtering requirements and we make sure that the products of the dark brem are kept no matter what.
+```python
+sim.actions.extend([
+    #make sure electron reaches target with 3.5GeV
+    filters.TaggerVetoFilter(3500.),
+    #make sure dark brem occurs in the target where A' has at least 2GeV
+    filters.TargetDarkBremFilter(2000.),
+    #keep all prodcuts of dark brem(A' and recoil electron)
+    util.TrackProcessFilter.dark_brem()
+])
+```
+
+That's it! After configuring the simulation in this way, events will be produced that have a dark brem interaction ocurring within the target region that have a dark photon with at least 2GeV of energy. One can then add this simulation to the processing sequence and add other emulation and reconstruction processes after it to study the sample in more detail.
