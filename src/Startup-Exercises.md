@@ -4,7 +4,7 @@ This page assumes you (the reader) already has some experience with `git` and th
 If you are not as experienced with either of these, 
 then you may need to use more resources than this guide to gain an understanding of `ldmx-sw`.
 
-- [Git Started](https://mareichler-spra.github.io/GitStarted/) using `git`
+- [Git Started](https://mareichler.github.io/GitStarted/) using `git`
 - [Windows Subsystem for Linux](https://wiki.ubuntu.com/WSL) for Windoze users
 - [Getting Started with the Terminal](https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/)
 
