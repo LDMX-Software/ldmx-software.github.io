@@ -31,3 +31,4 @@
 # Reference
 - [C++ Doxygen Manual](cpp_refman.html)
 - [Python Config Manual](python_refman.html)
+- [Development Image Manual](dev_image_refman.html)
