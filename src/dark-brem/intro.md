@@ -21,6 +21,6 @@ How is G4DarkBreM different from the above method? In essence, as the paper show
 
 ### References
 - [ArXiV of Paper about G4DarkBreM](https://arxiv.org/abs/2211.03873)
-- [G4DarkBreM Package Documentation](https://tomeichlersmith.github.io/G4DarkBreM/)
-- [G4DarkBreM on GitHub](https://github.com/tomeichlersmith/G4DarkBreM)
+- [G4DarkBreM Package Documentation](https://ldmx-software.github.io/G4DarkBreM/)
+- [G4DarkBreM on GitHub](https://github.com/LDMX-Software/G4DarkBreM)
 
