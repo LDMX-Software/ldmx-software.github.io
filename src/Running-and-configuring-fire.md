@@ -57,7 +57,7 @@ but you can also call `help(ldmxcfg.Process)` in `python` to see the documentati
    - For example: `[ mySimulator, ecalDigis, ecalRecon ]`
 - `keep` (list of strings)
    - List of drop/keep rules to help ldmx-sw know which collections to put into output file(s)
-   - Slightly complicated, see the [documentation of EventFile](https://ldmx-software.github.io/ldmx-sw/html/classldmx_1_1EventFile.html)
+   - Slightly complicated, see the [documentation of EventFile](https://ldmx-software.github.io/ldmx-sw/classframework_1_1EventFile.html)
    - For example: `[ "drop .*SimHits.*" , "keep Ecal.*" ]`
 - `skimDefaultIsKeep` (bool)
    - Should the process keep events unless told to drop by a processor?
