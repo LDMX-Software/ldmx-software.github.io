@@ -182,7 +182,10 @@ myLHE = generators.lhe( "myLHE" , "<path-to-LHE-file>" )
 
 #### Root Re-sim from ECal Scoring Planes
 
-_Note: unverified._
+> Note: Deprecated and will be removed soon.
+> This generator has not been able to be verified and has not been used recently.
+> To faithfully re-simulate events, the entire event from original beam generation needs
+> to be re-simulated.
 
 This generator re-simulates the event using the particles leaving the ECal scoring planes (heading into the HCal). Create one with:
 ```python
@@ -195,21 +198,6 @@ Parameter | Type | Accessed By | Description
 `collection_name` | string | RootSimFromEcalSP | Name of ECal Scoring Planes Hits collection created by simulation
 `pass_name` | string | RootSimFromEcalSP | Name of pass that generated the collection you want to use
 `time_cutoff` | double | RootSimFromEcalSP | Maximum time to allow for a particle to to leave the ECal and be included in this re-sim
-
-#### Root Re-sim from primaries
-
-_Note: unverified._
-
-This generator complete re-simulates the event from the original primary particles. Create one with:
-```python
-myCompleteReSim = generators.completeReSim( "myCompleteReSim" , "<path-to-ROOT-file>" )
-```
-Similar to the previous generator, you also have access to the following variables if you need to tell the generator which SimParticles collection to use. These parameters are given reasonable defaults.
-
-Parameter | Type | Accessed By | Description
---- | --- | --- | ---
-`collection_name` | string | RootCompleteReSim | Name of SimParticles collection created by simulation
-`pass_name` | string | RootCompleteReSim | Name of pass that generated the collection you want to use
 
 #### Geant4's General Particle Source
 
