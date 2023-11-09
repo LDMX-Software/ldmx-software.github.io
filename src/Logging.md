@@ -1,3 +1,5 @@
+# Logging
+
 In ldmx-sw, we use the [logging library from boost](https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/index.html).
 The initialization (and de-initialization) procedures are housed in the `Logger` header and implementation files in the `Framework` module. The general idea is for each class to have its own logger which gives a message and some meta-data to the boost logging core which then filters it before dumping the message to sinks. In our case, we have two (optional) sinks: the terminal and a logging file. All of the logging configuration is done by the parameters passed to the Process in the python configuration file.
 

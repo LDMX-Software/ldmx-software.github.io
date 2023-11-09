@@ -13,7 +13,15 @@ The configuration script language is discussed in more detail below.
 ### Configuration script arguments
 
 Arguments after the `.py` file on the commandline will be passed to the script as normal arguments to any python script.
-These can be used in many ways to adjust the behavior of the script.  Some examples are given below in the Tips and Tricks section.
+These can be used in many ways to adjust the behavior of the script.  Some examples are given below in the [Tips and Tricks](config-tips.md) section.
+
+## Processing Modes
+There are two processing modes that `fire` can run in which are defined by the presence of input data files[^1].
+
+If there are no input data files, then `fire` is in _Production Mode_ while if there are input data files, then
+`fire` is in _Reconstruction Mode_. The names of these two modes originate from how `fire` is used in LDMX research.
+
+[^1]: In this context, an "input data file" is a data file previously produced by `fire`. There can be other types of data that are "input" into `fire` but unless `fire` is actually treating those input files as a reference, `fire` is considered to be in "Production Mode". See the `inputFiles` configuration parameter below.
 
 ## The Process Object
 
@@ -38,11 +46,11 @@ but you can also call `help(ldmxcfg.Process)` in `python` to see the documentati
 - `maxEvents` (integer)
    - Maximum number of events to run for
    - Required for Production Mode (no input files)
-   - When input files are given, the number of events that are run is the number of events in the input files unless this parameter is positive and less than the input number.
+   - In Reconstruction Mode, the number of events that are run is the number of events in the input files unless this parameter is positive and less than the input number.
    - For example: `9000`
 - `outputFiles` (list of strings)
    - List of files to output events to
-   - Required to be exactly one for Production Mode
+   - Required to be exactly one for Production Mode, and either exactly one or exactly the number of input files in Reconstruction Mode.
    - For example: `[ "output.root" ]`
 - `inputFiles` (list of strings)
    - List of files to read events in from

@@ -5,9 +5,12 @@
 - [What the F.A.Q.?](faq.md)
 - [Generating Simulation Samples](Generating-Simulation-Samples.md)
 - [Getting Started at SLAC](Getting-Started-with-ldmx-sw-at-SLAC.md)
-- [Running and Configuring fire](Running-and-configuring-fire.md)
+- [Running and Configuring fire](fire/intro.md)
+  - [Config File Basics](fire/config-basics.md)
+  - [Structure of Event Processors](fire/structure-of-event-processors.md)
   - [Drop Keep Rules]()
-  - [Tips and Tricks](fire-config-tips.md)
+  - [Event Skimming]()
+  - [Tips and Tricks](fire/config-tips.md)
 - [Exercises](Startup-Exercises.md)
 
 # User Guides
@@ -25,7 +28,6 @@
 - [Contributing](Contributing-to-ldmx-sw.md)
   - [PRs in ldmx-sw](prs.md)
   - [Unit Testing](Unit-Testing-in-ldmx-sw.md)
-- [Structure of Event Processors](Structure-of-Event-Processors.md)
 - [Logging](Logging.md)
 - [Container-less Building (not recommended)](Building-ldmx-sw-containerless.md)
 
