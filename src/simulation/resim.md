@@ -2,7 +2,7 @@
 
 Oftentimes it is helpful to select specific events from a sample and re-run
 the full simulation of them while storing more simulation detail about what
-transpired. Thanks to the excellent work by Einar Elen in
+transpired. Thanks to the excellent work by Einar Elén in
 [SimCore #95](https://github.com/LDMX-Software/SimCore/pull/95) we are able
 to re-run the simulation using an input file and optionally specifying
 specific events to re-simulate.
