@@ -99,7 +99,34 @@ p.sequence = [
 
 The latter approach gets cumbersome if you want to use more than a couple of processors.
 
-## Storing all Simulated Particles
+## Producing more details about specific events 
+
+A common use-case for resimulation is when you have a subset of your events that
+you are particularly interested in (e.g. EcalPN reactions that pass the BDT
+veto). Repeating the simulation of just those events can allow you to record
+details that would otherwise consume too much space or insert additional
+instrumentation into the simulation (either directly in code or with tools/flags
+from ldmx-sw).
+
+### Printing particle histories 
+
+In the Biasing submodule, there is a `UserAction` available that will print out
+the full step history for one or more particles in an event. For anything longer
+than a couple events, this would entirely swamp the log with excessive detail.
+However, if you run the resimulation which only repeats the events you are
+interested in, this becomes a powerful tool for understanding what happened
+during the simulation.
+
+```python
+# Import the utility set of actions from the Biasing submodule 
+from LDMX.Biasing import util 
+resim.actions.extend([
+  util.StepPrinter(track_id=1), # Print the primary particle 
+  util.StepPrinter(process_type='photonNuclear'), # Print any photonuclear products
+])
+```
+
+### Storing all Simulated Particles
 The shower that happens in the calorimeters often creates many hundreds or even thousands
 of simulated particles. Thus we cannot save all of the simulated particles for all of our
 events - otherwise we would run out of storage space on our computers! We get around this
@@ -153,7 +180,7 @@ files from getting too large and unweildy. In a production scenario, it would be
 to write your own `UserAction` which finds the particles that interest you rather than
 storing all of the particles that are created.
 
-## No Merging of Ecal Simulated Hits
+### No Merging of Ecal Simulated Hits
 Similar to the simulated particles, the number of simulated hits in the ECal is generally
 too large and so we do a somewhat complicated procedure of merging them in order to reduce
 the size of the output data file. There is a standing issue focused on improving this
@@ -216,3 +243,4 @@ changed. For example, if we want to inspect how changes to the HCal can help vet
 the ECal itself and expect the re-simulation to re-play the same "special" process since the RNG may not follow
 the same path. Similarly, we cannot change the tagger or recoil or anything upstream of the ECal for fear of it
 affecting the RNG.
+
