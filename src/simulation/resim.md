@@ -46,6 +46,59 @@ events from the original simulation in an identical manner. This plain re-simula
 may not be very helpful on its own, so below we have a few other modifications that
 could be made to make the re-simulation more helpful.
 
+### Running additional processors after re-simulation
+
+After running the re-simulation, the output file will contain both the original sim-hit collection from the input file and the new one from the re-simulation. This means that if you want to run any processors after the simulation that use the collections, you either need to manually specify the re-sim pass name or drop the original collection (recommended). 
+
+If you want to run producers after the re-simulation, it is usually easiest to do so with a separate configuration that uses the re-simulation output as an input-file and dropping the original collections during the re-simulation. 
+
+As an example, if you wanted to run the Ecal reconstruction chain on a resimulation with pass-name "resim"
+
+```python
+# Resim config file 
+p = ldmxcfg.Process('resim') 
+# ...
+p.inputFiles = ['original_simulation.root'] # Pass name "sim"
+p.outputFiles = ['resimulation.root'] # Pass name "resim"
+# Drop all collections that end with SimHits_sim
+p.keep ["drop .SimHits_sim"] 
+```
+
+And later in your reconstruction config 
+```python
+# Resim config file 
+p = ldmxcfg.Process('reconstruct') 
+# ...
+p.inputFiles = ['resimulation.root'] # Pass name "resim"
+p.sequence = [
+  ecal_digi, 
+  ecal_reco
+]
+```
+
+Alternatively, you can do it all in one configuration but you will have to manually specify the pass name for each processor that relies on simulated hits that you want to use. Unfortunately, different processors have different naming conventions for the pass name parameter so you will have to check manually how to do it for the processor that you are interested in.
+
+
+```python
+# Resim config file 
+p = ldmxcfg.Process('resim') 
+# ...
+p.inputFiles = ['original_simulation.root'] # Pass name "sim"
+p.outputFiles = ['resimulation.root'] # Pass name "resim"
+
+# Digi producer needs the raw simhits 
+ecal_digi = ...  
+ecal_digi.inputPassName = 'resim' # Pick the resim version
+
+p.sequence = [
+  resim, 
+  ecal_digi, 
+  ecal_reco # Doesn't directly rely on simhits, so doesn't need pass name to be specified!
+]
+```
+
+The latter approach gets cumbersome if you want to use more than a couple of processors.
+
 ## Storing all Simulated Particles
 The shower that happens in the calorimeters often creates many hundreds or even thousands
 of simulated particles. Thus we cannot save all of the simulated particles for all of our
