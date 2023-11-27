@@ -2,7 +2,7 @@
 
 Oftentimes it is helpful to select specific events from a sample and re-run
 the full simulation of them while storing more simulation detail about what
-transpired. Thanks to the excellent work by Einar Elen in
+transpired. Thanks to the excellent work by Einar Elén in
 [SimCore #95](https://github.com/LDMX-Software/SimCore/pull/95) we are able
 to re-run the simulation using an input file and optionally specifying
 specific events to re-simulate.
@@ -46,7 +46,87 @@ events from the original simulation in an identical manner. This plain re-simula
 may not be very helpful on its own, so below we have a few other modifications that
 could be made to make the re-simulation more helpful.
 
-## Storing all Simulated Particles
+### Running additional processors after re-simulation
+
+After running the re-simulation, the output file will contain both the original sim-hit collection from the input file and the new one from the re-simulation. This means that if you want to run any processors after the simulation that use the collections, you either need to manually specify the re-sim pass name or drop the original collection (recommended). 
+
+If you want to run producers after the re-simulation, it is usually easiest to do so with a separate configuration that uses the re-simulation output as an input-file and dropping the original collections during the re-simulation. 
+
+As an example, if you wanted to run the Ecal reconstruction chain on a resimulation with pass-name "resim"
+
+```python
+# Resim config file 
+p = ldmxcfg.Process('resim') 
+# ...
+p.inputFiles = ['original_simulation.root'] # Pass name "sim"
+p.outputFiles = ['resimulation.root'] # Pass name "resim"
+# Drop all collections that end with SimHits_sim
+p.keep ["drop .SimHits_sim"] 
+```
+
+And later in your reconstruction config 
+```python
+# Resim config file 
+p = ldmxcfg.Process('reconstruct') 
+# ...
+p.inputFiles = ['resimulation.root'] # Pass name "resim"
+p.sequence = [
+  ecal_digi, 
+  ecal_reco
+]
+```
+
+Alternatively, you can do it all in one configuration but you will have to manually specify the pass name for each processor that relies on simulated hits that you want to use. Unfortunately, different processors have different naming conventions for the pass name parameter so you will have to check manually how to do it for the processor that you are interested in.
+
+
+```python
+# Resim config file 
+p = ldmxcfg.Process('resim') 
+# ...
+p.inputFiles = ['original_simulation.root'] # Pass name "sim"
+p.outputFiles = ['resimulation.root'] # Pass name "resim"
+
+# Digi producer needs the raw simhits 
+ecal_digi = ...  
+ecal_digi.inputPassName = 'resim' # Pick the resim version
+
+p.sequence = [
+  resim, 
+  ecal_digi, 
+  ecal_reco # Doesn't directly rely on simhits, so doesn't need pass name to be specified!
+]
+```
+
+The latter approach gets cumbersome if you want to use more than a couple of processors.
+
+## Producing more details about specific events 
+
+A common use-case for resimulation is when you have a subset of your events that
+you are particularly interested in (e.g. EcalPN reactions that pass the BDT
+veto). Repeating the simulation of just those events can allow you to record
+details that would otherwise consume too much space or insert additional
+instrumentation into the simulation (either directly in code or with tools/flags
+from ldmx-sw).
+
+### Printing particle histories 
+
+In the Biasing submodule, there is a `UserAction` available that will print out
+the full step history for one or more particles in an event. For anything longer
+than a couple events, this would entirely swamp the log with excessive detail.
+However, if you run the resimulation which only repeats the events you are
+interested in, this becomes a powerful tool for understanding what happened
+during the simulation.
+
+```python
+# Import the utility set of actions from the Biasing submodule 
+from LDMX.Biasing import util 
+resim.actions.extend([
+  util.StepPrinter(track_id=1), # Print the primary particle 
+  util.StepPrinter(process_type='photonNuclear'), # Print any photonuclear products
+])
+```
+
+### Storing all Simulated Particles
 The shower that happens in the calorimeters often creates many hundreds or even thousands
 of simulated particles. Thus we cannot save all of the simulated particles for all of our
 events - otherwise we would run out of storage space on our computers! We get around this
@@ -100,7 +180,7 @@ files from getting too large and unweildy. In a production scenario, it would be
 to write your own `UserAction` which finds the particles that interest you rather than
 storing all of the particles that are created.
 
-## No Merging of Ecal Simulated Hits
+### No Merging of Ecal Simulated Hits
 Similar to the simulated particles, the number of simulated hits in the ECal is generally
 too large and so we do a somewhat complicated procedure of merging them in order to reduce
 the size of the output data file. There is a standing issue focused on improving this
@@ -163,3 +243,4 @@ changed. For example, if we want to inspect how changes to the HCal can help vet
 the ECal itself and expect the re-simulation to re-play the same "special" process since the RNG may not follow
 the same path. Similarly, we cannot change the tagger or recoil or anything upstream of the ECal for fear of it
 affecting the RNG.
+
