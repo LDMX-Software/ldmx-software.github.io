@@ -39,7 +39,7 @@ myModel.count_light_ions=True # Don't disregard deutrons, tritons, 3He, or 4He i
 mySim.photonuclear_model = myModel
 
 
-myFilter = particle_filter.PhotoNuclearTopologyFilter().SingleNeutron()
+myFilter = particle_filter.PhotoNuclearTopologyFilter.SingleNeutronFilter()
 # Default values 
 myFilter.hard_particle_threshold = 200. # MeV, use the same as for the model 
 myFilter.count_light_ions = True # As above
@@ -66,7 +66,7 @@ myModel.count_light_ions=True # Don't disregard deutrons, tritons, 3He, or 4He i
 # Change the default model to the nothing hard model
 mySim.photonuclear_model = myModel
 
-myFilter = particle_filter.PhotoNuclearTopologyFilter().NothingHard()
+myFilter = particle_filter.PhotoNuclearTopologyFilter.NothingHardFilter()
 # Default values 
 myFilter.hard_particle_threshold = 200. # MeV, use the same as for the model 
 myFilter.count_light_ions = True # As above
@@ -88,7 +88,7 @@ from LDMX.Simcore import photonuclear_models as pn
 from LDMX.Biasing import particle_filter 
 
 
-myModel = pn.BertiniAtLeastNProductsModel().kaon() 
+myModel = pn.BertiniAtLeastNProductsModel.kaon() 
 # These are the default values of the parameters
 myModel.hard_particle_threshold=200. # Count particles with >= 200 MeV as "hard"
 myModel.zmin = 0 # Apply the model to any nucleus
@@ -100,7 +100,7 @@ myModel.min_products = 1 # Require at least 1 hard particle from the list above
 # Change the default model to the kaon producing model
 mySim.photonuclear_model = myModel
 
-myFilter = particle_filter.PhotoNuclearProductsFilter().kaon()
+myFilter = particle_filter.PhotoNuclearProductsFilter.kaon()
 
 # Add the filter at the end of the current list of user actions. 
 mySim.actions.extend([myFilter])
