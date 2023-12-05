@@ -5,12 +5,12 @@
 - [What the F.A.Q.?](faq.md)
 - [Generating Simulation Samples](Generating-Simulation-Samples.md)
 - [Getting Started at SLAC](Getting-Started-with-ldmx-sw-at-SLAC.md)
-- [Running and Configuring fire](fire/intro.md)
-  - [Config File Basics](fire/config-basics.md)
-  - [Structure of Event Processors](fire/structure-of-event-processors.md)
+- [Running and Configuring fire](config/intro.md)
+  - [Config File Basics](config/config-basics.md)
+  - [Structure of Event Processors](config/structure-of-event-processors.md)
   - [Drop Keep Rules]()
   - [Event Skimming]()
-  - [Tips and Tricks](fire/config-tips.md)
+  - [Tips and Tricks](config/config-tips.md)
 - [Exercises](Startup-Exercises.md)
 
 # User Guides
