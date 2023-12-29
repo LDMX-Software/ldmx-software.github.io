@@ -42,3 +42,10 @@ write a basic redirect file which is then updated to the correct style by mdbook
 In order to prevent confusion, I've added some redirects to mdbook so that old paths to the
 reference manuals are still usable. If any future pages are moved/renamed, one should consider
 doing the same so that the page is still accessible.
+
+### LaTeX Support
+[mdbook supports LaTeX through Mathjax](https://rust-lang.github.io/mdBook/format/mathjax.html).
+We've enabled mathjax support for this book so the only thing documentation writers need to
+know is that the open/close brackets are different.
+- Inline equations are marked by `\\(` and `\\)`
+- Block equations are marked by `\\[` and `\\]`
