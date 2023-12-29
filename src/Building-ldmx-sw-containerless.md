@@ -1,13 +1,18 @@
 # Building ldmx-sw Without Containers
 
-> _Note:_ This method is _highly_ discouraged. The collaboration has standardized
-  on using the container and so developing and running outside of the standardized
-  container will not be supported.
+```admonish warning title="This method is _highly_ discouraged."
+The collaboration has standardized
+on using the container and so developing and running outside of the standardized
+container will not be supported.
+```
 
 Building ldmx-sw will require the installation of several dependencies. 
 The following guide will walk you through the installation of those dependencies as well as ldmx-sw. 
-**This is your final warning.**
+
+```admonish danger title="This is your final warning."
 These instructions are not being maintained because we standardized on the container build.
+**You are on your own.**
+```
 
 ## Supported Platforms
 * Linux 

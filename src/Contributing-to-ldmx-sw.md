@@ -1,6 +1,8 @@
 # Contributing
 
-> All contributions are welcome. From fixing typos in these documentation pages to patching a bug in the event reconstruction code to adding a new simulatino process. Please reach out via GitHub issues or on the LDMX slack to get started.
+```admonish success title="All contributions are welcome."
+From fixing typos in these documentation pages to patching a bug in the event reconstruction code to adding a new simulation process. Please reach out via GitHub issues or on the LDMX slack to get started.
+```
 
 To contribute code to the project, you will need to create an account on [github](https://github.com/) if you don't have one already, and then request to be added to the [LDMX-Software](https://github.com/orgs/LDMX-Software/) organization.
 
