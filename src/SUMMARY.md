@@ -4,6 +4,7 @@
 - [Building and Installing ldmx-sw](Building-ldmx-sw.md)
 - [What the F.A.Q.?](faq.md)
 - [Generating Simulation Samples](Generating-Simulation-Samples.md)
+  - [Which SimParticles are saved?](which-sim-particles.md)
 - [Getting Started at SLAC](Getting-Started-with-ldmx-sw-at-SLAC.md)
 - [Running and Configuring fire](config/intro.md)
   - [Config File Basics](config/config-basics.md)

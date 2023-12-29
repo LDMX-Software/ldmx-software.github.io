@@ -129,26 +129,11 @@ resim.actions.extend([
 ### Storing all Simulated Particles
 The shower that happens in the calorimeters often creates many hundreds or even thousands
 of simulated particles. Thus we cannot save all of the simulated particles for all of our
-events - otherwise we would run out of storage space on our computers! We get around this
-issue by only saving a select group of particles during normal simulation which satisfy
-one (or more) of the following.
-
-1. The simulated particle is one of the primary particles
-    - This is determined by the generators the user provides to the simulation.
-2. The simulated particle is created in a region with `StoreTrajectories` set to `true`
-    - This is set within the GDML of the detector where we define regions.
-      In all of the current detectors, all of the regions will store trajectories _except_
-      the calorimeters.
-3. The simulated particle has its `SaveFlag` set to `true`
-    - This is determined by any extra `UserAction`s the simulation has attached to it.
-
-Currently, we do not have any `UserAction`s which set the `SaveFlag` to `false` because
-`UserAction`s which are looking for particular simulated particles are usually trying
-to get around the bulk "veto" imposed by the simulation throwing away simulated particles
-that were created within the calorimeter region (either the ECal or the HCal). If your
-simulation configuration has no `UserAction`s setting the `SaveFlag` to `false` (which
-is highly likely), then we can insure that the simulation saves _all_ of the simulated
-particles by setting `StoreTrajectories` to `true` _everywhere_.
+events - otherwise we would run out of storage space on our computers! Checkout
+[Which SimParticles are saved?](which-sim-particles.md) to learn more about how this choice
+is made. For our purposes here, if your simulation configuration has no `UserAction`s setting
+the `SaveFlag` to `false` (which is highly likely), then we can insure that the simulation 
+saves _all_ of the simulated particles by setting `StoreTrajectories` to `true` _everywhere_.
 
 First, make a local copy of the detector you are simulating so that you can reference it
 within the config script.
