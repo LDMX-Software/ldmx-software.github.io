@@ -12,6 +12,7 @@ create-missing = false
 mathjax-support = true
 git-repository-url = "https://github.com/LDMX-Software/ldmx-software.github.io/tree/trunk/"
 edit-url-template = "https://github.com/LDMX-Software/ldmx-software.github.io/edit/trunk/{path}"
+additional-css = ["./mdbook-admonish.css"]
 
 [output.html.redirect]
 "/_doxygen/index.html" = "/cpp_refman.html"
@@ -22,3 +23,9 @@ edit-url-template = "https://github.com/LDMX-Software/ldmx-software.github.io/ed
 "/Running-and-configuring-fire.html" = "/fire/intro.html"
 "/fire-config-tips.html" = "/fire/config-tips.html"
 "/Structure-of-Event-Processors.html" = "/fire/structure-of-event-processors.html"
+
+[preprocessor]
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.1" # do not edit: managed by `mdbook-admonish install`
