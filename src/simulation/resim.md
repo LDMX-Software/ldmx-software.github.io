@@ -198,9 +198,11 @@ for sd in sim.sensitive_detectors:
         sd.compressHitContribs = False
 ```
 
-> Warning: The ECal digi-emulation and reconstruction pipeline has only been developed and tested
-> with the default settings of the simulated hit merging. This means you should probably remove
-> the ECal pipeline (or prepare yourself to help develop it) if you start playing with these parameters.
+```admonish warning
+The ECal digi-emulation and reconstruction pipeline has only been developed and tested
+with the default settings of the simulated hit merging. This means you should probably remove
+the ECal pipeline (or prepare yourself to help develop it) if you start playing with these parameters.
+```
 
 ## Other Detector Designs
 The two prior examples are all about storing _more_ information during the re-simulation process

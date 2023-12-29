@@ -21,9 +21,11 @@ updates to later versions of ldmx-sw onto your branch to use a newer container).
 The ordering of versions follows semantic versioning 
 (i.e. order by major version, then minor version, then patch). 
 
-**Warning** This compatibility table is manually written _and_ not everything has been
+```admonish warning
+This compatibility table is manually written _and_ not everything has been
 directly tested. Updates to this document from your personal experience are welcome
 and encouraged.
+```
 
 For each range of versions of compatibility, we've written a table corresponding
 to different container versions required for different build configurations of
