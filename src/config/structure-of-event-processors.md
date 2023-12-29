@@ -23,9 +23,9 @@ It is just here for illustrative purposes.
 
 ```cpp
 // in the header file
-// ldmx-sw/Module/include/Module/MyProducer.h
+// ldmx-sw/MyModule/include/MyModule/MyProducer.h
 
-namespace module {
+namespace mymodule {
 /**
  * We inherit from the Producer class so that
  * the application can know what to do with us.
@@ -59,15 +59,15 @@ class MyProducer : public Producer {
   /// another parameter we will get from python
   std::vector<double> my_other_parameter_;
 }; // MyProducer
-}  // module
+}  // mymodule
 
 
 // in the source file
-// ldmx-sw/Module/src/Module/MyProducer.cxx
+// ldmx-sw/MyModule/src/MyModule/MyProducer.cxx
 
-#include "Module/MyProducer.h"
+#include "MyModule/MyProducer.h"
 
-namespace module {
+namespace mymodule {
 
 void MyProducer::configure(const Parameters& params) {
   my_parameter_ = params.getParameter<int>("my_parameter");
@@ -84,9 +84,9 @@ void MyProducer::produce(Event& event) {
   // insert processor's event-by-event work here
 }
 
-}  // module
+}  // mymodule
 
-DECLARE_PRODUCER_NS(module, MyProducer);
+DECLARE_PRODUCER_NS(mymodule, MyProducer);
 ```
 
 ### Python
