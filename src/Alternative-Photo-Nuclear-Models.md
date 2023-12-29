@@ -1,3 +1,5 @@
+# Alternative Photon-Nuclear Models
+
 This page details the options in LDMX-sw that allow you to change the default model used in Geant4 for modelling photo nuclear interactions. 
 
 Example use cases:
@@ -7,7 +9,7 @@ Example use cases:
 - Instrumenting a model to extend it in some way, e.g. to run the event generator until you produce an event topology that you are interested in, but could in principle be used to do anything you need (e.g. debugging)
 
 
-A photonuclear model in ldmx-sw is a class that provides Geant4 with an appropriate hadronic interaction to use for $\gamma A$ interactions. With the standard LDMX version of Geant4, the hadronic model is a modified version of [The Bertini Cascade](https://doi.org/10.1016/j.nima.2015.09.058) (for details, see sec D and appendix A of [arxiv:1808.04219v1](https://arxiv.org/abs/1808.05219v1)). 
+A photonuclear model in ldmx-sw is a class that provides Geant4 with an appropriate hadronic interaction to use for \\(\gamma A\\) interactions. With the standard LDMX version of Geant4, the hadronic model is a modified version of [The Bertini Cascade](https://doi.org/10.1016/j.nima.2015.09.058) (for details, see sec D and appendix A of [arxiv:1808.04219v1](https://arxiv.org/abs/1808.05219v1)). 
 
 
 To load a different model than the default, you change the `photonuclear_model` parameter of your simulation processor. A couple such models are bundled with ldmx-sw and adding new ones either within or from outside ldmx-sw is a relatively straigh-forward task. 
@@ -15,7 +17,7 @@ To load a different model than the default, you change the `photonuclear_model` 
 ## Models generating rare but challenging final states
 
 
-With all of these models, when a photonuclear interaction occurs the model will rerun the interaction until a particular condition is met for the final state particles. If it took $N$ attempts to produce that final state, the weight of the event will be multiplied with $\frac{1}{N}$. You can access the event weight with the event header. This can produce much faster simulations (>10x faster) than a full simulation + skim would do. However, you may need to be careful so that you don't introduce any significant bias to your results. Consider producing a smaller sample first with a regular simulation and comparing it to a sample of the same size made with one of these models. See the Validation module for a good starting point for such comparisons. 
+With all of these models, when a photonuclear interaction occurs the model will rerun the interaction until a particular condition is met for the final state particles. If it took \\(N\\) attempts to produce that final state, the weight of the event will be multiplied with \\(\frac{1}{N}\\). You can access the event weight with the event header. This can produce much faster simulations (>10x faster) than a full simulation + skim would do. However, you may need to be careful so that you don't introduce any significant bias to your results. Consider producing a smaller sample first with a regular simulation and comparing it to a sample of the same size made with one of these models. See the Validation module for a good starting point for such comparisons. 
 
 
 ### Events with one hard neutron 
@@ -197,7 +199,7 @@ You can see how the model is used in `GammaPhysics.cxx` in `SimCore` but in shor
 - Call `ConstructGammaProcess` to build the `photonNuclear` process
 - Set the `photonNuclear` process to be first in the list of processes for
   photons. Necessary for the bias operator to work. 
-- Add the $\gamma \rightarrow \mu\mu$ process
+- Add the \\(\gamma \rightarrow \mu\mu\\) process
 
 ## Instrumenting the photonuclear model
 
