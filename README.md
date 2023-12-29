@@ -9,6 +9,16 @@ are simply contributing single-page changes/additions, editing the file in the b
 at GitHub is probably sufficient since the GitHub-rendering of markdown is very close
 to the mdbook-rendering.
 
+In addition to `mdbook`, we also use an `mdbook` plugin `mdbook-admonish` which you can
+install using `cargo` like you would for `mdbook`. Honestly, the best reference for how
+to install these tools is shown in [the workflow itself](.github/workflows/mdbook.yml).
+```shell
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
+rustup update
+cargo install --version 0.4.36 --locked mdbook
+cargo install --version 1.14.0 --locked mdbook-admonish
+```
+
 # Notes
 Some notes on how this site is structured and built.
 
