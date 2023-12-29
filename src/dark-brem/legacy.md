@@ -6,7 +6,9 @@ but it may be helpful if you need to generate signal samples when required to us
 ---
 # v3.0.0 ldmx-sw
 
-**Warning:** Names and source code has been moved in order to isolate this method of producing signal into its own package. These changes were applied to ldmx-sw in v3.2.1.
+```admonish warning
+Names and source code has been moved in order to isolate this method of producing signal into its own package. These changes were applied to ldmx-sw in v3.2.1.
+```
 
 The signal generation is done by using a custom Geant4 physics process to interact with a "model" for how dark brem occurs.
 Currently, we only have one "model" defined (the `VertexLibraryModel`), but the code structure allows for creating other models without changes to the physics process.
@@ -35,7 +37,9 @@ A first discussion of the configurable parameters of the process and this first 
 ---
 # v2.3.0 ldmx-sw
 
-**Warning:** Drastic updates done to the signal simulation apart of ldmx-sw v3.0.0.
+```admonish warning
+Drastic updates done to the signal simulation apart of ldmx-sw v3.0.0.
+```
 
 The signal generation is done by a custom Geant4 physics process. This custom physics process `G4eDarkBremsstrahlung` has a corresponding model `G4eDarkBremsstrahlungModel` which handles most of the simulation work. The physics list entry `APrimePhysics` and the process are mainly there to conform to Geant4's framework and pass parameters to the model.
 
