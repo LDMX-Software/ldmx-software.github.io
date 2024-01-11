@@ -20,9 +20,29 @@ rustup update
 cargo install --version 0.4.36 --locked mdbook
 cargo install --version 1.14.0 --locked mdbook-admonish
 ```
+After these parts are installed (takes ~10min) you can clone this repository and "serve"
+the site so you can view it in your browser. The files within the `src` directory are watched
+and the site in your browser will be updated to any changes you introduce.
+```shell
+git clone git@github.com:LDMX-Software/ldmx-software.github.io
+cd ldmx-software.github.io
+mdbook serve
+# click on the link printed to the terminal or copy it into your browser
+```
+If you are adding a new file, you will need to create a new `.md` file in the `src`
+directory and decide where it should go in the site by putting a link to it in the `SUMMARY.md`
+file that `mdbook` uses as a reference.
 
 # Notes
 Some notes on how this site is structured and built.
+
+### Special Text Blocks
+Often when writing documentation, you want to draw the reader's attention to specific pieces of text.
+We incorportated [mdbook-admonish](https://tommilligan.github.io/mdbook-admonish/) into this setup to
+allow for this. Writers are highly encouraged to use mdbook-admonish text blocks in their rendered
+pages to help make the documentation easier to read. The linked page above gives examples on how
+to write these code blocks (and shows how they get rendered), but you can also browse the markdown
+for this site to see some examples as well.
 
 ### Manual Redirects
 We can use [a nifty HTML trick](https://www.w3docs.com/snippets/html/how-to-redirect-a-web-page-in-html.html)
