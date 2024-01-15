@@ -26,6 +26,7 @@
 - [Alternative photo-nuclear models](Alternative-Photo-Nuclear-Models.md)
 
 # For Developers
+- [Tracking Performance of ldmx-sw](performance.md)
 - [Container-Software Compatibility](compatibility.md)
 - [Contributing](Contributing-to-ldmx-sw.md)
   - [PRs in ldmx-sw](prs.md)
