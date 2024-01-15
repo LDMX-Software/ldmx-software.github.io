@@ -1,7 +1,8 @@
 [Welcome](index.md)
 
 # Getting Started
-- [Building and Installing ldmx-sw](Building-ldmx-sw.md)
+- [Building and Installing ldmx-sw](building/intro.md)
+  - [Shared Computing Clusters](building/clusters.md)
 - [What the F.A.Q.?](faq.md)
 - [Generating Simulation Samples](Generating-Simulation-Samples.md)
   - [Which SimParticles are saved?](which-sim-particles.md)
@@ -30,7 +31,7 @@
   - [PRs in ldmx-sw](prs.md)
   - [Unit Testing](Unit-Testing-in-ldmx-sw.md)
 - [Logging](Logging.md)
-- [Container-less Building (not recommended)](Building-ldmx-sw-containerless.md)
+- [Container-less Building (not recommended)](building/containerless.md)
 
 # Reference
 - [C++ Doxygen Manual](cpp_refman.html)
