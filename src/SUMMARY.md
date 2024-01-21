@@ -10,7 +10,7 @@
 - [Running and Configuring fire](config/intro.md)
   - [Config File Basics](config/config-basics.md)
   - [Structure of Event Processors](config/structure-of-event-processors.md)
-  - [Drop Keep Rules]()
+  - [Drop Keep Rules](config/drop-keep.md)
   - [Event Skimming]()
   - [Tips and Tricks](config/config-tips.md)
 - [Exercises](Startup-Exercises.md)
