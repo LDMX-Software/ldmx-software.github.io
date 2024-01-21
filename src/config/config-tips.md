@@ -1,15 +1,44 @@
 # Tips and Tricks
 
-There are two simple and very helpful features of using a python script as our configuration file.
-Firstly, python has a very easy-to-use [argument parsing library](https://docs.python.org/3/library/argparse.html). This library can be used within an ldmx-sw configuration script in order to change the parameters you are passing to the processors or even to change which processors you use.
+~~~admonish info collapsible=true title="Command Line Arguments"
+Python has an easy-to-use [argument parsing library](https://docs.python.org/3/library/argparse.html). This library can be used within an ldmx-sw configuration script in order to change the parameters you are passing to the processors or even to change which processors you use.
 
-Secondly, python has good libraries for working with your operating system: `os` and `sys`. These libraries can mainly be used to work with getting paths to files which is helpful for running over all the files in a given directory:
+For example, I use the code snippet often to pass inputs to the process.
+
 ```python
-p.inputFiles = [
-    os.path.join(myDirectory, f) 
-    for f in os.listdir(myDirectory) if os.path.isfile(os.path.join(myDirectory, f))
+import argparse
+from pathlib import Path
+
+parser = argparse.ArgumentParser()
+parser.add_argument('run_number',type=int,help='run number for this simulation run')
+parser.add_argument('-o','--out-dir',type=Path,help='output directory to write event data to')
+args = parser.parse_args()
+
+from LDMX.Framework import ldmxcfg
+p = ldmxcfg.Process('example')
+p.run = args.run_number
+p.outputFile = [
+  str(args.out_dir / f'my_special_simulation_run_{p.run:04d}.root')
 ]
+
+# rest of configuration
 ```
-or formatting the output file name to correspond to the input with some prefix or suffix:
+
+Looking at the argparse library linked above is highly recommended since it has a lot
+of flexibility and can make passing arguments into your config very easy.
+~~~
+
+~~~admonish info collapsible=true title="Manipulating File Paths"
+Python's [pathlib](https://docs.python.org/3/library/pathlib.html) library is helpful for doing the common tasks of finding files, listing files, and making a new file path.
+
+For example, if `input_dir` is a `pathlib.Path` for an input directory of ROOT files.
 ```python
-p.outputFiles = [ 'myPrefix_' + p.inputFiles[0].replace( '.root' , '' ) + '_mySuffix' + '.root' ]
+p.inputFiles = [ str(f) for f in input_dir.iterdir() if f.suffix == '.root' ]
+```
+
+We can also use an input file `input_file` to get an output file name and an output directory `output_dir`
+to place this file in the directory we want.
+```python
+p.outputFiles = [ str(output_dir / (input_file.stem + '_with_my_analyzer.root')) ]
+```
+~~~
