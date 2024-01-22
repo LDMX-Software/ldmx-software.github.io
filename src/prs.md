@@ -68,7 +68,21 @@ This is convenient because `gh` handles authentication for us,
 so it interacts with the GitHub repository in the same was as someone using the browser.
 This merging script is difficult to develop because there isn't much opportunity for testing the functionality of such a script.
 
-It is extremely helpful to have each submodule be on a specific tag of its repository. This makes it much easier to find and document the code so it may be helpful to make a release of the submodule before adding the new reference to ldmx-sw and committing it.
+It is extremely helpful to have each submodule be on a specific tag of its repository.
+This makes it much easier to find and document the code so it may be helpful to make a release of the submodule before adding the new reference to ldmx-sw and committing it.
+In this case, I find it helpful to put the tag that the submodule is on into the commit message so that it is easily discoverable.
+Instead of the above snippet, one could
+```
+# merge PR(s) on GitHub and make a new release documenting change(s)
+cd Framework
+git fetch --all
+git checkout <tagname> 
+cd ..
+git add Framework
+git commit -m "Framework on $(cd Framework; git describe --tags)"
+git push
+gh pr merge
+```
 
 ### Failed PR Validation
 If the PR Validation plots have failed and the reason for their failure is understood and desired, then the developer merging the PR should make a release of ldmx-sw. This triggers another GitHub action which will produce new distributions for the updated `trunk` that can be used to test future PRs. Unless the changes merged in are "major" (whatever that means), it is fair to default to just incrementing the patch number. This workflow means we are generating a lot of releases, but it is very helpful for keeping a very good record of what changed, why it changed, and how it changed.
