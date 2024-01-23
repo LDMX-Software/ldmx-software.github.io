@@ -1,6 +1,37 @@
 # What the F.A.Q.?
 Frequent issues and potholes that new collaborators run into while starting their work with LDMX software.
 
+~~~admonish question collapsible=true title="How can I find the version of the image I'm using?"
+Often it is helpful to determine an image's version.
+Sometimes, this is as easy as looking at the tag provided by `docker image ls` or written into the SIF file name,
+but sometimes this information is lost.
+Since v4 of the container image, we've been more generous with adding labels to the image and a standard one is included
+`org.opencontainers.image.version` which (for our purposes) stores the release that built the image.
+
+We can use `inspect` to find the labels stored within an image.
+```
+# docker inspect returns JSON with all the image manifest details
+# jq just helps us parse this JSON for the specific thing we are looking for,
+# but you could just scroll through the output of docker inspect
+docker inspect ldmx/dev:latest | jq 'map(.Config.Labels["org.opencontainers.image.version"])[]'
+# apptainer inspect (by default) returns just the list of labels
+# so we can just use grep to select the line with the label we care about
+apptainer inspect ldmx_dev_latest | grep org.opencontainers.image.version
+```
+
+If the `org.opencontainers.image.version` is not an available label, then the image being used was
+built prior to v4 and a more complicated, investigative procedure will need to be done. In this case,
+you should be trying to find the "digest" of the image you are running and then looking for that "digest"
+on the images availabe on DockerHub.
+
+With `docker` (and `podman`), this is easy
+```
+docker images --digests
+```
+It is more difficult (impossible in general?) with `apptainer` (and `singularity`) since
+some information is discarded while creating the SIF.
+~~~
+
 ~~~admonish question collapsible=true title="Running ROOT Macros from the Command Line"
 ROOT uses shell-reserved characters in order to mark command line arguments as specific inputs to the function it is parsing and running as a macro.
 This makes passing these arguments through our shell infrastructure difficult and one needs a hack to get around this.
