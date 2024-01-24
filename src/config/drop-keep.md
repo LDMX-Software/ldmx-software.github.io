@@ -1,5 +1,12 @@
 # Drop Keep Rules
 
+```admonish warning title="Bugs with Drop Keep Rules" collapsible=true
+Some issues with the drop keep rules have been reported on GitHub:
+[Framework Issue #91](https://github.com/LDMX-Software/Framework/issues/91).
+Check there if you are having issues to see if you need to update or if there
+is a work-around.
+```
+
 By default, all data that is added to an event (via `event.add` within a `produce` function)
 is written to the output data file. This is a helpful default because it allows users to
 quickly and write a new config and see everything that was produced by it.
