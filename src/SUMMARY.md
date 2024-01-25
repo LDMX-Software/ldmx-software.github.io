@@ -11,7 +11,7 @@
   - [Config File Basics](config/config-basics.md)
   - [Structure of Event Processors](config/structure-of-event-processors.md)
   - [Drop Keep Rules](config/drop-keep.md)
-  - [Event Skimming]()
+  - [Event Skimming](config/event-skimming.md)
   - [Tips and Tricks](config/config-tips.md)
 - [Exercises](Startup-Exercises.md)
 
