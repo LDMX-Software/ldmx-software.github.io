@@ -25,6 +25,11 @@
   - [Legacy Instructions](dark-brem/legacy.md)
 - [Alternative photo-nuclear models](Alternative-Photo-Nuclear-Models.md)
 
+# Physics Guides
+- [Statistics and Calculations](physics/stats/intro.md)
+  - [Averages](physics/stats/averages.md)
+  - [Resolution](physics/stats/resolution.md)
+
 # For Developers
 - [Tracking Performance of ldmx-sw](performance.md)
 - [Container-Software Compatibility](compatibility.md)
