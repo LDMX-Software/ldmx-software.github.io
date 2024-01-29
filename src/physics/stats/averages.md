@@ -1,6 +1,5 @@
 # Different Kinds of Averages
 
-These notes are just my own thoughts. 
 There are many more helpful and more detailed resources available.
 Honestly, the [Wikipedia page on Average](https://en.wikipedia.org/wiki/Average)
 is a great place to start.
@@ -40,7 +39,7 @@ This is just due to a difference in vocabulary.
 **Code**: [`np.average`](https://numpy.org/doc/stable/reference/generated/numpy.average.html)
 
 ### iterative mean
-To repeat what I said at our meeting, in a lot of the distributions we look at, there 
+In a lot of the distributions we look at, there 
 is a "core" distribution that is Gaussian, but the tails are distorted by other effects.
 Sometimes, we only care about the core distribution and we want to intentionally cut away
 the distorted tails so that we can study the "bulk" of the distribution. This is where
@@ -90,8 +89,9 @@ def itermean(values, weights = None, *, sigma_cut = 3.0) :
     the standard deviation, it is removed.
     """
     mean, stdd, merr = weightedmean(values, weights)
-    num_included = len(weights)+1 # just to get loop started
-    selection = (weights > 0) # first selection is all non-zero weighted samples
+    num_included = len(values)+1 # just to get loop started
+    # first selection is all non-zero weighted samples
+    selection = (weights > 0) if weights is not None else np.full(len(values), True)
     while np.count_nonzero(selection) < num_included :
         # update number included for this mean
         num_included = np.count_nonzero(selection)
@@ -99,7 +99,7 @@ def itermean(values, weights = None, *, sigma_cut = 3.0) :
         mean, stdd, merr = weightedmean(values[selection], weights[selection] if weights is not None else None)
         # determine new selection, since this variable was defined outside
         #   the loop, we can use it in the `while` line and it will just be updated
-        selection = (values > (mean - sigma_cut*stdd)) & (values < (mean + sigma_cut*stdd)) & (weights > 0)
+        selection = (values > (mean - sigma_cut*stdd)) & (values < (mean + sigma_cut*stdd))
 
     # left loop, meaning we settled into a state where nothing is outside sigma_cut standard deviations
     #   from our mean
