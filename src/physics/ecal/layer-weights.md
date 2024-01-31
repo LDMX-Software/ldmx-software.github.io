@@ -48,7 +48,7 @@ by the estimate energy loss per MIP in the absorbing material.
   E_\text{absorber} \approx L \frac{E_\text{silicon}}{E_\text{MIP in Si}}
 \\]
 
-The \\(L\\) in this equation is what the layer weights stored within are software represent.
+The \\(L\\) in this equation is what the layer weights stored within the software represent.
 They are the estimated energy loss of a single MIP passing through the absorbing layers in
 front of a silicon layer up to the next silicon layer.
 
@@ -160,7 +160,7 @@ be correct.
 ### Efficiently Broadcasting Layer Weights
 Now, the complicated bit. We want to efficiently broadcast the layer weights
 to all of the hits without having to copy around a bunch of data. `awkward`
-has a solution for this we can use
+has a solution for this: we can use
 [IndexedArray](https://awkward-array.org/doc/main/reference/generated/ak.contents.IndexedArray.html?highlight=indexedarray#ak.contents.IndexedArray) 
 with the layer indices as the index and
 [ListOffsetArray](https://awkward-array.org/doc/main/reference/generated/ak.contents.ListOffsetArray.html?highlight=listoffsetarray#ak.contents.ListOffsetArray)
