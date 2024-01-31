@@ -75,14 +75,14 @@ I'm listing them here just as reference.
 
 #### Symbols
 Not necessarily standard but helpful to be on the same page.
-- \(E_{meas}\) the reconstructed total energy measured by the ECal
-- \(E_{true}\) the known energy of the particle entering the ECal
-- \(\langle X \rangle\) the mean of samples of \(X\)
-- \(\sigma_X\) the standard deviation of samples of \(X\)
+- \\(E_{meas}\\) the reconstructed total energy measured by the ECal
+- \\(E_{true}\\) the known energy of the particle entering the ECal
+- \\(\\langle X \\rangle\\) the mean of samples of \\(X\\)
+- \\(\\sigma_X\\) the standard deviation of samples of \\(X\\)
 
 #### Plots
-- Histogram of \(E_{meas}/E_{true}\): this helps us see the shap of the distributions and
+- Histogram of \\(E_{meas}/E_{true}\\): this helps us see the shap of the distributions and
   dividing by the known beam energy allows us to overlay several different beam energies
   and compare their shapes.
-- Plot of \(\langle E_{meas} \rangle/E_{true}\) vs \(\langle E_{meas} \rangle\) shows how the mean changes with beam energy
-- Plot of \(\sigma_E / \langle E_{meas} \rangle\) vs \(\langle E_{meas} \rangle\) shows how the variation changes with beam energy
+- Plot of \\(\\langle E_{meas} \\rangle/E_{true}\\) vs \\(\\langle E_{meas} \\rangle\\) shows how the mean changes with beam energy
+- Plot of \\(\\sigma_E / \\langle E_{meas} \\rangle\\) vs \\(\\langle E_{meas} \\rangle\\) shows how the variation changes with beam energy
