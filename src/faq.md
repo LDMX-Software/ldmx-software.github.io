@@ -1,6 +1,42 @@
 # What the F.A.Q.?
 Frequent issues and potholes that new collaborators run into while starting their work with LDMX software.
 
+~~~admonish question collapsible=true title="CMake error: does not contain a CMakeLists.txt file."
+The full text of this error looks like (for example)
+```
+CMake Error at Tracking/CMakeLists.txt:61 (add_subdirectory):
+  The source directory
+
+    /full/path/to/ldmx/ldmx-sw/Tracking/acts
+
+  does not contain a CMakeLists.txt file. 
+```
+
+We make wide use of [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in `git` so that
+our software can be separated into packages that evolve and are developed at different rates.
+The error summarized in this title is most often shown when a submodule has not been properly initialized
+and thus is missing its source code (the first file that is used is the `CMakeLists.txt` file during the `cmake`
+step). Resolving this can be done with
+```
+git submodule update --init --recursive
+```
+This command does the following
+- `submodule update` instructs `git` to switch the submodules to the commits stored in the parent repository
+- The `--init` flag tells `git` to do an initial `clone` of a submodule if it hasn't yet.
+- The `--recursive` flag tells `git` to recursively apply these submodule updates in case submodule repos have
+  their own submodules (which they do in our case).
+
+You can avoid running this submodule update command if you use `--recurse-submodules` during your initial
+clone and any pulls you do.
+```
+# --recursive is the flag used with older git versions
+git clone --recurse-submodules git@github.com:LDMX-Software/ldmx-sw.git
+git pull --recurse-submodules
+```
+I **highly recommend** reading the linked page about git submodules. It is very helpful for understanding
+how to interact with them efficiently.
+~~~
+
 ~~~admonish question collapsible=true title="How can I find the version of the image I'm using?"
 Often it is helpful to determine an image's version.
 Sometimes, this is as easy as looking at the tag provided by `docker image ls` or written into the SIF file name,
