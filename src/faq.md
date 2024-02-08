@@ -85,11 +85,13 @@ The context for this can be found on [GitHub Issue #1169](https://github.com/LDM
 ~~~
 
 ~~~admonish question collapsible=true title="Installing on SDF: No space left on the device"
-On SLAC SDF we will be using singularity which is already installed. 
-This is a frustrating interaction between SDF's filesystem design and singularity. Long story short, singularity needs O(5GB) of disk space for intermediate files while it is downloading and building container images and by default it uses /tmp/ to do that. /tmp/ on SDF is highly restricted. The solution is to set a few environment variables to tell singularity where to write its intermediate files.
+On SLAC SDF (and S3DF, I use the same name for both here) we will be using singularity which is already installed. 
+This is a frustrating interaction between SDF's filesystem design and singularity. Long story short, singularity needs O(5GB) of disk space for intermediate files while it is downloading and building container images and by default it uses `/tmp/` to do that. `/tmp/` on SDF is highly restricted. The solution is to set a few environment variables to tell singularity where to write its intermediate files.
 ```
-export SINGULARITY_CACHEDIR=/scratch/$USER/.singularity
+# on SDF
 export TMPDIR=/scratch/$USER
+# on S3DF
+export TMPDIR=${SCRATCH}
 ```
 The ldmx-env.sh script is able to iterface with both docker and singularity so you should be able to use it after resolving this disk space issue.
 ~~~
