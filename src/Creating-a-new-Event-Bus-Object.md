@@ -43,3 +43,4 @@ If you are adding a new object after already developing with ldmx-sw, you will n
 cd Framework
 git clean -xxfd
 ```
+This last step is only necessary for developments built off of ldmx-sw prior to v3.3.4.
