@@ -3,6 +3,7 @@
 # Getting Started
 - [Building and Installing ldmx-sw](building/intro.md)
   - [Shared Computing Clusters](building/clusters.md)
+  - [Updating ldmx-sw](building/updating.md)
 - [What the F.A.Q.?](faq.md)
 - [Generating Simulation Samples](Generating-Simulation-Samples.md)
   - [Which SimParticles are saved?](which-sim-particles.md)
