@@ -1,6 +1,26 @@
 # What the F.A.Q.?
 Frequent issues and potholes that new collaborators run into while starting their work with LDMX software.
 
+~~~admonish question collapsible=true title="fire: command not found"
+This error can arise pretty easily but luckily it has a pretty easily solution.
+The [current entrypoint script](https://github.com/LDMX-Software/docker/blob/main/entry.sh)
+for the development environment[^1] (`ldmx/dev` images)
+assume that ldmx-sw is installed into the path at `${LDMX_BASE}/ldmx-sw/install`, so
+if any of the following are true, you will see the `fire: command not found` error.
+- `LDMX_BASE` is not the full path to the directory containing ldmx-sw.
+- The directory with the ldmx-sw source is not named `ldmx-sw`.
+- The user configured ldmx-sw to be installed somewhere else with `-DCMAKE_INSTALL_PREFIX=...`.
+
+The `ldmx/pro` images (short for "production") already have a copy of ldmx-sw compiled
+and installed into them and so they do not have this path resolution requirement in order
+to access the `fire` command.
+
+[^1]: I say "current" because there [is some discussion](https://github.com/LDMX-Software/ldmx-sw/issues/1232)
+about re-designing the container interaction to avoid such heavy reliance on the entrypoint in the image.
+Avoiding this reliance would make it easier for users to switch between images, but it would
+require us to learn a slightly new interaction workflow.
+~~~
+
 ~~~admonish question collapsible=true title="CMake error: does not contain a CMakeLists.txt file."
 The full text of this error looks like (for example)
 ```
