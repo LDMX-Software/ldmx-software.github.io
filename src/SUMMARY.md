@@ -17,6 +17,7 @@
 - [Exercises](Startup-Exercises.md)
 
 # User Guides
+- [Transition to ldmx-sw v4](transition-to-ldmx-sw-v4.md)
 - [Creating your own production image](custom-production-image.md)
 - [Creating a new Event Bus Object](Creating-a-new-Event-Bus-Object.md)
 - [Configuring the Simulation](simulation/configuring.md)
