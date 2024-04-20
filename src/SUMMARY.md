@@ -1,6 +1,9 @@
 [Welcome](index.md)
 
 # Getting Started
+- [Analyzing ldmx-sw Event Files](analysis/intro.md)
+  - [Using ldmx-sw Directly](analysis/ldmx-sw.md)
+  - [Using Python (Efficiently)](analysis/python.md)
 - [Building and Installing ldmx-sw](building/intro.md)
   - [Shared Computing Clusters](building/clusters.md)
   - [Updating ldmx-sw](building/updating.md)
