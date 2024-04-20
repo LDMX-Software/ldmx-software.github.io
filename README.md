@@ -33,6 +33,12 @@ If you are adding a new file, you will need to create a new `.md` file in the `s
 directory and decide where it should go in the site by putting a link to it in the `SUMMARY.md`
 file that `mdbook` uses as a reference.
 
+If you are on NixOS or are using the nix package manager, you can skip the installation
+step and go straight to serving the local build via `nix-shell`.
+```
+nix-shell -p mdbook mdbook-admonish --command 'mdbook serve'
+```
+
 # Notes
 Some notes on how this site is structured and built.
 
