@@ -1,10 +1,3 @@
-~~~admonish warning title="DRAFT"
-This page of notes is a draft.
-Of specific importance is the fact that the transition has not occured in ldmx-sw trunk yet
-and the tag `v3.4.0` has not been made.
-This message will be removed after the transition has occurred on ldmx-sw trunk.
-~~~
-
 # Transition to ldmx-sw v4
 
 ~~~admonish note title="TLDR"
