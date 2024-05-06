@@ -94,7 +94,16 @@ ldmx
 If you see something like "command not found", then something went wrong during the environment setup.
 ~~~
 
-## Configure the Software Build
+## Configure & Compile
+
+ldmx-sw has a shortcut to execute the commads detailed in the following subsections. After the enveroment was set up, just run
+```
+ldmx compile
+```
+This is equivalent to doing the following two steps.
+
+
+### Configure the Software Build
 ldmx-sw uses CMake to configure how the software will be built.
 You can do this configuration from within the `ldmx-sw` directory.
 ```
@@ -106,7 +115,7 @@ be no warnings and no errors reported by CMake. Some information will
 be printed about which versions of dependencies were found and what modules
 are being built.
 
-## Build and Install
+### Build and Install
 After CMake writes all the makefiles for us, we use `make` to build the software.
 Technically, this step both compiles the software and installs the software, but
 often you want the software installed after compiling so that you can run it.
@@ -142,3 +151,10 @@ of which should be operational and could be helpful for you to get started on yo
 - Biasing/test: configs running with a simulation where certain processes are biased and filtered for
 - SimCore/test: basic simulation testing
 - .github/validation_samples: longer configs with emulation and reconstruction used to do automatic validation of the code during development
+
+# Recompile and Fire
+
+It is very common during development that we would like to recompile the code and run fire on a config file. The shortcut for this is called `recompFire`.
+```
+ldmx recompFire my-config.py
+```
