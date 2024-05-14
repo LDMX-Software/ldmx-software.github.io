@@ -48,7 +48,8 @@ branch must first be "aligned" with this version of ldmx-sw.
 # make sure you have access to the tags of ldmx-sw
 git fetch --tags
 # merge the v3.4.0 tag into your branch
-git merge -s theirs v3.4.0
+# https://stackoverflow.com/a/3364506
+git merge -X theirs v3.4.0
 # check that the resulting diff contains your changes
 git diff v3.4.0
 ```
