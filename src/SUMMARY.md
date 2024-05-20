@@ -34,6 +34,7 @@
 - [Statistics and Calculations](physics/stats/intro.md)
   - [Averages](physics/stats/averages.md)
   - [Resolution](physics/stats/resolution.md)
+  - [Multi-Bin Exclusion with Combine](physics/stats/multi-bin-combine.md)
 - [ECal](physics/ecal/intro.md)
   - [Layer Weights](physics/ecal/layer-weights.md)
 
