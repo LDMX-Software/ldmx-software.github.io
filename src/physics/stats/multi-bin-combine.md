@@ -33,6 +33,7 @@ Roughly, we can partition using Combine into three steps.
 1. Preparing the inputs to Combine
 2. Running Combine
 3. Interpreting the results from Combine
+
 I've done the first and last steps within Python in a Jupyter notebook;
 however, one could easily use Python scripts, ROOT macros, or
 some other form of text file creation and TTree reading and plotting.
