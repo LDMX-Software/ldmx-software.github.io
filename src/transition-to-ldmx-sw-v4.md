@@ -138,7 +138,7 @@ Exclude any submodule changes when following the
 This is a bit more complicated. If you know which files are different, the easiest way
 to avoid including the submodule changes is to explicitly list the files in ldmx-sw that have changed.
 ```
-git diff v3.4.0 <list of changed files> ../ldmx-sw-only-changes.patch
+git diff v3.4.0 <list of changed files> > ../ldmx-sw-only-changes.patch
 ```
 You could also remove the chunks of the `.patch` file manually with a text editor, but that is
 more difficult and requires more familiarity with the syntax of patch files.
