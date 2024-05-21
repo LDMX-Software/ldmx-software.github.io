@@ -13,19 +13,12 @@ guide on how one could use Combine.
 Fortunately, [Combine distributes a container image](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/latest/#oustide-of-cmssw-recommended-for-non-cms-users) distinct from CMSSW.
 This enables us to choose a version of Combine and (almost) immediately begin.
 In order to pin the version, avoid typing longer commands, and have the same command across
-multiple runners, I coerce this image into a denv by modifying its local `.profile` file
-after initialization.
+multiple runners, I use this image `denv`.
 ```
 # initialize with combine version, may change version tag at end if desired
-denv init gitlab-registry.cern.ch/cms-cloud/combine-standalone:v9.2.1
-# initialize local .profile files
-denv exit 0
-# update profile with added PATH variables necessary for running
-cat >> .profile <<\PROFILE
-COMBINE_HOME=/code/HiggsAnalysis/CombinedLimit/build
-export LD_LIBRARY_PATH=${COMBINE_HOME}/lib:${LD_LIBRARY_PATH}
-export PYTHONPATH=${COMBINE_HOME}/lib/python:${PYTHONPATH}
-PROFILE
+denv init --clean-env gitlab-registry.cern.ch/cms-cloud/combine-standalone:v9.2.1
+# --clean-env is necessary for denv currently due to sharing of the LD_LIBRARY_PATH variable
+# https://github.com/tomeichlersmith/denv/issues/110
 ```
 
 ## Usage
