@@ -81,20 +81,27 @@ A few personal notes on the datacards.
 
 ### Running
 There are a plethora of command line options for `combine` that I
-will not go into here. Instead, I just have two comments.
+will not go into here. Instead, I just have a few comments.
 1. In a low-background scenario, the asymptotic limits are not as trustworthy,
   so it is better to use the `--method HybridNew` rather than the default.
   This method does the full CLs technique with toy experiment generation.
   We can use the suggested settings for this method using the `--LHCmode LHC-limits`
-  argument.
-2. One can label different runs within the output TTree with `--mass` and
+  argument. We can also speed this up by using a "hint" to help get it started
+  on the right path `--hintMethod AsymptoticLimits`.
+2. In a blinded (no data) scenario, we want to observe the median expected limit rather than the "observed" limit for some arbitrary chosen observed events. We can ask for this with `--expectedFromGrid=0.5`.
+3. One can label different runs within the output TTree with `--mass` and
   `--keyword-value` such that the resulting ROOT files can be `hadd`ed together
   into a single file containing all of the limits for the different runs
   of `combine`.
 
 For a single datacard example,
 ```
-denv combine --datacard datacard.txt --method HybridNew --LHCmode LHC-limits
+denv combine \
+  --datacard datacard.txt \
+  --method HybridNew \
+  --LHCmode LHC-limits \
+  --hintMethod AsymptoticLimits \
+  --expectedFromGrid=0.5
 ```
 Often, we want to estimate an exclusion for our different mass points as well.
 The brute-force way to do this is to simply write a datacard for each masspoint
@@ -106,6 +113,8 @@ for m in 1 10 100 1000; do
     --datacard datacard-${m}.txt \
     --method HybridNew \
     --LHCmode LHC-limits \
+    --hintMethod AsymptoticLimits \
+    --expectedFromGrid=0.5
     --mass ${m} || break
 done
 denv hadd higgsCombineTest.HybridNew.root higgsCombineTest.HybridNew.mH*.root
@@ -127,9 +136,18 @@ parallel \
     --method HybridNew \
     --mass {} \
     --datacard datacard-{}.txt \
+    --hintMethod AsymptoticLimits \
+    --expectedFromGrid=0.5
   ::: 1 10 100 1000
 ```
 And then `hadd` the same was as above.
+~~~
+
+~~~admonish tip title="Other Helpful Options" collapsible=true
+A few other helpful arguments for `combine`.
+- `--plot=path/to/plot.png` stores the CLs vs r plot with the HybridNew method. This is helpful for making sure that combine is actually finding a solution.
+- `--rAbsAcc` allows you to set the accuracy on r that combine is shooting for.
+- `--toysH` allows you to manually ask for more toys to be thrown. This is sometimes necessary if you wish to improve the CLs estimation.
 ~~~
 
 ### Result Interpretation
