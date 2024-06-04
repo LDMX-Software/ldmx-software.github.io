@@ -5,7 +5,7 @@ method given before using `uproot`, `awkward`, and `hist`. Nevertheless, there a
 main reasons I've had for putting an analysis into the ldmx-sw C++.
 1. **Longevity**: While the python ecosystem evolving quickly is helpful for obtaining
   new features, it can also cause long-running projects to "break" -- forcing a refactor
-  that is purely due to upstream code changes. Writing an analysis into C++, with its
+  that is purely due to upstream code changes.[^1] Writing an analysis into C++, with its
   more rigid view on backwards compatibility, essentially solidifies it so that it can
   be run in the same way for a long time into the future.
 2. **Non-Vectorization**: In the previous chapter, I made a big deal about how most
@@ -14,6 +14,11 @@ main reasons I've had for putting an analysis into the ldmx-sw C++.
   an analysis in a vectorizable form. Dropping down into the C++ allows analyzers
   to write the `for` loop themselves which may be necessary for an analysis to
   be understandable (or even functional).
+
+[^1]: This longevity issue can be resolved within python by "pinning" package versions
+so that all developers of the analysis code use the same version of python and the
+necessary packages. Nevertheless, this "pinning" also prevents analyzers from obtaining
+new features or bug fixes brought into newer versions of the packages.
 
 The following example is **stand-alone** in the same sense as the prior chapter's
 jupyter notebook. It can be run from outside of the ldmx-sw repository; however,
@@ -28,9 +33,13 @@ I am going to use the same version of ldmx-sw that was used to generate
 the input `events.root` file. This isn't strictly necessary - more often
 than not, newer ldmx-sw versions are able to read files from prior ldmx-sw
 versions.
+
+This tutorial uses a feature introduced into ldmx-sw in v4.0.1.
+One can follow the same general workflow with [some additional changes
+to the config script](#pre-401-standalone-analyzers) described below.
 ```
 cd work-area
-denv init ldmx/pro:v3.3.6
+denv init ldmx/pro:v4.0.1
 ```
 The following code block shows the necessary boilerplate for starting
 a C++ analyzer running with ldmx-sw.
@@ -118,3 +127,12 @@ Below is a screenshot of my browser window after opening the `hist.root` file an
 selecting the histogram we filled.
 
 ![screenshot of JSROOT](jsroot-screenshot.png)
+
+## Pre-4.0.1 Standalone Analyzers
+[PR #1310](https://github.com/LDMX-Software/ldmx-sw/pull/1310) goes into detail on
+the necessary changes, but - in large part -  we can mimic the feature introduced in v4.0.1
+with some additional python added into the config file.
+
+```python
+{{#include pre-4.0.1-cfg.py}}
+```
