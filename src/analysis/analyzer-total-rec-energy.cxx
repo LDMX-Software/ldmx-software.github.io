@@ -1,3 +1,4 @@
+// filename: MyAnalyzer.cxx
 #include "Framework/EventProcessor.h"
 
 #include "Ecal/Event/EcalHit.h"

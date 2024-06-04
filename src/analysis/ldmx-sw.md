@@ -5,7 +5,7 @@ method given before using `uproot`, `awkward`, and `hist`. Nevertheless, there a
 main reasons I've had for putting an analysis into the ldmx-sw C++.
 1. **Longevity**: While the python ecosystem evolving quickly is helpful for obtaining
   new features, it can also cause long-running projects to "break" -- forcing a refactor
-  that is purely due to upstream code changes. Writing an analysis into C++, with its
+  that is purely due to upstream code changes.[^1] Writing an analysis into C++, with its
   more rigid view on backwards compatibility, essentially solidifies it so that it can
   be run in the same way for a long time into the future.
 2. **Non-Vectorization**: In the previous chapter, I made a big deal about how most
@@ -14,6 +14,11 @@ main reasons I've had for putting an analysis into the ldmx-sw C++.
   an analysis in a vectorizable form. Dropping down into the C++ allows analyzers
   to write the `for` loop themselves which may be necessary for an analysis to
   be understandable (or even functional).
+
+[^1]: This longevity issue can be resolved within python by "pinning" package versions
+so that all developers of the analysis code use the same version of python and the
+necessary packages. Nevertheless, this "pinning" also prevents analyzers from obtaining
+new features or bug fixes brought into newer versions of the packages.
 
 The following example is **stand-alone** in the same sense as the prior chapter's
 jupyter notebook. It can be run from outside of the ldmx-sw repository; however,
@@ -28,9 +33,13 @@ I am going to use the same version of ldmx-sw that was used to generate
 the input `events.root` file. This isn't strictly necessary - more often
 than not, newer ldmx-sw versions are able to read files from prior ldmx-sw
 versions.
+
+This tutorial uses a feature introduced into ldmx-sw in v4.0.1.
+One can follow the same general workflow with [some additional changes
+to the config script](#pre-401-standalone-analyzers) described below.
 ```
 cd work-area
-denv init ldmx/pro:v3.3.6
+denv init ldmx/pro:v4.0.1
 ```
 The following code block shows the necessary boilerplate for starting
 a C++ analyzer running with ldmx-sw.
@@ -47,17 +56,36 @@ to load is.
 A quick test can show that the code is compiling and running
 (although it will not print out anything or create any files).
 ```
-$ denv 'g++ -fPIC -shared -o libMyAnalysis.so -lFramework -I$(root-config --incdir) MyAnalysis.cxx'
+$ denv time fire ana-cfg.py
+---- LDMXSW: Loading configuration --------
+Processor source file /home/tom/code/ldmx/website/ldmx-sw-eg/MyAnalyzer.cxx is newer than its compiled library /home/tom/code/ldmx/website/ldmx-sw-eg/libMyAnalyzer.so (or library does not exist), recompiling...
+done compiling /home/tom/code/ldmx/website/ldmx-sw-eg/MyAnalyzer.cxx
+---- LDMXSW: Configuration load complete  --------
+---- LDMXSW: Starting event processing --------
+---- LDMXSW: Event processing complete  --------
+7.79user 0.74system 0:08.55elapsed 99%CPU (0avgtext+0avgdata 601516maxresident)k
+264inputs+2480outputs (0major+223914minor)pagefaults 0swaps
+```
+`MyAnalyzer` needed to be compiled which increased the time it took to run.
+Re-running again without changing the source file allows us to skip this compilation step.
+```
 $ denv time fire ana-cfg.py
 ---- LDMXSW: Loading configuration --------
 ---- LDMXSW: Configuration load complete  --------
 ---- LDMXSW: Starting event processing --------
 ---- LDMXSW: Event processing complete  --------
-1.99user 0.11system 0:02.10elapsed 100%CPU (0avgtext+0avgdata 320716maxresident)k
-0inputs+0outputs (0major+58469minor)pagefaults 0swaps
+3.52user 0.14system 0:03.66elapsed 100%CPU (0avgtext+0avgdata 325828maxresident)k
+0inputs+0outputs (0major+58137minor)pagefaults 0swaps
 ```
-Notice that we still took about 2s to run. This is because, even though `MyAnalyzer` isn't
-doing anything with the data, `fire` is still looping through all of the events.
+Notice that we still took a few seconds to run.
+This is because, even though `MyAnalyzer` isn't doing anything with the data,
+`fire` is still looping through all of the events.
+
+~~~admonish tip title="Timing"
+You do not need to include `time` when running.
+I am just using it in this tutorial to give you a sense of how long
+different commands run.
+~~~
 
 ## Load Data, Manipulate Data, and Fill Histograms
 While these steps were separate in the previous workflow, they all share the same process
@@ -76,14 +104,13 @@ Again, putting your analyzer within ldmx-sw or ldmx-analysis gives you infrastru
 shortens how much you type during this compilation step.
 
 ```
-$ denv 'g++ -fPIC -shared -o libMyAnalysis.so -lFramework -I$(root-config --incdir) MyAnalysis.cxx'
-$ denv time fire ana-cfg.py
+$ denv fire ana-cfg.py
 ---- LDMXSW: Loading configuration --------
+Processor source file /home/tom/code/ldmx/website/ldmx-sw-eg/MyAnalyzer.cxx is newer than its compiled library /home/tom/code/ldmx/website/ldmx-sw-eg/libMyAnalyzer.so (or library does not exist), recompiling...
+done compiling /home/tom/code/ldmx/website/ldmx-sw-eg/MyAnalyzer.cxx
 ---- LDMXSW: Configuration load complete  --------
 ---- LDMXSW: Starting event processing --------
 ---- LDMXSW: Event processing complete  --------
-2.03user 0.12system 0:02.20elapsed 97%CPU (0avgtext+0avgdata 321300maxresident)k
-0inputs+40outputs (0major+57977minor)pagefaults 0swaps
 ```
 
 Now there is a new file `hist.root` in this directory which has the histogram we filled stored within it.
@@ -118,3 +145,17 @@ Below is a screenshot of my browser window after opening the `hist.root` file an
 selecting the histogram we filled.
 
 ![screenshot of JSROOT](jsroot-screenshot.png)
+
+## Pre-4.0.1 Standalone Analyzers
+[PR #1310](https://github.com/LDMX-Software/ldmx-sw/pull/1310) goes into detail on
+the necessary changes, but - in large part -  we can mimic the feature introduced in v4.0.1
+with some additional python added into the config file.
+
+~~~admonish warning title="Untested"
+The file below hasn't been thoroughly tested and may not work out-of-the-box.
+Please open a PR into this documentation if you find an issue that can be patched generally.
+~~~
+
+```python
+{{#include pre-4.0.1-cfg.py}}
+```
