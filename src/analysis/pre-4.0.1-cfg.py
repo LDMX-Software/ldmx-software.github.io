@@ -25,13 +25,18 @@ class StandaloneAnalyzer:
                 ' (or library does not exist), recompiling...'
             )
             import subprocess
+            # update this path to the location of the ldmx-sw install
+            # this is the correct path for production images
+            ldmx_sw_install_prefix = '/usr/local'
+            # for dev images, you could look at using
+            #ldmx_sw_install_prefix = f'{os.environ["LDMX_BASE"]}/ldmx-sw/install'
             subprocess.run([
                 'g++', '-fPIC', '-shared', # construct a shared library for dynamic loading
                 '-o', str(lib), str(src), # define output file and input source file
                 '-lFramework', # link to Framework library (and the event dictionary)
                 '-I/usr/local/include/root', # include ROOT's non-system headers
-                '-I/usr/local/include', # include ldmx-sw headers (if non-system)
-                '-L/usr/local/lib', # include ldmx-sw libs (if non-system)
+                f'-I{ldmx_sw_install_prefix}/include', # include ldmx-sw headers
+                f'-L{ldmx_sw_install_prefix}/lib', # include ldmx-sw libs
             ], check=True)
             print(f'done compiling {src}')
     
