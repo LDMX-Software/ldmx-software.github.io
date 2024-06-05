@@ -83,7 +83,7 @@ patch cmake | >= v4.0.0
 with sanitizers | > v3.2
 with detector id bindings | > v3.3
 
-### >= v3.2.5
+### >= v3.2.5 and < v3.3.4
 Since we are requiring an upgrade of the container
 in order to support the testing we also switch the
 detector ID bindings to be included in the default
@@ -95,3 +95,19 @@ build config | container version
 default | >= v4.0.0
 no det id bindings | >= v3.2
 no det id bindings and no sanitizers | >= v3.0
+
+### >= v3.3.5
+Updates to the ROOT dictionary generation procedure inadvertently
+broke compatibility with older container images.
+Users of older container images will see issues during dictionary building
+related to the `std::string_view` feature of C++17.
+If - for some reason - you require to use a pre-v4 container image with
+a version of ldmx-sw newer than v3.3.5, then you will need to manually
+undo the ROOT dictionary generation changes that were done in
+[Framework PR #73](https://github.com/LDMX-Software/Framework/pull/73).
+This is highly technical and I would recommend avoiding it at all costs.
+
+build config | container version
+---|---
+default | >= v4.0.0
+
