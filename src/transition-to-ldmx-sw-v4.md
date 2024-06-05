@@ -217,3 +217,15 @@ that is from before the transition.
 git clone --branch <name> --recursive git@github.com:LDMX-Software/ldmx-sw.git
 ```
 ~~~
+
+~~~admonish note title="Compilation Issues"
+If you are observing a compilation issue involving `std::string_view`
+after updating your to ldmx-sw v4, you are probably observing the incompatibility
+between ldmx-sw >= v3.3.5 and the container image < v4.
+
+The solution for this is to update the image you are running to build ldmx-sw
+to one that is >= v4.0.0. The simplest way to do this is just to update to the
+latest image with `ldmx pull dev latest`, but you can also simply make sure
+you are using an image that was create after June 22, 2023 (when v4.0.0 was
+built and pushed to DockerHub).
+~~~
