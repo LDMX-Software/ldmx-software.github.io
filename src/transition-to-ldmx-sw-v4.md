@@ -7,6 +7,11 @@ the easiest way to update ldmx-sw to v4 is with a new clone.
 rm -rf ldmx-sw # are you SURE you have no changes? We are deleting everything now...
 git clone --recursive git@github.com:LDMX-Software/ldmx-sw.git
 ```
+Make sure your container image is newer than v4 as well.
+```
+# after entering the ldmx envrionment
+ldmx pull dev latest
+```
 ~~~
 
 Before the major release v4, ldmx-sw contained a lot of git submodules.
