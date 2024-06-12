@@ -25,8 +25,7 @@ jupyter notebook. It can be run from outside of the ldmx-sw repository; however,
 this directly contradicts the first reason for writing an analysis like this
 in the first place. I would recommend that you store your analyzer source code
 in ldmx-sw or the private ldmx-analysis. These repos also contain CMake infrastructure
-so you can avoid having to write the long `g++` command necessary to compile
-and link the source code.
+so you can more easily share code common amongst many processors.
 
 ## Set Up
 I am going to use the same version of ldmx-sw that was used to generate
@@ -46,10 +45,10 @@ a C++ analyzer running with ldmx-sw.
 ```cpp
 {{#include analyzer-boilerplate.cxx}}
 ```
-And below is an example python config call `ana-cfg.py` that I will
+And below is an example python config called `ana-cfg.py` that I will
 use to run this analyzer with `fire`. It assumes to be in the same
-place as the source file so that it knows where the library it needs
-to load is.
+place as the source file so that it knows where the files it needs
+are located.
 ```python
 {{#include ana-cfg.py}}
 ```
@@ -100,8 +99,10 @@ made within the function definitions.
 ```
 
 In order to run this code on the data, we need to compile and run the program.
-Again, putting your analyzer within ldmx-sw or ldmx-analysis gives you infrastructure that
-shortens how much you type during this compilation step.
+The special `from_file` function within the config script handles this in
+most situations for us.
+Below, you'll see that the analyzer is re-compiled into the library while
+`fire` is loading the configuration and then the analyzer is used during event processing.
 
 ```
 $ denv fire ana-cfg.py
@@ -117,9 +118,9 @@ Now there is a new file `hist.root` in this directory which has the histogram we
 
 ```
 $ denv rootls -l hist.root
-TDirectoryFile  Apr 30 22:30 2024 my-ana  "my-ana"
+TDirectoryFile  Apr 30 22:30 2024 MyAnalyzer "MyAnalyzer"
 $ denv rootls -l hist.root:*
-TH1F  Apr 30 22:30 2024 my-ana_total_ecal_rec_energy  ""
+TH1F  Apr 30 22:30 2024 MyAnalyzer_total_ecal_rec_energy  ""
 ```
 
 ## Plotting Histograms
@@ -133,7 +134,7 @@ once I find the histogram I want to plot in order to pull the histogram into an 
 familiar with. For example
 ```python
 f = uproot.open('hist.root')
-h = f['my-ana/my-ana_total_ecal_rec_energy'].to_hist()
+h = f['MyAnalyzer/MyAnalyzer_total_ecal_rec_energy'].to_hist()
 h.plot()
 ```
 ~~~
