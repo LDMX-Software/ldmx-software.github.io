@@ -21,6 +21,28 @@ Avoiding this reliance would make it easier for users to switch between images, 
 require us to learn a slightly new interaction workflow.
 ~~~
 
+~~~admonish question collapsible=true title"Compile error: ap_fixed.h: No such file or directory."
+As with other errors of this type, this originates in a bad interaction between our repository
+and one of its submodules. Specifically, `ap_fixed.h` is within the `Trigger/HLS_arbitrary_Precision_Types`
+submodule and so if the files within that directory are not present you need to make sure that
+the submodules are up-to-date.
+```
+git submodule update --recursive --init && echo "success"
+```
+This command **should succeed**; thus, I added the `&& echo "success"` so that the last line is
+`success` if everything finished properly.
+
+One issue that has been observed is that this command fails
+rather quietly after a lot of printouts. Specifically, on MacOS, there was an issue where
+`git lfs` was not found and so `acts`'s submodule `OpenDataDetector` was failing to checkout
+and issuing a `fatal` error. This prevented all of the submodules from being updated and thus
+the missing file.
+
+Make sure `git lfs` is installed by running that command and seeing that it prints out
+a help message instead of an error like `'lfs' is not a git command`. If you see this
+error, you need to [install `git lfs`](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage).
+~~~
+
 ~~~admonish question collapsible=true title="CMake error: does not contain a CMakeLists.txt file."
 The full text of this error looks like (for example)
 ```
