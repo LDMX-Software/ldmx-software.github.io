@@ -21,7 +21,7 @@ Avoiding this reliance would make it easier for users to switch between images, 
 require us to learn a slightly new interaction workflow.
 ~~~
 
-~~~admonish question collapsible=true title"Compile error: ap_fixed.h: No such file or directory."
+~~~admonish question collapsible=true title="Compile error: ap_fixed.h: No such file or directory."
 As with other errors of this type, this originates in a bad interaction between our repository
 and one of its submodules. Specifically, `ap_fixed.h` is within the `Trigger/HLS_arbitrary_Precision_Types`
 submodule and so if the files within that directory are not present you need to make sure that
