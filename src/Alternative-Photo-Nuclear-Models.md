@@ -26,7 +26,7 @@ With all of these models, when a photonuclear interaction occurs the model will 
     
 ```python
 # Assuming your simulator is called mySim 
-from LDMX.Simcore import photonuclear_models as pn 
+from LDMX.SimCore import photonuclear_models as pn 
 from LDMX.Biasing import particle_filter 
 
 
@@ -54,7 +54,7 @@ mySim.actions.extend([myFilter])
   This model is very similar to the previous one with one big exception, it is only applied for interactions with tungsten (the `zmin` parameter is set to 74). Since the ECal consists of more material than just tungsten, this means that some ECal PN-events will not produce the desired final state. If you don't combine the model with a particle filter, you will have ~50% of your events being regular photonuclear reactions. The reason for this cut on the proton number of the target nucleus is that nothing hard events, which generally include very high product multiplicity, are extremely rare for nuclei with few nucleons. These interactions would therefore receive an extremely small event weight or even get stuck repeating the event generation infinitely for e.g. hydrogen. 
   
  ```python
-from LDMX.Simcore import photonuclear_models as pn 
+from LDMX.SimCore import photonuclear_models as pn 
 from LDMX.Biasing import particle_filter 
 
 
@@ -86,7 +86,7 @@ setup comes with a preconfigured version that requries at least one hard kaon in
 the final state. 
 
 ```python
-from LDMX.Simcore import photonuclear_models as pn 
+from LDMX.SimCore import photonuclear_models as pn 
 from LDMX.Biasing import particle_filter 
 
 
