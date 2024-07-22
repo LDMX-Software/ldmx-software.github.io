@@ -14,7 +14,7 @@ If you don't already have SSH keys configured, look at the [GitHub directions](h
 
 ## Pull Requests
 
-We prefer that any major code contributions are submitted via [pull requests](https://help.github.com/articles/creating-a-pull-request/) so that they can be reviewed before changes are merged into the master.
+We prefer that any code contributions are submitted via [pull requests](https://help.github.com/articles/creating-a-pull-request/) so that they can be reviewed before changes are merged into the master.
 
 Before you start, an [issue should be added to the ldmx-sw issue tracker](https://github.com/LDMXAnalysis/ldmx-sw/issues/new).
 
@@ -44,3 +44,42 @@ In ldmx-sw we follow the [Google Style Guide](https://google.github.io/styleguid
 - [emacs](https://raw.githubusercontent.com/google/styleguide/gh-pages/google-c-style.el)
 - [google/vim-codefmt](https://github.com/google/vim-codefmt)
 - [rhysd/vim-clang-format](https://github.com/rhysd/vim-clang-format)
+
+## Rebasing
+In ldmx-sw, I (Tom Eichlersmith) have pushed (pun intended) to rebase branches before merging them into ldmx-sw trunk so that
+the commit history is as linear as possible.
+
+~~~admonish tip title="Learn More"
+`git`'s [page on rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) gives helpful description
+and includes a discussion on the pros and cons of using this rebasing style (as opposed to simply merging
+and creating merge commits).
+~~~
+
+Oftentimes since ldmx-sw is such a large code base, the files that two developers work on do not conflict
+and therefore changes can be rebased automatically without human intervention.
+This is done in most PRs by GitHub when the "Rebase & Merge" button is pressed; however,
+some branches need to be manually rebased by a developer in order to handle the case where two developers
+have changes the same lines of a file. This section is focused on that manual rebase procedure.
+
+```
+# make sure `trunk` is up to date so I don't have to do this again
+git fetch
+git switch trunk
+git pull
+git switch iss1373
+```
+To first order, `rebase` _re-applies_ the changes from commits onto the new "base" (Here, your current branch is "based" on an old commit of trunk and we are updating the base to be the latest commit on trunk.) Often times, there are commits that don't need to be re-applied (you tried them and then later undid them because they didn't work or whatever); thus, I start an `--interactive` rebase.
+```
+git rebase --interactive
+```
+Now a file is open listing the different commits that would be re-applied. The syntax for how to interact with these commits is at the bottom of this file. Most often, I just remove the lines with commits that I don't want to keep. Once you save and exit this file the rebase begins.
+
+If there is a CONFLICT, make sure to resolve it. There are many tools available to more quickly resolve conflicts, but the simplest is just to open the file and look for the area with `<<<<<` denoting the beginning of the conflicting section. This corresponds to the two changes (the commit already on `trunk` and your commit that is being re-applied).
+
+Once you've resolved the conflict, you `git add <file>` and `git rebase --continue`.
+
+This cycle continues until all commits have been re-applied. You may have some commits that don't have any conflicts. These commits will just be automatically applied and the rebase continues unless you changed the command associated with that commit in the file opened earlier.
+
+Now you have a rebased branch on your _local_ computer. Double check that things work as intended (e.g. at least compiles) and that the changes you want to make are included. I often do this by `git diff trunk` to make sure my changes (and only my changes) are different compared to the latest trunk.
+
+Once you are certain that everything is good and rebased, you can push your branch `git push`. Rebasing _rewrites_ commits so you may need to `git push --force` to _overwrite_ the copy of your branch on GitHub. **Again, double check the changes and test them!!**
