@@ -1,9 +1,6 @@
 [Welcome](index.md)
 
 # Getting Started
-- [Analyzing ldmx-sw Event Files](analysis/intro.md)
-  - [Using Python (Efficiently)](analysis/python.md)
-  - [Using ldmx-sw Directly](analysis/ldmx-sw.md)
 - [Building and Installing ldmx-sw](building/intro.md)
   - [Shared Computing Clusters](building/clusters.md)
   - [Updating ldmx-sw](building/updating.md)
@@ -18,6 +15,9 @@
   - [Event Skimming](config/event-skimming.md)
   - [Tips and Tricks](config/config-tips.md)
 - [Exercises](Startup-Exercises.md)
+- [Analyzing ldmx-sw Event Files](analysis/intro.md)
+  - [Using Python (Efficiently)](analysis/python.md)
+  - [Using ldmx-sw Directly](analysis/ldmx-sw.md)
 
 # User Guides
 - [Transition to ldmx-sw v4](transition-to-ldmx-sw-v4.md)
