@@ -14,6 +14,12 @@ git-repository-url = "https://github.com/LDMX-Software/ldmx-software.github.io/t
 edit-url-template = "https://github.com/LDMX-Software/ldmx-software.github.io/edit/trunk/{path}"
 additional-css = ["./mdbook-admonish.css"]
 
+[preprocessor]
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.1" # do not edit: managed by `mdbook-admonish install`
+
 [output.html.redirect]
 "/_doxygen/index.html" = "/cpp_refman.html"
 "/_sphinx/index.html" = "/python_refman.html"
@@ -25,9 +31,34 @@ additional-css = ["./mdbook-admonish.css"]
 "/Structure-of-Event-Processors.html" = "/fire/structure-of-event-processors.html"
 "/Building-ldmx-sw.html" = "/building/intro.html"
 "/Building-ldmx-sw-containerless.html" = "/building/containerless.html"
-
-[preprocessor]
-
-[preprocessor.admonish]
-command = "mdbook-admonish"
-assets_version = "3.0.1" # do not edit: managed by `mdbook-admonish install`
+"/Contributing-to-ldmx-sw.html" = "/developers/Contributing-to-ldmx-sw.html"
+"/Creating-a-new-Event-Bus-Object.html" = "/developers/Creating-a-new-Event-Bus-Object.html"
+"/Logging.html" = "/developers/Logging.html"
+"/Unit-Testing-in-ldmx-sw.html" = "/developers/Unit-Testing-in-ldmx-sw.html"
+"/building/clusters.html" = "/developers/building/clusters.html"
+"/building/containerless.html" = "/developers/building/containerless.html"
+"/building/intro.html" = "/developers/building/intro.html"
+"/building/updating.html" = "/developers/building/updating.html"
+"/compatibility.html" = "/developers/compatibility.html"
+"/custom-production-image.html" = "/developers/custom-production-image.html"
+"/faq.html" = "/developers/faq.html"
+"/performance.html" = "/developers/performance.html"
+"/prs.html" = "/developers/prs.html"
+"/transition-to-ldmx-sw-v4.html" = "/developers/transition-to-ldmx-sw-v4.html"
+"/analysis/intro.html" = "/users/analysis/intro.html"
+"/analysis/ldmx-sw.html" = "/users/analysis/ldmx-sw.html"
+"/analysis/python.html" = "/users/analysis/python.html"
+"/config/config-basics.html" = "/users/config/config-basics.html"
+"/config/config-tips.html" = "/users/config/config-tips.html"
+"/config/drop-keep.html" = "/users/config/drop-keep.html"
+"/config/event-skimming.html" = "/users/config/event-skimming.html"
+"/config/intro.html" = "/users/config/intro.html"
+"/config/structure-of-event-processors.html" = "/users/config/structure-of-event-processors.html"
+"/dark-brem/how-to.html" = "/users/dark-brem/how-to.html"
+"/dark-brem/intro.html" = "/users/dark-brem/intro.html"
+"/dark-brem/legacy.html" = "/users/dark-brem/legacy.html"
+"/Alternative-Photo-Nuclear-Models.html" = "/users/sim/Alternative-Photo-Nuclear-Models.html"
+"/simulation/configuring.html" = "/users/sim/configuring.html"
+"/Generating-Simulation-Samples.html" = "/users/sim/generating.html"
+"/simulation/resim.html" = "/users/sim/resim.html"
+"/which-sim-particles.html" = "/users/sim/which-sim-particles.html"
