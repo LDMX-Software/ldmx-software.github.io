@@ -1,54 +1,76 @@
 # Building ldmx-sw
 
-Each of the steps below is really short but more detail has been added in order to help users debug any issues they may encounter. If all goes well, you will be able to fly through these instructions within 5-10 minutes (depending on how long software installations take). Each of the sections has a "Comments" subsection for extra details and a "Test" subsection allowing you to verify that you completed that step successfully.
+~~~admonish warning title="Warning"
+This guide assumes familiarity with the [user's guide](users/getting-started.md)
+and with the terminal.
+~~~
 
-### Windows Comments
-- If you are running on a Microsoft Windows system, it is _necessary_ for you to do all of the steps below within Windows Subsystem for Linux (WSL). The permissions system that docker relies on in order to effectively run the containers is not supported by Windoze. (While GitBash and the Command Prompt can look similar to other terminals, make sure to open a WSL terminal --- often labeled "Ubuntu").
-- _As of this writing, you cannot use a VPN and connect to the internet from within WSL_
-- The "docker daemon" needs to be running. On most systems, this program starts automatically when the computer is booted. You can check if the docker daemon is running by trying to run a simple docker container. If it is not running, you will need to start it manually. 
-- Docker Desktop outside WSL needs to be running to be able to use docker inside WSL? (question mark because unsure)
+We need a few more tools to help track our changes and share commands
+that we use regularly.
 
-## Install a Container Runner
-Currently, ldmx-sw's environment script supports `docker` and `singularity`. On personal laptops, most users will find it easiest to [install the docker engine](https://docs.docker.com/engine/install/). [singularityCE](https://docs.sylabs.io/guides/latest/user-guide/) and [apptainer](https://apptainer.org/) both provide the program `singularity` with near-identical functionality in a way that is often desirable for shared computing environments (like university clusters), so you may not need to install anything if one of these packages are already installed.
+## Make sure `git` is Installed
+`git` is a very common tool used by software developers and so it may already be
+available on the system you are using for development.
+Even if not (the test below fails), a simple internet search for
+`install git <your-operating-system>` will give you guidance.
 
 ~~~admonish note title="Comments"
-- If you are on Windows, make sure to use the WSL2 backend for docker.
-- On Linux systems, make sure to [manage docker as non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
-  so that you can run that command without `sudo`.
+- Make sure `git` is installed **within WSL** on Windows.
+  There are other ways to interact with `git` on Windows (e.g. GitBash),
+  but that is **not** what we want.
+- On MacOS, the default installation of `git` that comes with Apple's developer tools
+  does not include the `lfs` sub-command which is required by one of ldmx-sw's
+  dependencies (acts to be specific). Luckily, [GitHub has a nice tutorial](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage?platform=mac) on how to install `git lfs` on MacOS.
+~~~
+
+~~~admonish note title="Test"
+Both of the commands below should printout a help message rather than a
+`Command not found` error.
+```
+git
+git lfs
+```
+~~~
+
+## Install `just`
+`just` has a myriad of ways to be installed, but - like `denv` - it has
+[a simple download method](https://just.systems/man/en/chapter_5.html) that allows
+you to get the most recent version on most systems.
+
+~~~admonish note title="Comments"
+- You probably want to enable [shell tab-completion](https://just.systems/man/en/chapter_70.html) with `just` which only needs to be done once per installation but will help save typing.
+- `just` is not technically required in order to develop ldmx-sw.
+  The recipes within the `justfile` can be read with any text editor and you can
+  manually type them into the terminal yourself; nevertheless, that would be a lot more
+  typing and error prone.
 ~~~
 
 ~~~admonish success title="Test"
-You can run a simple container in whichever runner is available.
+You can run the command `just` within your terminal.
 ```
-docker run hello-world
+just
 ```
-_or_
+Without a `justfile` already residing within your current directory,
+`just` will printout an error. For example:
 ```
-singularity run docker://ghcr.io/apptainer/lolcow
+$ just
+error: No justfile found
 ```
 ~~~
 
-This may be the first point where you enter into a terminal unless your installation was terminal-based.
-If you are using Windows, remember to go into Windows Subsystem for Linux rather than other Windows terminals like GitBash or Command Prompt.
-
 ## Clone the Software Repository
-In a terminal, go to the directory[^1] where you will keep all of your LDMX software and run the following command.
+In a terminal, go to the directory where you will keep all of your LDMX software and run the following command.
 ```
-git clone --recursive https://github.com/LDMX-Software/ldmx-sw.git
+git clone --recursive git@github.com:LDMX-Software/ldmx-sw.git
 ```
-
-[^1]: If you are unfamiliar with the terminal, a helpful resource is [linuxcommand.org](https://linuxcommand.org/lc3_learning_the_shell.php).
 
 ~~~admonish note title="Comments"
 - The `--recursive` flag is _very important_ because there are several necessary parts of _ldmx-sw_ stored in separate git repositories.
-- The above `clone` uses a HTTPS connection which will allow you to `git pull` updates but it won't allow you to `git push` any changes you
-  make to GitHub. If you are going to write code for ldmx-sw and contribute, make sure to [create a GitHub account](https://github.com/signup) 
-  and [connect to it with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh), then use the SSH link rather than
-  the HTTPS link (`git@github.com:LDMX-Software/ldmx-sw.git`).
+- The above `clone` uses an SSH connection which requires you to [create a GitHub account](https://github.com/signup) and [connect to it with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 ~~~
 
 ~~~admonish tip title="Changing the link after cloning" collapsible=true
-If you find yourself with an already cloned copy of ldmx-sw and you wish to create a new branch and push,
+If you find yourself with an already cloned copy of ldmx-sw that was cloned with the HTTPS link and you wish to create a new branch and push,
 you can switch the link of the remote to the SSH version on your machine without having to re-clone.
 ```
 git remote set-url origin git@github.com:LDMX-Software/ldmx-sw.git
@@ -61,100 +83,51 @@ You can see the ldmx-sw software directory in your terminal.
 ```
 ls
 # 'ldmx-sw' is one of the entries printed
+cd ldmx-sw
+just
+# our justfile's default recipe is to printout all the possible commands
 ```
 ~~~
 
 ## Setup the Environment
-In order to simplify using the container runner installed earlier (and to have the same commands shared between different runners),
-we have developed a `bash` environment script.
+One of the recipes within our `justfile` handles initializing a default environment.
 ```
-source ldmx-sw/scripts/ldmx-env.sh
+just init
 ```
 
 ~~~admonish note title="Comments"
-- Must occur in a `bash` terminal (the default on many Linux systems and available on iOS).
-  In some iOS versions, the default shell is `tcsh` instead of `bash`. You can read [this article](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/)
-  to learn how to change the default shell to `bash` so the environment script works without
-  any other fuss.
 - This command downloads the latest development image, so it may take some time (a few minutes) on the first run.
-- This command must be re-run whenever a new terminal is opened because a new terminal starts with a "clean" environment.
-- On shared computing clusters, the specific filesystem configuration may not be well suited to downloading the image
-  with the default configuration. _For singularity_, be aware that you can move the directory in-which images are stored 
-  using the `SINGULARITY_CACHEDIR` environment variable and move the directory in-which the build takes place using the `TMPDIR`
-  environment variable. This is specifically an issue for SLAC's SDF which has a very small `/tmp` directory (what singularity
-  uses if `TMPDIR` is not defined).
+- This command only needs to be done once per clone of ldmx-sw. Look at the other commands available form `just` for changing the environment.
+- On shared computing clusters, the specific filesystem configuration may not be well suited to downloading the image with the default configuration. _For apptainer_, be aware that you can move the directory in-which images are stored using the `APPTAINER_CACHEDIR` environment variable and move the directory in-which the build takes place using the `TMPDIR` environment variable. This is specifically an issue for SLAC's SDF and S3DF which have very small `/tmp` directories (what apptainer uses if `TMPDIR` is not defined).
+  - The `justfile` updates the default definition of `APPTAINER_CACHEDIR` to be the parent directory of ldmx-sw, but this may still not be the best location.
 ~~~
 
 ~~~admonish success title="Test"
-You can run the `ldmx` command. Running it without any arguments will print out a usage message.
+You can view the environment configuration from `denv`.
 ```
-ldmx
-# a help message is printed
+denv config print
+# detail of how the environment is configured
 ```
-If you see something like "command not found", then something went wrong during the environment setup.
+If you see something like "no workspace found", then something went wrong during the environment setup.
 ~~~
 
-## Configure & Compile
-
-ldmx-sw has a shortcut to execute the commads detailed in the following subsections. After the enveroment was set up, just run
+## Development Cycle
+The `justfile` contains many recipes that are helpful so inspect the output
+printed when `just` is run with no arguments to view some of them.
+The default build can be created with
 ```
-ldmx compile
+just compile
 ```
-This is equivalent to doing the following two steps.
-
-
-### Configure the Software Build
-ldmx-sw uses CMake to configure how the software will be built.
-You can do this configuration from within the `ldmx-sw` directory.
+You can pass CMake variables to the configure command (sanitizer is just an example)
+and then `build` the updated configuration.
 ```
-cd ldmx-sw
-ldmx cmake -B build -S .
+just configure -DENABLE_SANITIZER_ADDRESS=ON build
 ```
-Since the container is specifically built for ldmx-sw, there should
-be no warnings and no errors reported by CMake. Some information will
-be printed about which versions of dependencies were found and what modules
-are being built.
-
-### Build and Install
-After CMake writes all the makefiles for us, we use `make` to build the software.
-Technically, this step both compiles the software and installs the software, but
-often you want the software installed after compiling so that you can run it.
+Often you will want to recompile and run a config script.
 ```
-cd build
-ldmx make install
+just compile fire my-config.py [config args ...]
 ```
-
-~~~admonish note title="Comments"
-- You can speed up the build (sometimes) by allowing `make` to use more cores on your computer.
-  This can be done by using the `-j` flag, for example, `-j2` would inform `make` to use 2 cores.
-~~~
-
-~~~admonish success title="Test"
-Similar to the CMake step, if there aren't any errors reported during compilation, you
-are good to move on. If you wish, you could also run one or more of the pre-packaged
-configuration scripts (a.k.a. "configs") to make sure the installation is functional.
+Running the test suite is done with
 ```
-cd .. # go back to ldmx-sw out of ldmx-sw/build
-ldmx fire SimCore/test/basic.py
-```
-~~~
-
-# Next Steps
-Now that the software is built and installed, you can run a few more programs within the container.
-Most likely, you will want to run some parts of ldmx-sw and in this case the program you will run
-is called `fire`.
-```
-ldmx fire my-config.py
-```
-There are many configuration scripts shipped with ldmx-sw for various testing and sharing any
-of which should be operational and could be helpful for you to get started on your own config.
-- Biasing/test: configs running with a simulation where certain processes are biased and filtered for
-- SimCore/test: basic simulation testing
-- .github/validation_samples: longer configs with emulation and reconstruction used to do automatic validation of the code during development
-
-# Recompile and Fire
-
-It is very common during development that we would like to recompile the code and run fire on a config file. The shortcut for this is called `recompFire`.
-```
-ldmx recompFire my-config.py
+just test
 ```

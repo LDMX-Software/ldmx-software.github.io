@@ -18,6 +18,15 @@ If all goes well, you will be able to fly through these instructions within 5-10
 Each of the sections has a "Comments" subsection for extra details and a
 "Test" subsection allowing you to verify that you completed that step successfully.
 
+~~~admonish tip title="Terminal"
+While many new ldmx-sw users may be unfamiliar with the terminal,
+explaining its use is beyond the scope of this site.
+If you are unfamiliar with the terminal,
+a helpful resource is [linuxcommand.org](https://linuxcommand.org/lc3_learning_the_shell.php)
+and there are many others available online since terminals are a
+common tool utilized by software developers.
+~~~
+
 ### Windows Comments
 - If you are running on a Microsoft Windows system, it is _necessary_ for you to do all of the steps below within Windows Subsystem for Linux (WSL). The permissions system that docker relies on in order to effectively run the containers is not supported by Windoze. (While GitBash and the Command Prompt can look similar to other terminals, make sure to open a WSL terminal --- often labeled "Ubuntu").
 - _As of this writing, you cannot use a VPN and connect to the internet from within WSL_
