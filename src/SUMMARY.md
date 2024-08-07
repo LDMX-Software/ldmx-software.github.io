@@ -1,7 +1,7 @@
 [Welcome](index.md)
 
 # For Users
-- [Setting Up]()
+- [Getting Started](users/getting-started.md)
 - [Analyzing ldmx-sw Event Files](users/analysis/intro.md)
   - [Using Python (Efficiently)](users/analysis/python.md)
   - [Using ldmx-sw Directly](users/analysis/ldmx-sw.md)
