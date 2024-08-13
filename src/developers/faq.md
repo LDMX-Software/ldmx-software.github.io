@@ -124,6 +124,14 @@ ldmx root <<EOF
 EOF
 ```
 The context for this can be found on [GitHub Issue #1169](https://github.com/LDMX-Software/ldmx-sw/issues/1169).
+
+While this answer was originally written with `ldmx` and its suite of bash functions,
+the same solution should work with `denv` as well.
+```
+denv root <<EOF
+.x my-macro.C("/path/to/input/file.root",72,42.0)
+EOF
+```
 ~~~
 
 ~~~admonish question collapsible=true title="Installing on SDF: No space left on the device"
@@ -139,6 +147,16 @@ The ldmx-env.sh script is able to iterface with both docker and singularity so y
 ~~~
 
 ~~~admonish question collapsible=true title="How do I update the version of the container I am using?"
+The prior answer below is under the assumption you are using the `ldmx` program
+defined within `scripts/ldmx-env.sh`. If you are using `denv`, you can define
+the container image to use with `denv config image`. For example
+```
+denv config image ldmx/pro:v4.0.1 # use pre-compiled ldmx-sw v4.0.1
+denv config image ldmx/dev:4.2.2 # use version 4.2.2 of image with ldmx-sw dependencies
+denv config image pull # explicitly pull whatever image is configured (e.g. if latest)
+```
+
+### Legacy Answer
 We've added this command to the `ldmx` command line program.
 In general, it is safe to just update to the latest version.
 ```
