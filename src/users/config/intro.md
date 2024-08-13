@@ -6,9 +6,21 @@ The `fire` application is used for simulation, reconstruction, and analysis of d
 
 From the commandline, the application is run as follows:
 
-    $ ldmx fire {configuration_script.py} [arguments for configuration script]
+    $ denv fire {configuration_script.py} [arguments for configuration script]
 
 The configuration script language is discussed in more detail below.
+
+~~~admonish tip title="Other prefixes besides `denv`" collapsible=true
+`denv` was pre-dated by a set of bash functions whose root command was `ldmx`.
+This means you can see `ldmx` as the main prefix for commands that
+should be running within the ldmx-sw environment.
+In most cases, one can simply replace `ldmx` with `denv` since they have
+similar design goals.
+
+Developers of ldmx-sw may also be using the recipe manager `just` and run
+the above with `just` as the prefix. This just (pun intended) runs `denv fire`
+under-the-hood, so it is also equivalent.
+~~~
 
 ### Configuration script arguments
 
