@@ -128,5 +128,45 @@ Usage: fire {configuration_script.py} [arguments to configuration script]
 ```
 ~~~
 
+~~~admonish note title="Using Legacy Versions of ldmx-sw" collapsible=true
+Versions of ldmx-sw that were built with a version of the development
+image before [4.2.2](https://github.com/LDMX-Software/docker/releases/tag/4.2.2)
+(generaly pre-v4 ldmx-sw) do not have some ease-of-use updates to enable
+running ldmx-sw from within a denv.
+
+One can still use a denv without much effort.
+In short, you must update the denv shell's profile.
+```
+denv exit 0 # make sure a template .profile is created
+```
+Add the following lines to the end of `.profile` that is in your working
+directory (**not** the `.profile` in your home directory if you have one).
+```
+# add ldmx-sw and ldmx-analysis installs to the various paths
+# LDMX_SW_INSTALL is defined when building the production image or users
+# can use it to specify a non-normal install location
+if [ -z "${LDMX_SW_INSTALL+x}" ]; then
+  if [ -z "${LDMX_BASE+x}" ]; then
+    printf "[ldmx-env-init.sh] WARNING: %s\n" \
+      "Neither LDMX_BASE nor LDMX_SW_INSTALL is defined." \
+      "At least one needs to be defined to ensure a working installation."
+  fi
+  export LDMX_SW_INSTALL="${LDMX_BASE}/ldmx-sw/install"
+fi
+export LD_LIBRARY_PATH="${LDMX_SW_INSTALL}/lib:${LD_LIBRARY_PATH}"
+export PYTHONPATH="${LDMX_SW_INSTALL}/python:${LDMX_SW_INSTALL}/lib:${PYTHONPATH}"
+export PATH="${LDMX_SW_INSTALL}/bin:${PATH}"
+```
+This is just a short term solution and needs to be done _on every computer_.
+Updating to more recent ldmx-sw is advised.
+~~~
+
 ## Running a Configuration Script
+The next step now that you have access to `fire` is to run a specific configuration
+of ldmx-sw with it!
+Configuration scripts are complicated in their own right and have
+[been given their own chapter](config/intro.md).
+The next chapter is focused on analyzing event files that have been shared with you
+(or generated with a config shared with you) since, generally, analyzing events is
+done before development of the configs that produce those events.
 
