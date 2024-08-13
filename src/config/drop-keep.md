@@ -2,7 +2,7 @@
 
 ```admonish warning title="Bugs with Drop Keep Rules" collapsible=true
 Some issues with the drop keep rules have been reported on GitHub:
-[Framework Issue #91](https://github.com/LDMX-Software/Framework/issues/91).
+[Issue #1297](https://github.com/LDMX-Software/ldmx-sw/issues/1297).
 Check there if you are having issues to see if you need to update or if there
 is a work-around.
 ```
