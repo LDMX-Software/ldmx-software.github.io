@@ -25,7 +25,9 @@ about how to get started using (and eventually developing) ldmx-sw.
   - [Advanced Session held in June 2021](https://indico.fnal.gov/event/49213/)
 
 This manual is separated into two main sections based on how you are interacting
-with ldmx-sw. **Users** are folks who are using running ldmx-sw with _fire_ and
+with ldmx-sw.
+- **Users** are folks who are using running ldmx-sw with _fire_ and
 are _not_ actively changing code within ldmx-sw (i.e. they can fix the version of
-ldmx-sw they are using for their work). **Developers** are actively changing code
+ldmx-sw they are using for their work).
+- **Developers** are actively changing code
 within ldmx-sw and so need to compile ldmx-sw themselves.
