@@ -97,7 +97,7 @@ just init
 
 ~~~admonish note title="Comments"
 - This command downloads the latest development image, so it may take some time (a few minutes) on the first run.
-- This command only needs to be done once per clone of ldmx-sw. Look at the other commands available form `just` for changing the environment.
+- This command only needs to be done once per clone of ldmx-sw. Look at the other commands available from `just` for changing the environment.
 - On shared computing clusters, the specific filesystem configuration may not be well suited to downloading the image with the default configuration. _For apptainer_, be aware that you can move the directory in-which images are stored using the `APPTAINER_CACHEDIR` environment variable and move the directory in-which the build takes place using the `TMPDIR` environment variable. This is specifically an issue for SLAC's SDF and S3DF which have very small `/tmp` directories (what apptainer uses if `TMPDIR` is not defined).
   - The `justfile` updates the default definition of `APPTAINER_CACHEDIR` to be the parent directory of ldmx-sw, but this may still not be the best location.
 ~~~
@@ -116,7 +116,7 @@ The `justfile` contains many recipes that are helpful so inspect the output
 printed when `just` is run with no arguments to view some of them.
 The default build can be created with
 ```
-just compile
+just configure build
 ```
 You can pass CMake variables to the configure command (sanitizer is just an example)
 and then `build` the updated configuration.
@@ -125,7 +125,7 @@ just configure -DENABLE_SANITIZER_ADDRESS=ON build
 ```
 Often you will want to recompile and run a config script.
 ```
-just compile fire my-config.py [config args ...]
+just build fire my-config.py [config args ...]
 ```
 Running the test suite is done with
 ```
