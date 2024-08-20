@@ -26,8 +26,15 @@ about how to get started using (and eventually developing) ldmx-sw.
 
 This manual is separated into two main sections based on how you are interacting
 with ldmx-sw.
-- **Users** are folks who are using running ldmx-sw with _fire_ and
+
+- **Users** are folks who are running ldmx-sw with _fire_ and
 are _not_ actively changing code within ldmx-sw (i.e. they can fix the version of
 ldmx-sw they are using for their work).
 - **Developers** are actively changing code
 within ldmx-sw and so need to compile ldmx-sw themselves.
+
+~~~admonish tip title="Users still Develop!"
+Notice that this categorization only cares about the ldmx-sw source code.
+**Users** very often are still developing code -- their code is
+just not within ldmx-sw and so they are not **Developers** of ldmx-sw.
+~~~
