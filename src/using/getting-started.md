@@ -1,8 +1,8 @@
 # Getting Started
 
-This guide is focused on first-time _users_ of ldmx-sw.
-If you are interested in contributig to ldmx-sw, please look
-at the [developer's getting started guide](../developers/building/intro.md)
+This guide is focused on first-time users of ldmx-sw.
+If you are interested in contributing to ldmx-sw, please look
+at the [getting started developing guide](../developing/building/intro.md)
 for help starting to develop ldmx-sw.
 
 ldmx-sw is a large software project that builds on top of other

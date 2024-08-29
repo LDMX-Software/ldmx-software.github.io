@@ -1,7 +1,7 @@
 # Building ldmx-sw
 
 ~~~admonish warning title="Warning"
-This guide assumes familiarity with the [user's guide](users/getting-started.md)
+This guide assumes familiarity with the [first-time using guide](using/getting-started.md)
 and with the terminal.
 ~~~
 
