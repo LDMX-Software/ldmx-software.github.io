@@ -29,6 +29,7 @@
   - [Layer Weights](physics/ecal/layer-weights.md)
 
 # Developing
+- [Getting Started](developing/getting-started.md)
 - [Building and Installing ldmx-sw](developing/building/intro.md)
   - [Shared Computing Clusting](developing/building/clusters.md)
   - [Updating ldmx-sw](developing/building/updating.md)

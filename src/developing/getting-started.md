@@ -1,8 +1,23 @@
-# Building ldmx-sw
+# Getting Started Developing ldmx-sw
 
 ~~~admonish warning title="Warning"
 This guide assumes familiarity with the [first-time using guide](using/getting-started.md)
 and with the terminal.
+~~~
+
+~~~admonish tip title="Coming From Using ldmx-sw"
+Moving from using ldmx-sw to developing ldmx-sw is a common occurrence
+as issues or missing features are discovered in the course of analyzing
+the physical results.
+
+Do not fear! We still use containers to share the software and thus
+the container runner and `denv` which you installed to use ldmx-sw
+will still be used when developing ldmx-sw.
+
+In fact, after building ldmx-sw yourself, you will still be able
+to run `denv fire` (and similar) commands like before - it will
+just use your local, custom build of ldmx-sw rather than the
+released version you chose before.
 ~~~
 
 We need a few more tools to help track our changes and share commands
@@ -23,7 +38,7 @@ Even if not (the test below fails), a simple internet search for
   dependencies (acts to be specific). Luckily, [GitHub has a nice tutorial](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage?platform=mac) on how to install `git lfs` on MacOS.
 ~~~
 
-~~~admonish note title="Test"
+~~~admonish success title="Test"
 Both of the commands below should printout a help message rather than a
 `Command not found` error.
 ```
