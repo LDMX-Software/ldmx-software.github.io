@@ -74,6 +74,25 @@ They are short but require you to be in the terminal.
 
 ~~~admonish note title="Comments"
 - Remember to install `denv` within WSL if you are using Windows.
+- While `denv`'s install script tries to help you update your `PATH` variable,
+  it may not be perfect. You may need to consult the documentation for your shell
+  on how to add new directories to the `PATH` variable so that the `denv` command
+  can be found by your shell.
+~~~
+
+~~~admonish tip title="Replicating the Legacy `ldmx` Command" collapsible=true
+Some folks want to replicate the `ldmx` bash function which preceeded `denv`.
+To do this, you can create a few symlinks.
+The examples below are for the default installation prefix for `denv`
+(`~/.local`), but you can replace this directory with whereever you chose
+to install `denv` when running the `curl ... install` command.
+```
+# for the command
+ln -s ~/.local/bin/denv ~/.local/bin/ldmx
+# and for the tab completion
+ln -s ~/.local/share/bash-completion/completions/denv \
+  ~/.local/share/bash-completion/completions/ldmx
+```
 ~~~
 
 ~~~admonish success title="Test"
@@ -85,10 +104,11 @@ denv check
 Example output would look like
 ```
 Entrypoint found alongside denv
-Looking for docker... found 'Docker version 24.0.7, build afdd53b' <- would use without DENV_RUNNER defined
-Looking for podman... not found
 Looking for apptainer... not found
 Looking for singularity... not found
+Looking for podman... not found
+Looking for docker... found 'Docker version 27.0.3, build 7d4bcd8' <- use without DENV_RUNNER defined
+denv would run with 'docker'
 ```
 ~~~
 
@@ -128,7 +148,7 @@ Usage: fire {configuration_script.py} [arguments to configuration script]
 ```
 ~~~
 
-~~~admonish note title="Using Legacy Versions of ldmx-sw" collapsible=true
+~~~admonish tip title="Using Legacy Versions of ldmx-sw" collapsible=true
 Versions of ldmx-sw that were built with a version of the development
 image before [4.2.2](https://github.com/LDMX-Software/docker/releases/tag/4.2.2)
 (generaly pre-v4 ldmx-sw) do not have some ease-of-use updates to enable

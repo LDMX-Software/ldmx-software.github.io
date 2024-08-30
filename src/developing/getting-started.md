@@ -53,12 +53,26 @@ git lfs
 you to get the most recent version on most systems.
 
 ~~~admonish note title="Comments"
-- You probably want to enable [shell tab-completion](https://just.systems/man/en/chapter_70.html) with `just` which only needs to be done once per installation but will help save typing.
+- You probably want to enable [shell tab-completion](https://just.systems/man/en/chapter_70.html) with `just`
+  which only needs to be done once per installation but will help save typing.
 - `just` is not technically required in order to develop ldmx-sw.
   The recipes within the `justfile` can be read with any text editor and you can
   manually type them into the terminal yourself; nevertheless, that would be a lot more
   typing and error prone.
 ~~~
+
+For example, we can install `just` into the same directory where `denv` is
+installed by default.
+```
+curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh |\
+  bash -s -- --to ~/.local/bin
+```
+And then you can enable `just`'s tab completion in `bash` by putting
+```
+eval "$(just --completions bash)"
+```
+in your `~/.bashrc` file. If you are using other shells, make sure to
+check which file to write to and what the syntax should be.
 
 ~~~admonish success title="Test"
 You can run the command `just` within your terminal.
