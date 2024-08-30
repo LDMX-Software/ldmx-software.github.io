@@ -9,8 +9,7 @@ git clone --recursive git@github.com:LDMX-Software/ldmx-sw.git
 ```
 Make sure your container image is newer than v4 as well.
 ```
-# after entering the ldmx envrionment
-ldmx pull dev latest
+just init pull dev latest
 ```
 ~~~
 
@@ -225,7 +224,7 @@ between ldmx-sw >= v3.3.5 and the container image < v4.
 
 The solution for this is to update the image you are running to build ldmx-sw
 to one that is >= v4.0.0. The simplest way to do this is just to update to the
-latest image with `ldmx pull dev latest`, but you can also simply make sure
+latest image with `just pull dev latest`, but you can also simply make sure
 you are using an image that was create after June 22, 2023 (when v4.0.0 was
 built and pushed to DockerHub).
 ~~~

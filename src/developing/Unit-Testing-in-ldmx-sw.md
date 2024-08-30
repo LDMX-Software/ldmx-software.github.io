@@ -153,29 +153,24 @@ Further development could include other tests to be attached to `ctest`.
 
 
 ## Invoking the test suite 
-To run the full test suite enter the build directory and invoke `ldmx ctest`. 
+You can run the test suite with the `test` recipe from just.
 
 ```sh 
-cd build 
-ldmx make install 
-ldmx ctest
+just build test
 ```
 
-Some useful options for `ctest` include 
+Some useful options for `test` include 
 - `--rerun-failed` Will skip any tests that didn't fail last time 
 - `--output-on-failure` Will output the contents of `stdout` of any failing test 
 - `--verbose`/`-V` and `--extra-verbose`/`-VV` 
 
 If you want to pass any command line arguments to the `run_test` executable (see [Catch2 documentation](https://github.com/catchorg/Catch2/blob/devel/docs/command-line.md#top)), you will have to invoke the executable directly. A common reason for doing this would be to run a particular subset of the test suit, e.g. all the tests in the `Ecal` module. To invoke the executable manually, enter the `test` directory in the build directory and run the executable in the build directory 
 ```sh 
-cd build
-ldmx make install 
-cd test/
-ldmx ../run_test [Ecal] # Only run tests matching [Ecal]
+cd build/test/
+just build
+denv ../run_test [Ecal] # Only run tests matching [Ecal]
 ```
 
-*Note:* Since the python configuration will import python modules from the install directory, you have to run `ldmx make install` and not just `ldmx make` before running your tests if you have made changes to any python files.
- 
 # GitHub Actions and ldmx-sw
 We use a variety of GitHub actions to write several different GitHub workflows to not only test ldmx-sw, but also generate documentation and build production images.
 A good starting place to look at these actions is in the [.github/workflows](https://github.com/LDMX-Software/ldmx-sw/tree/trunk/.github/workflows) directory of ldmx-sw.

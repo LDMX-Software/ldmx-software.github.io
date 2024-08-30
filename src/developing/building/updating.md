@@ -8,17 +8,17 @@ We can update ldmx-sw through three main stages. These stages are not necessaril
 you could update the code and re-build without changing the environment if desired).
 
 ### Update Environment
-The `ldmx` command includes a method for updating the environment on your machine.
+There is a `just` recipe that updates the environment on your machine.
 ```
-ldmx pull dev latest
+just pull dev latest
 ```
-The `pull` command informs `ldmx` to download the latest image no matter what
+The `pull` command informs `just` to download the latest image no matter what
 (The more common `use` command will only spend time downloading if the image is
 not available.)
 
 The `latest` tag is one tag that evolves with the image as new versions are built.
 If you wish to avoid accidentally upgrading your environment, you are encouraged
-to use specific versions of the image (e.g. `ldmx use dev 4.2.0`).
+to use specific versions of the image (e.g. `just use dev 4.2.0`).
 
 ### Update Source Code
 Updating the source code of ldmx-sw mostly amounts to using various `git` comands
@@ -89,6 +89,7 @@ then the generated files that used to be written outside of the build directory
 are being written inside now. This means you can remove all generated files simply by
 ```
 rm -r build install
+# same as 'just clean' after v4.1.0
 ```
 and without any `git clean` commands.
 ~~~
@@ -96,7 +97,8 @@ and without any `git clean` commands.
 The final build and install steps are similar to the past ones. Just note
 that they will take longer since the build is starting from scratch.
 ```
-ldmx cmake -B build -S .
-ldmx cmake --build build --target install
+denv cmake -B build -S .
+denv cmake --build build --target install
+# same as 'just configure build' after v4.1.0
 ```
 
