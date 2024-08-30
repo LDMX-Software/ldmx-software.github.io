@@ -44,6 +44,7 @@
 - [Creating a new Event Bus Object](developing/Creating-a-new-Event-Bus-Object.md)
 - [Creating your own production image](developing/custom-production-image.md)
 - [What the F.A.Q.?](developing/faq.md)
+- [Why this workflow?](developing/whyyyy.md)
 
 # Reference
 - [C++ Doxygen Manual](cpp_refman.html)
