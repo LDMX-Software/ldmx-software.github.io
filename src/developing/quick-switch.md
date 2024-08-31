@@ -23,3 +23,23 @@ printf '\neval "$(just --completions bash)"\n' >> ~/.bashrc
 The `denv` install script attempts to help you update your `~/.bashrc`
 so that `~/.local/bin` is in your `PATH` and discoverable by `bash` as
 a program, but you may need to update your `PATH` manually.
+
+~~~admonish warning title="No justfile found"
+While the `justfile` defining our shared configuring, building,
+testing, etc recipes is on `trunk`, it may not be on the branch you
+are developing on.
+There are two solutions to this:
+1. Update your branch to be based off the new `trunk`.
+```
+git switch trunk
+git pull
+git switch -
+git rebase trunk
+```
+2. Just use `denv` directly in place of `ldmx`.
+```
+denv cmake -B build -S .
+denv cmake --build build --target install
+# and most of the others
+```
+~~~
