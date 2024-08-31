@@ -32,7 +32,8 @@ p.maxEvents = 10
 p.outputFiles = [ "mySimulatorOutput.root" ]
 ```
 
-Run: `ldmx fire myConfig.py`
+Run: `denv fire myConfig.py`
+(or some [other prefix](http://127.0.0.1:3000/users/config/intro.html#admonition-other-prefixes-besides-denv) running `fire` within the ldmx-sw environment)
 
 ### Other Available Templates
 There are a lot of commonly used aspects of the simulation, so we have incorporated these common "templates" into the python interface for the simulation. 

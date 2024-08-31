@@ -23,3 +23,21 @@ about how to get started using (and eventually developing) ldmx-sw.
   - [Advanced Session held in May 2021](https://indico.fnal.gov/event/49208/)
   - [Basic Session held in June 2021](https://indico.fnal.gov/event/49212/)
   - [Advanced Session held in June 2021](https://indico.fnal.gov/event/49213/)
+
+This manual is separated into two main sections based on how you are interacting
+with ldmx-sw.
+
+- **Using** is when you are running ldmx-sw with _fire_ and
+are _not_ actively changing code within ldmx-sw (i.e. you can fix the version of
+ldmx-sw you are using for your work).
+- **Developing** is when you are actively changing code
+within ldmx-sw and so need to compile ldmx-sw yourself.
+
+~~~admonish tip title="Using and Developing"
+Notice that this categorization only cares about the ldmx-sw source code.
+People **using** ldmx-sw very often are still developing code that may
+just not be within ldmx-sw.
+Additionally, whether or not you are **developing** ldmx-sw may change
+depending on the project you are working on. Perhaps you find a bug or
+think of a new feature -- contributions are encouraged and welcome!
+~~~

@@ -71,6 +71,14 @@ In order to prevent confusion, I've added some redirects to mdbook so that old p
 reference manuals are still usable. If any future pages are moved/renamed, one should consider
 doing the same so that the page is still accessible.
 
+A nice way to do this is to use `git`'s ability to detect renames and then dump the output
+into `book.toml` for redirects. I've written a short `awk` script to help with this
+reformatting.
+```
+git status --short --porcelain |\
+  awk -f rename-to-redirect.awk >> book.toml
+```
+
 ### LaTeX Support
 [mdbook supports LaTeX through Mathjax](https://rust-lang.github.io/mdBook/format/mathjax.html).
 We've enabled mathjax support for this book so the only thing documentation writers need to

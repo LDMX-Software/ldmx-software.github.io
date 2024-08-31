@@ -31,7 +31,7 @@ Method | Description
 These should be the minimum requirements that allow you to `add` and `get` your class to/from the event bus.
 
 ```admonish note title="Class Versions"
-ROOT has a weird way of keeping track of class "versions" so if you change your class, you may need to increment the number in the ClassDef command by one in order to force ROOT to recognize the newer "version" of your class. You can reset this incrementation by deleting the ldmx install and build and recompiling from scratch.
+ROOT has a weird way of keeping track of class "versions" so if you change your class, you may need to increment the number in the ClassDef command by one in order to force ROOT to recognize the newer "version" of your class. You can reset this incrementation by deleting the ldmx-sw install and build and recompiling from scratch.
 
 The versions are helpful for longer-term developments when we wish to change something about the class (e.g. add a new member variable)
 without breaking the ability of our software to read the old version of the class.
