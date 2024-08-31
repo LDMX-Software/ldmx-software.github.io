@@ -30,6 +30,7 @@
 
 # Developing
 - [Getting Started](developing/getting-started.md)
+  - [Quick Switch to denv and just](developing/quick-switch.md)
 - [Building and Installing ldmx-sw](developing/building/intro.md)
   - [Shared Computing Clusting](developing/building/clusters.md)
   - [Updating ldmx-sw](developing/building/updating.md)
