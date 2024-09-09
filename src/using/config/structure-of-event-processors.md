@@ -40,10 +40,10 @@ class MyProducer : public Producer {
 
   /**
    * Destructor
-   * Marked virtual so that it will be called when MyProducer
+   * Marked override so that it will be called when MyProducer
    * is destructed via a pointer of type Producer*
    */
-  virtual ~MyProducer() = default;
+  ~MyProducer() override = default;
 
   /**
    * Configure this instance of MyProducer

@@ -7,7 +7,7 @@ class MyAnalyzer : public framework::Analyzer {
  public:
   MyAnalyzer(const std::string& name, framework::Process& p)
     : framework::Analyzer(name, p) {}
-  virtual ~MyAnalyzer() = default;
+  ~MyAnalyzer() override = default;
   void onProcessStart() override;
   void analyze(const framework::Event& event) override;
 };
