@@ -39,18 +39,25 @@ class MyProducer : public Producer {
   MyProducer(const std::string& name, Process& p) : Producer(name, p) {}
 
   /**
+   * Destructor
+   * Marked virtual so that it will be called when MyProducer
+   * is destructed via a pointer of type Producer*
+   */
+  virtual ~MyProducer() = default;
+
+  /**
    * Configure this instance of MyProducer
    *
    * We get an object storing all of the parameters set in the python.
    */
-  void configure(Parameters& params) final override;
+  void configure(Parameters& params) override;
 
   /**
    * Produce for the input event
    *
    * Here is where you do all your work on an event-by-event basis.
    */
-  void produce(Event& event) final override;
+  void produce(Event& event) override;
 
  private:
   /// a parameter we will get from python

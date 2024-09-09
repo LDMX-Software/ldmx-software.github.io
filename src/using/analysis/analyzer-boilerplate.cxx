@@ -8,8 +8,8 @@ class MyAnalyzer : public framework::Analyzer {
   MyAnalyzer(const std::string& name, framework::Process& p)
     : framework::Analyzer(name, p) {}
   ~MyAnalyzer() = default;
-  void onProcessStart() final;
-  void analyze(const framework::Event& event) final;
+  void onProcessStart() override;
+  void analyze(const framework::Event& event) override;
 };
 
 void MyAnalyzer::onProcessStart() {
