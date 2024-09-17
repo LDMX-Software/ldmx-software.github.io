@@ -154,7 +154,7 @@ just configure -DENABLE_SANITIZER_ADDRESS=ON build
 ```
 Often you will want to recompile and run a config script.
 ```
-just build fire my-config.py [config args ...]
+just fire my-config.py [config args ...]
 ```
 Running the test suite is done with
 ```
