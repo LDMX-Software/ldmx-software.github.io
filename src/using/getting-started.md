@@ -133,6 +133,13 @@ denv init ldmx/pro:v4.0.1
 - The version of ldmx-sw listed here is just an example, changing the version later can be done with `denv config image ldmx/pro:<ldmx-sw-version>` if desired.
 ~~~
 
+~~~admonish warning
+The `denv init` command should not be run from within ldmx-sw.
+This could lead to a confusing state where the fire being run
+is not the one associated with the ldmx-sw that resides in that
+directory.
+~~~
+
 ~~~admonish success title="Test"
 We can make sure you have access to ldmx-sw by trying to have ldmx-sw's core program `fire`
 printout its help message.
