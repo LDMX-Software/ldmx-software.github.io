@@ -83,6 +83,6 @@ As mentioned earlier, there are [many programs satisfying the "task runner" desc
 and - while I am very committed to having _a_ task runner - I am not very committed to any
 particular task runner.
 I chose `just` because I liked how easy it was to install, how simple the syntax is for
-defining tasks (or what it calls "recipes"), and its [promise of stability](https://just.systems/man/en/chapter_9.html).
+defining tasks (or what it calls "recipes"), and its [promise of stability](https://just.systems/man/en/backwards-compatibility.html).
 Perhaps a different task runner more well-suited to our purposes will come along and
 we will transition from a `justfile` to some other storage of our shared tasks.
