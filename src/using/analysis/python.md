@@ -506,6 +506,9 @@ shape and a few example values.
 
 [awkward's website](https://awkward-array.org/doc/main/index.html) is growing with documentation and has a detailed reference of the available commands.
 Nevertheless, you can find more help on [numpy's website](https://numpy.org/doc/stable/) whose syntax and vocabulary is a main inspiration for `awkward`.
+Specifically, I would guide folks to [What is NumPy](https://numpy.org/doc/stable/user/whatisnumpy.html#whatisnumpy) and the
+[NumPy Beginners Guide](https://numpy.org/doc/stable/user/absolute_beginners.html) to be given helpful definitions of the relevant vocabulary
+("vectorization", "array", "axis", "attribute" to name a few).
 
 
 ```python
