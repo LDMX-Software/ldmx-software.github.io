@@ -7,6 +7,18 @@ transpired. Thanks to the excellent work by Einar Elén in
 to re-run the simulation using an input file and optionally specifying
 specific events to re-simulate.
 
+~~~admonish warning title='Requirements'
+In order to properly re-simulate an event, we need to have properly saved the
+state of the random number generator at the beginning of the event.
+This is only done for ldmx-sw versions _after_ v3.3.0 so this re-simulation
+will only function propertly on samples that were generated with a version
+of ldmx-sw v3.3.0 or newer.
+
+Additionally, the event will only be re-simulated if the same simulation
+configuration is used, meaning you should find the config script that was
+originally used to generate the sample before attempting to re-simulate.
+~~~
+
 ## Basics
 A key component of re-simulation is to keep the physics configuration of the
 simulation _identical_ to what it was originally. With this in mind, the
