@@ -69,7 +69,12 @@ Many `apptainer` installations also come with a wrapper program
 called `singularity` for backwards compatibility.
 
 ## Install `denv`
-Follow [these instructions](https://tomeichlersmith.github.io/denv/getting_started.html#installation) for installing `denv`.
+For most users the following command will install the latest version of `denv`
+```
+curl -s https://raw.githubusercontent.com/tomeichlersmith/denv/main/install | sh 
+```
+
+If it doesn't work follow [these instructions](https://tomeichlersmith.github.io/denv/getting_started.html#installation) for installing `denv`.
 They are short but require you to be in the terminal.
 
 ~~~admonish note title="Comments"
