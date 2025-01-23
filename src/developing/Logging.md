@@ -4,13 +4,43 @@ In ldmx-sw, we use the [logging library from boost](https://www.boost.org/doc/li
 The initialization (and de-initialization) procedures are housed in the `Logger` header and implementation files in the `Framework` module. The general idea is for each class to have its own logger which gives a message and some meta-data to the boost logging core which then filters it before dumping the message to sinks. In our case, we have two (optional) sinks: the terminal and a logging file. All of the logging configuration is done by the parameters passed to the Process in the python configuration file.
 
 ## Configuration
-The python class `Process` has three parameters that configure how the logging works.
+The python class `Process` has the `logger` member that configures how the logging works.
 
 Parameter | Description
 ---|---
-`logFileName` | Name of logging file. No logging to file is done if this is not set.
-`termLogLevel` | Logging level (and above) to print to terminal
-`fileLogLevel` | Logging level (and above) to print to file
+`filePath` | path to logging file. No logging to file is done if this is not set.
+`fileLevel` | Logging level (and above) to print to the file
+`termLevel` | Logging level (and above) to print to the terminal
+
+Besides these parameters you can set directly, the `logger` also has
+the ability to customize logging levels depending on the name of the logging
+channel (usually the processor's name).
+
+### Examples
+to lower the level for everyone
+```python
+p.logger.termLevel = 0
+```
+to debug a specific processor
+```python
+p.logger.debug(my_processor)
+# OR
+p.logger.debug("MyProcessorName")
+```
+to silence a specific processor
+```python
+p.logger.silence(my_processor)
+# OR
+p.logger.silence("MyProcessorName")
+```
+or something in between
+```python
+p.logger.custom(my_processor, level = 1)
+```
+It is usually better to provide the processor object
+instead of the string in order to avoid typos, but
+the string option is there in case you don't have easy
+access to the channel configuration object yourself.
 
 The logging levels are defined in the `Logger` header file, and a general description is given below.
 Right now, configuration uses the `int` equivalent while the C++ uses the enum `level`s.
@@ -26,14 +56,14 @@ ldmx_log(info) << My message goes here;
 Level | Int | Description | Example
 --- | --- | --- | ---
 `debug` | 0 | Extra-detailed information that you would want if you were suspicious that things were running correctly | Whether a sensitive detector is skipping a hit or not
-`info` | 1 | Helpful comments for checking operations | What processes are enabled in Geant4
+`info` | 1 | Helpful comments for checking operations, average one message per event per channel | What processes are enabled in Geant4, event-level information like the number of hits
 `warn` | 2 | Something wrong happened but its not too bad | REGEX mismatch in GDML parsing
 `error`| 3 | Something _really_ wrong happened and the user needs to know that something needs to change | Extra information before an `EXCEPTION_RAISE` calls
 `fatal`| 4 | Reserved for run-ending exceptions | Message from catches of `Exception`.
 
 This is really all you need for an `EventProcessor`. Notice that the logger _does not_ need a new line character at the end of the line. The logger automatically makes a new line after each message.
 
-There is an additional logging level below "debug". A lot of times during development, a developer puts messages inside of the code to make sure it is working properly. A lot of these extra messages are not very helpful for the end user, so they should go into the log at all. Feel free to leave these messages in, but comment them out so that they don't clog up the log. A good rule of thumb is that the debug channel should have at most one message per event, info - one message every few events, warn - a few messages total per run, and error only one message per run.
+There is an additional logging level below "debug". A lot of times during development, a developer puts messages inside of the code to make sure it is working properly. A lot of these extra messages are not very helpful for the end user, so they should not go into the log at all. Feel free to leave these messages in, but comment them out so that they don't clog up the log. A good rule of thumb is that the debug channel can have a few messages per event, info - at most one message every event, warn - a few messages total per run, and error only one message per run.
 
 ## More Detail: Logging Outside Processors
 
