@@ -19,7 +19,7 @@ We prefer that any code contributions are submitted via [pull requests](https://
 Before you start, an [issue should be added to the ldmx-sw issue tracker](https://github.com/LDMXAnalysis/ldmx-sw/issues/new).
 
 ### Branch Name Convention
-Then you should make a local branch from `trunk` using a command like `git checkout -b 1234-short-desc` where _1234_ is the issue number from the issue tracker and `short-desc` is a short description (using `-` as spaces) of what the branch is working one.
+Then you should make a local branch from `trunk` using a command like `git checkout -b iss1234-short-desc` where _1234_ is the issue number from the issue tracker and `short-desc` is a short description (using `-` as spaces) of what the branch is working one.
 
 Once you have committed your local changes to this branch using the `git add` and `git commit` commands, then push your branch to github using a command like `git push -u origin 1234-short-desc`.
 
