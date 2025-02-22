@@ -17,6 +17,7 @@ When developing code in ldmx-sw please follow the following best practises and s
 2. Put the c++ file with the extension of `.cxx` into `Package/src/Package/MyFile.cxx`
 3. The `test` directory is for unit tests
 4. Example configs should be put under `exampleConfigs`
+5. All producers should have a configurable pass names, input collection names, and output collection names
     
 
 ## III. Code quality
