@@ -39,6 +39,7 @@
 - [Container-Software Compatibility](developing/compatibility.md)
 - [Contributing](developing/Contributing-to-ldmx-sw.md)
   - [PRs in ldmx-sw](developing/prs.md)
+  - [Coding rules](developing/coding-rules.md)
   - [Unit Testing](developing/Unit-Testing-in-ldmx-sw.md)
 - [Logging](developing/Logging.md)
 - [Container-less Building (not recommended)](developing/building/containerless.md)
