@@ -8,9 +8,10 @@ When developing code in ldmx-sw please follow the following best practises and s
 3. Use `snake_case_` for class member variables
 4. Use `UpperCase()` for classes
 5. Use `camalCase()` for functions
-6. Run `just format-cpp` so the automated formatting is applied
-7. For setters, include the word `set` in the beginning of the function, e.g. `setHitValsX()`
-8. Do not use `__` in any c++ variable name
+6. Use `lowercase` for namespaces
+7. Run `just format-cpp` so the automated formatting is applied
+8. For setters, include the word `set` in the beginning of the function, e.g. `setHitValsX()`
+9. Do not use `__` in any c++ variable name
 
 ## II. Packaging Rules
 1. Put the header files with the extension of `.h` into `Package/include/Package/MyFile.h`
