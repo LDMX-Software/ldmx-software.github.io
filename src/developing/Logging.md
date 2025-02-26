@@ -53,17 +53,16 @@ ldmx_log(info) << My message goes here;
 ```
 `info` is the severity level of this message. A severity level can be any of the following:
 
-Level | Int | Description | Example
---- | --- | --- | ---
-`debug` | 0 | Extra-detailed information that you would want if you were suspicious that things were running correctly | Whether a sensitive detector is skipping a hit or not
-`info` | 1 | Helpful comments for checking operations, average one message per event per channel | What processes are enabled in Geant4, event-level information like the number of hits
-`warn` | 2 | Something wrong happened but its not too bad | REGEX mismatch in GDML parsing
-`error`| 3 | Something _really_ wrong happened and the user needs to know that something needs to change | Extra information before an `EXCEPTION_RAISE` calls
-`fatal`| 4 | Reserved for run-ending exceptions | Message from catches of `Exception`.
+Level | Int | Description | Example | Printout frequency
+--- | --- | --- | --- | ---
+`trace` | -1 | Printouts for cases that are more verbose than what you would put for `debug | SimHit level information, or processes that are skipped in the end, or printouts that only help to see that the code got to line xyz, but  are not very helpful for the end user | Several dozens
+`debug` | 0 | Extra-detailed information that you would want if you were suspicious that things were running correctly | Whether a sensitive detector is skipping a hit or not | Few O(10) / event
+`info` | 1 | Helpful comments for checking operations, average one message per event per channel | What processes are enabled in Geant4, event-level information like the number of hits | O(1) / event
+`warn` | 2 | Something wrong happened but its not too bad | REGEX mismatch in GDML parsing | O(10) / run
+`error`| 3 | Something _really_ wrong happened and the user needs to know that something needs to change | Extra information before an `EXCEPTION_RAISE` calls  | O(1) / run
+`fatal`| 4 | Reserved for run-ending exceptions | Message from catches of `Exception` | 1 / run
 
 This is really all you need for an `EventProcessor`. Notice that the logger _does not_ need a new line character at the end of the line. The logger automatically makes a new line after each message.
-
-There is an additional logging level below "debug". A lot of times during development, a developer puts messages inside of the code to make sure it is working properly. A lot of these extra messages are not very helpful for the end user, so they should not go into the log at all. Feel free to leave these messages in, but comment them out so that they don't clog up the log. A good rule of thumb is that the debug channel can have a few messages per event, info - at most one message every event, warn - a few messages total per run, and error only one message per run.
 
 ## More Detail: Logging Outside Processors
 
