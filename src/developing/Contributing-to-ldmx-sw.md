@@ -21,7 +21,7 @@ Before you start, an [issue should be added to the ldmx-sw issue tracker](https:
 ### Branch Name Convention
 Then you should make a local branch from `trunk` using a command like `git checkout -b iss1234-short-desc` where _1234_ is the issue number from the issue tracker and `short-desc` is a short description (using `-` as spaces) of what the branch is working one.
 
-Once you have committed your local changes to this branch using the `git add` and `git commit` commands, then push your branch to github using a command like `git push -u origin 1234-short-desc`.
+Once you have committed your local changes to this branch using the `git add` and `git commit` commands, then push your branch to github using a command like `git push -u origin iss1234-short-desc`.
 
 Finally, [submit a pull request](https://github.com/LDMX-Software/ldmx-sw/compare) to integrate your changes by selecting your branch in the _compare_ dropdown box and clicking the green buttons to make the PR.  This should be reviewed and merged or changes may be requested before the code can be integrated into the master.
 
