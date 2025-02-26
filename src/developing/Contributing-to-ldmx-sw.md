@@ -27,6 +27,10 @@ Finally, [submit a pull request](https://github.com/LDMX-Software/ldmx-sw/compar
 
 If you plan on starting a major (sub)project within the repository like adding a new code module, you should give advance notice and explain your plains beforehand. :) A good way to do this is to create a new issue. This allows the rest of the code development team to see what your plan is and offer comments/questions.
 
+### Coding rules and conventions
+
+Please read the [Coding rules]((developing/coding-rules.md)
+
 ### After Opening a PR
 After opening a PR, several different tests are run using [our GitHub Actions](https://github.com/LDMX-Software/ldmx-sw/actions). One of these tests, the "Recon Validation" takes about three hours to run, so it shouldn't be run on every commit pushed to a pull request. Instead, it is run when the PR is created or when marked "Ready for Review". This enables the following workflow for validating PRs.
 
