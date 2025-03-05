@@ -89,6 +89,6 @@ A lot of different submission scripts have been written in `bash` and `python`, 
    - Post-Run Actions: copying output files to output directory cleaning up scractch directory
 3. Submit the job script using the submission program (e.g. `bsub` or `condor`) however many times
 
-Some examples of submission scripts:
-- [ldmx-workflow/batch](https://github.com/LDMX-Software/ldmx-workflow)
-- [ldmx-sw-scripts/batch](https://github.com/LDMX-Software/ldmx-sw-scripts)
+The `batch` directory in the [LDMX-Software/ldmx-sw-scripts](https://github.com/LDMX-Software/ldmx-sw-scripts)
+repository offers some examples of these submission scripts, although they tend to be a little old
+and will need to be updated.

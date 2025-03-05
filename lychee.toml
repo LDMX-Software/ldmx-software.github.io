@@ -7,7 +7,9 @@ cache = true
 # skip over URLs matching these regex
 exclude = [
   # skip DocDB, we want to link to internal documents
-  '^https://projects-docdb\.fnal\.gov'
+  '^https://projects-docdb\.fnal\.gov',
+  # this is a private repository
+  '^https://github\.com/LDMX-Software/(ldmx-sw-scripts|ldmx-analysis)'
 ]
 
 # don't check these files
