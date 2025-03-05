@@ -1,0 +1,12 @@
+# configuration of lychee link checker
+#  https://lychee.cli.rs/usage/config/
+
+# enable link checking to avoid rate limiting when doing many runs locally in sequence
+cache = true
+
+# skip over URLs matching these regex
+exclude = [
+  # skip DocDB, we want to link to internal documents
+  '^https://projects-docdb\.fnal\.gov'
+]
+
