@@ -39,6 +39,12 @@ step and go straight to serving the local build via `nix-shell`.
 nix-shell -p mdbook mdbook-admonish --command 'mdbook serve'
 ```
 
+We also use [lychee](https://lychee.cli.rs/) to check that the links we put into the book actually go somewhere.
+This is another tool that you can install with cargo.
+```
+cargo install --locaked lychee
+```
+
 # Notes
 Some notes on how this site is structured and built.
 
