@@ -25,7 +25,7 @@ This included the ability for users of ldmx-sw to manually launch the workflow t
 #### Steps
 2. Add `omarmoreno` as a [collaborator](https://docs.docker.com/docker-hub/repos/#collaborators-and-their-role) on the new repository you created 
    (This is the username that will be pushing any generated production images to DockerHub).
-3. Go to the [Build Production Image]([200~https://github.com/LDMX-Software/ldmx-sw/actions/workflows/build_production_image.yml) workflow on the "Actions" page.
+3. Go to the [Build Production Image](https://github.com/LDMX-Software/ldmx-sw/actions/workflows/build_production_image.yml) workflow on the "Actions" page.
 4. Select "Run Workflow" and input your values for the three parameters. Leave the drop down menu to the value `trunk` - that is the branch on which the workflow is run.
    - `repo`: **required** DockerHub repository that you want the image to be pushed to (same as repo you created earlier - e.g. `tomeichlersmith/eat`)
    - `branch`: (optional) name of branch you want to be compiled into the production image (e.g. `iss420-my-cool-devs`, default is `trunk`)
@@ -90,5 +90,5 @@ A lot of different submission scripts have been written in `bash` and `python`, 
 3. Submit the job script using the submission program (e.g. `bsub` or `condor`) however many times
 
 Some examples of submission scripts:
-- [ldmx-workflow/batch](https://github.com/LDMX-Software/ldmx-workflow/tree/master/batch)
-- [ldmx-sw-scripts/batch](https://github.com/LDMX-Software/ldmx-sw-scripts/tree/master/batch)
+- [ldmx-workflow/batch](https://github.com/LDMX-Software/ldmx-workflow)
+- [ldmx-sw-scripts/batch](https://github.com/LDMX-Software/ldmx-sw-scripts)

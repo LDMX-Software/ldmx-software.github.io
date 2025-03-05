@@ -43,7 +43,7 @@ as it interacts with the material. Most of these particles created during
 a shower are not "interesting" for our purposes, so it is helpful to just
 skip saving them. We do have the ability to store all of the particles in
 an event if you desire, you can follow 
-[the same instructions](simulation/resim.md#storing-all-simulated-particles)
+[the same instructions](resim.md#storing-all-simulated-particles)
 provided for storing all simulated particles during re-simulation.
 
 ## Implementation

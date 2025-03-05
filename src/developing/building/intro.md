@@ -4,7 +4,7 @@ There are many intricasies that come with building such a large software project
 This chapter is focused on providing guides on how to accomplish this build
 and more detailes related to it.
 
-This chapter assumes you already finished with everything under "[Getting started](../developing/getting-started.md)"
+This chapter assumes you already finished with everything under "[Getting started](../getting-started.md)"
 
 ## Clone the Software Repository
 In a terminal, go to the directory where you will keep all of your LDMX software and run the following command.
