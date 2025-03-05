@@ -79,9 +79,9 @@ and towards `denv`.
 - Write our own custom solution sharing common tasks (I don't like this because it puts more developing load on us.)
 - Don't attempt to share tasks and rely on documentation (I don't like this because it puts more documentation load on us.)
 
-As mentioned earlier, there are [many programs satisfying the "task runner" description](https://github.com/search?q=task%20runner&type=repositories)
-and - while I am very committed to having _a_ task runner - I am not very committed to any
-particular task runner.
+As mentioned earlier, there are many programs satisfying the "task runner" description
+(just search "task runner" on GitHub) and - while I am very committed to having _a_ task runner -
+I am not very committed to any particular task runner.
 I chose `just` because I liked how easy it was to install, how simple the syntax is for
 defining tasks (or what it calls "recipes"), and its [promise of stability](https://just.systems/man/en/backwards-compatibility.html).
 Perhaps a different task runner more well-suited to our purposes will come along and
