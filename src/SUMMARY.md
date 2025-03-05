@@ -34,6 +34,7 @@
 - [Building and Installing ldmx-sw](developing/building/intro.md)
   - [Shared Computing Clusting](developing/building/clusters.md)
   - [Updating ldmx-sw](developing/building/updating.md)
+- [Framework Structure](developing/framework.md)
 - [Transition to ldmx-sw v4](developing/transition-to-ldmx-sw-v4.md)
 - [Tracking Performance of ldmx-sw](developing/performance.md)
 - [Container-Software Compatibility](developing/compatibility.md)
