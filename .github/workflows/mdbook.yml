@@ -41,6 +41,12 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with mdBook
         run: mdbook build
+      - name: Check Links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          args: ./book
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
