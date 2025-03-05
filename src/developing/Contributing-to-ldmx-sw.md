@@ -16,7 +16,7 @@ If you don't already have SSH keys configured, look at the [GitHub directions](h
 
 We prefer that any code contributions are submitted via [pull requests](https://help.github.com/articles/creating-a-pull-request/) so that they can be reviewed before changes are merged into the master.
 
-Before you start, an [issue should be added to the ldmx-sw issue tracker](https://github.com/LDMXAnalysis/ldmx-sw/issues/new).
+Before you start, an [issue should be added to the ldmx-sw issue tracker](https://github.com/LDMX-Software/ldmx-sw/issues/new).
 
 ### Branch Name Convention
 Then you should make a local branch from `trunk` using a command like `git checkout -b iss1234-short-desc` where _1234_ is the issue number from the issue tracker and `short-desc` is a short description (using `-` as spaces) of what the branch is working one.
@@ -29,7 +29,7 @@ If you plan on starting a major (sub)project within the repository like adding a
 
 ### Coding rules and conventions
 
-Please read the [Coding rules](developing/coding-rules.md)
+Please read the [Coding rules](coding-rules.md)
 
 ### After Opening a PR
 After opening a PR, several different tests are run using [our GitHub Actions](https://github.com/LDMX-Software/ldmx-sw/actions). One of these tests, the "Recon Validation" takes about three hours to run, so it shouldn't be run on every commit pushed to a pull request. Instead, it is run when the PR is created or when marked "Ready for Review". This enables the following workflow for validating PRs.

@@ -1,6 +1,6 @@
 # Generating Simulation Samples
 
-The generation of simulation samples is done mainly by the Geant4 package with several additions stored in the `SimCore` module of ldmx-sw. However, you do not need to know the simulation to this level of depth. The `Simulator` producer in the `SimCore` module is your messenger to run the simulation. Here, I will go through its basic usage. For more information about _all_ of the available parameters, please see the documentation on [Configuring the Simulation](Configuring-the-Simulation.md).
+The generation of simulation samples is done mainly by the Geant4 package with several additions stored in the `SimCore` module of ldmx-sw. However, you do not need to know the simulation to this level of depth. The `Simulator` producer in the `SimCore` module is your messenger to run the simulation. Here, I will go through its basic usage. For more information about _all_ of the available parameters, please see the documentation on [Configuring the Simulation](configuring.md).
 
 ### Basic Usage
 Running the simulation is just like any other producer in ldmx-sw. In your python configuration script, it is _required_ that you have the following lines (or equivalent):
@@ -13,7 +13,7 @@ You can write your own detector description in the gdml format (if you want), bu
 mySimulator.setDetector( 'ldmx-det-v12' )
 ```
 Okay, `mySimulator` now is created and has been given a path to an LDMX detector description.
-What else is needed? Well, we need _at least_ one more thing. We need to tell the simulation _how_ to start the simulation. In Geant4 speak, this is called a "Primary Generator". In ldmx-sw, we already have several generators defined (more details on [Configuring the Simulation](Configuring-the-Simulation.md)), but for this simple example, we will just import a standard generator.
+What else is needed? Well, we need _at least_ one more thing. We need to tell the simulation _how_ to start the simulation. In Geant4 speak, this is called a "Primary Generator". In ldmx-sw, we already have several generators defined (more details on [Configuring the Simulation](configuring.md)), but for this simple example, we will just import a standard generator.
 ```python
 from LDMX.SimCore import generators
 mySimulator.generators = [ generators.single_4gev_e_upstream_tagger() ]
@@ -33,7 +33,7 @@ p.outputFiles = [ "mySimulatorOutput.root" ]
 ```
 
 Run: `denv fire myConfig.py`
-(or some [other prefix](http://127.0.0.1:3000/users/config/intro.html#admonition-other-prefixes-besides-denv) running `fire` within the ldmx-sw environment)
+(or some [other prefix](../config/intro.html#admonition-other-prefixes-besides-denv) running `fire` within the ldmx-sw environment)
 
 ### Other Available Templates
 There are a lot of commonly used aspects of the simulation, so we have incorporated these common "templates" into the python interface for the simulation. 
@@ -42,7 +42,7 @@ This section is focused on listing these available templates and how to access t
 #### Generators
 Access with: `from LDMX.SimCore import generators`.
 
-This module contains functions that produce each of the generators. You should _always_ use these helper functions because sometimes the underlying naming conventions may change in future developments. More detail about the generators is in the Generators section of [Configuring the Simulation](Configuring-the-Simulation.md).
+This module contains functions that produce each of the generators. You should _always_ use these helper functions because sometimes the underlying naming conventions may change in future developments. More detail about the generators is in the Generators section of [Configuring the Simulation](configuring.md).
 
 #### Biased Simulations
 Several simulations with biased processes have been used frequently in the past, so we have written templates for using simulations with reasonably-defined defaults.
@@ -59,7 +59,7 @@ Function | Description
 ---|---
 `photo_nuclear(detector,generator)` | PN process biased up and filtered for in (ecal or target)
 `electro_nuclear(detector,generator)` | EN process biased up and filtered for in target
-`dark_brem(massAPrime,lheFile,detector)` | Sets A' mass to massAPrime (in MeV) and uses the input LHE file as vertices for the dark brem simulation [more detail here](Dark-Brem-Signal-Process.md)
+`dark_brem(massAPrime,lheFile,detector)` | Sets A' mass to massAPrime (in MeV) and uses the input LHE file as vertices for the dark brem simulation [more detail here](../dark-brem/intro.md)
 
 ### More Advanced Details
 As I said earlier, you can definitely see all of the capabilities of `Simulator` by looking at the parameters that are available in the documentation (linked above). Two parameters that I would like to point out is `preInitCommands` and `postInitCommands`. These parameters are given directly to the Geant4 UI as a string, so you can still access Geant4 directly using these commands.

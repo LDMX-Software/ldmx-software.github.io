@@ -30,7 +30,7 @@ When developing code in ldmx-sw please follow the following best practises and s
 5. Do not inline virtual functions
 6. Do not let const member functions change the state of the object
 7. Keep the ordering of methods in the header ﬁle and in the source ﬁle identical.
-8. Move `cout`-s to the ldmx logging system, see [Logging](developing/Logging.md)
+8. Move `cout`-s to the ldmx logging system, see [Logging](Logging.md)
 9. Delete commented out code, or move them to `ldmx_log(trace)` if you think it's helpful for a future developer
 10. When updating code, be sure to update and revise comments too
 11. Set all parameters to be `const` that do not need to be non-const.

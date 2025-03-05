@@ -1,7 +1,7 @@
 # Getting Started Developing ldmx-sw
 
 ~~~admonish warning title="Warning"
-This guide assumes familiarity with the [first-time using guide](using/getting-started.md)
+This guide assumes familiarity with the [first-time using guide](../using/getting-started.md)
 and with the terminal.
 ~~~
 
@@ -59,7 +59,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh |\
   bash -s -- --to ~/.local/bin
 ```
 
-If the above does not work on your operating system, you can see system specific instructions [on the just website]( https://just.systems/man/en/packages.htm)
+If the above does not work on your operating system, you can see system specific instructions [on the just website]( https://just.systems/man/en/packages.html)
 
 You probably want to enable [shell tab-completion](https://just.systems/man/en/shell-completion-scripts.html) with `just`
   which only needs to be done once per installation but will help save typing.
