@@ -101,7 +101,7 @@ default | >= v4.0.0
 no det id bindings | >= v3.2, < v5.0.0
 no det id bindings and no sanitizers | >= v3.0, < v5.0.0
 
-### >= v3.3.5, < v3.2.15
+### >= v3.3.5, < v4.2.15
 Updates to the ROOT dictionary generation procedure inadvertently
 broke compatibility with older container images.
 Users of older container images will see issues during dictionary building
@@ -117,7 +117,7 @@ build config | image version
 default | >= v4.0.0, < v5.0.0
 header patch | >= v5.0.0
 
-### >= v3.2.15
+### >= v4.2.15
 Patches for the newer compiler have been included and so the default build
 configuration can be handled by the new image version.
 
