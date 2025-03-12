@@ -7,10 +7,10 @@ reasons cause some compatibility issues where all versions of ldmx-sw
 are not necessarily buildable by all versions of the container.
 
 The "container image" is version controlled in its repository 
-[LDMX-Software/docker](https://github.com/LDMX-Software/docker).
+[LDMX-Software/dev-build-context](https://github.com/LDMX-Software/dev-build-context).
 If you are interested in looking for which minimum version of the container 
 has your desired dependency, you should look through the 
-[releases](https://github.com/LDMX-Software/docker/releases) of the container.
+[releases](https://github.com/LDMX-Software/dev-build-context/releases) of the container.
 
 The ldmx-sw versions are documented in the "releases" of the LDMX-Software/ldmx-sw repository,
 but you should also read these versions as inclusive of branches that are based off of them.
@@ -41,6 +41,7 @@ force legacy onnx | ldmx-sw's CMake code for finding ONNX didn't work well and s
 sanitizers | enable one or more of the sanitizers, cmake: `-DENABLE_SANITIZER_*=ON`
 detector id bindings | enable detector ID python bindings, cmake: `-DBUILD_DETECTORID_BINDINGS=ON`
 patch cmake | need to do both `no testing` and `force legacy onnx`
+header patch | transitioning to a newer compiler then required a few more headers to be included[^3]
 
 [^1]: Currently in ldmx-sw, there isn't a command-line option to disable the
       testing so one must comment out the `build_test()` line in `ldmx-sw/CMakeLists.txt`.
@@ -53,35 +54,39 @@ patch cmake | need to do both `no testing` and `force legacy onnx`
       `find_path` call within the `ldmx-sw/cmake/FindONNXRuntime.cmake` file. This
       prevents CMake from finding the system install in newer containers.
 
+[^3]: The specific headers needed vary depending on the version you are attempting to build.
+      You can either look at [the patch files for different versions](https://github.com/LDMX-Software/dev-build-context/tree/main/ci/interop)
+      or simply follow the compiler's instructions for including the appropriate headers.
+
 ### Pre-v3.0.0
 No containers have been studied for older versions of ldmx-sw.
 Although, there was 
 [a patch-release of v1.7.0](https://github.com/LDMX-Software/ldmx-sw/releases/tag/v1.7.1) 
-so that it could run in a container image.
+so that it could run in an image.
 
 ### >=v3.0.0 and < v3.1.1
 
-build config | container version
+build config | image version
 ---|---
 default | < v4.0.0
-patch cmake | >= v4.0.0
+patch cmake | >= v4.0.0, < v5.0.0
 
 ### >=v3.1.1 and < v3.1.12
 
-build config | container version
+build config | image version
 ---|---
 default | < v4.0.0
-patch cmake | >= v4.0.0
-with sanitizers | > v3.2
+patch cmake | >= v4.0.0, < v5.0.0
+with sanitizers | > v3.2, < v5.0.0
 
 ### >= v3.1.12 and < v3.2.4
 
-build config | container version
+build config | image version
 ---|---
 default | < v4.0.0
-patch cmake | >= v4.0.0
-with sanitizers | > v3.2
-with detector id bindings | > v3.3
+patch cmake | >= v4.0.0, < v5.0.0
+with sanitizers | > v3.2, < v5.0.0
+with detector id bindings | > v3.3, < v5.0.0
 
 ### >= v3.2.5 and < v3.3.4
 Since we are requiring an upgrade of the container
@@ -90,13 +95,14 @@ detector ID bindings to be included in the default
 build configuration which simply bumps the minimum
 no-testing release by three.
 
-build config | container version
+build config | image version
 ---|---
-default | >= v4.0.0
-no det id bindings | >= v3.2
-no det id bindings and no sanitizers | >= v3.0
+default | >= v4.0.0, < v5.0.0
+no det id bindings | >= v3.2, < v5.0.0
+no det id bindings and no sanitizers | >= v3.0, < v5.0.0
+header patch | >= v5.0.0
 
-### >= v3.3.5
+### >= v3.3.5, < v4.2.15
 Updates to the ROOT dictionary generation procedure inadvertently
 broke compatibility with older container images.
 Users of older container images will see issues during dictionary building
@@ -107,7 +113,18 @@ undo the ROOT dictionary generation changes that were done in
 [Framework PR #73](https://github.com/LDMX-Software/Framework/pull/73).
 This is highly technical and I would recommend avoiding it at all costs.
 
-build config | container version
+build config | image version
+---|---
+default | >= v4.0.0, < v5.0.0
+header patch | >= v5.0.0
+
+### >= v4.2.15
+Patches for the newer compiler have been included and so the default build
+configuration can be handled by the new image version.
+Not all of the _warnings_ from the newer compiler have been patched,
+but a regular build that doesn't force the warnings to be errors completes
+and runs as expected.
+
+build config | image version
 ---|---
 default | >= v4.0.0
-
