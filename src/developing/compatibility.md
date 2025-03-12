@@ -97,9 +97,10 @@ no-testing release by three.
 
 build config | image version
 ---|---
-default | >= v4.0.0
+default | >= v4.0.0, < v5.0.0
 no det id bindings | >= v3.2, < v5.0.0
 no det id bindings and no sanitizers | >= v3.0, < v5.0.0
+header patch | >= v5.0.0
 
 ### >= v3.3.5, < v4.2.15
 Updates to the ROOT dictionary generation procedure inadvertently
@@ -120,6 +121,9 @@ header patch | >= v5.0.0
 ### >= v4.2.15
 Patches for the newer compiler have been included and so the default build
 configuration can be handled by the new image version.
+Not all of the _warnings_ from the newer compiler have been patched,
+but a regular build that doesn't force the warnings to be errors completes
+and runs as expected.
 
 build config | image version
 ---|---
