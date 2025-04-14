@@ -44,7 +44,6 @@
   - [Coding rules](developing/coding-rules.md)
   - [Unit Testing](developing/Unit-Testing-in-ldmx-sw.md)
 - [Logging](developing/Logging.md)
-- [Container-less Building (not recommended)](developing/building/containerless.md)
 - [Creating a new Event Bus Object](developing/Creating-a-new-Event-Bus-Object.md)
 - [Creating your own production image](developing/custom-production-image.md)
 - [What the F.A.Q.?](developing/faq.md)
