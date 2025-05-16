@@ -42,7 +42,7 @@ nix-shell -p mdbook mdbook-admonish --command 'mdbook serve'
 We also use [lychee](https://lychee.cli.rs/) to check that the links we put into the book actually go somewhere.
 This is another tool that you can install with cargo.
 ```
-cargo install --locaked lychee
+cargo install --locked lychee
 ```
 
 # Notes
