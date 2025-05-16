@@ -46,7 +46,7 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           fail: true
-          args: ./book
+          args: --root-dir ${{ github.workspace }}/book ./book
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
