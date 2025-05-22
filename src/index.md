@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="img/ldmx_logo_dark.png" width="500">
+    <img src="https://github.com/LDMX-Software/logo/releases/download/2025.05.22/ldmx-sw.png" width="500">
 </p>
 
 Welcome to the **L**ight **D**ark **M**atter e**X**periment!
