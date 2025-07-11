@@ -71,7 +71,7 @@ There are some other inheritance trees inside of ldmx-sw that have `theLog_` as 
 There is _a lot_ going on under the hood for this logging library, but I can give slightly more detail to help you if you want to have logging inside of a class that does not inherit from a class that already has the log defined. Basically, each class has a member variable called `theLog_` that is constructed by `makeLogger`. The logger has an associated attribute that boost calls a "channel": a short name for the source of the message. For example, inside of a processor, the channel is the name of the processor. There is another convenience wrapper around the necessary code to "enable logging" inside of your class. Again, this is best illustrated by an example:
 ```c++
 //myClass.h
-#include "Exception/Logger.h" //<-- defines the macros you need
+#include "Framework/Logger.h" //<-- defines the macros you need
 class myClass {
  public:
   void someFunctionThatLogs() {
