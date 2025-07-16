@@ -20,6 +20,7 @@ When developing code in ldmx-sw please follow the following best practises and s
 3. The `test` directory is for unit tests
 4. Example configs should be put under `exampleConfigs`
 5. All producers should have a configurable pass names, input collection names, and output collection names
+6. Put the `#include` lines into the `.h` header file, instead of the `.cxx` files
     
 
 ## III. Code quality
