@@ -197,7 +197,7 @@ export LDMX_SW_INSTALL=${HOME}/ldmx-sw/install
 or you can set it to some other path that you are installing ldmx-sw to.
 ~~~
 
-~~~admonish note title="fire: command note found" collapsible=true
+~~~admonish note title="fire: command not found" collapsible=true
 This arises from a lot of different combinations of `.profile` files and image versions,
 but it simplifies once you know a little of the background.
 Most of the time it comes up because you have an old (<= v5.1.0) `.profile` being used
