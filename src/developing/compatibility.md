@@ -136,7 +136,7 @@ build config | image version
 ---|---
 default | >= v4.0.0
 
-### >= 4.3.1
+### >= 4.3.1, < v4.4.13
 One release after getting development to function with ldmx/dev:v5,
 I (Tom) accidentally introduced a change that breaks compatibility with ldmx/dev:4.2.2
 which uses an older version of ROOT.
@@ -158,3 +158,90 @@ build config | image version
 ---|---
 default | >= v5.0.0
 include lorentz vector | >= v4.0.0
+
+### >= v4.4.13
+Some changes were made to how the environment in the development container is configured so
+that the denv workspace can be moved into ldmx-sw [ldmx-sw #1472](https://github.com/LDMX-Software/ldmx-sw/issues/1472).
+This leads to a set of confusing warnings and errors that are difficult for a non-expert to understand.
+
+The main source of this is that `denv` relies on copying a shell configuration file called `.profile` into your workspace and then reading that configuration file when launching the container.
+This `.profile` allows you to [customize your container environment](https://tomeichlersmith.github.io/denv/tune.html#rc-files), but it also is _never_ overwritten by `denv` in order to avoid undoing any changes you want to make.
+
+If you don't care about customizing your local container environment (e.g. you've never looked at the `.profile` before), then you can just remove it and have `denv` make a new copy whenever you switch images.
+```
+rm .denv/skel-init .bashrc .bash_logout .profile
+denv config image <pull-or-different-tag>
+```
+
+If you do care about keeping your local customizations,
+I've written some notes on changes that I suspect you need to make to `.profile` depending on
+the error message you are seeing.
+
+You can find the `.profile` that `denv` is using within your denv workspace by running `denv printenv HOME`
+which will print the directory in which the `.profile` will be.
+
+~~~admonish note title="Neither `LDMX_BASE` nor `LDMX_SW_INSTALL` is defined." collapsible=true
+This comes from having a `.profile` file from an image >= v5.1.1 being used with an older image <= v5.1.0
+that expects a different `.profile`.
+
+Inside the `.profile`, make sure to define `LDMX_SW_INSTALL` _before_ the `. /etc/ldmx-env-init.sh` line.
+
+If ldmx-sw is the denv workspace, then you should define
+```
+export LDMX_SW_INSTALL=${HOME}/install
+```
+or if the parent directory of ldmx-sw is the denv workspace, then
+```
+export LDMX_SW_INSTALL=${HOME}/ldmx-sw/install
+```
+or you can set it to some other path that you are installing ldmx-sw to.
+~~~
+
+~~~admonish note title="fire: command note found" collapsible=true
+This arises from a lot of different combinations of `.profile` files and image versions,
+but it simplifies once you know a little of the background.
+Most of the time it comes up because you have an old (<= v5.1.0) `.profile` being used
+with a new (>= v5.1.1) image.
+
+The shell within the container looks through the directories in a `:`-separated list
+stored in the `PATH` environment variable, so this error crops up if the `PATH` variable
+is not configured properly.
+
+You can use `denv printenv PATH` to see where the shell is looking for executables.
+You want to leave the `/usr/...` ones as written (those are the ones for stuff in the image),
+but the other one refers to a directory that is supposed to be on your system and point to
+where ldmx-sw is installed.
+
+For example, you may need to remove the `LDMX_BASE` lines from within the `.profile` file in your denv
+workspace. Notice that before I edited `.profile` with `vim`, there is an extra "ldmx-sw" in the path to its
+install.
+```
+tom@appa:~/code/ldmx/ldmx-sw$ denv printenv PATH
+/home/tom/code/ldmx/ldmx-sw/ldmx-sw/install/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/src/GENIE/Generator/bin:/usr/local/src/GENIE/Reweight/bin
+tom@appa:~/code/ldmx/ldmx-sw$ tail .profile 
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+# make sure LDMX_BASE is defined for ldmx-env-init.sh
+if [ -z "${LDMX_BASE+x}" ]; then
+  export LDMX_BASE="${HOME}"
+fi
+. /etc/ldmx-env-init.sh
+tom@appa:~/code/ldmx/ldmx-sw$ vim .profile 
+tom@appa:~/code/ldmx/ldmx-sw$ tail .profile 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+. /etc/ldmx-env-init.sh
+tom@appa:~/code/ldmx/ldmx-sw$ denv printenv PATH
+/home/tom/code/ldmx/ldmx-sw/install/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/src/GENIE/Generator/bin:/usr/local/src/GENIE/Reweight/bin
+```
+~~~
