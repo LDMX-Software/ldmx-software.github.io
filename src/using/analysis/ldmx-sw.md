@@ -38,8 +38,10 @@ One can follow the same general workflow with [some additional changes
 to the config script](#pre-401-standalone-analyzers) described below.
 ```
 cd work-area
-denv init ldmx/pro:v4.0.1
+denv init ldmx/pro:<ldmx-sw-version>
 ```
+where `<ldmx-sw-version>` is a version of ldmx-sw that has been [released](https://github.com/LDMX-Software/ldmx-sw/releases). The version of ldmx-sw you want to use depends on what features
+you need and input data files you want to analyze.
 The following code block shows the necessary boilerplate for starting
 a C++ analyzer running with ldmx-sw.
 ```cpp
@@ -97,6 +99,8 @@ made within the function definitions.
 ```cpp
 {{#include analyzer-total-rec-energy.cxx}}
 ```
+Look at the [documentation of the HistogramPool](https://ldmx-software.github.io/ldmx-sw/classframework_1_1HistogramPool.html)
+to see more examples of how to `create` and `fill` histograms.
 
 In order to run this code on the data, we need to compile and run the program.
 The special `from_file` function within the config script handles this in
@@ -122,6 +126,13 @@ TDirectoryFile  Apr 30 22:30 2024 MyAnalyzer "MyAnalyzer"
 $ denv rootls -l hist.root:*
 TH1F  Apr 30 22:30 2024 MyAnalyzer_total_ecal_rec_energy  ""
 ```
+
+~~~admonish warning title="Naming Change"
+In v4.5.2 of ldmx-sw, the histogram pooling was changed to avoid referencing the name
+of the analyzer in both the directory and the histogram itself.
+Before this release, the histogram would have been located at "MyAnalyzer/MyAnalyzer_total_ecal_rec_energy"
+but if you are using this release or newer, the same histogram would be located at "MyAnalyzer/total_ecal_rec_energy".
+~~~
 
 ## Plotting Histograms
 Viewing the histogram with the filled data is another fork in the road.
