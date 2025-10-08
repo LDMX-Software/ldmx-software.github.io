@@ -27,7 +27,7 @@ void MyAnalyzer::onProcessStart() {
 }
 
 void MyAnalyzer::analyze(const framework::Event& event) {
-  const auto& ecal_rec_hits{event.getCollection<ldmx::EcalHit>("EcalRecHits")};
+  const auto& ecal_rec_hits{event.getCollection<ldmx::EcalHit>("EcalRecHits","")};
   double total = 0.0;
   for (const auto& hit : ecal_rec_hits) {
     total += hit.getEnergy();

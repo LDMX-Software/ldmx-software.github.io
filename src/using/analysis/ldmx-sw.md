@@ -54,6 +54,39 @@ are located.
 ```python
 {{#include ana-cfg.py}}
 ```
+
+~~~admonish error title="Unable to Load Library" collapsible=true
+If you see an error like the one below, you are probably not linking
+your stand-alone processor to its necessary libraries.
+The configuration script needs to be updated with `needs` listing
+the ldmx-sw libraries that the stand-alone processor needs to be
+linked to.
+
+For example, this tutorial uses the Ecal hits defined in the
+`Ecal/Event` area which means we need to add `'Ecal_Event'` to
+the `needs` list.
+
+Example error you could see...
+```
+$ denv fire ana-cfg.py
+---- LDMXSW: Loading configuration --------
+Processor source file /home/tom/code/ldmx/website/src/using/analysis/MyAnalyzer.cxx is newer than its compiled library
+ /home/tom/code/ldmx/website/src/using/analysis/libMyAnalyzer.so (or library does not exist), recompiling...          
+ done compiling /home/tom/code/ldmx/website/src/using/analysis/MyAnalyzer.cxx
+ ---- LDMXSW: Configuration load complete  --------
+ ---- LDMXSW: Starting event processing --------
+ Warning in <TClass::Init>: no dictionary for class pair<int,ldmx::SimParticle> is available
+ Warning in <TClass::Init>: no dictionary for class ldmx::SimParticle is available
+ Warning in <TClass::Init>: no dictionary for class ldmx::SimTrackerHit is available
+ Warning in <TClass::Init>: no dictionary for class ldmx::SimCalorimeterHit is available
+ Warning in <TClass::Init>: no dictionary for class ldmx::HgcrocDigiCollection is available
+ Warning in <TClass::Init>: no dictionary for class ldmx::EcalHit is available
+ Warning in <TClass::Init>: no dictionary for class ldmx::CalorimeterHit is available     
+ 
+ ... proceeds to seg fault on getEnergy ...
+```
+~~~
+
 A quick test can show that the code is compiling and running
 (although it will not print out anything or create any files).
 ```
