@@ -62,7 +62,7 @@ to the "Events Began" field of the `intParameters_` member of the RunHeader.
 
 The easiest way to know for certain the number of tries is to just set the maximum
 number of events to your desired number of tries \\(N_\mathrm{attempt}\\) and limit the
-number of tries per output event to one (`p.maxTriesPerEvent = 1` and `p.maxEvents = Nthrown`
+number of tries per output event to one (`p.maxTriesPerEvent = 1` and `p.maxEvents = Nattempt`
 in the config script).
 ~~~
 
@@ -107,10 +107,10 @@ weight in our simulation.
 We can then calculate an effective biasing factor by dividing the total number of events
 in the output sample (\\(N_\mathrm{sampled}\\)) by the sum of their event weights (\\(\sum w\\)).
 In the thin-target regime (where nothing happens to a biased particle besides the
-biased process), this equation reduces to the simpler \\(B N_\mathrm{thrown}\\) used in other
+biased process), this equation reduces to the simpler \\(B N_\mathrm{attempt}\\) used in other
 analyses since biased tracks in Geant4 begin with a weight of \\(1/B\\).
 \\[
-N_\text{EoT}^\text{equiv} = \frac{N_\mathrm{sampled}}{\sum w}N_\mathrm{thrown}
+N_\text{EoT}^\text{equiv} = \frac{N_\mathrm{sampled}}{\sum w}N_\mathrm{attempt}
 \\]
 
 ## Event Yield Estimation
@@ -119,16 +119,61 @@ This weight quantitatively estimates how many _unbiased_ events this single
 _biased_ event represents.
 Thus, if we want to estimate the total number of events produced for a desired EoT
 (the "event yield"), we would sum the weights and then scale this weight sum by the ratio
-between our desired EoT \\(N_\text{EoT}\\) and our actual simulated EoT \\(N_\text{thrown}\\).
+between our desired EoT \\(N_\text{EoT}\\) and our actual simulated EoT \\(N_\text{attempt}\\).
 \\[
-N_\text{yield} = \frac{N_\text{EoT}}{N_\text{thrown}}\sum w
+N_\text{yield} = \frac{N_\text{EoT}}{N_\text{attempt}}\sum w
 \\]
 Notice that \\(N_\text{yield} = N_\text{sampled}\\) if we use
 \\(N_\text{EoT} = N_\text{EoT}^\text{equiv}\\) from before.
 Of particular importance, the scaling factor out front is constant across all events
 for any single simulation sample, so (for example) we can apply it to the contents of a
 histogram so that the bin heights represent the event yield within \\(N_\text{EoT}\\) events
-rather than just the weight sum (which is equivalent to \\(N_\text{EoT} = N_\text{thrown}\\)).
+rather than just the weight sum (which is equivalent to \\(N_\text{EoT} = N_\text{attempt}\\)).
 
-## More Complexity
-Include Einar's notes here...
+Generally, its a bad idea to scale too far above the equivalent EoT of the sample, so usually
+we keep generating more of a specific simulation sample until \\(N_\text{EoT}^\text{equiv}\\)
+is above the desired \\(N_\text{EoT}\\) for the analysis.
+
+## More Detail
+This is a copy of work done by Einar Elén for [a software development meeting in Jan 2024](https://indico.fnal.gov/event/63045/).
+
+The number of selected events in a sample \\(M = N_\text{sampled}\\) should be binomially distributed
+with two parameters: the number of attempted events \\(N = N_\text{attempt}\\) and probability \\(p\\).
+To make an EoT estiamte from a biased sample with \\(N\\) events, we need to know
+how the probability in the biased sample differs from one in an inclusive sample.
+
+Using "i" to stand for "inclusive" and "b" to stand for "biased".
+There are two options that have floated around in LDMX.
+1. \\(p_\text{b} = B p_\text{i}\\) where \\(B\\) is the biasing factor.
+2. \\(p_\text{b} = W p_\text{i}\\) where \\(W\\) is the ratio of the average event weights between the two samples. Since the inclusive sample has all event weights equal to one, \\(W = \sum_\text{b} w / N\\) so it represents the EoT estimate described above.
+
+### Binomial Basics
+- Binomials are valid for distributions corresponding to some number of binary yes/no questions.
+- When we select \\(M\\) events out of \\(N\\) generated, the probability estimate is just \\(M/N\\).
+
+We want \\(C = p_\text{b} / p_\text{i}\\).
+
+The ratio of two probability parameters is not usually well behaved, but the binomial distribution is special.
+A 95% Confidence Interval can be reliably calculated for this ratio:
+\\[
+  CI[\ln(C)] = 1.96 \sqrt{\frac{1}{N_i} - \frac{1}{M_i} + \frac{1}{N_b} - \frac{1}{M_b}}
+\\]
+This is good news since now we can extrapolate a 95% CI up to a large enough sample size using smaller
+samples that are easier to generate.
+
+For example, a very common sample is the so-called "Ecal PN" sample where we bias and filter for a high-energy
+photon to be produced in the target and then have a photon-nuclear interaction in the Ecal mimicking our missing
+momentum signal.
+Up to a sample size \\(N\\) of 1e8 (\\(10^8\\) both options for estimating \\(C\\) look okay (first image),
+but we can extrapolate out another order of magnitude and observe that the second option \\(W\\) stays within
+the CI.
+
+![EoT Estimate for ECal PN Sample on a Linear Scale](figs/eot/ecal-pn-linear-scale.png)
+![EoT Estimate for ECal PN Sample Extrapolated on a LogLog Scale](figs/eot/ecal-pn-extrapolate-loglog-scale.png)
+
+Now, this estimate \\(W\\) ends up being a slight over-estimate for samples produced via a more complicated process.
+Specifically, a "Kaon" sample where there is not an explicit biasing but the photon-nuclear interaction is re-sampled during the event already shows difference between the "true" value for \\(C\\) and our two short-hand estimates from before.
+
+![EoT Estimate Failure for Kaon PN Resampling](figs/eot/kaon-pn-resampling.png)
+
+I (Tom) do not know how to resolve this. Perhaps a different estimate for \\(C\\) is able to handle the PN resampling and accomodate biasing in which case we can update our advice on how to estimate the EoT.
