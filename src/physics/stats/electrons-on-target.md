@@ -19,7 +19,7 @@ given the amount of time we collected data \\(t\\).
 For an analysis that only inspects single-electron events, we can use the Poisson fraction of these
 bunches that corresponds to one-electron to estimate the number of EoT the analysis is inspecting.
 \\[
-  N_\text{EoT} \approx e^{-\mu} N_\text{bunch}
+  N_\text{EoT} \approx \mu e^{-\mu} N_\text{bunch}
 \\]
 If we are able to include all bunches (regardless on the number of electrons), then we can replace
 the Poisson fraction with the Poisson average.
@@ -139,15 +139,15 @@ This is a copy of work done by Einar Elén for [a software development meeting i
 
 The number of selected events in a sample \\(M = N_\text{sampled}\\) should be binomially distributed
 with two parameters: the number of attempted events \\(N = N_\text{attempt}\\) and probability \\(p\\).
-To make an EoT estiamte from a biased sample with \\(N\\) events, we need to know
+To make an EoT estimate from a biased sample with \\(N\\) events, we need to know
 how the probability in the biased sample differs from one in an inclusive sample.
 
 Using "i" to stand for "inclusive" and "b" to stand for "biased".
-There are two options that have floated around in LDMX.
+There are two options that we have used in LDMX.
 1. \\(p_\text{b} = B p_\text{i}\\) where \\(B\\) is the biasing factor.
 2. \\(p_\text{b} = W p_\text{i}\\) where \\(W\\) is the ratio of the average event weights between the two samples. Since the inclusive sample has all event weights equal to one, \\(W = \sum_\text{b} w / N\\) so it represents the EoT estimate described above.
 
-### Binomial Basics
+~~~admonish note title="Binomial Basics"
 - Binomials are valid for distributions corresponding to some number of binary yes/no questions.
 - When we select \\(M\\) events out of \\(N\\) generated, the probability estimate is just \\(M/N\\).
 
@@ -156,24 +156,50 @@ We want \\(C = p_\text{b} / p_\text{i}\\).
 The ratio of two probability parameters is not usually well behaved, but the binomial distribution is special.
 A 95% Confidence Interval can be reliably calculated for this ratio:
 \\[
-  CI[\ln(C)] = 1.96 \sqrt{\frac{1}{N_i} - \frac{1}{M_i} + \frac{1}{N_b} - \frac{1}{M_b}}
+  \text{CI}[\ln(C)] = 1.96 \sqrt{\frac{1}{N_i} - \frac{1}{M_i} + \frac{1}{N_b} - \frac{1}{M_b}}
 \\]
 This is good news since now we can extrapolate a 95% CI up to a large enough sample size using smaller
 samples that are easier to generate.
+~~~
+
+### Biasing and Filtering
+For "normal" samples that use some combination of biasing and/or filtering, \\(W\\) is a good (unbiased)
+estimator of \\(C\\) and thus the EoT estimate described above is also good (unbiased).
 
 For example, a very common sample is the so-called "Ecal PN" sample where we bias and filter for a high-energy
 photon to be produced in the target and then have a photon-nuclear interaction in the Ecal mimicking our missing
 momentum signal.
+We can use this sample (along with an inclusive sample of the same size) to directly calculuate \\(C\\) with
+\\(M/N\\) and compare that value to our two estimators.
 Up to a sample size \\(N\\) of 1e8 (\\(10^8\\) both options for estimating \\(C\\) look okay (first image),
-but we can extrapolate out another order of magnitude and observe that the second option \\(W\\) stays within
-the CI.
+but we can extrapolate out another order of magnitude and observe that only the second option \\(W\\) stays within
+the CI (second image).
 
 ![EoT Estimate for ECal PN Sample on a Linear Scale](figs/eot/ecal-pn-linear-scale.png)
 ![EoT Estimate for ECal PN Sample Extrapolated on a LogLog Scale](figs/eot/ecal-pn-extrapolate-loglog-scale.png)
 
-Now, this estimate \\(W\\) ends up being a slight over-estimate for samples produced via a more complicated process.
-Specifically, a "Kaon" sample where there is not an explicit biasing but the photon-nuclear interaction is re-sampled during the event already shows difference between the "true" value for \\(C\\) and our two short-hand estimates from before.
+### Photon-Nuclear Re-sampling
+Often we want to not only require there to be a photon-nuclear interaction in the Ecal, but we also want
+that photon-nuclear interaction to produce a specific type of interaction (usually specific types of particles
+and/or how energetic those particles are) -- known as the "event topology".
+
+In order to support this style of sample generation, ldmx-sw is able to be configured such that when the
+PN interaction is happening, it is repeatedly re-sampled until the configured event topology is produced
+and then the simulation continues.
+The estimate \\(W\\) ends up being a slight over-estimate for samples produced via this more complicated process.
+Specifically, a "Kaon" sample where there is not an explicit biasing of the photon-nuclear interaction but
+the photon-nuclear interaction is re-sampled until kaons are produced already shows difference between the
+"true" value for \\(C\\) and our two short-hand estimates from before (image below).
 
 ![EoT Estimate Failure for Kaon PN Resampling](figs/eot/kaon-pn-resampling.png)
 
-I (Tom) do not know how to resolve this. Perhaps a different estimate for \\(C\\) is able to handle the PN resampling and accomodate biasing in which case we can update our advice on how to estimate the EoT.
+The overly-simple naive expected bias \\(B\\) is wrong because there is no biasing,
+but the average event weight ratio estimate \\(W\\) is also wrong
+in this case because the current (ldmx-sw v4.5.2) implementation of the re-sampling procedure updates the event
+weights incorrectly.
+[Issue #9999](https://github.com/LDMX-Software/ldmx-sw/issues/9999) documents what we believe is incorrect
+and a path forward to fixing it.
+In the meantime, just remember that if you are using this configuration of the simulation, the estimate for the
+EoT explained above will be slighly higher than the "true" EoT.
+You can repeat this experiment on a medium sample size (here 5e7 = 50M events) where an inclusive sample can
+be produced to calculate \\(C\\) directly.
