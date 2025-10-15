@@ -49,15 +49,22 @@ where
 - \\(\sum w\\) is the sum of the event weights of those same events
 - \\(N_\text{attempt}\\) is the number of events that were attempted when simulating
 
+Another way to phrase this equation (one that is more appropriate for the statistical analysis below) is
+\\[
+N_\text{EoT}^\text{equiv} = \frac{N_\mathrm{attempt}}{\langle{w}\rangle}
+\\]
+where \\(\langle{w}\rangle\\) is the mean event weight over the sampled events.
+Dividing by this mean event weight is like multiplying by an "effective biasing factor" since
+the event weights being with a value of \\(1/B\\).
+
 ~~~admonish note title="Finding Number of Attempted Events"
 Currently, the number of attempted events is stored as the `num_tries_` member of
 the `RunHeader`
 
-Samples created with ldmx-sw verions newer than v3.3.4 (>= v3.3.5) have an update
-to the processing framework to store this information more directly
-(in the `numTries_` member of the RunHeader or <= v4.4.7 and the `num_tries_` member
-for newer).
-Samples created with ldmx-sw versions older than v3.1.12 (<= v3.1.11) have access
+Samples created with ldmx-sw verions >= v3.3.5 and <= v4.4.7 store this number
+in the `numTries_` member of the RunHeader.
+
+Samples created with ldmx-sw versions <= v3.1.11 have access
 to the "Events Began" field of the `intParameters_` member of the RunHeader.
 
 The easiest way to know for certain the number of tries is to just set the maximum
@@ -110,7 +117,7 @@ In the thin-target regime (where nothing happens to a biased particle besides th
 biased process), this equation reduces to the simpler \\(B N_\mathrm{attempt}\\) used in other
 analyses since biased tracks in Geant4 begin with a weight of \\(1/B\\).
 \\[
-N_\text{EoT}^\text{equiv} = \frac{N_\mathrm{sampled}}{\sum w}N_\mathrm{attempt}
+N_\text{EoT}^\text{equiv} = \frac{N_\mathrm{sampled}}{\sum w}N_\mathrm{attempt} = \frac{N_\mathrm{attempt}}{\langle{w}\rangle}
 \\]
 
 ## Event Yield Estimation
@@ -145,7 +152,7 @@ how the probability in the biased sample differs from one in an inclusive sample
 Using "i" to stand for "inclusive" and "b" to stand for "biased".
 There are two options that we have used in LDMX.
 1. \\(p_\text{b} = B p_\text{i}\\) where \\(B\\) is the biasing factor.
-2. \\(p_\text{b} = W p_\text{i}\\) where \\(W\\) is the ratio of the average event weights between the two samples. Since the inclusive sample has all event weights equal to one, \\(W = \sum_\text{b} w / N\\) so it represents the EoT estimate described above.
+2. \\(p_\text{b} = W p_\text{i}\\) where \\(W\\) is the ratio of the average event weights between the two samples. Since the inclusive sample has all event weights equal to one, \\(W = \langle{w}\rangle_b\\) so it represents the EoT estimate described above.
 
 ~~~admonish note title="Binomial Basics"
 - Binomials are valid for distributions corresponding to some number of binary yes/no questions.
