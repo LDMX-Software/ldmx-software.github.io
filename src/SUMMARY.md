@@ -26,6 +26,7 @@
   - [Averages](physics/stats/averages.md)
   - [Resolution](physics/stats/resolution.md)
   - [Multi-Bin Exclusion with Combine](physics/stats/multi-bin-combine.md)
+  - [Electrons on Target (EoT)](physics/stats/electrons-on-target.md)
 - [ECal](physics/ecal/intro.md)
   - [Layer Weights](physics/ecal/layer-weights.md)
 
