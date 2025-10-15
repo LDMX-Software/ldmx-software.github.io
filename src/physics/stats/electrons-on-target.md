@@ -197,7 +197,7 @@ The overly-simple naive expected bias \\(B\\) is wrong because there is no biasi
 but the average event weight ratio estimate \\(W\\) is also wrong
 in this case because the current (ldmx-sw v4.5.2) implementation of the re-sampling procedure updates the event
 weights incorrectly.
-[Issue #9999](https://github.com/LDMX-Software/ldmx-sw/issues/9999) documents what we believe is incorrect
+[Issue #1858](https://github.com/LDMX-Software/ldmx-sw/issues/1858) documents what we believe is incorrect
 and a path forward to fixing it.
 In the meantime, just remember that if you are using this configuration of the simulation, the estimate for the
 EoT explained above will be slighly higher than the "true" EoT.
