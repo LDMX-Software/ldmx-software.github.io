@@ -7,11 +7,11 @@ If the objects already in an Event module do not suit your purposes, you can def
 * In the header file, include `ClassDef( ClassName , 1 );` at the bottom of your class declaration (right before the closing bracket `};`).
 * At the top of the implementation file, include `ClassImp( ClassName );` right after the include statement.
 * Your class shouldn't use `TRef` (or any derived class)
-* Your object needs to be "registered" with the software so that ROOT can put it in our event model dictionary. This is done by adding a line to the `CMakeLists.txt` file in the module you are putting the new object. For example, the `Recon` module has an object shared by Hcal and Ecal in it. This object is not put inside a collection, so no other parameters are needed.
+* Your object needs to be "registered" with the software so that ROOT can put it in our event model dictionary. This is done by adding lines to `LinkDef.h` in the module you are putting the new object. For example, the `Recon` module has an object shared by Hcal and Ecal in it. This object is not put inside a collection, so no other lines are needed.
 
-```cmake
-  register_event_object( module_path "Recon/Event" namespace "ldmx" 
-                         class "HgcrocDigiCollection" )
+```cpp
+// inside Recon/include/Recon/Event/LinkDef.h
+#pragma link C++ class ldmx::HgcrocDigiCollection+;
 ```
 
 * If you class is going to be inside an STL container, then you need
@@ -20,6 +20,14 @@ Method | Description
 ---|---
 `Print()` | Summarize object in a one line description of the form: `MyObject { param1 = val, param2 = val,...}` output to input ostream.
 `operator<` | This is used to sort the collection before inputting into event bus.
+
+and you should add the STL container class to the `LinkDef.h` file as well, for example
+```cpp
+// for a std::vector
+#pragma link C++ class std::vector<ClassName>+;
+// and/or for a std::map with int keys
+#pragma link C++ class std::map<int, ClassName>+;
+```
 
 * If your class is going to be outside an STL container (i.e. put into the event bus by itself), then you need
 
@@ -44,3 +52,7 @@ cd Framework
 git clean -xxfd
 ```
 This last step is only necessary for developments built off of ldmx-sw prior to v3.3.4.
+
+### CMake Registration
+If you are developing off of ldmx-sw prior to v4.5.3, then instead of editing the `LinkDef.h` file directly, you would register within the `CMakeLists.txt` file and then some CMake code writes a LinkDef file for you.
+This extra indirection did not save much effort and got in the way of developing manual schema evolution, so it was dropped.
