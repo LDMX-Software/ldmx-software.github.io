@@ -22,6 +22,7 @@
 - [Batch Computing](using/batch.md)
 
 # Physics Guides
+- [Background](physics/background.md)
 - [Statistics and Calculations](physics/stats/intro.md)
   - [Averages](physics/stats/averages.md)
   - [Resolution](physics/stats/resolution.md)
