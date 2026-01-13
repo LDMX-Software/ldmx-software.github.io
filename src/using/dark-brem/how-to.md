@@ -22,49 +22,27 @@ to be a configuration of MadGraph that is useful to LDMX and has been packaged
 into a container similar to how ldmx-sw and its dependencies are.
 
 For details on the MadGraph configuration and how to use it, visit the GitHub
-project [tomeichlersmith/dark-brem-lib-gen](https://github.com/tomeichlersmith/dark-brem-lib-gen).
+project [LDMX-Software/dark-brem-lib-gen](https://github.com/LDMX-Software/dark-brem-lib-gen).
 Unless you plan to add new features or fix some sort of issue, you _will not_
-need this repository and instead only require a script wrapping the container
-running process for you.
+need this repository and instead only require the image that it produces.
 
-The script only needs to be downloaded once and it only needs to be `source`d
-once inside each terminal you wish to run in.
-```bash
-# download the dark-brem-lib-gen environment script
-wget https://raw.githubusercontent.com/tomeichlersmith/dark-brem-lib-gen/main/env.sh
-# initialize the environment
-source env.sh
+Similar to running ldmx-sw within a pre-built image, you need to create a denv.
 ```
-Now a new bash function `dbgen` is defined which you can use (similar to `ldmx`) to
-interact with the containerized MadGraph and generate dark brem events.
-Further configuration of your local `dbgen` setup is possible now. Below, I've
-written some dummy commands which are helpful for various reasons.
-- `dbgen use v4.5` : it is helpful to pin the version you are using so that
-  future analyzers of the data (including yourself) know exactly how it was generated
-- `dbgen cache /big/cache/dir` : on clusters where you are using `singularity`,
-  you will probably need to move the directory where `singularity` caches downloaded
-  layers because, by default, it uses your home directory which probably doesn't have
-  enough space. One option, if you are also using `ldmx` is to put the cache in the
-  same place the `ldmx` cache is `dbgen cache ${LDMX_BASE}/.singularity`.
-- `dbgen work /scratch/dir` : the working directory where intermediate files will
-  be written. It needs to be large enough to hold a copy of MadGraph (>1GB). On laptops,
-  the default `/tmp` directory is probably fine but this will probably need to be changed
-  on clusters. For example, at SLAC you will want `dbgen work /scratch/$USER`.
-- `dbgen dest /path/to/destination` : set where you would like the generate library to be put.
-  By default, it is whereever you execute `dbgen run` but you may want the output directory
-  to be somewhere else with more space.
-
-You can view all of the runtime options (and test that the environment is setup reasonably)
-by running the container and asking for the usage information.
-```bash
-dbgen run --help
+denv init ldmx/dark-brem-lib-gen:v5.2.0
 ```
+And then you can print out the help message which will take a while on the first
+run since the container runner needs to initialize the environment.
+```
+denv dark-brem-lib-gen --help
+```
+This prints all of the runtime options which you may need depending on your requirements.
+A more detailed explanation of these options is available in [the source repo](https://github.com/LDMX-Software/dark-brem-lib-gen/tree/main?tab=readme-ov-file#usage-manual)
 
 The defaults for the runtime options align pretty well with the LDMX signal use case, so
 lets just run it with defaults and obtain a library to use later. This usually takes a few minutes
 but may be faster/slower depending on the computer you are using to run.
 ```bash
-dbgen run
+denv dark-brem-lib-gen
 ```
 
 Now we have a new directory created in the current directory (or where-ever you set `dest` to be)
@@ -130,6 +108,12 @@ That's it! After configuring the simulation in this way, events will be produced
 
 ## Batch Running
 Suppose you've gotten pretty familiar with the signal samples generating single files for each of the different mass points you wish to study, but now you want to scale up this analysis to larger samples so you can more precisely study how your analysis effects the signal distributions. This is where batch running comes in! Below, I've copied a `bash` script I've used at UMN to generate large signal samples. It avoids the use of dark-brem-lib-gen's `env.sh` script as well as ldmx-sw's `ldmx-env.sh` script by writing container-running commands manually.
+
+
+~~~admonish warning title=Legacy
+This was from using a v4 version of dark-brem-lib-gen, so the specific command line arguments
+would need to change for current versions. The overall structure is still valid and encouraged.
+~~~
 
 You may notice that there are actually three steps in this script and not only two. 
 Since the LHE files generated for the reference library are often only used for the reference library, 
