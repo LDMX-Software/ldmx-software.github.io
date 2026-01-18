@@ -19,7 +19,8 @@
 - [Dark Brem Signal Samples](using/dark-brem/intro.md)
   - [How to Run](using/dark-brem/how-to.md)
   - [Legacy Instructions](using/dark-brem/legacy.md)
-- [Batch Computing](using/batch.md)
+- [Batch Computing](using/batch/index.md)
+  - [fire-parallel](using/batch/fire-parallel.md)
 
 # Physics Guides
 - [Background](physics/background.md)
