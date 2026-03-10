@@ -31,6 +31,7 @@
   - [Electrons on Target (EoT)](physics/stats/electrons-on-target.md)
 - [ECal](physics/ecal/intro.md)
   - [Layer Weights](physics/ecal/layer-weights.md)
+- [Visualization](physics/visualization.md)
 
 # Developing
 - [Getting Started](developing/getting-started.md)
