@@ -2,6 +2,10 @@
 
 __ __
 
+~~~admonish warning title="Compatibility"
+This tutorial was written for ldmx-sw v4.6.4 and contains features not available before that version
+~~~
+
 One of Geant4’s most reliable visualizers throughout the years, OpenGL
 (or OGL) is a fast, powerful, yet relatively low-resource rendering
 program. Despite these advantages, there are two major
@@ -286,7 +290,8 @@ just g4-vis /path/to/detector.gdml /path/to/macrofile.mac
 
 A few example macro files have been included with this tutorial, to do
 things such as examining the TSPads in greater detail, rendering the
-ECal, and a secret third example which I’ll add later as a surprise.
+ECal, viewing the entire geometry, and a special example which showcases
+some of the other tools available in the visualizer.
 
 <br>
 
@@ -295,7 +300,8 @@ ECal, and a secret third example which I’ll add later as a surprise.
 You can try your luck at googling for OpenGL tutorials. These are
 often quite old, but the functionality hasn’t evolved much in the past
 10 years. There are also books and stuff but I’ve never actually seen
-one. I don’t know what to tell you for GDML. There’s a [manual](https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf), but
+one. I don’t know what to tell you for GDML. There’s a
+[manual](https://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf), but
 it’s missing a lot of details.
 
 There are two essential commands which can help you learn more about
