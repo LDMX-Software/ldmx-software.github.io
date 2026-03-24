@@ -77,13 +77,13 @@ class MyProducer : public Producer {
 namespace mymodule {
 
 void MyProducer::configure(const Parameters& params) {
-  my_parameter_ = params.getParameter<int>("my_parameter");
-  my_other_parameter_ = params.getParameter<std::vector<double>>("my_other_parameter");
+  my_parameter_ = params.get<int>("my_parameter");
+  my_other_parameter_ = params.get<std::vector<double>>("my_other_parameter");
   
   std::cout << "I also know the name "
-      << params.getParameter<std::string>("instanceName")
+      << params.get<std::string>("instance_name")
       << " and class "
-      << params.getParameter<std::string>("className")
+      << params.get<std::string>("class_name")
       << " of this copy of MyProcessor" << std::endl;
 }
 
@@ -93,7 +93,7 @@ void MyProducer::produce(Event& event) {
 
 }  // mymodule
 
-DECLARE_PRODUCER_NS(mymodule, MyProducer);
+DECLARE_PRODUCER(mymodule::MyProducer);
 ```
 
 ### Python
@@ -109,7 +109,8 @@ The python class has three objectives:
 Here is an outline of the python class that would go with the C++ class `MyProducer` above.
 
 ```python
-class MyProducer(Producer) :
+@processor("mymodule::MyProducer", "MyModule")
+class MyProducer(Processor) :
     """An outline for a producer configuration in python
     
     Parameters
@@ -119,19 +120,11 @@ class MyProducer(Producer) :
     my_other_parameter : list[float]
       An example of a vector of doubles parameter
     """
-
-    def __init__(self,name) :
-        super().__init__(
-            name, # unique instance name because you could have more than one copy of a processor
-            'cool::MyProducer', #the full name including namespaces of the C++ class
-            'MyModule' #the name of the module this processor is in (e.g. Ecal or Analysis)
-            )
-        
-        # define the parameters and their defaults
-        #   notice that the names of the parameters
-        #   are what we look for in the C++ configure method
-        self.my_parameter = 5
-        self.my_other_parameter = [ 1. , 2. , 3. ]
+    
+    # define the parameters and their defaults
+    # the names of the parameters here should match what is in the C++
+    my_parameter: int = 5
+    my_other_parameter: list[float] = [1.0, 2.0, 3.0]
 ```
 
 Now in a configuration script you can create a configuration for MyProducer and (if you want) change some of the parameters to something other than the defaults.
@@ -141,7 +134,7 @@ Now in a configuration script you can create a configuration for MyProducer and 
 #   my_producer is the python file in MyModule/python
 #   that contains the python class definition of MyProducer
 from LDMX.MyModule import my_producer
-myProd = my_producer.MyProducer('myProd')
+myProd = my_producer.MyProducer(instance_name = 'myProd')
 myProd.my_parameter = 10 #will change the 5 to 10 so the C++ class will receive 10
 ```
 

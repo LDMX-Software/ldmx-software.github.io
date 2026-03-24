@@ -13,13 +13,6 @@ class MyAnalyzer : public framework::Analyzer {
 };
 
 void MyAnalyzer::onProcessStart() {
-  /**
-   * In v4.5.1 ldmx-sw and earlier, forgetting `getHistoDirectory()`
-   * led to silently not creating any histograms.
-   * In v4.5.2 ldmx-sw and newer, it can be left out but it does
-   * no harm if left in.
-   */
-  getHistoDirectory();
   histograms_.create(
       "total_ecal_rec_energy",
       "Total ECal Rec Energy [GeV]", 160, 0.0, 16.0

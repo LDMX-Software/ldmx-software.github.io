@@ -135,6 +135,13 @@ made within the function definitions.
 Look at the [documentation of the HistogramPool](https://ldmx-software.github.io/ldmx-sw/classframework_1_1HistogramPool.html)
 to see more examples of how to `create` and `fill` histograms.
 
+~~~admonish note title="Missing Histograms" collapsible=true
+If the output histogram file you are writing to does not receive any histograms despite
+you following the above procedure, you are probably working with an older version of
+ldmx-sw. In v4.5.1 ldmx-sw and earlier, you needed to include `getHistoDirectory()`
+at the beginning of your `onProcessStart` function.
+~~~
+
 In order to run this code on the data, we need to compile and run the program.
 The special `from_file` function within the config script handles this in
 most situations for us.
