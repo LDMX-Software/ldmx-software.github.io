@@ -128,6 +128,9 @@ class MyProducer(Processor) :
 ```
 
 Now in a configuration script you can create a configuration for MyProducer and (if you want) change some of the parameters to something other than the defaults.
+There is a wealth of examples present in `ldmx-sw` - just look in the `python` subdirectory of any module - but I want to highlight some specific features that can be helpful.
+- writing a `__post_init__` function can give you access to the configuration class while it is being constructed so you can do more dynamic things like (for example) having some parameters depend on others (maybe the output name depends on which input is being looked at)
+- the parameters are spell- and type- checked on the Python side using their spelling and types as written above. This means any parameter changes should be propagated to the `class` _first_ and then the checker can point out where downstream changes are needed
 
 ```python
 # in a configuration python script
