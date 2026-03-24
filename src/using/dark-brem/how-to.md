@@ -110,7 +110,7 @@ That's it! After configuring the simulation in this way, events will be produced
 Suppose you've gotten pretty familiar with the signal samples generating single files for each of the different mass points you wish to study, but now you want to scale up this analysis to larger samples so you can more precisely study how your analysis effects the signal distributions. This is where batch running comes in! Below, I've copied a `bash` script I've used at UMN to generate large signal samples. It avoids the use of dark-brem-lib-gen's `env.sh` script as well as ldmx-sw's `ldmx-env.sh` script by writing container-running commands manually.
 
 
-~~~admonish warning title=Legacy
+~~~admonish warning title="Legacy"
 This was from using a v4 version of dark-brem-lib-gen, so the specific command line arguments
 would need to change for current versions. The overall structure is still valid and encouraged.
 ~~~
