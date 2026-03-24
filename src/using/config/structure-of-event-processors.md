@@ -137,8 +137,17 @@ There is a wealth of examples present in `ldmx-sw` - just look in the `python` s
 #   my_producer is the python file in MyModule/python
 #   that contains the python class definition of MyProducer
 from LDMX.MyModule import my_producer
-myProd = my_producer.MyProducer(instance_name = 'myProd')
-myProd.my_parameter = 10 #will change the 5 to 10 so the C++ class will receive 10
+p.sequence = [
+    # the parameters can be set in the constructor
+    my_producer.MyProducer(
+      instance_name = 'special-name',
+      my_parameter = 10 # C++ recieves 10 instead of the default 5
+    )
+]
+
+# or after creation if something more dynamic is needed
+another = my_producer.MyProducer(instance_name = "another")
+another.my_parameter = 20
 ```
 
 # Other Objects
