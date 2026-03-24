@@ -6,11 +6,11 @@ The generation of simulation samples is done mainly by the Geant4 package with s
 Running the simulation is just like any other producer in ldmx-sw. In your python configuration script, it is _required_ that you have the following lines (or equivalent):
 ```python
 from LDMX.SimCore.simulator import simulator
-mySimulator = simulator( "mySimulator" ) #create the simulator object
+mySimulator = simulator(instance_name="mySimulator")
 ```
 You can write your own detector description in the gdml format (if you want), but ldmx-sw already comes with several versions of the LDMX detector description. These versions are installed with it and can be accessed with some python (+ cmake!) code:
 ```python
-mySimulator.setDetector( 'ldmx-det-v12' )
+mySimulator.set_detector('ldmx-det-v15')
 ```
 Okay, `mySimulator` now is created and has been given a path to an LDMX detector description.
 What else is needed? Well, we need _at least_ one more thing. We need to tell the simulation _how_ to start the simulation. In Geant4 speak, this is called a "Primary Generator". In ldmx-sw, we already have several generators defined (more details on [Configuring the Simulation](configuring.md)), but for this simple example, we will just import a standard generator.
@@ -22,14 +22,14 @@ Now you can add `mySimulator` to the process sequence:
 ```python
 # p is a Process created earlier in your py config script
 p.sequence = [ 
-mySimulator 
-#other processors?
+  mySimulator 
+  #other processors?
 ]
 ```
 Remember to tell the process how many events to simulate and where to put them:
 ```python
-p.maxEvents = 10
-p.outputFiles = [ "mySimulatorOutput.root" ]
+p.max_events = 10
+p.output_files = [ "mySimulatorOutput.root" ]
 ```
 
 Run: `denv fire myConfig.py`
@@ -59,7 +59,7 @@ Function | Description
 ---|---
 `photo_nuclear(detector,generator)` | PN process biased up and filtered for in (ecal or target)
 `electro_nuclear(detector,generator)` | EN process biased up and filtered for in target
-`dark_brem(massAPrime,lheFile,detector)` | Sets A' mass to massAPrime (in MeV) and uses the input LHE file as vertices for the dark brem simulation [more detail here](../dark-brem/intro.md)
+`dark_brem(massAPrime,lheFile,detector,generator)` | Sets A' mass to massAPrime (in MeV) and uses the input LHE file as vertices for the dark brem simulation [more detail here](../dark-brem/intro.md)
 
 ### More Advanced Details
 As I said earlier, you can definitely see all of the capabilities of `Simulator` by looking at the parameters that are available in the documentation (linked above). Two parameters that I would like to point out is `preInitCommands` and `postInitCommands`. These parameters are given directly to the Geant4 UI as a string, so you can still access Geant4 directly using these commands.
@@ -86,13 +86,14 @@ from LDMX.SimCore import generators
 from LDMX.SimCore import simulator
 
 mySim = simulator.simulator( "mySim" )
-mySim.setDetector( 'ldmx-det-v12' )
+mySim.set_detector( 'ldmx-det-v12' )
 mySim.generators = [ generators.single_4gev_e_upstream_tagger() ]
 mySim.description = 'I am a basic working example!'
 
 # import chip/geometry conditions
+import LDMX.Ecal.ecal_geometry
 import LDMX.Ecal.ecal_hardcoded_conditions
-import LDMX.Hcal.HcalGeometry
+import LDMX.Hcal.hcal_geometry
 import LDMX.Hcal.hcal_hardcoded_conditions
 # import processor templates
 import LDMX.Ecal.digi as ecal_digi
@@ -106,20 +107,20 @@ p.sequence = [
     hcal_digi.HcalRecProducer()
     ]
 
-# During production (simulation), maxEvents is used as the number
+# During production (simulation), max_events is used as the number
 # of events to simulate.
-# Other times (like when analyzing a file), maxEvents is used as
+# Other times (like when analyzing a file), max_events is used as
 # a cutoff to prevent fire from running over the entire file.
-p.maxEvents = 10
+p.max_events = 10
 
 # how frequently should the process print messages to the screen?
-p.logFrequency = 1
+p.log_frequency = 1
 
 # I want to see all of the information messages (the default is only warnings and errors)
-p.termLogLevel = 1
+p.logger.term_Level = 1
 
 # give name of output file
-p.outputFiles = [ "output.root" ]
+p.output_files = [ "output.root" ]
 
 # print process object to make sure configuration is correct
 # at beginning of run and wait for user to press enter to start

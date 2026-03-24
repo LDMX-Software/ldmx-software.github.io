@@ -17,40 +17,15 @@ Parameter | Type | Accessed By | Description
 `detector` | string | Simulator | Full path to detector gdml description
 `description` | string | Simulator and RootPersistencyManager | Concise phrase describing this simulation in a human-readable way
 `verbosity` | int | Simulator | Integer flag describing how verbose to be
-`scoringPlanes` | string | RunManager | Full path to scoring plane gdml description
-`randomSeeds` | vector of ints | Simulator | Lists random seeds to pass to Geant4
+`scoring_planes` | string | RunManager | Full path to scoring plane gdml description
 `preInitCommands` | vector of strings | Simulator | Geant4 commands to run before the run is initialized
 `postInitCommands` | vector of strings | Simulator | Geant4 commands to run after the run is initialized
-`enableHitContribs` | bool | RootPersistencyManager | Should the simulation allow for the different contributors to an ECal hit be stored?
-`compressHitContribs` | bool | RootPersistencyManager | Should the simulation compress the contributors by combining any contributors with the same PDG ID?
-
-
-Note: In earlier versions of LDMX-sw, you would set the `runNumber` parameter in
-the simulator. The `runNumber` is a unique number (int) that identifies this
-run. In current versions of LDMX-sw, the `runNumber` is called `run` and is set as a parameter to
-the process directly. In other words, along the lines of
-```python
-p = ldmxcfg.Process("simulation")
-p.run = 9001
-```
 
 ### Biasing
 
 Biasing is helpful for efficiently simulating the detector's response to various
 events. The biasing parameters are given directly to the simulation and are
 listed below.
-
-Parameter | Type | Accessed By | Description
---- | --- | --- | ---
-`biasing_enabled` | bool | DetectorConstruction and RunManager | Should we bias?
-`biasing_process` | string | DetectorConstruction | Geant4 process to bias
-`biasing_volume` | string | DetectorConstruction | Geant4 volume to bias inside of
-`biasing_particle` | string | DetectorConstruction and RunManager | Geant4 particle to bias
-`biasing_all` | bool | DetectorConstruction | Should Geant4 bias all particles of the input type?
-`biasing_incident` | bool | DetectorConstruction | Should Geant4 bias only the incident particle of the input type?
-`biasing_disableEMBiasing` | bool | DetectorConstruction | Should Geant4 disable down-biasing EM?
-`biasing_threshold` | double | DetectorConstruction | Minium energy threshold to bias (MeV)
-`biasing_factor` | int | DetectorConstruction | Factor to multiply cross-section by
 
 In v3.0.0 of ldmx-sw, we transitioned the biasing operators to be configured by their own Python classes.
 Those operators are stored in the `SimCore.bias_operators` module and are attached to the `simulator` class similar to generators and actions.
@@ -137,7 +112,6 @@ There are a few general options that determine how primaries are generated. Thes
 
 Parameter | Type | Accessed By | Description
 --- | --- | --- | ---
-`beamSpotSmear` | vector of doubles | PrimaryGeneratorAction | Define how much to smear the primary vertex in each of the Cartesian directions (x,y,z)
 `generators` | vector of PrimaryGenerators | PrimaryGeneratorManager | List the primary generators to use in this simulation run
 
 Like UserActions, PrimaryGenerator is a python class that you can create using the `LDMX.SimCore.simcfg` python module. And actually, there are several helpful functions defined in the `LDMX.SimCore.generators` python module. These helpful functions return the correct python class and set some helpful defaults. Look at that file for more details. The most widely used primary generator is a simple one: a single 4GeV electron fired from upstream of the tagger. You could use that generator in your simulation with the following lines:
@@ -151,6 +125,7 @@ myGenerator.parameterKey = parameterValue
 ```
 
 Several of these generators can be used at once, although not all combinations have been tested.
+All of these generators have a `beam_spot_smear` parameter that defines how to smear the primary vertex it generates in each of the Cartesian directions (x,y,z).
 
 A more detailed description of the parameters you can pass the various generators are listed below. All of the python code below requires the `LDMX.SimCore.generators` module to be imported:
 ```python
