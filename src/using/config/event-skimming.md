@@ -39,12 +39,12 @@ what the default decision is in the case of no hints or a tie in voting.
 
 ### Listening Rules
 The format of the string representing a listening rule is a bit complicated, so it is best
-to just use the `p.skimConsider` function when defining which processors you wish to "listen"
+to just use the `p.skim_consider` function when defining which processors you wish to "listen"
 to (or "consider") when making a skimming decision. Most commonly, a user just has one processor
 that they want to make the skimming decision and in this case you can just provide the processors
 name.
 ```python
-p.skimConsider(my_processor.instanceName)
+p.skim_consider(my_processor.instanceName)
 ```
 Technically, the listening rules use regular expressions for both the processor name and the
 purpose, so one could get quite fancy about which processors (and purposes) are selected.
@@ -57,15 +57,15 @@ processors at all, the default configuration of the default decision is to keep 
 any config changes, we keep all events that are processed. Without changing this,
 you could have a processor that explicity "drops" events and update the config to consider
 this processor in order to run over events and drop the "uninteresting" ones
-(using `p.skimConsider` like above).
+(using `p.skim_consider` like above).
 
 On the other hand, we could set the default decision to drop all the events and instead
 have a processor specifically "keep" events that are interesting. In this case, you would
 want to add the following to your config.
 ```python
-p.skimDefaultIsDrop()
+p.skim_default_is_drop()
 ```
-**along with a `p.skimConsider`** so that something ends up in your output event file.
+**along with a `p.skim_consider`** so that something ends up in your output event file.
 
 ~~~admonish warning title="Another Form of Event Dropping"
 This style of event dropping is geared more towards readout, reconstruction, and analysis

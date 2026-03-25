@@ -70,8 +70,8 @@ As an example, if you wanted to run the Ecal reconstruction chain on a resimulat
 # Resim config file 
 p = ldmxcfg.Process('resim') 
 # ...
-p.inputFiles = ['original_simulation.root'] # Pass name "sim"
-p.outputFiles = ['resimulation.root'] # Pass name "resim"
+p.input_files = ['original_simulation.root'] # Pass name "sim"
+p.output_files = ['resimulation.root'] # Pass name "resim"
 # Drop all collections that end with SimHits_sim
 p.keep ["drop .SimHits_sim"] 
 ```
@@ -81,7 +81,7 @@ And later in your reconstruction config
 # Resim config file 
 p = ldmxcfg.Process('reconstruct') 
 # ...
-p.inputFiles = ['resimulation.root'] # Pass name "resim"
+p.input_files = ['resimulation.root'] # Pass name "resim"
 p.sequence = [
   ecal_digi, 
   ecal_reco
@@ -95,12 +95,12 @@ Alternatively, you can do it all in one configuration but you will have to manua
 # Resim config file 
 p = ldmxcfg.Process('resim') 
 # ...
-p.inputFiles = ['original_simulation.root'] # Pass name "sim"
-p.outputFiles = ['resimulation.root'] # Pass name "resim"
+p.input_files = ['original_simulation.root'] # Pass name "sim"
+p.output_files = ['resimulation.root'] # Pass name "resim"
 
 # Digi producer needs the raw simhits 
 ecal_digi = ...  
-ecal_digi.inputPassName = 'resim' # Pick the resim version
+ecal_digi.input_pass_name = 'resim' # Pick the resim version
 
 p.sequence = [
   resim, 
@@ -160,7 +160,7 @@ Finally, update the re-simulation config to use this slightly modified detector 
 of the original copy at the install location.
 ```python
 # above we construct the simulator object sim
-sim.setDetector( '<detector-name>' )
+sim.set_detector( '<detector-name>' )
 # update the path to use the new root detector.gdml with updated flags
 #   here, we use a relative path and so we must run the config from the
 #   directory where the edited detector.gdml is
@@ -181,25 +181,25 @@ storing all of the particles that are created.
 Similar to the simulated particles, the number of simulated hits in the ECal is generally
 too large and so we do a somewhat complicated procedure of merging them in order to reduce
 the size of the output data file. There is a standing issue focused on improving this
-merging algorithm [SimCore #31](https://github.com/LDMX-Software/SimCore/issues/31) and
+merging algorithm [Issue #1317](https://github.com/LDMX-Software/ldmx-sw/issues/1317) and
 if that issue is resolved, the parameters of the merging will likely change.
 
 The `EcalSD` class is what handles each of the simulated hits created while Geant4 is
 processing an event. It has two parameters for modifying how these hits should be
 created.
 
-- `enableHitContribs`, if `True`, allows `EcalSD` to create `SimCalorimeterHit` "contribs"
+- `enable_hit_contribs`, if `True`, allows `EcalSD` to create `SimCalorimeterHit` "contribs"
   when more than one hit occurs within the same Ecal cell. If `False`, all hits within a cell
   are combined by summing their respective energy deposits and choosing the earliest time.
   - The default is `True`.
-- `compressHitContribs` is only used is `enableHitContribs` is `True`. If `compressHitContribs`
+- `compress_hit_contribs` is only used is `enable_hit_contribs` is `True`. If `compress_hit_contribs`
   is `True`, then a new contrib is only created for unique simulated particles. In other words,
   a contrib for a specific simulated particle is updated with more energy deposited and another
   deposit time if another hit is made by that simulated particle in the same ECal cell. If `False`,
   a new contrib is created for all simulated hits regardless on if any of the contribs originate
   from the same simulated particle.
 
-The `compressHitContribs` is the parameter which causes the most confusion when interpreting ECal
+The `compress_hit_contribs` is the parameter which causes the most confusion when interpreting ECal
 simulated hit information and so removing it will give you a contrib for each simulated hit created
 by Geant4 within the ECal. The code to put into your re-sim config is below.
 ```python
@@ -207,7 +207,7 @@ by Geant4 within the ECal. The code to put into your re-sim config is below.
 # must be done _after_ sim.setDetector is called
 for sd in sim.sensitive_detectors:
     if 'EcalSD' in sd.class_name:
-        sd.compressHitContribs = False
+        sd.compress_hit_contribs = False
 ```
 
 ```admonish warning
@@ -220,7 +220,7 @@ the ECal pipeline (or prepare yourself to help develop it) if you start playing 
 The two prior examples are all about storing _more_ information during the re-simulation process
 so that certain "special" events can be studied in more detail. One could also imagine studying how
 a select set of "special" events behave within a modified detector. Technically, this is easy - 
-simply change the name provided to `setDetector` or specify a relative path like is done when
+simply change the name provided to `set_detector` or specify a relative path like is done when
 saving all of the sim particles above. However, there is a big caveat.
 
 The random number generation in Geant4 is sequential. This means psuedo-random numbers are "created"

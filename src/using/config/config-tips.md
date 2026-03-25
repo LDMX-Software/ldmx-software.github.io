@@ -17,7 +17,7 @@ args = parser.parse_args()
 from LDMX.Framework import ldmxcfg
 p = ldmxcfg.Process('example')
 p.run = args.run_number
-p.outputFile = [
+p.output_file = [
   str(args.out_dir / f'my_special_simulation_run_{p.run:04d}.root')
 ]
 
@@ -33,12 +33,12 @@ Python's [pathlib](https://docs.python.org/3/library/pathlib.html) library is he
 
 For example, if `input_dir` is a `pathlib.Path` for an input directory of ROOT files.
 ```python
-p.inputFiles = [ str(f) for f in input_dir.iterdir() if f.suffix == '.root' ]
+p.input_files = [ str(f) for f in input_dir.iterdir() if f.suffix == '.root' ]
 ```
 
 We can also use an input file `input_file` to get an output file name and an output directory `output_dir`
 to place this file in the directory we want.
 ```python
-p.outputFiles = [ str(output_dir / (input_file.stem + '_with_my_analyzer.root')) ]
+p.output_files = [ str(output_dir / (input_file.stem + '_with_my_analyzer.root')) ]
 ```
 ~~~

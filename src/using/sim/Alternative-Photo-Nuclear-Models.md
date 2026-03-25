@@ -153,17 +153,16 @@ setup_library(module ModuleName
 Finally, you'll need to add a new model to your python configuration and register it as the as the photonuclear model of your simulation processor. 
 
 ```python
-from LDMX.SimCore import simcfg 
+from LDMX.SimCore import photo_nuclear_model, PhotoNuclearModel
 
-class MyModel(simcfg.PhotoNuclearModel): 
+@photo_nuclear_model("ClassName", "ModuleName")
+class MyModel(PhotoNuclearModel): 
     """
        Documentation 
     """
-    def __init__(self):
-    super().__init__('MyModel', 'ClassName', 'ModuleName')
-    
-    
-    
+    # declare parameters here like a processor
+
+
 mySim.photonuclear_model = MyModel()
 ```
 
@@ -269,11 +268,11 @@ DECLARE_PHOTONUCLEAR_MODEL(simcore::NuclearTallyModel);
 With a corresponding python object 
 
 ```python
-class NuclearTally(simcfg.PhotoNuclearModel):
-    def __init__(self):
-        super().__init__("NuclearTallyModel",
-                         "simcore::NuclearTallyModel",
-                         "SimCore_PhotoNuclearModels")
+# the ModuleName is omitted since we are assuming it has been built
+# into the default module: SimCore_PhotoNuclearModels
+@photo_nuclear_model("simcore::NuclearTallyModel")
+class NuclearTally(PhotoNuclearModel):
+    pass
 ```
 
 ## Models forcing particular final states 

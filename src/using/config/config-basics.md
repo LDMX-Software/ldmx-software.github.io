@@ -17,27 +17,27 @@ Additional notes:
   python module so that the C++ class name, the module name, and any other parameters can be properly spelled once and used everywhere.
 
 ## Minimal Production Config
-In Production Mode, there won't be a `p.inputFiles` line but there will be a line setting `p.run` to some value.
+In Production Mode, there won't be a `p.input_files` line but there will be a line setting `p.run` to some value.
 
 ```python
 from LDMX.Framework import ldmxcfg
 p = ldmxcfg.Process('mypass')
-p.outputFiles = ['output_events.root']
+p.output_files = ['output_events.root']
 p.run = 1
 p.sequence = [
-  ldmxcfg.Producer('my_producer','some::cpp::MyProducer','Module')
+  ldmxcfg.make_processor('my_producer','some::cpp::MyProducer','Module')
 ]
 ```
 
 ## Minimal Reconstruction Config
-In Reconstruction Mode, there will be a `p.inputFiles` line but since `p.run` will be ignored it is often omitted.
+In Reconstruction Mode, there will be a `p.input_files` line but since `p.run` will be ignored it is often omitted.
 
 ```python
 from LDMX.Framework import ldmxcfg
 p = ldmxcfg.Process('myreco')
-p.inputFiles = ['input_events.root']
-p.outputFiles = ['rereco_input_events.root']
+p.input_files = ['input_events.root']
+p.output_files = ['rereco_input_events.root']
 p.sequence = [
-  ldmxcfg.Producer('my_reco', 'some::cpp::MyReco', 'Module')
+  ldmxcfg.make_processor('my_reco', 'some::cpp::MyReco', 'Module')
 ]
 ```
