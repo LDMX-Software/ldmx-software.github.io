@@ -5,8 +5,8 @@ The generation of simulation samples is done mainly by the Geant4 package with s
 ### Basic Usage
 Running the simulation is just like any other producer in ldmx-sw. In your python configuration script, it is _required_ that you have the following lines (or equivalent):
 ```python
-from LDMX.SimCore.simulator import simulator
-mySimulator = simulator(instance_name="mySimulator")
+from LDMX.SimCore.simulator import Simulator
+mySimulator = Simulator(instance_name="mySimulator")
 ```
 You can write your own detector description in the gdml format (if you want), but ldmx-sw already comes with several versions of the LDMX detector description. These versions are installed with it and can be accessed with some python (+ cmake!) code:
 ```python
