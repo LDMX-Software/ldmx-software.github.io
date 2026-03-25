@@ -143,7 +143,7 @@ at the beginning of your `onProcessStart` function.
 ~~~
 
 In order to run this code on the data, we need to compile and run the program.
-The special `from_file` function within the config script handles this in
+The special `processor_from_file` function within the config script handles this in
 most situations for us.
 Below, you'll see that the analyzer is re-compiled into the library while
 `fire` is loading the configuration and then the analyzer is used during event processing.

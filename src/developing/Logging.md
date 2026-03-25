@@ -8,9 +8,9 @@ The python class `Process` has the `logger` member that configures how the loggi
 
 Parameter | Description
 ---|---
-`filePath` | path to logging file. No logging to file is done if this is not set.
-`fileLevel` | Logging level (and above) to print to the file
-`termLevel` | Logging level (and above) to print to the terminal
+`file_path` | path to logging file. No logging to file is done if this is not set.
+`file_level` | Logging level (and above) to print to the file
+`term_level` | Logging level (and above) to print to the terminal
 
 Besides these parameters you can set directly, the `logger` also has
 the ability to customize logging levels depending on the name of the logging
@@ -19,7 +19,7 @@ channel (usually the processor's name).
 ### Examples
 to lower the level for everyone
 ```python
-p.logger.termLevel = 0
+p.logger.term_level = 0
 ```
 to debug a specific processor
 ```python
