@@ -55,6 +55,11 @@ are located.
 {{#include ana-cfg.py}}
 ```
 
+~~~admonish warning title="Prior ldmx-sw Versions
+If you are using ldmx-sw < v4.7.0 (but >= v4.0.1), then the `processor_from_file` function
+was named `Analyzer.from_file` but otherwise works the same.
+~~~
+
 ~~~admonish error title="Unable to Load Library" collapsible=true
 If you see an error like the one below, you are probably not linking
 your stand-alone processor to its necessary libraries.
