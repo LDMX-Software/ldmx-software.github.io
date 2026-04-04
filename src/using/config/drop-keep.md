@@ -1,15 +1,8 @@
 # Drop Keep Rules
 
-```admonish warning title="Bugs with Drop Keep Rules" collapsible=true
-Some issues with the drop keep rules have been reported on GitHub:
-[Issue #1297](https://github.com/LDMX-Software/ldmx-sw/issues/1297).
-Check there if you are having issues to see if you need to update or if there
-is a work-around.
-```
-
 By default, all data that is added to an event (via `event.add` within a `produce` function)
 is written to the output data file. This is a helpful default because it allows users to
-quickly and write a new config and see everything that was produced by it.
+quickly write a new config and see everything that was produced by it.
 
 Nevertheless, it is often helpful to avoid storing specific event objects within the output file
 mostly because the output file is getting too large and removing certain objects can save disk
@@ -34,33 +27,37 @@ Each rule in the list should be a string with a single space.
 decision expression
 ```
 - `decision` is one of three strings: `drop`, `keep`, and `ignore`.
-- `expression` is a regular expression that will be compared against the event object names
+- `expression` is a regular expression that will be compared against the branch names
 
 ### decision
 As the name implies, this first string is the definition of what should happen to
-an event object that this rule applies to. It must exactly match one of the strings below.
+an event object that this rule applies to. It must exactly match one of the strings below
+**and must appear at the start of the rule string**.
 
-- `drop` : event objects matching `expression` should not be written to the output file
-- `keep` : event objects matching `expression` should be written to the output file
-- `ignore` : event objects matching `expression` should not even be read in from the input file
+- `drop` : event objects matching `expression` are readable during processing but not written to the output file
+- `keep` : event objects matching `expression` are written to the output file (the default for all objects)
+- `ignore` : event objects matching `expression` are not read from the input file at all and are invisible to processors
 
-```admonish note title='Legacy Note'
-The "ignore" decision is leftover from earlier versions of the processing framework that
-would load all event objects from the input file into memory for processing. Current versions
-of framework do not do this and so this decision is largely not needed.
+```admonish note title='Difference between drop and ignore'
+`drop` lets processors still read the collection during processing — it just will not appear in the
+output file. `ignore` goes further: the branch is not registered in the event product list at all,
+so processors cannot access it even if they try. Use `ignore` when you want to completely hide
+collections from a previous pass (e.g. intermediate "test" pass data) while reprocessing with a
+new pass.
+```
 
-Perhaps a future version of framework will fully remove this as an option after testing
-confirms that this behavior is not needed.
+```admonish warning title='EventHeader is protected'
+A `drop` or `ignore` rule that would match `EventHeader` will raise an error at startup.
+The EventHeader is required by the framework and cannot be removed.
 ```
 
 ### expression
-This regular expression hasn't been fully tested against all the powers of regular expressions.
-What has been tested is basic sub-string matching and so it is advised to stay within the realm of
-sub-string matching.
+This regular expression has been tested against basic sub-string matching and it is advised
+to stay within the realm of sub-string matching.
 
-Since we append the pass name of a process to the end of these event objects created within that
-process, we expect this expression to be focused on matching the prefix of the full object name.
-Thus, if an expression _emph_ does not end in a `*` character, one is appended.
+Since we append the pass name of a process to the end of event objects created within that
+process, we expect this expression to be focused on matching the prefix of the full branch name.
+Thus, if an expression does not end in a `*` character, one is appended automatically.
 
 ~~~admonish example
 The expression `"EcalSimHits"` in the python configuration will be updated to
@@ -70,10 +67,10 @@ The expression `"EcalSimHits"` in the python configuration will be updated to
 ### Ordering
 The rules are applied in order and can override one another. This allows for more complicated
 decisions to be made. In essence, the _last_ rule in the list whose expression matches the
-event object's name, that is the decision that will be applied.
+event object's name is the decision that will be applied.
 
 ~~~admonish example
-I can drop all of the scoring plane hit collections except the one for the ECal.
+Drop all scoring plane hit collections except the one for the ECal.
 ```python
 p.keep = [
     'drop .*ScoringPlane.*',
@@ -82,10 +79,20 @@ p.keep = [
 ```
 ~~~
 
+~~~admonish example title='Ignoring a previous pass'
+When reprocessing data, you can hide all collections from a previous pass so that processors
+cannot accidentally read old data. New collections with the current pass name will still be
+created normally.
+```python
+p.keep = [
+    'ignore test',  # hide all branches with pass name "test"
+]
+```
+~~~
+
 ~~~admonish warning title="Dangerous Example"
 In a very tight disk space environment, you can drop all event objects and then only keep
-ones you specifically require. In general, this is _not_ recommended (and to be honest,
-I'm not sure if it works).
+ones you specifically require. In general, this is _not_ recommended.
 ```python
 p.keep = [
     'drop .*',
@@ -93,8 +100,9 @@ p.keep = [
     'keep EcalHits.*',
 ]
 ```
-The above would then have a file with only the Hcal and Ecal hits.
-Make sure to thoroughly test run your config with the setting of `p.keep` to make sure that
+The above would produce a file with only the Hcal and Ecal hits. A warning will be printed
+at startup when an all-matching drop or ignore rule is detected.
+Make sure to thoroughly test your config with `p.keep` set to confirm that
 everything you need is in the output file. It is very easy to mis-type one of these patterns
 and prevent anything from being written to the output file.
 ~~~
