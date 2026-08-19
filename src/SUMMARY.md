@@ -16,6 +16,7 @@
   - [Configuring the Simulation](using/sim/configuring.md)
   - [Re-Simulation](using/sim/resim.md)
   - [Alternative photo-nuclear models](using/sim/Alternative-Photo-Nuclear-Models.md)
+  - [Simulation from Scoring Planes](using/sim/sim-from-scoring-planes.md)
 - [Dark Brem Signal Samples](using/dark-brem/intro.md)
   - [How to Run](using/dark-brem/how-to.md)
   - [Legacy Instructions](using/dark-brem/legacy.md)
