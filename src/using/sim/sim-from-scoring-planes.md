@@ -30,17 +30,19 @@ filter out events from that sample that are particularly troublesome that we
 want to study in more detail with the calorimeter simulation as well.
 
 ## Stage One: "simtrk"
+`SimCore/exampleConfigs/stage-one-no-cal.py`
+
 In this stage, we do a normal simulation but we omit the detector volumes
 and sensitive detectors (SDs) that are not within the region we care about.
 The tracking region already has a GDML detector model constructed that is
-equivalent to the full v14 detector but without the two calorimeters,
+equivalent to the full v15 detector but without the two calorimeters,
 so we can just use that model.
 
 For example,
 ```python
 from LDMX.SimCore import simulator, generators, sensitive_detectors
 sim = simulator.simulator('sim')
-sim.setDetector('ldmx-det-v14-8gev-no-cals')
+sim.set_detector('ldmx-det-v15-8gev-no-cals')
 sim.generators = [
     generators.single_8gev_e_upstream_tagger()
 ]
@@ -55,19 +57,20 @@ sim.sensitive_detectors = [
     sensitive_detectors.TrigScintSD.pad3(),
     sensitive_detectors.ScoringPlaneSD.tracker(),
     sensitive_detectors.ScoringPlaneSD.target(),
-    sensitive_detectors.ScoringPlaneSD.ecal(),
-    sensitive_detectors.ScoringPlaneSD.hcal()
+    sensitive_detectors.ScoringPlaneSD.ecal()
 ]
-sim.beamSpotSmear = [20.0, 80.0, 0.0] # mm
 ```
-We want to remove all of the SDs that pertain to subsystems we are not
+We want to _remove_ all of the SDs that pertain to subsystems we are not
 including (e.g. `EcalSD` and `HcalSD` are omitted), but we do want to
 include the scoring planes for the area from which we want to start
-stage two (in this case, `ScoringPlaneSD.hcal()` contains one "plane"
-at the front of the calorimeter region, `ScoringPlaneSD.ecal()` has
-a similar one but it is not as large in the transverse direction).
+stage two (in this case, `ScoringPlaneSD.ecal()` contains one "plane"
+at the front of the calorimeter region, `ScoringPlaneSD.hcal()` has
+a similar one which is larger in the transverse dimensions if you
+need to capture wider scatters).
 
 ## Stage Two: "simcal"
+`SimCore/exampleConfigs/stage-two-cal.py`
+
 The `FromScoringPlane` generator requires an input file to be given to the
 process so that (a) the prior pass's information is copied into the output
 file for analysis and (b) so this generator can access the prior
@@ -84,21 +87,14 @@ And then the simulation can use the special generator that uses hits from the in
 ```python
 # sim is a normal simulator.Simulator
 from LDMX.SimCore.generators import FromScoringPlane
-sim.generators = [
-    FromScoringPlane(
-        # default is EcalScoringPlaneHits but you can use
-        # the HcalSP if they are available
-        coll_name = "HcalScoringPlaneHits",
-        # usually you want to choose the front plane
-        # 31 for EcalSP, 41 for HcalSP
-        select_planes = [41]
-    )
-]
+sim.generators = [ FromScoringPlane.ecal() ]
 ```
 
 You can do a similar thing as stage one where you tune the `sim.sensitive_detectors` to only the subsystems that are of-interest in this stage. Technically, that is not necessary but it would be helpful to avoid downstream confusion during analysis.
 
 ### Analysis Comments
-The file output by "Stage Two" of the simulation is complicated since it was constructed in a abnormal way.
+The file output by "Stage Two" of the simulation is complicated since it was constructed in an abnormal way.
 
-**Be Careful with Pass Names**: Remember that both stages could have contributed a collection with the same name, so make sure the two stages have different pass names and you choose the correct pass name when analyzing the resulting file. For example, I know that the `RecoilSimHits` collection from the `simcal` pass will only be back-splash hits while the `RecoilSimHits` collection from the `simtrk` pass will be near-normal.
+- **Be Careful with Pass Names**: Remember that both stages could have contributed a collection with the same name, so make sure the two stages have different pass names and you choose the correct pass name when analyzing the resulting file. For example, I know that the `RecoilSimHits` collection from the `simcal` pass will only be back-splash hits while the `RecoilSimHits` collection from the `simtrk` pass will be near-normal.
+- **Neglecting Backspash**: While we expect backsplash from the calorimeters confusing the recoil tracker to be a small/neglible effect, this two-stage simulation completely omits this possibility. In some sense, the tracking in the recoil detector is therefore a bit "too easy" compared to real events.
+- **Re-Sampling**: Since the fate of particles is inherently probabilistic, you may want to simulate the same scoring-plane events many times to try to understand the distribution of possible signals in the calorimeters. This can be achieved by using the same input file and simply using a different run number in stage two so that the random number generator is seeded differently.
