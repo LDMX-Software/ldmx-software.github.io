@@ -1,5 +1,7 @@
 # Simulation from Scoring Plane Hits
 
+Available in ldmx-sw VERSION and later.
+
 ~~~admonish note title="Not Re-Sim"
 The `FromScoringPlane` generator is mainly focused on doing "two stage" simulation
 where _replication_ is not required.  If you want to **fully replicate**
@@ -41,7 +43,7 @@ so we can just use that model.
 For example,
 ```python
 from LDMX.SimCore import simulator, generators, sensitive_detectors
-sim = simulator.simulator('sim')
+sim = simulator.Simulator('sim')
 sim.set_detector('ldmx-det-v15-8gev-no-cals')
 sim.generators = [
     generators.single_8gev_e_upstream_tagger()
