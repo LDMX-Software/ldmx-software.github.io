@@ -1,6 +1,6 @@
 # Simulation from Scoring Plane Hits
 
-Available in ldmx-sw VERSION and later.
+Available in ldmx-sw v4.8.2 and later.
 
 ~~~admonish note title="Not Re-Sim"
 The `FromScoringPlane` generator is mainly focused on doing "two stage" simulation
