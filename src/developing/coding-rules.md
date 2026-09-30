@@ -22,7 +22,7 @@ When developing code in ldmx-sw please follow the following best practises and s
 5. All producers should have a configurable pass names, input collection names, and output collection names
 6. Include what you use: a header includes only what its own declarations need, everything else goes into the `.cxx` file. Do not rely on headers pulled in indirectly by other includes.
     - Run `just include-cleaner-diff` before opening a PR to list unused includes in the files you changed, and `just include-cleaner-diff --edit` to remove them (review the result and make sure it still compiles)
-    - The same check runs on every PR in CI and reports unused includes as warnings
+    - The same check runs on every PR in CI and fails if a changed file has an unused include
     - If the tool flags an include that is needed (e.g. only used inside a macro or an uninstantiated template), keep it with a trailing `// IWYU pragma: keep` comment
 
 ## III. Code quality
